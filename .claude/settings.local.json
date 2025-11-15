@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(curl:*)",
+      "Bash(node -c:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

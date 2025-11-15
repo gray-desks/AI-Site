@@ -4,85 +4,130 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>テンプレート記事 | AI情報ブログ</title>
+  <meta name="description" content="このテンプレートを複製して記事を作成できます。構成やCTAの位置を確認するためのデモページです。">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
-  <header class="site-header">
-    <div class="inner">
-      <a class="brand" href="../index.html">
-        <img src="../assets/img/logo.png" alt="AI情報ブログ ロゴ" class="logo">
-        <span>AI情報ブログ</span>
-      </a>
-      <nav aria-label="メインナビゲーション">
-        <a href="../index.html">ホーム</a>
-        <a href="../about.html">このサイトについて</a>
-      </nav>
-    </div>
-  </header>
+<body class="article-page">
+  <!-- ヘッダーはcomponents.jsで動的に挿入されます -->
 
   <main>
-    <div class="inner article-wrapper">
-      <!-- Google AdSense: 記事上広告 -->
-      <!--
-      <div class="ad-container ad-article-top">
-        <span class="ad-label">広告</span>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="XXXXXXXXXX"
-             data-ad-format="rectangle"
-             data-full-width-responsive="true"></ins>
-      </div>
-      -->
-
-      <article class="post-article">
-        <div class="post-meta">2025.11.10</div>
-        <h1>テンプレート記事（動作確認用）</h1>
-        <p class="post-summary">このサンプルを複製し、日付・タイトル・本文を更新して新しい記事を作成できます。</p>
-
-        <h2>セクション見出し</h2>
-        <p>本文は自由に入れ替えてください。段落やリスト、図版などのHTML要素を利用できます。</p>
-
-        <!-- Google AdSense: 記事中広告 -->
-        <!--
-        <div class="ad-container ad-article-middle">
-          <span class="ad-label">広告</span>
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-               data-ad-slot="XXXXXXXXXX"
-               data-ad-format="rectangle"></ins>
+    <article class="article-detail">
+      <section class="inner article-hero">
+        <p class="article-eyebrow">Template Walkthrough</p>
+        <div class="article-hero-main">
+          <div>
+            <p class="post-meta">2025.11.10</p>
+            <h1>テンプレート記事（動作確認用）</h1>
+            <p class="article-summary">このサンプルを複製し、日付・タイトル・本文を更新して新しい記事を作成できます。メタ情報・目次・参考リンクの見せ方も含めて確認できます。</p>
+          </div>
+          <div class="article-hero-cta">
+            <a class="button button-primary" href="../index.html">記事一覧へ戻る</a>
+            <button class="button button-ghost" type="button" data-share-target="native">この記事を共有</button>
+          </div>
         </div>
-        -->
 
-        <h3>ポイントリスト</h3>
-        <ul>
-          <li>AI関連ニュース・実装Tipsなどを想定</li>
-          <li>画像は <code>assets/img/posts/&lt;日付&gt;/</code> に保存</li>
-          <li>必要に応じて図解を差し込んでください</li>
+        <div class="article-meta-grid">
+          <article class="meta-card">
+            <p class="meta-label">公開日</p>
+            <p class="meta-value">2025年11月10日</p>
+            <small>最終更新: 2025.11.10</small>
+          </article>
+          <article class="meta-card">
+            <p class="meta-label">推定読了時間</p>
+            <p class="meta-value">4分</p>
+            <small>約1,000文字</small>
+          </article>
+          <article class="meta-card">
+            <p class="meta-label">リサーチソース</p>
+            <p class="meta-value">AI情報ブログ編集部</p>
+            <a href="../about.html">編集ポリシーを見る</a>
+          </article>
+        </div>
+
+        <ul class="article-tags">
+          <li>Template</li>
+          <li>Guide</li>
+          <li>How To</li>
         </ul>
 
-        <p>執筆が完了したら <code>data/posts.json</code> に記事情報を追記すれば、トップページの一覧に表示されます。</p>
-      </article>
+        <div class="article-share-links">
+          <a class="share-link" href="#" data-share-target="x" aria-label="Xで共有">Xに共有</a>
+          <a class="share-link" href="#" data-share-target="linkedin" aria-label="LinkedInで共有">LinkedIn</a>
+          <button class="share-link copy-link" type="button" data-copy-link>リンクをコピー</button>
+        </div>
+      </section>
 
-      <!-- Google AdSense: 記事下広告 -->
-      <!--
-      <div class="ad-container ad-article-bottom">
-        <span class="ad-label">広告</span>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-             data-ad-slot="XXXXXXXXXX"
-             data-ad-format="autorelaxed"></ins>
+      <div class="inner article-grid">
+        <div class="article-main-column">
+          <article class="post-article article-content">
+            <section class="article-section" id="section-overview">
+              <p class="section-eyebrow">Section 01</p>
+              <h2>セクション見出し</h2>
+              <p>本文は自由に入れ替えてください。段落やリスト、図版などのHTML要素を利用できます。適宜 <code>&lt;figure&gt;</code> や引用を挿入しても、レイアウトが崩れないよう調整済みです。</p>
+            </section>
+
+            <section class="article-section" id="section-points">
+              <p class="section-eyebrow">Section 02</p>
+              <h2>ポイントリスト</h2>
+              <ul>
+                <li>AI関連ニュース・実装Tipsなどを想定</li>
+                <li>画像は <code>assets/img/posts/&lt;日付&gt;/</code> に保存</li>
+                <li>必要に応じて図解を差し込んでください</li>
+              </ul>
+              <p>リストやコードブロック、引用などの装飾は <code>assets/css/style.css</code> の <code>.post-article</code> セクションで定義しています。</p>
+            </section>
+
+            <section class="article-section" id="section-next">
+              <p class="section-eyebrow">Section 03</p>
+              <h2>次のアクション</h2>
+              <p>執筆が完了したら <code>data/posts.json</code> に記事情報を追記すれば、トップページの一覧に表示されます。テンプレートを流用してもよく、OpenAIジェネレーターの出力を微調整して公開しても問題ありません。</p>
+              <p>必要に応じて <a href="../automation/templates/article.md">automation/templates/article.md</a> を更新し、生成される構成を調整してください。</p>
+            </section>
+          </article>
+        </div>
+
+        <aside class="article-sidebar" aria-label="補足情報">
+          <section class="article-card article-toc">
+            <p class="article-card-label">目次</p>
+            <ol class="toc-list" data-toc-list aria-live="polite"></ol>
+          </section>
+
+          <section class="article-card article-note">
+            <p class="article-card-label">テンプレ小ネタ</p>
+            <p class="article-note-text">generator で組んだHTMLは publisher が即座に <code>posts/&lt;slug&gt;.html</code> へ書き込みます。下書き用ディレクトリは使っていません。</p>
+          </section>
+        </aside>
       </div>
-      -->
-    </div>
+
+      <section class="inner article-panels">
+        <article class="article-panel seo-panel">
+          <p class="panel-label">SEO観点</p>
+          <h2>検索上位との差別化ポイント</h2>
+          <ul class="insight-list">
+            <li>導入文では動画やデータソースの信頼性を簡潔に補足する</li>
+            <li>見出しは「課題→解決策→アクション」の3ステップで揃えると回遊が増える</li>
+            <li>最後に「次に読むべき記事」を2件以上紹介して内部リンクを明示</li>
+          </ul>
+        </article>
+
+        <article class="article-panel reference-panel">
+          <p class="panel-label">参考リンク</p>
+          <ul class="reference-list">
+            <li><a href="https://developers.google.com/youtube/v3" target="_blank" rel="noopener noreferrer">YouTube Data API v3</a></li>
+            <li><a href="https://platform.openai.com/" target="_blank" rel="noopener noreferrer">OpenAI Platform</a></li>
+            <li><a href="../automation/pipeline/index.js">パイプライン実装を見る</a></li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Google AdSense等の広告枠は必要に応じて挿入 -->
+    </article>
   </main>
 
-  <footer class="site-footer">
-    <div class="inner">
-      <small>&copy; 2025 AI情報ブログ</small>
-    </div>
-  </footer>
+  <!-- フッターはcomponents.jsで動的に挿入されます -->
+
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/article.js" defer></script>
 </body>
 </html>

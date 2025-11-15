@@ -6,7 +6,7 @@
 - すべての説明・コミットメッセージ・レビューは日本語で行う。
 - OpenAI / Google Search などのシークレットはローカルに置かず、GitHub Secrets を利用する前提で記述やコマンドを提案する。
 - 変更対象は原則 `automation/`、`data/`、`posts/`、`index.html` などリポジトリ内のファイルのみ。既存の未コミット変更には触れない。
-- 自動生成物（`posts/generated-drafts/` 内のHTMLや `automation/output/pipeline-status.json`）を手動で書き換える場合は理由を記述し、極力再現手順を残す。
+- 自動生成物（`posts/` 内の公開HTMLや `automation/output/pipeline-status.json`）を手動で書き換える場合は理由を記述し、極力再現手順を残す。
 
 ## 役割ごとの方針
 
@@ -17,8 +17,8 @@
 
 ### 2. Generatorサポート
 - 対象候補は `data/candidates.json` の `status: "pending"`。重複判定は `data/topic-history.json` と `data/posts.json` を組み合わせる実装になっている。
-- `automation/generator/index.js` は OpenAI `gpt-4o-mini` を使い、必要に応じて Google Custom Search (`GOOGLE_SEARCH_API_KEY` / `GOOGLE_SEARCH_CX`) から得た順位情報をプロンプトに挿入する。検索キーが無い場合のフォールバック文面が欠けていないかを確認する。
-- 生成HTMLは `posts/generated-drafts/` に保存。テンプレートは `automation/templates/` 下にあるため、大きなレイアウト変更時はテンプレート→HTML→`index.html`/`about.html` の整合性を取る。
+- `automation/generator/index.js` は OpenAI `gpt-4o` を使い、必要に応じて Google Custom Search (`GOOGLE_SEARCH_API_KEY` / `GOOGLE_SEARCH_CX`) から得た順位情報をプロンプトに挿入する。検索キーが無い場合のフォールバック文面が欠けていないかを確認する。
+- 生成HTMLは generator から publisher へ直接渡され、`posts/<slug>.html` に保存。テンプレートは `automation/templates/` 下にあるため、大きなレイアウト変更時はテンプレート→HTML→`index.html`/`about.html` の整合性を取る。
 
 ### 3. Publisherサポート
 - `automation/publisher/index.js` は generator の出力を `data/posts.json` に反映し、日付降順で整列する。フィールド追加時は `posts/` 内の実ページと `index.html` のレンダリングに影響するので schema を必ず更新。
@@ -38,4 +38,4 @@
 
 ## その他
 - ブランチポリシーやデプロイ戦略に変更があれば、このファイルを更新して最新手順に同期させる。
-- 記事本文は SEO 向けの bullet リストを含む JSON を元にHTML化している。構造を変更した際は必ず `automation/templates/` と `posts/generated-drafts/` の整合を確認。
+- 記事本文は SEO 向けの bullet リストを含む JSON を元にHTML化している。構造を変更した際は必ず `automation/templates/` と `posts/` の最終HTMLの整合を確認。

@@ -3,19 +3,17 @@
  * Generator
  * - Picks pending candidates from data/candidates.json
  * - Calls OpenAI to research SEO-oriented article outline
- * - Writes draft HTML and records topic history for deduplication
+ * - Returns article HTML for publisher and records topic history for deduplication
  */
 
 const path = require('path');
-const fs = require('fs');
-const { readJson, writeJson, ensureDir } = require('../lib/io');
+const { readJson, writeJson } = require('../lib/io');
 const slugify = require('../lib/slugify');
 const { searchTopArticles } = require('../lib/googleSearch');
 
 const root = path.resolve(__dirname, '..', '..');
 const candidatesPath = path.join(root, 'data', 'candidates.json');
 const postsJsonPath = path.join(root, 'data', 'posts.json');
-const draftsDir = path.join(root, 'posts', 'generated-drafts');
 const topicHistoryPath = path.join(root, 'data', 'topic-history.json');
 
 const API_URL = 'https://api.openai.com/v1/chat/completions';
@@ -39,23 +37,121 @@ const toHtmlParagraphs = (text) => {
     .join('\n      ');
 };
 
+const formatDateParts = (value) => {
+  if (!value) {
+    const now = new Date();
+    return {
+      dotted: '',
+      verbose: '',
+      year: now.getFullYear(),
+    };
+  }
+  const normalized = value.replace(/\//g, '-');
+  const date = new Date(`${normalized}T00:00:00`);
+  if (Number.isNaN(date.getTime())) {
+    const now = new Date();
+    return {
+      dotted: value,
+      verbose: value,
+      year: now.getFullYear(),
+    };
+  }
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return {
+    dotted: `${y}.${m}.${d}`,
+    verbose: `${y}年${m}月${d}日`,
+    year: y,
+  };
+};
+
+const computeReadingStats = (sections, summary) => {
+  const rawText = [summary, ...sections.map((section) => section.body ?? '')]
+    .join('\n')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z]+;/gi, ' ');
+  const characters = rawText.replace(/\s+/g, '').length;
+  const approxChars = Math.max(400, Math.round(((characters || 800) / 50)) * 50);
+  const minutes = Math.max(3, Math.round(characters / 400) || 3);
+  return { minutes, approxChars };
+};
+
+const slugifyHeading = (heading, index = 0) => {
+  const base = heading || `section-${index + 1}`;
+  const slug = base
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace(/[\s・、。/]+/g, '-')
+    .replace(/[^a-z0-9\-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+  return slug || `section-${index + 1}`;
+};
+
 const compileArticleHtml = (article, meta, options = {}) => {
   const assetBase = typeof options.assetBase === 'string' ? options.assetBase : '../';
   const normalizedAssetBase = assetBase.endsWith('/') ? assetBase : `${assetBase}/`;
   const cssHref = `${normalizedAssetBase}assets/css/style.css`;
+  const mainJsSrc = `${normalizedAssetBase}assets/js/main.js`;
+  const articleJsSrc = `${normalizedAssetBase}assets/js/article.js`;
   const homeHref = `${normalizedAssetBase}index.html`;
+
   const sections = Array.isArray(article.sections) ? article.sections : [];
   const references = Array.isArray(article.references) ? article.references : [];
   const seoInsights = Array.isArray(article.seoInsights) ? article.seoInsights : [];
+  const tags = Array.isArray(article.tags) ? article.tags : [];
+
+  const dateParts = formatDateParts(meta.date);
+  const reading = computeReadingStats(sections, article.summary ?? '');
+  const approxCharsLabel = reading.approxChars.toLocaleString('ja-JP');
+  const sourceName = meta.sourceName || '情報ソース';
+  const sourceLinkHref = meta.sourceUrl || meta.videoUrl || homeHref;
+  const sourceLinkLabel = meta.sourceUrl
+    ? 'チャンネルを見る'
+    : meta.videoUrl
+      ? '元動画を見る'
+      : '記事一覧へ戻る';
+
+  const heroButtonHref = meta.videoUrl || meta.sourceUrl || homeHref;
+  const heroButtonLabel = meta.videoUrl ? '元動画を見る' : '記事一覧へ戻る';
+  const heroButtonAttrs = /^https?:/i.test(heroButtonHref)
+    ? ' target="_blank" rel="noopener noreferrer"'
+    : '';
+  const sourceLinkAttrs = /^https?:/i.test(sourceLinkHref)
+    ? ' target="_blank" rel="noopener noreferrer"'
+    : '';
+
+  const noteText = meta.sourceName
+    ? `${meta.sourceName}の最新コンテンツをもとに、${dateParts.verbose || meta.date}時点のインサイトを整理しました。`
+    : '自動収集した候補をもとにAIがまとめたドラフト記事です。';
 
   const sectionMarkup = sections
-    .map(
-      (section) => `
-    <section>
-      <h2>${section.heading ?? ''}</h2>
-      ${toHtmlParagraphs(section.body)}
-    </section>`,
-    )
+    .map((section, index) => {
+      const heading = section.heading ?? `セクション${index + 1}`;
+      const slug = slugifyHeading(heading, index);
+      const eyebrow = `Section ${String(index + 1).padStart(2, '0')}`;
+      const bulletList = Array.isArray(section.points)
+        ? section.points
+        : Array.isArray(section.bullets)
+          ? section.bullets
+          : [];
+      const bulletMarkup = bulletList.length
+        ? `
+              <ul>
+                ${bulletList.map((item) => `<li>${item}</li>`).join('\n                ')}
+              </ul>`
+        : '';
+
+      return `
+            <section class="article-section" id="${slug}">
+              <p class="section-eyebrow">${eyebrow}</p>
+              <h2>${heading}</h2>
+              ${toHtmlParagraphs(section.body)}
+              ${bulletMarkup}
+            </section>`;
+    })
     .join('\n');
 
   const referenceMarkup = references.length
@@ -71,16 +167,18 @@ const compileArticleHtml = (article, meta, options = {}) => {
           return '';
         })
         .filter(Boolean)
-        .join('\n        ')
+        .join('\n            ')
     : '<li>参考リンクがありません</li>';
 
   const seoMarkup = seoInsights.length
-    ? seoInsights
-        .map((insight) => `<li>${insight}</li>`)
-        .join('\n        ')
+    ? seoInsights.map((insight) => `<li>${insight}</li>`).join('\n            ')
     : '<li>SEO観点のメモはありません</li>';
 
-  const tags = Array.isArray(article.tags) ? article.tags.join(', ') : '';
+  const tagMarkup = tags.length
+    ? `<ul class="article-tags">
+          ${tags.map((tag) => `<li>${tag}</li>`).join('\n          ')}
+        </ul>`
+    : '';
 
   return `<!DOCTYPE html>
 <html lang="ja">
@@ -88,41 +186,98 @@ const compileArticleHtml = (article, meta, options = {}) => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${article.title} | AI情報ブログ</title>
+  <meta name="description" content="${article.summary ?? ''}">
   <link rel="stylesheet" href="${cssHref}">
 </head>
-<body>
-  <header>
-    <nav>
-      <a href="${homeHref}">ホームに戻る</a>
-    </nav>
-  </header>
+<body class="article-page">
+  <!-- ヘッダーはcomponents.jsで動的に挿入されます -->
 
-  <article>
-    <header>
-      <p class="post-meta">公開日: ${meta.date}</p>
-      <h1>${article.title}</h1>
-      <p class="post-summary">${article.summary ?? ''}</p>
-      <p class="post-meta">元ネタ: ${meta.sourceName} / <a href="${meta.sourceUrl}" target="_blank" rel="noopener noreferrer">${meta.videoUrl}</a></p>
-      <p class="post-meta">タグ: ${tags}</p>
-    </header>
-    <section>
-      <h2>SEO観点の調査メモ</h2>
-      <ul>
-        ${seoMarkup}
-      </ul>
-    </section>
-    ${sectionMarkup}
-    <footer>
-      <h2>参考リンク</h2>
-      <ul>
-        ${referenceMarkup}
-      </ul>
-    </footer>
-  </article>
+  <main>
+    <article class="article-detail">
+      <section class="inner article-hero">
+        <p class="article-eyebrow">Daily Briefing</p>
+        <div class="article-hero-main">
+          <div>
+            <p class="post-meta">${dateParts.dotted}</p>
+            <h1>${article.title}</h1>
+            <p class="article-summary">${article.summary ?? ''}</p>
+          </div>
+          <div class="article-hero-cta">
+            <a class="button button-primary" href="${heroButtonHref}"${heroButtonAttrs}>${heroButtonLabel}</a>
+            <button class="button button-ghost" type="button" data-share-target="native">この記事を共有</button>
+          </div>
+        </div>
 
-  <footer>
-    <small>&copy; ${new Date(meta.date).getFullYear()} AI情報ブログ</small>
-  </footer>
+        <div class="article-meta-grid">
+          <article class="meta-card">
+            <p class="meta-label">公開日</p>
+            <p class="meta-value">${dateParts.verbose || meta.date}</p>
+            <small>最終更新: ${dateParts.dotted}</small>
+          </article>
+          <article class="meta-card">
+            <p class="meta-label">推定読了時間</p>
+            <p class="meta-value">${reading.minutes}分</p>
+            <small>約${approxCharsLabel}文字</small>
+          </article>
+          <article class="meta-card">
+            <p class="meta-label">リサーチソース</p>
+            <p class="meta-value">${sourceName}</p>
+            <a href="${sourceLinkHref}"${sourceLinkAttrs}>${sourceLinkLabel}</a>
+          </article>
+        </div>
+
+        ${tagMarkup}
+
+        <div class="article-share-links">
+          <a class="share-link" href="#" data-share-target="x" aria-label="Xで共有">Xで共有</a>
+          <a class="share-link" href="#" data-share-target="linkedin" aria-label="LinkedInで共有">LinkedIn</a>
+          <button class="share-link copy-link" type="button" data-copy-link>リンクをコピー</button>
+        </div>
+      </section>
+
+      <div class="inner article-grid">
+        <div class="article-main-column">
+          <article class="post-article article-content">
+${sectionMarkup}
+          </article>
+        </div>
+
+        <aside class="article-sidebar" aria-label="補足情報">
+          <section class="article-card article-toc">
+            <p class="article-card-label">目次</p>
+            <ol class="toc-list" data-toc-list aria-live="polite"></ol>
+          </section>
+          <section class="article-card article-note">
+            <p class="article-card-label">補足メモ</p>
+            <p class="article-note-text">${noteText}</p>
+          </section>
+        </aside>
+      </div>
+
+      <section class="inner article-panels">
+        <article class="article-panel seo-panel">
+          <p class="panel-label">SEO観点</p>
+          <h2>検索上位との差別化ポイント</h2>
+          <ul class="insight-list">
+            ${seoMarkup}
+          </ul>
+        </article>
+
+        <article class="article-panel reference-panel">
+          <p class="panel-label">参考リンク</p>
+          <ul class="reference-list">
+            ${referenceMarkup}
+          </ul>
+        </article>
+      </section>
+    </article>
+  </main>
+
+  <!-- フッターはcomponents.jsで動的に挿入されます -->
+
+  <script src="${normalizedAssetBase}assets/js/components.js"></script>
+  <script src="${mainJsSrc}" defer></script>
+  <script src="${articleJsSrc}" defer></script>
 </body>
 </html>`;
 };
@@ -301,8 +456,6 @@ const runGenerator = async () => {
     };
   }
 
-  ensureDir(draftsDir);
-
   let searchResults = [];
   if (googleApiKey && googleCx) {
     try {
@@ -329,8 +482,6 @@ const runGenerator = async () => {
   const today = new Date().toISOString().split('T')[0];
   const slug = `${today}-${topicKey}`;
   const fileName = `${slug}.html`;
-  const draftPath = path.join(draftsDir, fileName);
-  const draftRelativePath = path.posix.join('posts', 'generated-drafts', fileName);
   const publishRelativePath = path.posix.join('posts', fileName);
 
   const meta = {
@@ -341,9 +492,6 @@ const runGenerator = async () => {
   };
 
   const publishHtml = compileArticleHtml(article, meta, { assetBase: '../' });
-  const draftHtml = compileArticleHtml(article, meta, { assetBase: '../../' });
-  fs.writeFileSync(draftPath, draftHtml);
-  console.log(`[generator] ドラフトHTMLを保存: ${draftRelativePath}`);
 
   const now = new Date().toISOString();
 
@@ -355,7 +503,6 @@ const runGenerator = async () => {
           generatedAt: now,
           updatedAt: now,
           topicKey,
-          draftUrl: draftRelativePath,
           postDate: today,
           slug,
           outputFile: publishRelativePath,
@@ -367,7 +514,7 @@ const runGenerator = async () => {
   const updatedHistory = updateTopicHistory(topicHistory, topicKey, {
     sourceName: candidate.source.name,
     videoTitle: candidate.video.title,
-    draftUrl: draftRelativePath,
+    draftUrl: publishRelativePath,
     lastPublishedAt: today,
   });
   writeJson(topicHistoryPath, updatedHistory);
@@ -411,7 +558,7 @@ const runGenerator = async () => {
     generated: true,
     candidateId: candidate.id,
     postEntry,
-    draftUrl: draftRelativePath,
+    draftUrl: publishRelativePath,
     topicKey,
     article: articleData,
   };
