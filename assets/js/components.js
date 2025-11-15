@@ -35,11 +35,19 @@
             <img src="${logoPath}" alt="AI情報ブログ ロゴ" class="logo">
             <span>AI情報ブログ</span>
           </a>
+          <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
           <nav aria-label="メインナビゲーション">
             <a href="${homeLink}"${isHome ? ' aria-current="page"' : ''}>ホーム</a>
             <a href="${aboutLink}">このサイトについて</a>
           </nav>
         </div>
+        <div class="menu-overlay"></div>
       </header>
     `;
   }
@@ -60,6 +68,75 @@
   }
 
   /**
+   * ハンバーガーメニューの動作を初期化
+   */
+  function initMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.site-header nav');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const navLinks = document.querySelectorAll('.site-header nav a');
+
+    if (!menuToggle || !nav || !menuOverlay) return;
+
+    // メニューの開閉
+    function toggleMenu() {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      menuToggle.setAttribute('aria-label', isExpanded ? 'メニューを開く' : 'メニューを閉じる');
+      menuToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+
+      // メニューが開いている時はbodyのスクロールを防止
+      if (!isExpanded) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+
+    // メニューを閉じる
+    function closeMenu() {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'メニューを開く');
+      menuToggle.classList.remove('active');
+      nav.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ハンバーガーボタンをクリック
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // オーバーレイをクリック
+    menuOverlay.addEventListener('click', closeMenu);
+
+    // ナビゲーションリンクをクリックしたらメニューを閉じる
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // ESCキーでメニューを閉じる
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+
+    // ウィンドウリサイズ時に768px以上になったらメニューを閉じる
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth > 768 && nav.classList.contains('active')) {
+          closeMenu();
+        }
+      }, 250);
+    });
+  }
+
+  /**
    * コンポーネントを挿入
    */
   function injectComponents() {
@@ -68,6 +145,8 @@
     // ヘッダーが存在しない場合のみ挿入（重複防止）
     if (!document.querySelector('.site-header')) {
       document.body.insertAdjacentHTML('afterbegin', getHeaderHTML(basePath));
+      // ヘッダー挿入後にモバイルメニューを初期化
+      initMobileMenu();
     }
 
     // フッターが存在しない場合のみ挿入（重複防止）

@@ -166,17 +166,11 @@ const compileArticleHtml = (article, meta, options = {}) => {
   const cssHref = `${normalizedAssetBase}assets/css/style.css`;
   const mainJsSrc = `${normalizedAssetBase}assets/js/main.js`;
   const articleJsSrc = `${normalizedAssetBase}assets/js/article.js`;
-  const homeHref = `${normalizedAssetBase}index.html`;
 
   const sections = Array.isArray(article.sections) ? article.sections : [];
   const tags = Array.isArray(article.tags) ? article.tags : [];
 
   const dateParts = formatDateParts(meta.date);
-  const heroButtonHref = meta.videoUrl || meta.sourceUrl || homeHref;
-  const heroButtonLabel = meta.videoUrl ? '元動画を見る' : '記事一覧へ戻る';
-  const heroButtonAttrs = /^https?:/i.test(heroButtonHref)
-    ? ' target="_blank" rel="noopener noreferrer"'
-    : '';
 
   const renderTagList = (items) => {
     if (!Array.isArray(items) || items.length === 0) {
@@ -292,15 +286,9 @@ ${toHtmlParagraphs(article.conclusion)}
       <section class="inner article-hero">
         <p class="article-eyebrow">Daily Briefing</p>
         <div class="article-hero-main">
-          <div>
-            <p class="post-meta">公開日: ${dateParts.dotted || meta.date}</p>
-            <h1>${article.title}</h1>
-            <p class="article-summary">${article.summary ?? ''}</p>
-          </div>
-          <div class="article-hero-cta">
-            <a class="button button-primary" href="${heroButtonHref}"${heroButtonAttrs}>${heroButtonLabel}</a>
-            <button class="button button-ghost" type="button" data-share-target="native">この記事を共有</button>
-          </div>
+          <p class="post-meta">${dateParts.dotted || meta.date}</p>
+          <h1>${article.title}</h1>
+          <p class="article-summary">${article.summary ?? ''}</p>
         </div>
 
         ${tagMarkup}
