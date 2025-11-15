@@ -3,102 +3,119 @@
     "platform": "YouTube",
     "name": "AI Insider JP",
     "url": "https://www.youtube.com/@ai-insider",
+    "channelId": "UCetupxUgjPiMKDK2AZ94YQQ",
     "focus": ["生成AI", "MLOps", "プロダクト事例"]
   },
   {
     "platform": "YouTube",
     "name": "Prompt Engineers",
-    "url": "https://www.youtube.com/@prompt-engineers",
+    "url": "https://www.youtube.com/@promptengineers",
+    "channelId": "UCxiGHcZnWOHXvTlM83_CoEg",
     "focus": ["プロンプト設計", "LLMアップデート"]
   },
   {
     "platform": "YouTube",
     "name": "Vision Tech Lab",
-    "url": "https://www.youtube.com/@vision-tech-lab",
+    "url": "https://www.youtube.com/@visiontechlab",
+    "channelId": "UCMSRLcpBbA-hP-Mrdrf_XJQ",
     "focus": ["マルチモーダル", "コンピュータビジョン"]
   },
   {
     "platform": "YouTube",
     "name": "aivtuber2866",
     "url": "https://www.youtube.com/@aivtuber2866",
+    "channelId": "UCZQVTC3uLCyuJUOcRlguazA",
     "focus": ["生成AI", "VTuber"]
   },
   {
     "platform": "YouTube",
     "name": "ai-saborou",
     "url": "https://www.youtube.com/@ai-saborou",
+    "channelId": "UC9AuyS7U4PxeDSNMJ2srarA",
     "focus": ["AIツール", "自動化"]
   },
   {
     "platform": "YouTube",
     "name": "google-school",
     "url": "https://www.youtube.com/@google-school",
+    "channelId": "UC_kTlZMryHFPMc7QMi4g0VQ",
     "focus": ["Google", "AI教育"]
   },
   {
     "platform": "YouTube",
     "name": "mikimikiweb",
     "url": "https://www.youtube.com/@mikimikiweb",
+    "channelId": "UChxtIA33ty53Hh4MmkXNASg",
     "focus": ["Web制作", "AI活用"]
   },
   {
     "platform": "YouTube",
     "name": "ai_masaou",
     "url": "https://www.youtube.com/@ai_masaou",
+    "channelId": "UCvHpETRVi1tXeRJoYiXHJqw",
     "focus": ["生成AI", "Tips"]
   },
   {
     "platform": "YouTube",
     "name": "keitoaiweb",
     "url": "https://www.youtube.com/@keitoaiweb",
+    "channelId": "UCfapRkagDtoQEkGeyD3uERQ",
     "focus": ["AIニュース", "Web活用"]
   },
   {
     "platform": "YouTube",
     "name": "chaen-ai-lab",
     "url": "https://www.youtube.com/@chaen-ai-lab",
+    "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
     "focus": ["AI解説", "LLM"]
   },
   {
     "platform": "YouTube",
     "name": "ウェブマニア",
     "url": "https://www.youtube.com/@%E3%82%A6%E3%82%A7%E3%83%96%E3%83%9E%E3%83%8B%E3%82%A2",
+    "channelId": "UCvpDuJLRV07mTu6gh9CGq0w",
     "focus": ["Webマーケ", "AI活用"]
   },
   {
     "platform": "YouTube",
     "name": "kei31e",
-    "url": "https://www.youtube.com/@kei31e/videos",
+    "url": "https://www.youtube.com/@kei31e",
+    "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
     "focus": ["エンジニアリング", "AI"]
   },
   {
     "platform": "YouTube",
     "name": "iketomo-ch",
     "url": "https://www.youtube.com/@iketomo-ch",
+    "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
     "focus": ["AIツール", "活用事例"]
   },
   {
     "platform": "YouTube",
     "name": "tomos_aiagent",
     "url": "https://www.youtube.com/@tomos_aiagent",
+    "channelId": "UCAmdG83hIqRQfwLaNQS7H2w",
     "focus": ["AIエージェント", "自動化"]
   },
   {
     "platform": "YouTube",
     "name": "AI-Hakase",
     "url": "https://www.youtube.com/@AI-Hakase",
+    "channelId": "UC_XCzQX1YiDetIm5IUYvZ7w",
     "focus": ["AI解説", "研究トレンド"]
   },
   {
     "platform": "YouTube",
     "name": "technavi_tooru",
     "url": "https://www.youtube.com/@technavi_tooru",
+    "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
     "focus": ["テックニュース", "生成AI"]
   },
   {
     "platform": "YouTube",
     "name": "AIAIChatGPT-cj4sh",
     "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
+    "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
     "focus": ["ChatGPT", "生成AIノウハウ"]
   }
 ]

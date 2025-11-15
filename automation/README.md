@@ -3,9 +3,9 @@
 GitHub Actions から `automation/pipeline/index.js` を呼び出し、以下の3ステージを順番に実行します。ローカル環境にはAPIキーを置かず、GitHub Secrets 上の `OPENAI_API_KEY` をワークフローに注入して実行する前提です。
 
 1. **collector** (`automation/collector/index.js`)  
-   - `data/sources.json` の YouTube ハンドルを巡回し、公開フィードをパースして直近7日以内の動画メタデータを取得。  
+   - `data/sources.json` に登録された YouTube `channelId` をもとに、YouTube Data API v3 の `search` エンドポイントから直近7日以内の動画を取得します。  
    - 候補は `data/candidates.json` に保存され、1チャンネルあたり最大2件をキューします。  
-   - `automation/cache/channel-ids.json` に channelId をキャッシュしてリクエストを最小化します。
+   - 実行には `YOUTUBE_API_KEY` が必要で、GitHub Secrets から注入します。
 
 2. **generator** (`automation/generator/index.js`)  
    - `data/candidates.json` から `status: "pending"` のものを選び、過去5日間に同一トピック（タイトルの slug 化）で記事化していないかを `data/topic-history.json` と `data/posts.json` でチェック。  
@@ -29,3 +29,4 @@ GitHub Actions から `automation/pipeline/index.js` を呼び出し、以下の
 | `OPENAI_API_KEY` | generator で記事テキストを生成するための OpenAI API キー |
 | `GOOGLE_SEARCH_API_KEY` | Google Custom Search JSON API キー（リアルタイム検索用、任意だが推奨） |
 | `GOOGLE_SEARCH_CX` | Custom Search Engine ID。上記APIキーとペアで指定 |
+| `YOUTUBE_API_KEY` | collector が YouTube Data API v3 を呼び出すために使用 |

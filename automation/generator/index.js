@@ -21,6 +21,14 @@ const topicHistoryPath = path.join(root, 'data', 'topic-history.json');
 const API_URL = 'https://api.openai.com/v1/chat/completions';
 const DEDUPE_WINDOW_DAYS = 5;
 
+const createChannelUrl = (channelId) =>
+  channelId ? `https://www.youtube.com/channel/${channelId}` : '';
+
+const resolveSourceUrl = (source) => {
+  if (!source) return '';
+  return source.url || createChannelUrl(source.channelId);
+};
+
 const toHtmlParagraphs = (text) => {
   if (!text) return '';
   return text
@@ -156,6 +164,8 @@ const requestArticleDraft = async (apiKey, candidate, searchResults) => {
   const today = new Date().toISOString().split('T')[0];
   const focusText = (candidate.source.focus || []).join(' / ');
   const searchSummary = formatSearchResults(searchResults);
+  const sourceUrl = resolveSourceUrl(candidate.source);
+  const promptSourceUrl = sourceUrl || 'URL不明';
   const payload = {
     model: 'gpt-4o-mini',
     temperature: 0.4,
@@ -173,7 +183,7 @@ You are given metadata from a YouTube video. Generate a Japanese blog draft that
 Video Title: ${candidate.video.title}
 Video URL: ${candidate.video.url}
 Published At: ${candidate.video.publishedAt}
-Channel: ${candidate.source.name} (${candidate.source.url})
+Channel: ${candidate.source.name} (${promptSourceUrl})
 Channel Focus: ${focusText}
 Video Description:
 ${candidate.video.description}
@@ -266,6 +276,7 @@ const runGenerator = async () => {
   console.log(
     `[generator] 対象候補: ${candidate.id} / ${candidate.source.name} / ${candidate.video?.title}`,
   );
+  const sourceUrl = resolveSourceUrl(candidate.source);
   const topicKey = candidate.topicKey || slugify(candidate.video?.title);
   const duplicate = isDuplicateTopic(topicKey, posts, topicHistory);
   console.log(`[generator] 重複判定: ${duplicate ? '重複あり → スキップ' : '新規トピック'}`);
@@ -325,7 +336,7 @@ const runGenerator = async () => {
   const meta = {
     date: today,
     sourceName: candidate.source.name,
-    sourceUrl: candidate.source.url,
+    sourceUrl,
     videoUrl: candidate.video.url,
   };
 
@@ -384,7 +395,7 @@ const runGenerator = async () => {
     relativePath: publishRelativePath,
     source: {
       name: candidate.source.name,
-      url: candidate.source.url,
+      url: sourceUrl,
     },
     video: {
       title: candidate.video.title,

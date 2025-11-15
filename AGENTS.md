@@ -11,9 +11,9 @@
 ## 役割ごとの方針
 
 ### 1. Collectorサポート
-- ソースは `data/sources.json` を単一の真実源とする。YouTubeハンドルの追加・修正はここ。
-- `automation/collector/index.js` の仕様：直近7日以内の動画のみ `data/candidates.json` に保存。調整時はフィルタ日数、1チャンネルあたり件数 (`MAX_PER_CHANNEL`) を確認。
-- `automation/cache/channel-ids.json` はAPIコール最適化用。更新が壊れていないか diff をチェック。
+- ソースは `data/sources.json` を単一の真実源とする。YouTubeチャネルを追加する際は必ず `channelId` を記載する（ハンドルだけでは動作しない）。
+- `automation/collector/index.js` の仕様：YouTube Data API v3 を使って直近7日以内の動画のみ `data/candidates.json` に保存。調整時はフィルタ日数、1チャンネルあたり件数 (`MAX_PER_CHANNEL`) を確認。
+- APIキーは `YOUTUBE_API_KEY` を GitHub Secrets から受け取る。欠落時は collector が即座にエラーを投げる。
 
 ### 2. Generatorサポート
 - 対象候補は `data/candidates.json` の `status: "pending"`。重複判定は `data/topic-history.json` と `data/posts.json` を組み合わせる実装になっている。

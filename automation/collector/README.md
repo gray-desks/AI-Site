@@ -1,5 +1,6 @@
 # collector
 
-- `sources.json` をもとに対象YouTubeチャンネルの最新動画を取得します。
-- MVPではまだAPIコールを実装していません。`collect-notes.md` などで観測ログを残し、後続処理に渡す想定です。
-- 実装時は `scripts` ディレクトリにAPIキーを置かず、必ず GitHub Secrets から読み込んでください。
+- `sources.json` をもとに対象YouTubeチャンネルの最新動画を YouTube Data API v3 で取得します。
+- `data/sources.json` には `channelId` を必須フィールドとして登録し、ハンドルやHTMLスクレイピングには依存しません。
+- 実行には `YOUTUBE_API_KEY` が必要です。GitHub Secrets 経由で渡し、ローカルでは `.env` などに直接書き込まないようにしてください。
+- 取得結果は `data/candidates.json` に保存され、generator が `status: "pending"` のレコードから処理します。
