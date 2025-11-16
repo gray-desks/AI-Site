@@ -1,5 +1,32 @@
 [
   {
+    "title": "NotebookLMの最新アップデートでAIノート作成がさらに便利に！",
+    "date": "2025-11-16",
+    "summary": "NotebookLMの新機能により、AIを活用したノート作成がより簡単になりました。この記事では、具体的な機能とその活用方法を詳しく解説します。",
+    "tags": [
+      {
+        "slug": "ai",
+        "label": "AIノート作成",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "tag-2",
+        "label": "情報整理",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "generative-ai",
+        "label": "生成AI",
+        "category": "技術トピック",
+        "style": "accent-pink"
+      }
+    ],
+    "url": "posts/2025-11-16-notebooklmai.html",
+    "slug": "2025-11-16-notebooklmai"
+  },
+  {
     "title": "ChatGPTでLINE不要の新時代",
     "date": "2025-11-15",
     "summary": "ChatGPTにグループチャット機能が追加され、友人や同僚とAIを交えた会話が可能になりました。AIがもたらす新しいチャット体験を詳しく解説します。",
