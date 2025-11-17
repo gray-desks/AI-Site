@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
  * Researcher
- * - Processes pending candidates from data/candidates.json
+ * - Processes collected candidates from data/candidates.json
  * - Extracts search keywords using OpenAI API
  * - Fetches Google search results and generates summaries
- * - Updates candidates with research data
+ * - Updates candidates with research data (status -> researched)
  */
 
 const path = require('path');
@@ -24,6 +24,14 @@ const outputDir = path.join(root, 'automation', 'output', 'researcher');
 const { GOOGLE_TOP_LIMIT, ARTICLE_FETCH_TIMEOUT_MS, ARTICLE_TEXT_MAX_LENGTH, SUMMARY_MIN_LENGTH, SUMMARY_MAX_LENGTH, USER_AGENT } = RESEARCHER;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const BLOCKED_DOMAINS = [
+  'x.com',
+  'twitter.com',
+  't.co',
+  'facebook.com',
+  'instagram.com',
+];
 
 const stripHtmlTags = (html) => {
   if (!html) return '';
@@ -177,22 +185,48 @@ const summarizeSearchResult = async (item, index, apiKey) => {
   };
 };
 
+const shouldSkipResult = (url) => {
+  if (!url) return true;
+  try {
+    const hostname = new URL(url).hostname.toLowerCase();
+    return BLOCKED_DOMAINS.some(
+      (blocked) => hostname === blocked || hostname.endsWith(`.${blocked}`),
+    );
+  } catch {
+    return true;
+  }
+};
+
 const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey) => {
   if (!query || !googleApiKey || !googleCx) return [];
   try {
+    const desiredCount = Math.max(1, GOOGLE_TOP_LIMIT);
+    const requestCount = Math.min(desiredCount * 3, 10);
     const res = await searchTopArticles({
       apiKey: googleApiKey,
       cx: googleCx,
       query,
-      num: GOOGLE_TOP_LIMIT,
+      num: requestCount,
     });
-    const items = Array.isArray(res.items) ? res.items.slice(0, GOOGLE_TOP_LIMIT) : [];
+    const items = Array.isArray(res.items) ? res.items : [];
+    const filteredItems = items.filter((item) => {
+      const skip = shouldSkipResult(item.link);
+      if (skip && item?.link) {
+        console.log(`[researcher] SNS結果をスキップ: ${item.link}`);
+      }
+      return !skip;
+    });
+    const limitedItems = filteredItems.length > 0
+      ? filteredItems.slice(0, desiredCount)
+      : items.slice(0, desiredCount);
     const summaries = [];
-    for (const [index, item] of items.entries()) {
+    for (const [index, item] of limitedItems.entries()) {
       try {
         const summaryEntry = await summarizeSearchResult(item, index, openaiApiKey);
         summaries.push(summaryEntry);
-        console.log(`[researcher] 要約完了 (${index + 1}/${items.length}): ${summaryEntry.title} - ${summaryEntry.summary.length}文字`);
+        console.log(
+          `[researcher] 要約完了 (${index + 1}/${limitedItems.length}): ${summaryEntry.title} - ${summaryEntry.summary.length}文字`,
+        );
       } catch (error) {
         console.warn(
           `[researcher] Google検索結果の要約作成に失敗 (${item?.link || 'unknown'}): ${error.message}`,

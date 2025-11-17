@@ -1,26 +1,30 @@
 # Automation Overview
 
-GitHub Actions から `automation/pipeline/index.js` を呼び出し、以下の3ステージを順番に実行します。ローカル環境にはAPIキーを置かず、GitHub Secrets 上の `OPENAI_API_KEY` をワークフローに注入して実行する前提です。
+GitHub Actions から `automation/pipeline/index.js` を呼び出し、以下の4ステージを順番に実行します。ローカル環境には各種APIキーを置かず、GitHub Secrets から注入する前提です。
 
 1. **collector** (`automation/collector/index.js`)  
-   - `data/sources.json` に登録された YouTube `channelId` をもとに、YouTube Data API v3 の `search` エンドポイントから直近7日以内の動画を取得します。  
-   - 候補は `data/candidates.json` に保存され、1チャンネルあたり最大2件をキューします。  
-   - 実行には `YOUTUBE_API_KEY` が必要で、GitHub Secrets から注入します。
+   - `data/sources.json` に登録された YouTube `channelId` をもとに YouTube Data API v3 の `search` エンドポイントから直近7日以内の動画を取得します。  
+   - 候補は `data/candidates.json` に `status: "collected"` で保存され、1チャンネルあたり最大2件をキューします。  
+   - 実行には `YOUTUBE_API_KEY` が必要です。
 
-2. **generator** (`automation/generator/index.js`)  
-   - `data/candidates.json` から `status: "pending"` のものを選び、過去5日間に同一トピック（タイトルの slug 化）で記事化していないかを `data/topic-history.json` と `data/posts.json` でチェック。  
-   - 重複していれば `status: "skipped"` / `skipReason: "duplicate-topic"` に更新し、他の候補に回します。  
-   - 重複していなければ OpenAI (model: `gpt-4o`) に動画情報を渡す前に、Google Custom Search API (`GOOGLE_SEARCH_API_KEY` + `GOOGLE_SEARCH_CX`) でリアルタイムの上位記事を取得。結果をプロンプトへ差し込み、SEO観点の bullet 付き JSON を生成させ、完成したHTMLを `automation/publisher` に引き渡します（ドラフト保存は行わず、即公開用データを返す仕様です）。検索APIのシークレットが設定されていない場合は、このステップをスキップし、これまで通りLLMの推論のみでSEOメモを作成します。
+2. **researcher** (`automation/researcher/index.js`)  
+   - `status: "collected"` の候補を対象に、OpenAI で検索キーワード抽出 → Google Custom Search API で上位記事取得 → 記事本文の要約（OpenAI + 文字数フォールバック）の流れを実行します。  
+   - 成功した候補は `status: "researched"` となり、`searchQuery` や `searchSummaries` を付与します。  
+   - 実行には `OPENAI_API_KEY`, `GOOGLE_SEARCH_API_KEY`, `GOOGLE_SEARCH_CX` が必要です。
 
-3. **publisher** (`automation/publisher/index.js`)  
-   - generator が返した記事メタを `data/posts.json` に反映し、最新順に並べ替えます。  
-   - Collector / Generator のサマリーを `automation/output/pipeline-status.json` として保存し、静的サイトから参照できるようにします。
+3. **generator** (`automation/generator/index.js`)  
+   - `data/candidates.json` から `status: "researched"` のものを選び、過去5日間に同一トピックが `data/topic-history.json` / `data/posts.json` に存在しないかをチェックします。  
+   - 重複なら `status: "skipped"` / `skipReason: "duplicate-topic"` を付与。新規トピックなら OpenAI (model: `gpt-4o`) に詳細な記事生成を依頼し、完成HTMLを Publisher に渡します。Google検索が空でも動画メタデータのみで生成を試みます。
+
+4. **publisher** (`automation/publisher/index.js`)  
+   - generator から受け取った記事HTMLを `posts/<slug>.html` に書き出し、`data/posts.json` を日付降順で更新します。  
+   - Collector/Researcher/Generator のサマリーを `automation/output/pipeline-status.json` に保存し、静的サイトから参照できるようにします。
 
 ## 仕組みのポイント
 
-- `data/topic-history.json` で直近に扱ったトピックを管理し、5日以内に同じ slug の記事を生成しないようにしています。YouTube で同テーマが頻出しても、最終アウトプットの重複を防げます。  
-- `data/candidates.json` は collector により自動追加されますが、必要であれば手動で `status` や `notes` を編集して優先順位を調整できます。  
-- 失敗時は各ステージが詳細なメッセージを投げるので、`automation/output/pipeline-status.json` を見ると原因を追跡できます。
+- `data/topic-history.json` で直近5日間に扱ったトピックを管理し、重複生成を防ぎます。YouTube 側で同テーマが頻出しても、Generator は `status: "researched"` の候補から重複を除外します。  
+- `data/candidates.json` は collector により自動追加されます。必要に応じて `status` や `notes` を手動で調整しても構いませんが、Researcher → Generator の順序で状態遷移させることが前提です。  
+- ステージ毎のメトリクスは `automation/output/pipeline-status.json` に集約され、失敗時のトラブルシューティングにも利用します。
 
 ## 必要なシークレット
 

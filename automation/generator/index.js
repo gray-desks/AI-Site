@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
  * Generator
- * - Picks pending candidates from data/candidates.json
- * - Calls OpenAI to research SEO-oriented article outline
+ * - Picks researched candidates from data/candidates.json
+ * - Calls OpenAI to craft SEO-oriented article drafts
  * - Returns article HTML for publisher and records topic history for deduplication
  */
 

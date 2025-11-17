@@ -44,7 +44,7 @@ const recordFailureStatus = (error, context = {}) => {
   return writeStatusSnapshot(payload);
 };
 
-const runPublisher = async ({ collectorResult, generatorResult }) => {
+const runPublisher = async ({ collectorResult, researcherResult, generatorResult }) => {
   console.log('[publisher] ステージ開始: 記事ファイルとサマリーを更新します。');
   ensureDir(postsDir);
 
@@ -99,6 +99,7 @@ const runPublisher = async ({ collectorResult, generatorResult }) => {
     generatedFile: generatedFilePath,
     executedAt: new Date().toISOString(),
     collector: collectorResult ?? null,
+    researcher: researcherResult ?? null,
     generator: generatorResult ?? null,
     publisher: {
       addedPost: postsChanged,

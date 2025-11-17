@@ -1,19 +1,11 @@
 [
   {
-    "topicKey": "line不要chatgptにクルーフチャット機能か搭載友人や同僚と同しチャットて会話か可能ai搭載の新時代のチャット体験を徹底解説",
-    "firstSeen": "2025-11-15T07:03:55.709Z",
-    "lastPublishedAt": "2025-11-15",
-    "sourceName": "chaen-ai-lab",
-    "videoTitle": "【LINE不要？？】ChatGPTにグループチャット機能が搭載。友人や同僚と同じチャットで会話が可能。AI搭載の新時代のチャット体験を徹底解説",
-    "draftUrl": "posts/2025-11-15-chatgpt.html"
-  },
-  {
-    "topicKey": "11月最新比較最強の対話aiはとれchatgptgeminipixaimioエーシェントを徹底検証した結果うちの子創作の相棒はコレ一択てした",
-    "firstSeen": "2025-11-15T07:20:02.306Z",
-    "lastPublishedAt": "2025-11-15",
-    "sourceName": "AI-Hakase",
-    "videoTitle": "【11月最新比較】最強の対話AIはどれ？ChatGPT、Gemini、PixAI「Mioエージェント」を徹底検証した結果、\"うちの子\"創作の相棒はコレ一択でした。",
-    "draftUrl": "posts/2025-11-15-aichatgptgeminipixai.html"
+    "topicKey": "ai04",
+    "firstSeen": "2025-11-17T00:46:58.184Z",
+    "lastPublishedAt": "2025-11-17",
+    "sourceName": "ai-saborou",
+    "videoTitle": "【初心者必見】AI活用を0から学ぶ4つのステップ",
+    "draftUrl": "posts/2025-11-17-ai04.html"
   },
   {
     "topicKey": "notebooklmdeep-research",
@@ -32,11 +24,59 @@
     "draftUrl": "posts/2025-11-16-aigemini-30.html"
   },
   {
-    "topicKey": "ai04",
-    "firstSeen": "2025-11-17T00:46:58.184Z",
-    "lastPublishedAt": "2025-11-17",
-    "sourceName": "ai-saborou",
-    "videoTitle": "【初心者必見】AI活用を0から学ぶ4つのステップ",
-    "draftUrl": "posts/2025-11-17-ai04.html"
+    "topicKey": "notebooklmai",
+    "firstSeen": "2025-11-16T00:00:00.000Z",
+    "lastPublishedAt": "2025-11-16",
+    "sourceName": "unknown",
+    "videoTitle": "NotebookLMの最新アップデートでAIノート作成がさらに便利に！",
+    "draftUrl": "posts/2025-11-16-notebooklmai.html"
+  },
+  {
+    "topicKey": "aigemini-30",
+    "firstSeen": "2025-11-16T00:00:00.000Z",
+    "lastPublishedAt": "2025-11-16",
+    "sourceName": "unknown",
+    "videoTitle": "次世代AI「Gemini 3.0」と新モデルの動向を探る",
+    "draftUrl": "posts/2025-11-16-aigemini-30.html"
+  },
+  {
+    "topicKey": "line不要chatgptにクルーフチャット機能か搭載友人や同僚と同しチャットて会話か可能ai搭載の新時代のチャット体験を徹底解説",
+    "firstSeen": "2025-11-15T07:03:55.709Z",
+    "lastPublishedAt": "2025-11-15",
+    "sourceName": "chaen-ai-lab",
+    "videoTitle": "【LINE不要？？】ChatGPTにグループチャット機能が搭載。友人や同僚と同じチャットで会話が可能。AI搭載の新時代のチャット体験を徹底解説",
+    "draftUrl": "posts/2025-11-15-chatgpt.html"
+  },
+  {
+    "topicKey": "11月最新比較最強の対話aiはとれchatgptgeminipixaimioエーシェントを徹底検証した結果うちの子創作の相棒はコレ一択てした",
+    "firstSeen": "2025-11-15T07:20:02.306Z",
+    "lastPublishedAt": "2025-11-15",
+    "sourceName": "AI-Hakase",
+    "videoTitle": "【11月最新比較】最強の対話AIはどれ？ChatGPT、Gemini、PixAI「Mioエージェント」を徹底検証した結果、\"うちの子\"創作の相棒はコレ一択でした。",
+    "draftUrl": "posts/2025-11-15-aichatgptgeminipixai.html"
+  },
+  {
+    "topicKey": "linechatgptai",
+    "firstSeen": "2025-11-15T00:00:00.000Z",
+    "lastPublishedAt": "2025-11-15",
+    "sourceName": "unknown",
+    "videoTitle": "ChatGPTでLINE不要の新時代",
+    "draftUrl": "posts/2025-11-15-linechatgptai.html"
+  },
+  {
+    "topicKey": "chatgpt",
+    "firstSeen": "2025-11-15T00:00:00.000Z",
+    "lastPublishedAt": "2025-11-15",
+    "sourceName": "unknown",
+    "videoTitle": "ChatGPTのグループチャット機能で業務効率を劇的に向上させる方法",
+    "draftUrl": "posts/2025-11-15-chatgpt.html"
+  },
+  {
+    "topicKey": "aichatgptgeminipixai",
+    "firstSeen": "2025-11-15T00:00:00.000Z",
+    "lastPublishedAt": "2025-11-15",
+    "sourceName": "unknown",
+    "videoTitle": "AIツール徹底比較：ChatGPT、Gemini、PixAIの選び方",
+    "draftUrl": "posts/2025-11-15-aichatgptgeminipixai.html"
   }
 ]
