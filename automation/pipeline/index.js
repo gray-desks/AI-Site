@@ -44,13 +44,15 @@ const main = async () => {
     // Researcherで処理された候補がない場合はGeneratorをスキップ
     if (researcherResult.succeeded === 0) {
       console.log('\n[pipeline] リサーチ済み候補が0件のため、GeneratorとPublisherをスキップします。');
-      const status = {
-        success: true,
-        skipped: true,
+      generatorResult = {
+        generated: false,
         reason: 'no-researched-candidates',
-        collector: collectorResult,
-        researcher: researcherResult,
       };
+      const status = await runPublisher({
+        collectorResult,
+        researcherResult,
+        generatorResult,
+      });
       console.log('\n[pipeline] Pipeline completed (skipped).');
       console.log(JSON.stringify(status, null, 2));
       return;
