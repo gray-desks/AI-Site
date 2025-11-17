@@ -1,183 +1,315 @@
 {
   "status": "success",
-  "generatedFile": "posts/2025-11-17-ai04.html",
-  "executedAt": "2025-11-17T00:46:58.185Z",
+  "generatedFile": "posts/2025-11-17-chatgpt.html",
+  "executedAt": "2025-11-17T12:12:33.683Z",
   "collector": {
     "source": "YouTube",
     "checkedSources": 17,
-    "newCandidates": 9,
+    "newCandidates": 21,
     "totalCandidates": 37,
     "errors": [],
     "metrics": {
-      "totalVideosFound": 39,
-      "newVideosAdded": 9,
-      "duplicatesSkipped": 29
+      "totalVideosFound": 45,
+      "newVideosAdded": 21,
+      "duplicatesSkipped": 8
+    }
+  },
+  "researcher": {
+    "processed": 21,
+    "succeeded": 21,
+    "failed": 0,
+    "errors": [
+      {
+        "candidateId": "yt-LSYpUMvUE78",
+        "videoTitle": "【ChatGPT新機能】グループチャット機能搭載 #chatgpt #ai #チャエン #仕事効率化 #業務効率化 #line",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-p6xraf9z234",
+        "videoTitle": "【AIで社員が半分クビ？】AI失業の最前線に迫る。AI時代に淘汰されない人材になるための「5つのステップ」を徹底解説。《専門家が緊急提言》",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-eCmXCWYGloU",
+        "videoTitle": "「**」←これ消す方法 #chatgpt",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-ZNiRzCS8afI",
+        "videoTitle": "【AI動画の常識が変わる】面倒な&quot;音付け&quot;も&quot;キャラ固定&quot;もAI任せ！制作フローを根底から変える『Pollo AI 2.0』速報レビュー【1週間限定50%OFF】",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-IZHsLovznUQ",
+        "videoTitle": "【賛否両論？】Googleフォーム、回答時に「プレビュー機能」あったら便利？",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-qYHW5sTK_6I",
+        "videoTitle": "JSONよりも約40%のトークンを削減？！AI時代のファイル形式『TOON』について解説します！ #vibecoding #ai",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-3R-YTWdg0zw",
+        "videoTitle": "【最新版】今週のAIニュース厳選9選！GPT5.1にWorkspace Flowsなど、盛りだくさんでした",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-qIePtei1ipY",
+        "videoTitle": "【週刊最新AIツール&amp;ニュース】テキストや画像から3D空間を構築できるAI「Marble」/温かみのある会話のできるAIモデル「GPT-5.1」/NotebookLMに4つの新機能実装",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-sySmsCeVIZE",
+        "videoTitle": "注目AIニュース24選～ChatGPTグループチャット、Google Flows、Claude for Excel、全業務を可視化するScribe optimizeなど",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-SGnV6SP1Hgg",
+        "videoTitle": "ChatGPT-5.1が素晴らしい！なぜ好評？何がどう変わったのか解説",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-sn9U_mcWq3M",
+        "videoTitle": "【アプデ‼️】ChatGPT最新モデル「GPT-5.1」爆誕！進化した最強モデルを徹底解説（vs Gemini 2.5）",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-Vj3TGwyltV8",
+        "videoTitle": "Windows11を限界までカスタマイズして超オシャレな新Windows作ったった【ウィンドウズカスタマイズ術】",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-yr-7lcESGDo",
+        "videoTitle": "Nano BananaでLINEスタンプを作る実況RTA",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-URxwCd8t8xU",
+        "videoTitle": "LLMの次はワールドモデル？「空間知能」AI　画像・動画から世界をつくる",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-bSwwWGAEf7g",
+        "videoTitle": "【複数画像で展開を操る】設定2つだけ！新Wan2.2ノード『FMLF2V』で、始点・中間・終点を完全コントロールする方法を徹底解説｜ComfyUI",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-FUAwo7cJFEA",
+        "videoTitle": "今話題のGoogle Workspace Flowsを&quot;弱点&quot;も含め、徹底解説します！（AIワークフロー／n8n）",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-n6Z3hdLgWk0",
+        "videoTitle": "【待望アプデ‼️】Google最強AI「NotebookLM」でスプシ&amp;データ分析機能が神！使えるワークフローも解説",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-ZZ_4IfLMXCk",
+        "videoTitle": "【GPT-5.1最速解説】冷たいAIがフレンドリーで賢いAIに進化したGPT-5.1の概要と使い方！ ～ChatGPTの新機能も～",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-gQ5oQ5WOj2w",
+        "videoTitle": "Nano BananaでLINEスタンプを作るChrome拡張",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-_8sj8xmxjkE",
+        "videoTitle": "OpenAIの新しいモデル「GPT-5.1」登場！",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      },
+      {
+        "candidateId": "yt-K2M4PAOSfEE",
+        "videoTitle": "【また進化！】NotebookLMの動画解説がまた進化！「Kawaii」が遂にリリースされました",
+        "step": "keyword-extraction",
+        "message": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
+      }
+    ],
+    "metrics": {
+      "totalProcessed": 21,
+      "keywordExtraction": {
+        "success": 0,
+        "failure": 21,
+        "fallbackUsed": 21,
+        "successRate": 0
+      },
+      "googleSearch": {
+        "success": 21,
+        "failure": 0,
+        "totalResults": 50,
+        "successRate": 100,
+        "avgResultsPerSearch": 2
+      },
+      "performance": {
+        "avgKeywordExtractionTimeMs": 439,
+        "avgGoogleSearchTimeMs": 28713
+      }
     }
   },
   "generator": {
     "generated": true,
-    "candidateId": "yt-mq-7-5lzuxw",
+    "candidateId": "yt-LSYpUMvUE78",
     "postEntry": {
-      "title": "AI活用を0から学ぶ4つのステップ：初心者向け完全ガイド",
+      "title": "ChatGPTのグループチャット機能がもたらす業務効率化の新潮流",
       "date": "2025-11-17",
-      "summary": "この記事を読むと、AI初心者がどのようにAIを活用し始めるかを具体的に理解できます。4つのステップでわかりやすく解説します。",
+      "summary": "この記事を読むと、ChatGPTの新たなグループチャット機能がどのように業務効率化を促進し、AIの活用を次のレベルに引き上げるかを理解できます。",
       "tags": [
         {
+          "slug": "chatgpt",
+          "label": "ChatGPT",
+          "category": "ツール",
+          "style": "accent-purple"
+        },
+        {
           "slug": "ai",
-          "label": "AI活用",
+          "label": "AI",
           "category": "その他",
           "style": "accent-neutral"
         },
         {
-          "slug": "tag-2",
-          "label": "初心者ガイド",
+          "slug": "productivity",
+          "label": "業務効率化",
+          "category": "ユースケース",
+          "style": "accent-lime"
+        },
+        {
+          "slug": "tag-4",
+          "label": "グループチャット",
           "category": "その他",
           "style": "accent-neutral"
         },
         {
-          "slug": "ai-3",
-          "label": "AI学習",
-          "category": "その他",
-          "style": "accent-neutral"
-        },
-        {
-          "slug": "ai-4",
-          "label": "AIステップ",
+          "slug": "tag-5",
+          "label": "テクノロジー",
           "category": "その他",
           "style": "accent-neutral"
         }
       ],
-      "url": "posts/2025-11-17-ai04.html",
-      "slug": "2025-11-17-ai04"
+      "url": "posts/2025-11-17-chatgpt.html",
+      "slug": "2025-11-17-chatgpt"
     },
-    "draftUrl": "posts/2025-11-17-ai04.html",
-    "topicKey": "ai04",
+    "draftUrl": "posts/2025-11-17-chatgpt.html",
+    "topicKey": "chatgpt-chatgpt-ai-line",
     "article": {
-      "title": "AI活用を0から学ぶ4つのステップ：初心者向け完全ガイド",
-      "summary": "この記事を読むと、AI初心者がどのようにAIを活用し始めるかを具体的に理解できます。4つのステップでわかりやすく解説します。",
-      "intro": "AI技術はますます日常生活やビジネスに浸透していますが、初心者にとってはどこから始めれば良いのか悩むところですよね。この記事では、AI活用を始めるための4つのステップを詳しく解説します。これを読めば、AIをどのように学び、活用できるかが明確になります。さあ、AIの世界に一歩踏み出しましょう！",
-      "conclusion": "AI活用を始めるための4つのステップを紹介しました。まずはAIの基本を理解し、次に適切なツールを選び、小さなプロジェクトを通じて実践的な経験を積みましょう。そして、継続的に学習し、コミュニティに参加することで、AIの世界をさらに広げていくことができます。これらのステップを踏むことで、AIを効果的に活用できるようになるでしょう。まずは、今日から小さな一歩を踏み出してみてください。",
+      "title": "ChatGPTのグループチャット機能がもたらす業務効率化の新潮流",
+      "summary": "この記事を読むと、ChatGPTの新たなグループチャット機能がどのように業務効率化を促進し、AIの活用を次のレベルに引き上げるかを理解できます。",
+      "intro": "AI技術の進化は、私たちの働き方に大きな変革をもたらしています。その中でも、OpenAIが提供するChatGPTの新機能であるグループチャットは、特に注目されています。この機能は、AIが単なる情報提供者から、よりインタラクティブで協力的なパートナーへと進化することを示しています。この記事では、ChatGPTのグループチャット機能がどのように業務効率化を実現するのか、その技術的背景と実践的な応用例を深掘りします。",
+      "conclusion": "ChatGPTのグループチャット機能は、AI技術の進化を象徴するものであり、業務効率化に大きな影響を与えると考えられます。今後、AIがより多くの業務プロセスに組み込まれることで、働き方はさらに変革を遂げるでしょう。導入を検討する企業は、まずは小規模なプロジェクトで試験運用を行い、AIの効果を実感することをお勧めします。また、技術的な課題に対しては、常に最新の情報をキャッチアップし、適切な対策を講じることが重要です。",
       "tags": [
         {
+          "slug": "chatgpt",
+          "label": "ChatGPT",
+          "category": "ツール",
+          "style": "accent-purple"
+        },
+        {
           "slug": "ai",
-          "label": "AI活用",
+          "label": "AI",
           "category": "その他",
           "style": "accent-neutral"
         },
         {
-          "slug": "tag-2",
-          "label": "初心者ガイド",
+          "slug": "productivity",
+          "label": "業務効率化",
+          "category": "ユースケース",
+          "style": "accent-lime"
+        },
+        {
+          "slug": "tag-4",
+          "label": "グループチャット",
           "category": "その他",
           "style": "accent-neutral"
         },
         {
-          "slug": "ai-3",
-          "label": "AI学習",
-          "category": "その他",
-          "style": "accent-neutral"
-        },
-        {
-          "slug": "ai-4",
-          "label": "AIステップ",
+          "slug": "tag-5",
+          "label": "テクノロジー",
           "category": "その他",
           "style": "accent-neutral"
         }
       ],
       "sections": [
         {
-          "heading": "ステップ1: AIの基本を理解する",
-          "overview": "まずはAIの基本概念を理解することが重要です。ここでは、AIとは何か、どのように機能するのかを解説します。",
+          "heading": "ChatGPTグループチャット機能の技術的背景",
+          "overview": "このセクションでは、ChatGPTのグループチャット機能がどのように構築されているか、その技術的な基盤を探ります。",
           "subSections": [
             {
-              "heading": "AIとは？",
-              "body": "AI（人工知能）は、人間のように学習し、判断する能力を持つコンピュータシステムのことです。AIはデータを分析し、パターンを見つけ出すことで、予測や意思決定を行います。例えば、AIはメールのスパムを自動で振り分けたり、オンラインショッピングのおすすめ商品を提示したりします。"
+              "heading": "自然言語処理の進化",
+              "body": "ChatGPTのグループチャット機能は、自然言語処理（NLP）の進化に大きく依存しています。特に、Transformerアーキテクチャの改良により、複数のユーザーからの入力を同時に処理し、適切な応答を生成する能力が向上しています。これにより、AIが複数のコンテキストを同時に理解し、より一貫した会話を提供できるようになりました。"
             },
             {
-              "heading": "AIの基本的な仕組み",
-              "body": "AIは主に機械学習という技術を使って動作します。機械学習では、大量のデータを使ってコンピュータに学習させ、特定のタスクを遂行できるようにします。例えば、画像認識AIは何千枚もの画像を学習し、人や物体を正確に識別できるようになります。"
+              "heading": "リアルタイムデータ処理",
+              "body": "グループチャット機能では、リアルタイムでのデータ処理が不可欠です。ChatGPTは、分散システムを活用してデータを迅速に処理し、遅延を最小限に抑えています。これにより、ユーザーはストレスなくスムーズに会話を進められ、業務の効率化に寄与します。"
             }
           ]
         },
         {
-          "heading": "ステップ2: AIツールを選ぶ",
-          "overview": "次に、自分に合ったAIツールを選びましょう。このセクションでは、初心者におすすめのAIツールを紹介します。",
+          "heading": "業務効率化への具体的な応用例",
+          "overview": "ここでは、ChatGPTのグループチャット機能が実際にどのように業務効率化を実現するか、具体的な応用例を紹介します。",
           "subSections": [
             {
-              "heading": "初心者におすすめのAIツール",
-              "body": "AIツールには様々な種類がありますが、初心者には使いやすく、サポートが充実しているものが良いでしょう。例えば、ChatGPTやClaudeといったツールは、自然言語処理を活用したAIで、会話形式で質問に答えたり、文章を生成したりできます。これらのツールは、直感的に操作できるため、AIの学習に最適です。"
+              "heading": "プロジェクト管理の改善",
+              "body": "ChatGPTのグループチャット機能は、プロジェクト管理ツールと連携することで、タスクの進捗管理やメンバー間のコミュニケーションを効率化します。例えば、TrelloやAsanaといったツールと統合することで、タスクの更新やリマインダーを自動化し、プロジェクトの透明性を高めます。"
             },
             {
-              "heading": "AIツールの選び方",
-              "body": "AIツールを選ぶ際には、何を達成したいのかを明確にしましょう。例えば、文章生成が目的なら、自然言語処理に強いツールを選ぶべきです。また、ツールの使いやすさやサポート体制も重要なポイントです。初心者向けのチュートリアルやコミュニティがあるツールは、学習を進める上で助けになります。"
+              "heading": "カスタマーサポートの強化",
+              "body": "カスタマーサポートにおいても、グループチャット機能は大いに役立ちます。複数のサポートエージェントが同時に顧客の問い合わせに対応できるため、応答時間を短縮し、顧客満足度を向上させることが可能です。また、AIが過去の問い合わせ履歴を参照し、より的確な回答を提供することもできます。"
             }
           ]
         },
         {
-          "heading": "ステップ3: 小さなプロジェクトを始める",
-          "overview": "実際に手を動かしてみることがAI学習の近道です。ここでは、初心者が取り組みやすいプロジェクトの例を紹介します。",
+          "heading": "AI技術の進化と今後の展望",
+          "overview": "AI技術の進化がもたらす未来の働き方について考察し、ChatGPTのグループチャット機能がどのようにその一端を担うかを探ります。",
           "subSections": [
             {
-              "heading": "簡単なプロジェクト例",
-              "body": "AIを使った小さなプロジェクトを始めてみましょう。例えば、簡単なチャットボットを作成してみるのも良いアイデアです。無料のオンラインプラットフォームを利用すれば、プログラミングの知識がなくても、チャットボットを作成することができます。"
+              "heading": "AIと人間の協働の未来",
+              "body": "ChatGPTのようなAIは、単なるツールとしての役割を超え、チームの一員として機能することが期待されています。AIが人間の意思決定をサポートし、より高度な業務を担うことで、人間は創造的なタスクに集中できるようになります。"
             },
             {
-              "heading": "プロジェクトを通じて学ぶ",
-              "body": "プロジェクトを進める中で、AIの動作や限界について学ぶことができます。実際に手を動かすことで、理論だけではわからない実践的な知識が身につきます。失敗を恐れず、試行錯誤しながら進めることで、AIの理解が深まります。"
-            }
-          ]
-        },
-        {
-          "heading": "ステップ4: 継続的な学習とコミュニティ参加",
-          "overview": "AIは日々進化しています。継続的な学習とコミュニティ参加が重要です。このセクションでは、その方法を紹介します。",
-          "subSections": [
-            {
-              "heading": "AIの最新情報を追う",
-              "body": "AIの分野は非常に速いペースで進化しています。最新の技術やトレンドを追うために、AI関連のニュースサイトやブログを定期的にチェックしましょう。また、オンラインコースやセミナーを利用して、継続的に学習することも重要です。"
-            },
-            {
-              "heading": "コミュニティに参加する",
-              "body": "AIに関するコミュニティに参加することで、他の学習者や専門家と情報を共有できます。オンラインフォーラムやソーシャルメディアのグループに参加し、質問したり、プロジェクトを共有したりすることで、より深い理解が得られます。"
+              "heading": "技術的な課題と解決策",
+              "body": "AIの導入に伴う技術的な課題も存在します。データプライバシーの確保や、AIのバイアスを排除するためのアルゴリズムの改善が求められています。これらの課題に対処することで、AIの信頼性と安全性を高め、より広範な導入が可能となるでしょう。"
             }
           ]
         }
       ],
-      "slug": "2025-11-17-ai04",
+      "slug": "2025-11-17-chatgpt",
       "date": "2025-11-17",
-      "htmlContent": "<!DOCTYPE html>\n<html lang=\"ja\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>AI活用を0から学ぶ4つのステップ：初心者向け完全ガイド | AI情報ブログ</title>\n  <meta name=\"description\" content=\"この記事を読むと、AI初心者がどのようにAIを活用し始めるかを具体的に理解できます。4つのステップでわかりやすく解説します。\">\n\n  <!-- ファビコン -->\n  <link rel=\"icon\" type=\"image/svg+xml\" href=\"../assets/img/logo.svg\">\n  <link rel=\"apple-touch-icon\" href=\"../assets/img/logo.svg\">\n\n  <!-- Open Graph / SNS共有 -->\n  <meta property=\"og:type\" content=\"article\">\n  <meta property=\"og:title\" content=\"AI活用を0から学ぶ4つのステップ：初心者向け完全ガイド | AI情報ブログ\">\n  <meta property=\"og:description\" content=\"この記事を読むと、AI初心者がどのようにAIを活用し始めるかを具体的に理解できます。4つのステップでわかりやすく解説します。\">\n  <meta property=\"og:image\" content=\"../assets/img/ogp-default.svg\">\n  <meta property=\"og:site_name\" content=\"AI情報ブログ\">\n  <meta property=\"og:locale\" content=\"ja_JP\">\n  <meta property=\"article:published_time\" content=\"2025.11.17T00:00:00+09:00\">\n\n  <!-- Twitter Card -->\n  <meta name=\"twitter:card\" content=\"summary_large_image\">\n  <meta name=\"twitter:title\" content=\"AI活用を0から学ぶ4つのステップ：初心者向け完全ガイド | AI情報ブログ\">\n  <meta name=\"twitter:description\" content=\"この記事を読むと、AI初心者がどのようにAIを活用し始めるかを具体的に理解できます。4つのステップでわかりやすく解説します。\">\n  <meta name=\"twitter:image\" content=\"../assets/img/ogp-default.svg\">\n\n  <link rel=\"stylesheet\" href=\"../assets/css/style.css\">\n</head>\n<body class=\"article-page\">\n  <!-- ヘッダーはcomponents.jsで動的に挿入されます -->\n\n  <main>\n    <article class=\"article-detail\">\n      <section class=\"inner article-hero\">\n        <p class=\"article-eyebrow\">Daily Briefing</p>\n        <div class=\"article-hero-main\">\n          <p class=\"post-meta\">2025.11.17</p>\n          <h1>AI活用を0から学ぶ4つのステップ：初心者向け完全ガイド</h1>\n          <p class=\"article-summary\">この記事を読むと、AI初心者がどのようにAIを活用し始めるかを具体的に理解できます。4つのステップでわかりやすく解説します。</p>\n        </div>\n\n        <ul class=\"article-tags\">\n          <li class=\"tag\" data-tag-slug=\"ai\" data-tag-category=\"その他\" data-tag-style=\"accent-neutral\">AI活用</li>\n          <li class=\"tag\" data-tag-slug=\"tag-2\" data-tag-category=\"その他\" data-tag-style=\"accent-neutral\">初心者ガイド</li>\n          <li class=\"tag\" data-tag-slug=\"ai-3\" data-tag-category=\"その他\" data-tag-style=\"accent-neutral\">AI学習</li>\n          <li class=\"tag\" data-tag-slug=\"ai-4\" data-tag-category=\"その他\" data-tag-style=\"accent-neutral\">AIステップ</li>\n        </ul>\n      </section>\n\n      <div class=\"inner article-grid\">\n        <div class=\"article-main-column\">\n          <article class=\"post-article article-content\">\n\n        <section class=\"article-intro-block\">\n          <div class=\"intro-content\">\n<p>AI技術はますます日常生活やビジネスに浸透していますが、初心者にとってはどこから始めれば良いのか悩むところですよね。この記事では、AI活用を始めるための4つのステップを詳しく解説します。これを読めば、AIをどのように学び、活用できるかが明確になります。さあ、AIの世界に一歩踏み出しましょう！</p>\n          </div>\n        </section>\n\n            <section class=\"article-section\" id=\"1-ai\">\n              <h2 class=\"section-heading\">ステップ1: AIの基本を理解する</h2>\n              <div class=\"section-overview\"><p>まずはAIの基本概念を理解することが重要です。ここでは、AIとは何か、どのように機能するのかを解説します。</p></div>\n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">AIとは？</h3>\n                <div class=\"subsection-body\">\n                  <p>AI（人工知能）は、人間のように学習し、判断する能力を持つコンピュータシステムのことです。AIはデータを分析し、パターンを見つけ出すことで、予測や意思決定を行います。例えば、AIはメールのスパムを自動で振り分けたり、オンラインショッピングのおすすめ商品を提示したりします。</p>\n                </div>\n              </div>\n\n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">AIの基本的な仕組み</h3>\n                <div class=\"subsection-body\">\n                  <p>AIは主に機械学習という技術を使って動作します。機械学習では、大量のデータを使ってコンピュータに学習させ、特定のタスクを遂行できるようにします。例えば、画像認識AIは何千枚もの画像を学習し、人や物体を正確に識別できるようになります。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"2-ai\">\n              <h2 class=\"section-heading\">ステップ2: AIツールを選ぶ</h2>\n              <div class=\"section-overview\"><p>次に、自分に合ったAIツールを選びましょう。このセクションでは、初心者におすすめのAIツールを紹介します。</p></div>\n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">初心者におすすめのAIツール</h3>\n                <div class=\"subsection-body\">\n                  <p>AIツールには様々な種類がありますが、初心者には使いやすく、サポートが充実しているものが良いでしょう。例えば、ChatGPTやClaudeといったツールは、自然言語処理を活用したAIで、会話形式で質問に答えたり、文章を生成したりできます。これらのツールは、直感的に操作できるため、AIの学習に最適です。</p>\n                </div>\n              </div>\n\n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">AIツールの選び方</h3>\n                <div class=\"subsection-body\">\n                  <p>AIツールを選ぶ際には、何を達成したいのかを明確にしましょう。例えば、文章生成が目的なら、自然言語処理に強いツールを選ぶべきです。また、ツールの使いやすさやサポート体制も重要なポイントです。初心者向けのチュートリアルやコミュニティがあるツールは、学習を進める上で助けになります。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"3\">\n              <h2 class=\"section-heading\">ステップ3: 小さなプロジェクトを始める</h2>\n              <div class=\"section-overview\"><p>実際に手を動かしてみることがAI学習の近道です。ここでは、初心者が取り組みやすいプロジェクトの例を紹介します。</p></div>\n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">簡単なプロジェクト例</h3>\n                <div class=\"subsection-body\">\n                  <p>AIを使った小さなプロジェクトを始めてみましょう。例えば、簡単なチャットボットを作成してみるのも良いアイデアです。無料のオンラインプラットフォームを利用すれば、プログラミングの知識がなくても、チャットボットを作成することができます。</p>\n                </div>\n              </div>\n\n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">プロジェクトを通じて学ぶ</h3>\n                <div class=\"subsection-body\">\n                  <p>プロジェクトを進める中で、AIの動作や限界について学ぶことができます。実際に手を動かすことで、理論だけではわからない実践的な知識が身につきます。失敗を恐れず、試行錯誤しながら進めることで、AIの理解が深まります。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"4\">\n              <h2 class=\"section-heading\">ステップ4: 継続的な学習とコミュニティ参加</h2>\n              <div class=\"section-overview\"><p>AIは日々進化しています。継続的な学習とコミュニティ参加が重要です。このセクションでは、その方法を紹介します。</p></div>\n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">AIの最新情報を追う</h3>\n                <div class=\"subsection-body\">\n                  <p>AIの分野は非常に速いペースで進化しています。最新の技術やトレンドを追うために、AI関連のニュースサイトやブログを定期的にチェックしましょう。また、オンラインコースやセミナーを利用して、継続的に学習することも重要です。</p>\n                </div>\n              </div>\n\n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">コミュニティに参加する</h3>\n                <div class=\"subsection-body\">\n                  <p>AIに関するコミュニティに参加することで、他の学習者や専門家と情報を共有できます。オンラインフォーラムやソーシャルメディアのグループに参加し、質問したり、プロジェクトを共有したりすることで、より深い理解が得られます。</p>\n                </div>\n              </div>\n            </section>\n          </article>\n        </div>\n\n        <aside class=\"article-sidebar\" aria-label=\"補足情報\">\n          <section class=\"article-card article-toc\">\n            <p class=\"article-card-label\">目次</p>\n            <ol class=\"toc-list\" data-toc-list aria-live=\"polite\"></ol>\n          </section>\n        </aside>\n      </div>\n\n      \n      <section class=\"article-conclusion inner\">\n        <h2 class=\"conclusion-heading\">まとめ</h2>\n        <div class=\"conclusion-content\">\n<p>AI活用を始めるための4つのステップを紹介しました。まずはAIの基本を理解し、次に適切なツールを選び、小さなプロジェクトを通じて実践的な経験を積みましょう。そして、継続的に学習し、コミュニティに参加することで、AIの世界をさらに広げていくことができます。これらのステップを踏むことで、AIを効果的に活用できるようになるでしょう。まずは、今日から小さな一歩を踏み出してみてください。</p>\n        </div>\n      </section>\n    </article>\n  </main>\n\n  <!-- フッターはcomponents.jsで動的に挿入されます -->\n\n  <script src=\"../assets/js/components.js\"></script>\n  <script src=\"../assets/js/main.js\" defer></script>\n  <script src=\"../assets/js/article.js\" defer></script>\n</body>\n</html>",
-      "relativePath": "posts/2025-11-17-ai04.html",
+      "htmlContent": "<!DOCTYPE html>\n<html lang=\"ja\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>ChatGPTのグループチャット機能がもたらす業務効率化の新潮流 | AI情報ブログ</title>\n  <meta name=\"description\" content=\"この記事を読むと、ChatGPTの新たなグループチャット機能がどのように業務効率化を促進し、AIの活用を次のレベルに引き上げるかを理解できます。\">\n\n  <script src=\"../assets/js/analytics.js\"></script>\n\n  <!-- ファビコン -->\n  <link rel=\"icon\" type=\"image/svg+xml\" href=\"../assets/img/logo.svg\">\n  <link rel=\"apple-touch-icon\" href=\"../assets/img/logo.svg\">\n\n  <!-- Open Graph / SNS共有 -->\n  <meta property=\"og:type\" content=\"article\">\n  <meta property=\"og:title\" content=\"ChatGPTのグループチャット機能がもたらす業務効率化の新潮流 | AI情報ブログ\">\n  <meta property=\"og:description\" content=\"この記事を読むと、ChatGPTの新たなグループチャット機能がどのように業務効率化を促進し、AIの活用を次のレベルに引き上げるかを理解できます。\">\n  <meta property=\"og:image\" content=\"../assets/img/ogp-default.svg\">\n  <meta property=\"og:site_name\" content=\"AI情報ブログ\">\n  <meta property=\"og:locale\" content=\"ja_JP\">\n  <meta property=\"article:published_time\" content=\"2025.11.17T00:00:00+09:00\">\n\n  <!-- Twitter Card -->\n  <meta name=\"twitter:card\" content=\"summary_large_image\">\n  <meta name=\"twitter:title\" content=\"ChatGPTのグループチャット機能がもたらす業務効率化の新潮流 | AI情報ブログ\">\n  <meta name=\"twitter:description\" content=\"この記事を読むと、ChatGPTの新たなグループチャット機能がどのように業務効率化を促進し、AIの活用を次のレベルに引き上げるかを理解できます。\">\n  <meta name=\"twitter:image\" content=\"../assets/img/ogp-default.svg\">\n\n  <link rel=\"stylesheet\" href=\"../assets/css/style.css\">\n</head>\n<body class=\"article-page\">\n  <!-- ヘッダーはcomponents.jsで動的に挿入されます -->\n\n  <main>\n    <article class=\"article-detail\">\n      <section class=\"inner article-hero\">\n        <p class=\"article-eyebrow\">Daily Briefing</p>\n        <div class=\"article-hero-main\">\n          <p class=\"post-meta\">2025.11.17</p>\n          <h1>ChatGPTのグループチャット機能がもたらす業務効率化の新潮流</h1>\n          <p class=\"article-summary\">この記事を読むと、ChatGPTの新たなグループチャット機能がどのように業務効率化を促進し、AIの活用を次のレベルに引き上げるかを理解できます。</p>\n        </div>\n\n        <ul class=\"article-tags\">\n          <li class=\"tag\" data-tag-slug=\"chatgpt\" data-tag-category=\"ツール\" data-tag-style=\"accent-purple\">ChatGPT</li>\n          <li class=\"tag\" data-tag-slug=\"ai\" data-tag-category=\"その他\" data-tag-style=\"accent-neutral\">AI</li>\n          <li class=\"tag\" data-tag-slug=\"productivity\" data-tag-category=\"ユースケース\" data-tag-style=\"accent-lime\">業務効率化</li>\n          <li class=\"tag\" data-tag-slug=\"tag-4\" data-tag-category=\"その他\" data-tag-style=\"accent-neutral\">グループチャット</li>\n          <li class=\"tag\" data-tag-slug=\"tag-5\" data-tag-category=\"その他\" data-tag-style=\"accent-neutral\">テクノロジー</li>\n        </ul>\n      </section>\n\n      <div class=\"inner article-grid\">\n        <div class=\"article-main-column\">\n          <article class=\"post-article article-content\">\n\n        <section class=\"article-intro-block\">\n          <div class=\"intro-content\">\n<p>AI技術の進化は、私たちの働き方に大きな変革をもたらしています。その中でも、OpenAIが提供するChatGPTの新機能であるグループチャットは、特に注目されています。この機能は、AIが単なる情報提供者から、よりインタラクティブで協力的なパートナーへと進化することを示しています。この記事では、ChatGPTのグループチャット機能がどのように業務効率化を実現するのか、その技術的背景と実践的な応用例を深掘りします。</p>\n          </div>\n        </section>\n\n            <section class=\"article-section\" id=\"chatgpt\">\n              <h2 class=\"section-heading\">ChatGPTグループチャット機能の技術的背景</h2>\n              <div class=\"section-overview\"><p>このセクションでは、ChatGPTのグループチャット機能がどのように構築されているか、その技術的な基盤を探ります。</p></div>\n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">自然言語処理の進化</h3>\n                <div class=\"subsection-body\">\n                  <p>ChatGPTのグループチャット機能は、自然言語処理（NLP）の進化に大きく依存しています。特に、Transformerアーキテクチャの改良により、複数のユーザーからの入力を同時に処理し、適切な応答を生成する能力が向上しています。これにより、AIが複数のコンテキストを同時に理解し、より一貫した会話を提供できるようになりました。</p>\n                </div>\n              </div>\n\n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">リアルタイムデータ処理</h3>\n                <div class=\"subsection-body\">\n                  <p>グループチャット機能では、リアルタイムでのデータ処理が不可欠です。ChatGPTは、分散システムを活用してデータを迅速に処理し、遅延を最小限に抑えています。これにより、ユーザーはストレスなくスムーズに会話を進められ、業務の効率化に寄与します。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"section-2\">\n              <h2 class=\"section-heading\">業務効率化への具体的な応用例</h2>\n              <div class=\"section-overview\"><p>ここでは、ChatGPTのグループチャット機能が実際にどのように業務効率化を実現するか、具体的な応用例を紹介します。</p></div>\n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">プロジェクト管理の改善</h3>\n                <div class=\"subsection-body\">\n                  <p>ChatGPTのグループチャット機能は、プロジェクト管理ツールと連携することで、タスクの進捗管理やメンバー間のコミュニケーションを効率化します。例えば、TrelloやAsanaといったツールと統合することで、タスクの更新やリマインダーを自動化し、プロジェクトの透明性を高めます。</p>\n                </div>\n              </div>\n\n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">カスタマーサポートの強化</h3>\n                <div class=\"subsection-body\">\n                  <p>カスタマーサポートにおいても、グループチャット機能は大いに役立ちます。複数のサポートエージェントが同時に顧客の問い合わせに対応できるため、応答時間を短縮し、顧客満足度を向上させることが可能です。また、AIが過去の問い合わせ履歴を参照し、より的確な回答を提供することもできます。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"ai\">\n              <h2 class=\"section-heading\">AI技術の進化と今後の展望</h2>\n              <div class=\"section-overview\"><p>AI技術の進化がもたらす未来の働き方について考察し、ChatGPTのグループチャット機能がどのようにその一端を担うかを探ります。</p></div>\n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">AIと人間の協働の未来</h3>\n                <div class=\"subsection-body\">\n                  <p>ChatGPTのようなAIは、単なるツールとしての役割を超え、チームの一員として機能することが期待されています。AIが人間の意思決定をサポートし、より高度な業務を担うことで、人間は創造的なタスクに集中できるようになります。</p>\n                </div>\n              </div>\n\n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">技術的な課題と解決策</h3>\n                <div class=\"subsection-body\">\n                  <p>AIの導入に伴う技術的な課題も存在します。データプライバシーの確保や、AIのバイアスを排除するためのアルゴリズムの改善が求められています。これらの課題に対処することで、AIの信頼性と安全性を高め、より広範な導入が可能となるでしょう。</p>\n                </div>\n              </div>\n            </section>\n          </article>\n        </div>\n\n        <aside class=\"article-sidebar\" aria-label=\"補足情報\">\n          <section class=\"article-card article-toc\">\n            <p class=\"article-card-label\">目次</p>\n            <ol class=\"toc-list\" data-toc-list aria-live=\"polite\"></ol>\n          </section>\n        </aside>\n      </div>\n\n      \n      <section class=\"article-conclusion inner\">\n        <h2 class=\"conclusion-heading\">まとめ</h2>\n        <div class=\"conclusion-content\">\n<p>ChatGPTのグループチャット機能は、AI技術の進化を象徴するものであり、業務効率化に大きな影響を与えると考えられます。今後、AIがより多くの業務プロセスに組み込まれることで、働き方はさらに変革を遂げるでしょう。導入を検討する企業は、まずは小規模なプロジェクトで試験運用を行い、AIの効果を実感することをお勧めします。また、技術的な課題に対しては、常に最新の情報をキャッチアップし、適切な対策を講じることが重要です。</p>\n        </div>\n      </section>\n    </article>\n  </main>\n\n  <!-- フッターはcomponents.jsで動的に挿入されます -->\n\n  <script src=\"../assets/js/components.js\"></script>\n  <script src=\"../assets/js/main.js\" defer></script>\n  <script src=\"../assets/js/article.js\" defer></script>\n</body>\n</html>",
+      "relativePath": "posts/2025-11-17-chatgpt.html",
       "source": {
-        "name": "ai-saborou",
-        "url": "https://www.youtube.com/@ai-saborou"
+        "name": "chaen-ai-lab",
+        "url": "https://www.youtube.com/@chaen-ai-lab"
       },
       "video": {
-        "title": "【初心者必見】AI活用を0から学ぶ4つのステップ",
-        "url": "https://www.youtube.com/watch?v=mq-7-5lzuxw"
+        "title": "【ChatGPT新機能】グループチャット機能搭載 #chatgpt #ai #チャエン #仕事効率化 #業務効率化 #line",
+        "url": "https://www.youtube.com/watch?v=LSYpUMvUE78"
       },
-      "searchSummaries": [
-        {
-          "title": "【初心者必見】AI活用を0から学ぶ4つのステップ https://t.co ...",
-          "url": "https://x.com/riverstn7/status/1989647560840245681",
-          "snippet": "2 days ago ... BENZO (@riverstn7). 56 views. 【初心者必見】AI活用を0から学ぶ4つのステップ https://t.co/IM1al5eFLs via @YouTube.",
-          "summary": "Something went wrong, but don’t fret — let’s give it another shot. Try again Some privacy related extensions may cause issues on x.com. Please disable them and try again. 2 days ago ... BENZO (@riverstn7). 56 views. 【初心者必見】AI活用を0から学ぶ4つのステップ https://t.co/IM1al5eFLs via @YouTube."
-        },
-        {
-          "title": "AI(人工知能)の作り方！初心者がいちから開発する全手順【準備から ...",
-          "url": "https://generative-ai.sejuku.net/blog/3946/",
-          "snippet": "Oct 10, 2025 ... また、線形代数などの数学の知識やニューラルネットワークを学ぶのも時間がかかります。 そこで、以降では初心者がAI（人工知能）を作る4つのステップを紹介 ...",
-          "summary": "AI(人工知能)の作り方！初心者がいちから開発する全手順【準備から公開】 | 侍エンジニア MENU サービス 生成AI基礎コース 生成AI業務改善コース 生成AIツール ChatGPT Gemini Copilot Claude Perplexity DeepSeek 生成AI診断 生成AI学習 スクール セミナー 講座 サービス 生成AI基礎コース 生成AI業務改善コース 生成AIツール ChatGPT Gemini Copilot Claude Perplexity DeepSeek 生成AI診断 生成AI学習 スクール セミナー 講座 無料で相談する ホーム 生成AI AI(人工知能)の作り方！初心者がいちから開発する全手順【準備から公開】 AI(人工知能)の作り方！初心者がいちから開発する全手順【準備から公開】 2025 10/10 広告 生成AI 2025年10月10日 中川大輝 この記事では、準備段階から公開までのAI(人工知能)の作り方をわかりやすく解説します。"
-        },
-        {
-          "title": "AIでサボろうチャンネル (@ai_saborou) / Posts / X",
-          "url": "https://x.com/ai_saborou",
-          "snippet": "【初心者必見】AI活用を0から学ぶ4つのステップ. AI活用の学習をどう進めれば良いか、4つのステップを提案します。 noteのメンバーシップ メンバーシップ購読はこちら ...",
-          "summary": "Something went wrong, but don’t fret — let’s give it another shot. Try again Some privacy related extensions may cause issues on x.com. Please disable them and try again. 【初心者必見】AI活用を0から学ぶ4つのステップ. AI活用の学習をどう進めれば良いか、4つのステップを提案します。 noteのメンバーシップ メンバーシップ購読はこちら ..."
-        }
-      ]
+      "searchSummaries": []
     }
   },
   "publisher": {
     "addedPost": true,
-    "totalPosts": 6,
-    "outputFile": "posts/2025-11-17-ai04.html"
+    "totalPosts": 7,
+    "outputFile": "posts/2025-11-17-chatgpt.html"
   }
 }

@@ -33,6 +33,45 @@
     "slug": "2025-11-17-ai04"
   },
   {
+    "title": "ChatGPTのグループチャット機能がもたらす業務効率化の新潮流",
+    "date": "2025-11-17",
+    "summary": "この記事を読むと、ChatGPTの新たなグループチャット機能がどのように業務効率化を促進し、AIの活用を次のレベルに引き上げるかを理解できます。",
+    "tags": [
+      {
+        "slug": "chatgpt",
+        "label": "ChatGPT",
+        "category": "ツール",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "ai",
+        "label": "AI",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "productivity",
+        "label": "業務効率化",
+        "category": "ユースケース",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "tag-4",
+        "label": "グループチャット",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "tag-5",
+        "label": "テクノロジー",
+        "category": "その他",
+        "style": "accent-neutral"
+      }
+    ],
+    "url": "posts/2025-11-17-chatgpt.html",
+    "slug": "2025-11-17-chatgpt"
+  },
+  {
     "title": "NotebookLMの最新アップデートでAIノート作成がさらに便利に！",
     "date": "2025-11-16",
     "summary": "NotebookLMの新機能により、AIを活用したノート作成がより簡単になりました。この記事では、具体的な機能とその活用方法を詳しく解説します。",
