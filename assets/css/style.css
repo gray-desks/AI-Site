@@ -1265,7 +1265,7 @@ body.article-page main {
 }
 
 .tag-search-panel {
-  margin: var(--space-2xl) 0 0;
+  margin: 0 0 var(--space-2xl) 0;
   padding: var(--space-lg);
   border-radius: var(--radius-xl);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 247, 243, 0.92));
@@ -1433,13 +1433,20 @@ body.article-page main {
   margin: 0;
 }
 
+@media (min-width: 768px) {
+  .tag-search-panel {
+    /* デスクトップでは常に表示 */
+    display: flex !important;
+  }
+}
+
 @media (max-width: 767px) {
   .tag-search-toggle {
     display: inline-flex;
   }
 
   .tag-search-panel {
-    margin: var(--space-xl) 0 0;
+    margin: 0 0 var(--space-xl) 0;
     padding: var(--space-md);
     border-radius: var(--radius-lg);
   }

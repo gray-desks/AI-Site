@@ -75,22 +75,13 @@
           タグで絞り込む
         </button>
       </div>
-      <ul id="post-list" class="post-grid" aria-live="polite">
-        <li class="post-card skeleton">
-          <div class="skeleton-media"></div>
-          <div class="post-card-body">
-            <div class="skeleton-line"></div>
-            <div class="skeleton-line"></div>
-            <div class="skeleton-line short"></div>
-          </div>
-        </li>
-      </ul>
-      <p id="post-error" role="status" aria-live="assertive"></p>
+
+      <!-- タグ検索パネルを記事リストの上に配置 -->
       <div
         class="tag-search-panel"
         id="tag-search-panel"
         aria-label="タグ検索"
-        data-mobile-open="true"
+        data-mobile-open="false"
       >
         <div class="tag-search-input-row">
           <label for="tag-search-input">タグ検索</label>
@@ -116,6 +107,18 @@
         <p class="tag-filter-status" id="tag-filter-status" aria-live="polite"></p>
         <div class="tag-search-suggestions" id="tag-search-suggestions" role="listbox" aria-label="タグ候補"></div>
       </div>
+
+      <ul id="post-list" class="post-grid" aria-live="polite">
+        <li class="post-card skeleton">
+          <div class="skeleton-media"></div>
+          <div class="post-card-body">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line short"></div>
+          </div>
+        </li>
+      </ul>
+      <p id="post-error" role="status" aria-live="assertive"></p>
     </section>
 
     <section id="features" class="inner info-panel">
