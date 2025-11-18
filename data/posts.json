@@ -1,5 +1,44 @@
 [
   {
+    "title": "AI時代に淘汰されない人材になるための5つのステップ",
+    "date": "2025-11-18",
+    "summary": "この記事では、AIの進化が労働市場に与える影響と、AI時代において淘汰されないための具体的なステップを解説します。",
+    "tags": [
+      {
+        "slug": "ai",
+        "label": "AI失業",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "tag-2",
+        "label": "労働市場",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "tag-3",
+        "label": "キャリア戦略",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "automation",
+        "label": "業務自動化",
+        "category": "ユースケース",
+        "style": "accent-teal"
+      },
+      {
+        "slug": "ai-5",
+        "label": "AI適応",
+        "category": "その他",
+        "style": "accent-neutral"
+      }
+    ],
+    "url": "posts/2025-11-18-ai5.html",
+    "slug": "2025-11-18-ai5"
+  },
+  {
     "title": "AI活用を0から学ぶ4つのステップ：初心者向け完全ガイド",
     "date": "2025-11-17",
     "summary": "この記事を読むと、AI初心者がどのようにAIを活用し始めるかを具体的に理解できます。4つのステップでわかりやすく解説します。",
@@ -40,6 +79,45 @@
     "url": "posts/2025-11-17-ai04.html",
     "slug": "2025-11-17-ai04",
     "publishedAt": "2025-11-17T23:59:00.000Z"
+  },
+  {
+    "title": "ChatGPTのグループチャット機能がもたらす業務効率化の新潮流",
+    "date": "2025-11-17",
+    "summary": "この記事を読むと、ChatGPTの新たなグループチャット機能がどのように業務効率化を促進し、AIの活用を次のレベルに引き上げるかを理解できます。",
+    "tags": [
+      {
+        "slug": "chatgpt",
+        "label": "ChatGPT",
+        "category": "ツール",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "ai",
+        "label": "AI",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "productivity",
+        "label": "業務効率化",
+        "category": "ユースケース",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "tag-4",
+        "label": "グループチャット",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "tag-5",
+        "label": "テクノロジー",
+        "category": "その他",
+        "style": "accent-neutral"
+      }
+    ],
+    "url": "posts/2025-11-17-chatgpt.html",
+    "slug": "2025-11-17-chatgpt"
   },
   {
     "title": "NotebookLMの最新アップデートでAIノート作成がさらに便利に！",
