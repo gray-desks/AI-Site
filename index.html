@@ -65,11 +65,39 @@
       <div class="section-header">
         <h2>最新記事</h2>
       </div>
+      <div class="tag-search-panel" id="tag-search-panel" aria-label="タグ検索">
+        <div class="tag-search-input-row">
+          <label for="tag-search-input">タグ検索</label>
+          <div class="tag-search-input">
+            <span class="tag-search-icon" aria-hidden="true">#</span>
+            <input
+              type="search"
+              id="tag-search-input"
+              placeholder="タグ名で検索..."
+              autocapitalize="off"
+              autocomplete="off"
+              spellcheck="false"
+              aria-describedby="tag-search-hint"
+            >
+            <button type="button" id="tag-search-clear" aria-label="検索キーワードをクリア">クリア</button>
+          </div>
+        </div>
+        <p id="tag-search-hint" class="tag-search-hint">タグ名を入力すると候補が絞り込まれます。候補のタグをクリックすると記事がフィルタリングされます。</p>
+        <div class="tag-search-selected" id="tag-search-selected" hidden>
+          <span id="tag-search-selected-label"></span>
+          <button type="button" id="tag-search-selected-clear" aria-label="選択中のタグを解除">×</button>
+        </div>
+        <p class="tag-filter-status" id="tag-filter-status" aria-live="polite"></p>
+        <div class="tag-search-suggestions" id="tag-search-suggestions" role="listbox" aria-label="タグ候補"></div>
+      </div>
       <ul id="post-list" class="post-grid" aria-live="polite">
         <li class="post-card skeleton">
-          <div class="skeleton-line"></div>
-          <div class="skeleton-line"></div>
-          <div class="skeleton-line short"></div>
+          <div class="skeleton-media"></div>
+          <div class="post-card-body">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line short"></div>
+          </div>
         </li>
       </ul>
       <p id="post-error" role="status" aria-live="assertive"></p>

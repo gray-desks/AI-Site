@@ -24,7 +24,8 @@
       "Bash(gh issue create:*)",
       "Bash(gh issue close:*)",
       "Bash(ffmpeg:*)",
-      "Bash(jq:*)"
+      "Bash(jq:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

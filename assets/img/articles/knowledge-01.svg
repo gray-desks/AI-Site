@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg width='1200' height='675' viewBox='0 0 1200 675' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <linearGradient id='grad-knowledge-01' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#2EC4B6' />
+      <stop offset='100%' stop-color='#EFFAF3' />
+    </linearGradient>
+    <radialGradient id='circle-knowledge-01' cx='50%' cy='50%' r='50%'>
+      <stop offset='0%' stop-color='#FF9F1C' stop-opacity='0.45' />
+      <stop offset='100%' stop-color='#FF9F1C' stop-opacity='0' />
+    </radialGradient>
+  </defs>
+  <rect width='1200' height='675' fill='url(#grad-knowledge-01)' />
+  <circle cx='390' cy='-40' r='266' fill='url(#circle-knowledge-01)' />
+  <circle cx='665' cy='715' r='184' fill='url(#circle-knowledge-01)' />
+  <path d='M0 297.5 C 400.0 382.5, 800.0 292.5, 1200 367.5'
+        stroke='#FFFFFF' stroke-opacity='0.35' stroke-width='4' fill='none' />
+  <path d='M0 417.5 C 300.0 467.5, 600.0 277.5, 1200 357.5'
+        stroke='#FFFFFF' stroke-opacity='0.18' stroke-width='3' fill='none' />
+</svg>

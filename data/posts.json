@@ -29,6 +29,14 @@
         "style": "accent-neutral"
       }
     ],
+    "image": {
+      "key": "ai-core-04",
+      "src": "assets/img/articles/ai-core-04.svg",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
     "url": "posts/2025-11-17-ai04.html",
     "slug": "2025-11-17-ai04",
     "publishedAt": "2025-11-17T23:59:00.000Z"
@@ -57,6 +65,14 @@
         "style": "accent-pink"
       }
     ],
+    "image": {
+      "key": "knowledge-02",
+      "src": "assets/img/articles/knowledge-02.svg",
+      "alt": "ノートや知識体系を示す重なり（バリアント2）",
+      "label": "ナレッジグラフ",
+      "caption": "NotebookLMや知識管理の話題に。",
+      "category": "knowledge"
+    },
     "url": "posts/2025-11-16-notebooklmai.html",
     "slug": "2025-11-16-notebooklmai",
     "publishedAt": "2025-11-16T23:59:00.000Z"
@@ -91,37 +107,17 @@
         "style": "accent-neutral"
       }
     ],
+    "image": {
+      "key": "future-03",
+      "src": "assets/img/articles/future-03.svg",
+      "alt": "未来感のあるホログラム調（バリアント3）",
+      "label": "フューチャービジョン",
+      "caption": "次世代ロードマップやGemini 3.0の展望記事向け。",
+      "category": "future"
+    },
     "url": "posts/2025-11-16-aigemini-30.html",
     "slug": "2025-11-16-aigemini-30",
     "publishedAt": "2025-11-16T23:58:00.000Z"
-  },
-  {
-    "title": "ChatGPTでLINE不要の新時代",
-    "date": "2025-11-15",
-    "summary": "ChatGPTにグループチャット機能が追加され、友人や同僚とAIを交えた会話が可能になりました。AIがもたらす新しいチャット体験を詳しく解説します。",
-    "tags": [
-      {
-        "slug": "chatgpt",
-        "label": "ChatGPT",
-        "category": "ツール",
-        "style": "accent-purple"
-      },
-      {
-        "slug": "ai-chat",
-        "label": "AIチャット",
-        "category": "ユースケース",
-        "style": "accent-lime"
-      },
-      {
-        "slug": "ai-tools",
-        "label": "AIツール",
-        "category": "ツール",
-        "style": "accent-lavender"
-      }
-    ],
-    "url": "posts/2025-11-15-linechatgptai.html",
-    "slug": "2025-11-15-linechatgptai",
-    "publishedAt": "2025-11-15T23:59:00.000Z"
   },
   {
     "title": "ChatGPTのグループチャット機能で業務効率を劇的に向上させる方法",
@@ -153,6 +149,14 @@
         "style": "accent-neutral"
       }
     ],
+    "image": {
+      "key": "collab-02",
+      "src": "assets/img/articles/collab-02.svg",
+      "alt": "チーム協業とチャットを思わせるシンボル（バリアント2）",
+      "label": "コラボレーションダイナミクス",
+      "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
+      "category": "collaboration"
+    },
     "url": "posts/2025-11-15-chatgpt.html",
     "slug": "2025-11-15-chatgpt",
     "publishedAt": "2025-11-15T23:58:00.000Z"
@@ -187,6 +191,14 @@
         "style": "accent-purple"
       }
     ],
+    "image": {
+      "key": "creative-03",
+      "src": "assets/img/articles/creative-03.svg",
+      "alt": "クリエイティブな光の帯（バリアント3）",
+      "label": "クリエイティブAI",
+      "caption": "PixAIや生成系デザインの記事向け。",
+      "category": "creative"
+    },
     "url": "posts/2025-11-15-aichatgptgeminipixai.html",
     "slug": "2025-11-15-aichatgptgeminipixai",
     "publishedAt": "2025-11-15T23:57:00.000Z"

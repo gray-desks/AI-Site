@@ -110,6 +110,7 @@ const runPublisher = async ({ collectorResult, researcherResult, generatorResult
       ...basePostEntry,
       url: relativePath,
       slug: basePostEntry.slug || article.slug,
+      image: basePostEntry.image || article.image || null,
     };
     updatedPosts = updatePosts(posts, finalizedPostEntry);
     postsChanged = JSON.stringify(updatedPosts) !== JSON.stringify(posts);

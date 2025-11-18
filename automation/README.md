@@ -26,6 +26,13 @@ GitHub Actions から `automation/pipeline/index.js` を呼び出し、以下の
 - `data/candidates.json` は collector により自動追加されます。必要に応じて `status` や `notes` を手動で調整しても構いませんが、Researcher → Generator の順序で状態遷移させることが前提です。  
 - ステージ毎のメトリクスは `automation/output/pipeline-status.json` に集約され、失敗時のトラブルシューティングにも利用します。
 
+## 記事ビジュアル（ヒーロー/カード画像）
+
+- `assets/img/articles/index.json` に 16:9 比率のテンプレート画像（55種）を定義し、`key`・`src`・`alt`・`topics` などのメタデータを持たせています。SVG 本体も同ディレクトリ配下に配置します。  
+- generator は記事タグ・`topicKey`・ソースの focus などをトークン化してマニフェストの `topics` と突き合わせ、決定的に1枚を自動割り当てします。選択結果は `candidate.image` / `candidate.imageKey`、`generatorResult.postEntry.image` に格納されます。  
+- publisher は渡された `image` 情報をそのまま `data/posts.json` に保存し、`index.html` のカード一覧と `posts/<slug>.html` のヒーローセクションが同じビジュアルを参照します。  
+- 手動で差し替える場合は `data/candidates.json` の対象候補に `image` / `imageKey` を上書きするか、`data/posts.json` を直接編集してください。再利用したい画像はマニフェストに追加した上で `topics` を設定すると自動割当の候補に含まれます。
+
 ## 必要なシークレット
 
 | 名前 | 用途 |

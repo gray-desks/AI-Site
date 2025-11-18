@@ -78,8 +78,227 @@
 (function loadPosts() {
   const list = document.getElementById('post-list');
   const errorLabel = document.getElementById('post-error');
+  const defaultCardImage = 'assets/img/articles/ai-core-01.svg';
 
   if (!list) return;
+
+  const tagSearchElements = {
+    panel: document.getElementById('tag-search-panel'),
+    input: document.getElementById('tag-search-input'),
+    clearButton: document.getElementById('tag-search-clear'),
+    selectedWrapper: document.getElementById('tag-search-selected'),
+    selectedLabel: document.getElementById('tag-search-selected-label'),
+    selectedClear: document.getElementById('tag-search-selected-clear'),
+    suggestions: document.getElementById('tag-search-suggestions'),
+    status: document.getElementById('tag-filter-status'),
+  };
+
+  if (tagSearchElements.input) tagSearchElements.input.disabled = true;
+  if (tagSearchElements.clearButton) tagSearchElements.clearButton.disabled = true;
+  if (tagSearchElements.status) {
+    tagSearchElements.status.textContent = 'タグ情報を読み込み中...';
+  }
+
+  const tagSearchState = {
+    posts: [],
+    filteredPosts: [],
+    tags: [],
+    query: '',
+    selectedTag: null,
+    hasLoadedPosts: false,
+  };
+
+  const normalizeFilterValue = (value) => {
+    if (value === null || value === undefined) return '';
+    return value.toString().normalize('NFKC').trim().toLowerCase();
+  };
+
+  const buildTagIndex = (posts) => {
+    const tagMap = new Map();
+    posts.forEach((post) => {
+      const postTags = Array.isArray(post.tags) ? post.tags : [];
+      postTags.forEach((tag, index) => {
+        const normalized = toTagObject(tag, index);
+        const key = normalized.slug || normalized.label || `tag-${index + 1}`;
+        if (!tagMap.has(key)) {
+          tagMap.set(key, { ...normalized, count: 1 });
+        } else {
+          const existing = tagMap.get(key);
+          existing.count += 1;
+        }
+      });
+    });
+    return Array.from(tagMap.values()).sort((a, b) => {
+      if (b.count !== a.count) return b.count - a.count;
+      return a.label.localeCompare(b.label, 'ja');
+    });
+  };
+
+  const filterPostsByTagSlug = (slug) => {
+    const posts = Array.isArray(tagSearchState.posts) ? tagSearchState.posts : [];
+    if (!slug) return [...posts];
+    return posts.filter((post) => {
+      const postTags = Array.isArray(post.tags) ? post.tags : [];
+      return postTags.some((tag, index) => toTagObject(tag, index).slug === slug);
+    });
+  };
+
+  const updateSelectedTagUI = () => {
+    if (!tagSearchElements.selectedWrapper || !tagSearchElements.selectedLabel) return;
+    if (!tagSearchState.selectedTag) {
+      tagSearchElements.selectedWrapper.hidden = true;
+      tagSearchElements.selectedWrapper.setAttribute('aria-hidden', 'true');
+      tagSearchElements.selectedLabel.textContent = '';
+      return;
+    }
+    tagSearchElements.selectedWrapper.hidden = false;
+    tagSearchElements.selectedWrapper.removeAttribute('aria-hidden');
+    const label = tagSearchState.selectedTag.label;
+    const count = tagSearchState.filteredPosts.length;
+    tagSearchElements.selectedLabel.textContent = `${label} (${count}件)`;
+  };
+
+  const updateFilterStatus = () => {
+    if (!tagSearchElements.status) return;
+    if (!tagSearchState.posts.length) {
+      tagSearchElements.status.textContent = tagSearchState.hasLoadedPosts
+        ? '記事がまだ登録されていません。'
+        : 'タグ情報を読み込み中...';
+      return;
+    }
+    if (tagSearchState.selectedTag) {
+      if (tagSearchState.filteredPosts.length === 0) {
+        tagSearchElements.status.textContent = `タグ「${tagSearchState.selectedTag.label}」に該当する記事はまだありません。`;
+      } else {
+        tagSearchElements.status.textContent = `タグ「${tagSearchState.selectedTag.label}」の記事を${tagSearchState.filteredPosts.length}件表示中`;
+      }
+    } else {
+      tagSearchElements.status.textContent = `全${tagSearchState.posts.length}件の記事を表示中`;
+    }
+  };
+
+  const updateClearButtonState = () => {
+    if (!tagSearchElements.clearButton) return;
+    tagSearchElements.clearButton.disabled = tagSearchState.query.length === 0;
+  };
+
+  const TAG_SUGGESTION_LIMIT = 18;
+
+  const getFilteredTagSuggestions = () => {
+    if (!tagSearchState.query) return tagSearchState.tags;
+    const query = normalizeFilterValue(tagSearchState.query);
+    if (!query) return tagSearchState.tags;
+    return tagSearchState.tags.filter((tag) => {
+      const labelText = normalizeFilterValue(tag.label);
+      const slugText = normalizeFilterValue(tag.slug);
+      return labelText.includes(query) || slugText.includes(query);
+    });
+  };
+
+  const renderTagSuggestions = () => {
+    if (!tagSearchElements.suggestions) return;
+    if (!tagSearchState.tags.length) {
+      const message = tagSearchState.hasLoadedPosts
+        ? 'タグ情報がまだ登録されていません。'
+        : 'タグ情報を読み込み中です。';
+      tagSearchElements.suggestions.innerHTML = `<p class="tag-search-empty">${message}</p>`;
+      return;
+    }
+    const suggestions = getFilteredTagSuggestions();
+    if (!suggestions.length) {
+      tagSearchElements.suggestions.innerHTML = '<p class="tag-search-empty">該当するタグが見つかりません。</p>';
+      return;
+    }
+    const items = suggestions.slice(0, TAG_SUGGESTION_LIMIT).map((tag) => {
+      const isActive = tagSearchState.selectedTag?.slug === tag.slug;
+      return `
+        <button
+          type="button"
+          class="tag-search-chip${isActive ? ' active' : ''}"
+          data-tag-select="true"
+          data-tag-slug="${tag.slug}"
+          role="option"
+          aria-selected="${isActive ? 'true' : 'false'}"
+          aria-pressed="${isActive ? 'true' : 'false'}"
+        >
+          <span>${tag.label}</span>
+          <span class="tag-count">${tag.count}件</span>
+        </button>
+      `;
+    }).join('');
+    tagSearchElements.suggestions.innerHTML = items;
+  };
+
+  const applyPostFilter = (tag) => {
+    tagSearchState.selectedTag = tag || null;
+    tagSearchState.filteredPosts = filterPostsByTagSlug(tagSearchState.selectedTag?.slug);
+    renderPosts(tagSearchState.filteredPosts);
+    updateSelectedTagUI();
+    updateFilterStatus();
+    updateClearButtonState();
+  };
+
+  const attachTagSearchEvents = () => {
+    if (tagSearchElements.input) {
+      const handleInputChange = (event) => {
+        tagSearchState.query = event.target.value || '';
+        renderTagSuggestions();
+        updateClearButtonState();
+      };
+      tagSearchElements.input.addEventListener('input', handleInputChange);
+      tagSearchElements.input.addEventListener('search', handleInputChange);
+      tagSearchElements.input.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter') return;
+        const [first] = getFilteredTagSuggestions();
+        if (!first) return;
+        event.preventDefault();
+        applyPostFilter(first);
+        renderTagSuggestions();
+      });
+    }
+
+    if (tagSearchElements.clearButton) {
+      tagSearchElements.clearButton.addEventListener('click', () => {
+        if (!tagSearchState.query) return;
+        tagSearchState.query = '';
+        updateClearButtonState();
+        if (tagSearchElements.input) {
+          tagSearchElements.input.value = '';
+          tagSearchElements.input.focus();
+        }
+        renderTagSuggestions();
+      });
+    }
+
+    if (tagSearchElements.selectedClear) {
+      tagSearchElements.selectedClear.addEventListener('click', () => {
+        if (!tagSearchState.selectedTag) return;
+        applyPostFilter(null);
+        renderTagSuggestions();
+      });
+    }
+
+    if (tagSearchElements.suggestions) {
+      tagSearchElements.suggestions.addEventListener('click', (event) => {
+        if (!(event.target instanceof Element)) return;
+        const target = event.target.closest('[data-tag-select="true"]');
+        if (!target) return;
+        const slug = target.getAttribute('data-tag-slug');
+        if (!slug) return;
+        const selected = tagSearchState.tags.find((tag) => tag.slug === slug);
+        if (!selected) return;
+        if (tagSearchState.selectedTag?.slug === selected.slug) {
+          applyPostFilter(null);
+        } else {
+          applyPostFilter(selected);
+        }
+        renderTagSuggestions();
+      });
+    }
+  };
+
+  attachTagSearchEvents();
+  renderTagSuggestions();
 
   const enhanceCardAccessibility = () => {
     list.querySelectorAll('.post-card').forEach(card => {
@@ -204,12 +423,21 @@
 
       const tags = Array.isArray(post.tags) ? post.tags : [];
       const tagMarkup = createTagMarkup(tags);
+      const imageSrc = (post?.image && post.image.src) || defaultCardImage;
+      const imageAlt = (post?.image && post.image.alt) || `${post.title}のイメージ`;
+      const coverMarkup = `
+        <figure class="post-card-cover">
+          <img src="${imageSrc}" alt="${imageAlt}" loading="lazy" decoding="async" width="640" height="360">
+        </figure>`;
 
       item.innerHTML = `
-        <div class="post-meta">${formatDate(post.date)}</div>
-        <h3><a href="${post.url}">${post.title}</a></h3>
-        <p class="post-summary">${post.summary ?? ''}</p>
-        ${tagMarkup}
+        ${coverMarkup}
+        <div class="post-card-body">
+          <div class="post-meta">${formatDate(post.date)}</div>
+          <h3><a href="${post.url}">${post.title}</a></h3>
+          <p class="post-summary">${post.summary ?? ''}</p>
+          ${tagMarkup}
+        </div>
       `;
 
       // カード全体をクリック可能に
@@ -244,13 +472,21 @@
 
   // スケルトンローダーの表示
   const showSkeleton = () => {
-    list.innerHTML = Array(3).fill(0).map(() => `
+    list.innerHTML = Array(3)
+      .fill(0)
+      .map(
+        () => `
       <li class="post-card skeleton">
-        <div class="skeleton-line"></div>
-        <div class="skeleton-line"></div>
-        <div class="skeleton-line short"></div>
+        <div class="skeleton-media"></div>
+        <div class="post-card-body">
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line short"></div>
+        </div>
       </li>
-    `).join('');
+    `,
+      )
+      .join('');
   };
 
   showSkeleton();
@@ -265,7 +501,16 @@
 
       // データ取得後、少し遅延させて表示（UX向上）
       setTimeout(() => {
-        renderPosts(sorted);
+        tagSearchState.posts = sorted;
+        tagSearchState.tags = buildTagIndex(sorted);
+        tagSearchState.query = '';
+        tagSearchState.hasLoadedPosts = true;
+        if (tagSearchElements.input) {
+          tagSearchElements.input.disabled = tagSearchState.tags.length === 0;
+          tagSearchElements.input.value = '';
+        }
+        applyPostFilter(null);
+        renderTagSuggestions();
         if (errorLabel) errorLabel.textContent = '';
       }, 300);
     })
@@ -273,6 +518,18 @@
       console.error('記事一覧の読み込みに失敗しました', error);
       if (errorLabel) {
         errorLabel.textContent = '記事一覧の読み込みに失敗しました。時間をおいて再度お試しください。';
+      }
+      if (tagSearchElements.status) {
+        tagSearchElements.status.textContent = 'タグ情報を取得できませんでした。';
+      }
+      if (tagSearchElements.suggestions) {
+        tagSearchElements.suggestions.innerHTML = '<p class="tag-search-empty">タグ情報を取得できませんでした。</p>';
+      }
+      if (tagSearchElements.input) {
+        tagSearchElements.input.disabled = true;
+      }
+      if (tagSearchElements.clearButton) {
+        tagSearchElements.clearButton.disabled = true;
       }
       list.innerHTML = '';
     });

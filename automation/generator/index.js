@@ -19,6 +19,7 @@ const candidatesPath = path.join(root, 'data', 'candidates.json');
 const postsJsonPath = path.join(root, 'data', 'posts.json');
 const topicHistoryPath = path.join(root, 'data', 'topic-history.json');
 const tagsConfigPath = path.join(root, 'data', 'tags.json');
+const articleImagesManifestPath = path.join(root, 'assets', 'img', 'articles', 'index.json');
 
 const { DEDUPE_WINDOW_DAYS } = GENERATOR;
 
@@ -122,6 +123,114 @@ const buildTagDictionary = () => {
 
 const tagDictionary = buildTagDictionary();
 
+const buildArticleImagePool = () => {
+  const manifest = readJson(articleImagesManifestPath, []);
+  if (!Array.isArray(manifest)) return [];
+  return manifest
+    .map((item, index) => {
+      if (!item || !item.key || !item.src) return null;
+      const topics = Array.isArray(item.topics)
+        ? item.topics.map((topic) => normalizeTagToken(topic)).filter(Boolean)
+        : [];
+      return {
+        key: item.key,
+        src: item.src,
+        alt: item.alt || item.label || 'AI情報ブログのビジュアル',
+        label: item.label || null,
+        description: item.description || null,
+        category: normalizeTagToken(item.category) || null,
+        topics,
+        isDefault: Boolean(item.isDefault) || index === 0,
+      };
+    })
+    .filter(Boolean);
+};
+
+const articleImagePool = buildArticleImagePool();
+const defaultArticleImage = articleImagePool.find((item) => item.isDefault) || articleImagePool[0] || null;
+
+const deterministicPickFromPool = (pool, seed = '') => {
+  if (!Array.isArray(pool) || pool.length === 0) return null;
+  const normalizedSeed = seed ? seed.toString() : 'ai-info-blog';
+  let hash = 0;
+  for (let i = 0; i < normalizedSeed.length; i += 1) {
+    hash = (hash * 31 + normalizedSeed.charCodeAt(i)) & 0xffffffff;
+  }
+  const index = Math.abs(hash) % pool.length;
+  return pool[index];
+};
+
+const gatherImageTokens = (article, candidate) => {
+  const tokens = new Set();
+  const pushToken = (value) => {
+    const normalized = normalizeTagToken(value);
+    if (normalized) tokens.add(normalized);
+  };
+
+  if (article?.tags) {
+    article.tags.forEach((tag) => {
+      if (!tag) return;
+      if (typeof tag === 'string') {
+        pushToken(tag);
+        return;
+      }
+      pushToken(tag.slug);
+      pushToken(tag.label);
+      pushToken(tag.category);
+    });
+  }
+
+  if (candidate?.source?.focus) {
+    candidate.source.focus.forEach(pushToken);
+  }
+
+  if (candidate?.topicKey) {
+    pushToken(candidate.topicKey);
+    candidate.topicKey.split(/[-_]+/).forEach(pushToken);
+  }
+
+  if (article?.slug) {
+    pushToken(article.slug);
+    article.slug.split(/[-_]+/).forEach(pushToken);
+  }
+
+  const injectFromTitle = (title) => {
+    if (!title) return;
+    title
+      .split(/[\s・／/、。:+\-]+/)
+      .map((token) => token.trim())
+      .forEach(pushToken);
+  };
+
+  injectFromTitle(article?.title);
+  injectFromTitle(candidate?.video?.title);
+
+  return tokens;
+};
+
+const selectArticleImage = (article, candidate) => {
+  if (!articleImagePool.length) return null;
+  const tokens = gatherImageTokens(article, candidate);
+  const matched = articleImagePool.filter((entry) => {
+    if (!entry) return false;
+    if (entry.topics.some((topic) => tokens.has(topic))) return true;
+    if (entry.category && tokens.has(entry.category)) return true;
+    return false;
+  });
+  const seed = candidate?.topicKey || article?.slug || article?.title || candidate?.id || 'ai-info';
+  const pool = matched.length > 0 ? matched : articleImagePool;
+  const picked = deterministicPickFromPool(pool, seed) || defaultArticleImage;
+  if (!picked) return null;
+  return {
+    key: picked.key,
+    src: picked.src,
+    alt: picked.alt,
+    label: picked.label,
+    caption: picked.description || picked.label || '',
+    category: picked.category,
+  };
+};
+
 const mapArticleTags = (rawTags) => {
   if (!Array.isArray(rawTags) || rawTags.length === 0) return [];
   const seen = new Set();
@@ -174,6 +283,16 @@ const compileArticleHtml = (article, meta, options = {}) => {
   const tags = Array.isArray(article.tags) ? article.tags : [];
 
   const dateParts = formatDateParts(meta.date);
+  const heroImage = (meta && meta.image) || options.image || null;
+  const heroImageSrc = heroImage?.src ? `${normalizedAssetBase}${heroImage.src}` : null;
+  const heroFigureMarkup = heroImageSrc
+    ? `
+          <figure class="article-hero-image">
+            <img src="${heroImageSrc}" alt="${heroImage?.alt || `${article.title}のイメージ`}" loading="lazy" decoding="async" width="1200" height="675">
+            ${heroImage?.caption || heroImage?.label ? `<figcaption>${heroImage.caption || heroImage.label}</figcaption>` : ''}
+          </figure>`
+    : '';
+  const socialImage = heroImageSrc || `${normalizedAssetBase}assets/img/ogp-default.svg`;
 
   const renderTagList = (items) => {
     if (!Array.isArray(items) || items.length === 0) {
@@ -277,7 +396,7 @@ ${toHtmlParagraphs(article.conclusion)}
   <meta property="og:type" content="article">
   <meta property="og:title" content="${article.title} | AI情報ブログ">
   <meta property="og:description" content="${article.summary ?? ''}">
-  <meta property="og:image" content="${normalizedAssetBase}assets/img/ogp-default.svg">
+  <meta property="og:image" content="${socialImage}">
   <meta property="og:site_name" content="AI情報ブログ">
   <meta property="og:locale" content="ja_JP">
   <meta property="article:published_time" content="${dateParts.dotted}T00:00:00+09:00">
@@ -286,7 +405,7 @@ ${toHtmlParagraphs(article.conclusion)}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${article.title} | AI情報ブログ">
   <meta name="twitter:description" content="${article.summary ?? ''}">
-  <meta name="twitter:image" content="${normalizedAssetBase}assets/img/ogp-default.svg">
+  <meta name="twitter:image" content="${socialImage}">
 
   <link rel="stylesheet" href="${cssHref}">
 </head>
@@ -297,10 +416,13 @@ ${toHtmlParagraphs(article.conclusion)}
     <article class="article-detail">
       <section class="inner article-hero">
         <p class="article-eyebrow">Daily Briefing</p>
-        <div class="article-hero-main">
-          <p class="post-meta">${dateParts.dotted || meta.date}</p>
-          <h1>${article.title}</h1>
-          <p class="article-summary">${article.summary ?? ''}</p>
+        <div class="article-hero-layout">
+          <div class="article-hero-main">
+            <p class="post-meta">${dateParts.dotted || meta.date}</p>
+            <h1>${article.title}</h1>
+            <p class="article-summary">${article.summary ?? ''}</p>
+          </div>
+          ${heroFigureMarkup}
         </div>
 
         ${tagMarkup}
@@ -543,6 +665,7 @@ const runGenerator = async () => {
     ...article,
     tags: normalizedTags,
   };
+  const selectedImage = selectArticleImage(hydratedArticle, candidate);
 
   const today = new Date().toISOString().split('T')[0];
   const slugifiedTitle = slugify(article.title, topicKey || 'ai-topic');
@@ -555,9 +678,13 @@ const runGenerator = async () => {
     sourceName: candidate.source.name,
     sourceUrl,
     videoUrl: candidate.video.url,
+    image: selectedImage,
   };
 
-  const publishHtml = compileArticleHtml(hydratedArticle, meta, { assetBase: '../' });
+  const publishHtml = compileArticleHtml(hydratedArticle, meta, {
+    assetBase: '../',
+    image: selectedImage,
+  });
 
   const now = new Date().toISOString();
 
@@ -572,6 +699,8 @@ const runGenerator = async () => {
           postDate: today,
           slug,
           outputFile: publishRelativePath,
+          image: selectedImage || null,
+          imageKey: selectedImage?.key || null,
         }
       : item,
   );
@@ -594,6 +723,7 @@ const runGenerator = async () => {
     url: publishRelativePath,
     slug,
     publishedAt: now,
+    image: selectedImage || null,
   };
 
   const articleData = {
@@ -607,6 +737,7 @@ const runGenerator = async () => {
     date: today,
     htmlContent: publishHtml,
     relativePath: publishRelativePath,
+    image: selectedImage || null,
     source: {
       name: candidate.source.name,
       url: sourceUrl,
