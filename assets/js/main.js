@@ -91,6 +91,7 @@
     selectedClear: document.getElementById('tag-search-selected-clear'),
     suggestions: document.getElementById('tag-search-suggestions'),
     status: document.getElementById('tag-filter-status'),
+    toggle: document.getElementById('tag-search-toggle'),
   };
 
   if (tagSearchElements.input) tagSearchElements.input.disabled = true;
@@ -297,7 +298,71 @@
     }
   };
 
+  const initResponsiveTagSearchLayout = () => {
+    if (!tagSearchElements.panel || !tagSearchElements.toggle) return;
+
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const layoutState = {
+      isMobile: mediaQuery.matches,
+      isExpanded: mediaQuery.matches ? false : true,
+    };
+
+    const scrollPanelIntoView = () => {
+      if (!tagSearchElements.panel) return;
+      tagSearchElements.panel.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    };
+
+    const applyState = () => {
+      const panel = tagSearchElements.panel;
+      const toggle = tagSearchElements.toggle;
+      const shouldShowPanel = !layoutState.isMobile || layoutState.isExpanded;
+
+      panel.dataset.mobileOpen = shouldShowPanel ? 'true' : 'false';
+      panel.hidden = layoutState.isMobile ? !shouldShowPanel : false;
+
+      toggle.setAttribute('aria-expanded', shouldShowPanel ? 'true' : 'false');
+      toggle.setAttribute('aria-label', shouldShowPanel ? 'タグ検索を閉じる' : 'タグ検索を開く');
+
+      if (layoutState.isMobile) {
+        toggle.removeAttribute('aria-hidden');
+        toggle.tabIndex = 0;
+      } else {
+        toggle.setAttribute('aria-hidden', 'true');
+        toggle.tabIndex = -1;
+      }
+    };
+
+    const updateViewportState = (isMobile) => {
+      layoutState.isMobile = isMobile;
+      layoutState.isExpanded = isMobile ? false : true;
+      applyState();
+    };
+
+    const handleToggleClick = () => {
+      if (!layoutState.isMobile) return;
+      layoutState.isExpanded = !layoutState.isExpanded;
+      applyState();
+      if (layoutState.isExpanded && tagSearchElements.input) {
+        requestAnimationFrame(() => {
+          tagSearchElements.input.focus({ preventScroll: true });
+          scrollPanelIntoView();
+        });
+      }
+    };
+
+    tagSearchElements.toggle.addEventListener('click', handleToggleClick);
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', (event) => updateViewportState(event.matches));
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener((event) => updateViewportState(event.matches));
+    }
+
+    applyState();
+  };
+
   attachTagSearchEvents();
+  initResponsiveTagSearchLayout();
   renderTagSuggestions();
 
   const enhanceCardAccessibility = () => {

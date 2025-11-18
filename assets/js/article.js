@@ -148,6 +148,74 @@
 
   initReadingProgress();
 
+  function initResponsiveTocToggle() {
+    const tocCard = document.querySelector('.article-card.article-toc');
+    const tocListElement = tocCard?.querySelector('[data-toc-list]');
+    const label = tocCard?.querySelector('.article-card-label');
+    if (!tocCard || !tocListElement || !label) return;
+    if (tocCard.dataset.tocToggleInit === 'true') return;
+    tocCard.dataset.tocToggleInit = 'true';
+
+    const header = document.createElement('div');
+    header.className = 'article-card-header';
+    tocCard.insertBefore(header, label);
+    header.appendChild(label);
+
+    const panel = document.createElement('div');
+    panel.className = 'toc-panel';
+    const panelId = 'article-toc-panel';
+    panel.id = panelId;
+    panel.appendChild(tocListElement);
+    tocCard.appendChild(panel);
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'toc-toggle';
+    toggle.setAttribute('aria-controls', panelId);
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.textContent = '目次を隠す';
+    header.appendChild(toggle);
+
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const state = {
+      isMobile: mediaQuery.matches,
+      expanded: !mediaQuery.matches,
+    };
+
+    const updateToggleLabel = () => {
+      const labelText = state.expanded ? '目次を隠す' : '目次を表示';
+      toggle.textContent = labelText;
+      toggle.setAttribute('aria-label', labelText);
+    };
+
+    const applyState = () => {
+      state.isMobile = mediaQuery.matches;
+      if (!state.isMobile) {
+        state.expanded = true;
+      }
+      const shouldShow = !state.isMobile || state.expanded;
+      panel.hidden = !shouldShow;
+      toggle.setAttribute('aria-expanded', shouldShow ? 'true' : 'false');
+      tocCard.dataset.mobileCollapsed = state.isMobile && !state.expanded ? 'true' : 'false';
+      updateToggleLabel();
+    };
+
+    toggle.addEventListener('click', () => {
+      if (!state.isMobile) return;
+      state.expanded = !state.expanded;
+      applyState();
+    });
+
+    const handleMediaChange = () => applyState();
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handleMediaChange);
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener(handleMediaChange);
+    }
+
+    applyState();
+  }
+
   // === 目次のアクティブ状態管理 ===
   function initTocHighlight() {
     if (!tocList || headings.length === 0) return;
@@ -179,5 +247,6 @@
     updateActiveToc();
   }
 
+  initResponsiveTocToggle();
   initTocHighlight();
 })();

@@ -64,8 +64,34 @@
     <section id="posts" class="inner">
       <div class="section-header">
         <h2>最新記事</h2>
+        <button
+          type="button"
+          id="tag-search-toggle"
+          class="tag-search-toggle"
+          aria-controls="tag-search-panel"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true">#</span>
+          タグで絞り込む
+        </button>
       </div>
-      <div class="tag-search-panel" id="tag-search-panel" aria-label="タグ検索">
+      <ul id="post-list" class="post-grid" aria-live="polite">
+        <li class="post-card skeleton">
+          <div class="skeleton-media"></div>
+          <div class="post-card-body">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line short"></div>
+          </div>
+        </li>
+      </ul>
+      <p id="post-error" role="status" aria-live="assertive"></p>
+      <div
+        class="tag-search-panel"
+        id="tag-search-panel"
+        aria-label="タグ検索"
+        data-mobile-open="true"
+      >
         <div class="tag-search-input-row">
           <label for="tag-search-input">タグ検索</label>
           <div class="tag-search-input">
@@ -90,17 +116,6 @@
         <p class="tag-filter-status" id="tag-filter-status" aria-live="polite"></p>
         <div class="tag-search-suggestions" id="tag-search-suggestions" role="listbox" aria-label="タグ候補"></div>
       </div>
-      <ul id="post-list" class="post-grid" aria-live="polite">
-        <li class="post-card skeleton">
-          <div class="skeleton-media"></div>
-          <div class="post-card-body">
-            <div class="skeleton-line"></div>
-            <div class="skeleton-line"></div>
-            <div class="skeleton-line short"></div>
-          </div>
-        </li>
-      </ul>
-      <p id="post-error" role="status" aria-live="assertive"></p>
     </section>
 
     <section id="features" class="inner info-panel">
