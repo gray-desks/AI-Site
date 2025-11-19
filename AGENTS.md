@@ -311,6 +311,7 @@ node automation/publisher/index.js
 ### 記事構造
 - 記事本文は SEO 向けの sections/subSections を含む JSON を元にHTML化している。
 - 構造を変更した際は必ず `automation/templates/` と `posts/` の最終HTMLの整合を確認。
+- ブログ詳細ページのHTMLは `automation/templates/article.html` を雛形に generator が生成する。プレースホルダや構造を変更したい場合はこのテンプレートを編集すること。
 
 ### 記事ビジュアル
 - 記事カードとヒーロー画像は WEBP のみをサポートします。ファイルは `assets/img/article-templates/` に配置し、メタデータは `assets/img/articles/index.json` で管理してください。

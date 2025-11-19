@@ -33,6 +33,12 @@ GitHub Actions から `automation/pipeline/index.js` を呼び出し、以下の
 - publisher は渡された `image` 情報をそのまま `data/posts.json` に保存し、`index.html` のカード一覧と `posts/<slug>.html` のヒーローセクションが同じ WEBP を参照します。  
 - 手動で差し替える場合は `assets/img/article-templates/` に WEBP を配置し、`assets/img/articles/index.json` に `src`・`topics` を追記してください。個々の記事で使い分けたい場合は `data/candidates.json` や `data/posts.json` の `image` / `imageKey` を上書きします。
 
+## 記事HTMLテンプレート
+
+- ブログ詳細ページのレイアウトは `automation/templates/article.html` で管理します。`{{TITLE}}` や `{{SECTION_MARKUP}}` などのプレースホルダを generator が埋め込みます。  
+- 構造やメタタグの変更はこのテンプレートを編集してください。既存の記事HTMLを直接弄る必要はありません。  
+- テンプレートを削除した場合は generator が従来のハードコードされたHTMLをフォールバックとして使用します。
+
 ## 必要なシークレット
 
 | 名前 | 用途 |

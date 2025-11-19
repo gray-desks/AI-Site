@@ -6,6 +6,7 @@
  * - Returns article HTML for publisher and records topic history for deduplication
  */
 
+const fs = require('fs');
 const path = require('path');
 const { readJson, writeJson } = require('../lib/io');
 const slugify = require('../lib/slugify');
@@ -20,6 +21,7 @@ const postsJsonPath = path.join(root, 'data', 'posts.json');
 const topicHistoryPath = path.join(root, 'data', 'topic-history.json');
 const tagsConfigPath = path.join(root, 'data', 'tags.json');
 const articleImagesManifestPath = path.join(root, 'assets', 'img', 'articles', 'index.json');
+const articleHtmlTemplatePath = path.join(root, 'automation', 'templates', 'article.html');
 
 const { DEDUPE_WINDOW_DAYS } = GENERATOR;
 
@@ -148,6 +150,34 @@ const buildArticleImagePool = () => {
 
 const articleImagePool = buildArticleImagePool();
 const defaultArticleImage = articleImagePool.find((item) => item.isDefault) || articleImagePool[0] || null;
+
+let cachedArticleTemplate = null;
+let articleTemplateLoaded = false;
+
+const escapeRegExp = (value) => value.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+
+const getArticleTemplate = () => {
+  if (articleTemplateLoaded) return cachedArticleTemplate;
+  try {
+    cachedArticleTemplate = fs.readFileSync(articleHtmlTemplatePath, 'utf-8');
+  } catch (error) {
+    cachedArticleTemplate = null;
+    console.warn('[generator] 記事テンプレートの読み込みに失敗しました:', error.message);
+  } finally {
+    articleTemplateLoaded = true;
+  }
+  return cachedArticleTemplate;
+};
+
+const renderArticleTemplate = (slots) => {
+  const template = getArticleTemplate();
+  if (!template) return null;
+  return Object.entries(slots).reduce((html, [token, value]) => {
+    const safeValue = value ?? '';
+    const pattern = new RegExp(escapeRegExp(token), 'g');
+    return html.replace(pattern, safeValue);
+  }, template);
+};
 
 const deterministicPickFromPool = (pool, seed = '') => {
   if (!Array.isArray(pool) || pool.length === 0) return null;
@@ -457,13 +487,37 @@ ${toHtmlParagraphs(article.conclusion)}
       </section>`
     : '';
 
+  const summaryText = article.summary ?? '';
+  const displayDate = dateParts.dotted || meta.date || '';
+  const publishedTimeIso = displayDate ? `${displayDate}T00:00:00+09:00` : new Date().toISOString();
+
+  const templateSlots = {
+    '{{ASSET_BASE}}': normalizedAssetBase,
+    '{{TITLE}}': article.title,
+    '{{SUMMARY}}': summaryText,
+    '{{SOCIAL_IMAGE}}': socialImage,
+    '{{PUBLISHED_AT_ISO}}': publishedTimeIso,
+    '{{DISPLAY_DATE}}': displayDate,
+    '{{TAG_MARKUP}}': tagMarkup,
+    '{{AD_TOP}}': adTopMarkup,
+    '{{INTRO_MARKUP}}': introMarkup,
+    '{{SECTION_MARKUP}}': sectionMarkup,
+    '{{AD_BOTTOM}}': adBottomMarkup,
+    '{{CONCLUSION_MARKUP}}': conclusionMarkup,
+  };
+
+  const templatedHtml = renderArticleTemplate(templateSlots);
+  if (templatedHtml) {
+    return templatedHtml;
+  }
+
   return `<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${article.title} | AI情報ブログ</title>
-  <meta name="description" content="${article.summary ?? ''}">
+  <meta name="description" content="${summaryText}">
 
   <script src="${normalizedAssetBase}assets/js/analytics.js"></script>
 
@@ -478,16 +532,16 @@ ${toHtmlParagraphs(article.conclusion)}
   <!-- Open Graph / SNS共有 -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="${article.title} | AI情報ブログ">
-  <meta property="og:description" content="${article.summary ?? ''}">
+  <meta property="og:description" content="${summaryText}">
   <meta property="og:image" content="${socialImage}">
   <meta property="og:site_name" content="AI情報ブログ">
   <meta property="og:locale" content="ja_JP">
-  <meta property="article:published_time" content="${dateParts.dotted}T00:00:00+09:00">
+  <meta property="article:published_time" content="${publishedTimeIso}">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${article.title} | AI情報ブログ">
-  <meta name="twitter:description" content="${article.summary ?? ''}">
+  <meta name="twitter:description" content="${summaryText}">
   <meta name="twitter:image" content="${socialImage}">
 
   <link rel="stylesheet" href="${cssHref}">
@@ -501,9 +555,9 @@ ${toHtmlParagraphs(article.conclusion)}
         <p class="article-eyebrow">Daily Briefing</p>
         <div class="article-hero-layout">
           <div class="article-hero-main">
-            <p class="post-meta">${dateParts.dotted || meta.date}</p>
+            <p class="post-meta">${displayDate}</p>
             <h1>${article.title}</h1>
-            <p class="article-summary">${article.summary ?? ''}</p>
+            <p class="article-summary">${summaryText}</p>
           </div>
         </div>
 
