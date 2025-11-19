@@ -1,56 +1,84 @@
-/* === スケルトンローダー === */
+/**
+ * @fileoverview スケルトンローダーのスタイル
+ * コンテンツの読み込み中に表示されるプレースホルダー（スケルトン）のスタイルを定義します。
+ * ユーザーにコンテンツがロード中であることを視覚的に伝え、UXを向上させます。
+ */
+
+/*
+ * スケルトン要素の基本スタイル (.skeleton)
+ */
 .skeleton {
-  animation: skeleton-pulse 1.5s ease-in-out infinite;
-  border-style: dashed;
-  border-color: var(--border-subtle);
-  min-height: 220px;
-  background: var(--surface-tertiary);
+  animation: skeleton-pulse 1.5s ease-in-out infinite; /* 点滅アニメーション */
+  border-style: dashed; /* 破線ボーダー */
+  border-color: var(--border-subtle); /* 控えめなボーダー色 */
+  min-height: 220px; /* 最小の高さ */
+  background: var(--surface-tertiary); /* 背景色 */
 }
 
+/*
+ * スケルトンメディア（画像などのプレースホルダー）のスタイル (.skeleton-media)
+ */
 .skeleton-media {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15));
-  overflow: hidden;
-  margin-bottom: var(--space-md);
+  padding-top: 56.25%; /* 16:9のアスペクト比を維持 */
+  border-radius: var(--radius-lg); /* 角丸 */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15)); /* 背景グラデーション */
+  overflow: hidden; /* はみ出しを隠す */
+  margin-bottom: var(--space-md); /* 下部の余白 */
 }
 
+/*
+ * スケルトンメディア内のシマー効果 (.skeleton-media::after)
+ * 光が流れるようなアニメーションを表現します。
+ */
 .skeleton-media::after {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: 0; /* 親要素いっぱいに広げる */
   background: linear-gradient(90deg,
     rgba(99, 102, 241, 0.05) 0%,
     rgba(99, 102, 241, 0.2) 50%,
-    rgba(99, 102, 241, 0.05) 100%);
-  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+    rgba(99, 102, 241, 0.05) 100%); /* 光のグラデーション */
+  animation: skeleton-shimmer 1.5s ease-in-out infinite; /* シマーアニメーション */
 }
 
+/*
+ * スケルトンライン（テキスト行のプレースホルダー）のスタイル (.skeleton-line)
+ */
 .skeleton-line {
-  height: 18px;
+  height: 18px; /* 行の高さ */
   background: linear-gradient(90deg,
     rgba(99, 102, 241, 0.08) 0%,
     rgba(99, 102, 241, 0.15) 50%,
-    rgba(99, 102, 241, 0.08) 100%);
-  background-size: 200% 100%;
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-sm);
-  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+    rgba(99, 102, 241, 0.08) 100%); /* 光のグラデーション */
+  background-size: 200% 100%; /* グラデーションのサイズ */
+  border-radius: var(--radius-full); /* 角を丸くする */
+  margin-bottom: var(--space-sm); /* 下部の余白 */
+  animation: skeleton-shimmer 1.5s ease-in-out infinite; /* シマーアニメーション */
 }
 
+/*
+ * 短いスケルトンラインのスタイル (.skeleton-line.short)
+ */
 .skeleton-line.short {
-  width: 65%;
+  width: 65%; /* 幅を短くする */
 }
 
+/*
+ * キーフレームアニメーション: skeleton-pulse
+ * 要素の透明度を変化させ、点滅効果を生み出します。
+ */
 @keyframes skeleton-pulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0.5; } /* 開始と終了は半透明 */
+  50% { opacity: 1; } /* 中間点で完全に表示 */
 }
 
+/*
+ * キーフレームアニメーション: skeleton-shimmer
+ * 背景グラデーションの位置を変化させ、光が流れるような効果を生み出します。
+ */
 @keyframes skeleton-shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% { background-position: 200% 0; } /* グラデーションの開始位置 */
+  100% { background-position: -200% 0; } /* グラデーションの終了位置 */
 }
-

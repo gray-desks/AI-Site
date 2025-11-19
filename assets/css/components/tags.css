@@ -1,85 +1,115 @@
-/* === タグシステム === */
+/**
+ * @fileoverview タグコンポーネントのスタイル
+ * 記事に付与されるタグの表示スタイルを定義します。
+ * 様々な色合いのタグを表現するためのスタイルが含まれます。
+ */
+
+/*
+ * タグリスト (.tag-list) の基本スタイル
+ * タグを横並びに表示し、適切な間隔を空けます。
+ */
 .tag-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
+  flex-wrap: wrap; /* 画面幅が狭い場合にタグを折り返す */
+  gap: var(--space-xs); /* タグ間の余白 */
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: none; /* リストのデフォルトスタイルを削除 */
   position: relative;
-  z-index: 1;
+  z-index: 1; /* 他の要素より手前に表示 */
 }
 
+/*
+ * 個々のタグ (.tag) の基本スタイル
+ */
 .tag {
-  padding: 0.35rem 0.9rem;
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 600;
+  padding: 0.35rem 0.9rem; /* 内側の余白 */
+  border-radius: var(--radius-full); /* 角を完全に丸くしてピル型にする */
+  font-size: 0.75rem; /* フォントサイズを小さくする */
+  font-weight: 600; /* 太字 */
+  
+  /* デフォルトの背景グラデーション */
   background: linear-gradient(135deg, rgba(255, 148, 195, 0.35), rgba(255, 212, 82, 0.25));
-  color: var(--color-primary-dim);
-  border: 1px solid rgba(255, 173, 191, 0.4);
-  transition: all var(--transition-fast);
-  white-space: nowrap;
+  color: var(--color-primary-dim); /* テキストの色 */
+  border: 1px solid rgba(255, 173, 191, 0.4); /* ボーダー */
+  transition: all var(--transition-fast); /* 全ての変化を滑らかにアニメーション */
+  white-space: nowrap; /* タグ内のテキストを折り返さない */
 }
 
+/*
+ * タグのホバー時のスタイル
+ */
 .tag:hover {
-  background: linear-gradient(135deg, rgba(255, 148, 195, 0.55), rgba(255, 212, 82, 0.45));
-  border-color: var(--border-strong);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  background: linear-gradient(135deg, rgba(255, 148, 195, 0.55), rgba(255, 212, 82, 0.45)); /* 背景グラデーションを濃くする */
+  border-color: var(--border-strong); /* ボーダーを濃くする */
+  transform: translateY(-2px); /* 少し上に浮き上がる */
+  box-shadow: var(--shadow-sm); /* 影を追加 */
 }
 
+/*
+ * `data-tag-style` 属性によるタグのバリエーション
+ * 各タグに異なる色合いを適用します。
+ */
+
+/* スカイブルー系のタグ */
 .tag[data-tag-style='accent-sky'] {
   background: rgba(56, 189, 248, 0.2);
   border-color: rgba(2, 132, 199, 0.4);
   color: #0369a1;
 }
 
+/* ピンク系のタグ */
 .tag[data-tag-style='accent-pink'] {
   background: rgba(251, 113, 133, 0.2);
   border-color: rgba(244, 63, 94, 0.35);
   color: #be123c;
 }
 
+/* パープル系のタグ */
 .tag[data-tag-style='accent-purple'] {
   background: rgba(196, 181, 253, 0.25);
   border-color: rgba(167, 139, 250, 0.4);
   color: #6d28d9;
 }
 
+/* ライムグリーン系のタグ */
 .tag[data-tag-style='accent-lime'] {
   background: rgba(190, 242, 100, 0.25);
   border-color: rgba(132, 204, 22, 0.4);
   color: #3f6212;
 }
 
+/* ゴールド系のタグ */
 .tag[data-tag-style='accent-gold'] {
   background: rgba(253, 230, 138, 0.3);
   border-color: rgba(245, 158, 11, 0.45);
   color: #b45309;
 }
 
+/* ラベンダー系のタグ */
 .tag[data-tag-style='accent-lavender'] {
   background: rgba(221, 214, 254, 0.35);
   border-color: rgba(196, 181, 253, 0.45);
   color: #5b21b6;
 }
 
+/* ティール系のタグ */
 .tag[data-tag-style='accent-teal'] {
   background: rgba(125, 211, 252, 0.25);
   border-color: rgba(45, 212, 191, 0.45);
   color: #0f766e;
 }
 
+/* オレンジ系のタグ */
 .tag[data-tag-style='accent-orange'] {
   background: rgba(254, 215, 170, 0.3);
   border-color: rgba(251, 146, 60, 0.45);
   color: #c2410c;
 }
 
+/* ニュートラル（無彩色）系のタグ */
 .tag[data-tag-style='accent-neutral'] {
   background: rgba(226, 232, 240, 0.8);
   border-color: rgba(148, 163, 184, 0.5);
   color: #334155;
 }
-
