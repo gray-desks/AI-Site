@@ -5,8 +5,8 @@ on:
   schedule:
     # 09:00 JST / 00:00 UTC
     - cron: '0 0 * * *'
-    # 21:00 JST / 12:00 UTC
-    - cron: '0 12 * * *'
+    # 21:00 JST / 12:00 UTC (一時的に停止中)
+    # - cron: '0 12 * * *'
 
 permissions:
   contents: write
