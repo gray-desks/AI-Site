@@ -7,8 +7,10 @@
 /* === ヒーローセクション (#hero, .hero-panel) === */
 #hero,
 .hero-panel {
-  /* 柔らかいグラデーション背景 */
+  /* 柔らかいグラデーション背景（アニメーション付き） */
   background: linear-gradient(165deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 237, 244, 0.92) 60%, rgba(255, 248, 228, 0.9) 100%);
+  background-size: 200% 200%; /* アニメーション用に背景を拡大 */
+  animation: gentleGradient 30s ease-in-out infinite; /* 柔らかいグラデーションアニメーション */
   border: 1px solid rgba(255, 190, 210, 0.7); /* ボーダー */
   border-radius: var(--radius-2xl); /* 大きめの角丸 */
   padding: clamp(2rem, 5vw, 3.5rem); /* レスポンシブな内側余白 */
@@ -45,6 +47,7 @@
   background: radial-gradient(circle, rgba(255, 183, 197, 0.35) 0%, rgba(255, 212, 82, 0.18) 50%, transparent 70%);
   pointer-events: none;
   animation: float 20s ease-in-out infinite; /* 浮遊アニメーション */
+  will-change: transform, opacity; /* パフォーマンス最適化 */
 }
 
 /*
@@ -61,6 +64,8 @@
   height: 480px;
   background: radial-gradient(circle, rgba(183, 225, 247, 0.35) 0%, transparent 70%);
   pointer-events: none;
+  animation: floatReverse 25s ease-in-out infinite; /* 逆方向の浮遊アニメーション */
+  will-change: transform, opacity; /* パフォーマンス最適化 */
 }
 
 /*
@@ -68,9 +73,87 @@
  * 要素をゆっくりと浮遊させるアニメーション。
  */
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(30px, -30px) rotate(5deg); }
-  66% { transform: translate(-20px, 20px) rotate(-3deg); }
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.35;
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(5deg);
+    opacity: 0.45;
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(-3deg);
+    opacity: 0.3;
+  }
+}
+
+/*
+ * キーフレームアニメーション: gentleGradient
+ * 背景のグラデーションが柔らかく変化するアニメーション。
+ */
+@keyframes gentleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 75%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 25%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*
+ * キーフレームアニメーション: floatReverse
+ * float アニメーションとは逆方向に動く浮遊アニメーション。
+ */
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.35;
+  }
+  33% {
+    transform: translate(-25px, 25px) rotate(-4deg);
+    opacity: 0.3;
+  }
+  66% {
+    transform: translate(20px, -20px) rotate(3deg);
+    opacity: 0.4;
+  }
+}
+
+/*
+ * キーフレームアニメーション: fadeInUp
+ * 下から上にフェードインするアニメーション。
+ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+ * キーフレームアニメーション: shimmer
+ * グラデーションテキストが微かに光るアニメーション。
+ */
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
 }
 
 /*
@@ -86,10 +169,12 @@
   color: var(--color-primary);
   /* テキストにグラデーションを適用 */
   background: linear-gradient(135deg, var(--color-primary), var(--color-accent-secondary));
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: var(--space-sm);
+  animation: fadeInUp 0.8s ease-out, shimmer 8s ease-in-out infinite; /* フェードイン＆シマーアニメーション */
 }
 
 /*
@@ -103,6 +188,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: fadeInUp 1s ease-out 0.2s both; /* フェードインアニメーション（遅延0.2秒） */
 }
 
 /*
@@ -114,6 +200,7 @@
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-secondary);
+  animation: fadeInUp 1s ease-out 0.4s both; /* フェードインアニメーション（遅延0.4秒） */
 }
 
 /* === ヒーロー統計カード (.hero-stats) === */
@@ -137,6 +224,22 @@
   overflow: hidden;
   transition: all var(--transition-base);
   box-shadow: var(--shadow-sm);
+  animation: fadeInUp 1s ease-out both; /* フェードインアニメーション */
+}
+
+/*
+ * 各統計カードを順番に表示
+ */
+.hero-stats li:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.hero-stats li:nth-child(2) {
+  animation-delay: 0.65s;
+}
+
+.hero-stats li:nth-child(3) {
+  animation-delay: 0.8s;
 }
 
 /*

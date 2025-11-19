@@ -48,6 +48,8 @@
   /* 最小250px、最大1frの幅で自動的にカラムを配置 */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-xl); /* グリッドアイテム間の余白 */
+  /* 3D効果のためのパースペクティブを設定 */
+  perspective: 1000px;
 }
 
 /*
@@ -61,10 +63,14 @@
   padding: var(--space-xl);
   min-height: 200px; /* 最小の高さ */
   position: relative;
-  transition: all var(--transition-base); /* 全ての変化をアニメーション */
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); /* バウンス効果のあるイージング */
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  /* 3D変形を保持 */
+  transform-style: preserve-3d;
+  /* 裏面を表示しない */
+  backface-visibility: hidden;
 }
 
 /*
@@ -93,8 +99,13 @@
 .workflow-card:hover {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 250, 235, 0.95) 100%); /* 背景を少し明るく */
   border-color: var(--border-strong); /* ボーダーを濃くする */
-  transform: translateY(-4px); /* 少し上に浮き上がる */
-  box-shadow: var(--shadow-lg); /* 影を強調 */
+  /* 3D立体的な動き: 上に浮き上がり、Y軸周りに少し回転、少し拡大 */
+  transform: translateY(-12px) rotateX(5deg) scale(1.02);
+  /* より強い影で立体感を演出 */
+  box-shadow:
+    0 20px 40px rgba(255, 183, 197, 0.25),
+    0 10px 20px rgba(0, 0, 0, 0.1),
+    0 0 60px rgba(255, 183, 197, 0.15);
 }
 
 /*
@@ -114,6 +125,17 @@
   text-transform: uppercase; /* 大文字にする */
   color: var(--color-primary); /* プライマリカラー */
   margin-bottom: var(--space-xs);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/*
+ * ホバー時にラベルを前に出して明るくする
+ */
+.workflow-card:hover .workflow-step {
+  transform: translateZ(15px);
+  color: var(--color-accent-secondary);
 }
 
 /*
@@ -123,6 +145,17 @@
   margin: 0 0 var(--space-sm);
   color: var(--text-primary);
   font-size: 1.2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/*
+ * ホバー時に見出しを少し前に出す
+ */
+.workflow-card:hover h3 {
+  transform: translateZ(20px);
+  color: var(--color-primary);
 }
 
 /*
@@ -132,6 +165,17 @@
   margin: 0;
   color: var(--text-tertiary);
   line-height: 1.6;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/*
+ * ホバー時に段落を少し前に出す
+ */
+.workflow-card:hover p {
+  transform: translateZ(10px);
+  color: var(--text-secondary);
 }
 
 /* === ソースグリッド (.source-grid) === */
