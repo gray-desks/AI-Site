@@ -1,0 +1,85 @@
+/* === タグシステム === */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  z-index: 1;
+}
+
+.tag {
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(255, 148, 195, 0.35), rgba(255, 212, 82, 0.25));
+  color: var(--color-primary-dim);
+  border: 1px solid rgba(255, 173, 191, 0.4);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tag:hover {
+  background: linear-gradient(135deg, rgba(255, 148, 195, 0.55), rgba(255, 212, 82, 0.45));
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.tag[data-tag-style='accent-sky'] {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: rgba(2, 132, 199, 0.4);
+  color: #0369a1;
+}
+
+.tag[data-tag-style='accent-pink'] {
+  background: rgba(251, 113, 133, 0.2);
+  border-color: rgba(244, 63, 94, 0.35);
+  color: #be123c;
+}
+
+.tag[data-tag-style='accent-purple'] {
+  background: rgba(196, 181, 253, 0.25);
+  border-color: rgba(167, 139, 250, 0.4);
+  color: #6d28d9;
+}
+
+.tag[data-tag-style='accent-lime'] {
+  background: rgba(190, 242, 100, 0.25);
+  border-color: rgba(132, 204, 22, 0.4);
+  color: #3f6212;
+}
+
+.tag[data-tag-style='accent-gold'] {
+  background: rgba(253, 230, 138, 0.3);
+  border-color: rgba(245, 158, 11, 0.45);
+  color: #b45309;
+}
+
+.tag[data-tag-style='accent-lavender'] {
+  background: rgba(221, 214, 254, 0.35);
+  border-color: rgba(196, 181, 253, 0.45);
+  color: #5b21b6;
+}
+
+.tag[data-tag-style='accent-teal'] {
+  background: rgba(125, 211, 252, 0.25);
+  border-color: rgba(45, 212, 191, 0.45);
+  color: #0f766e;
+}
+
+.tag[data-tag-style='accent-orange'] {
+  background: rgba(254, 215, 170, 0.3);
+  border-color: rgba(251, 146, 60, 0.45);
+  color: #c2410c;
+}
+
+.tag[data-tag-style='accent-neutral'] {
+  background: rgba(226, 232, 240, 0.8);
+  border-color: rgba(148, 163, 184, 0.5);
+  color: #334155;
+}
+

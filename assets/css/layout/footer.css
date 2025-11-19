@@ -1,0 +1,11 @@
+/* === フッター === */
+.site-footer {
+  margin-top: var(--space-3xl);
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-2xl) 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 247, 240, 0.95));
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+

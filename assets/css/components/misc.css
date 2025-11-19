@@ -1,0 +1,243 @@
+/* === 情報パネル === */
+.info-panel {
+  margin-top: var(--space-3xl);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 245, 0.9) 45%, rgba(255, 248, 228, 0.88) 100%);
+  border: 1px solid rgba(255, 190, 210, 0.6);
+  border-radius: var(--radius-2xl);
+  padding: clamp(2rem, 4vw, 3rem);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-panel::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 214, 235, 0.35) 0%, rgba(183, 225, 247, 0.25) 45%, transparent 70%);
+  pointer-events: none;
+}
+
+.info-panel h2 {
+  margin-bottom: var(--space-xl);
+}
+
+/* === ワークフローグリッド === */
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xl);
+}
+
+.workflow-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 245, 238, 0.92) 100%);
+  border: 1px solid rgba(255, 190, 210, 0.5);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  min-height: 200px;
+  position: relative;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.workflow-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--color-primary) 0%,
+    var(--color-accent-secondary) 50%,
+    var(--color-accent) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-spring);
+}
+
+.workflow-card:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 250, 235, 0.95) 100%);
+  border-color: var(--border-strong);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.workflow-card:hover::before {
+  transform: scaleX(1);
+}
+
+.workflow-step {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.workflow-card h3 {
+  margin: 0 0 var(--space-sm);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+}
+
+.workflow-card p {
+  margin: 0;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+}
+
+/* === ソースグリッド === */
+.source-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.source-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 245, 238, 0.92) 100%);
+  border: 1px solid rgba(255, 190, 210, 0.5);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  line-height: 1.6;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.source-card::after {
+  content: '→';
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all var(--transition-base);
+}
+
+.source-card:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 248, 236, 0.95) 100%);
+  border-color: var(--border-strong);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.source-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.source-card h3 {
+  margin: 0 0 var(--space-xs);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.source-card a {
+  color: var(--color-primary-bright);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.source-card a:hover {
+  color: var(--color-accent);
+}
+
+.source-meta {
+  margin-top: var(--space-sm);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* === 記事コンテンツ === */
+.post-article {
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 244, 239, 0.92) 100%);
+  border: 1px solid rgba(255, 190, 210, 0.6);
+  border-radius: var(--radius-2xl);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  box-shadow: var(--shadow-lg);
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.post-article h1 {
+  margin-top: 0;
+  margin-bottom: var(--space-xl);
+  color: var(--text-primary);
+}
+
+.post-article h2,
+.post-article h3 {
+  color: var(--text-primary);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+}
+
+.post-article ul,
+.post-article ol {
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.post-article li {
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+.post-article a {
+  color: var(--color-primary-bright);
+  text-decoration: underline;
+  text-decoration-color: rgba(91, 158, 255, 0.3);
+  text-underline-offset: 3px;
+  transition: all var(--transition-fast);
+}
+
+.post-article a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.post-article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  margin: var(--space-xl) 0;
+  box-shadow: var(--shadow-md);
+}
+
+.post-article code {
+  background: var(--surface-tertiary);
+  padding: 0.2em 0.5em;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+  color: var(--color-accent-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.post-article pre {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  overflow-x: auto;
+  margin: var(--space-lg) 0;
+}
+
+.post-article pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+

@@ -1,0 +1,72 @@
+/* ============================================
+   AI情報ブログ - デザイントークン
+   ============================================ */
+
+/* === カラーシステム & デザイントークン === */
+:root {
+  /* フォント */
+  --font-primary: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+                  system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "SF Pro Display", "Hiragino Sans", "Noto Sans JP", sans-serif;
+
+  /* カラーパレット - 柔らかく明るい配色 */
+  --color-bg-base: #fff8fc;
+  --color-bg-elevated: #fffefd;
+  --color-bg-overlay: rgba(255, 255, 255, 0.94);
+
+  /* サーフェス */
+  --surface-primary: rgba(255, 255, 255, 0.92);
+  --surface-secondary: rgba(255, 247, 243, 0.9);
+  --surface-tertiary: rgba(255, 182, 193, 0.18);
+  --surface-hover: rgba(255, 182, 193, 0.3);
+
+  /* ボーダー */
+  --border-subtle: rgba(255, 173, 191, 0.35);
+  --border-medium: rgba(255, 173, 191, 0.55);
+  --border-strong: rgba(255, 173, 191, 0.75);
+
+  /* アクセントカラー - ビタミンカラーの差し色 */
+  --color-primary: #ff74b1;
+  --color-primary-bright: #ff9aca;
+  --color-primary-dim: #f25493;
+  --color-accent: #ffb347;
+  --color-accent-secondary: #ffd452;
+  --color-success: #2ec885;
+  --color-warning: #f7a072;
+
+  /* テキストカラー - コントラストを確保したダークトーン */
+  --text-primary: #3a2c41;
+  --text-secondary: #5a4c5f;
+  --text-tertiary: #7a6a7f;
+  --text-muted: #b09ab0;
+
+  /* シャドウシステム - 柔らかな光感 */
+  --shadow-sm: 0 3px 10px rgba(255, 173, 191, 0.18);
+  --shadow-md: 0 10px 30px rgba(255, 173, 191, 0.25);
+  --shadow-lg: 0 18px 45px rgba(255, 173, 191, 0.3);
+  --shadow-xl: 0 26px 60px rgba(255, 173, 191, 0.32);
+  --shadow-glow: 0 0 55px rgba(255, 173, 191, 0.45);
+
+  /* スペーシングシステム */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* ボーダー半径 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* トランジション */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}

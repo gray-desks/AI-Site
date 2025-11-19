@@ -1,0 +1,56 @@
+/* === スケルトンローダー === */
+.skeleton {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  border-style: dashed;
+  border-color: var(--border-subtle);
+  min-height: 220px;
+  background: var(--surface-tertiary);
+}
+
+.skeleton-media {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15));
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+}
+
+.skeleton-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(99, 102, 241, 0.05) 0%,
+    rgba(99, 102, 241, 0.2) 50%,
+    rgba(99, 102, 241, 0.05) 100%);
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-line {
+  height: 18px;
+  background: linear-gradient(90deg,
+    rgba(99, 102, 241, 0.08) 0%,
+    rgba(99, 102, 241, 0.15) 50%,
+    rgba(99, 102, 241, 0.08) 100%);
+  background-size: 200% 100%;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-line.short {
+  width: 65%;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+

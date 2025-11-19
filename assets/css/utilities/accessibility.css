@@ -1,0 +1,79 @@
+/* === アクセシビリティ - 動きを抑える設定 === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === ダークモード対応（将来の拡張用） === */
+@media (prefers-color-scheme: dark) {
+  /* 現在はライトモードのみ対応 */
+  /* 将来的にダークモード変数をここに追加可能 */
+}
+
+/* === パフォーマンス最適化 === */
+
+/* GPU アクセラレーション */
+.post-card,
+.workflow-card,
+.source-card,
+.button,
+.site-header {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* レイアウトシフト防止 */
+.logo,
+.post-card img {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* フォント読み込み最適化 */
+@supports (font-display: swap) {
+  @font-face {
+    font-display: swap;
+  }
+}
+
+/* === 高解像度ディスプレイ対応 === */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* === 印刷スタイル === */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .site-header,
+  .site-footer,
+  .ad-container,
+  .article-share-links,
+  .button {
+    display: none;
+  }
+
+  .article-content,
+  .post-article {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
