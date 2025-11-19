@@ -327,22 +327,45 @@
   initTocHighlight();
 
   // === 記事詳細ページのタグクリック機能 ===
-  function initArticleTagClick() {
-    const articleTags = document.querySelectorAll('.article-tags .tag[data-tag-slug]');
+  // イベント委譲を使用してdocument全体でタグクリックを監視
+  document.addEventListener('click', (e) => {
+    // クリックされた要素がタグかどうか確認
+    const tagElement = e.target.closest('.tag[data-tag-slug]');
 
-    articleTags.forEach((tagElement) => {
-      tagElement.style.cursor = 'pointer';
-      tagElement.addEventListener('click', (e) => {
-        e.preventDefault();
-        const slug = tagElement.getAttribute('data-tag-slug');
-        if (!slug) return;
+    if (!tagElement) return;
 
-        // index.htmlにタグパラメータ付きでリダイレクト
-        const basePath = window.location.pathname.includes('/posts/') ? '../' : './';
-        window.location.href = `${basePath}index.html?tag=${encodeURIComponent(slug)}`;
-      });
+    // article-page内のタグのみ処理
+    const isArticlePage = document.body.classList.contains('article-page');
+    if (!isArticlePage) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const slug = tagElement.getAttribute('data-tag-slug');
+    console.log('タグクリック:', slug);
+
+    if (!slug) return;
+
+    // index.htmlにタグパラメータ付きでリダイレクト
+    const basePath = window.location.pathname.includes('/posts/') ? '../' : './';
+    const targetUrl = `${basePath}index.html?tag=${encodeURIComponent(slug)}`;
+    console.log('リダイレクト先:', targetUrl);
+    window.location.href = targetUrl;
+  });
+
+  // タグにカーソルスタイルを適用
+  const applyTagStyles = () => {
+    const articleTags = document.querySelectorAll('.article-tags .tag[data-tag-slug], .article-hero .tag[data-tag-slug]');
+    console.log('タグ要素数 =', articleTags.length);
+    articleTags.forEach((tag) => {
+      tag.style.cursor = 'pointer';
     });
-  }
+  };
 
-  initArticleTagClick();
+  // DOMが読み込まれた後にスタイルを適用
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyTagStyles);
+  } else {
+    applyTagStyles();
+  }
 })();
