@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Researcher
- * - Processes collected candidates from data/candidates.json
- * - Extracts search keywords using OpenAI API
- * - Fetches Google search results and generates summaries
- * - Updates candidates with research data (status -> researched)
+ * @fileoverview Researcher: 記事候補の調査ステージ
+ * - `data/candidates.json` から `status='collected'` の候補を処理します。
+ * - OpenAI API を利用して、動画のタイトルと説明から検索キーワードを抽出します。
+ * - Google Search API を使って関連記事を検索し、その内容を要約します。
+ * - 調査結果で候補情報を更新し、ステータスを `researched` に変更します。
  */
 
 const path = require('path');
@@ -19,15 +19,26 @@ const { createLogger } = require('../lib/logger');
 const { createMetricsTracker, average } = require('../lib/metrics');
 const { summarizeSearchResult } = require('./services/summaryBuilder');
 
+// --- パス設定 ---
+// プロジェクトのルートディレクトリを取得
 const root = path.resolve(__dirname, '..', '..');
+// 実行結果の出力先ディレクトリのパス
 const outputDir = path.join(root, 'automation', 'output', 'researcher');
 
+// --- 定数設定 ---
 const { GOOGLE_TOP_LIMIT } = RESEARCHER;
+// ロガーとメトリクス追跡ツールを初期化
 const logger = createLogger('researcher');
 const metricsTracker = createMetricsTracker('researcher');
 
+/**
+ * 指定されたミリ秒だけ処理を待機します。APIのレート制限を回避するために使用します。
+ * @param {number} ms - 待機する時間（ミリ秒）
+ * @returns {Promise<void>}
+ */
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+// Google検索結果から除外するドメインのリスト（主にSNSなど）
 const BLOCKED_DOMAINS = [
   'x.com',
   'twitter.com',
@@ -39,23 +50,39 @@ const BLOCKED_DOMAINS = [
   'm.youtube.com',
 ];
 
+/**
+ * URLが除外対象のドメインに一致するか判定します。
+ * @param {string} url - 判定するURL
+ * @returns {boolean} 除外対象であればtrue
+ */
 const shouldSkipResult = (url) => {
   if (!url) return true;
   try {
     const hostname = new URL(url).hostname.toLowerCase();
+    // 除外リストのドメインと後方一致するかチェック
     return BLOCKED_DOMAINS.some(
       (blocked) => hostname === blocked || hostname.endsWith(`.${blocked}`),
     );
   } catch {
-    return true;
+    return true; // URLのパースに失敗した場合も除外
   }
 };
 
+/**
+ * Googleで検索し、上位記事の要約を生成します。
+ * @param {string} query - 検索クエリ
+ * @param {string} googleApiKey - Google Search APIキー
+ * @param {string} googleCx - Googleカスタム検索エンジンID
+ * @param {string} openaiApiKey - OpenAI APIキー
+ * @returns {Promise<Array<object>>} 要約情報の配列
+ */
 const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey) => {
   if (!query || !googleApiKey || !googleCx) return [];
   try {
-    const desiredCount = Math.max(1, GOOGLE_TOP_LIMIT);
+    const desiredCount = Math.max(1, GOOGLE_TOP_LIMIT); // 取得したい記事の数
+    // SNSなどを除外することを考慮し、多めにリクエスト (最大10件)
     const requestCount = Math.min(desiredCount * 3, 10);
+    // Google検索を実行
     const res = await searchTopArticles({
       apiKey: googleApiKey,
       cx: googleCx,
@@ -63,6 +90,7 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
       num: requestCount,
     });
     const items = Array.isArray(res.items) ? res.items : [];
+    // 除外ドメインに一致しないものをフィルタリング
     const filteredItems = items.filter((item) => {
       const skip = shouldSkipResult(item.link);
       if (skip && item?.link) {
@@ -70,12 +98,16 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
       }
       return !skip;
     });
+    // フィルタ後の結果が多ければ上限数に、少なければ元の結果から上限数に絞る
     const limitedItems = filteredItems.length > 0
       ? filteredItems.slice(0, desiredCount)
       : items.slice(0, desiredCount);
+      
     const summaries = [];
+    // 各検索結果をループして要約を作成
     for (const [index, item] of limitedItems.entries()) {
       try {
+        // OpenAI APIを使って検索結果を要約
         const summaryEntry = await summarizeSearchResult(item, index, openaiApiKey);
         summaries.push(summaryEntry);
         logger.info(
@@ -85,6 +117,7 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
         logger.warn(
           `Google検索結果の要約作成に失敗 (${item?.link || 'unknown'}): ${error.message}`,
         );
+        // 要約に失敗した場合は、スニペットをフォールバックとして使用
         summaries.push({
           title: item.title || `検索結果${index + 1}`,
           url: item.link,
@@ -92,18 +125,23 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
           summary: item.snippet || '',
         });
       }
+      // APIレート制限対策として待機
       await sleep(RATE_LIMITS.SEARCH_RESULT_WAIT_MS);
     }
     return summaries;
   } catch (error) {
     logger.warn(`Google Search API 呼び出しに失敗: ${error.message}`);
-    return [];
+    return []; // エラーが発生した場合は空の配列を返す
   }
 };
 
+/**
+ * Researcherステージのメイン処理
+ */
 const runResearcher = async () => {
   logger.info('ステージ開始: pending候補のリサーチを実行します。');
 
+  // 環境変数からAPIキーを取得
   const openaiApiKey = process.env.OPENAI_API_KEY;
   if (!openaiApiKey) {
     throw new Error('OPENAI_API_KEY が設定されていません。GitHub Secrets に登録してください。');
@@ -117,7 +155,7 @@ const runResearcher = async () => {
 
   const candidates = readCandidates();
 
-  // リサーチが必要な候補を抽出（status=collected）
+  // リサーチが必要な候補（status='collected'）を抽出
   const candidatesToResearch = candidates.filter((c) => c.status === 'collected');
 
   if (candidatesToResearch.length === 0) {
@@ -136,19 +174,21 @@ const runResearcher = async () => {
   let successCount = 0;
   let failureCount = 0;
 
+  // 各候補に対してリサーチ処理を実行
   for (const candidate of candidatesToResearch) {
     metricsTracker.increment('candidates.processed');
     const video = candidate.video;
 
     logger.info(`処理中: ${video.title}`);
 
-    // キーワード抽出
-    let searchQuery = video.title;
+    // --- 1. キーワード抽出 ---
+    let searchQuery = video.title; // フォールバックとして動画タイトルを使用
     let keywordExtractionMethod = 'fallback';
     const keywordStartTime = Date.now();
 
     try {
       logger.info(`キーワード抽出開始: "${video.title}"`);
+      // OpenAI APIを使ってキーワードを抽出
       searchQuery = await extractSearchKeywords(
         openaiApiKey,
         video.title,
@@ -157,7 +197,6 @@ const runResearcher = async () => {
       const keywordEndTime = Date.now();
       metricsTracker.recordDuration('keywordExtraction.timeMs', keywordEndTime - keywordStartTime);
 
-      // 抽出されたキーワードが元のタイトルと同じ場合は警告
       if (searchQuery === video.title) {
         logger.warn(`⚠️ キーワード抽出が元のタイトルと同じです: "${searchQuery}"`);
       }
@@ -175,7 +214,7 @@ const runResearcher = async () => {
       logger.error(`⚠️ キーワード抽出失敗: ${error.message}`);
       logger.error(`  - エラー詳細: ${error.stack || 'スタックトレースなし'}`);
       logger.error(`  - 対象タイトル: "${video.title}"`);
-      searchQuery = video.title;
+      searchQuery = video.title; // 失敗した場合は動画タイトルをそのまま使用
       keywordExtractionMethod = 'fallback';
 
       errors.push({
@@ -187,16 +226,18 @@ const runResearcher = async () => {
       });
     }
 
-    // レート制限対策
+    // APIレート制限対策として待機
     await sleep(RATE_LIMITS.KEYWORD_EXTRACTION_WAIT_MS);
 
-    // トピックキー抽出
+    // --- 2. トピックキー抽出 ---
+    // フォールバック用のトピックキーを生成
     let topicKeyInfo = {
       topicKey: slugify(video.title, 'ai-topic'),
       method: 'fallback',
       raw: video.title,
     };
     try {
+      // OpenAI APIを使ってトピックキーを抽出
       topicKeyInfo = await deriveTopicKey(openaiApiKey, video, candidate.source);
       const confidenceText =
         typeof topicKeyInfo.confidence === 'number'
@@ -205,6 +246,7 @@ const runResearcher = async () => {
       logger.info(`トピックキー抽出: ${topicKeyInfo.topicKey} (confidence: ${confidenceText})`);
     } catch (error) {
       logger.warn(`トピックキー抽出に失敗: ${error.message}`);
+      // 失敗した場合はフォールバック値を使用
       topicKeyInfo = {
         topicKey: slugify(video.title, 'ai-topic'),
         method: 'fallback',
@@ -213,12 +255,13 @@ const runResearcher = async () => {
       };
     }
 
-    // Google検索
+    // --- 3. Google検索と要約 ---
     let searchSummaries = [];
     const stopSearchTimer = metricsTracker.startTimer('googleSearch.timeMs');
 
     try {
       logger.info(`Google検索: "${searchQuery}"`);
+      // 抽出したキーワードでGoogle検索し、結果を要約
       searchSummaries = await fetchSearchSummaries(searchQuery, googleApiKey, googleCx, openaiApiKey);
       const elapsed = stopSearchTimer();
 
@@ -232,7 +275,7 @@ const runResearcher = async () => {
       logger.error(`⚠️ Google検索失敗: ${error.message}`);
       logger.error(`  - エラー詳細: ${error.stack || 'スタックトレースなし'}`);
       logger.error(`  - 検索クエリ: "${searchQuery}" (elapsed ${elapsed}ms)`);
-      searchSummaries = [];
+      searchSummaries = []; // 失敗した場合は空の配列を設定
 
       errors.push({
         candidateId: candidate.id,
@@ -244,8 +287,9 @@ const runResearcher = async () => {
       });
     }
 
-    // 候補を更新
+    // --- 4. 候補情報の更新 ---
     const now = new Date().toISOString();
+    // リサーチ結果を候補オブジェクトにマージ
     const updatedCandidate = {
       ...candidate,
       searchQuery: {
@@ -265,12 +309,12 @@ const runResearcher = async () => {
         error: topicKeyInfo.error || null,
       },
       searchSummaries,
-      status: 'researched',
+      status: 'researched', // ステータスを 'researched' に更新
       researchedAt: now,
       updatedAt: now,
     };
 
-    // candidates配列を更新
+    // candidates配列内の該当候補を更新
     const candidateIndex = candidates.findIndex((c) => c.id === candidate.id);
     if (candidateIndex !== -1) {
       candidates[candidateIndex] = updatedCandidate;
@@ -280,17 +324,17 @@ const runResearcher = async () => {
       logger.error(`⚠️ 候補が見つかりません: ${candidate.id}`);
     }
 
-    // レート制限対策
+    // APIレート制限対策として待機
     await sleep(RATE_LIMITS.CANDIDATE_PROCESSING_WAIT_MS);
   }
 
-  // 更新されたcandidatesを保存
+  // 更新された候補リストをファイルに書き込み
   writeCandidates(candidates);
 
-  // 成果物を保存
-  ensureDir(outputDir);
+  // --- 成果物の保存 ---
+  ensureDir(outputDir); // 出力ディレクトリがなければ作成
   const timestamp = new Date().toISOString();
-  // メトリクスサマリー
+  // メトリクスサマリーの計算
   const keywordDurations = metricsTracker.getTimings('keywordExtraction.timeMs');
   const googleDurations = metricsTracker.getTimings('googleSearch.timeMs');
   const avgKeywordTime = average(keywordDurations);
@@ -305,6 +349,7 @@ const runResearcher = async () => {
   const totalResults = metricsTracker.getCounter('googleSearch.totalResults');
   const avgResultsPerSearch = googleSuccess > 0 ? Math.round(totalResults / googleSuccess) : 0;
 
+  // レポート用のメトリクスオブジェクトを作成
   const metricsReport = {
     totalProcessed,
     keywordExtraction: {
@@ -326,6 +371,7 @@ const runResearcher = async () => {
     },
   };
 
+  // 出力データを作成
   const outputData = {
     timestamp,
     processed: totalProcessed,
@@ -333,8 +379,9 @@ const runResearcher = async () => {
     failed: failureCount,
     metrics: metricsReport,
     errors,
+    // 直近1時間でリサーチされた候補のリスト
     researchedCandidates: candidates
-      .filter((c) => c.status === 'researched' && c.researchedAt && new Date(c.researchedAt).getTime() > Date.now() - 3600000)
+      .filter((c) => c.status === 'researched' && c.researchedAt && new Date(c.researchedAt).getTime() > Date.now() - 3600000) 
       .map((c) => ({
         id: c.id,
         videoTitle: c.video.title,
@@ -344,10 +391,12 @@ const runResearcher = async () => {
       })),
   };
 
+  // 成果物をJSONファイルとして保存
   const outputPath = path.join(outputDir, `researcher-${timestamp.split('T')[0]}.json`);
   writeJson(outputPath, outputData);
   logger.info(`成果物を保存しました: ${outputPath}`);
 
+  // --- メトリクスサマリーの表示 ---
   logger.info('\n=== Researcher メトリクスサマリー ===');
   logger.info(`処理候補数: ${totalProcessed}件`);
   logger.info(`成功: ${successCount}件 / 失敗: ${failureCount}件`);
@@ -361,6 +410,7 @@ const runResearcher = async () => {
 
   if (errors.length > 0) {
     logger.warn(`\n⚠️  警告: ${errors.length}件のエラーが発生しました`);
+    // エラーをステップごとに集計
     const errorsByStep = errors.reduce((acc, err) => {
       acc[err.step] = (acc[err.step] || 0) + 1;
       return acc;
@@ -372,8 +422,9 @@ const runResearcher = async () => {
 
   logger.success(`\n完了: ${successCount}件のリサーチが完了しました。`);
 
+  // パイプラインの次のステージに渡す結果オブジェクト
   return {
-    processed: metrics.totalProcessed,
+    processed: totalProcessed,
     succeeded: successCount,
     failed: failureCount,
     errors,
@@ -381,6 +432,7 @@ const runResearcher = async () => {
   };
 };
 
+// スクリプトが直接実行された場合にrunResearcherを実行
 if (require.main === module) {
   runResearcher()
     .then((result) => {

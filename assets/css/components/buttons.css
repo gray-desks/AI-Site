@@ -1,19 +1,34 @@
-/* === メインコンテンツ === */
+/**
+ * @fileoverview メインコンテンツ領域の基本レイアウト
+ * `main` タグや、その中のセクションの基本的な余白（padding, margin）を定義します。
+ * ※ファイル名は `buttons.css` となっていますが、内容はメインレイアウトに関するものです。
+ */
+
+/*
+ * メインコンテンツ領域 (`main` タグ) のスタイル
+ */
 main {
-  padding: var(--space-3xl) 0;
-  position: relative;
+  padding: var(--space-3xl) 0; /* 上下のパディングを大きく取る */
+  position: relative; /* 子要素の配置の基準とするため */
 }
 
+/*
+ * 記事ラッパーのスタイル
+ */
 .article-wrapper {
-  padding: var(--space-2xl) 0 var(--space-3xl);
+  padding: var(--space-2xl) 0 var(--space-3xl); /* 上下のパディングを設定 */
 }
 
-/* セクション間の余白 */
+/*
+ * `main` 直下の `section` 要素間の余白
+ */
 main > section {
-  margin-bottom: var(--space-3xl);
+  margin-bottom: var(--space-3xl); /* 各セクションの下に大きな余白を設ける */
 }
 
+/*
+ * `main` 直下の最後の `section` 要素には、下の余白を設けない
+ */
 main > section:last-child {
   margin-bottom: 0;
 }
-

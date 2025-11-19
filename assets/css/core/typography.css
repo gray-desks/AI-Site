@@ -1,36 +1,60 @@
-/* ============================================
-   タイポグラフィシステム
-   ============================================ */
+/**
+ * @fileoverview タイポグラフィシステム
+ * 見出し、段落、リンクなど、サイト全体のテキスト関連のスタイルを定義します。
+ */
 
+/*
+ * 見出し (h1-h6) の共通スタイル
+ */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  color: var(--text-primary);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  font-family: var(--font-display); /* 見出し用のフォントを変数から指定 */
+  color: var(--text-primary); /* 見出し用の文字色を変数から指定 */
+  font-weight: 700; /* 太字に設定 */
+  letter-spacing: -0.02em; /* 文字間を少し詰めて、視覚的なまとまりを出す */
+  line-height: 1.2; /* 行の高さをフォントサイズの1.2倍に設定 */
 }
 
-h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+/*
+ * 各レベルの見出しのフォントサイズ
+ * `clamp()` を使用して、画面幅に応じてフォントサイズが滑らかに変化する
+ * レスポンシブなタイポグラフィを実現します。
+ * clamp(最小値, 推奨値, 最大値)
+ */
+h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); } /* 画面幅の5%を基準に、最小2.25rem, 最大3.5rem */
 h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
 h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 
+/*
+ * 段落 (p) のスタイル
+ */
 p {
-  margin-bottom: 1rem;
-  max-width: 70ch;
+  margin-bottom: 1rem; /* 段落の下に余白を設定 */
+  max-width: 70ch; /* 1行の最大長を約70文字に制限し、可読性を向上させる */
 }
 
+/*
+ * リンク (a) のスタイル
+ */
 a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color var(--transition-fast);
+  color: var(--color-primary); /* リンク色をプライマリカラーに設定 */
+  text-decoration: none; /* 下線を削除 */
+  transition: color var(--transition-fast); /* 色の変化を滑らかなアニメーションにする */
 }
 
+/*
+ * リンクのホバー（マウスオーバー）時のスタイル
+ */
 a:hover {
-  color: var(--color-primary-bright);
+  color: var(--color-primary-bright); /* 少し明るい色に変化させる */
 }
 
+/*
+ * キーボード操作でフォーカスが当たった際のスタイル
+ * :focus-visible を使うことで、マウス操作でのクリック時にはアウトラインを表示せず、
+ * Tabキーなどでフォーカスした場合にのみ表示し、アクセシビリティを向上させます。
+ */
 a:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 4px;
-  border-radius: 4px;
+  outline: 2px solid var(--color-primary); /* プライマリカラーのアウトラインを表示 */
+  outline-offset: 4px; /* 要素から少し離してアウトラインを表示 */
+  border-radius: 4px; /* アウトラインの角を丸める */
 }

@@ -1,11 +1,14 @@
-/* === フッター === */
-.site-footer {
-  margin-top: var(--space-3xl);
-  border-top: 1px solid var(--border-subtle);
-  padding: var(--space-2xl) 0;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 247, 240, 0.95));
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
+/**
+ * @fileoverview サイトフッターのスタイル
+ * ページ最下部に表示されるフッターのレイアウトとデザインを定義します。
+ */
 
+.site-footer {
+  margin-top: var(--space-3xl); /* フッターの上の余白を大きく取る */
+  border-top: 1px solid var(--border-subtle); /* フッター上部の境界線 */
+  padding: var(--space-2xl) 0; /* 上下のパディング */
+  text-align: center; /* テキストを中央揃えにする */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 247, 240, 0.95)); /* 薄いグラデーション背景 */
+  color: var(--text-muted); /* テキストの色を控えめにする */
+  font-size: 0.9rem; /* フォントサイズを少し小さくする */
+}

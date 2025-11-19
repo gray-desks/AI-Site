@@ -1,10 +1,17 @@
 #!/usr/bin/env node
 /**
- * キーワード抽出機能のテスト
+ * @fileoverview キーワード抽出機能のテストスクリプト
+ * `extractSearchKeywords` 関数が、様々な動画タイトルと説明文に対して
+ * 意図通りに動作するかを確認します。
+ *
+ * 実行方法:
+ * `export OPENAI_API_KEY=sk-your-key`
+ * `node automation/test-keyword-extraction.js`
  */
 
 const { extractSearchKeywords } = require('./lib/extractKeywords');
 
+// テスト対象となる動画タイトルと説明文のリスト
 const testCases = [
   {
     title: 'Sherlock Dash AlphaとSherlock Think Alphaをテストしましょう！',
@@ -20,25 +27,33 @@ const testCases = [
   },
 ];
 
+/**
+ * メインのテスト処理
+ */
 const main = async () => {
+  // 環境変数からOpenAI APIキーを取得
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
-    console.error('OPENAI_API_KEY が設定されていません');
+    console.error('環境変数 OPENAI_API_KEY が設定されていません。');
     process.exit(1);
   }
 
   console.log('=== キーワード抽出テスト ===\n');
 
-  for (const testCase of testCases) {
+  // 各テストケースをループして実行
+  for (const [index, testCase] of testCases.entries()) {
+    console.log(`--- ケース ${index + 1} ---`);
     console.log(`元のタイトル: ${testCase.title}`);
     try {
+      // キーワード抽出関数を呼び出し
       const keywords = await extractSearchKeywords(apiKey, testCase.title, testCase.description);
-      console.log(`抽出キーワード: ${keywords}`);
-      console.log(`文字数: ${keywords.length}文字\n`);
+      console.log(`  -> 抽出キーワード: "${keywords}"`);
+      console.log(`     文字数: ${keywords.length}文字\n`);
     } catch (error) {
-      console.error(`エラー: ${error.message}\n`);
+      console.error(`     エラー: ${error.message}\n`);
     }
   }
 };
 
+// テストを実行
 main().catch(console.error);

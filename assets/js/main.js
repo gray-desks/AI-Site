@@ -1,744 +1,377 @@
-// ============================================
-// AI情報ブログ - インタラクティブUI v2.0
-// ============================================
+/**
+ * @fileoverview AI情報ブログ メインスクリプト (トップページ用)
+ * サイト全体の共通機能と、記事一覧ページのインタラクティブなUIを制御します。
+ */
 
-// === スクロール時のヘッダー効果 ===
+// --- 共通UI機能 ---
+
+/**
+ * スクロール時にヘッダーのスタイルを変更します。
+ * 一定以上スクロールされると、ヘッダーに 'scrolled' クラスを追加して背景などを変更します。
+ */
 (function initHeaderScroll() {
   const header = document.querySelector('.site-header');
-  let lastScroll = 0;
-  const scrollThreshold = 50;
+  if (!header) return;
+  const scrollThreshold = 50; // 50pxスクロールされたら発火
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > scrollThreshold) {
+    if (window.pageYOffset > scrollThreshold) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
-
-    lastScroll = currentScroll;
-  }, { passive: true });
+  }, { passive: true }); // パフォーマンス向上のためpassive: trueを指定
 })();
 
-// === スムーズスクロールアニメーション ===
+
+/**
+ * ページ内アンカーリンク（`#`で始まるリンク）のスムーズスクロールを実装します。
+ */
 (function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      if (href === '#') return;
+      if (href === '#') return; // href="#"だけのリンクは無視
 
-      e.preventDefault();
-      const target = document.querySelector(href);
-
-      if (target) {
-        const headerOffset = 80;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-})();
-
-// === インターセクションオブザーバー（要素のフェードイン） ===
-(function initScrollAnimations() {
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // アニメーション対象要素を監視
-  const animateElements = document.querySelectorAll(
-    '.post-card, .workflow-card, .source-card, .info-panel, .hero-panel'
-  );
-
-  animateElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(el);
-  });
-})();
-
-// === 記事一覧の読み込み ===
-(function loadPosts() {
-  const list = document.getElementById('post-list');
-  const errorLabel = document.getElementById('post-error');
-  const defaultCardImage = 'assets/img/article-templates/ai-core-01.webp';
-
-  if (!list) return;
-
-  const tagSearchElements = {
-    panel: document.getElementById('tag-search-panel'),
-    input: document.getElementById('tag-search-input'),
-    clearButton: document.getElementById('tag-search-clear'),
-    selectedWrapper: document.getElementById('tag-search-selected'),
-    selectedLabel: document.getElementById('tag-search-selected-label'),
-    selectedClear: document.getElementById('tag-search-selected-clear'),
-    suggestions: document.getElementById('tag-search-suggestions'),
-    status: document.getElementById('tag-filter-status'),
-    toggle: document.getElementById('tag-search-toggle'),
-  };
-
-  if (tagSearchElements.input) tagSearchElements.input.disabled = true;
-  if (tagSearchElements.clearButton) tagSearchElements.clearButton.disabled = true;
-  if (tagSearchElements.status) {
-    tagSearchElements.status.textContent = 'タグ情報を読み込み中...';
-  }
-
-  const tagSearchState = {
-    posts: [],
-    filteredPosts: [],
-    tags: [],
-    query: '',
-    selectedTag: null,
-    hasLoadedPosts: false,
-  };
-
-  const normalizeFilterValue = (value) => {
-    if (value === null || value === undefined) return '';
-    return value.toString().normalize('NFKC').trim().toLowerCase();
-  };
-
-  const buildTagIndex = (posts) => {
-    const tagMap = new Map();
-    posts.forEach((post) => {
-      const postTags = Array.isArray(post.tags) ? post.tags : [];
-      postTags.forEach((tag, index) => {
-        const normalized = toTagObject(tag, index);
-        const key = normalized.slug || normalized.label || `tag-${index + 1}`;
-        if (!tagMap.has(key)) {
-          tagMap.set(key, { ...normalized, count: 1 });
-        } else {
-          const existing = tagMap.get(key);
-          existing.count += 1;
-        }
-      });
-    });
-    return Array.from(tagMap.values()).sort((a, b) => {
-      if (b.count !== a.count) return b.count - a.count;
-      return a.label.localeCompare(b.label, 'ja');
-    });
-  };
-
-  const filterPostsByTagSlug = (slug) => {
-    const posts = Array.isArray(tagSearchState.posts) ? tagSearchState.posts : [];
-    if (!slug) return [...posts];
-    return posts.filter((post) => {
-      const postTags = Array.isArray(post.tags) ? post.tags : [];
-      return postTags.some((tag, index) => toTagObject(tag, index).slug === slug);
-    });
-  };
-
-  const updateSelectedTagUI = () => {
-    if (!tagSearchElements.selectedWrapper || !tagSearchElements.selectedLabel) return;
-    if (!tagSearchState.selectedTag) {
-      tagSearchElements.selectedWrapper.hidden = true;
-      tagSearchElements.selectedWrapper.setAttribute('aria-hidden', 'true');
-      tagSearchElements.selectedLabel.textContent = '';
-      return;
-    }
-    tagSearchElements.selectedWrapper.hidden = false;
-    tagSearchElements.selectedWrapper.removeAttribute('aria-hidden');
-    const label = tagSearchState.selectedTag.label;
-    const count = tagSearchState.filteredPosts.length;
-    tagSearchElements.selectedLabel.textContent = `${label} (${count}件)`;
-  };
-
-  const updateFilterStatus = () => {
-    if (!tagSearchElements.status) return;
-    if (!tagSearchState.posts.length) {
-      tagSearchElements.status.textContent = tagSearchState.hasLoadedPosts
-        ? '記事がまだ登録されていません。'
-        : 'タグ情報を読み込み中...';
-      return;
-    }
-    if (tagSearchState.selectedTag) {
-      if (tagSearchState.filteredPosts.length === 0) {
-        tagSearchElements.status.textContent = `タグ「${tagSearchState.selectedTag.label}」に該当する記事はまだありません。`;
-      } else {
-        tagSearchElements.status.textContent = `タグ「${tagSearchState.selectedTag.label}」の記事を${tagSearchState.filteredPosts.length}件表示中`;
-      }
-    } else {
-      tagSearchElements.status.textContent = `全${tagSearchState.posts.length}件の記事を表示中`;
-    }
-  };
-
-  const updateClearButtonState = () => {
-    if (!tagSearchElements.clearButton) return;
-    tagSearchElements.clearButton.disabled = tagSearchState.query.length === 0;
-  };
-
-  const TAG_SUGGESTION_LIMIT = 18;
-
-  const getFilteredTagSuggestions = () => {
-    if (!tagSearchState.query) return tagSearchState.tags;
-    const query = normalizeFilterValue(tagSearchState.query);
-    if (!query) return tagSearchState.tags;
-    return tagSearchState.tags.filter((tag) => {
-      const labelText = normalizeFilterValue(tag.label);
-      const slugText = normalizeFilterValue(tag.slug);
-      return labelText.includes(query) || slugText.includes(query);
-    });
-  };
-
-  const renderTagSuggestions = () => {
-    if (!tagSearchElements.suggestions) return;
-    if (!tagSearchState.tags.length) {
-      const message = tagSearchState.hasLoadedPosts
-        ? 'タグ情報がまだ登録されていません。'
-        : 'タグ情報を読み込み中です。';
-      tagSearchElements.suggestions.innerHTML = `<p class="tag-search-empty">${message}</p>`;
-      return;
-    }
-    const suggestions = getFilteredTagSuggestions();
-    if (!suggestions.length) {
-      tagSearchElements.suggestions.innerHTML = '<p class="tag-search-empty">該当するタグが見つかりません。</p>';
-      return;
-    }
-    const items = suggestions.slice(0, TAG_SUGGESTION_LIMIT).map((tag) => {
-      const isActive = tagSearchState.selectedTag?.slug === tag.slug;
-      return `
-        <button
-          type="button"
-          class="tag-search-chip${isActive ? ' active' : ''}"
-          data-tag-select="true"
-          data-tag-slug="${tag.slug}"
-          role="option"
-          aria-selected="${isActive ? 'true' : 'false'}"
-          aria-pressed="${isActive ? 'true' : 'false'}"
-        >
-          <span>${tag.label}</span>
-          <span class="tag-count">${tag.count}件</span>
-        </button>
-      `;
-    }).join('');
-    tagSearchElements.suggestions.innerHTML = items;
-  };
-
-  // URLパラメータを更新する関数（先に定義）
-  const updateURLParameter = (slug) => {
-    const url = new URL(window.location);
-    if (slug) {
-      url.searchParams.set('tag', slug);
-    } else {
-      url.searchParams.delete('tag');
-    }
-    window.history.pushState({}, '', url);
-  };
-
-  const applyPostFilter = (tag) => {
-    tagSearchState.selectedTag = tag || null;
-    tagSearchState.filteredPosts = filterPostsByTagSlug(tagSearchState.selectedTag?.slug);
-    renderPosts(tagSearchState.filteredPosts);
-    updateSelectedTagUI();
-    updateFilterStatus();
-    updateClearButtonState();
-
-    // URLパラメータを更新
-    updateURLParameter(tagSearchState.selectedTag?.slug);
-  };
-
-  const attachTagSearchEvents = () => {
-    if (tagSearchElements.input) {
-      const handleInputChange = (event) => {
-        tagSearchState.query = event.target.value || '';
-        renderTagSuggestions();
-        updateClearButtonState();
-      };
-      tagSearchElements.input.addEventListener('input', handleInputChange);
-      tagSearchElements.input.addEventListener('search', handleInputChange);
-      tagSearchElements.input.addEventListener('keydown', (event) => {
-        if (event.key !== 'Enter') return;
-        const [first] = getFilteredTagSuggestions();
-        if (!first) return;
-        event.preventDefault();
-        applyPostFilter(first);
-        renderTagSuggestions();
-      });
-    }
-
-    if (tagSearchElements.clearButton) {
-      tagSearchElements.clearButton.addEventListener('click', () => {
-        if (!tagSearchState.query) return;
-        tagSearchState.query = '';
-        updateClearButtonState();
-        if (tagSearchElements.input) {
-          tagSearchElements.input.value = '';
-          tagSearchElements.input.focus();
-        }
-        renderTagSuggestions();
-      });
-    }
-
-    if (tagSearchElements.selectedClear) {
-      tagSearchElements.selectedClear.addEventListener('click', () => {
-        if (!tagSearchState.selectedTag) return;
-        applyPostFilter(null);
-        renderTagSuggestions();
-      });
-    }
-
-    if (tagSearchElements.suggestions) {
-      tagSearchElements.suggestions.addEventListener('click', (event) => {
-        if (!(event.target instanceof Element)) return;
-        const target = event.target.closest('[data-tag-select="true"]');
-        if (!target) return;
-        const slug = target.getAttribute('data-tag-slug');
-        if (!slug) return;
-        const selected = tagSearchState.tags.find((tag) => tag.slug === slug);
-        if (!selected) return;
-        if (tagSearchState.selectedTag?.slug === selected.slug) {
-          applyPostFilter(null);
-        } else {
-          applyPostFilter(selected);
-        }
-        renderTagSuggestions();
-      });
-    }
-  };
-
-  const initResponsiveTagSearchLayout = () => {
-    if (!tagSearchElements.panel || !tagSearchElements.toggle) return;
-
-    const mediaQuery = window.matchMedia('(max-width: 767px)');
-    const layoutState = {
-      isMobile: mediaQuery.matches,
-      isExpanded: mediaQuery.matches ? false : true,
-    };
-
-    const scrollPanelIntoView = () => {
-      if (!tagSearchElements.panel) return;
-      tagSearchElements.panel.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-    };
-
-    const applyState = () => {
-      const panel = tagSearchElements.panel;
-      const toggle = tagSearchElements.toggle;
-      const shouldShowPanel = !layoutState.isMobile || layoutState.isExpanded;
-
-      panel.dataset.mobileOpen = shouldShowPanel ? 'true' : 'false';
-      panel.hidden = layoutState.isMobile ? !shouldShowPanel : false;
-
-      toggle.setAttribute('aria-expanded', shouldShowPanel ? 'true' : 'false');
-      toggle.setAttribute('aria-label', shouldShowPanel ? 'タグ検索を閉じる' : 'タグ検索を開く');
-
-      if (layoutState.isMobile) {
-        toggle.removeAttribute('aria-hidden');
-        toggle.tabIndex = 0;
-      } else {
-        toggle.setAttribute('aria-hidden', 'true');
-        toggle.tabIndex = -1;
-      }
-    };
-
-    const updateViewportState = (isMobile) => {
-      layoutState.isMobile = isMobile;
-      layoutState.isExpanded = isMobile ? false : true;
-      applyState();
-    };
-
-    const handleToggleClick = () => {
-      if (!layoutState.isMobile) return;
-      layoutState.isExpanded = !layoutState.isExpanded;
-      applyState();
-      if (layoutState.isExpanded && tagSearchElements.input) {
-        requestAnimationFrame(() => {
-          tagSearchElements.input.focus({ preventScroll: true });
-          scrollPanelIntoView();
-        });
-      }
-    };
-
-    tagSearchElements.toggle.addEventListener('click', handleToggleClick);
-
-    if (typeof mediaQuery.addEventListener === 'function') {
-      mediaQuery.addEventListener('change', (event) => updateViewportState(event.matches));
-    } else if (typeof mediaQuery.addListener === 'function') {
-      mediaQuery.addListener((event) => updateViewportState(event.matches));
-    }
-
-    applyState();
-  };
-
-  // タグクリックイベントを設定する関数
-  const attachTagClickEvents = () => {
-    const tagElements = list.querySelectorAll('.tag[data-tag-slug]');
-    tagElements.forEach((tagElement) => {
-      tagElement.style.cursor = 'pointer';
-      tagElement.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const slug = tagElement.getAttribute('data-tag-slug');
-        if (!slug) return;
-
-        // 該当するタグオブジェクトを検索
-        const selectedTag = tagSearchState.tags.find((tag) => tag.slug === slug);
-        if (!selectedTag) return;
-
-        // タグフィルタを適用（URLパラメータの更新も含む）
-        applyPostFilter(selectedTag);
-        renderTagSuggestions();
-
-        // タグ検索パネルまでスムーズスクロール
-        if (tagSearchElements.panel) {
-          const headerOffset = 100;
-          const elementPosition = tagSearchElements.panel.getBoundingClientRect().top;
+      try {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const headerOffset = 80; // ヘッダーの高さを考慮したオフセット
+          const elementPosition = target.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
           });
         }
+      } catch (error) {
+        // 無効なセレクタなどによるエラーを無視
+        console.warn(`Smooth scroll target not found or invalid: ${href}`);
+      }
+    });
+  });
+})();
+
+
+/**
+ * IntersectionObserverを使用して、要素が画面内に入ったときにフェードインアニメーションを適用します。
+ */
+(function initScrollAnimations() {
+  // IntersectionObserverがサポートされていないブラウザでは何もしない
+  if (!('IntersectionObserver' in window)) return;
+
+  const observerOptions = {
+    threshold: 0.1, // 要素が10%表示されたら発火
+    rootMargin: '0px 0px -50px 0px' // 画面下部から50px手前で判定を開始
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target); // 一度表示されたら監視を解除
+      }
+    });
+  }, observerOptions);
+
+  // .animate-on-scrollクラスを持つ要素を監視対象とする
+  document.querySelectorAll('.animate-on-scroll, .post-card, .workflow-card, .source-card, .info-panel, .hero-panel').forEach(el => {
+    observer.observe(el);
+  });
+})();
+
+
+// --- 記事一覧ページの機能 ---
+
+/**
+ * 記事一覧の読み込み、フィルタリング、タグ検索機能を初期化します。
+ * この機能はトップページ（`#post-list`要素が存在するページ）でのみ動作します。
+ */
+(function initPostList() {
+  const listContainer = document.getElementById('post-list');
+  if (!listContainer) return; // 記事一覧コンテナがなければ処理を中断
+
+  // --- DOM要素の取得 ---
+  const elements = {
+    list: listContainer,
+    errorLabel: document.getElementById('post-error'),
+    tagSearchPanel: document.getElementById('tag-search-panel'),
+    tagSearchInput: document.getElementById('tag-search-input'),
+    tagSearchClear: document.getElementById('tag-search-clear'),
+    selectedTagWrapper: document.getElementById('tag-search-selected'),
+    selectedTagLabel: document.getElementById('tag-search-selected-label'),
+    selectedTagClear: document.getElementById('tag-search-selected-clear'),
+    tagSuggestions: document.getElementById('tag-search-suggestions'),
+    filterStatus: document.getElementById('tag-filter-status'),
+    tagSearchToggle: document.getElementById('tag-search-toggle'),
+  };
+
+  // --- 状態管理 ---
+  const state = {
+    allPosts: [],       // 全記事データ
+    filteredPosts: [],  // フィルタリング後の記事データ
+    allTags: [],        // 全タグデータ（頻度順）
+    searchQuery: '',    // タグ検索クエリ
+    selectedTag: null,  // 選択中のタグ
+    isLoading: true,    // 読み込み中フラグ
+  };
+
+  // --- 関数の定義 ---
+
+  /**
+   * フィルタリング用の値を正規化します（小文字、トリム、NFKC正規化）。
+   * @param {*} value - 正規化する値
+   * @returns {string} 正規化された文字列
+   */
+  const normalize = (value) => String(value ?? '').normalize('NFKC').trim().toLowerCase();
+
+  /**
+   * 記事データからタグの一覧と出現回数を集計し、インデックスを構築します。
+   * @param {Array<object>} posts - 記事データの配列
+   * @returns {Array<object>} タグオブジェクトの配列（頻度順）
+   */
+  const buildTagIndex = (posts) => {
+    const tagMap = new Map();
+    posts.forEach(post => {
+      (post.tags || []).forEach(tag => {
+        const tagObj = toTagObject(tag);
+        if (!tagMap.has(tagObj.slug)) {
+          tagMap.set(tagObj.slug, { ...tagObj, count: 0 });
+        }
+        tagMap.get(tagObj.slug).count++;
       });
     });
+    return Array.from(tagMap.values()).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'ja'));
   };
 
-  attachTagSearchEvents();
-  initResponsiveTagSearchLayout();
-  renderTagSuggestions();
-
-  const enhanceCardAccessibility = () => {
-    list.querySelectorAll('.post-card').forEach(card => {
-      if (card.dataset.accessibilityInit === 'true') return;
-      card.dataset.accessibilityInit = 'true';
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('role', 'article');
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          const link = card.querySelector('a');
-          if (link) link.click();
-        }
-      });
-    });
+  /**
+   * 記事をタグのスラッグでフィルタリングします。
+   * @param {string | null} slug - フィルタするタグのスラッグ。nullの場合は全記事を返す。
+   * @returns {Array<object>} フィルタリングされた記事の配列
+   */
+  const filterPostsByTag = (slug) => {
+    if (!slug) return [...state.allPosts];
+    return state.allPosts.filter(post => 
+      (post.tags || []).some(tag => toTagObject(tag).slug === slug)
+    );
   };
 
-  const formatDate = (isoString) => {
-    if (!isoString) return '';
-    const normalized = isoString.replaceAll('/', '-');
-    const date = new Date(`${normalized}T00:00:00`);
-    if (Number.isNaN(date.getTime())) return isoString;
-    const y = date.getFullYear();
-    const m = String(date.getMonth() + 1).padStart(2, '0');
-    const d = String(date.getDate()).padStart(2, '0');
-    return `${y}.${m}.${d}`;
-  };
+  /**
+   * 記事カードのHTML文字列を生成します。
+   * @param {object} post - 記事データ
+   * @param {number} index - 配列内でのインデックス（アニメーション遅延用）
+   * @returns {string} 記事カードのHTML
+   */
+  const createPostCardHTML = (post, index) => {
+    const defaultImg = 'assets/img/article-templates/ai-core-01.webp';
+    const imageSrc = post.image?.src || defaultImg;
+    const imageAlt = post.image?.alt || post.title;
+    const tagsHTML = (post.tags || []).map(tag => {
+      const tagObj = toTagObject(tag);
+      return `<li class="tag" data-tag-slug="${tagObj.slug}" style="cursor: pointer;">${tagObj.label}</li>`;
+    }).join('');
 
-  const getSortableTimestamp = (post) => {
-    if (!post) return 0;
-    const candidateValues = [post.publishedAt, post.updatedAt];
-    for (const value of candidateValues) {
-      if (!value) continue;
-      const parsed = new Date(value);
-      if (!Number.isNaN(parsed.getTime())) {
-        return parsed.getTime();
-      }
-    }
-    if (post.date) {
-      const parsed = new Date(`${post.date}T00:00:00Z`);
-      if (!Number.isNaN(parsed.getTime())) {
-        return parsed.getTime();
-      }
-    }
-    return 0;
-  };
-
-  const comparePosts = (a, b) => {
-    const timeDiff = getSortableTimestamp(b) - getSortableTimestamp(a);
-    if (timeDiff !== 0) return timeDiff;
-
-    if (a?.date && b?.date) {
-      const dateDiff = new Date(b.date) - new Date(a.date);
-      if (!Number.isNaN(dateDiff) && dateDiff !== 0) {
-        return dateDiff;
-      }
-    }
-
-    const slugA = (a?.slug || a?.url || '').toString();
-    const slugB = (b?.slug || b?.url || '').toString();
-    return slugB.localeCompare(slugA, undefined, { sensitivity: 'base', numeric: true });
-  };
-
-  const slugifyTag = (value, fallback = 'tag') => {
-    if (!value) return fallback;
-    const normalized = value
-      .toString()
-      .normalize('NFKC')
-      .trim()
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
-    return normalized || fallback;
-  };
-
-  const toTagObject = (tag, index = 0) => {
-    if (tag && typeof tag === 'object') {
-      return {
-        slug: tag.slug || slugifyTag(tag.label || `tag-${index + 1}`),
-        label: tag.label || tag.slug || `タグ${index + 1}`,
-        category: tag.category || 'その他',
-        style: tag.style || null,
-      };
-    }
-    const label = (tag ?? '').toString().trim();
-    return {
-      slug: slugifyTag(label || `tag-${index + 1}`),
-      label: label || `タグ${index + 1}`,
-      category: 'その他',
-      style: null,
-    };
-  };
-
-  const createTagMarkup = (tags) => {
-    if (!Array.isArray(tags) || tags.length === 0) return '';
-    const items = tags
-      .map((tag, index) => {
-        const normalized = toTagObject(tag, index);
-        const attrs = [
-          normalized.slug ? `data-tag-slug="${normalized.slug}"` : '',
-          normalized.category ? `data-tag-category="${normalized.category}"` : '',
-          normalized.style ? `data-tag-style="${normalized.style}"` : '',
-        ]
-          .filter(Boolean)
-          .join(' ');
-        return `<li class="tag"${attrs ? ` ${attrs}` : ''}>${normalized.label}</li>`;
-      })
-      .join('');
-    return items ? `<ul class="tag-list">${items}</ul>` : '';
-  };
-
-  const renderPosts = (posts) => {
-    list.innerHTML = '';
-
-    posts.forEach((post, index) => {
-      const item = document.createElement('li');
-      item.className = 'post-card';
-
-      // スタガードアニメーション（順次表示）
-      item.style.animationDelay = `${index * 0.1}s`;
-
-      const tags = Array.isArray(post.tags) ? post.tags : [];
-      const tagMarkup = createTagMarkup(tags);
-      const imageSrc = (post?.image && post.image.src) || defaultCardImage;
-      const imageAlt = (post?.image && post.image.alt) || `${post.title}のイメージ`;
-      const coverMarkup = `
-        <figure class="post-card-cover">
-          <img src="${imageSrc}" alt="${imageAlt}" loading="lazy" decoding="async" width="640" height="360">
-        </figure>`;
-
-      item.innerHTML = `
-        ${coverMarkup}
-        <div class="post-card-body">
-          <div class="post-meta">${formatDate(post.date)}</div>
-          <h3><a href="${post.url}">${post.title}</a></h3>
-          <p class="post-summary">${post.summary ?? ''}</p>
-          ${tagMarkup}
-        </div>
-      `;
-
-      // カード全体をクリック可能に（ただしタグは除外）
-      item.addEventListener('click', (e) => {
-        // タグクリック時は記事に遷移しない
-        if (e.target.classList.contains('tag') || e.target.closest('.tag')) {
-          return;
-        }
-        if (e.target.tagName !== 'A') {
-          const link = item.querySelector('h3 a');
-          if (link) link.click();
-        }
-      });
-
-      list.appendChild(item);
-    });
-
-    // 追加後にアニメーション監視を再実行
-    setTimeout(() => {
-      const cards = list.querySelectorAll('.post-card');
-      cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-
-        // すぐに表示開始
-        requestAnimationFrame(() => {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        });
-      });
-    }, 10);
-
-    enhanceCardAccessibility();
-
-    // タグクリックイベントを設定
-    attachTagClickEvents();
-  };
-
-  // スケルトンローダーの表示
-  const showSkeleton = () => {
-    list.innerHTML = Array(3)
-      .fill(0)
-      .map(
-        () => `
-      <li class="post-card skeleton">
-        <div class="skeleton-media"></div>
-        <div class="post-card-body">
-          <div class="skeleton-line"></div>
-          <div class="skeleton-line"></div>
-          <div class="skeleton-line short"></div>
-        </div>
+    return `
+      <li class="post-card animate-on-scroll" style="animation-delay: ${index * 0.05}s;">
+        <a href="${post.url}" class="post-card-link" aria-label="${post.title}">
+          <figure class="post-card-cover">
+            <img src="${imageSrc}" alt="${imageAlt}" loading="lazy" decoding="async" width="640" height="360">
+          </figure>
+          <div class="post-card-body">
+            <div class="post-meta">${formatDate(post.date)}</div>
+            <h3>${post.title}</h3>
+            <p class="post-summary">${post.summary ?? ''}</p>
+            ${tagsHTML ? `<ul class="tag-list">${tagsHTML}</ul>` : ''}
+          </div>
+        </a>
       </li>
-    `,
-      )
-      .join('');
+    `;
   };
-
-  showSkeleton();
-
-  // URLパラメータからタグを取得する関数
-  const getTagFromURL = () => {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('tag');
-  };
-
-  fetch('data/posts.json', { cache: 'no-cache' })
-    .then((response) => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.json();
-    })
-    .then((posts) => {
-      const sorted = [...posts].sort(comparePosts);
-
-      // データ取得後、少し遅延させて表示（UX向上）
-      setTimeout(() => {
-        tagSearchState.posts = sorted;
-        tagSearchState.tags = buildTagIndex(sorted);
-        tagSearchState.query = '';
-        tagSearchState.hasLoadedPosts = true;
-        if (tagSearchElements.input) {
-          tagSearchElements.input.disabled = tagSearchState.tags.length === 0;
-          tagSearchElements.input.value = '';
+  
+  /**
+   * 記事一覧をDOMにレンダリング（描画）します。
+   * @param {Array<object>} posts - 描画する記事の配列
+   */
+  const renderPosts = (posts) => {
+    if (posts.length > 0) {
+      elements.list.innerHTML = posts.map(createPostCardHTML).join('');
+    } else {
+      elements.list.innerHTML = `<li class="no-results">該当する記事が見つかりませんでした。</li>`;
+    }
+    // 新しく生成された要素にアニメーションを再適用
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      el.classList.remove('is-visible'); // 一旦非表示に
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          entries[0].target.classList.add('is-visible');
+          observer.unobserve(entries[0].target);
         }
-
-        // URLパラメータにタグが指定されている場合は自動的にフィルタを適用
-        const tagSlugFromURL = getTagFromURL();
-        if (tagSlugFromURL) {
-          const selectedTag = tagSearchState.tags.find((tag) => tag.slug === tagSlugFromURL);
-          if (selectedTag) {
-            applyPostFilter(selectedTag);
-
-            // モバイルの場合はタグ検索パネルを展開
-            if (tagSearchElements.toggle && window.innerWidth <= 767) {
-              const mediaQuery = window.matchMedia('(max-width: 767px)');
-              if (mediaQuery.matches && tagSearchElements.panel) {
-                tagSearchElements.panel.dataset.mobileOpen = 'true';
-                tagSearchElements.panel.hidden = false;
-                tagSearchElements.toggle.setAttribute('aria-expanded', 'true');
-              }
-            }
-          } else {
-            applyPostFilter(null);
-          }
-        } else {
-          applyPostFilter(null);
-        }
-
-        renderTagSuggestions();
-        if (errorLabel) errorLabel.textContent = '';
-      }, 300);
-    })
-    .catch((error) => {
-      console.error('記事一覧の読み込みに失敗しました', error);
-      if (errorLabel) {
-        errorLabel.textContent = '記事一覧の読み込みに失敗しました。時間をおいて再度お試しください。';
-      }
-      if (tagSearchElements.status) {
-        tagSearchElements.status.textContent = 'タグ情報を取得できませんでした。';
-      }
-      if (tagSearchElements.suggestions) {
-        tagSearchElements.suggestions.innerHTML = '<p class="tag-search-empty">タグ情報を取得できませんでした。</p>';
-      }
-      if (tagSearchElements.input) {
-        tagSearchElements.input.disabled = true;
-      }
-      if (tagSearchElements.clearButton) {
-        tagSearchElements.clearButton.disabled = true;
-      }
-      list.innerHTML = '';
+      }, { threshold: 0.1 });
+      observer.observe(el);
     });
-})();
+  };
 
-// === パフォーマンス最適化: Passive Event Listeners ===
-(function optimizeScrollPerformance() {
-  // すべてのホバー効果をGPU加速
-  const cards = document.querySelectorAll('.post-card, .workflow-card, .source-card');
-  cards.forEach(card => {
-    card.style.willChange = 'transform';
+  /**
+   * タグ検索のサジェストリストをレンダリングします。
+   */
+  const renderTagSuggestions = () => {
+    const query = normalize(state.searchQuery);
+    const suggestions = query
+      ? state.allTags.filter(tag => normalize(tag.label).includes(query) || normalize(tag.slug).includes(query))
+      : state.allTags;
+
+    if (suggestions.length > 0) {
+      elements.tagSuggestions.innerHTML = suggestions.slice(0, 18).map(tag => {
+        const isActive = state.selectedTag?.slug === tag.slug;
+        return `
+          <button type="button" class="tag-search-chip${isActive ? ' active' : ''}" data-tag-slug="${tag.slug}">
+            <span>${tag.label}</span>
+            <span class="tag-count">${tag.count}件</span>
+          </button>
+        `;
+      }).join('');
+    } else {
+      elements.tagSuggestions.innerHTML = `<p class="tag-search-empty">該当するタグが見つかりません。</p>`;
+    }
+  };
+
+  /**
+   * UIの状態をまとめて更新します。
+   */
+  const updateUI = () => {
+    renderPosts(state.filteredPosts);
+    renderTagSuggestions();
+
+    // 選択中タグのUI
+    if (state.selectedTag) {
+      elements.selectedTagWrapper.hidden = false;
+      elements.selectedTagLabel.textContent = `${state.selectedTag.label} (${state.filteredPosts.length}件)`;
+    } else {
+      elements.selectedTagWrapper.hidden = true;
+    }
+
+    // フィルタ状況のテキスト
+    if (state.selectedTag) {
+      elements.filterStatus.textContent = `タグ「${state.selectedTag.label}」でフィルタ中 (${state.filteredPosts.length}件)`;
+    } else {
+      elements.filterStatus.textContent = `全${state.allPosts.length}件の記事を表示中`;
+    }
+    
+    // 検索クリアボタンの状態
+    elements.tagSearchClear.disabled = !state.searchQuery;
+  };
+
+  /**
+   * タグによるフィルタリングを適用します。
+   * @param {object | null} tag - 選択されたタグオブジェクト。nullでフィルタ解除。
+   */
+  const applyTagFilter = (tag) => {
+    state.selectedTag = tag;
+    state.filteredPosts = filterPostsByTag(tag?.slug);
+    
+    // URLのクエリパラメータを更新
+    const url = new URL(window.location);
+    if (tag) {
+      url.searchParams.set('tag', tag.slug);
+    } else {
+      url.searchParams.delete('tag');
+    }
+    window.history.pushState({}, '', url);
+    
+    updateUI();
+  };
+
+  // --- イベントリスナーの設定 ---
+  
+  // タグ検索入力
+  elements.tagSearchInput.addEventListener('input', (e) => {
+    state.searchQuery = e.target.value;
+    renderTagSuggestions();
+    elements.tagSearchClear.disabled = !state.searchQuery;
   });
-})();
 
-// === ページロード完了時の初期化 ===
-window.addEventListener('DOMContentLoaded', () => {
-  // フォーカス可視性の強化
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') {
-      document.body.classList.add('keyboard-navigation');
+  // 検索クリアボタン
+  elements.tagSearchClear.addEventListener('click', () => {
+    state.searchQuery = '';
+    elements.tagSearchInput.value = '';
+    elements.tagSearchInput.focus();
+    renderTagSuggestions();
+    elements.tagSearchClear.disabled = true;
+  });
+
+  // 選択中タグのクリアボタン
+  elements.selectedTagClear.addEventListener('click', () => applyTagFilter(null));
+
+  // サジェストされたタグのクリック
+  elements.tagSuggestions.addEventListener('click', (e) => {
+    const button = e.target.closest('button[data-tag-slug]');
+    if (!button) return;
+    const slug = button.dataset.tagSlug;
+    const tag = state.allTags.find(t => t.slug === slug);
+    if (tag) {
+      // 同じタグが選択されていたら解除、違えば選択
+      applyTagFilter(state.selectedTag?.slug === slug ? null : tag);
+    }
+  });
+  
+  // 記事カード内のタグクリック（イベント委譲）
+  elements.list.addEventListener('click', (e) => {
+    const tagEl = e.target.closest('.tag[data-tag-slug]');
+    if (!tagEl) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const slug = tagEl.dataset.tagSlug;
+    const tag = state.allTags.find(t => t.slug === slug);
+    if (tag) {
+      applyTagFilter(tag);
+      // タグ検索パネルまでスクロール
+      elements.tagSearchPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 
-  document.addEventListener('mousedown', () => {
-    document.body.classList.remove('keyboard-navigation');
+  // レスポンシブ対応のトグルボタン
+  elements.tagSearchToggle.addEventListener('click', () => {
+    const isExpanded = elements.tagSearchToggle.getAttribute('aria-expanded') === 'true';
+    elements.tagSearchToggle.setAttribute('aria-expanded', !isExpanded);
+    elements.tagSearchPanel.dataset.mobileOpen = String(!isExpanded);
   });
-});
 
-// === プリロードとパフォーマンス最適化 ===
-(function optimizePerformance() {
-  // 重要なフォントをプリロード（将来の拡張用）
-  // const preloadFont = (url) => {
-  //   const link = document.createElement('link');
-  //   link.rel = 'preload';
-  //   link.as = 'font';
-  //   link.crossOrigin = 'anonymous';
-  //   link.href = url;
-  //   document.head.appendChild(link);
-  // };
+  // --- 初期化処理 ---
 
-  // 画像の遅延読み込み
-  const images = document.querySelectorAll('img[data-src]');
-  if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.removeAttribute('data-src');
-          imageObserver.unobserve(img);
-        }
-      });
+  // スケルトンローダーを表示
+  elements.list.innerHTML = Array(6).fill('<li class="post-card skeleton"><div class="skeleton-media"></div><div class="post-card-body"><div class="skeleton-line"></div><div class="skeleton-line short"></div></div></li>').join('');
+
+  // posts.jsonをフェッチ
+  fetch('data/posts.json', { cache: 'no-cache' })
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(posts => {
+      state.allPosts = posts.sort(comparePosts); // 日付でソート
+      state.allTags = buildTagIndex(state.allPosts);
+      state.isLoading = false;
+      elements.tagSearchInput.disabled = false;
+
+      // URLパラメータから初期タグを読み込む
+      const initialTagSlug = new URLSearchParams(window.location.search).get('tag');
+      const initialTag = initialTagSlug ? state.allTags.find(t => t.slug === initialTagSlug) : null;
+      
+      applyTagFilter(initialTag); // 初期フィルタを適用してUIを更新
+    })
+    .catch(error => {
+      console.error('記事一覧の読み込みに失敗しました', error);
+      elements.list.innerHTML = '';
+      elements.errorLabel.textContent = '記事一覧の読み込みに失敗しました。';
+      state.isLoading = false;
+      updateUI();
     });
 
-    images.forEach(img => imageObserver.observe(img));
-  } else {
-    // フォールバック
-    images.forEach(img => {
-      img.src = img.dataset.src;
-    });
-  }
+  // --- ヘルパー関数 ---
+  const formatDate = (iso) => iso ? new Date(iso).toLocaleDateString('ja-JP') : '';
+  const comparePosts = (a, b) => new Date(b.date) - new Date(a.date);
+  const toTagObject = (tag) => (typeof tag === 'object' ? tag : { slug: normalize(tag), label: tag });
+
 })();
-
-console.log('🎨 AI情報ブログ v2.0 - デザインシステム初期化完了');

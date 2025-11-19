@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
- * Generator
- * - Picks researched candidates from data/candidates.json
- * - Calls OpenAI to craft SEO-oriented article drafts
- * - Returns article HTML for publisher and records topic history for deduplication
+ * @fileoverview Generator: 記事生成ステージ
+ * - `data/candidates.json` から `status='researched'` の候補を1つ選択します。
+ * - OpenAI API を呼び出し、SEOを意識した記事の下書きをJSON形式で生成させます。
+ * - 生成された記事データとテンプレートを組み合わせて、公開用のHTMLファイルを作成します。
+ * - 記事のトピックが最近公開されたものと重複していないかチェックします。
+ * - 候補のステータスを `generated` に更新し、次のPublisherステージに渡します。
  */
 
 const path = require('path');
@@ -20,51 +22,81 @@ const { createTagMapper } = require('./services/tagMapper');
 const { createImageSelector } = require('./services/imageSelector');
 const { createTemplateRenderer } = require('./services/templateRenderer');
 
+// --- パス設定 ---
+// プロジェクトのルートディレクトリを取得
 const root = path.resolve(__dirname, '..', '..');
+// 公開済み記事リストのパス
 const postsJsonPath = path.join(root, 'data', 'posts.json');
+// トピック履歴のパス
 const topicHistoryPath = path.join(root, 'data', 'topic-history.json');
+// タグ定義ファイルのパス
 const tagsConfigPath = path.join(root, 'data', 'tags.json');
+// 記事画像リストのパス
 const articleImagesManifestPath = path.join(root, 'assets', 'img', 'articles', 'index.json');
+// 記事HTMLテンプレートのパス
 const articleHtmlTemplatePath = path.join(root, 'automation', 'templates', 'article.html');
 
+// --- 定数 ---
 const { DEDUPE_WINDOW_DAYS } = GENERATOR;
+// ロガーとメトリクス追跡ツールを初期化
 const logger = createLogger('generator');
 const metricsTracker = createMetricsTracker('generator');
 
+// --- サービス初期化 ---
+// タグマッピングサービス: AIが生成したタグを正規化する
 const { mapArticleTags } = createTagMapper({
   readJson,
   tagsConfigPath,
 });
 
+// 画像選択サービス: 記事内容に合った画像を自動で選ぶ
 const { selectArticleImage } = createImageSelector({
   readJson,
   manifestPath: articleImagesManifestPath,
 });
 
+// テンプレートレンダリングサービス: 記事データからHTMLを生成する
 const { compileArticleHtml } = createTemplateRenderer({
   templatePath: articleHtmlTemplatePath,
 });
 
-const createChannelUrl = (channelId) =>
-  channelId ? `https://www.youtube.com/channel/${channelId}` : '';
+/**
+ * チャンネルIDからYouTubeチャンネルURLを生成します。
+ * @param {string} channelId - YouTubeチャンネルID
+ * @returns {string} チャンネルURL
+ */
+const createChannelUrl = (channelId)
+  =>
+    channelId ? `https://www.youtube.com/channel/${channelId}` : '';
 
+/**
+ * 候補のソース情報からURLを解決します。
+ * @param {object} source - 候補のソースオブジェクト
+ * @returns {string} ソースのURL
+ */
 const resolveSourceUrl = (source) => {
   if (!source) return '';
+  // source.urlが存在すればそれを使い、なければチャンネルIDから生成
   return source.url || createChannelUrl(source.channelId);
 };
 
-// テンプレート関連のユーティリティは templateRenderer サービスに移動
-
-// タグ辞書と画像選定ロジックは services 配下へ移動済み
-
+/**
+ * OpenAIからのレスポンス（JSON文字列）をパースします。
+ * @param {string|Array} content - OpenAIの`message.content`
+ * @returns {object} パースされたJSONオブジェクト
+ * @throws {Error} パースに失敗した場合
+ */
 const parseCompletionContent = (content) => {
   if (!content) {
     throw new Error('OpenAIレスポンスにcontentが含まれていません');
   }
+  // contentが文字列の場合、そのままパース
   if (typeof content === 'string') {
     return JSON.parse(content);
   }
+  // ストリーミングなどでcontentが配列の場合を考慮
   if (Array.isArray(content)) {
+    // 配列の各要素を結合して1つのJSON文字列にする
     const merged = content
       .map((part) => {
         if (typeof part === 'string') return part;
@@ -78,23 +110,34 @@ const parseCompletionContent = (content) => {
   throw new Error('contentの形式を解析できませんでした');
 };
 
+/**
+ * 候補データから検索クエリを抽出します。
+ * @param {object} candidate - 候補オブジェクト
+ * @returns {string} 検索クエリ
+ */
 const extractSearchQuery = (candidate) => {
   // 新しい構造: { original, extracted, method }
   if (candidate.searchQuery && typeof candidate.searchQuery === 'object') {
     return candidate.searchQuery.extracted || candidate.searchQuery.original || '';
   }
-  // 旧構造: 文字列
+  // 古い構造: 文字列
   if (typeof candidate.searchQuery === 'string') {
     return candidate.searchQuery;
   }
-  // フォールバック
+  // フォールバックとして動画タイトルを使用
   return candidate.video?.title || '';
 };
 
+/**
+ * Google検索の要約結果を整形してプロンプトに含める文字列を生成します。
+ * @param {Array<object>} summaries - 要約情報の配列
+ * @returns {string} 整形された文字列
+ */
 const formatSearchSummaries = (summaries) => {
   if (!Array.isArray(summaries) || summaries.length === 0) {
     return '検索要約が取得できていません。';
   }
+  // 各要約をマークダウン形式の文字列に変換
   return summaries
     .map((item, index) => {
       const title = item.title || `Source ${index + 1}`;
@@ -106,11 +149,18 @@ const formatSearchSummaries = (summaries) => {
     .join('\n\n');
 };
 
+/**
+ * OpenAI APIにリクエストを送り、記事の下書きを生成します。
+ * @param {string} apiKey - OpenAI APIキー
+ * @param {object} candidate - 記事の元となる候補データ
+ * @returns {Promise<object>} 生成された記事データ (JSON)
+ */
 const requestArticleDraft = async (apiKey, candidate) => {
   const today = new Date().toISOString().split('T')[0];
   const searchSummary = formatSearchSummaries(candidate.searchSummaries);
   const searchQuery = extractSearchQuery(candidate);
 
+  // プロンプトを組み立てる
   const messages = [
     {
       role: 'system',
@@ -122,6 +172,7 @@ const requestArticleDraft = async (apiKey, candidate) => {
     },
   ];
 
+  // OpenAI APIを呼び出す
   const completion = await callOpenAI({
     apiKey,
     messages,
@@ -131,27 +182,48 @@ const requestArticleDraft = async (apiKey, candidate) => {
   });
 
   const content = completion?.choices?.[0]?.message?.content;
+  // レスポンスをパースして返す
   return parseCompletionContent(content);
 };
 
+/**
+ * 指定されたトピックキーが最近公開された記事と重複していないかチェックします。
+ * @param {string} topicKey - チェックするトピックキー
+ * @param {Array<object>} posts - 公開済み記事のリスト
+ * @param {Array<object>} history - トピック履歴
+ * @returns {boolean} 重複していればtrue
+ */
 const isDuplicateTopic = (topicKey, posts, history) => {
   const now = Date.now();
+  // 重複チェック期間を計算
   const windowMs = DEDUPE_WINDOW_DAYS * 24 * 60 * 60 * 1000;
   const cutoff = now - windowMs;
 
+  // 1. 公開済み記事リストに同じトピックキーがないか確認
   const inPosts = posts.some((post) => slugify(post.title) === topicKey);
   if (inPosts) return true;
 
+  // 2. トピック履歴内で、指定期間内に同じトピックキーが公開されていないか確認
   return history.some((entry) => {
     if (entry.topicKey !== topicKey) return false;
     const last = new Date(entry.lastPublishedAt || entry.firstSeen).getTime();
+    // 最終公開日時がチェック期間内であれば重複とみなす
     return !Number.isNaN(last) && last >= cutoff;
   });
 };
 
+/**
+ * トピック履歴を更新します。
+ * @param {Array<object>} history - 現在のトピック履歴
+ * @param {string} topicKey - 更新するトピックキー
+ * @param {object} record - 関連情報
+ * @returns {Array<object>} 更新されたトピック履歴
+ */
 const updateTopicHistory = (history, topicKey, record) => {
+  // 既存の履歴から同じトピックキーのエントリを削除
   const filtered = history.filter((entry) => entry.topicKey !== topicKey);
   const now = new Date().toISOString();
+  // 新しいエントリを追加
   filtered.push({
     topicKey,
     firstSeen: record.firstSeen || now,
@@ -163,6 +235,9 @@ const updateTopicHistory = (history, topicKey, record) => {
   return filtered;
 };
 
+/**
+ * Generatorステージのメイン処理
+ */
 const runGenerator = async () => {
   logger.info('ステージ開始: 候補の分析を実行します。');
   const apiKey = process.env.OPENAI_API_KEY;
@@ -172,6 +247,7 @@ const runGenerator = async () => {
 
   const candidates = readCandidates();
   metricsTracker.set('candidates.total', candidates.length);
+  // 処理結果を返すためのヘルパー関数
   const buildResult = (payload) => {
     const summary = metricsTracker.summary();
     logger.info('Generatorメトリクスサマリー:', summary);
@@ -183,6 +259,7 @@ const runGenerator = async () => {
   const posts = readJson(postsJsonPath, []);
   const topicHistory = readJson(topicHistoryPath, []);
 
+  // `status='researched'` の候補を1つ見つける
   const candidate = candidates.find((item) => item.status === 'researched');
   if (!candidate) {
     logger.info('researched状態の候補が存在しないため処理を終了します。');
@@ -197,6 +274,7 @@ const runGenerator = async () => {
     `対象候補: ${candidate.id} / ${candidate.source.name} / ${candidate.video?.title}`,
   );
   const sourceUrl = resolveSourceUrl(candidate.source);
+  // トピックキーが存在しない場合のフォールバック
   const fallbackTopicKey = slugify(candidate.video?.title);
   const topicKey = candidate.topicKey || fallbackTopicKey;
   if (candidate.topicKey) {
@@ -204,12 +282,15 @@ const runGenerator = async () => {
   } else {
     logger.warn(`⚠️ topicKey未設定のため動画タイトルから生成しました: ${topicKey}`);
   }
+
+  // --- トピックの重複チェック ---
   const duplicate = isDuplicateTopic(topicKey, posts, topicHistory);
   logger.info(`重複判定: ${duplicate ? '重複あり → スキップ' : '新規トピック'}`);
 
   if (duplicate) {
     metricsTracker.increment('candidates.skipped.duplicate');
     const now = new Date().toISOString();
+    // 候補のステータスを 'skipped' に更新
     const updatedCandidates = candidates.map((item) =>
       item.id === candidate.id
         ? {
@@ -242,9 +323,11 @@ const runGenerator = async () => {
     searchSummaries,
   };
 
+  // --- 記事生成 ---
   let article;
   const stopDraftTimer = metricsTracker.startTimer('articleGeneration.timeMs');
   try {
+    // OpenAI APIを呼び出して記事を生成
     article = await requestArticleDraft(apiKey, enrichedCandidate);
     const elapsed = stopDraftTimer();
     metricsTracker.increment('articles.generated');
@@ -253,6 +336,7 @@ const runGenerator = async () => {
     const elapsed = stopDraftTimer();
     metricsTracker.increment('articles.failed');
     logger.error(`⚠️ 記事生成に失敗しました: ${error.message} (${elapsed}ms)`);
+    // 候補のステータスを 'failed' に更新
     const now = new Date().toISOString();
     const updatedCandidates = candidates.map((item) =>
       item.id === candidate.id
@@ -274,19 +358,22 @@ const runGenerator = async () => {
     });
   }
 
-  const normalizedTags = mapArticleTags(article.tags);
+  // --- 記事データの後処理 ---
+  const normalizedTags = mapArticleTags(article.tags); // タグを正規化
   const hydratedArticle = {
     ...article,
     tags: normalizedTags,
   };
-  const selectedImage = selectArticleImage(hydratedArticle, candidate);
+  const selectedImage = selectArticleImage(hydratedArticle, candidate); // 画像を選択
 
+  // --- ファイルパスとメタデータ生成 ---
   const today = new Date().toISOString().split('T')[0];
   const slugifiedTitle = slugify(article.title, topicKey || 'ai-topic');
   const slug = `${today}-${slugifiedTitle}`;
   const fileName = `${slug}.html`;
   const publishRelativePath = path.posix.join('posts', fileName);
 
+  // HTMLテンプレートに渡すメタデータ
   const meta = {
     date: today,
     sourceName: candidate.source.name,
@@ -296,6 +383,7 @@ const runGenerator = async () => {
     image: selectedImage,
   };
 
+  // --- HTML生成 ---
   const publishHtml = compileArticleHtml(hydratedArticle, meta, {
     assetBase: '../',
     image: selectedImage,
@@ -303,6 +391,8 @@ const runGenerator = async () => {
 
   const now = new Date().toISOString();
 
+  // --- 候補と履歴の更新 ---
+  // 候補のステータスを 'generated' に更新
   const updatedCandidates = candidates.map((item) =>
     item.id === candidate.id
       ? {
@@ -321,6 +411,7 @@ const runGenerator = async () => {
   );
   writeCandidates(updatedCandidates);
 
+  // トピック履歴を更新
   const updatedHistory = updateTopicHistory(topicHistory, topicKey, {
     sourceName: candidate.source.name,
     videoTitle: candidate.video.title,
@@ -330,6 +421,8 @@ const runGenerator = async () => {
   writeJson(topicHistoryPath, updatedHistory);
   logger.info('candidates と topic-history を更新しました。');
 
+  // --- Publisherステージへの返り値を作成 ---
+  // posts.jsonに保存するためのエントリ
   const postEntry = {
     title: hydratedArticle.title,
     date: today,
@@ -341,6 +434,7 @@ const runGenerator = async () => {
     image: selectedImage || null,
   };
 
+  // PublisherステージでHTMLファイルを書き込むための詳細データ
   const articleData = {
     title: hydratedArticle.title,
     summary: hydratedArticle.summary ?? '',
@@ -366,6 +460,7 @@ const runGenerator = async () => {
 
   logger.info(`記事データを返却: slug=${slug}, ファイル予定パス=${publishRelativePath}`);
 
+  // 最終的な結果を返す
   return buildResult({
     generated: true,
     candidateId: candidate.id,
@@ -376,6 +471,7 @@ const runGenerator = async () => {
   });
 };
 
+// スクリプトが直接実行された場合にrunGeneratorを実行
 if (require.main === module) {
   runGenerator()
     .then((result) => {

@@ -1,30 +1,39 @@
 /**
- * 共通コンポーネント（ヘッダー・フッター）の動的挿入
- * SEO影響を最小化するため、DOMContentLoadedで即座に実行
+ * @fileoverview 共通コンポーネント（ヘッダー・フッター）の動的挿入スクリプト
+ * 全てのページで共通のヘッダーとフッターをJavaScriptで動的に挿入します。
+ * これにより、各HTMLファイルで同じコードを繰り返し記述する必要がなくなります。
+ * また、レスポンシブ対応のハンバーガーメニューの機能も初期化します。
+ * SEOへの影響を最小限に抑えるため、DOMContentLoadedイベントで即座に実行されます。
  */
 
 (function() {
   'use strict';
 
   /**
-   * 現在のページパスに基づいて相対パスを調整
-   * @returns {string} assets/へのパス（'../' or './'）
+   * 現在のページのパスに基づいて、アセット（画像など）への相対パスを決定します。
+   * - `posts/` ディレクトリ内のページ（記事詳細ページ）からは `../`
+   * - それ以外のページ（トップページ、概要ページなど）からは `./`
+   * @returns {string} アセットへのベースパス
    */
   function getBasePath() {
     const path = window.location.pathname;
-    // posts/配下のページなら '../'、それ以外は './'
     return path.includes('/posts/') ? '../' : './';
   }
 
   /**
-   * ヘッダーHTMLを生成
-   * @param {string} basePath - assets/へのパス
-   * @returns {string} ヘッダーHTML
+   * ヘッダーのHTML文字列を生成します。
+   * 現在のページに応じてナビゲーションリンクに `aria-current="page"` を付与し、
+   * アクセシビリティを向上させます。
+   * @param {string} basePath - アセットへのベースパス
+   * @returns {string} ヘッダーのHTML文字列
    */
   function getHeaderHTML(basePath) {
+    // 現在のページがホームかどうかを判定
     const isHome = !window.location.pathname.includes('/posts/') &&
                    !window.location.pathname.includes('/about.html');
-    // ルートからの相対パスを使用（ブラウザが自動的に解決）
+    const isAbout = window.location.pathname.includes('/about.html');
+    
+    // 各ページへのリンクとロゴ画像のパスを解決
     const homeLink = basePath === '../' ? '../index.html' : 'index.html';
     const aboutLink = basePath === '../' ? '../about.html' : 'about.html';
     const logoPath = basePath + 'assets/img/logo.svg';
@@ -45,7 +54,7 @@
           </button>
           <nav aria-label="メインナビゲーション">
             <a href="${homeLink}"${isHome ? ' aria-current="page"' : ''}>ホーム</a>
-            <a href="${aboutLink}">このサイトについて</a>
+            <a href="${aboutLink}"${isAbout ? ' aria-current="page"' : ''}>このサイトについて</a>
           </nav>
         </div>
         <div class="menu-overlay"></div>
@@ -54,8 +63,9 @@
   }
 
   /**
-   * フッターHTMLを生成
-   * @returns {string} フッターHTML
+   * フッターのHTML文字列を生成します。
+   * 現在の西暦を自動的に表示します。
+   * @returns {string} フッターのHTML文字列
    */
   function getFooterHTML() {
     const currentYear = new Date().getFullYear();
@@ -69,7 +79,8 @@
   }
 
   /**
-   * ハンバーガーメニューの動作を初期化
+   * モバイル表示時のハンバーガーメニューの動作を初期化します。
+   * メニューの開閉、キーボード操作（ESCキー）、オーバーレイクリックでのクローズなどを設定します。
    */
   function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -79,26 +90,24 @@
 
     if (!menuToggle || !nav || !menuOverlay) return;
 
-    // メニューの開閉
+    // メニューを開閉する関数
     function toggleMenu() {
       const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-
       menuToggle.setAttribute('aria-expanded', !isExpanded);
       menuToggle.setAttribute('aria-label', isExpanded ? 'メニューを開く' : 'メニューを閉じる');
+      
+      // activeクラスを付け外しして表示を切り替える
       menuToggle.classList.toggle('active');
       nav.classList.toggle('active');
       menuOverlay.classList.toggle('active');
 
-      // メニューが開いている時はbodyのスクロールを防止
-      if (!isExpanded) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-      }
+      // メニューが開いている間、背景のスクロールを禁止する
+      document.body.style.overflow = !isExpanded ? 'hidden' : '';
     }
 
-    // メニューを閉じる
+    // メニューを閉じる関数
     function closeMenu() {
+      if (menuToggle.getAttribute('aria-expanded') !== 'true') return;
       menuToggle.setAttribute('aria-expanded', 'false');
       menuToggle.setAttribute('aria-label', 'メニューを開く');
       menuToggle.classList.remove('active');
@@ -107,57 +116,44 @@
       document.body.style.overflow = '';
     }
 
-    // ハンバーガーボタンをクリック
     menuToggle.addEventListener('click', toggleMenu);
-
-    // オーバーレイをクリック
     menuOverlay.addEventListener('click', closeMenu);
-
-    // ナビゲーションリンクをクリックしたらメニューを閉じる
-    navLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    // ESCキーでメニューを閉じる
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && nav.classList.contains('active')) {
         closeMenu();
       }
     });
 
-    // ウィンドウリサイズ時に768px以上になったらメニューを閉じる
-    let resizeTimer;
+    // ウィンドウリサイズ時にPC幅になったらメニューを自動で閉じる
     window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        if (window.innerWidth > 768 && nav.classList.contains('active')) {
-          closeMenu();
-        }
-      }, 250);
+      if (window.innerWidth > 768 && nav.classList.contains('active')) {
+        closeMenu();
+      }
     });
   }
 
   /**
-   * コンポーネントを挿入
+   * ヘッダーとフッターのコンポーネントをDOMに挿入します。
+   * 重複挿入を防ぐために、既に要素が存在しないかチェックします。
    */
   function injectComponents() {
     const basePath = getBasePath();
 
-    // ヘッダーが存在しない場合のみ挿入（重複防止）
     if (!document.querySelector('.site-header')) {
       document.body.insertAdjacentHTML('afterbegin', getHeaderHTML(basePath));
-      // ヘッダー挿入後にモバイルメニューを初期化
+      // ヘッダーが挿入された後にメニューの初期化処理を実行
       initMobileMenu();
     }
 
-    // フッターが存在しない場合のみ挿入（重複防止）
     if (!document.querySelector('.site-footer')) {
-      document.body.insertAdjacentHTML('beforeend', getFooterHTML(basePath));
+      document.body.insertAdjacentHTML('beforeend', getFooterHTML());
     }
   }
 
-  // DOM読み込み完了後すぐに実行（SEO影響を最小化）
+  // DOMの読み込み状態に応じて、コンポーネント挿入処理を実行
   if (document.readyState === 'loading') {
+    // まだ読み込み中の場合は、DOMContentLoadedイベントを待つ
     document.addEventListener('DOMContentLoaded', injectComponents);
   } else {
     // 既に読み込み済みの場合は即座に実行

@@ -1,62 +1,81 @@
-/* ============================================
-   ハンバーガーメニュー
-   ============================================ */
+/**
+ * @fileoverview ハンバーガーメニューのスタイル
+ * モバイル表示時に使用されるハンバーガーアイコンと、
+ * メニュー開閉時のアニメーションを定義します。
+ */
 
+/*
+ * メニュー切り替えボタン (.menu-toggle) の基本スタイル
+ */
 .menu-toggle {
-  display: none; /* デスクトップでは非表示 */
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: var(--space-xs);
-  width: 44px;
-  height: 44px;
+  display: none; /* デスクトップではデフォルトで非表示 */
+  background: none; /* 背景なし */
+  border: none; /* ボーダーなし */
+  cursor: pointer; /* カーソルをポインターにする */
+  padding: var(--space-xs); /* タップ領域を確保するためのパディング */
+  width: 44px; /* タップターゲットサイズ */
+  height: 44px; /* タップターゲットサイズ */
   position: relative;
-  z-index: 1001;
-  flex-shrink: 0;
+  z-index: 1001; /* 他の要素より手前に表示 */
+  flex-shrink: 0; /* Flexアイテムとして縮小しない */
 }
 
+/*
+ * メニュー切り替えボタンがフォーカスされた際のスタイル
+ * アクセシビリティ向上のため、キーボード操作時に視覚的なフィードバックを提供します。
+ */
 .menu-toggle:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 4px;
-  border-radius: 4px;
+  outline: 2px solid var(--color-primary); /* プライマリカラーのアウトライン */
+  outline-offset: 4px; /* 要素から少し離してアウトラインを表示 */
+  border-radius: 4px; /* アウトラインの角を丸める */
 }
 
+/*
+ * ハンバーガーアイコン本体 (.hamburger) のスタイル
+ * 3本の線（span要素）を内包します。
+ */
 .hamburger {
-  width: 24px;
-  height: 18px;
+  width: 24px; /* アイコンの幅 */
+  height: 18px; /* アイコンの高さ */
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0 auto;
+  flex-direction: column; /* 縦方向に並べる */
+  justify-content: space-between; /* 線間に均等なスペースを配置 */
+  margin: 0 auto; /* 中央揃え */
 }
 
+/*
+ * ハンバーガーアイコンの各線 (span) のスタイル
+ */
 .hamburger span {
   display: block;
-  height: 2px;
-  width: 100%;
-  background: var(--text-primary);
-  border-radius: 2px;
-  transition: all var(--transition-base);
-  transform-origin: center;
+  height: 2px; /* 線の太さ */
+  width: 100%; /* 親要素の幅いっぱいに広げる */
+  background: var(--text-primary); /* 線の色 */
+  border-radius: 2px; /* 線の角を丸める */
+  transition: all var(--transition-base); /* 変化を滑らかにするアニメーション */
+  transform-origin: center; /* 変形（回転など）の中心点を中央に設定 */
 }
 
-/* ハンバーガーメニュー開いた時のアニメーション（X印に変形） */
+/*
+ * メニューが開いた状態 (.menu-toggle.active) のアニメーション
+ * ハンバーガーアイコンがX印に変形します。
+ */
 .menu-toggle.active .hamburger span:nth-child(1) {
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  margin-top: -1px;
+  transform: rotate(45deg); /* 1本目の線を45度回転 */
+  position: absolute; /* 絶対配置にして重ねる */
+  top: 50%; /* 中央に配置 */
+  margin-top: -1px; /* 線の太さの半分だけ上にずらして垂直方向の中央に */
 }
 
 .menu-toggle.active .hamburger span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
+  opacity: 0; /* 2本目の線を非表示にする */
+  transform: scaleX(0); /* 横方向に縮小して消す */
 }
 
 .menu-toggle.active .hamburger span:nth-child(3) {
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 50%;
-  margin-top: -1px;
+  transform: rotate(-45deg); /* 3本目の線を-45度回転 */
+  position: absolute; /* 絶対配置にして重ねる */
+  top: 50%; /* 中央に配置 */
+  margin-top: -1px; /* 線の太さの半分だけ上にずらして垂直方向の中央に */
 }

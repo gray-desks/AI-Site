@@ -1,19 +1,32 @@
-/* ============================================
-   AI情報ブログ - メインスタイルシート
-   モジュラーCSS構成 v2.0
-   ============================================ */
+/**
+ * @fileoverview AI情報ブログ - メインスタイルシート
+ * このファイルは、サイト全体のスタイルシートのエントリーポイントです。
+ * SMACSSやBEMのようなモジュラーCSSの考え方に基づき、
+ * 機能ごとに分割されたCSSファイルを`@import`で読み込みます。
+ *
+ * 構成:
+ * - Core:       サイト全体の基本的な変数、リセット、タイポグラフィ。
+ * - Layout:     ヘッダー、フッター、グリッドシステムなどの主要なレイアウト構造。
+ * - Components: ボタン、カード、タグなど、再利用可能なUI部品。
+ * - Pages:      各ページ（ホーム、記事詳細など）に固有のスタイル。
+ * - Utilities:  広告やアクセシビリティなど、特定の目的を持つヘルパークラス。
+ * - Responsive: メディアクエリを使ったレスポンシブデザインの調整。
+ */
 
 /* === Core: 基本設定 === */
+/* 変数、ブラウザのデフォルトスタイルリセット、基本的な文字スタイル */
 @import url('core/variables.css');
 @import url('core/reset.css');
 @import url('core/typography.css');
 
 /* === Layout: レイアウト構造 === */
+/* グリッドシステム、ヘッダー、フッターのスタイル */
 @import url('layout/grid.css');
 @import url('layout/header.css');
 @import url('layout/footer.css');
 
 /* === Components: 再利用可能なコンポーネント === */
+/* ボタン、ハンバーガーメニュー、カード、タグ、スケルトンローダーなどのUI部品 */
 @import url('components/buttons.css');
 @import url('components/hamburger.css');
 @import url('components/cards.css');
@@ -23,13 +36,16 @@
 @import url('components/misc.css');
 
 /* === Pages: ページ固有スタイル === */
+/* ホームページ、記事ページ、概要ページに特化したスタイル */
 @import url('pages/home.css');
 @import url('pages/article.css');
 @import url('pages/about.css');
 
 /* === Utilities: ユーティリティ === */
+/* 広告表示やアクセシビリティ向上のための補助的なスタイル */
 @import url('utilities/ads.css');
 @import url('utilities/accessibility.css');
 
 /* === Responsive: レスポンシブデザイン === */
+/* 画面幅に応じたスタイル調整 */
 @import url('responsive.css');
