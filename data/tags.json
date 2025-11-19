@@ -236,5 +236,61 @@
     "category": "開発",
     "aliases": ["開発ツール", "dev tools", "開発環境"],
     "style": "accent-blue"
+  },
+  {
+    "slug": "ai-ethics",
+    "label": "AI倫理",
+    "category": "ガバナンス",
+    "aliases": ["ai倫理", "ethics", "倫理", "エシックス"],
+    "style": "accent-orange"
+  },
+  {
+    "slug": "bias",
+    "label": "バイアス",
+    "category": "ガバナンス",
+    "aliases": ["bias", "偏見", "バイアス対策", "公平性"],
+    "style": "accent-orange"
+  },
+  {
+    "slug": "fairness",
+    "label": "AI公平性",
+    "category": "ガバナンス",
+    "aliases": ["fairness", "公平性", "公正性", "フェアネス"],
+    "style": "accent-orange"
+  },
+  {
+    "slug": "ai-responsibility",
+    "label": "AI責任",
+    "category": "ガバナンス",
+    "aliases": ["責任あるai", "responsibility", "責任", "アカウンタビリティ"],
+    "style": "accent-orange"
+  },
+  {
+    "slug": "transparency",
+    "label": "透明性",
+    "category": "ガバナンス",
+    "aliases": ["transparency", "透明性", "説明可能性", "explainability"],
+    "style": "accent-orange"
+  },
+  {
+    "slug": "ai-healthcare",
+    "label": "AIヘルスケア",
+    "category": "ユースケース",
+    "aliases": ["aiヘルスケア", "healthcare", "医療ai", "健康"],
+    "style": "accent-teal"
+  },
+  {
+    "slug": "medical-ai",
+    "label": "医療AI",
+    "category": "ユースケース",
+    "aliases": ["医療ai", "medical", "医療", "臨床ai"],
+    "style": "accent-teal"
+  },
+  {
+    "slug": "diagnosis",
+    "label": "診断支援",
+    "category": "ユースケース",
+    "aliases": ["診断", "diagnosis", "診断支援", "医療診断"],
+    "style": "accent-teal"
   }
 ]

@@ -834,5 +834,144 @@
       "memory"
     ],
     "category": "knowledge"
+  },
+  {
+    "key": "ethics-01",
+    "src": "assets/img/article-templates/ethics-01.webp",
+    "label": "AI倫理とガバナンス",
+    "alt": "AI倫理を象徴する抽象的なビジュアル（バリアント1）",
+    "description": "AI倫理、責任、公平性、透明性に関する記事向け。",
+    "topics": [
+      "ethics",
+      "ai-ethics",
+      "bias",
+      "fairness",
+      "responsibility",
+      "transparency",
+      "governance"
+    ],
+    "category": "ethics"
+  },
+  {
+    "key": "ethics-02",
+    "src": "assets/img/article-templates/ethics-02.webp",
+    "label": "AI倫理とガバナンス",
+    "alt": "AI倫理を象徴する抽象的なビジュアル（バリアント2）",
+    "description": "AI倫理、責任、公平性、透明性に関する記事向け。",
+    "topics": [
+      "ethics",
+      "ai-ethics",
+      "bias",
+      "fairness",
+      "responsibility",
+      "transparency",
+      "governance"
+    ],
+    "category": "ethics"
+  },
+  {
+    "key": "ethics-03",
+    "src": "assets/img/article-templates/ethics-03.webp",
+    "label": "AI倫理とガバナンス",
+    "alt": "AI倫理を象徴する抽象的なビジュアル（バリアント3）",
+    "description": "AI倫理、責任、公平性、透明性に関する記事向け。",
+    "topics": [
+      "ethics",
+      "ai-ethics",
+      "bias",
+      "fairness",
+      "responsibility",
+      "transparency",
+      "governance"
+    ],
+    "category": "ethics"
+  },
+  {
+    "key": "ethics-04",
+    "src": "assets/img/article-templates/ethics-04.webp",
+    "label": "AI倫理とガバナンス",
+    "alt": "AI倫理を象徴する抽象的なビジュアル（バリアント4）",
+    "description": "AI倫理、責任、公平性、透明性に関する記事向け。",
+    "topics": [
+      "ethics",
+      "ai-ethics",
+      "bias",
+      "fairness",
+      "responsibility",
+      "transparency",
+      "governance"
+    ],
+    "category": "ethics"
+  },
+  {
+    "key": "ethics-05",
+    "src": "assets/img/article-templates/ethics-05.webp",
+    "label": "AI倫理とガバナンス",
+    "alt": "AI倫理を象徴する抽象的なビジュアル（バリアント5）",
+    "description": "AI倫理、責任、公平性、透明性に関する記事向け。",
+    "topics": [
+      "ethics",
+      "ai-ethics",
+      "bias",
+      "fairness",
+      "responsibility",
+      "transparency",
+      "governance"
+    ],
+    "category": "ethics"
+  },
+  {
+    "key": "healthcare-01",
+    "src": "assets/img/article-templates/healthcare-01.webp",
+    "label": "AIヘルスケア",
+    "alt": "AIヘルスケアを象徴するビジュアル（バリアント1）",
+    "description": "医療AI、診断支援、ヘルスケアに関する記事向け。",
+    "topics": [
+      "healthcare",
+      "medical",
+      "health",
+      "diagnosis",
+      "ai-healthcare",
+      "medical-ai",
+      "patient",
+      "clinical"
+    ],
+    "category": "healthcare"
+  },
+  {
+    "key": "healthcare-02",
+    "src": "assets/img/article-templates/healthcare-02.webp",
+    "label": "AIヘルスケア",
+    "alt": "AIヘルスケアを象徴するビジュアル（バリアント2）",
+    "description": "医療AI、診断支援、ヘルスケアに関する記事向け。",
+    "topics": [
+      "healthcare",
+      "medical",
+      "health",
+      "diagnosis",
+      "ai-healthcare",
+      "medical-ai",
+      "patient",
+      "clinical"
+    ],
+    "category": "healthcare"
+  },
+  {
+    "key": "healthcare-03",
+    "src": "assets/img/article-templates/healthcare-03.webp",
+    "label": "AIヘルスケア",
+    "alt": "AIヘルスケアを象徴するビジュアル（バリアント3）",
+    "description": "医療AI、診断支援、ヘルスケアに関する記事向け。",
+    "topics": [
+      "healthcare",
+      "medical",
+      "health",
+      "diagnosis",
+      "ai-healthcare",
+      "medical-ai",
+      "patient",
+      "clinical"
+    ],
+    "category": "healthcare"
   }
 ]
