@@ -346,6 +346,64 @@ const compileArticleHtml = (article, meta, options = {}) => {
 
   const tagMarkup = renderTagList(tags);
 
+  // 広告ブロックのテンプレート（コメントアウト状態）
+  const adTopMarkup = `
+      <!-- Google AdSense: 記事上広告 -->
+      <!--
+      <div class="inner">
+        <div class="ad-container ad-article-top">
+          <span class="ad-label">広告</span>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="YYYYYYYYYY"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </div>
+      -->
+`;
+
+  const adMiddleMarkup = `
+            <!-- Google AdSense: 記事中広告 -->
+            <!--
+            <div class="ad-container ad-article-middle">
+              <span class="ad-label">広告</span>
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                   data-ad-slot="YYYYYYYYYY"
+                   data-ad-format="rectangle"></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+            -->
+`;
+
+  const adBottomMarkup = `
+      <!-- Google AdSense: 記事下広告 -->
+      <!--
+      <div class="inner">
+        <div class="ad-container ad-article-bottom">
+          <span class="ad-label">広告</span>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="YYYYYYYYYY"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </div>
+      -->
+`;
+
   const renderSubSections = (subSections = [], parentIndex = 0) => {
     if (!Array.isArray(subSections) || subSections.length === 0) {
       return '';
@@ -374,12 +432,16 @@ const compileArticleHtml = (article, meta, options = {}) => {
       const overview = toHtmlParagraphs(section.overview || section.body || '');
       const subSections = renderSubSections(section.subSections, index);
       const overviewMarkup = overview ? `<div class="section-overview">${overview}</div>` : '';
+
+      // 記事中広告を最初のセクションの後に挿入
+      const adInsert = index === 0 ? adMiddleMarkup : '';
+
       return `
             <section class="article-section" id="${slug}">
               <h2 class="section-heading">${heading}</h2>
               ${overviewMarkup}
               ${subSections}
-            </section>`;
+            </section>${adInsert}`;
     })
     .join('\n');
 
@@ -411,6 +473,10 @@ ${toHtmlParagraphs(article.conclusion)}
   <meta name="description" content="${article.summary ?? ''}">
 
   <script src="${normalizedAssetBase}assets/js/analytics.js"></script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+       crossorigin="anonymous"></script>
 
   <!-- ファビコン -->
   <link rel="icon" type="image/svg+xml" href="${normalizedAssetBase}assets/img/logo.svg">
@@ -452,6 +518,8 @@ ${toHtmlParagraphs(article.conclusion)}
         ${tagMarkup}
       </section>
 
+      ${adTopMarkup}
+
       <div class="inner article-grid">
         <div class="article-main-column">
           <article class="post-article article-content">
@@ -467,6 +535,8 @@ ${sectionMarkup}
           </section>
         </aside>
       </div>
+
+      ${adBottomMarkup}
 
       ${conclusionMarkup}
     </article>
