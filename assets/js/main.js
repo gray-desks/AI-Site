@@ -17,8 +17,10 @@ const initHeaderScroll = () => {
     window.removeEventListener('scroll', window.headerScrollHandler);
   }
 
+  // スクロール判定のしきい値（ピクセル単位）
   const scrollThreshold = 50;
   window.headerScrollHandler = () => {
+    // ページのスクロール量がしきい値を超えたらヘッダーに'scrolled'クラスを追加
     if (window.pageYOffset > scrollThreshold) {
       header.classList.add('scrolled');
     } else {
@@ -47,10 +49,14 @@ const initSmoothScroll = () => {
         const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
+          // ヘッダーの高さ分のオフセット（ピクセル単位）
           const headerOffset = 80;
+          // ターゲット要素の現在位置を取得
           const elementPosition = target.getBoundingClientRect().top;
+          // スクロール先の位置を計算（ヘッダー分を考慮）
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
+          // スムーズスクロールを実行
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
@@ -70,9 +76,10 @@ const initSmoothScroll = () => {
 const initScrollAnimations = () => {
   if (!('IntersectionObserver' in window)) return;
 
+  // Intersection Observerのオプション設定
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.1, // 要素の10%が表示されたら発火
+    rootMargin: '0px 0px -50px 0px' // ビューポートの下辺から50px手前で判定
   };
 
   const observer = new IntersectionObserver((entries, obs) => {
@@ -103,6 +110,7 @@ const initPostList = () => {
   if (listContainer.dataset.postListInit) return;
   listContainer.dataset.postListInit = 'true';
 
+  // --- DOM要素の取得 ---
   const elements = {
     list: listContainer,
     errorLabel: document.getElementById('post-error'),
@@ -115,22 +123,40 @@ const initPostList = () => {
     tagSuggestions: document.getElementById('tag-search-suggestions'),
     filterStatus: document.getElementById('tag-filter-status'),
     tagSearchToggle: document.getElementById('tag-search-toggle'),
+    loadMoreContainer: document.getElementById('load-more-container'),
+    loadMoreBtn: document.getElementById('load-more-btn'),
   };
 
   // 要素が足りない場合は中断（検索パネルがないページなど）
   if (!elements.tagSearchInput) return;
 
+  // 表示件数の定数
+  const INITIAL_DISPLAY_COUNT = 9; // 初期表示件数
+  const LOAD_MORE_INCREMENT = 9; // 「もっと見る」ボタンで追加表示する件数
+
+  // アプリケーションの状態管理オブジェクト
   const state = {
-    allPosts: [],
-    filteredPosts: [],
-    allTags: [],
-    searchQuery: '',
-    selectedTag: null,
-    isLoading: true,
+    allPosts: [], // すべての記事データ
+    filteredPosts: [], // フィルタリング後の記事データ
+    allTags: [], // すべてのタグ情報（カウント付き）
+    searchQuery: '', // タグ検索のクエリ文字列
+    selectedTag: null, // 現在選択されているタグ
+    isLoading: true, // データ読み込み中フラグ
+    visibleCount: INITIAL_DISPLAY_COUNT, // 現在表示されている記事数
   };
 
+  /**
+   * 文字列を正規化する（全角/半角統一、トリミング、小文字化）
+   * @param {string} value - 正規化する文字列
+   * @returns {string} 正規化された文字列
+   */
   const normalize = (value) => String(value ?? '').normalize('NFKC').trim().toLowerCase();
 
+  /**
+   * すべての記事からタグのインデックスを作成する
+   * @param {Array} posts - 記事の配列
+   * @returns {Array} タグオブジェクトの配列（slug, label, count）
+   */
   const buildTagIndex = (posts) => {
     const tagMap = new Map();
     posts.forEach(post => {
@@ -139,12 +165,19 @@ const initPostList = () => {
         if (!tagMap.has(tagObj.slug)) {
           tagMap.set(tagObj.slug, { ...tagObj, count: 0 });
         }
+        // タグの出現回数をカウント
         tagMap.get(tagObj.slug).count++;
       });
     });
+    // カウント数の降順、同数なら日本語の辞書順でソート
     return Array.from(tagMap.values()).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'ja'));
   };
 
+  /**
+   * 指定されたタグで記事をフィルタリングする
+   * @param {string} slug - フィルタするタグのslug（nullの場合は全記事を返す）
+   * @returns {Array} フィルタリングされた記事の配列
+   */
   const filterPostsByTag = (slug) => {
     if (!slug) return [...state.allPosts];
     return state.allPosts.filter(post =>
@@ -152,10 +185,18 @@ const initPostList = () => {
     );
   };
 
+  /**
+   * 記事カードのHTML文字列を生成する
+   * @param {Object} post - 記事オブジェクト
+   * @param {number} index - 記事のインデックス（アニメーション遅延に使用）
+   * @returns {string} 記事カードのHTML文字列
+   */
   const createPostCardHTML = (post, index) => {
+    // デフォルト画像のパス
     const defaultImg = 'assets/img/article-templates/new_default.svg';
     const imageSrc = post.image?.src || defaultImg;
     const imageAlt = post.image?.alt || post.title;
+    // タグリストのHTMLを生成
     const tagsHTML = (post.tags || []).map(tag => {
       const tagObj = toTagObject(tag);
       return `<li class="tag" data-tag-slug="${tagObj.slug}" style="cursor: pointer;">${tagObj.label}</li>`;
@@ -178,18 +219,61 @@ const initPostList = () => {
     `;
   };
 
-  const renderPosts = (posts) => {
+  /**
+   * 記事一覧を画面に描画する
+   * @param {Array} posts - 描画する記事の配列
+   * @param {boolean} append - trueの場合は追加描画、falseの場合は全描画
+   */
+  const renderPosts = (posts, append = false) => {
+    // 表示件数分の記事を抽出
+    const postsToShow = posts.slice(0, state.visibleCount);
+    const html = postsToShow.map(createPostCardHTML).join('');
+
     if (posts.length > 0) {
-      elements.list.innerHTML = posts.map(createPostCardHTML).join('');
+      if (append) {
+        // 追加読み込みの場合は、既存のリストの末尾に追加する形にするのが理想だが、
+        // ここでは簡易的にinnerHTMLを書き換える（アニメーションリセットされるが許容）
+        // もしくは、新しく追加される分だけ生成してappendする方が良い。
+        // 今回は実装をシンプルにするため、全再描画とするが、
+        // アニメーションのちらつきを防ぐなら差分更新が必要。
+        // -> 差分更新ロジックに変更
+        const currentCount = elements.list.children.length;
+        const newPosts = postsToShow.slice(currentCount);
+        if (newPosts.length > 0) {
+          const newHtml = newPosts.map((post, idx) => createPostCardHTML(post, idx)).join('');
+          // 既存リストの末尾に新しい記事カードを追加
+          elements.list.insertAdjacentHTML('beforeend', newHtml);
+        }
+      } else {
+        // 初回またはフィルタ変更時は全書き換え
+        elements.list.innerHTML = html;
+      }
     } else {
+      // 該当記事がない場合のメッセージ表示
       elements.list.innerHTML = `<li class="no-results">該当する記事が見つかりませんでした。</li>`;
     }
+
+    // "Load More" ボタンの表示制御
+    if (elements.loadMoreContainer) {
+      if (state.visibleCount < posts.length) {
+        // まだ表示していない記事がある場合はボタンを表示
+        elements.loadMoreContainer.style.display = 'block';
+      } else {
+        // すべての記事を表示済みの場合はボタンを非表示
+        elements.loadMoreContainer.style.display = 'none';
+      }
+    }
+
     // アニメーション再適用
     initScrollAnimations();
   };
 
+  /**
+   * タグ候補リストを描画する
+   */
   const renderTagSuggestions = () => {
     const query = normalize(state.searchQuery);
+    // 検索クエリがあれば部分一致でフィルタ、なければ全タグ表示
     const suggestions = query
       ? state.allTags.filter(tag => normalize(tag.label).includes(query) || normalize(tag.slug).includes(query))
       : state.allTags;
@@ -209,10 +293,15 @@ const initPostList = () => {
     }
   };
 
-  const updateUI = () => {
-    renderPosts(state.filteredPosts);
+  /**
+   * UIを更新する（記事一覧、タグ候補、フィルタ状態の表示）
+   * @param {boolean} append - trueの場合は追加更新
+   */
+  const updateUI = (append = false) => {
+    renderPosts(state.filteredPosts, append);
     renderTagSuggestions();
 
+    // 選択中タグの表示更新
     if (state.selectedTag) {
       elements.selectedTagWrapper.hidden = false;
       elements.selectedTagLabel.textContent = `${state.selectedTag.label} (${state.filteredPosts.length}件)`;
@@ -220,37 +309,49 @@ const initPostList = () => {
       elements.selectedTagWrapper.hidden = true;
     }
 
+    // フィルタ状態のテキスト更新
     if (state.selectedTag) {
       elements.filterStatus.textContent = `タグ「${state.selectedTag.label}」でフィルタ中 (${state.filteredPosts.length}件)`;
     } else {
       elements.filterStatus.textContent = `全${state.allPosts.length}件の記事を表示中`;
     }
 
+    // 検索クリアボタンの有効/無効を制御
     elements.tagSearchClear.disabled = !state.searchQuery;
   };
 
+  /**
+   * タグフィルタを適用する
+   * @param {Object|null} tag - 適用するタグオブジェクト（nullの場合はフィルタ解除）
+   */
   const applyTagFilter = (tag) => {
     state.selectedTag = tag;
     state.filteredPosts = filterPostsByTag(tag?.slug);
+    state.visibleCount = INITIAL_DISPLAY_COUNT; // フィルタ変更時はリセット
 
+    // URLのクエリパラメータを更新
     const url = new URL(window.location);
     if (tag) {
       url.searchParams.set('tag', tag.slug);
     } else {
       url.searchParams.delete('tag');
     }
+    // ブラウザ履歴に追加（ページはリロードしない）
     window.history.pushState({}, '', url);
 
-    updateUI();
+    updateUI(false);
   };
 
-  // イベントリスナー
+  // --- イベントリスナーの登録 ---
+
+  // タグ検索の入力イベント
   elements.tagSearchInput.addEventListener('input', (e) => {
     state.searchQuery = e.target.value;
     renderTagSuggestions();
     elements.tagSearchClear.disabled = !state.searchQuery;
   });
 
+  // タグ検索のクリアボタン
   elements.tagSearchClear.addEventListener('click', () => {
     state.searchQuery = '';
     elements.tagSearchInput.value = '';
@@ -259,18 +360,22 @@ const initPostList = () => {
     elements.tagSearchClear.disabled = true;
   });
 
+  // 選択中タグのクリアボタン
   elements.selectedTagClear.addEventListener('click', () => applyTagFilter(null));
 
+  // タグ候補のクリックイベント
   elements.tagSuggestions.addEventListener('click', (e) => {
     const button = e.target.closest('button[data-tag-slug]');
     if (!button) return;
     const slug = button.dataset.tagSlug;
     const tag = state.allTags.find(t => t.slug === slug);
     if (tag) {
+      // 既に選択中のタグをクリックした場合はフィルタ解除
       applyTagFilter(state.selectedTag?.slug === slug ? null : tag);
     }
   });
 
+  // 記事カード内のタグクリックイベント
   elements.list.addEventListener('click', (e) => {
     const tagEl = e.target.closest('.tag[data-tag-slug]');
     if (!tagEl) return;
@@ -280,33 +385,50 @@ const initPostList = () => {
     const tag = state.allTags.find(t => t.slug === slug);
     if (tag) {
       applyTagFilter(tag);
+      // タグ検索パネルまでスクロール
       elements.tagSearchPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 
+  // タグ検索パネルの開閉トグル（モバイル用）
   elements.tagSearchToggle.addEventListener('click', () => {
     const isExpanded = elements.tagSearchToggle.getAttribute('aria-expanded') === 'true';
     elements.tagSearchToggle.setAttribute('aria-expanded', !isExpanded);
     elements.tagSearchPanel.dataset.mobileOpen = String(!isExpanded);
   });
 
-  // 初期化
+  // 「もっと見る」ボタンのクリックイベント
+  if (elements.loadMoreBtn) {
+    elements.loadMoreBtn.addEventListener('click', () => {
+      state.visibleCount += LOAD_MORE_INCREMENT;
+      updateUI(true);
+    });
+  }
+
+  // --- データ読み込みと初期化 ---
+
+  // スケルトンスクリーン（ローディング表示）を表示
   elements.list.innerHTML = Array(6).fill('<li class="post-card skeleton"><div class="skeleton-media"></div><div class="post-card-body"><div class="skeleton-line"></div><div class="skeleton-line short"></div></div></li>').join('');
 
+  // 記事データをJSON形式で読み込み
   fetch('data/posts.json', { cache: 'no-cache' })
     .then(res => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
     })
     .then(posts => {
+      // 記事データを日付順にソートして保存
       state.allPosts = posts.sort(comparePosts);
+      // タグのインデックスを構築
       state.allTags = buildTagIndex(state.allPosts);
       state.isLoading = false;
       elements.tagSearchInput.disabled = false;
 
+      // URLパラメータから初期タグを取得
       const initialTagSlug = new URLSearchParams(window.location.search).get('tag');
       const initialTag = initialTagSlug ? state.allTags.find(t => t.slug === initialTagSlug) : null;
 
+      // 初期フィルタを適用して表示
       applyTagFilter(initialTag);
     })
     .catch(error => {
@@ -317,8 +439,13 @@ const initPostList = () => {
       updateUI();
     });
 
+  // --- ユーティリティ関数 ---
+
+  /** ISO形式の日付を日本語形式に変換 */
   const formatDate = (iso) => iso ? new Date(iso).toLocaleDateString('ja-JP') : '';
+  /** 記事を日付の降順でソート */
   const comparePosts = (a, b) => new Date(b.date) - new Date(a.date);
+  /** タグを統一されたオブジェクト形式に変換 */
   const toTagObject = (tag) => (typeof tag === 'object' ? tag : { slug: normalize(tag), label: tag });
 };
 

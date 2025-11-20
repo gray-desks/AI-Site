@@ -2,12 +2,16 @@
 <html lang="ja">
 
 <head>
+  <!-- 基本的なページ設定 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO メタ情報 -->
   <meta name="description" content="AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。">
   <meta name="keywords" content="AI, 機械学習, ChatGPT, Claude, LLM, 自動化, GitHub Actions">
   <meta name="author" content="AI情報ブログ">
 
+  <!-- Google Analytics 4 の読み込み -->
   <script src="assets/js/analytics.js"></script>
 
   <!-- Google AdSense -->
@@ -40,13 +44,16 @@
     rel="stylesheet">
 
   <title>AI情報ブログ - 最新AI情報を自動収集・分析</title>
+  <!-- コードハイライト用スタイルシート -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <!-- メインスタイルシート -->
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body data-barba="wrapper">
   <!-- ヘッダーはcomponents.jsで動的に挿入されます -->
 
+  <!-- メインコンテンツエリア（Barbaページ遷移対応） -->
   <main data-barba="container" data-barba-namespace="home">
     <!-- Google AdSense: ヘッダー広告（728x90 or レスポンシブ） -->
     <!--
@@ -66,6 +73,7 @@
     </div>
     -->
 
+    <!-- ヒーローセクション: サイトのメインビジュアルと紹介文 -->
     <section id="hero" class="inner hero-panel">
       <div class="hero-content">
         <p class="eyebrow">Future of Intelligence</p>
@@ -74,9 +82,11 @@
       </div>
     </section>
 
+    <!-- 記事一覧セクション: 最新記事とタグ検索機能 -->
     <section id="posts" class="inner">
       <div class="section-header">
         <h2>最新記事</h2>
+        <!-- タグ絞り込みトグルボタン -->
         <button type="button" id="tag-search-toggle" class="tag-search-toggle" aria-controls="tag-search-panel"
           aria-expanded="false">
           <span aria-hidden="true">#</span>
@@ -84,7 +94,7 @@
         </button>
       </div>
 
-      <!-- タグ検索パネルを記事リストの上に配置 -->
+      <!-- タグ検索パネル: タグによる記事フィルタリング機能 -->
       <div class="tag-search-panel" id="tag-search-panel" aria-label="タグ検索" data-mobile-open="false">
         <div class="tag-search-input-row">
           <label for="tag-search-input">タグ検索</label>
@@ -96,27 +106,33 @@
           </div>
         </div>
 
-        <!-- 記事検索 (Fuse.js) -->
+        <!-- 記事検索 (Fuse.js): キーワードによる全文検索機能 -->
         <div class="search-container" style="margin-top: 1rem;">
           <label for="search-input" style="display:block; margin-bottom:0.5rem; font-weight:bold;">記事検索</label>
           <div style="position:relative;">
             <input type="search" id="search-input" placeholder="キーワードで記事を検索..."
               style="width:100%; padding:0.8rem; border-radius:8px; border:1px solid var(--color-border); background:var(--color-bg-card);">
+            <!-- 検索結果のドロップダウン -->
             <div id="search-results" class="search-results-dropdown"
               style="display:none; position:absolute; top:100%; left:0; right:0; background:var(--color-bg-card); border:1px solid var(--color-border); border-radius:8px; z-index:1000; max-height:300px; overflow-y:auto; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
             </div>
           </div>
         </div>
 
+        <!-- タグ検索のヒントテキスト -->
         <p id="tag-search-hint" class="tag-search-hint">タグ名を入力すると候補が絞り込まれます。候補のタグをクリックすると記事がフィルタリングされます。</p>
+        <!-- 選択中のタグ表示エリア -->
         <div class="tag-search-selected" id="tag-search-selected" hidden>
           <span id="tag-search-selected-label"></span>
           <button type="button" id="tag-search-selected-clear" aria-label="選択中のタグを解除">×</button>
         </div>
+        <!-- フィルタ状態の表示 -->
         <p class="tag-filter-status" id="tag-filter-status" aria-live="polite"></p>
+        <!-- タグ候補リスト -->
         <div class="tag-search-suggestions" id="tag-search-suggestions" role="listbox" aria-label="タグ候補"></div>
       </div>
 
+      <!-- 記事カードのグリッド表示エリア (JavaScriptで動的に生成) -->
       <ul id="post-list" class="post-grid" aria-live="polite">
         <li class="post-card skeleton">
           <div class="skeleton-media"></div>
@@ -127,13 +143,21 @@
           </div>
         </li>
       </ul>
+      <!-- もっと見るボタン: 記事を追加で読み込む -->
+      <div id="load-more-container" class="load-more-container"
+        style="display: none; text-align: center; margin-top: 2rem;">
+        <button type="button" id="load-more-btn" class="btn btn-primary">もっと見る</button>
+      </div>
+      <!-- エラーメッセージ表示エリア -->
       <p id="post-error" role="status" aria-live="assertive"></p>
     </section>
 
+    <!-- サイト特徴紹介セクション -->
     <section id="features" class="inner info-panel">
       <div class="section-header">
         <h2>このブログの特徴</h2>
       </div>
+      <!-- 3つの特徴をカード形式で表示 -->
       <div class="workflow-grid">
         <article class="workflow-card">
           <p class="workflow-step">Feature 01</p>
@@ -175,17 +199,33 @@
 
   <!-- フッターはcomponents.jsで動的に挿入されます -->
 
+  <!-- JavaScriptが無効な場合の警告メッセージ -->
   <noscript>JavaScriptを有効にすると記事一覧が表示されます。</noscript>
+
+  <!-- 共通コンポーネント (ヘッダー・フッター) の動的挿入 -->
   <script src="assets/js/components.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+  <!-- アニメーションライブラリ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+
+  <!-- ページ遷移ライブラリ: Barba.js -->
   <script src="https://unpkg.com/@barba/core"></script>
+
+  <!-- スムーズスクロールライブラリ: Lenis -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+  <!-- コードハイライトライブラリ: Prism.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
-  <script src="assets/js/search.js" defer></script>
+
+  <!-- 全文検索ライブラリ: Fuse.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
+
+  <!-- サイト独自スクリプト -->
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/search.js" defer></script>
   <script src="assets/js/transitions.js" defer></script>
 </body>
 

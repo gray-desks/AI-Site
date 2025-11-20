@@ -1,21 +1,16 @@
 /**
  * @fileoverview 記事詳細ページ専用のUI制御スクリプト
  * 以下の機能を提供します:
- * - SNS共有リンクの生成
- * - 目次（Table of Contents）の自動生成とスクロール連動ハイライト
- * - 読書進捗バーの表示
- * - 目次のレスポンシブ対応（折りたたみ機能）
- * - 記事内タグのクリックによるトップページへの遷移
- */
-/**
- * @fileoverview 記事詳細ページ専用のUI制御スクリプト
- * 以下の機能を提供します:
  * - 目次（Table of Contents）の自動生成とスクロール連動ハイライト
  * - 読書進捗バーの表示
  * - 目次のレスポンシブ対応（折りたたみ機能）
  * - 記事内タグのクリックによるトップページへの遷移
  */
 
+/**
+ * 記事詳細ページの初期化関数
+ * Barba.jsによるページ遷移後にも呼び出せるようにグローバル関数として定義
+ */
 window.initArticlePage = () => {
   'use strict';
 
@@ -32,11 +27,14 @@ window.initArticlePage = () => {
   const title = document.title.replace(/ \| AI情報ブログ$/, '') || 'AI情報ブログ';
 
   // クリーンアップ用: 以前のイベントリスナーを削除
+  // Barba.jsでページ遷移する際、前のページで登録したイベントリスナーが残っていると
+  // 多重登録されてしまうため、初期化時に前回のクリーンアップ関数を実行
   if (window.articlePageCleanup) {
     window.articlePageCleanup();
     window.articlePageCleanup = null;
   }
 
+  // 今回の初期化で登録するクリーンアップタスクの配列
   const cleanupTasks = [];
 
   // --- 2. 目次 (Table of Contents) の自動生成 ---
@@ -116,8 +114,9 @@ window.initArticlePage = () => {
 
 
   // --- 3. 読書進捗インジケーター ---
+  // ページ上部に読書進捗を示すプログレスバーを表示する
   const initReadingProgress = () => {
-    // 既存のバーがあれば削除
+    // 既存のバーがあれば削除（ページ遷移時の重複を防ぐ）
     const existingBar = document.querySelector('.reading-progress');
     if (existingBar) existingBar.remove();
 
@@ -130,15 +129,18 @@ window.initArticlePage = () => {
     const articleContent = document.querySelector('.article-content, .post-article');
     if (!articleContent) return;
 
+    // スクロール位置に応じてプログレスバーの幅を更新する
     const updateProgress = () => {
       const articleTop = articleContent.offsetTop;
       const articleHeight = articleContent.offsetHeight;
       const scrollPosition = window.pageYOffset;
       const windowHeight = window.innerHeight;
 
+      // 記事の開始位置と終了位置を計算
       const scrollStart = articleTop;
       const scrollEnd = articleTop + articleHeight - windowHeight;
 
+      // 現在の読書進捗を0〜100の範囲で計算
       let progress = 0;
       if (scrollPosition >= scrollStart && scrollPosition <= scrollEnd) {
         progress = ((scrollPosition - scrollStart) / (scrollEnd - scrollStart)) * 100;
@@ -146,6 +148,7 @@ window.initArticlePage = () => {
         progress = 100;
       }
 
+      // プログレスバーの幅を更新
       bar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
     };
 
@@ -232,12 +235,15 @@ window.initArticlePage = () => {
     });
 
     // --- スクロール連動ハイライト ---
+    // スクロール位置に応じて、現在表示中のセクションを目次上でハイライトする
     const tocItems = Array.from(tocList.querySelectorAll('li[data-section-id]'));
     const sections = Array.from(headings);
 
+    // 現在のスクロール位置に基づいて、アクティブな目次項目を更新
     const updateActiveToc = () => {
       const scrollPosition = window.pageYOffset + 120; // ヘッダーオフセット分を加味
       let activeSection = null;
+      // 上から順に見ていき、スクロール位置を超えている最後のセクションを見つける
       for (const section of sections) {
         if (section.offsetTop <= scrollPosition) {
           activeSection = section;
@@ -246,14 +252,17 @@ window.initArticlePage = () => {
         }
       }
 
+      // 全ての目次項目からactiveクラスを削除
       tocItems.forEach(item => item.classList.remove('active'));
 
+      // アクティブなセクションがある場合、対応する目次項目をハイライト
       if (activeSection) {
         const activeItem = tocItems.find(item => item.dataset.sectionId === activeSection.id);
         if (activeItem) {
           activeItem.classList.add('active');
           const index = activeItem.dataset.tocIndex || '';
           const text = activeItem.querySelector('.toc-text')?.textContent || '';
+          // 現在位置を表示
           indicator.textContent = `現在位置: ${index} ${text.trim()}`;
           return;
         }
@@ -272,6 +281,7 @@ window.initArticlePage = () => {
 
 
   // --- 5. 記事内タグのクリック機能 ---
+  // 記事ページ内のタグをクリックすると、トップページのそのタグでフィルタリングされたページに遷移する
   const setupTagLinks = () => {
     const clickHandler = (e) => {
       const tagElement = e.target.closest('.tag[data-tag-slug]');
@@ -285,6 +295,7 @@ window.initArticlePage = () => {
       if (!slug) return;
 
       // ルートパスからの相対パスを計算してリダイレクト
+      // posts/ディレクトリ内からは '../' を、それ以外からは './' を使用
       const basePath = window.location.pathname.includes('/posts/') ? '../' : './';
       window.location.href = `${basePath}index.html?tag=${encodeURIComponent(slug)}`;
     };
