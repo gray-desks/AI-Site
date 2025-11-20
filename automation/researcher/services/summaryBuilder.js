@@ -43,11 +43,13 @@ const generateAISummary = async (articleText, title, apiKey) => {
       },
     ];
 
-    // OpenAI APIを呼び出し
+    // OpenAI APIを呼び出し（フォールバックモデル付き）
+    // 注意: この処理は1回のみ実行されます。リトライはしません。
     const completion = await callOpenAI({
       apiKey,
       messages,
       model: SUMMARY_GENERATION.model,
+      fallbackModel: SUMMARY_GENERATION.fallbackModel,
       temperature: SUMMARY_GENERATION.temperature,
       maxTokens: SUMMARY_GENERATION.max_tokens,
     });

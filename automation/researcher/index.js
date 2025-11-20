@@ -5,6 +5,11 @@
  * - OpenAI API を利用して、動画のタイトルと説明から検索キーワードを抽出します。
  * - Google Search API を使って関連記事を検索し、その内容を要約します。
  * - 調査結果で候補情報を更新し、ステータスを `researched` に変更します。
+ *
+ * 重要な設計方針:
+ * - 各処理（キーワード抽出、Google検索、要約生成）は1回のみ実行されます。
+ * - 失敗時はフォールバック値を使用し、リトライや再試行はしません。
+ * - 無限ループを防ぐため、再検索や再抽出は行いません。
  */
 
 const path = require('path');
@@ -39,15 +44,19 @@ const metricsTracker = createMetricsTracker('researcher');
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Google検索結果から除外するドメインのリスト（主にSNSなど）
+// 注意: これらのドメインは検索結果から取得されますが、後処理でフィルタリングされます
 const BLOCKED_DOMAINS = [
   'x.com',
   'twitter.com',
   't.co',
   'facebook.com',
   'instagram.com',
+  'tiktok.com',
   'youtube.com',
   'youtu.be',
   'm.youtube.com',
+  'reddit.com',
+  'pinterest.com',
 ];
 
 /**
@@ -70,6 +79,8 @@ const shouldSkipResult = (url) => {
 
 /**
  * Googleで検索し、上位記事の要約を生成します。
+ * 注意: この関数は1回のみ呼び出されます。再試行やループはしません。
+ *
  * @param {string} query - 検索クエリ
  * @param {string} googleApiKey - Google Search APIキー
  * @param {string} googleCx - Googleカスタム検索エンジンID
@@ -81,8 +92,11 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
   try {
     const desiredCount = Math.max(1, GOOGLE_TOP_LIMIT); // 取得したい記事の数
     // SNSなどを除外することを考慮し、多めにリクエスト (最大10件)
+    // 注意: Google Custom Search APIはドメイン除外パラメータのサポートが限定的なため、
+    // 取得後にフィルタリングを行います
     const requestCount = Math.min(desiredCount * 3, 10);
-    // Google検索を実行
+
+    // Google検索を実行（1回のみ、リトライなし）
     const res = await searchTopArticles({
       apiKey: googleApiKey,
       cx: googleCx,
@@ -90,14 +104,26 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
       num: requestCount,
     });
     const items = Array.isArray(res.items) ? res.items : [];
+
+    logger.info(`Google検索結果: ${items.length}件取得`);
+
     // 除外ドメインに一致しないものをフィルタリング
+    let skippedCount = 0;
     const filteredItems = items.filter((item) => {
       const skip = shouldSkipResult(item.link);
-      if (skip && item?.link) {
-        logger.info(`SNS結果をスキップ: ${item.link}`);
+      if (skip) {
+        skippedCount++;
+        if (item?.link) {
+          logger.info(`  [スキップ] SNS/除外ドメイン: ${item.link}`);
+        }
       }
       return !skip;
     });
+
+    if (skippedCount > 0) {
+      logger.info(`除外ドメインのフィルタリング: ${skippedCount}件スキップ、${filteredItems.length}件残存`);
+    }
+
     // フィルタ後の結果が多ければ上限数に、少なければ元の結果から上限数に絞る
     const limitedItems = filteredItems.length > 0
       ? filteredItems.slice(0, desiredCount)
@@ -182,13 +208,14 @@ const runResearcher = async () => {
     logger.info(`処理中: ${video.title}`);
 
     // --- 1. キーワード抽出 ---
+    // 注意: この処理は1回のみ実行されます。失敗時はフォールバックを使用し、リトライはしません。
     let searchQuery = video.title; // フォールバックとして動画タイトルを使用
     let keywordExtractionMethod = 'fallback';
     const keywordStartTime = Date.now();
 
     try {
-      logger.info(`キーワード抽出開始: "${video.title}"`);
-      // OpenAI APIを使ってキーワードを抽出
+      logger.info(`[キーワード抽出] 開始: "${video.title.substring(0, 50)}..."`);
+      // OpenAI APIを使ってキーワードを抽出（1回のみ、リトライなし）
       searchQuery = await extractSearchKeywords(
         openaiApiKey,
         video.title,
@@ -204,16 +231,18 @@ const runResearcher = async () => {
       metricsTracker.increment('keywordExtraction.success');
       keywordExtractionMethod = 'openai';
       logger.info(
-        `✓ 抽出キーワード: "${searchQuery}" (元: "${video.title.substring(0, 30)}...", ${keywordEndTime - keywordStartTime}ms)`,
+        `✓ [キーワード抽出] 成功: "${searchQuery}" (${keywordEndTime - keywordStartTime}ms)`,
       );
     } catch (error) {
       const keywordEndTime = Date.now();
       metricsTracker.increment('keywordExtraction.failure');
       metricsTracker.increment('keywordExtraction.fallback');
 
-      logger.error(`⚠️ キーワード抽出失敗: ${error.message}`);
-      logger.error(`  - エラー詳細: ${error.stack || 'スタックトレースなし'}`);
-      logger.error(`  - 対象タイトル: "${video.title}"`);
+      // エラーログを1行で簡潔に表示
+      logger.error(`✗ [キーワード抽出] 失敗 (${keywordEndTime - keywordStartTime}ms): ${error.message}`);
+      logger.error(`  → フォールバック使用: 動画タイトルをそのまま検索クエリに使用します`);
+      logger.error(`  → 対象: "${video.title.substring(0, 50)}..."`);
+
       searchQuery = video.title; // 失敗した場合は動画タイトルをそのまま使用
       keywordExtractionMethod = 'fallback';
 
@@ -222,7 +251,8 @@ const runResearcher = async () => {
         videoTitle: video.title,
         step: 'keyword-extraction',
         message: error.message,
-        errorStack: error.stack,
+        errorType: error.status ? `HTTP ${error.status}` : 'Unknown',
+        model: error.model || 'unknown',
       });
     }
 
@@ -256,25 +286,28 @@ const runResearcher = async () => {
     }
 
     // --- 3. Google検索と要約 ---
+    // 注意: この処理は1回のみ実行されます。失敗時は空の配列を返し、リトライはしません。
     let searchSummaries = [];
     const stopSearchTimer = metricsTracker.startTimer('googleSearch.timeMs');
 
     try {
-      logger.info(`Google検索: "${searchQuery}"`);
-      // 抽出したキーワードでGoogle検索し、結果を要約
+      logger.info(`[Google検索] 開始: "${searchQuery}"`);
+      // 抽出したキーワードでGoogle検索し、結果を要約（1回のみ、リトライなし）
       searchSummaries = await fetchSearchSummaries(searchQuery, googleApiKey, googleCx, openaiApiKey);
       const elapsed = stopSearchTimer();
 
       metricsTracker.increment('googleSearch.success');
       metricsTracker.increment('googleSearch.totalResults', searchSummaries.length);
-      logger.info(`検索完了: ${searchSummaries.length}件 (${elapsed}ms)`);
+      logger.info(`✓ [Google検索] 完了: ${searchSummaries.length}件の要約を取得 (${elapsed}ms)`);
     } catch (error) {
       const elapsed = stopSearchTimer();
       metricsTracker.increment('googleSearch.failure');
 
-      logger.error(`⚠️ Google検索失敗: ${error.message}`);
-      logger.error(`  - エラー詳細: ${error.stack || 'スタックトレースなし'}`);
-      logger.error(`  - 検索クエリ: "${searchQuery}" (elapsed ${elapsed}ms)`);
+      // エラーログを1行で簡潔に表示
+      logger.error(`✗ [Google検索] 失敗 (${elapsed}ms): ${error.message}`);
+      logger.error(`  → 検索クエリ: "${searchQuery}"`);
+      logger.error(`  → 結果: 要約なしで続行します`);
+
       searchSummaries = []; // 失敗した場合は空の配列を設定
 
       errors.push({
@@ -283,7 +316,7 @@ const runResearcher = async () => {
         step: 'google-search',
         searchQuery,
         message: error.message,
-        errorStack: error.stack,
+        errorType: error.status ? `HTTP ${error.status}` : 'Unknown',
       });
     }
 

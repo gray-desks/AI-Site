@@ -35,11 +35,13 @@ const extractSearchKeywords = async (apiKey, title, description = '') => {
     },
   ];
 
-  // OpenAI APIを呼び出し
+  // OpenAI APIを呼び出し（フォールバックモデル付き）
+  // 注意: この処理は1回のみ実行されます。リトライはしません。
   const completion = await callOpenAI({
     apiKey,
     messages,
     model: KEYWORD_EXTRACTION.model,
+    fallbackModel: KEYWORD_EXTRACTION.fallbackModel,
     temperature: KEYWORD_EXTRACTION.temperature,
     maxTokens: KEYWORD_EXTRACTION.max_tokens,
   });

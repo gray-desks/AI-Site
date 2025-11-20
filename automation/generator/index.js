@@ -171,11 +171,13 @@ const requestArticleDraft = async (apiKey, candidate) => {
     },
   ];
 
-  // OpenAI APIを呼び出す
+  // OpenAI APIを呼び出す（フォールバックモデル付き）
+  // 注意: この処理は1回のみ実行されます。リトライはしません。
   const completion = await callOpenAI({
     apiKey,
     messages,
     model: ARTICLE_GENERATION.model,
+    fallbackModel: ARTICLE_GENERATION.fallbackModel,
     temperature: ARTICLE_GENERATION.temperature,
     responseFormat: ARTICLE_GENERATION.response_format,
   });

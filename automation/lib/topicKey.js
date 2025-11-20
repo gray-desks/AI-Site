@@ -141,11 +141,13 @@ const deriveTopicKey = async (apiKey, video = {}, source = {}) => {
     },
   ];
 
-  // OpenAI APIを呼び出し
+  // OpenAI APIを呼び出し（フォールバックモデル付き）
+  // 注意: この処理は1回のみ実行されます。リトライはしません。
   const completion = await callOpenAI({
     apiKey,
     messages,
     model: TOPIC_KEY_EXTRACTION.model,
+    fallbackModel: TOPIC_KEY_EXTRACTION.fallbackModel,
     temperature: TOPIC_KEY_EXTRACTION.temperature,
     maxTokens: TOPIC_KEY_EXTRACTION.max_tokens,
     responseFormat: TOPIC_KEY_EXTRACTION.response_format,

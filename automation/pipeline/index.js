@@ -8,6 +8,11 @@
  * 2. Researcher: キーワード抽出とGoogle検索による調査 (候補ステータス: researched)
  * 3. Generator: 記事を生成 (候補ステータス: generated)
  * 4. Publisher: 生成された記事をサイトに公開 (候補ステータス: published)
+ *
+ * 重要な設計方針:
+ * - 各ステージは1回のみ実行されます。リトライや再試行はしません。
+ * - エラーが発生した場合は、フォールバック値を使用するか、gracefulに失敗します。
+ * - 無限ループを防ぐため、どのステージでも再検索や再生成は行いません。
  */
 
 const { runCollector } = require('../collector');
