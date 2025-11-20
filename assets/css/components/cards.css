@@ -197,3 +197,17 @@
   z-index: 1;
   flex-grow: 1;
 }
+
+/*
+ * ガラスモーフィズムカード (.card-glass)
+ * 背景を半透明にしてぼかし効果を加える
+ */
+.card-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}

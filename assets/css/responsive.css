@@ -489,7 +489,8 @@
     font-size: 0.65rem;
   }
 
-  .post-card {
+  .post-card,
+  .card-glass {
     padding: var(--space-md);
   }
 
@@ -698,7 +699,8 @@
     font-size: 0.6rem;
   }
 
-  .post-card {
+  .post-card,
+  .card-glass {
     padding: var(--space-sm);
   }
 
