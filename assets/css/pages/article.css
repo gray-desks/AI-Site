@@ -74,6 +74,13 @@ body.article-page main {
   }
 }
 
+/* デスクトップサイズではより広い幅に */
+@media (min-width: 1024px) {
+  .article-hero {
+    width: min(1400px, 100% - 4rem);
+  }
+}
+
 /*
  * 記事ヒーローセクション内の装飾的な疑似要素 (::after)
  * 右上に配置される円形のグラデーション。
@@ -243,6 +250,17 @@ body.article-page main {
   }
 }
 
+/* デスクトップサイズで2カラムレイアウト */
+@media (min-width: 1024px) {
+  .article-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(240px, 1fr);
+    gap: var(--space-2xl);
+    align-items: flex-start;
+    width: min(1400px, 100% - 4rem);
+  }
+}
+
 /*
  * 記事メインカラム (.article-main-column)
  */
@@ -252,6 +270,14 @@ body.article-page main {
   width: 100%;
   max-width: 760px;
   margin: 0 auto;
+}
+
+/* デスクトップサイズではグリッドアイテムとして自然に配置 */
+@media (min-width: 1024px) {
+  .article-main-column {
+    max-width: none;
+    margin: 0;
+  }
 }
 
 /*
@@ -396,6 +422,20 @@ body.article-page main {
   margin-right: auto;
 }
 
+/* デスクトップサイズではより広い幅に */
+@media (min-width: 768px) {
+  .article-conclusion {
+    width: min(900px, 100% - 4rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .article-conclusion {
+    width: min(1400px, 100% - 4rem);
+    max-width: none;
+  }
+}
+
 /*
  * まとめセクションの見出し (.conclusion-heading)
  */
@@ -447,6 +487,22 @@ body.article-page main {
   max-width: 760px;
   margin: 0 auto;
   order: -1;
+  /* モバイルでは上に表示 */
+}
+
+/* デスクトップサイズではサイド固定表示 */
+@media (min-width: 1024px) {
+  .article-sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    max-width: none;
+    margin: 0;
+    order: 1;
+    /* デスクトップでは右側に表示 */
+  }
 }
 
 /*
@@ -465,6 +521,17 @@ body.article-page main {
   padding: var(--space-sm) 0 var(--space-md);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
+}
+
+/* デスクトップサイズでは背景とボーダーを調整 */
+@media (min-width: 1024px) {
+  .article-card.article-toc {
+    padding: var(--space-lg);
+    background: var(--surface-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+  }
 }
 
 .article-card.article-note {
@@ -558,6 +625,16 @@ body.article-page main {
   padding: 0.25rem 0;
 }
 
+/* デスクトップサイズでは縦並びに戻す */
+@media (min-width: 1024px) {
+  .toc-list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    padding: 0;
+  }
+}
+
 /*
  * 目次リストの各アイテム (li)
  */
@@ -565,6 +642,14 @@ body.article-page main {
   transition: color var(--transition-fast);
   padding: 0;
   border-radius: 0;
+}
+
+/* デスクトップサイズではパディングとボーダー半径を追加 */
+@media (min-width: 1024px) {
+  .toc-list li {
+    padding: 0.35rem var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
 }
 
 /*
@@ -580,6 +665,18 @@ body.article-page main {
   align-items: center;
   gap: 0.5rem;
   padding: 0.1rem 0;
+}
+
+/* デスクトップサイズではflexレイアウトに変更 */
+@media (min-width: 1024px) {
+  .toc-list a {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+  }
 }
 
 /*
@@ -599,6 +696,13 @@ body.article-page main {
   color: var(--text-tertiary);
 }
 
+/* デスクトップサイズではインデントを追加 */
+@media (min-width: 1024px) {
+  .toc-list li.is-depth {
+    padding-left: calc(var(--space-md) + 0.5rem);
+  }
+}
+
 /*
  * 目次番号 (.toc-index)
  */
@@ -611,6 +715,15 @@ body.article-page main {
   /* 数字の幅を揃える */
   color: var(--text-muted);
   line-height: 1.4;
+}
+
+/* デスクトップサイズでは番号の幅を調整 */
+@media (min-width: 1024px) {
+  .toc-index {
+    min-width: 2.4rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
 }
 
 /*
