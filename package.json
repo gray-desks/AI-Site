@@ -7,8 +7,7 @@
     "pipeline": "node automation/pipeline/index.js",
     "research": "node automation/researcher/index.js",
     "generate": "node automation/generator/index.js",
-    "publish": "node automation/publisher/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "node automation/publisher/index.js"
   },
   "keywords": [
     "ai",
