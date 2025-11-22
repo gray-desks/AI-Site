@@ -4,10 +4,11 @@
  * キーワードベースの記事生成パイプライン
  *
  * 処理フロー:
- * 1. keywords.json から検索キーワードを読み込み (またはCLI引数)
- * 2. Researcher: Google検索による調査（検索1回、要約3件）
- * 3. Generator: 記事を生成
- * 4. Publisher: 生成された記事をサイトに公開
+ * 1. Collector: YouTube Data APIから候補動画を収集・保存し、検索キーワードキューを更新
+ * 2. キーワード選定: 保存済みキーワードを読み込み、既存記事と重複しないものを1件消費
+ * 3. Researcher: Google検索による調査（検索1回、要約3件）
+ * 4. Generator: 記事を生成
+ * 5. Publisher: 生成された記事をサイトに公開
  *
  * 重要な設計方針:
  * - 各ステージは1回のみ実行されます。リトライや再試行はしません。
@@ -16,36 +17,77 @@
  */
 
 const path = require('path');
+const fs = require('fs');
 const { parseArgs } = require('util');
-const { readJson } = require('../lib/io');
-// const { runCollector } = require('../collector'); // Collector は一時的にスキップ
+const { readJson, writeJson } = require('../lib/io');
+const { runCollector } = require('../collector');
 const { runResearcher } = require('../researcher');
 const { runGenerator } = require('../generator');
 const { runPublisher, recordFailureStatus } = require('../publisher');
+const slugify = require('../lib/slugify');
 
 // --- パス設定 ---
 const root = path.resolve(__dirname, '..', '..');
 const keywordsPath = path.join(root, 'data', 'keywords.json');
+const postsDir = path.join(root, 'posts');
 
 /**
- * keywords.json から検索キーワードを読み込みます。
- * @returns {string} 検索キーワード
+ * 既存記事のスラグ一覧を取得します。
+ * postsディレクトリ内のファイル名から日付プレフィックスを除去してスラグ化します。
  */
-const loadKeyword = () => {
-  try {
-    const keywords = readJson(keywordsPath, []);
-    if (!Array.isArray(keywords) || keywords.length === 0) {
-      throw new Error('keywords.json にキーワードが設定されていません。');
-    }
-    // 配列の最初の要素をキーワードとして使用
-    const keyword = keywords[0];
-    if (!keyword || typeof keyword !== 'string') {
-      throw new Error('keywords.json の最初の要素が有効な文字列ではありません。');
-    }
-    return keyword;
-  } catch (error) {
-    throw new Error(`keywords.json の読み込みに失敗しました: ${error.message}`);
+const getExistingArticleSlugs = () => {
+  if (!fs.existsSync(postsDir)) return new Set();
+  const files = fs.readdirSync(postsDir, { withFileTypes: true });
+  const slugs = files
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.html') && entry.name !== 'article-template.html')
+    .map((entry) => entry.name.replace(/\.html$/, ''))
+    .map((name) => name.replace(/^\d{4}-\d{2}-\d{2}-/, ''))
+    .map((name) => slugify(name, 'article'));
+  return new Set(slugs);
+};
+
+/**
+ * keywords.json から検索キーワードを1件取り出し、既存記事と重複しないものだけを残します。
+ * 取り出したキーワードはキューから削除され、以後再利用されません。
+ * @returns {{ keyword: string, remaining: number }} 取り出したキーワードと残キュー数
+ */
+const consumeKeyword = () => {
+  let queue = readJson(keywordsPath, []);
+  if (!Array.isArray(queue)) queue = [];
+
+  const existingSlugs = getExistingArticleSlugs();
+  const seenSlugs = new Set();
+  const normalizedQueue = [];
+
+  // キュー内の重複を排除しつつ正規化
+  for (const entry of queue) {
+    if (!entry || typeof entry !== 'string') continue;
+    const slug = slugify(entry, 'keyword');
+    if (!slug || seenSlugs.has(slug)) continue;
+    seenSlugs.add(slug);
+    normalizedQueue.push({ value: entry, slug });
   }
+
+  let picked = null;
+  const remainingQueue = [];
+
+  for (const item of normalizedQueue) {
+    if (!existingSlugs.has(item.slug) && !picked) {
+      picked = item.value;
+      continue;
+    }
+    // 既存記事と重複するもの、もしくは消費済み以外を残す
+    if (!existingSlugs.has(item.slug)) {
+      remainingQueue.push(item.value);
+    }
+  }
+
+  if (!picked) {
+    throw new Error('keywords.json に有効なキーワードがありません（既存記事と重複を除外後に空になりました）。');
+  }
+
+  writeJson(keywordsPath, remainingQueue);
+  return { keyword: picked, remaining: remainingQueue.length };
 };
 
 /**
@@ -80,40 +122,38 @@ const main = async () => {
   }
 
   console.log('[pipeline] 自動記事生成パイプラインを起動します。');
-  console.log('[pipeline] 処理フロー: Keyword → Researcher → Generator → Publisher\n');
+  console.log('[pipeline] 処理フロー: Collector → Keyword Selection → Researcher → Generator → Publisher\n');
 
   // 各ステージの結果を格納する変数
-  let collectorResult = null; // Collector はスキップするが、Publisher の互換性のため
+  let collectorResult = null;
   let researcherResult = null;
   let generatorResult = null;
+  let keyword = null;
 
   try {
-    // Stage 0: キーワード決定
-    console.log('[pipeline] === Stage 0: Keyword Loading ===');
-    let keyword;
+    // Stage 1: Collector
+    console.log('\n[pipeline] === Stage 1/5: Collector ===');
+    collectorResult = await runCollector();
+    console.log('[pipeline] Collector 完了:', {
+      newCandidates: collectorResult.newCandidates,
+      totalCandidates: collectorResult.totalCandidates,
+      keywordsAdded: collectorResult.keywordsAdded ?? 0,
+      keywordQueueSize: collectorResult.keywordQueueSize ?? 'unknown',
+    });
+
+    // Stage 2: キーワード選定
+    console.log('\n[pipeline] === Stage 2/5: Keyword Selection ===');
     if (args.keyword) {
       keyword = args.keyword;
       console.log(`[pipeline] CLI引数からキーワードを使用: "${keyword}"`);
     } else {
-      keyword = loadKeyword();
-      console.log(`[pipeline] keywords.jsonからキーワードを使用: "${keyword}"`);
+      const { keyword: picked, remaining } = consumeKeyword();
+      keyword = picked;
+      console.log(`[pipeline] keywords.jsonからキーワードを使用: "${keyword}" (残り ${remaining} 件)`);
     }
 
-    // Stage 1: Collector (一時的にスキップ)
-    // console.log('\n[pipeline] === Stage 1/4: Collector ===');
-    // collectorResult = await runCollector();
-    // console.log('[pipeline] Collector 完了:', {
-    //   newCandidates: collectorResult.newCandidates,
-    //   totalCandidates: collectorResult.totalCandidates,
-    // });
-    console.log('\n[pipeline] === Stage 1: Collector (スキップ) ===');
-    collectorResult = {
-      skipped: true,
-      reason: 'keyword-based-pipeline',
-    };
-
-    // Stage 2: Researcher (キーワードでGoogle検索)
-    console.log('\n[pipeline] === Stage 2: Researcher ===');
+    // Stage 3: Researcher (キーワードでGoogle検索)
+    console.log('\n[pipeline] === Stage 3/5: Researcher ===');
     researcherResult = await runResearcher({ keyword });
     console.log('[pipeline] Researcher 完了:', {
       keyword: researcherResult.keyword,
@@ -138,16 +178,16 @@ const main = async () => {
       return;
     }
 
-    // Stage 3: Generator (記事生成)
-    console.log('\n[pipeline] === Stage 3: Generator ===');
+    // Stage 4: Generator (記事生成)
+    console.log('\n[pipeline] === Stage 4/5: Generator ===');
     generatorResult = await runGenerator(researcherResult);
     console.log('[pipeline] Generator 完了:', {
       generated: generatorResult.generated,
       reason: generatorResult.reason || 'success',
     });
 
-    // Stage 4: Publisher (公開)
-    console.log('\n[pipeline] === Stage 4: Publisher ===');
+    // Stage 5: Publisher (公開)
+    console.log('\n[pipeline] === Stage 5/5: Publisher ===');
     const status = await runPublisher({
       collectorResult,
       researcherResult,

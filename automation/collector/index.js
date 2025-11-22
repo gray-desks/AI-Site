@@ -7,6 +7,7 @@
  */
 
 const path = require('path');
+const fs = require('fs');
 const { readJson, writeJson, ensureDir } = require('../lib/io');
 const slugify = require('../lib/slugify');
 const { COLLECTOR } = require('../config/constants');
@@ -22,6 +23,9 @@ const root = path.resolve(__dirname, '..', '..');
 const sourcesPath = path.join(root, 'data', 'sources.json');
 // 実行結果の出力先ディレクトリのパス
 const outputDir = path.join(root, 'automation', 'output', 'collector');
+// キーワードキュー
+const keywordsPath = path.join(root, 'data', 'keywords.json');
+const postsDir = path.join(root, 'posts');
 
 // --- 定数設定 ---
 const { MAX_PER_CHANNEL, VIDEO_LOOKBACK_DAYS, SEARCH_PAGE_SIZE, CLEANUP_PROCESSED_DAYS, MAX_PENDING_CANDIDATES } = COLLECTOR;
@@ -36,6 +40,53 @@ const metricsTracker = createMetricsTracker('collector');
  */
 const createChannelUrl = (channelId) =>
   channelId ? `https://www.youtube.com/channel/${channelId}` : null;
+
+/**
+ * 既存記事のスラグ一覧を取得します。
+ * ファイル名の日付プレフィックスを除去してスラグ化します。
+ */
+const getExistingArticleSlugs = () => {
+  if (!fs.existsSync(postsDir)) return new Set();
+  const files = fs.readdirSync(postsDir, { withFileTypes: true });
+  const slugs = files
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.html') && entry.name !== 'article-template.html')
+    .map((entry) => entry.name.replace(/\.html$/, ''))
+    .map((name) => name.replace(/^\d{4}-\d{2}-\d{2}-/, ''))
+    .map((name) => slugify(name, 'article'))
+    .filter(Boolean);
+  return new Set(slugs);
+};
+
+/**
+ * 収集したキーワードをキューに追加し、重複や既存記事と被るものを除外します。
+ * @param {Array<string>} keywords - 追加するキーワード配列
+ * @returns {{added: number, total: number}} 追加数とキュー全体の件数
+ */
+const enqueueKeywords = (keywords) => {
+  if (!Array.isArray(keywords) || keywords.length === 0) {
+    const existingQueue = readJson(keywordsPath, []);
+    return { added: 0, total: Array.isArray(existingQueue) ? existingQueue.length : 0 };
+  }
+
+  let queue = readJson(keywordsPath, []);
+  if (!Array.isArray(queue)) queue = [];
+
+  const existingSlugs = new Set(queue.map((k) => slugify(k, 'keyword')));
+  const articleSlugs = getExistingArticleSlugs();
+  let added = 0;
+
+  for (const keyword of keywords) {
+    if (!keyword || typeof keyword !== 'string') continue;
+    const slug = slugify(keyword, 'keyword');
+    if (!slug || existingSlugs.has(slug) || articleSlugs.has(slug)) continue;
+    queue.push(keyword);
+    existingSlugs.add(slug);
+    added += 1;
+  }
+
+  writeJson(keywordsPath, queue);
+  return { added, total: queue.length };
+};
 
 /**
  * 動画の公開日時が指定された期間内（VIDEO_LOOKBACK_DAYS）であるか判定します。
@@ -174,6 +225,7 @@ const runCollector = async () => {
   let updatedCandidates = [...existingCandidates];
   const errors = [];
   let newCandidatesCount = 0;
+  const newKeywords = [];
 
   // 各ソース（チャンネル）に対して処理を実行
   for (const [index, source] of sources.entries()) {
@@ -251,6 +303,9 @@ const runCollector = async () => {
         logger.info(
           `新規候補を追加: ${normalizedSource.name} / ${video.title} (candidateId: ${candidateId})`,
         );
+
+        // 検索キーワード候補として動画タイトルをキューに追加する（後で重複除外）
+        newKeywords.push(video.title);
       }
 
       if (addedForChannel === 0) {
@@ -333,6 +388,13 @@ const runCollector = async () => {
     newVideosAdded: metricsTracker.getCounter('videos.new'),
     duplicatesSkipped: metricsTracker.getCounter('videos.duplicates'),
   };
+
+  // キーワードキューを更新（新規候補の動画タイトルを利用）
+  const keywordQueueResult = enqueueKeywords(newKeywords);
+  logger.info(
+    `[keyword-queue] 新規${keywordQueueResult.added}件を追加 / キュー総数 ${keywordQueueResult.total}件`,
+  );
+
   // 出力データを作成
   const outputData = {
     timestamp,
@@ -341,6 +403,10 @@ const runCollector = async () => {
     totalCandidates: updatedCandidates.length,
     metrics: metricsSummary,
     errors,
+    keywordQueue: {
+      added: keywordQueueResult.added,
+      total: keywordQueueResult.total,
+    },
     // 直近1時間で追加された新規動画のリスト
     newVideos: updatedCandidates
       .filter((c) => c.status === 'collected' && new Date(c.createdAt).getTime() > Date.now() - 3600000) 
@@ -385,6 +451,8 @@ const runCollector = async () => {
     checkedSources: sources.length,
     newCandidates: newCandidatesCount,
     totalCandidates: updatedCandidates.length,
+    keywordsAdded: keywordQueueResult.added,
+    keywordQueueSize: keywordQueueResult.total,
     errors,
     metrics: metricsSummary,
   };
