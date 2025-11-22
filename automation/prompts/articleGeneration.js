@@ -23,7 +23,8 @@ const ARTICLE_GENERATION = {
 
   user: (candidate, searchSummary, searchQuery, today) => `
 # Mission: Write a High-Quality Technical Review
-以下のリサーチ情報を元に、エンジニアやテック愛好家が満足する深度のある技術記事を作成してください。
+以下のリサーチ情報を元に、エンジニアやテック愛好家が満足する**情報量と深度**を持つ技術記事を作成してください。
+記事が短くなることは許されません。読者が「保存版」としてブックマークしたくなるような、網羅的かつ詳細な内容にしてください。
 
 **Source Material**:
 [Title]: ${candidate.video.title}
@@ -32,43 +33,32 @@ ${searchSummary}
 
 **Requirement**:
 - Generate a JSON object following the schema below.
-- **Total Character Count: 3000+ characters** (Deep dive required).
+- **Total Character Count: 3000+ characters** (This is a strict requirement. Provide deep analysis, not just summaries).
+- **Content Density**: Avoid filler words. Every paragraph must contain new information, technical details, or specific examples.
 - **Style**: Analytical, precise, and forward-looking. Use technical terminology correctly.
 
 # Output Schema (JSON Only)
 {
   "title": "35-45文字。具体的な技術名やメリットを含み、クリックしたくなるが釣りではない信頼できるタイトル。（例：Gemini 3 Pro実機レビュー：マルチモーダル性能の進化と開発現場での活用可能性）",
-  "summary": "120文字程度。記事の要点を簡潔にまとめ、読むメリットを提示する。",
-  "intro": "3-4段落。事実（ニュース）から入り、この記事で何を検証するのか、結論として何が言えるのかを提示する。読者の課題意識にフックさせる。",
+  "summary": "150文字程度。記事の要点を簡潔にまとめ、読むメリットを提示する。",
+  "intro": "4-5段落。事実（ニュース）から入り、この記事で何を検証するのか、結論として何が言えるのかを提示する。読者の課題意識にフックさせる。",
   "tags": ["SEOキーワード", "技術スタック", "トレンド"],
   "sections": [
+    // 記事のテーマに合わせて、最適な構成（3〜5つのセクション）を自由に設計してください。
+    // 各セクションは十分に深掘りし、決して表面的な内容で終わらせないでください。
+    // 以下の要素から、記事の内容に最適なものを組み合わせて構成してください：
+    // - 技術的な深掘り・アーキテクチャ解説
+    // - 具体的な検証・ベンチマーク（やってみた系の場合）
+    // - 実践的なユースケース・活用シナリオ
+    // - 競合比較・市場分析
+    // - エンジニア視点での評価・課題
     {
-      "heading": "H2見出し。具体的で説明的なもの（例：推論速度と精度のトレードオフ検証）。",
-      "overview": "セクションの概要。技術的な背景。",
-      "subSections": [
-        {
-          "heading": "H3見出し。具体的な機能や検証項目。",
-          "body": "長文（600文字以上）。具体的な数値、比較（vs GPT-4, Claude 3等）、実際の挙動を詳細に記述する。「〜という処理をさせた結果、〇〇秒でレスポンスがあった」など、検証プロセスが見えるように書く。"
-        }
-      ]
-    },
-    {
-      "heading": "H2見出し（実践的ユースケースと応用）。",
-      "overview": "ビジネスや開発フローへの導入シミュレーション。",
-      "subSections": [
-        {
-          "heading": "H3見出し。",
-          "body": "長文（600文字以上）。具体的なシナリオ（例：レガシーコードのリファクタリング、多言語ドキュメントの自動生成等）を設定し、この技術がどう役立つか、どこに限界があるかを論じる。"
-        }
-      ]
-    },
-    {
-      "heading": "H2見出し（エンジニア視点での評価と課題）。",
-      "overview": "コストパフォーマンス、APIの使い勝手、エコシステムなど。",
+      "heading": "H2見出し。記事の流れに沿った魅力的な見出し。",
+      "overview": "セクションの導入。",
       "subSections": [
         {
           "heading": "H3見出し。",
-          "body": "長文（600文字以上）。良い点だけでなく、レイテンシの問題、トークンコスト、ハルシネーションのリスクなど、導入前に知っておくべき注意点をプロの視点で指摘する。"
+          "body": "超長文（800〜1000文字推奨）。具体的な詳細、数値データ、エピソード、コード例、比較表の内容などを交えて徹底的に論じる。「〜です。〜ます。」で終わる短い文を羅列するのではなく、論理的に接続された読み応えのある段落を構成する。"
         }
       ]
     }
@@ -78,7 +68,7 @@ ${searchSummary}
 
 **Constraint**:
 - Produce strictly valid JSON.
-- **Minimum 3000 characters**.
+- **Minimum 2500 characters**.
 - Date context: ${today}`,
 };
 

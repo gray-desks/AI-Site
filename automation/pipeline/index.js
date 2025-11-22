@@ -47,8 +47,41 @@ const getExistingArticleSlugs = () => {
 };
 
 /**
+ * 2つの文字列の類似度（0.0〜1.0）を計算します。
+ * Levenshtein距離に基づき、文字列の近さを判定します。
+ * @param {string} s1
+ * @param {string} s2
+ * @returns {number} 類似度 (0.0: 全く異なる, 1.0: 完全一致)
+ */
+const calculateSimilarity = (s1, s2) => {
+  const len1 = s1.length;
+  const len2 = s2.length;
+  const maxLen = Math.max(len1, len2);
+  if (maxLen === 0) return 1.0;
+
+  const matrix = [];
+  for (let i = 0; i <= len1; i++) matrix[i] = [i];
+  for (let j = 0; j <= len2; j++) matrix[0][j] = j;
+
+  for (let i = 1; i <= len1; i++) {
+    for (let j = 1; j <= len2; j++) {
+      const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,
+        matrix[i][j - 1] + 1,
+        matrix[i - 1][j - 1] + cost
+      );
+    }
+  }
+
+  const distance = matrix[len1][len2];
+  return 1.0 - distance / maxLen;
+};
+
+/**
  * keywords.json から検索キーワードを1件取り出し、既存記事と重複しないものだけを残します。
  * 取り出したキーワードはキューから削除され、以後再利用されません。
+ * 重複判定には完全一致に加え、スラグの類似度（Levenshtein距離）も使用します。
  * @returns {{ keyword: string, remaining: number }} 取り出したキーワードと残キュー数
  */
 const consumeKeyword = () => {
@@ -72,13 +105,29 @@ const consumeKeyword = () => {
   const remainingQueue = [];
 
   for (const item of normalizedQueue) {
-    if (!existingSlugs.has(item.slug) && !picked) {
+    // 既存記事との重複チェック（完全一致 + 類似度）
+    const isDuplicate = Array.from(existingSlugs).some((existing) => {
+      // 1. 完全一致
+      if (existing === item.slug) return true;
+
+      // 2. 類似度チェック (閾値 0.8)
+      // 短すぎるスラグは誤判定のリスクがあるため、ある程度の長さがある場合のみチェック
+      if (item.slug.length > 5 && existing.length > 5) {
+        return calculateSimilarity(item.slug, existing) > 0.8;
+      }
+      return false;
+    });
+
+    if (!isDuplicate && !picked) {
       picked = item.value;
       continue;
     }
-    // 既存記事と重複するもの、もしくは消費済み以外を残す
-    if (!existingSlugs.has(item.slug)) {
+
+    // 既存記事と重複しないものだけをキューに残す
+    if (!isDuplicate) {
       remainingQueue.push(item.value);
+    } else {
+      console.log(`[pipeline] Skipped duplicate keyword: "${item.value}" (slug: ${item.slug})`);
     }
   }
 
