@@ -1,5 +1,41 @@
 [
   {
+    "title": "Gemini 3 Proがもたらす未来のAI体験、驚きの連続！",
+    "date": "2025-11-22",
+    "summary": "Gemini 3 ProはただのAIじゃない。実際に触ってみたら、まるで未来がここに来たような感覚。これ、絶対に試してみる価値あり！",
+    "tags": [
+      {
+        "slug": "ai-topic",
+        "label": "AIトピック",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "gemini-3-pro",
+        "label": "Gemini 3 Pro",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "tag-3",
+        "label": "技術革新",
+        "category": "その他",
+        "style": "accent-sky"
+      }
+    ],
+    "url": "posts/2025-11-22-gemini-3-proai.html",
+    "slug": "2025-11-22-gemini-3-proai",
+    "publishedAt": "2025-11-22T06:16:17.350Z",
+    "image": {
+      "key": "research-05",
+      "src": "assets/img/article-templates/research-05.webp",
+      "alt": "リサーチデータの波形（バリアント5）",
+      "label": "リサーチ＆インサイト",
+      "caption": "Gemini 3.0や深掘り分析記事にフィット。",
+      "category": "research"
+    }
+  },
+  {
     "title": "Gemini 3: Googleの次世代AIがもたらす革新と挑戦",
     "date": "2025-11-22",
     "summary": "Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。",
