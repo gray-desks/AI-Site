@@ -1,54 +1,203 @@
 {
-  "status": "skipped",
-  "generatedFile": null,
-  "executedAt": "2025-11-22T03:22:18.348Z",
+  "status": "success",
+  "generatedFile": "posts/2025-11-22-gemini-3-googleai.html",
+  "executedAt": "2025-11-22T03:48:51.011Z",
   "collector": {
-    "skipped": true,
-    "reason": "keyword-based-pipeline"
+    "source": "YouTube",
+    "checkedSources": 17,
+    "newCandidates": 20,
+    "totalCandidates": 42,
+    "keywordsAdded": 20,
+    "keywordQueueSize": 20,
+    "errors": [],
+    "metrics": {
+      "totalVideosFound": 47,
+      "newVideosAdded": 20,
+      "duplicatesSkipped": 3
+    }
   },
   "researcher": {
-    "keyword": "Gemini 3 最新情報",
+    "keyword": "Google最新AI「Gemini 3」とAIエディタ「Google AntiGravity」が凄かったので解説してみた",
     "summaries": [
       {
-        "title": "Gemini 3 による知性の新時代",
-        "url": "https://blog.google/intl/ja-jp/company-news/technology/gemini-3/",
-        "snippet": "3 days ago ... ウェブ上の情報をより深く理解できるよう、Google 検索 の AI モードでは、Gemini 3 を搭載しました。これにより、没入型な視覚レイアウト、 ...",
-        "summary": "- Gemini 3は、2025年11月19日に発表されたGoogle DeepMindの最新AIモデル。\n- Gemini 3 Proは、LMArenaで1501 Eloを記録し、Humanity’s Last Examで37.5%、GPQA Diamondで91.9%のスコアを達成。\n- MathArena Apexで23.4%、MMMU-Proで81%、Video-MMMUで87.6%、SimpleQA Verifiedで72.1%のスコア。\n- Gemini 3 Deep Thinkモードは、Humanity’s Last Examで41.0%、GPQA Diamondで93.8%、ARC-AGIで45.1%を記録。\n- 100万トークンのコンテキストウィンドウを持ち、マルチモーダル推論能力を強化。\n- Terminal-Bench 2.0で54.2%、SWE-bench Verifiedで76.2%のスコア。\n- WebDev Arenaで1487 ELOを獲得。\n- Google Antigravityプラットフォームでエージェント開発を支援。\n- 安全性評価は、AISIなどの機関と協力し、プロンプトインジェクション耐性を向上。\n- Google AI Ultraのサブスクリプションユーザー向けにGemini 3 Deep Thinkモードを提供予定。",
+        "title": "【完全解説】Google「Gemini 3」ついに登場！他をぶっち切る圧倒 ...",
+        "url": "https://note.com/masa_wunder/n/n21fe502360e7",
+        "snippet": "3 days ago ... Gemini 3 Deep Think: 推論能力を極限まで高めた強化モード（Google AI Ultraサブスクリプション向け）。 Google Antigravity: 新しいエージェント型開発 ...",
+        "summary": "- Googleは2025年11月にAIモデル「Gemini 3」と「Gemini 3 Pro」を発表。\n- 「Gemini 3」は推論、エージェント機能、マルチモーダルで進化。\n- 提供形態: Gemini 3 ProはGoogle全製品で利用可能。Deep ThinkはGoogle AI Ultra向け。\n- ベンチマーク: Humanity’s Last Exam、ARC-AGI-2、GPQA Diamond、AIME 2025、SWE-Bench Verified、t2-bench、Vending-Bench 2で高スコア。\n- プログラミング能力: ワンショット生成の精度が高く、SVGやHTMLスライドなどを生成。\n- 新プラットフォーム「Google Antigravity」発表。AIエージェントが自律的に計画・コーディング。\n- Deep Thinkモード: 複雑な問題をステップごとに分解し、検証。\n- マルチモーダル機能: 動画解析、手書き文字認識、UI/UX理解。\n- コスト: Gemini 2.5 Proより20%高いが、GPT-5シリーズよりコストパフォーマンスが良い。\n- 提供開始: 一般ユーザーと開発者は即日利用可能。Deep Thinkは数週間以内に提供予定。",
         "quality": "high"
       },
       {
-        "title": "Gemini 3 デベロッパー ガイド | Gemini API | Google AI for Developers",
-        "url": "https://ai.google.dev/gemini-api/docs/gemini-3?hl=ja",
-        "snippet": "2 days ago ... Gemini 3 の新 ... この情報は役に立ちましたか？ フィードバックを送信. Gemini 3 デベロッパー ガイド. content_copy. この ...",
-        "summary": "- **Gemini 3 Pro Model**: Supports complex reasoning, autonomous coding, and multimodal tasks. Default thinking level is high, but can be set to low for faster, low-latency responses.\n- **API Usage**: \n  - Python: `client.models.generate_content(model=\"gemini-3-pro-preview\", contents=\"...\")`\n  - JavaScript: `ai.models.generateContent({ model: \"gemini-3-pro-preview\", contents: \"...\" })`\n  - REST: `curl \"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent\" -H \"x-goog-api-key: $GEMINI_API_KEY\" -d '{ \"contents\": [...] }'`\n- **Model Specifications**:\n  - `gemini-3-pro-preview`: Context window 1M/64k, knowledge cutoff Jan 2025, pricing $2/$12 (<200k tokens), $4/$18 (>200k tokens).\n  - `gemini-3-pro-image-preview`: Context window 65k/32k, pricing $2 (text input)/$0.134 (image output).\n- **Parameters**:\n  - `thinking_level`: Controls inference depth; low minimizes latency/cost, high maximizes reasoning depth.\n  - `media_resolution`: Controls token allocation for images/videos; high resolution increases detail but also token usage and latency.\n- **Media Resolution Recommendations**:\n  - Images: `media_resolution_high`, 1120 tokens.\n  - PDFs: `media_resolution_medium`, 560 tokens.\n  - Videos: `media_resolution_low`, 70 tokens/frame.\n- **Thought Signatures**: Used to maintain inference context across API calls. Required for strict validation in function calls and image editing.\n- **Errors**: Using both `thinking_level` and `thinking_budget` in the same request returns a 400 error.\n- **Temperature Setting**: Recommended to keep at default 1.0 to avoid unexpected behavior in complex tasks.\n- **API Version**: `media_resolution` available in `v1alpha` API version.",
-        "quality": "high"
-      },
-      {
-        "title": "Gemini 3：Gemini アプリにさらに進化したスマートな新機能が登場",
-        "url": "https://blog.google/intl/ja-jp/company-news/technology/gemini-3gemini/",
-        "snippet": "3 days ago ... Gemini 3 を本日発表します。 より鋭い推論、大幅に進化したバイブ コーディングの機能、新しいデザイン、そして実験的なエージェントが導入され ...",
-        "summary": "Gemini 3：Gemini アプリにさらに進化したスマートな新機能が登場 2025年 11月 19日 共有 Twitter Facebook LinkedIn メール リンクをコピー Gemini 3 を本日発表します。より鋭い推論、大幅に進化したバイブ コーディングの機能、新しいデザイン、そして実験的なエージェントが導入されます。Josh Woodward VP, Google Labs, Gemini & AI Studio 共有 Twitter Facebook LinkedIn メール リンクをコピー 本日、Gemini アプリの重要なアップデートについて発表します。これは、これまでで最も高性能なモデルの発表も含みます。発表の内容は以下の通りです。Gemini 3：最先端の推論により最も複雑なリクエストを解決できる最新モデル。生成インターフェース：Gemini 3 は、ユーザーのニーズに適応し、特定のプロンプトに最適に応答する新しいインターフェース。Gemini Agent：複数の手順を要するタスクを任せられる新しいツールを、Google AI Ultra ユーザーに先行展開。（米国から提供開始） Gemini 3：AI の力を最大限に引き出すGemini 3 は、AI モデルの性能を新たな高みへと引き上げます。Gemini の応答がより実用的に、より整然と、そしてより簡潔になりました。",
+        "title": "【衝撃】Googleから「Gemini 3」が登場。GPT-5.1を超えた？深夜 ...",
+        "url": "https://note.com/life_to_ai/n/ne2f4545d2db4",
+        "snippet": "3 days ago ... ... てみたデモの結果、そして私が感じた「AIとしての賢さ」の正体について、包括的に解説していきます。 1. Gemini 3 Proの衝撃：GPT-5.1 Thinkingを超え ...",
+        "summary": "- **モデル名**: Gemini 3 Pro\n- **ベンチマーク性能**:\n  - ARC-AGIで高スコアを記録。\n  - ビジネスシミュレーション「Bending Machine」で圧倒的1位。\n  - SW Benchでのコーディング能力は他モデルと大差なし。\n  - 「Last Exam」No Toolでの正答率37.5%。\n- **新機能**:\n  - Gemini CLIとAPIが開発者向けに提供。\n  - AIエディタ「Anti-Gravity」登場。\n- **具体的なタスク性能**:\n  - SVG生成で高品質なイラストを一発で出力。\n  - HTMLスライド生成で実用レベルのデザインを一発で出力。\n  - Webサイト・LP制作でUIの質が高い。\n- **知性と判断力**:\n  - 論理パズルを22.9秒で解決。\n  - ユーザーの施策に対して明確な否定が可能。\n- **コスト**:\n  - Gemini 3 Proは前モデルより約20%値上がり。\n  - 200kトークンを超えると高額になる可能性。\n- **競合比較**:\n  - GPT-5.1と比べ、具現化能力が高い。\n  - Claude 3.5 Sonnetより安価。\n- **使用環境**:\n  - Cursor / Windsurf対応。\n  - OpenRouter経由でのスピードが速い。",
         "quality": "high"
       }
     ]
   },
   "generator": {
-    "generated": false,
-    "reason": "duplicate-topic",
-    "candidateId": "manual-1763781738339",
+    "generated": true,
+    "candidateId": "manual-1763783323097",
+    "postEntry": {
+      "title": "Gemini 3: Googleの次世代AIがもたらす革新と挑戦",
+      "date": "2025-11-22",
+      "summary": "Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。",
+      "tags": [
+        {
+          "slug": "ai-topic",
+          "label": "AIトピック",
+          "category": "その他",
+          "style": "accent-neutral"
+        },
+        {
+          "slug": "gemini-3",
+          "label": "Gemini 3",
+          "category": "その他",
+          "style": "accent-gold"
+        },
+        {
+          "slug": "google-ai",
+          "label": "Google AI",
+          "category": "企業・プロダクト",
+          "style": "accent-purple"
+        },
+        {
+          "slug": "tag-4",
+          "label": "マルチモーダル",
+          "category": "その他",
+          "style": "accent-sky"
+        },
+        {
+          "slug": "tag-5",
+          "label": "推論能力",
+          "category": "その他",
+          "style": "accent-pink"
+        }
+      ],
+      "url": "posts/2025-11-22-gemini-3-googleai.html",
+      "slug": "2025-11-22-gemini-3-googleai",
+      "publishedAt": "2025-11-22T03:48:51.001Z",
+      "image": {
+        "key": "future-04",
+        "src": "assets/img/article-templates/future-04.webp",
+        "alt": "未来感のあるホログラム調（バリアント4）",
+        "label": "フューチャービジョン",
+        "caption": "次世代ロードマップやGemini 3.0の展望記事向け。",
+        "category": "future"
+      }
+    },
+    "draftUrl": "posts/2025-11-22-gemini-3-googleai.html",
+    "topicKey": "googleaigemini-3aigoogle-antigravity",
+    "article": {
+      "title": "Gemini 3: Googleの次世代AIがもたらす革新と挑戦",
+      "summary": "Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。",
+      "intro": "AIの進化は止まらない。Googleが発表したGemini 3は、単なるアップデートに留まらず、AIの未来を切り拓く存在だ。推論能力、エージェント機能、そしてマルチモーダル対応。これらが何を意味するのか？そして、あなたのプロジェクトにどのように影響を与えるのか？この問いに答えるべく、我々はGemini 3の核心に迫る。",
+      "conclusion": "Gemini 3は、推論能力とマルチモーダル機能で業界をリードする存在だ。しかし、そのコストと処理速度のトレードオフを考慮し、適用するプロジェクトを選定することが重要だ。高度な問題解決が求められる場面では、Gemini 3は強力なツールとなるだろう。一方で、コスト効率を重視するプロジェクトでは、他の選択肢も検討すべきだ。",
+      "tags": [
+        {
+          "slug": "ai-topic",
+          "label": "AIトピック",
+          "category": "その他",
+          "style": "accent-neutral"
+        },
+        {
+          "slug": "gemini-3",
+          "label": "Gemini 3",
+          "category": "その他",
+          "style": "accent-gold"
+        },
+        {
+          "slug": "google-ai",
+          "label": "Google AI",
+          "category": "企業・プロダクト",
+          "style": "accent-purple"
+        },
+        {
+          "slug": "tag-4",
+          "label": "マルチモーダル",
+          "category": "その他",
+          "style": "accent-sky"
+        },
+        {
+          "slug": "tag-5",
+          "label": "推論能力",
+          "category": "その他",
+          "style": "accent-pink"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "Gemini 3の技術的進化とそのインパクト",
+          "overview": "Gemini 3はAIの限界を押し広げ、特に推論能力とマルチモーダル機能で突出している。これにより、開発者はより複雑なタスクを効率的に処理できるようになる。",
+          "subSections": [
+            {
+              "heading": "推論能力の飛躍: Deep Thinkモード",
+              "body": "Gemini 3の推論能力は、特にDeep Thinkモードで顕著である。このモードは、複雑な問題をステップごとに分解し、各ステップでの検証を行う。これにより、AIはより高度な問題解決を可能にする。ベンチマークテストでの高スコアは、この能力の証明である。しかし、200kトークンを超えるとコストが急増するため、利用には慎重な計画が必要だ。"
+            },
+            {
+              "heading": "マルチモーダル機能の革新",
+              "body": "Gemini 3は、動画解析や手書き文字認識、UI/UX理解を含むマルチモーダル機能を強化している。これにより、開発者はより多様なデータソースから情報を引き出し、統合することが可能となる。この機能は、特にWebサイトやLP制作において、UIの質を向上させる。しかし、全てのプロジェクトに適用できるわけではない。特に、リアルタイム性が求められる環境では、処理速度が課題となる可能性がある。"
+            }
+          ]
+        }
+      ],
+      "slug": "2025-11-22-gemini-3-googleai",
+      "date": "2025-11-22",
+      "htmlContent": "<!DOCTYPE html>\n<html lang=\"ja\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Gemini 3: Googleの次世代AIがもたらす革新と挑戦 | AI情報ブログ</title>\n    <meta name=\"description\" content=\"Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。\">\n\n    <script src=\"../assets/js/analytics.js\"></script>\n\n    <!-- Google AdSense -->\n    <script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX\"\n        crossorigin=\"anonymous\"></script>\n\n    <!-- ファビコン -->\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"../assets/img/logo.svg\">\n    <link rel=\"apple-touch-icon\" href=\"../assets/img/logo.svg\">\n\n    <!-- Open Graph / SNS共有 -->\n    <meta property=\"og:type\" content=\"article\">\n    <meta property=\"og:title\" content=\"Gemini 3: Googleの次世代AIがもたらす革新と挑戦 | AI情報ブログ\">\n    <meta property=\"og:description\" content=\"Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。\">\n    <meta property=\"og:image\" content=\"../assets/img/article-templates/future-04.webp\">\n    <meta property=\"og:site_name\" content=\"AI情報ブログ\">\n    <meta property=\"og:locale\" content=\"ja_JP\">\n    <meta property=\"article:published_time\" content=\"2025-11-22T00:00:00+09:00\">\n\n    <!-- Twitter Card -->\n    <meta name=\"twitter:card\" content=\"summary_large_image\">\n    <meta name=\"twitter:title\" content=\"Gemini 3: Googleの次世代AIがもたらす革新と挑戦 | AI情報ブログ\">\n    <meta name=\"twitter:description\" content=\"Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。\">\n    <meta name=\"twitter:image\" content=\"../assets/img/article-templates/future-04.webp\">\n\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css\">\n    <link rel=\"stylesheet\" href=\"../assets/css/main.css\">\n</head>\n\n<body class=\"article-page\">\n    <!-- ヘッダーはSSGまたはcomponents.jsで挿入されます -->\n\n    <main>\n        <article class=\"article-detail\">\n  <section class=\"inner article-hero\">\n    <p class=\"article-eyebrow\">Daily Briefing</p>\n    <div class=\"article-hero-layout\">\n      <div class=\"article-hero-main\">\n        <p class=\"post-meta\">2025.11.22</p>\n        <h1>Gemini 3: Googleの次世代AIがもたらす革新と挑戦</h1>\n        <p class=\"article-summary\">Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。</p>\n      </div>\n    </div>\n\n    <ul class=\"article-tags\">\n          <li class=\"tag\" data-tag-slug=\"ai-topic\" data-tag-category=\"その他\" data-tag-style=\"accent-neutral\">AIトピック</li>\n          <li class=\"tag\" data-tag-slug=\"gemini-3\" data-tag-category=\"その他\" data-tag-style=\"accent-gold\">Gemini 3</li>\n          <li class=\"tag\" data-tag-slug=\"google-ai\" data-tag-category=\"企業・プロダクト\" data-tag-style=\"accent-purple\">Google AI</li>\n          <li class=\"tag\" data-tag-slug=\"tag-4\" data-tag-category=\"その他\" data-tag-style=\"accent-sky\">マルチモーダル</li>\n          <li class=\"tag\" data-tag-slug=\"tag-5\" data-tag-category=\"その他\" data-tag-style=\"accent-pink\">推論能力</li>\n        </ul>\n  </section>\n\n  \n      <!-- Google AdSense: 記事上広告 -->\n      <!--\n      <div class=\"inner\">\n        <div class=\"ad-container ad-article-top\">\n          <span class=\"ad-label\">広告</span>\n        </div>\n      </div>\n      -->\n\n\n  <div class=\"inner article-grid\">\n    <div class=\"article-main-column\">\n      <article class=\"post-article article-content\">\n        \n        <section class=\"article-intro-block\">\n          <div class=\"intro-content\">\n<p>AIの進化は止まらない。Googleが発表したGemini 3は、単なるアップデートに留まらず、AIの未来を切り拓く存在だ。推論能力、エージェント機能、そしてマルチモーダル対応。これらが何を意味するのか？そして、あなたのプロジェクトにどのように影響を与えるのか？この問いに答えるべく、我々はGemini 3の核心に迫る。</p>\n          </div>\n        </section>\n        \n            <section class=\"article-section\" id=\"gemini-3\">\n              <h2 class=\"section-heading\">Gemini 3の技術的進化とそのインパクト</h2>\n              <div class=\"section-overview\"><p>Gemini 3はAIの限界を押し広げ、特に推論能力とマルチモーダル機能で突出している。これにより、開発者はより複雑なタスクを効率的に処理できるようになる。</p></div>\n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">推論能力の飛躍: Deep Thinkモード</h3>\n                <div class=\"subsection-body\">\n                  <p>Gemini 3の推論能力は、特にDeep Thinkモードで顕著である。このモードは、複雑な問題をステップごとに分解し、各ステップでの検証を行う。これにより、AIはより高度な問題解決を可能にする。ベンチマークテストでの高スコアは、この能力の証明である。しかし、200kトークンを超えるとコストが急増するため、利用には慎重な計画が必要だ。</p>\n                </div>\n              </div>\n\n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">マルチモーダル機能の革新</h3>\n                <div class=\"subsection-body\">\n                  <p>Gemini 3は、動画解析や手書き文字認識、UI/UX理解を含むマルチモーダル機能を強化している。これにより、開発者はより多様なデータソースから情報を引き出し、統合することが可能となる。この機能は、特にWebサイトやLP制作において、UIの質を向上させる。しかし、全てのプロジェクトに適用できるわけではない。特に、リアルタイム性が求められる環境では、処理速度が課題となる可能性がある。</p>\n                </div>\n              </div>\n            </section>\n            <!-- Google AdSense: 記事中広告 -->\n            <!--\n            <div class=\"ad-container ad-article-middle\">\n              <span class=\"ad-label\">広告</span>\n            </div>\n            -->\n\n      </article>\n    </div>\n\n    <aside class=\"article-sidebar\" aria-label=\"補足情報\">\n      <section class=\"article-card article-toc\">\n        <p class=\"article-card-label\">目次</p>\n        <ol class=\"toc-list\" data-toc-list aria-live=\"polite\"></ol>\n      </section>\n    </aside>\n  </div>\n\n  \n      <!-- Google AdSense: 記事下広告 -->\n      <!--\n      <div class=\"inner\">\n        <div class=\"ad-container ad-article-bottom\">\n          <span class=\"ad-label\">広告</span>\n        </div>\n      </div>\n      -->\n\n\n  \n      <section class=\"article-conclusion inner\">\n        <h2 class=\"conclusion-heading\">まとめ</h2>\n        <div class=\"conclusion-content\">\n<p>Gemini 3は、推論能力とマルチモーダル機能で業界をリードする存在だ。しかし、そのコストと処理速度のトレードオフを考慮し、適用するプロジェクトを選定することが重要だ。高度な問題解決が求められる場面では、Gemini 3は強力なツールとなるだろう。一方で、コスト効率を重視するプロジェクトでは、他の選択肢も検討すべきだ。</p>\n        </div>\n      </section>\n</article>\n    </main>\n\n    <!-- フッターはSSGまたはcomponents.jsで挿入されます -->\n\n    <script src=\"../assets/js/components.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js\"></script>\n    <script src=\"../assets/js/main.js\" defer></script>\n    <script src=\"../assets/js/article.js\" defer></script>\n</body>\n\n</html>",
+      "relativePath": "posts/2025-11-22-gemini-3-googleai.html",
+      "image": {
+        "key": "future-04",
+        "src": "assets/img/article-templates/future-04.webp",
+        "alt": "未来感のあるホログラム調（バリアント4）",
+        "label": "フューチャービジョン",
+        "caption": "次世代ロードマップやGemini 3.0の展望記事向け。",
+        "category": "future"
+      },
+      "source": {
+        "name": "Manual Input",
+        "url": ""
+      },
+      "video": {
+        "title": "Google最新AI「Gemini 3」とAIエディタ「Google AntiGravity」が凄かったので解説してみた",
+        "url": ""
+      },
+      "searchSummaries": [
+        {
+          "title": "【完全解説】Google「Gemini 3」ついに登場！他をぶっち切る圧倒 ...",
+          "url": "https://note.com/masa_wunder/n/n21fe502360e7",
+          "snippet": "3 days ago ... Gemini 3 Deep Think: 推論能力を極限まで高めた強化モード（Google AI Ultraサブスクリプション向け）。 Google Antigravity: 新しいエージェント型開発 ...",
+          "summary": "- Googleは2025年11月にAIモデル「Gemini 3」と「Gemini 3 Pro」を発表。\n- 「Gemini 3」は推論、エージェント機能、マルチモーダルで進化。\n- 提供形態: Gemini 3 ProはGoogle全製品で利用可能。Deep ThinkはGoogle AI Ultra向け。\n- ベンチマーク: Humanity’s Last Exam、ARC-AGI-2、GPQA Diamond、AIME 2025、SWE-Bench Verified、t2-bench、Vending-Bench 2で高スコア。\n- プログラミング能力: ワンショット生成の精度が高く、SVGやHTMLスライドなどを生成。\n- 新プラットフォーム「Google Antigravity」発表。AIエージェントが自律的に計画・コーディング。\n- Deep Thinkモード: 複雑な問題をステップごとに分解し、検証。\n- マルチモーダル機能: 動画解析、手書き文字認識、UI/UX理解。\n- コスト: Gemini 2.5 Proより20%高いが、GPT-5シリーズよりコストパフォーマンスが良い。\n- 提供開始: 一般ユーザーと開発者は即日利用可能。Deep Thinkは数週間以内に提供予定。",
+          "quality": "high"
+        },
+        {
+          "title": "【衝撃】Googleから「Gemini 3」が登場。GPT-5.1を超えた？深夜 ...",
+          "url": "https://note.com/life_to_ai/n/ne2f4545d2db4",
+          "snippet": "3 days ago ... ... てみたデモの結果、そして私が感じた「AIとしての賢さ」の正体について、包括的に解説していきます。 1. Gemini 3 Proの衝撃：GPT-5.1 Thinkingを超え ...",
+          "summary": "- **モデル名**: Gemini 3 Pro\n- **ベンチマーク性能**:\n  - ARC-AGIで高スコアを記録。\n  - ビジネスシミュレーション「Bending Machine」で圧倒的1位。\n  - SW Benchでのコーディング能力は他モデルと大差なし。\n  - 「Last Exam」No Toolでの正答率37.5%。\n- **新機能**:\n  - Gemini CLIとAPIが開発者向けに提供。\n  - AIエディタ「Anti-Gravity」登場。\n- **具体的なタスク性能**:\n  - SVG生成で高品質なイラストを一発で出力。\n  - HTMLスライド生成で実用レベルのデザインを一発で出力。\n  - Webサイト・LP制作でUIの質が高い。\n- **知性と判断力**:\n  - 論理パズルを22.9秒で解決。\n  - ユーザーの施策に対して明確な否定が可能。\n- **コスト**:\n  - Gemini 3 Proは前モデルより約20%値上がり。\n  - 200kトークンを超えると高額になる可能性。\n- **競合比較**:\n  - GPT-5.1と比べ、具現化能力が高い。\n  - Claude 3.5 Sonnetより安価。\n- **使用環境**:\n  - Cursor / Windsurf対応。\n  - OpenRouter経由でのスピードが速い。",
+          "quality": "high"
+        }
+      ]
+    },
     "metrics": {
       "scope": "generator",
       "counters": {
         "candidates.total": 1,
         "candidates.analyzed": 1,
-        "candidates.skipped.duplicate": 1
+        "articles.generated": 1
       },
-      "timings": {}
+      "timings": {
+        "articleGeneration.timeMs": {
+          "count": 1,
+          "avg": 7900,
+          "min": 7900,
+          "max": 7900
+        }
+      }
     }
   },
   "publisher": {
-    "addedPost": false,
-    "totalPosts": 11,
-    "outputFile": null
+    "addedPost": true,
+    "totalPosts": 12,
+    "outputFile": "posts/2025-11-22-gemini-3-googleai.html"
   }
 }

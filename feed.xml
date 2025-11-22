@@ -5,9 +5,21 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Sat, 22 Nov 2025 03:22:18 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 22 Nov 2025 03:48:51 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>Gemini 3: Googleの次世代AIがもたらす革新と挑戦</title>
+    <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-22-gemini-3-googleai.html</link>
+    <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-22-gemini-3-googleai.html</guid>
+    <pubDate>Sat, 22 Nov 2025 03:48:51 GMT</pubDate>
+    <description>Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。</description>
+    <category>AIトピック</category>
+    <category>Gemini 3</category>
+    <category>Google AI</category>
+    <category>マルチモーダル</category>
+    <category>推論能力</category>
+  </item>
   <item>
     <title>Gemini 3の革新: AIアシスタントの新機能と応用展望</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-20-gemini-3-ai.html</link>
