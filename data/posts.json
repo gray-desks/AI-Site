@@ -1,5 +1,41 @@
 [
   {
+    "title": "Gemini 3の技術革新：軽量化と専門性の未来",
+    "date": "2025-11-22",
+    "summary": "Gemini 3の軽量モデルがもたらす技術的進化と、その実用性を深く探ります。",
+    "tags": [
+      {
+        "slug": "ai",
+        "label": "AI技術",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "tag-2",
+        "label": "モデル軽量化",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "tag-3",
+        "label": "ビジネス応用",
+        "category": "その他",
+        "style": "accent-orange"
+      }
+    ],
+    "url": "posts/2025-11-22-gemini-3.html",
+    "slug": "2025-11-22-gemini-3",
+    "publishedAt": "2025-11-22T06:33:28.905Z",
+    "image": {
+      "key": "research-03",
+      "src": "assets/img/article-templates/research-03.webp",
+      "alt": "リサーチデータの波形（バリアント3）",
+      "label": "リサーチ＆インサイト",
+      "caption": "Gemini 3.0や深掘り分析記事にフィット。",
+      "category": "research"
+    }
+  },
+  {
     "title": "Gemini 3 Proがもたらす未来のAI体験、驚きの連続！",
     "date": "2025-11-22",
     "summary": "Gemini 3 ProはただのAIじゃない。実際に触ってみたら、まるで未来がここに来たような感覚。これ、絶対に試してみる価値あり！",
