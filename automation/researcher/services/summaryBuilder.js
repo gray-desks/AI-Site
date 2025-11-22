@@ -10,7 +10,7 @@
 
 const { RESEARCHER } = require('../../config/constants');
 const { SUMMARY_GENERATION } = require('../../config/models');
-const PROMPTS = require('../../config/prompts');
+const SUMMARY_GENERATION_PROMPT = require('../../prompts/summaryGeneration');
 const { callOpenAI, extractContent } = require('../../lib/openai');
 const { fetchArticleText, isQualityContent } = require('./articleContent');
 
@@ -35,11 +35,11 @@ const generateAISummary = async (articleText, title, apiKey) => {
     const messages = [
       {
         role: 'system',
-        content: PROMPTS.SUMMARY_GENERATION.system,
+        content: SUMMARY_GENERATION_PROMPT.system,
       },
       {
         role: 'user',
-        content: PROMPTS.SUMMARY_GENERATION.user(title, articleText),
+        content: SUMMARY_GENERATION_PROMPT.user(title, articleText),
       },
     ];
 

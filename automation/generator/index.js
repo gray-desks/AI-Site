@@ -13,7 +13,7 @@ const { readJson, writeJson } = require('../lib/io');
 const slugify = require('../lib/slugify');
 const { GENERATOR } = require('../config/constants');
 const { ARTICLE_GENERATION } = require('../config/models');
-const PROMPTS = require('../config/prompts');
+const ARTICLE_GENERATION_PROMPT = require('../prompts/articleGeneration');
 const { callOpenAI } = require('../lib/openai');
 const { readCandidates, writeCandidates } = require('../lib/candidatesRepository');
 const { createLogger } = require('../lib/logger');
@@ -163,11 +163,11 @@ const requestArticleDraft = async (apiKey, candidate) => {
   const messages = [
     {
       role: 'system',
-      content: PROMPTS.ARTICLE_GENERATION.system,
+      content: ARTICLE_GENERATION_PROMPT.system,
     },
     {
       role: 'user',
-      content: PROMPTS.ARTICLE_GENERATION.user(candidate, searchSummary, searchQuery, today),
+      content: ARTICLE_GENERATION_PROMPT.user(candidate, searchSummary, searchQuery, today),
     },
   ];
 
@@ -355,11 +355,11 @@ const runGenerator = async (researchResult = null) => {
       const updatedCandidates = candidates.map((item) =>
         item.id === candidate.id
           ? {
-              ...item,
-              status: 'skipped',
-              skipReason: 'duplicate-topic',
-              updatedAt: now,
-            }
+            ...item,
+            status: 'skipped',
+            skipReason: 'duplicate-topic',
+            updatedAt: now,
+          }
           : item,
       );
       writeCandidates(updatedCandidates);
@@ -406,12 +406,12 @@ const runGenerator = async (researchResult = null) => {
       const updatedCandidates = candidates.map((item) =>
         item.id === candidate.id
           ? {
-              ...item,
-              status: 'failed',
-              failReason: 'article-generation-error',
-              errorMessage: error.message,
-              updatedAt: now,
-            }
+            ...item,
+            status: 'failed',
+            failReason: 'article-generation-error',
+            errorMessage: error.message,
+            updatedAt: now,
+          }
           : item,
       );
       writeCandidates(updatedCandidates);
@@ -464,17 +464,17 @@ const runGenerator = async (researchResult = null) => {
     const updatedCandidates = candidates.map((item) =>
       item.id === candidate.id
         ? {
-            ...item,
-            status: 'generated',
-            generatedAt: now,
-            updatedAt: now,
-            topicKey,
-            postDate: today,
-            slug,
-            outputFile: publishRelativePath,
-            image: selectedImage || null,
-            imageKey: selectedImage?.key || null,
-          }
+          ...item,
+          status: 'generated',
+          generatedAt: now,
+          updatedAt: now,
+          topicKey,
+          postDate: today,
+          slug,
+          outputFile: publishRelativePath,
+          image: selectedImage || null,
+          imageKey: selectedImage?.key || null,
+        }
         : item,
     );
     writeCandidates(updatedCandidates);

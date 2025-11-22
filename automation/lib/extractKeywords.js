@@ -5,7 +5,7 @@
  */
 
 const { KEYWORD_EXTRACTION } = require('../config/models');
-const PROMPTS = require('../config/prompts');
+const KEYWORD_EXTRACTION_PROMPT = require('../prompts/keywordExtraction');
 const { callOpenAI, extractContent } = require('./openai');
 
 /**
@@ -26,12 +26,12 @@ const extractSearchKeywords = async (apiKey, title, description = '') => {
     {
       role: 'system',
       // システムプロンプトでAIの役割と要件を定義
-      content: PROMPTS.KEYWORD_EXTRACTION.system,
+      content: KEYWORD_EXTRACTION_PROMPT.system,
     },
     {
       role: 'user',
       // ユーザープロンプトで実際の動画情報を渡す
-      content: PROMPTS.KEYWORD_EXTRACTION.user(title, description),
+      content: KEYWORD_EXTRACTION_PROMPT.user(title, description),
     },
   ];
 

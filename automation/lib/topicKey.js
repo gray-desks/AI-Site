@@ -9,7 +9,7 @@
 
 const slugify = require('./slugify');
 const { TOPIC_KEY_EXTRACTION } = require('../config/models');
-const PROMPTS = require('../config/prompts');
+const TOPIC_KEY_EXTRACTION_PROMPT = require('../prompts/topicKeyExtraction');
 const { callOpenAI, extractContent } = require('./openai');
 
 /**
@@ -73,7 +73,7 @@ const normalizeTopicPayload = (payload, fallbackTitle) => {
   // `topic_key`が直接指定されていない場合、productとfeatureから組み立てる
   const fallbackBase = [product, feature].filter(Boolean).join('-') || sanitizeText(payload?.topic_key);
   const slugSource = sanitizeText(payload?.topic_key || fallbackBase);
-  
+
   // 最終的なtopicKeyをslugifyで生成
   const topicKey = slugify(slugSource || fallbackTitle, 'ai-topic');
 
@@ -127,11 +127,11 @@ const deriveTopicKey = async (apiKey, video = {}, source = {}) => {
   const messages = [
     {
       role: 'system',
-      content: PROMPTS.TOPIC_KEY_EXTRACTION.system,
+      content: TOPIC_KEY_EXTRACTION_PROMPT.system,
     },
     {
       role: 'user',
-      content: PROMPTS.TOPIC_KEY_EXTRACTION.user({
+      content: TOPIC_KEY_EXTRACTION_PROMPT.user({
         title: video.title,
         description: video.description || '',
         channelName: source?.name || video.channelTitle || '',
@@ -162,7 +162,7 @@ const deriveTopicKey = async (apiKey, video = {}, source = {}) => {
 
   // パースしたJSONを正規化
   const normalized = normalizeTopicPayload(parsed, video.title);
-  
+
   // 最終的な結果オブジェクトを構築して返す
   return {
     topicKey: normalized.topicKey,
