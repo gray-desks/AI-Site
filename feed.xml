@@ -5,9 +5,20 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Sun, 23 Nov 2025 01:36:00 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 23 Nov 2025 12:07:14 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く</title>
+    <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-23-nano-banana-proai.html</link>
+    <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-23-nano-banana-proai.html</guid>
+    <pubDate>Sun, 23 Nov 2025 12:07:14 GMT</pubDate>
+    <description>Nano Banana Proは、既存の画像編集を革新するAIとして注目されています。本記事では、その技術的背景、具体的なユースケース、競合との比較を通じて、その真価を検証します。</description>
+    <category>画像生成AI</category>
+    <category>Nano Banana Pro</category>
+    <category>技術革新</category>
+    <category>AI活用</category>
+  </item>
   <item>
     <title>Stitch 2.0の進化：Gemini3とNanobanana Proの実力を徹底解剖</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-23-stitch-20gemini3nanobanana-pro.html</link>

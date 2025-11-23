@@ -1,5 +1,47 @@
 [
   {
+    "title": "Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く",
+    "date": "2025-11-23",
+    "summary": "Nano Banana Proは、既存の画像編集を革新するAIとして注目されています。本記事では、その技術的背景、具体的なユースケース、競合との比較を通じて、その真価を検証します。",
+    "tags": [
+      {
+        "slug": "image-generation",
+        "label": "画像生成AI",
+        "category": "技術トピック",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "nano-banana-pro",
+        "label": "Nano Banana Pro",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "tag-3",
+        "label": "技術革新",
+        "category": "その他",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "ai-utilization",
+        "label": "AI活用",
+        "category": "ユースケース",
+        "style": "accent-teal"
+      }
+    ],
+    "url": "posts/2025-11-23-nano-banana-proai.html",
+    "slug": "2025-11-23-nano-banana-proai",
+    "publishedAt": "2025-11-23T12:07:14.001Z",
+    "image": {
+      "key": "security-04",
+      "src": "assets/img/article-templates/security-04.webp",
+      "alt": "セキュリティを示す保護レイヤ（バリアント4）",
+      "label": "セキュリティラティス",
+      "caption": "トラストやガバナンス記事に使用。",
+      "category": "security"
+    }
+  },
+  {
     "title": "Stitch 2.0の進化：Gemini3とNanobanana Proの実力を徹底解剖",
     "date": "2025-11-23",
     "summary": "Stitch 2.0は、Gemini3とNanobanana Proを搭載し、UIデザインの新たな可能性を切り開きます。本記事では、その技術的特性と実際のユースケースを詳述し、導入のメリットと課題を探ります。",
