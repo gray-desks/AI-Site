@@ -9,7 +9,8 @@
  * モバイル表示時にタグ検索パネルの表示/非表示を切り替えるボタン。
  */
 .tag-search-toggle {
-  display: none; /* デスクトップではデフォルトで非表示 */
+  display: none;
+  /* デスクトップではデフォルトで非表示 */
   align-items: center;
   gap: 0.4rem;
   font-size: 0.95rem;
@@ -35,7 +36,8 @@
  * トグルボタンが展開状態 (`aria-expanded="true"`) のスタイル
  */
 .tag-search-toggle[aria-expanded="true"] {
-  background: linear-gradient(135deg, rgba(255, 148, 195, 0.2), rgba(255, 212, 82, 0.2)); /* 背景にグラデーション */
+  background: linear-gradient(135deg, rgba(255, 148, 195, 0.2), rgba(255, 212, 82, 0.2));
+  /* 背景にグラデーション */
   color: var(--color-primary);
   box-shadow: var(--shadow-sm);
 }
@@ -44,15 +46,23 @@
  * タグ検索パネル (.tag-search-panel) の基本スタイル
  */
 .tag-search-panel {
-  margin: 0 0 var(--space-2xl) 0; /* 下部に余白 */
-  padding: var(--space-lg); /* 内側の余白 */
-  border-radius: var(--radius-xl); /* 角丸 */
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 247, 243, 0.92)); /* 柔らかいグラデーション背景 */
-  border: 1px solid var(--border-subtle); /* 控えめなボーダー */
-  box-shadow: var(--shadow-sm); /* 影 */
+  margin: 0 0 var(--space-2xl) 0;
+  /* 下部に余白 */
+  padding: var(--space-lg);
+  /* 内側の余白 */
+  border-radius: var(--radius-xl);
+  /* 角丸 */
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 247, 243, 0.92));
+  /* 柔らかいグラデーション背景 */
+  border: 1px solid var(--border-subtle);
+  /* 控えめなボーダー */
+  box-shadow: var(--shadow-sm);
+  /* 影 */
   display: flex;
-  flex-direction: column; /* 子要素を縦に並べる */
-  gap: var(--space-md); /* 子要素間の余白 */
+  flex-direction: column;
+  /* 子要素を縦に並べる */
+  gap: var(--space-md);
+  /* 子要素間の余白 */
 }
 
 /*
@@ -60,7 +70,8 @@
  */
 .tag-search-input-row {
   display: flex;
-  flex-direction: column; /* デフォルトは縦並び */
+  flex-direction: column;
+  /* デフォルトは縦並び */
   gap: var(--space-xs);
 }
 
@@ -70,14 +81,18 @@
  */
 @media (min-width: 640px) {
   .tag-search-input-row {
-    flex-direction: row; /* 横並び */
-    align-items: center; /* 垂直方向中央揃え */
-    justify-content: space-between; /* 両端揃え */
+    flex-direction: row;
+    /* 横並び */
+    align-items: center;
+    /* 垂直方向中央揃え */
+    justify-content: space-between;
+    /* 両端揃え */
     gap: var(--space-md);
   }
 
   .tag-search-input-row label {
-    min-width: 120px; /* ラベルの最小幅 */
+    min-width: 120px;
+    /* ラベルの最小幅 */
     font-weight: 600;
   }
 }
@@ -93,7 +108,8 @@
   border-radius: var(--radius-full);
   border: 1px solid var(--border-medium);
   padding: 0.35rem 0.35rem 0.35rem 0.75rem;
-  box-shadow: inset 0 1px 2px rgba(255, 173, 191, 0.18); /* 内側の影 */
+  box-shadow: inset 0 1px 2px rgba(255, 173, 191, 0.18);
+  /* 内側の影 */
 }
 
 /*
@@ -108,20 +124,24 @@
  * タグ検索入力欄 (input) のスタイル
  */
 .tag-search-input input {
-  flex: 1; /* 利用可能なスペースを埋める */
+  flex: 1;
+  /* 利用可能なスペースを埋める */
   border: none;
   background: transparent;
   font-size: 0.95rem;
   color: var(--text-primary);
-  font-family: inherit; /* 親要素のフォントを継承 */
-  min-width: 0; /* Flexアイテムの最小幅をリセット */
+  font-family: inherit;
+  /* 親要素のフォントを継承 */
+  min-width: 0;
+  /* Flexアイテムの最小幅をリセット */
 }
 
 /*
  * 入力欄がフォーカスされた際のスタイル
  */
 .tag-search-input input:focus {
-  outline: none; /* デフォルトのアウトラインを削除 */
+  outline: none;
+  /* デフォルトのアウトラインを削除 */
 }
 
 /*
@@ -144,7 +164,8 @@
  */
 .tag-search-input button:disabled {
   background: var(--text-muted);
-  cursor: not-allowed; /* カーソルを禁止マークにする */
+  cursor: not-allowed;
+  /* カーソルを禁止マークにする */
   opacity: 0.7;
 }
 
@@ -153,7 +174,8 @@
  */
 .tag-search-input button:not(:disabled):hover {
   box-shadow: var(--shadow-sm);
-  transform: translateY(-1px); /* 少し上に浮き上がる */
+  transform: translateY(-1px);
+  /* 少し上に浮き上がる */
 }
 
 /*
@@ -164,7 +186,6 @@
   color: var(--text-tertiary);
   margin: 0;
   line-height: 1.5;
-  text-wrap: balance;
 }
 
 /*
@@ -174,14 +195,16 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  background: rgba(255, 148, 195, 0.12); /* 薄いピンクの背景 */
+  background: rgba(255, 148, 195, 0.12);
+  /* 薄いピンクの背景 */
   border: 1px solid rgba(255, 148, 195, 0.4);
   border-radius: var(--radius-full);
   padding: 0.4rem 0.75rem;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-primary-dim);
-  width: fit-content; /* コンテンツの幅に合わせる */
+  width: fit-content;
+  /* コンテンツの幅に合わせる */
 }
 
 /*
@@ -213,8 +236,10 @@
  */
 .tag-search-suggestions {
   display: flex;
-  flex-wrap: wrap; /* タグを折り返す */
-  gap: var(--space-sm); /* タグ間の余白 */
+  flex-wrap: wrap;
+  /* タグを折り返す */
+  gap: var(--space-sm);
+  /* タグ間の余白 */
 }
 
 /*
@@ -251,7 +276,8 @@
   border-color: var(--border-strong);
   color: var(--color-primary-dim);
   box-shadow: var(--shadow-sm);
-  outline: none; /* デフォルトのアウトラインを削除 */
+  outline: none;
+  /* デフォルトのアウトラインを削除 */
 }
 
 /*
@@ -278,7 +304,8 @@
 @media (min-width: 768px) {
   .tag-search-panel {
     /* デスクトップでは常に表示 */
-    display: flex !important; /* JavaScriptによるhidden属性を上書き */
+    display: flex !important;
+    /* JavaScriptによるhidden属性を上書き */
   }
 }
 
@@ -287,7 +314,8 @@
  */
 @media (max-width: 767px) {
   .tag-search-toggle {
-    display: inline-flex; /* モバイルではトグルボタンを表示 */
+    display: inline-flex;
+    /* モバイルではトグルボタンを表示 */
   }
 
   .tag-search-panel {
