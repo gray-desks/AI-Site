@@ -1,5 +1,53 @@
 [
   {
+    "title": "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命",
+    "date": "2025-11-24",
+    "summary": "GoogleのNano Banana Proは、Gemini 2.5を基盤にした画像生成AIで、リアルさとスピードを兼ね備えています。本記事ではその技術的背景と実用的なユースケースを詳しく解説します。",
+    "tags": [
+      {
+        "slug": "ai",
+        "label": "AI画像生成",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "gemini-25",
+        "label": "Gemini 2.5",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "nano-banana-pro",
+        "label": "Nano Banana Pro",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "google-ai",
+        "label": "Google AI",
+        "category": "企業・プロダクト",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "tag-5",
+        "label": "デジタルクリエイティブ",
+        "category": "その他",
+        "style": "accent-sky"
+      }
+    ],
+    "url": "posts/2025-11-24-nano-banana-pro-gemini-25.html",
+    "slug": "2025-11-24-nano-banana-pro-gemini-25",
+    "publishedAt": "2025-11-24T12:08:17.616Z",
+    "image": {
+      "key": "ai-core-05",
+      "src": "assets/img/article-templates/ai-core-05.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント5）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    }
+  },
+  {
     "title": "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性",
     "date": "2025-11-24",
     "summary": "Googleの新AIモデルGemini 3は、マルチモーダル性能を強化し、ビジネスや教育現場での実務活用を加速させます。本記事ではその技術的背景と具体的なユースケースを深掘りします。",
