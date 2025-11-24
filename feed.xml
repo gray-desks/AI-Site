@@ -5,9 +5,21 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Sun, 23 Nov 2025 12:07:14 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 24 Nov 2025 00:12:29 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>Gemini 3: マルチモーダルAIの新時代と実務活用の可能性</title>
+    <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-24-gemini-3-ai.html</link>
+    <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-24-gemini-3-ai.html</guid>
+    <pubDate>Mon, 24 Nov 2025 00:12:29 GMT</pubDate>
+    <description>Googleの新AIモデルGemini 3は、マルチモーダル性能を強化し、ビジネスや教育現場での実務活用を加速させます。本記事ではその技術的背景と具体的なユースケースを深掘りします。</description>
+    <category>Gemini 3</category>
+    <category>マルチモーダルAI</category>
+    <category>生成AI</category>
+    <category>Google AI</category>
+    <category>技術革新</category>
+  </item>
   <item>
     <title>Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-23-nano-banana-proai.html</link>

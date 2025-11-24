@@ -1,5 +1,53 @@
 [
   {
+    "title": "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性",
+    "date": "2025-11-24",
+    "summary": "Googleの新AIモデルGemini 3は、マルチモーダル性能を強化し、ビジネスや教育現場での実務活用を加速させます。本記事ではその技術的背景と具体的なユースケースを深掘りします。",
+    "tags": [
+      {
+        "slug": "gemini-3",
+        "label": "Gemini 3",
+        "category": "その他",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "ai",
+        "label": "マルチモーダルAI",
+        "category": "その他",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "generative-ai",
+        "label": "生成AI",
+        "category": "技術トピック",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "google-ai",
+        "label": "Google AI",
+        "category": "企業・プロダクト",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "tag-5",
+        "label": "技術革新",
+        "category": "その他",
+        "style": "accent-sky"
+      }
+    ],
+    "url": "posts/2025-11-24-gemini-3-ai.html",
+    "slug": "2025-11-24-gemini-3-ai",
+    "publishedAt": "2025-11-24T00:12:29.223Z",
+    "image": {
+      "key": "research-05",
+      "src": "assets/img/article-templates/research-05.webp",
+      "alt": "リサーチデータの波形（バリアント5）",
+      "label": "リサーチ＆インサイト",
+      "caption": "Gemini 3.0や深掘り分析記事にフィット。",
+      "category": "research"
+    }
+  },
+  {
     "title": "Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く",
     "date": "2025-11-23",
     "summary": "Nano Banana Proは、既存の画像編集を革新するAIとして注目されています。本記事では、その技術的背景、具体的なユースケース、競合との比較を通じて、その真価を検証します。",
