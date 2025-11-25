@@ -5,9 +5,21 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Tue, 25 Nov 2025 00:10:33 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 25 Nov 2025 12:09:49 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>AI時代の革新: タイニーチームとデータ駆動型組織の未来</title>
+    <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-25-ai.html</link>
+    <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-25-ai.html</guid>
+    <pubDate>Tue, 25 Nov 2025 12:09:49 GMT</pubDate>
+    <description>AIを活用する組織の成功法則を探る。タイニーチームの役割とデータ駆動型アプローチがどのように企業の競争力を高めるのかを分析する。</description>
+    <category>AIトピック</category>
+    <category>データ駆動型</category>
+    <category>タイニーチーム</category>
+    <category>組織改革</category>
+    <category>シリコンバレー</category>
+  </item>
   <item>
     <title>Gemini新モデルの技術的進化と実践的応用の可能性</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-25-gemini.html</link>

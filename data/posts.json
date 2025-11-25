@@ -1,5 +1,53 @@
 [
   {
+    "title": "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
+    "date": "2025-11-25",
+    "summary": "AIを活用する組織の成功法則を探る。タイニーチームの役割とデータ駆動型アプローチがどのように企業の競争力を高めるのかを分析する。",
+    "tags": [
+      {
+        "slug": "ai-topic",
+        "label": "AIトピック",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "tag-2",
+        "label": "データ駆動型",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "tag-3",
+        "label": "タイニーチーム",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "tag-4",
+        "label": "組織改革",
+        "category": "その他",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "tag-5",
+        "label": "シリコンバレー",
+        "category": "その他",
+        "style": "accent-lime"
+      }
+    ],
+    "url": "posts/2025-11-25-ai.html",
+    "slug": "2025-11-25-ai",
+    "publishedAt": "2025-11-25T12:09:49.623Z",
+    "image": {
+      "key": "ai-core-01",
+      "src": "assets/img/article-templates/ai-core-01.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    }
+  },
+  {
     "title": "Gemini新モデルの技術的進化と実践的応用の可能性",
     "date": "2025-11-25",
     "summary": "Geminiの新モデルが公開され、その技術的進化とビジネス現場での応用可能性を徹底解説します。新しいAI技術がどのように業務効率を向上させるのかを探ります。",
