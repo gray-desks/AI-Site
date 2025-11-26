@@ -1,5 +1,47 @@
 [
   {
+    "title": "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+    "date": "2025-11-26",
+    "summary": "GPT-4oはテキストとマルチメディアの融合を実現し、ビジネス効率化やクリエイティブプロセスの革新を推進します。本記事ではその技術的背景と実用的ユースケースを詳述します。",
+    "tags": [
+      {
+        "slug": "chatgpt",
+        "label": "ChatGPT",
+        "category": "ツール",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "ai",
+        "label": "AI技術",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "tag-3",
+        "label": "ビジネス効率化",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "tag-4",
+        "label": "クリエイティブプロセス",
+        "category": "その他",
+        "style": "accent-pink"
+      }
+    ],
+    "url": "posts/2025-11-26-gpt-4o.html",
+    "slug": "2025-11-26-gpt-4o",
+    "publishedAt": "2025-11-26T00:11:53.713Z",
+    "image": {
+      "key": "collab-04",
+      "src": "assets/img/article-templates/collab-04.webp",
+      "alt": "チーム協業とチャットを思わせるシンボル（バリアント4）",
+      "label": "コラボレーションダイナミクス",
+      "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
+      "category": "collaboration"
+    }
+  },
+  {
     "title": "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
     "date": "2025-11-25",
     "summary": "AIを活用する組織の成功法則を探る。タイニーチームの役割とデータ駆動型アプローチがどのように企業の競争力を高めるのかを分析する。",

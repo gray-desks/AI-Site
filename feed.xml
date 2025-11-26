@@ -5,9 +5,20 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Tue, 25 Nov 2025 12:09:49 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 26 Nov 2025 00:11:53 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新</title>
+    <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-26-gpt-4o.html</link>
+    <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-26-gpt-4o.html</guid>
+    <pubDate>Wed, 26 Nov 2025 00:11:53 GMT</pubDate>
+    <description>GPT-4oはテキストとマルチメディアの融合を実現し、ビジネス効率化やクリエイティブプロセスの革新を推進します。本記事ではその技術的背景と実用的ユースケースを詳述します。</description>
+    <category>ChatGPT</category>
+    <category>AI技術</category>
+    <category>ビジネス効率化</category>
+    <category>クリエイティブプロセス</category>
+  </item>
   <item>
     <title>AI時代の革新: タイニーチームとデータ駆動型組織の未来</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-25-ai.html</link>
