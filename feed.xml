@@ -5,9 +5,24 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Wed, 26 Nov 2025 00:11:53 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 26 Nov 2025 12:08:03 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法</title>
+    <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-26-apihttp.html</link>
+    <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-26-apihttp.html</guid>
+    <pubDate>Wed, 26 Nov 2025 12:08:03 GMT</pubDate>
+    <description>APIとHTTPリクエストの基本概念を深掘りし、ビジネスや開発現場での具体的な活用方法を解説します。技術的な背景を理解し、実践的なユースケースを知ることで、APIを効果的に活用するための知識を提供します。</description>
+    <category>API</category>
+    <category>HTTPリクエスト</category>
+    <category>Webhook</category>
+    <category>Oauth2</category>
+    <category>JSON</category>
+    <category>n8n</category>
+    <category>技術スタック</category>
+    <category>データ交換</category>
+  </item>
   <item>
     <title>GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-26-gpt-4o.html</link>

@@ -1,5 +1,71 @@
 [
   {
+    "title": "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+    "date": "2025-11-26",
+    "summary": "APIとHTTPリクエストの基本概念を深掘りし、ビジネスや開発現場での具体的な活用方法を解説します。技術的な背景を理解し、実践的なユースケースを知ることで、APIを効果的に活用するための知識を提供します。",
+    "tags": [
+      {
+        "slug": "api",
+        "label": "API",
+        "category": "その他",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "http",
+        "label": "HTTPリクエスト",
+        "category": "その他",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "webhook",
+        "label": "Webhook",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "oauth2",
+        "label": "Oauth2",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "json",
+        "label": "JSON",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "n8n",
+        "label": "n8n",
+        "category": "その他",
+        "style": "accent-teal"
+      },
+      {
+        "slug": "tag-7",
+        "label": "技術スタック",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "tag-8",
+        "label": "データ交換",
+        "category": "その他",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025-11-26-apihttp.html",
+    "slug": "2025-11-26-apihttp",
+    "publishedAt": "2025-11-26T12:08:03.150Z",
+    "image": {
+      "key": "research-01",
+      "src": "assets/img/article-templates/research-01.webp",
+      "alt": "リサーチデータの波形（バリアント1）",
+      "label": "リサーチ＆インサイト",
+      "caption": "Gemini 3.0や深掘り分析記事にフィット。",
+      "category": "research"
+    }
+  },
+  {
     "title": "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
     "date": "2025-11-26",
     "summary": "GPT-4oはテキストとマルチメディアの融合を実現し、ビジネス効率化やクリエイティブプロセスの革新を推進します。本記事ではその技術的背景と実用的ユースケースを詳述します。",

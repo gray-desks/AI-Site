@@ -198,5 +198,13 @@
     "sourceName": "Manual Input",
     "videoTitle": "【2025年11月】ChatGPT時短術10選～仕事・生活を生成AIを活用してラクにし、もっと日々を楽しむためのコツが満載！Geminiも対応",
     "draftUrl": "posts/2025-11-26-gpt-4o.html"
+  },
+  {
+    "topicKey": "apihttpaiwebhookoauth2jsonn8n",
+    "firstSeen": "2025-11-26T12:08:03.150Z",
+    "lastPublishedAt": "2025-11-26",
+    "sourceName": "Manual Input",
+    "videoTitle": "APIやHTTPリクエストって何？小学生でもわかるAI基礎知識！（Webhook・Oauth2・ベーシック認証・バイナリーデータ・JSONデータ・n8n）",
+    "draftUrl": "posts/2025-11-26-apihttp.html"
   }
 ]
