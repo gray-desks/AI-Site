@@ -23,7 +23,7 @@ const RESEARCHER = {
   // Google検索で参考にする上位記事の数
   GOOGLE_TOP_LIMIT: 5,
   // サマリーの最低件数（これ未満なら生成をスキップ）
-  MIN_SUMMARIES: 2,
+  MIN_SUMMARIES: 3,
   // 記事コンテンツ取得時のタイムアウト（ミリ秒）
   ARTICLE_FETCH_TIMEOUT_MS: 15000,
   // 記事コンテンツの最大文字数（これを超えると切り捨て）

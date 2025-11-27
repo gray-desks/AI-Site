@@ -87,7 +87,7 @@ const validateArticlePayload = (article) => {
   if (!article.title || article.title.length < 10) {
     throw new Error('article title too short');
   }
-  if (!article.summary || article.summary.length < 150) {
+  if (!article.summary || article.summary.length < 130) {
     throw new Error('article summary too short');
   }
   if (!article.intro || article.intro.length < 400) {
@@ -435,43 +435,51 @@ const runGenerator = async (researchResult = null) => {
   };
 
   // --- 記事生成 ---
-  let article;
   const stopDraftTimer = metricsTracker.startTimer('articleGeneration.timeMs');
-  try {
-    // OpenAI APIを呼び出して記事を生成
-    article = await requestArticleDraft(apiKey, enrichedCandidate);
-    validateArticlePayload(article);
-    const elapsed = stopDraftTimer();
-    metricsTracker.increment('articles.generated');
-    logger.info(`OpenAI応答を受信: "${article.title}" (${elapsed}ms)`);
-  } catch (error) {
-    const elapsed = stopDraftTimer();
-    metricsTracker.increment('articles.failed');
-    logger.error(`⚠️ 記事生成に失敗しました: ${error.message} (${elapsed}ms)`);
+  let article;
+  let attempts = 0;
+  const maxAttempts = 2; // バリデーション失敗時に1回だけ再生成
 
-    // candidates.json の更新（従来モードのみ）
-    if (!isManualMode) {
-      const now = new Date().toISOString();
-      const updatedCandidates = candidates.map((item) =>
-        item.id === candidate.id
-          ? {
-            ...item,
-            status: 'failed',
-            failReason: 'article-generation-error',
-            errorMessage: error.message,
-            updatedAt: now,
-          }
-          : item,
-      );
-      writeCandidates(updatedCandidates);
+  while (attempts < maxAttempts) {
+    attempts += 1;
+    try {
+      article = await requestArticleDraft(apiKey, enrichedCandidate);
+      validateArticlePayload(article);
+      const elapsed = stopDraftTimer();
+      metricsTracker.increment('articles.generated');
+      logger.info(`OpenAI応答を受信: "${article.title}" (${elapsed}ms) (attempt ${attempts})`);
+      break;
+    } catch (error) {
+      const elapsed = stopDraftTimer();
+      logger.warn(`⚠️ 記事生成リトライ対象: ${error.message} (${elapsed}ms) / attempt ${attempts}`);
+      if (attempts >= maxAttempts) {
+        metricsTracker.increment('articles.failed');
+
+        // candidates.json の更新（従来モードのみ）
+        if (!isManualMode) {
+          const now = new Date().toISOString();
+          const updatedCandidates = candidates.map((item) =>
+            item.id === candidate.id
+              ? {
+                ...item,
+                status: 'failed',
+                failReason: 'article-generation-error',
+                errorMessage: error.message,
+                updatedAt: now,
+              }
+              : item,
+          );
+          writeCandidates(updatedCandidates);
+        }
+
+        return buildResult({
+          generated: false,
+          reason: 'article-generation-failed',
+          candidateId: candidate.id,
+          error: error.message,
+        });
+      }
     }
-
-    return buildResult({
-      generated: false,
-      reason: 'article-generation-failed',
-      candidateId: candidate.id,
-      error: error.message,
-    });
   }
 
   // --- 記事データの後処理 ---

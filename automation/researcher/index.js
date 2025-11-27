@@ -94,6 +94,19 @@ const isFreshEnough = (item) => {
 };
 
 /**
+ * キーワードに応じて検索クエリを強調する。
+ * 例: 「Chrome」が含まれる場合は拡張/連携などを追加してノイズを減らす。
+ */
+const buildSearchQuery = (keyword) => {
+  const base = keyword || '';
+  const lower = base.toLowerCase();
+  if (lower.includes('chrome')) {
+    return `${base} Chrome 拡張 連携 統合`;
+  }
+  return base;
+};
+
+/**
  * Googleで検索し、上位記事の要約を生成します。
  *
  * @param {string} query - 検索クエリ
@@ -110,13 +123,14 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
     // SNS除外を考慮し、多めにリクエスト（最大10件）
     const requestCount = Math.min(desiredCount * 4, 10);
 
-    logger.info(`[Google検索] 開始: "${query}"`);
+    const refinedQuery = buildSearchQuery(query);
+    logger.info(`[Google検索] 開始: "${refinedQuery}"`);
 
     // Google検索を実行（1回のみ）
     const res = await searchTopArticles({
       apiKey: googleApiKey,
       cx: googleCx,
-      query,
+      query: refinedQuery,
       num: requestCount,
     });
 
