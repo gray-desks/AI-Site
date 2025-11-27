@@ -24,6 +24,14 @@ const KEYWORD_EXTRACTION = {
   max_tokens: 100,
 };
 
+// 検索クエリ生成用モデル
+const QUERY_GENERATION = {
+  model: 'gpt-4o',
+  fallbackModel: 'gpt-3.5-turbo',
+  temperature: 0.7,
+  response_format: { type: 'json_object' },
+};
+
 // トピックキー抽出用モデル
 const TOPIC_KEY_EXTRACTION = {
   model: 'gpt-4o',
@@ -57,5 +65,6 @@ module.exports = {
   KEYWORD_EXTRACTION,
   TOPIC_KEY_EXTRACTION,
   SUMMARY_GENERATION,
+  QUERY_GENERATION,
   ARTICLE_GENERATION,
 };
