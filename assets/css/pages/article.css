@@ -878,3 +878,47 @@ body.article-page main {
   display: block;
   box-shadow: var(--shadow-sm);
 }
+
+/* === Note記事用コピーボタン === */
+.note-copy-btn-container {
+  margin-top: var(--space-xl);
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.note-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.note-copy-btn:hover {
+  background: var(--surface-hover);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.note-copy-btn:active {
+  transform: translateY(0);
+}
+
+.note-copy-btn.copied {
+  background-color: var(--color-accent-success, #27ae60);
+  color: white;
+  border-color: transparent;
+}

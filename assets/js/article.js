@@ -250,50 +250,42 @@ window.initArticlePage = () => {
   // --- 6. Note記事用コピー機能 ---
   // 記事のタイトル、本文、タグをNote記事形式でクリップボードにコピーする
   const setupNoteCopyButton = () => {
-    const heroMain = document.querySelector('.article-hero-main');
-    if (!heroMain) return;
+    const articleContent = document.querySelector('.article-content');
+    if (!articleContent) return;
 
     // 既存のボタンがあれば削除
-    const existingBtn = document.querySelector('.note-copy-btn');
-    if (existingBtn) existingBtn.remove();
+    const existingContainer = document.querySelector('.note-copy-btn-container');
+    if (existingContainer) existingContainer.remove();
+
+    const btnContainer = document.createElement('div');
+    btnContainer.className = 'note-copy-btn-container';
 
     const copyBtn = document.createElement('button');
     copyBtn.className = 'note-copy-btn';
-    copyBtn.textContent = 'Note記事用にコピー';
+    copyBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      Note記事用にコピー
+    `;
     copyBtn.type = 'button';
-
-    // スタイル適用（JSで直接適用またはCSSクラスで管理）
-    Object.assign(copyBtn.style, {
-      marginTop: '1rem',
-      padding: '0.5rem 1rem',
-      fontSize: '0.9rem',
-      fontWeight: '600',
-      color: '#fff',
-      backgroundColor: '#2c3e50',
-      border: 'none',
-      borderRadius: '4px',
-      cursor: 'pointer',
-      transition: 'background-color 0.2s'
-    });
-
-    copyBtn.addEventListener('mouseover', () => copyBtn.style.backgroundColor = '#34495e');
-    copyBtn.addEventListener('mouseout', () => copyBtn.style.backgroundColor = '#2c3e50');
 
     copyBtn.addEventListener('click', async () => {
       try {
         const title = document.querySelector('h1')?.textContent.trim() || '';
-        const contentElement = document.querySelector('.article-content');
         const tags = Array.from(document.querySelectorAll('.article-tags .tag'))
           .map(tag => `#${tag.textContent.trim()}`)
           .join(' ');
 
-        if (!contentElement) throw new Error('記事本文が見つかりません');
-
         // 本文のテキスト抽出（簡易的なHTMLタグ除去と整形）
         let bodyText = '';
-        const paragraphs = contentElement.querySelectorAll('p, h2, h3, ul, ol');
+        const paragraphs = articleContent.querySelectorAll('p, h2, h3, ul, ol');
 
         paragraphs.forEach(el => {
+          // ボタン自体のテキストが含まれないようにチェック
+          if (el.closest('.note-copy-btn-container')) return;
+
           if (el.tagName === 'H2') {
             bodyText += `\n\n## ${el.textContent.trim()}\n\n`;
           } else if (el.tagName === 'H3') {
@@ -310,13 +302,18 @@ window.initArticlePage = () => {
 
         await navigator.clipboard.writeText(copyText);
 
-        const originalText = copyBtn.textContent;
-        copyBtn.textContent = 'コピーしました！';
-        copyBtn.style.backgroundColor = '#27ae60';
+        const originalContent = copyBtn.innerHTML;
+        copyBtn.classList.add('copied');
+        copyBtn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          コピーしました！
+        `;
 
         setTimeout(() => {
-          copyBtn.textContent = originalText;
-          copyBtn.style.backgroundColor = '#2c3e50';
+          copyBtn.classList.remove('copied');
+          copyBtn.innerHTML = originalContent;
         }, 2000);
 
       } catch (err) {
@@ -325,7 +322,8 @@ window.initArticlePage = () => {
       }
     });
 
-    heroMain.appendChild(copyBtn);
+    btnContainer.appendChild(copyBtn);
+    articleContent.appendChild(btnContainer);
   };
   setupNoteCopyButton();
 
