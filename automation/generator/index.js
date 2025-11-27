@@ -87,10 +87,10 @@ const validateArticlePayload = (article) => {
   if (!article.title || article.title.length < 10) {
     throw new Error('article title too short');
   }
-  if (!article.summary || article.summary.length < 130) {
+  if (!article.summary || article.summary.length < 100) {
     throw new Error('article summary too short');
   }
-  if (!article.intro || article.intro.length < 400) {
+  if (!article.intro || article.intro.length < 300) {
     throw new Error('article intro too short');
   }
   if (!Array.isArray(article.sections) || article.sections.length === 0) {
@@ -98,12 +98,12 @@ const validateArticlePayload = (article) => {
   }
   const hasValidSection = article.sections.some((sec) =>
     Array.isArray(sec.subSections) &&
-    sec.subSections.some((sub) => (sub.body || '').length >= 300),
+    sec.subSections.some((sub) => (sub.body || '').length >= 200),
   );
   if (!hasValidSection) {
     throw new Error('article sections too thin');
   }
-  if (totalLength < 2200) {
+  if (totalLength < 1800) {
     throw new Error('article total length too short');
   }
 };

@@ -232,7 +232,7 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
     // 件数が足りなければクエリを緩和して再検索
     if (summaries.length < MIN_SUMMARIES) {
       logger.info(`[Google検索] 要約が不足 (${summaries.length}/${MIN_SUMMARIES}) のため緩和クエリで再検索します`);
-      const relaxedQuery = keyword ? keyword : refinedQuery;
+      const relaxedQuery = keyword ? `${keyword} Chrome Claude` : refinedQuery.replace(/-まとめ.*$/, '').trim();
       res = await performSearch(relaxedQuery);
       let items2 = Array.isArray(res.items) ? res.items : [];
       items2 = items2.filter((item) => !shouldSkipResult(item.link, { allowSocial: true }) && !isBlockedDomain(item.link));
