@@ -1,23 +1,23 @@
 {
   "status": "skipped",
   "generatedFile": null,
-  "executedAt": "2025-11-27T00:10:24.328Z",
+  "executedAt": "2025-11-27T02:48:21.167Z",
   "collector": {
     "source": "YouTube",
     "checkedSources": 17,
-    "newCandidates": 16,
+    "newCandidates": 15,
     "totalCandidates": 42,
-    "keywordsAdded": 3,
-    "keywordQueueSize": 65,
+    "keywordsAdded": 12,
+    "keywordQueueSize": 73,
     "errors": [],
     "metrics": {
-      "totalVideosFound": 49,
-      "newVideosAdded": 16,
-      "duplicatesSkipped": 24
+      "totalVideosFound": 51,
+      "newVideosAdded": 15,
+      "duplicatesSkipped": 28
     }
   },
   "researcher": {
-    "keyword": "【3周年総括】なぜPixAIが選ばれるのか？新機能「Mioエージェント」の活用法から新ロードマップまで、イベントの&quot;真の価値&quot;を完全レビュー。",
+    "keyword": "Apple MacとWindowsでLLMを分散実行！Parallaxを使った自家製AIクラスターの構築",
     "summaries": []
   },
   "generator": {

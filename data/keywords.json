@@ -1,5 +1,4 @@
 [
-  "Apple MacとWindowsでLLMを分散実行！Parallaxを使った自家製AIクラスターの構築",
   "OpenAIの新しいモデル「GPT-5.1 CODEX MAX」登場！",
   "【2025年最強画像生成AI】Gemini 3 Proベースの画像生成AIモデル「Nano Banana Pro」の概要・無料で使う方法・活用事例！",
   "【2025年最強AI登場】AIベンチマーク総ナメ! GoogleのAIモデル「Gemini 3 Pro」の概要・無料で使う方法・活用事例！",
@@ -59,5 +58,14 @@
   "【雑談配信】おそらく今年最後の配信です！2025年もありがとうございました！",
   "AIで格差100倍!? 「外注」の時代は終わった。バイブコーディングで自分の業務は「自分で効率化」するのが活躍の鍵",
   "【プロ必見】FLUX.2完全攻略ガイド！商用レベルの画像生成環境を自宅PCで作る方法｜低VRAM・ComfyUIやローカル動作・LoRA学習まで",
-  "【プレゼン資料自動生成】Nano Banana Pro搭載の無料AIアシスタント「NotebookLM」で日本語のスライド資料と日本語ビジュアル図解を作れる！"
+  "【プレゼン資料自動生成】Nano Banana Pro搭載の無料AIアシスタント「NotebookLM」で日本語のスライド資料と日本語ビジュアル図解を作れる！",
+  "TTS多言語スライド生成",
+  "Nanobanana連携技術",
+  "Grok 4.1 Fast最適化",
+  "Windhawk拡張機能",
+  "Unreal Engine5実践",
+  "Nano Banana拡張機能",
+  "Nano Banana API活用",
+  "Webhook実装詳細",
+  "Parallax分散実行構築"
 ]
