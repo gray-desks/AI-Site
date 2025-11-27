@@ -21,7 +21,7 @@ let cachedFooterTemplate = null;
 const loadTemplates = () => {
   if (!cachedHeaderTemplate) {
     try {
-      cachedHeaderTemplate = fs.readFileSync(HEADER_TEMPLATE_PATH, 'utf-8');
+      cachedHeaderTemplate = fs.readFileSync(HEADER_TEMPLATE_PATH, 'utf-8').trim();
     } catch (e) {
       console.error(`[SSG] Header template not found at ${HEADER_TEMPLATE_PATH}`);
       cachedHeaderTemplate = '';
@@ -29,7 +29,7 @@ const loadTemplates = () => {
   }
   if (!cachedFooterTemplate) {
     try {
-      cachedFooterTemplate = fs.readFileSync(FOOTER_TEMPLATE_PATH, 'utf-8');
+      cachedFooterTemplate = fs.readFileSync(FOOTER_TEMPLATE_PATH, 'utf-8').trim();
     } catch (e) {
       console.error(`[SSG] Footer template not found at ${FOOTER_TEMPLATE_PATH}`);
       cachedFooterTemplate = '';
@@ -107,17 +107,18 @@ const injectCommonComponents = (htmlContent, relativeFilePath) => {
   const footerHTML = getFooterHTML(basePath);
 
   // Remove existing header/footer if any (to avoid duplication on re-runs)
+  // Use \s* to consume surrounding whitespace (newlines) to prevent accumulation
   let newHtml = htmlContent
-    .replace(/<header class="site-header">[\s\S]*?<\/header>/, '')
-    .replace(/<footer class="site-footer">[\s\S]*?<\/footer>/, '');
+    .replace(/\s*<header class="site-header">[\s\S]*?<\/header>\s*/, '')
+    .replace(/\s*<footer class="site-footer">[\s\S]*?<\/footer>\s*/, '');
 
   // Inject Header after <body>
   // We look for <body> tag. If it has attributes, we handle that.
   if (newHtml.includes('<body')) {
-    newHtml = newHtml.replace(/(<body[^>]*>)/i, `$1\n${headerHTML}`);
+    newHtml = newHtml.replace(/(<body[^>]*>)/i, `$1\n${headerHTML}\n`);
   } else {
     // Fallback if no body tag found (unlikely for valid HTML)
-    newHtml = headerHTML + newHtml;
+    newHtml = headerHTML + '\n' + newHtml;
   }
 
   // Inject Footer before </body>
@@ -125,9 +126,9 @@ const injectCommonComponents = (htmlContent, relativeFilePath) => {
   // Ideally, footer should be at the end of main content or just before scripts.
   // Let's put it before the script tags at the end of body, or just before </body>.
   if (newHtml.includes('</body>')) {
-    newHtml = newHtml.replace('</body>', `${footerHTML}\n</body>`);
+    newHtml = newHtml.replace('</body>', `\n${footerHTML}\n</body>`);
   } else {
-    newHtml = newHtml + footerHTML;
+    newHtml = newHtml + '\n' + footerHTML;
   }
 
   return newHtml;
