@@ -9,7 +9,7 @@ const COLLECTOR = {
   // 1つのYouTubeチャンネルから一度に取得する最大動画数
   MAX_PER_CHANNEL: 2,
   // 何日前までの動画を収集対象とするか
-  VIDEO_LOOKBACK_DAYS: 7,
+  VIDEO_LOOKBACK_DAYS: 1,
   // YouTube APIで1ページあたりに取得する動画数
   SEARCH_PAGE_SIZE: 10,
   // 処理済み（generated, skipped, failed）の候補を何日後にクリーンアップするか
