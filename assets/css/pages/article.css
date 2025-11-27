@@ -862,3 +862,17 @@ body.article-page main {
 .reference-list a {
   font-weight: 600;
 }
+
+/*
+ * 記事画像のサイズ調整
+ */
+.article-hero-image img,
+.article-image img {
+  max-height: 450px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}

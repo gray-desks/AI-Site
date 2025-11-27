@@ -1,8 +1,8 @@
 [
   {
-    "title": "次世代LLMの比較分析：性能と実用性の深層検証",
+    "title": "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
     "date": "2025-11-27",
-    "summary": "最新の大規模言語モデル（LLM）であるGPT-4o、Gemini 1.5 Pro、Claude 3.5 Sonnetを徹底比較し、それぞれの技術的特性と実用性を深く掘り下げます。特にビジネスや開発現場での活用可能性を中心に、具体的なユースケースを紹介します。",
+    "summary": "2025年11月に登場したGemini 3、8月にリリースされたGPT-5、そして根強い人気のClaude 3.5 Sonnet。最新3大LLMの性能、機能、コストを徹底比較。Deep Thinkモードやエージェント機能など、それぞれの強みを解説します。",
     "tags": [
       {
         "slug": "llm",
@@ -17,34 +17,34 @@
         "style": "accent-pink"
       },
       {
-        "slug": "tag-3",
+        "slug": "comparison",
         "label": "技術比較",
         "category": "その他",
         "style": "accent-orange"
       },
       {
-        "slug": "ai",
-        "label": "AI市場",
-        "category": "その他",
-        "style": "accent-blue"
+        "slug": "gpt-5",
+        "label": "GPT-5",
+        "category": "企業・プロダクト",
+        "style": "accent-green"
       },
       {
-        "slug": "tag-5",
-        "label": "ビジネス活用",
-        "category": "その他",
-        "style": "accent-pink"
+        "slug": "gemini-3",
+        "label": "Gemini 3",
+        "category": "企業・プロダクト",
+        "style": "accent-gold"
       }
     ],
     "url": "posts/2025-11-27-llm.html",
     "slug": "2025-11-27-llm",
     "publishedAt": "2025-11-27T03:46:53.561Z",
     "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
+      "key": "hero",
+      "src": "assets/img/posts/2025-11-27-llm/hero.png",
+      "alt": "Gemini 3, GPT-5, Claude 3.5 Sonnetの比較イメージ",
+      "label": "技術比較",
+      "caption": "3大LLMの比較イメージ",
+      "category": "comparison"
     }
   },
   {
