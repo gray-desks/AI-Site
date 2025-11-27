@@ -207,6 +207,10 @@
   /* コンテンツの幅に合わせる */
 }
 
+.tag-search-selected[hidden] {
+  display: none !important;
+}
+
 /*
  * 選択中のタグをクリアするボタン (.tag-search-selected button)
  */

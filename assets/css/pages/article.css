@@ -867,12 +867,14 @@ body.article-page main {
  * 記事画像のサイズ調整
  */
 .article-hero-image img,
+.article-featured-image img,
 .article-image img {
-  max-height: 450px;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
   margin: 0 auto;
   display: block;
-  object-fit: contain;
-  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
