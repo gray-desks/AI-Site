@@ -98,15 +98,14 @@ const isRelevant = (item, keyword) => {
   if (!item) return false;
   const text = `${item.title || ''} ${item.snippet || ''}`.toLowerCase();
   const kw = (keyword || '').toLowerCase();
-  const tokens = kw.split(/\s+/).filter(Boolean);
-  // Claude と Chrome を両方含むものを優先（どちらか欠ける場合は除外）
   const hasClaude = text.includes('claude');
   const hasChrome = text.includes('chrome');
+  // Claude x Chrome が意図なので両方含まないものは除外
   if (kw.includes('claude') && kw.includes('chrome')) {
     return hasClaude && hasChrome;
   }
-  // それ以外はキーワードの一部でも含んでいれば許容
-  return tokens.some((t) => text.includes(t));
+  // それ以外でも最低限キーワードの一部は含むこと
+  return kw.split(/\s+/).filter(Boolean).some((t) => text.includes(t));
 };
 
 const isBlockedDomain = (url) => {
@@ -116,6 +115,9 @@ const isBlockedDomain = (url) => {
     const blocked = [
       'b.hatena.ne.jp', // はてなブックマーク総合
       'forest.watch.impress.co.jp', // 窓の杜総合
+      'itmedia.co.jp', // 総合カテゴリ
+      'news.mynavi.jp', // 総合ニュース
+      'wired.jp', // 総合テックニュース
     ];
     return blocked.some((d) => host === d || host.endsWith(`.${d}`));
   } catch {
@@ -130,10 +132,11 @@ const isBlockedDomain = (url) => {
 const buildSearchQuery = (keyword) => {
   const base = keyword || '';
   const lower = base.toLowerCase();
+  const negatives = '-まとめ -総合 -ニュース -hotentry -窓の杜 -はてな';
   if (lower.includes('chrome')) {
-    return `${base} Chrome 拡張 連携 統合`;
+    return `${base} Chrome 拡張 連携 統合 ${negatives}`;
   }
-  return base;
+  return `${base} ${negatives}`;
 };
 
 /**
@@ -185,20 +188,9 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
       logger.info(`[フィルタリング] SNS/除外ドメイン: ${skippedCount}件スキップ`);
     }
 
-    // 関連度フィルタ（Claude + Chrome を両方含むものを優先）
-    filteredItems = filteredItems.filter((item) => isRelevant(item, query));
+    // 関連度フィルタ（Claude + Chrome を両方含むもののみ採用）
+    filteredItems = filteredItems.filter((item) => isRelevant(item, refinedQuery));
     logger.info(`[フィルタリング] キーワード関連度を満たす件数: ${filteredItems.length}/${items.length}`);
-
-    // 関連度フィルタで不足したら、元のitemsから関連性低めでも補充
-    if (filteredItems.length < desiredCount) {
-      const fallback = items.filter((item) => !isBlockedDomain(item.link)).slice(0, desiredCount * 2);
-      const merged = [...filteredItems];
-      for (const f of fallback) {
-        if (!merged.includes(f)) merged.push(f);
-        if (merged.length >= desiredCount) break;
-      }
-      filteredItems = merged;
-    }
 
     // 全除外された場合は、フィルタを緩和して再トライ（SNSも許容）
     if (filteredItems.length === 0 && items.length > 0) {
@@ -244,6 +236,7 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
       res = await performSearch(relaxedQuery);
       let items2 = Array.isArray(res.items) ? res.items : [];
       items2 = items2.filter((item) => !shouldSkipResult(item.link, { allowSocial: true }) && !isBlockedDomain(item.link));
+      items2 = items2.filter((item) => isRelevant(item, relaxedQuery));
       const limited2 = items2.slice(0, desiredCount);
 
       for (const [index, item] of limited2.entries()) {

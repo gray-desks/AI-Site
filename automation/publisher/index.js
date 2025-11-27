@@ -200,20 +200,29 @@ const runPublisher = async ({ collectorResult, researcherResult, generatorResult
     console.log('[publisher] generator出力が無いため、記事作成とposts.json更新をスキップします。');
   }
 
-  // --- SSG処理 (全ページ適用) ---
+  // --- SSG処理 (差分のみ) ---
   console.log('[publisher] SSG処理を開始します...');
   const staticPages = ['index.html', 'about.html', 'contact.html', 'privacy-policy.html'];
 
-  // 静的ページの処理
+  // 静的ページは毎回処理（数が少なく負荷が軽いため）
   staticPages.forEach(page => {
     processSSG(path.join(root, page), page);
   });
 
-  // 記事ページの処理
-  updatedPosts.forEach(post => {
-    if (post.url) {
-      processSSG(path.join(root, post.url), post.url);
-    }
+  // 今回生成・更新した記事だけ処理
+  const targetPosts = [];
+  if (generatedFilePath) {
+    targetPosts.push(generatedFilePath);
+  }
+
+  // posts.json に更新があり、追加/更新されたURLがある場合のみ処理
+  if (postsChanged && generatorResult?.postEntry?.url) {
+    targetPosts.push(generatorResult.postEntry.url);
+  }
+
+  // 重複排除して処理
+  Array.from(new Set(targetPosts)).forEach((relativeUrl) => {
+    processSSG(path.join(root, relativeUrl), relativeUrl);
   });
 
   // --- RSS生成 ---

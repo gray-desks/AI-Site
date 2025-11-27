@@ -22,9 +22,9 @@ const ARTICLE_GENERATION = {
 - 読者に対して「教える」のではなく、「知見を共有する」対等なスタンス。`,
 
   user: (candidate, searchSummary, searchQuery, today, options = {}) => {
-    const force = options.forceLongSummary
-      ? '\n- summaryは200文字以上、必ずClaudeとChrome統合の具体例を含めること。'
-      : '';
+    const extra =
+      (options.forceLongSummary ? '\n- summaryは200文字以上、必ずClaudeとChrome統合の具体例を含めること。' : '') +
+      (options.forceLongIntro ? '\n- introは600文字以上、Claude for Chrome拡張の実際の設定・操作手順を具体的に含めること。' : '');
     return `
 # Mission: Write a High-Quality Technical Review
 以下のリサーチ情報を元に、エンジニアやテック愛好家が満足する**情報量と深度**を持つ技術記事を作成してください。
@@ -72,7 +72,7 @@ ${searchSummary}
 **Constraint**:
 - Produce strictly valid JSON.
 - **Minimum 2500 characters**.
-- Date context: ${today}${force}`;
+- Date context: ${today}${extra}`;
   },
 };
 
