@@ -10,7 +10,7 @@ const path = require('path');
 const fs = require('fs');
 const { readJson, writeJson, ensureDir } = require('../lib/io');
 const slugify = require('../lib/slugify');
-const { COLLECTOR, RATE_LIMITS } = require('../config/constants');
+const { COLLECTOR, RATE_LIMITS, KEYWORDS } = require('../config/constants');
 const { YOUTUBE_API_BASE } = require('../config/models');
 const { readCandidates, writeCandidates } = require('../lib/candidatesRepository');
 const { createLogger } = require('../lib/logger');
@@ -136,18 +136,30 @@ const enqueueKeywords = (keywords) => {
   const existingSlugs = new Set(queue.map((k) => slugify(k, 'keyword')));
   const articleSlugs = getExistingArticleSlugs();
   let added = 0;
+  const additions = [];
 
   for (const keyword of keywords) {
     if (!keyword || typeof keyword !== 'string') continue;
     const slug = slugify(keyword, 'keyword');
     if (!slug || existingSlugs.has(slug) || articleSlugs.has(slug)) continue;
-    queue.push(keyword);
+    additions.push(keyword);
     existingSlugs.add(slug);
     added += 1;
   }
 
-  writeJson(keywordsPath, queue);
-  return { added, total: queue.length };
+  let nextQueue = [...additions, ...queue]; // 新規キーワードを先頭に優先追加
+
+  // キュー上限で古いものを末尾から削除
+  const limit = KEYWORDS?.QUEUE_LIMIT || 0;
+  let trimmed = 0;
+  if (limit > 0 && nextQueue.length > limit) {
+    trimmed = nextQueue.length - limit;
+    nextQueue = nextQueue.slice(0, limit);
+    logger.info(`[keyword-queue] 上限${limit}件を超過したため末尾から${trimmed}件を削除しました。`);
+  }
+
+  writeJson(keywordsPath, nextQueue);
+  return { added, total: nextQueue.length, trimmed };
 };
 
 /**
@@ -462,7 +474,8 @@ const runCollector = async () => {
   // キーワードキューを更新（新規候補の動画タイトルを利用）
   const keywordQueueResult = enqueueKeywords(newKeywords);
   logger.info(
-    `[keyword-queue] 新規${keywordQueueResult.added}件を追加 / キュー総数 ${keywordQueueResult.total}件`,
+    `[keyword-queue] 新規${keywordQueueResult.added}件を追加 / キュー総数 ${keywordQueueResult.total}件` +
+      (keywordQueueResult.trimmed ? ` / ${keywordQueueResult.trimmed}件を上限で削除` : ''),
   );
 
   // 出力データを作成

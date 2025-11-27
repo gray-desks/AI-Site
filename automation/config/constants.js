@@ -61,6 +61,12 @@ const VALIDATION = {
   ORPHAN_POST_IGNORE: ['article-template.html'],
 };
 
+// --- キーワードキュー設定 ---
+const KEYWORDS = {
+  // キューの最大保持件数。超過分は末尾から削除して最新を優先する。
+  QUEUE_LIMIT: 40,
+};
+
 // --- サイト設定 ---
 const SITE_CONFIG = {
   // サイトのベースURL（sitemap.xml生成に使用）
@@ -74,5 +80,6 @@ module.exports = {
   GENERATOR,
   RATE_LIMITS,
   VALIDATION,
+  KEYWORDS,
   SITE_CONFIG,
 };

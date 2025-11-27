@@ -51,10 +51,11 @@ const BLOCKED_DOMAINS = [
 /**
  * URLが除外対象のドメインに一致するか判定します。
  */
-const shouldSkipResult = (url) => {
+const shouldSkipResult = (url, { allowSocial = false } = {}) => {
   if (!url) return true;
   try {
     const hostname = new URL(url).hostname.toLowerCase();
+    if (allowSocial) return false;
     return BLOCKED_DOMAINS.some(
       (blocked) => hostname === blocked || hostname.endsWith(`.${blocked}`),
     );
@@ -78,7 +79,7 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
   try {
     const desiredCount = GOOGLE_TOP_LIMIT; // 3件
     // SNS除外を考慮し、多めにリクエスト（最大10件）
-    const requestCount = Math.min(desiredCount * 3, 10);
+    const requestCount = Math.min(desiredCount * 4, 10);
 
     logger.info(`[Google検索] 開始: "${query}"`);
 
@@ -94,11 +95,17 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
     logger.info(`[Google検索] 結果取得: ${items.length}件`);
 
     // SNS/除外ドメインをフィルタリング
-    const filteredItems = items.filter((item) => !shouldSkipResult(item.link));
+    let filteredItems = items.filter((item) => !shouldSkipResult(item.link));
 
     const skippedCount = items.length - filteredItems.length;
     if (skippedCount > 0) {
       logger.info(`[フィルタリング] SNS/除外ドメイン: ${skippedCount}件スキップ`);
+    }
+
+    // 全除外された場合は、フィルタを緩和して再トライ（SNSも許容）
+    if (filteredItems.length === 0 && items.length > 0) {
+      logger.info('[フィルタリング] 0件のため緩和リトライ（SNS許容）');
+      filteredItems = items.filter((item) => !shouldSkipResult(item.link, { allowSocial: true }));
     }
 
     // 上位3件に絞る

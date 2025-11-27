@@ -25,11 +25,29 @@ const { runResearcher } = require('../researcher');
 const { runGenerator } = require('../generator');
 const { runPublisher, recordFailureStatus } = require('../publisher');
 const slugify = require('../lib/slugify');
+const { KEYWORDS } = require('../config/constants');
 
 // --- パス設定 ---
 const root = path.resolve(__dirname, '..', '..');
 const keywordsPath = path.join(root, 'data', 'keywords.json');
 const postsDir = path.join(root, 'posts');
+
+/**
+ * Google検索用にキーワードをサニタイズ・短縮します。
+ * - 余計な引用符や読点を除去
+ * - 連続スペースを1つに圧縮
+ * - 末尾の読点・省略記号を除去
+ * - 最大80文字に制限
+ */
+const sanitizeKeyword = (value) => {
+  if (!value || typeof value !== 'string') return '';
+  return value
+    .replace(/["“”'「」『』]/g, '')
+    .replace(/\s+/g, ' ')
+    .replace(/[、。…!！?？・]+$/g, '')
+    .trim()
+    .slice(0, 80);
+};
 
 /**
  * 既存記事のスラグ一覧を取得します。
@@ -88,6 +106,15 @@ const consumeKeyword = () => {
   let queue = readJson(keywordsPath, []);
   if (!Array.isArray(queue)) queue = [];
 
+  // 上限を超えている場合は末尾から削除（最新優先）
+  const limit = KEYWORDS?.QUEUE_LIMIT || 0;
+  if (limit > 0 && queue.length > limit) {
+    const removed = queue.length - limit;
+    queue = queue.slice(0, limit);
+    console.log(`[pipeline] keywords.json を上限${limit}件にトリム (${removed}件を削除)`);
+    writeJson(keywordsPath, queue);
+  }
+
   const existingSlugs = getExistingArticleSlugs();
   const seenSlugs = new Set();
   const normalizedQueue = [];
@@ -95,10 +122,12 @@ const consumeKeyword = () => {
   // キュー内の重複を排除しつつ正規化
   for (const entry of queue) {
     if (!entry || typeof entry !== 'string') continue;
-    const slug = slugify(entry, 'keyword');
+    const cleaned = sanitizeKeyword(entry);
+    if (!cleaned) continue;
+    const slug = slugify(cleaned, 'keyword');
     if (!slug || seenSlugs.has(slug)) continue;
     seenSlugs.add(slug);
-    normalizedQueue.push({ value: entry, slug });
+    normalizedQueue.push({ value: cleaned, slug });
   }
 
   let picked = null;
@@ -191,13 +220,17 @@ const main = async () => {
     });
 
     // Stage 2: キーワード選定
-    console.log('\n[pipeline] === Stage 2/5: Keyword Selection ===');
-    if (args.keyword) {
-      keyword = args.keyword;
-      console.log(`[pipeline] CLI引数からキーワードを使用: "${keyword}"`);
-    } else {
-      const { keyword: picked, remaining } = consumeKeyword();
-      keyword = picked;
+  console.log('\n[pipeline] === Stage 2/5: Keyword Selection ===');
+  if (args.keyword) {
+    const cleanedArg = sanitizeKeyword(args.keyword);
+    if (!cleanedArg) {
+      throw new Error('CLI引数のキーワードが無効です。空でない文字列を指定してください。');
+    }
+    keyword = cleanedArg;
+    console.log(`[pipeline] CLI引数からキーワードを使用: "${keyword}"`);
+  } else {
+    const { keyword: picked, remaining } = consumeKeyword();
+    keyword = picked;
       console.log(`[pipeline] keywords.jsonからキーワードを使用: "${keyword}" (残り ${remaining} 件)`);
     }
 
