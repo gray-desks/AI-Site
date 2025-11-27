@@ -17,3 +17,8 @@ When updating an existing blog post or creating a new one manually:
 
 3.  **Consistency**:
     -   The `index.html` (article list) relies on `data/posts.json` (via JavaScript) to display article cards. Failing to update `posts.json` will result in a mismatch between the list view and the actual article content.
+
+## Image Generation
+
+-   **Language**: When generating images that include text, ensure the text is in **Japanese**.
+-   **Context**: Avoid using English text in generated images unless explicitly requested or appropriate for the context (e.g., code snippets, specific brand names).
