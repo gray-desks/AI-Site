@@ -1,5 +1,53 @@
 [
   {
+    "title": "Claude for Chrome拡張の実力検証：生産性向上の新基準",
+    "date": "2025-11-27",
+    "summary": "Claude for Chrome拡張機能は、Webブラウジングを効率化し、開発者やビジネスプロフェッショナルの生産性を劇的に向上させます。本記事では、具体的な設定手順や操作方法、実際のユースケースを通じて、その実力を徹底的に解説します。",
+    "tags": [
+      {
+        "slug": "claude",
+        "label": "Claude",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "chrome",
+        "label": "Chrome拡張",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "generative-ai",
+        "label": "生成AI",
+        "category": "技術トピック",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "tag-4",
+        "label": "生産性向上",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "tag-5",
+        "label": "技術スタック",
+        "category": "その他",
+        "style": "accent-lavender"
+      }
+    ],
+    "url": "posts/2025-11-27-claude-for-chrome.html",
+    "slug": "2025-11-27-claude-for-chrome",
+    "publishedAt": "2025-11-27T11:49:48.291Z",
+    "image": {
+      "key": "ai-core-04",
+      "src": "assets/img/article-templates/ai-core-04.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    }
+  },
+  {
     "title": "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
     "date": "2025-11-27",
     "summary": "2025年11月に登場したGemini 3、8月にリリースされたGPT-5、そして根強い人気のClaude 3.5 Sonnet。最新3大LLMの性能、機能、コストを徹底比較。Deep Thinkモードやエージェント機能など、それぞれの強みを解説します。",

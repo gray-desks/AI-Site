@@ -214,5 +214,13 @@
     "sourceName": "Manual Input",
     "videoTitle": "LLMモデル比較分析",
     "draftUrl": "posts/2025-11-27-llm.html"
+  },
+  {
+    "topicKey": "claude-tool-search",
+    "firstSeen": "2025-11-27T11:49:48.291Z",
+    "lastPublishedAt": "2025-11-27",
+    "sourceName": "Manual Input",
+    "videoTitle": "Claude Tool Search技術",
+    "draftUrl": "posts/2025-11-27-claude-for-chrome.html"
   }
 ]
