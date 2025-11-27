@@ -10,11 +10,12 @@ const path = require('path');
 const fs = require('fs');
 const { readJson, writeJson, ensureDir } = require('../lib/io');
 const slugify = require('../lib/slugify');
-const { COLLECTOR } = require('../config/constants');
+const { COLLECTOR, RATE_LIMITS } = require('../config/constants');
 const { YOUTUBE_API_BASE } = require('../config/models');
 const { readCandidates, writeCandidates } = require('../lib/candidatesRepository');
 const { createLogger } = require('../lib/logger');
 const { createMetricsTracker } = require('../lib/metrics');
+const { extractSearchKeywords } = require('../lib/extractKeywords');
 
 // --- パス設定 ---
 // プロジェクトのルートディレクトリを取得
@@ -32,6 +33,67 @@ const { MAX_PER_CHANNEL, VIDEO_LOOKBACK_DAYS, SEARCH_PAGE_SIZE, CLEANUP_PROCESSE
 // ロガーとメトリクス追跡ツールを初期化
 const logger = createLogger('collector');
 const metricsTracker = createMetricsTracker('collector');
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * キーワード文字列をGoogle検索向けにサニタイズします。
+ *  - 余計な引用符や読点を除去
+ *  - 連続スペースを1つに圧縮
+ *  - 末尾の読点・省略記号を除去
+ *  - 80文字にトリム
+ */
+const sanitizeKeyword = (value) => {
+  if (!value || typeof value !== 'string') return '';
+  return value
+    .replace(/["“”'「」『』]/g, '')
+    .replace(/\s+/g, ' ')
+    .replace(/[、。…]+$/g, '')
+    .trim()
+    .slice(0, 80);
+};
+
+/**
+ * YouTube動画タイトル/説明からGoogle検索向けのクエリを生成します。
+ * OpenAIが使えない・失敗した場合はタイトルをサニタイズして返します。
+ */
+const buildSearchKeyword = async (video, openaiApiKey) => {
+  const base = sanitizeKeyword(video?.title || '');
+  if (!base) return '';
+
+  if (!openaiApiKey) {
+    metricsTracker.increment('keywords.extraction.skipped');
+    return base;
+  }
+
+  const stopTimer = metricsTracker.startTimer('keywords.extraction.timeMs');
+
+  try {
+    const extracted = await extractSearchKeywords(
+      openaiApiKey,
+      video.title,
+      video.description || '',
+    );
+    const cleaned = sanitizeKeyword(extracted);
+    const elapsed = stopTimer();
+
+    if (cleaned) {
+      metricsTracker.increment('keywords.extraction.success');
+      logger.info(`[keyword] 抽出: "${cleaned}" <= ${base} (${elapsed}ms)`);
+      await sleep(RATE_LIMITS.KEYWORD_EXTRACTION_WAIT_MS);
+      return cleaned;
+    }
+
+    metricsTracker.increment('keywords.extraction.empty');
+    logger.warn(`[keyword] 抽出結果が空のためタイトルを使用: "${base}"`);
+  } catch (error) {
+    const elapsed = stopTimer();
+    metricsTracker.increment('keywords.extraction.failure');
+    logger.warn(`[keyword] 抽出失敗 (${elapsed}ms): ${error.message} / fallback: "${base}"`);
+  }
+
+  await sleep(RATE_LIMITS.KEYWORD_EXTRACTION_WAIT_MS);
+  return base;
+};
 
 /**
  * チャンネルIDからYouTubeチャンネルのURLを生成します。
@@ -214,6 +276,11 @@ const runCollector = async () => {
     throw new Error('YOUTUBE_API_KEY が設定されていません。GitHub Secrets に登録してください。');
   }
 
+  const openaiApiKey = process.env.OPENAI_API_KEY;
+  if (!openaiApiKey) {
+    logger.warn('OPENAI_API_KEY が設定されていないため、検索キーワード最適化をスキップしタイトルを使用します。');
+  }
+
   // 監視対象のソースと既存の候補リストを読み込み
   const sources = readJson(sourcesPath, []);
   const existingCandidates = readCandidates();
@@ -304,8 +371,11 @@ const runCollector = async () => {
           `新規候補を追加: ${normalizedSource.name} / ${video.title} (candidateId: ${candidateId})`,
         );
 
-        // 検索キーワード候補として動画タイトルをキューに追加する（後で重複除外）
-        newKeywords.push(video.title);
+        // 検索キーワード候補としてGoogle検索最適化済みのクエリを追加（後で重複除外）
+        const searchKeyword = await buildSearchKeyword(video, openaiApiKey);
+        if (searchKeyword) {
+          newKeywords.push(searchKeyword);
+        }
       }
 
       if (addedForChannel === 0) {
