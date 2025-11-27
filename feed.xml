@@ -5,20 +5,20 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Thu, 27 Nov 2025 03:46:53 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 27 Nov 2025 10:45:44 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
   <item>
-    <title>次世代LLMの比較分析：性能と実用性の深層検証</title>
+    <title>【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-27-llm.html</link>
     <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-27-llm.html</guid>
     <pubDate>Thu, 27 Nov 2025 03:46:53 GMT</pubDate>
-    <description>最新の大規模言語モデル（LLM）であるGPT-4o、Gemini 1.5 Pro、Claude 3.5 Sonnetを徹底比較し、それぞれの技術的特性と実用性を深く掘り下げます。特にビジネスや開発現場での活用可能性を中心に、具体的なユースケースを紹介します。</description>
+    <description>2025年11月に登場したGemini 3、8月にリリースされたGPT-5、そして根強い人気のClaude 3.5 Sonnet。最新3大LLMの性能、機能、コストを徹底比較。Deep Thinkモードやエージェント機能など、それぞれの強みを解説します。</description>
     <category>LLM</category>
     <category>生成AI</category>
     <category>技術比較</category>
-    <category>AI市場</category>
-    <category>ビジネス活用</category>
+    <category>GPT-5</category>
+    <category>Gemini 3</category>
   </item>
   <item>
     <title>APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法</title>
