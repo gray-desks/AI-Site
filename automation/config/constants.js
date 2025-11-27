@@ -21,7 +21,9 @@ const COLLECTOR = {
 // --- Researcherステージ関連 ---
 const RESEARCHER = {
   // Google検索で参考にする上位記事の数
-  GOOGLE_TOP_LIMIT: 3,
+  GOOGLE_TOP_LIMIT: 5,
+  // サマリーの最低件数（これ未満なら生成をスキップ）
+  MIN_SUMMARIES: 2,
   // 記事コンテンツ取得時のタイムアウト（ミリ秒）
   ARTICLE_FETCH_TIMEOUT_MS: 15000,
   // 記事コンテンツの最大文字数（これを超えると切り捨て）
@@ -32,6 +34,8 @@ const RESEARCHER = {
   SUMMARY_MAX_LENGTH: 800,
   // 記事コンテンツ取得時のユーザーエージェント
   USER_AGENT: 'AIInfoBlogCollector/1.0 (+https://github.com/gray-desk/AI-information-blog)',
+  // Google検索結果に許容する最大経過日数（新鮮さの閾値）
+  SEARCH_FRESHNESS_DAYS: 7,
 };
 
 // --- Generatorステージ関連 ---
@@ -65,6 +69,8 @@ const VALIDATION = {
 const KEYWORDS = {
   // キューの最大保持件数。超過分は末尾から削除して最新を優先する。
   QUEUE_LIMIT: 40,
+  // この件数以上キューが溜まっている場合はCollectorをスキップし、APIコストを抑える
+  SKIP_COLLECTOR_THRESHOLD: 20,
 };
 
 // --- サイト設定 ---

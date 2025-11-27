@@ -24,7 +24,7 @@ const root = path.resolve(__dirname, '..', '..');
 const outputDir = path.join(root, 'automation', 'output', 'researcher');
 
 // --- 定数設定 ---
-const { GOOGLE_TOP_LIMIT } = RESEARCHER; // 取得する記事数（constants.js から取得）
+const { GOOGLE_TOP_LIMIT, MIN_SUMMARIES, SEARCH_FRESHNESS_DAYS, SUMMARY_MIN_LENGTH } = RESEARCHER; // 取得する記事数など
 const logger = createLogger('researcher');
 const metricsTracker = createMetricsTracker('researcher');
 
@@ -65,6 +65,35 @@ const shouldSkipResult = (url, { allowSocial = false } = {}) => {
 };
 
 /**
+ * Google検索結果から公開日時を推定し、新鮮さをチェックします。
+ * メタタグや日付が取得できない場合は true（通す）で、明らかに古いものだけを除外します。
+ */
+const isFreshEnough = (item) => {
+  const freshnessDays = SEARCH_FRESHNESS_DAYS || 0;
+  if (!freshnessDays || freshnessDays <= 0) return true;
+  const cutoff = Date.now() - freshnessDays * 24 * 60 * 60 * 1000;
+
+  const metaTags = item?.pagemap?.metatags;
+  if (Array.isArray(metaTags) && metaTags.length > 0) {
+    const meta = metaTags[0] || {};
+    const candidates = [
+      meta['article:published_time'],
+      meta['og:updated_time'],
+      meta['date'],
+      meta['last-modified'],
+    ].filter(Boolean);
+    for (const value of candidates) {
+      const parsed = new Date(value).getTime();
+      if (!Number.isNaN(parsed)) {
+        return parsed >= cutoff;
+      }
+    }
+  }
+  // 取得できなければ除外しない
+  return true;
+};
+
+/**
  * Googleで検索し、上位記事の要約を生成します。
  *
  * @param {string} query - 検索クエリ
@@ -91,8 +120,15 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
       num: requestCount,
     });
 
-    const items = Array.isArray(res.items) ? res.items : [];
+    let items = Array.isArray(res.items) ? res.items : [];
     logger.info(`[Google検索] 結果取得: ${items.length}件`);
+
+    // 古い記事を除外（メタタグ日付ベース）
+    const beforeFreshFilter = items.length;
+    items = items.filter((item) => isFreshEnough(item));
+    if (items.length !== beforeFreshFilter) {
+      logger.info(`[フィルタリング] 古い記事を除外: ${beforeFreshFilter - items.length}件`);
+    }
 
     // SNS/除外ドメインをフィルタリング
     let filteredItems = items.filter((item) => !shouldSkipResult(item.link));
@@ -112,7 +148,7 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
     const limitedItems = filteredItems.slice(0, desiredCount);
     logger.info(`[処理対象] ${limitedItems.length}件を要約します`);
 
-    const summaries = [];
+    let summaries = [];
 
     // 各検索結果を要約
     for (const [index, item] of limitedItems.entries()) {
@@ -135,6 +171,9 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
       // APIレート制限対策
       await sleep(RATE_LIMITS.SEARCH_RESULT_WAIT_MS);
     }
+
+    // 要約の最小長を満たさないものを除外
+    summaries = summaries.filter((entry) => (entry.summary || '').length >= SUMMARY_MIN_LENGTH);
 
     return summaries;
   } catch (error) {
@@ -185,6 +224,12 @@ const runResearcher = async ({ keyword }) => {
     const elapsed = stopTimer();
     metricsTracker.increment('googleSearch.failure');
     logger.error(`[Google検索] 失敗 (${elapsed}ms): ${error.message}`);
+    summaries = [];
+  }
+
+  // 最低件数を満たさない場合は空配列を返す（Generatorでスキップさせる）
+  if (summaries.length < (MIN_SUMMARIES || 1)) {
+    logger.warn(`[Google検索] 要約が規定件数(${MIN_SUMMARIES})未満のためスキップします。取得件数: ${summaries.length}`);
     summaries = [];
   }
 

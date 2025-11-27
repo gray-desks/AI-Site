@@ -83,6 +83,7 @@ jobs:
           GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }} # Google Custom Search API
           GOOGLE_SEARCH_CX: ${{ secrets.GOOGLE_SEARCH_CX }}       # Googleカスタム検索エンジンID
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}         # YouTube Data API v3
+          ARTICLES_PER_RUN: 1                                     # 1ジョブで1本生成（1日2回のスケジュールで合計2本）
         run: node automation/pipeline/index.js
 
       # ----------------------------------------------------------------

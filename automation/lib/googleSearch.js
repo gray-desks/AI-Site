@@ -30,10 +30,11 @@ const extractItems = (payload, limit = 3) => {
  * @param {string} options.cx - カスタム検索エンジンID
  * @param {string} options.query - 検索クエリ
  * @param {number} [options.num=3] - 取得する結果数（最大10件）
+ * @param {string} [options.dateRestrict='d7'] - 期間フィルタ（例: d7=過去7日, m1=過去1か月）
  * @returns {Promise<{items: Array<object>, fromCache: boolean}>} 検索結果の配列
  * @throws {Error} API呼び出しに失敗した場合にエラーをスローします。
  */
-const searchTopArticles = async ({ apiKey, cx, query, num = 3 }) => {
+const searchTopArticles = async ({ apiKey, cx, query, num = 3, dateRestrict = 'd7' }) => {
   // 必須パラメータのチェック
   if (!apiKey || !cx || !query) {
     console.warn('Google Search APIの必須パラメータ（apiKey, cx, query）が不足しています。');
@@ -47,6 +48,10 @@ const searchTopArticles = async ({ apiKey, cx, query, num = 3 }) => {
   url.searchParams.set('q', query);
   url.searchParams.set('num', String(Math.min(num, 10))); // 取得件数は最大10件
   url.searchParams.set('lr', 'lang_ja'); // 検索結果を日本語に限定
+  url.searchParams.set('sort', 'date'); // 新しい順を優先
+  if (dateRestrict) {
+    url.searchParams.set('dateRestrict', dateRestrict); // 期間フィルタ（デフォルト: 過去7日）
+  }
 
   // APIを呼び出し
   const response = await fetch(url.toString());

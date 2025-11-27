@@ -65,6 +65,50 @@ const { compileArticleHtml } = createTemplateRenderer({
 });
 
 /**
+ * 生成された記事オブジェクトの簡易バリデーション
+ * 必須フィールドや最低長を満たさない場合はエラーを投げ、再試行用にキーワードを戻せるようにする。
+ */
+const validateArticlePayload = (article) => {
+  if (!article || typeof article !== 'object') {
+    throw new Error('article payload is empty or invalid');
+  }
+  const totalLength =
+    (article.intro || '').length +
+    (article.conclusion || '').length +
+    (Array.isArray(article.sections)
+      ? article.sections.reduce((acc, sec) => {
+        const bodySum = Array.isArray(sec.subSections)
+          ? sec.subSections.reduce((bAcc, sub) => bAcc + (sub.body || '').length, 0)
+          : 0;
+        return acc + (sec.heading || '').length + bodySum;
+      }, 0)
+      : 0);
+
+  if (!article.title || article.title.length < 10) {
+    throw new Error('article title too short');
+  }
+  if (!article.summary || article.summary.length < 150) {
+    throw new Error('article summary too short');
+  }
+  if (!article.intro || article.intro.length < 400) {
+    throw new Error('article intro too short');
+  }
+  if (!Array.isArray(article.sections) || article.sections.length === 0) {
+    throw new Error('article sections missing');
+  }
+  const hasValidSection = article.sections.some((sec) =>
+    Array.isArray(sec.subSections) &&
+    sec.subSections.some((sub) => (sub.body || '').length >= 300),
+  );
+  if (!hasValidSection) {
+    throw new Error('article sections too thin');
+  }
+  if (totalLength < 2200) {
+    throw new Error('article total length too short');
+  }
+};
+
+/**
  * チャンネルIDからYouTubeチャンネルURLを生成します。
  * @param {string} channelId - YouTubeチャンネルID
  * @returns {string} チャンネルURL
@@ -396,6 +440,7 @@ const runGenerator = async (researchResult = null) => {
   try {
     // OpenAI APIを呼び出して記事を生成
     article = await requestArticleDraft(apiKey, enrichedCandidate);
+    validateArticlePayload(article);
     const elapsed = stopDraftTimer();
     metricsTracker.increment('articles.generated');
     logger.info(`OpenAI応答を受信: "${article.title}" (${elapsed}ms)`);
