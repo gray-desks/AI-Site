@@ -247,6 +247,89 @@ window.initArticlePage = () => {
   setupTagLinks();
 
 
+  // --- 6. Note記事用コピー機能 ---
+  // 記事のタイトル、本文、タグをNote記事形式でクリップボードにコピーする
+  const setupNoteCopyButton = () => {
+    const heroMain = document.querySelector('.article-hero-main');
+    if (!heroMain) return;
+
+    // 既存のボタンがあれば削除
+    const existingBtn = document.querySelector('.note-copy-btn');
+    if (existingBtn) existingBtn.remove();
+
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'note-copy-btn';
+    copyBtn.textContent = 'Note記事用にコピー';
+    copyBtn.type = 'button';
+
+    // スタイル適用（JSで直接適用またはCSSクラスで管理）
+    Object.assign(copyBtn.style, {
+      marginTop: '1rem',
+      padding: '0.5rem 1rem',
+      fontSize: '0.9rem',
+      fontWeight: '600',
+      color: '#fff',
+      backgroundColor: '#2c3e50',
+      border: 'none',
+      borderRadius: '4px',
+      cursor: 'pointer',
+      transition: 'background-color 0.2s'
+    });
+
+    copyBtn.addEventListener('mouseover', () => copyBtn.style.backgroundColor = '#34495e');
+    copyBtn.addEventListener('mouseout', () => copyBtn.style.backgroundColor = '#2c3e50');
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        const title = document.querySelector('h1')?.textContent.trim() || '';
+        const contentElement = document.querySelector('.article-content');
+        const tags = Array.from(document.querySelectorAll('.article-tags .tag'))
+          .map(tag => `#${tag.textContent.trim()}`)
+          .join(' ');
+
+        if (!contentElement) throw new Error('記事本文が見つかりません');
+
+        // 本文のテキスト抽出（簡易的なHTMLタグ除去と整形）
+        let bodyText = '';
+        const paragraphs = contentElement.querySelectorAll('p, h2, h3, ul, ol');
+
+        paragraphs.forEach(el => {
+          if (el.tagName === 'H2') {
+            bodyText += `\n\n## ${el.textContent.trim()}\n\n`;
+          } else if (el.tagName === 'H3') {
+            bodyText += `\n### ${el.textContent.trim()}\n\n`;
+          } else if (el.tagName === 'UL' || el.tagName === 'OL') {
+            const listItems = Array.from(el.querySelectorAll('li')).map(li => `- ${li.textContent.trim()}`).join('\n');
+            bodyText += `${listItems}\n\n`;
+          } else {
+            bodyText += `${el.textContent.trim()}\n\n`;
+          }
+        });
+
+        const copyText = `${title}\n\n${bodyText}\n${tags}`;
+
+        await navigator.clipboard.writeText(copyText);
+
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = 'コピーしました！';
+        copyBtn.style.backgroundColor = '#27ae60';
+
+        setTimeout(() => {
+          copyBtn.textContent = originalText;
+          copyBtn.style.backgroundColor = '#2c3e50';
+        }, 2000);
+
+      } catch (err) {
+        console.error('コピーに失敗しました:', err);
+        alert('コピーに失敗しました');
+      }
+    });
+
+    heroMain.appendChild(copyBtn);
+  };
+  setupNoteCopyButton();
+
+
 };
 
 // 初回読み込み時

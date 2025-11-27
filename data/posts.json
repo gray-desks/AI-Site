@@ -39,12 +39,12 @@
     "slug": "2025-11-27-google-workspace-flowsnotebooklm",
     "publishedAt": "2025-11-27T22:57:40.452Z",
     "image": {
-      "key": "infra-03",
-      "src": "assets/img/article-templates/infra-03.webp",
-      "alt": "クラウド連携を示す幾何学模様（バリアント3）",
-      "label": "クラウド・インフラ",
-      "caption": "Googleやクラウドプラットフォーム関連トピック向け。",
-      "category": "infrastructure"
+      "key": "hero",
+      "src": "assets/img/posts/2025-11-28-gw-flows/hero.png",
+      "alt": "Google Workspace FlowsとNotebookLMの進化イメージ",
+      "label": "Latest Update",
+      "caption": "AIエージェントによる業務自動化のイメージ",
+      "category": "ai"
     }
   },
   {
