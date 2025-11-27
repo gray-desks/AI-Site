@@ -93,6 +93,36 @@ const isFreshEnough = (item) => {
   return true;
 };
 
+// 関連度の簡易チェック: タイトル/スニペットに主要キーワードが含まれているか
+const isRelevant = (item, keyword) => {
+  if (!item) return false;
+  const text = `${item.title || ''} ${item.snippet || ''}`.toLowerCase();
+  const kw = (keyword || '').toLowerCase();
+  const tokens = kw.split(/\s+/).filter(Boolean);
+  // Claude と Chrome を両方含むものを優先（どちらか欠ける場合は除外）
+  const hasClaude = text.includes('claude');
+  const hasChrome = text.includes('chrome');
+  if (kw.includes('claude') && kw.includes('chrome')) {
+    return hasClaude && hasChrome;
+  }
+  // それ以外はキーワードの一部でも含んでいれば許容
+  return tokens.some((t) => text.includes(t));
+};
+
+const isBlockedDomain = (url) => {
+  if (!url) return false;
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    const blocked = [
+      'b.hatena.ne.jp', // はてなブックマーク総合
+      'forest.watch.impress.co.jp', // 窓の杜総合
+    ];
+    return blocked.some((d) => host === d || host.endsWith(`.${d}`));
+  } catch {
+    return false;
+  }
+};
+
 /**
  * キーワードに応じて検索クエリを強調する。
  * 例: 「Chrome」が含まれる場合は拡張/連携などを追加してノイズを減らす。
@@ -126,13 +156,16 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
     const refinedQuery = buildSearchQuery(query);
     logger.info(`[Google検索] 開始: "${refinedQuery}"`);
 
-    // Google検索を実行（1回のみ）
-    const res = await searchTopArticles({
-      apiKey: googleApiKey,
-      cx: googleCx,
-      query: refinedQuery,
-      num: requestCount,
-    });
+    // Google検索を実行（1回のみ、必要なら後で緩和再検索）
+    const performSearch = async (q) =>
+      searchTopArticles({
+        apiKey: googleApiKey,
+        cx: googleCx,
+        query: q,
+        num: requestCount,
+      });
+
+    let res = await performSearch(refinedQuery);
 
     let items = Array.isArray(res.items) ? res.items : [];
     logger.info(`[Google検索] 結果取得: ${items.length}件`);
@@ -145,11 +178,26 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
     }
 
     // SNS/除外ドメインをフィルタリング
-    let filteredItems = items.filter((item) => !shouldSkipResult(item.link));
+    let filteredItems = items.filter((item) => !shouldSkipResult(item.link) && !isBlockedDomain(item.link));
 
     const skippedCount = items.length - filteredItems.length;
     if (skippedCount > 0) {
       logger.info(`[フィルタリング] SNS/除外ドメイン: ${skippedCount}件スキップ`);
+    }
+
+    // 関連度フィルタ（Claude + Chrome を両方含むものを優先）
+    filteredItems = filteredItems.filter((item) => isRelevant(item, query));
+    logger.info(`[フィルタリング] キーワード関連度を満たす件数: ${filteredItems.length}/${items.length}`);
+
+    // 関連度フィルタで不足したら、元のitemsから関連性低めでも補充
+    if (filteredItems.length < desiredCount) {
+      const fallback = items.filter((item) => !isBlockedDomain(item.link)).slice(0, desiredCount * 2);
+      const merged = [...filteredItems];
+      for (const f of fallback) {
+        if (!merged.includes(f)) merged.push(f);
+        if (merged.length >= desiredCount) break;
+      }
+      filteredItems = merged;
     }
 
     // 全除外された場合は、フィルタを緩和して再トライ（SNSも許容）
@@ -158,7 +206,7 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
       filteredItems = items.filter((item) => !shouldSkipResult(item.link, { allowSocial: true }));
     }
 
-    // 上位3件に絞る
+    // 上位desiredCount件に絞る
     const limitedItems = filteredItems.slice(0, desiredCount);
     logger.info(`[処理対象] ${limitedItems.length}件を要約します`);
 
@@ -188,6 +236,28 @@ const fetchSearchSummaries = async (query, googleApiKey, googleCx, openaiApiKey)
 
     // 要約の最小長を満たさないものを除外
     summaries = summaries.filter((entry) => (entry.summary || '').length >= SUMMARY_MIN_LENGTH);
+
+    // 件数が足りなければクエリを緩和して再検索
+    if (summaries.length < MIN_SUMMARIES) {
+      logger.info(`[Google検索] 要約が不足 (${summaries.length}/${MIN_SUMMARIES}) のため緩和クエリで再検索します`);
+      const relaxedQuery = keyword ? keyword : refinedQuery;
+      res = await performSearch(relaxedQuery);
+      let items2 = Array.isArray(res.items) ? res.items : [];
+      items2 = items2.filter((item) => !shouldSkipResult(item.link, { allowSocial: true }) && !isBlockedDomain(item.link));
+      const limited2 = items2.slice(0, desiredCount);
+
+      for (const [index, item] of limited2.entries()) {
+        try {
+          const summaryEntry = await summarizeSearchResult(item, index, openaiApiKey);
+          if ((summaryEntry.summary || '').length >= SUMMARY_MIN_LENGTH) {
+            summaries.push(summaryEntry);
+          }
+        } catch (error) {
+          logger.warn(`[要約失敗:緩和] ${item?.link || 'unknown'}: ${error.message}`);
+        }
+        await sleep(RATE_LIMITS.SEARCH_RESULT_WAIT_MS);
+      }
+    }
 
     return summaries;
   } catch (error) {

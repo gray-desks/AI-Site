@@ -21,7 +21,11 @@ const ARTICLE_GENERATION = {
 - 基本は「です・ます」調だが、論理の展開は鋭く、無駄な言葉を削ぎ落とす。
 - 読者に対して「教える」のではなく、「知見を共有する」対等なスタンス。`,
 
-  user: (candidate, searchSummary, searchQuery, today) => `
+  user: (candidate, searchSummary, searchQuery, today, options = {}) => {
+    const force = options.forceLongSummary
+      ? '\n- summaryは200文字以上、必ずClaudeとChrome統合の具体例を含めること。'
+      : '';
+    return `
 # Mission: Write a High-Quality Technical Review
 以下のリサーチ情報を元に、エンジニアやテック愛好家が満足する**情報量と深度**を持つ技術記事を作成してください。
 記事が短くなることは許されません。読者が「保存版」としてブックマークしたくなるような、網羅的かつ詳細な内容にしてください。
@@ -68,7 +72,8 @@ ${searchSummary}
 **Constraint**:
 - Produce strictly valid JSON.
 - **Minimum 2500 characters**.
-- Date context: ${today}`,
+- Date context: ${today}${force}`;
+  },
 };
 
 module.exports = ARTICLE_GENERATION;

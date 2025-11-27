@@ -202,7 +202,7 @@ const formatSearchSummaries = (summaries) => {
  * @param {object} candidate - 記事の元となる候補データ
  * @returns {Promise<object>} 生成された記事データ (JSON)
  */
-const requestArticleDraft = async (apiKey, candidate) => {
+const requestArticleDraft = async (apiKey, candidate, { forceLongSummary = false } = {}) => {
   const today = new Date().toISOString().split('T')[0];
   const searchSummary = formatSearchSummaries(candidate.searchSummaries);
   const searchQuery = extractSearchQuery(candidate);
@@ -215,7 +215,13 @@ const requestArticleDraft = async (apiKey, candidate) => {
     },
     {
       role: 'user',
-      content: ARTICLE_GENERATION_PROMPT.user(candidate, searchSummary, searchQuery, today),
+      content: ARTICLE_GENERATION_PROMPT.user(
+        candidate,
+        searchSummary,
+        searchQuery,
+        today,
+        { forceLongSummary },
+      ),
     },
   ];
 
@@ -443,7 +449,9 @@ const runGenerator = async (researchResult = null) => {
   while (attempts < maxAttempts) {
     attempts += 1;
     try {
-      article = await requestArticleDraft(apiKey, enrichedCandidate);
+      article = await requestArticleDraft(apiKey, enrichedCandidate, {
+        forceLongSummary: attempts >= 2,
+      });
       validateArticlePayload(article);
       const elapsed = stopDraftTimer();
       metricsTracker.increment('articles.generated');
