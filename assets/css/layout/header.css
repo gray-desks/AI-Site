@@ -8,8 +8,10 @@
  * ヘッダー本体の基本スタイル
  */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
 
   /* Glassmorphism effect */

@@ -1,34 +1,86 @@
 /**
- * @fileoverview メインコンテンツ領域の基本レイアウト
- * `main` タグや、その中のセクションの基本的な余白（padding, margin）を定義します。
- * ※ファイル名は `buttons.css` となっていますが、内容はメインレイアウトに関するものです。
+ * @fileoverview ボタンコンポーネント
+ * サイト全体で使用されるボタンのスタイルを定義します。
  */
 
 /*
- * メインコンテンツ領域 (`main` タグ) のスタイル
+ * ボタンの基本スタイル (.btn)
  */
-main {
-  padding: var(--space-3xl) 0; /* 上下のパディングを大きく取る */
-  position: relative; /* 子要素の配置の基準とするため */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2.5rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /*
- * 記事ラッパーのスタイル
+ * プライマリボタン (.btn-primary)
+ * グラデーション背景と影を使用した強調スタイル
  */
-.article-wrapper {
-  padding: var(--space-2xl) 0 var(--space-3xl); /* 上下のパディングを設定 */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dim) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /*
- * `main` 直下の `section` 要素間の余白
+ * ホバー時のスタイル
  */
-main > section {
-  margin-bottom: var(--space-3xl); /* 各セクションの下に大きな余白を設ける */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  filter: brightness(1.05);
 }
 
 /*
- * `main` 直下の最後の `section` 要素には、下の余白を設けない
+ * アクティブ（クリック）時のスタイル
  */
-main > section:last-child {
-  margin-bottom: 0;
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.2);
+}
+
+/*
+ * フォーカス時のスタイル（アクセシビリティ）
+ */
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/*
+ * もっと見るボタンのコンテナ (.load-more-container)
+ * 記事一覧の下に配置されるボタンのラッパー
+ */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-3xl);
+  padding-bottom: var(--space-xl);
+  width: 100%;
+}
+
+/*
+ * モバイル向けの調整
+ */
+@media (max-width: 640px) {
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.875rem 1.5rem;
+  }
 }

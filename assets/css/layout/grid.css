@@ -15,8 +15,10 @@
    * 小画面ではビューポートの両端に1remずつの余白が確保されます。
    */
   width: min(1200px, 100% - 2rem);
-  margin: 0 auto; /* コンテナを水平方向中央に配置 */
-  padding: 0 var(--space-md); /* 左右のパディング（変数を使用） */
+  margin: 0 auto;
+  /* コンテナを水平方向中央に配置 */
+  padding: 0 var(--space-md);
+  /* 左右のパディング（変数を使用） */
 }
 
 /*
@@ -29,6 +31,41 @@
      * 広い画面では、左右の余白を合計4remに増やします。
      */
     width: min(1200px, 100% - 4rem);
-    padding: 0 var(--space-xl); /* 左右のパディングを広げる */
+    padding: 0 var(--space-xl);
+    /* 左右のパディングを広げる */
   }
+}
+
+/*
+ * メインコンテンツ領域 (`main` タグ) のスタイル
+ * (以前は buttons.css に誤って配置されていました)
+ */
+main {
+  padding: calc(var(--header-height) + var(--space-xl)) 0 var(--space-3xl);
+  /* 上下のパディングを大きく取る（上部はヘッダー分を考慮） */
+  position: relative;
+  /* 子要素の配置の基準とするため */
+}
+
+/*
+ * 記事ラッパーのスタイル
+ */
+.article-wrapper {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+  /* 上下のパディングを設定 */
+}
+
+/*
+ * `main` 直下の `section` 要素間の余白
+ */
+main>section {
+  margin-bottom: var(--space-3xl);
+  /* 各セクションの下に大きな余白を設ける */
+}
+
+/*
+ * `main` 直下の最後の `section` 要素には、下の余白を設けない
+ */
+main>section:last-child {
+  margin-bottom: 0;
 }

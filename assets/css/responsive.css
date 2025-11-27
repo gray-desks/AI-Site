@@ -64,14 +64,20 @@
 
 /* タブレット縦向き */
 @media (max-width: 768px) {
+  :root {
+    --header-height: 60px;
+  }
+
   body {
     font-size: 15px;
     /* 少しフォントサイズを小さく */
   }
 
   .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1001;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
