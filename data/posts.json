@@ -1,5 +1,53 @@
 [
   {
+    "title": "次世代LLMの比較分析：性能と実用性の深層検証",
+    "date": "2025-11-27",
+    "summary": "最新の大規模言語モデル（LLM）であるGPT-4o、Gemini 1.5 Pro、Claude 3.5 Sonnetを徹底比較し、それぞれの技術的特性と実用性を深く掘り下げます。特にビジネスや開発現場での活用可能性を中心に、具体的なユースケースを紹介します。",
+    "tags": [
+      {
+        "slug": "llm",
+        "label": "LLM",
+        "category": "技術トピック",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "generative-ai",
+        "label": "生成AI",
+        "category": "技術トピック",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "tag-3",
+        "label": "技術比較",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "ai",
+        "label": "AI市場",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "tag-5",
+        "label": "ビジネス活用",
+        "category": "その他",
+        "style": "accent-pink"
+      }
+    ],
+    "url": "posts/2025-11-27-llm.html",
+    "slug": "2025-11-27-llm",
+    "publishedAt": "2025-11-27T03:46:53.561Z",
+    "image": {
+      "key": "ai-core-01",
+      "src": "assets/img/article-templates/ai-core-01.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    }
+  },
+  {
     "title": "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
     "date": "2025-11-26",
     "summary": "APIとHTTPリクエストの基本概念を深掘りし、ビジネスや開発現場での具体的な活用方法を解説します。技術的な背景を理解し、実践的なユースケースを知ることで、APIを効果的に活用するための知識を提供します。",

@@ -206,5 +206,13 @@
     "sourceName": "Manual Input",
     "videoTitle": "APIやHTTPリクエストって何？小学生でもわかるAI基礎知識！（Webhook・Oauth2・ベーシック認証・バイナリーデータ・JSONデータ・n8n）",
     "draftUrl": "posts/2025-11-26-apihttp.html"
+  },
+  {
+    "topicKey": "llm",
+    "firstSeen": "2025-11-27T03:46:53.561Z",
+    "lastPublishedAt": "2025-11-27",
+    "sourceName": "Manual Input",
+    "videoTitle": "LLMモデル比較分析",
+    "draftUrl": "posts/2025-11-27-llm.html"
   }
 ]

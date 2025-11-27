@@ -1,5 +1,161 @@
 [
   {
+    "id": "yt-4tQ7W8Ei8T8",
+    "source": {
+      "platform": "YouTube",
+      "name": "ウェブマニア",
+      "channelId": "UCvpDuJLRV07mTu6gh9CGq0w",
+      "url": "https://www.youtube.com/@%E3%82%A6%E3%82%A7%E3%83%96%E3%83%9E%E3%83%8B%E3%82%A2",
+      "focus": [
+        "Webマーケ",
+        "AI活用"
+      ]
+    },
+    "video": {
+      "id": "4tQ7W8Ei8T8",
+      "title": "【雑談配信】おそらく今年最後の配信です！2025年もありがとうございました！",
+      "url": "https://www.youtube.com/watch?v=4tQ7W8Ei8T8",
+      "description": "一足も二足も早く1年を振り返ります。 配信時間：1時間（時間厳守）を予定 ＜ウェブマニアのマシュマロ＞ 匿名でウェブマニア ...",
+      "thumbnail": "https://i.ytimg.com/vi/4tQ7W8Ei8T8/hqdefault.jpg",
+      "publishedAt": "2025-11-26T14:12:16Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-11-27T03:45:47.308Z",
+    "updatedAt": "2025-11-27T03:45:47.308Z",
+    "topicKey": "2025",
+    "notes": "YouTube Data API: ウェブマニア の最新動画"
+  },
+  {
+    "id": "yt-wpW8-GvDfKY",
+    "source": {
+      "platform": "YouTube",
+      "name": "keitoaiweb",
+      "channelId": "UCfapRkagDtoQEkGeyD3uERQ",
+      "url": "https://www.youtube.com/@keitoaiweb",
+      "focus": [
+        "AIニュース",
+        "Web活用"
+      ]
+    },
+    "video": {
+      "id": "wpW8-GvDfKY",
+      "title": "Google AntigravityでNanobananaの画像付きWebサイトを作ってみた",
+      "url": "https://www.youtube.com/watch?v=wpW8-GvDfKY",
+      "description": "GoogleのAIエージェントソフトウェア開発プラットフォームGoogle Antigravity（アンチグラビティ）でWebサイトを作成して ...",
+      "thumbnail": "https://i.ytimg.com/vi/wpW8-GvDfKY/hqdefault.jpg",
+      "publishedAt": "2025-11-26T12:01:55Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-11-27T03:45:41.988Z",
+    "updatedAt": "2025-11-27T03:45:41.988Z",
+    "topicKey": "google-antigravitynanobananaweb",
+    "notes": "YouTube Data API: keitoaiweb の最新動画"
+  },
+  {
+    "id": "yt-r2BvoaULH9c",
+    "source": {
+      "platform": "YouTube",
+      "name": "iketomo-ch",
+      "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
+      "url": "https://www.youtube.com/@iketomo-ch",
+      "focus": [
+        "AIツール",
+        "活用事例"
+      ]
+    },
+    "video": {
+      "id": "r2BvoaULH9c",
+      "title": "AIで格差100倍!? 「外注」の時代は終わった。バイブコーディングで自分の業務は「自分で効率化」するのが活躍の鍵",
+      "url": "https://www.youtube.com/watch?v=r2BvoaULH9c",
+      "description": "新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
+      "thumbnail": "https://i.ytimg.com/vi/r2BvoaULH9c/hqdefault.jpg",
+      "publishedAt": "2025-11-26T11:01:54Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-11-27T03:45:48.614Z",
+    "updatedAt": "2025-11-27T03:45:48.614Z",
+    "topicKey": "ai100",
+    "notes": "YouTube Data API: iketomo-ch の最新動画"
+  },
+  {
+    "id": "yt-qkNRbgE4qIQ",
+    "source": {
+      "platform": "YouTube",
+      "name": "ai_masaou",
+      "channelId": "UCvHpETRVi1tXeRJoYiXHJqw",
+      "url": "https://www.youtube.com/@ai_masaou",
+      "focus": [
+        "生成AI",
+        "Tips"
+      ]
+    },
+    "video": {
+      "id": "qkNRbgE4qIQ",
+      "title": "【完全版】Gemini 3 vs Claude Opus4.5、使い分け解説！開発向LLM15種の実力をガチ格付け",
+      "url": "https://www.youtube.com/watch?v=qkNRbgE4qIQ",
+      "description": "今回の動画では、新しく登場したGemini3 ProやClaude Opus 4.5といったモデルの開発における使い分けに関して徹底解説し、 ...",
+      "thumbnail": "https://i.ytimg.com/vi/qkNRbgE4qIQ/hqdefault.jpg",
+      "publishedAt": "2025-11-26T10:30:42Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-11-27T03:45:38.559Z",
+    "updatedAt": "2025-11-27T03:45:38.559Z",
+    "topicKey": "gemini-3-vs-claude-opus45llm15",
+    "notes": "YouTube Data API: ai_masaou の最新動画"
+  },
+  {
+    "id": "yt-Qe-EaMpPI-Y",
+    "source": {
+      "platform": "YouTube",
+      "name": "AI-Hakase",
+      "channelId": "UC_XCzQX1YiDetIm5IUYvZ7w",
+      "url": "https://www.youtube.com/@AI-Hakase",
+      "focus": [
+        "AI解説",
+        "研究トレンド"
+      ]
+    },
+    "video": {
+      "id": "Qe-EaMpPI-Y",
+      "title": "【プロ必見】FLUX.2完全攻略ガイド！商用レベルの画像生成環境を自宅PCで作る方法｜低VRAM・ComfyUIやローカル動作・LoRA学習まで",
+      "url": "https://www.youtube.com/watch?v=Qe-EaMpPI-Y",
+      "description": "動画のもとになったNote記事 https://note.com/ai_hakase/n/n912f330c4738?app_launch=false 他のフル動画版などもこちらで ...",
+      "thumbnail": "https://i.ytimg.com/vi/Qe-EaMpPI-Y/hqdefault.jpg",
+      "publishedAt": "2025-11-26T10:17:29Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-11-27T03:45:50.706Z",
+    "updatedAt": "2025-11-27T03:45:50.706Z",
+    "topicKey": "flux2pcvramcomfyuilora",
+    "notes": "YouTube Data API: AI-Hakase の最新動画"
+  },
+  {
+    "id": "yt-3g_d95GCtCs",
+    "source": {
+      "platform": "YouTube",
+      "name": "AIAIChatGPT-cj4sh",
+      "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
+      "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
+      "focus": [
+        "ChatGPT",
+        "生成AIノウハウ"
+      ]
+    },
+    "video": {
+      "id": "3g_d95GCtCs",
+      "title": "【プレゼン資料自動生成】Nano Banana Pro搭載の無料AIアシスタント「NotebookLM」で日本語のスライド資料と日本語ビジュアル図解を作れる！",
+      "url": "https://www.youtube.com/watch?v=3g_d95GCtCs",
+      "description": "動画の説明 各種資料から仮想のノートブック(以下ノート)を生成し 解説動画やポッドキャストなど様々なデータを生成できる ...",
+      "thumbnail": "https://i.ytimg.com/vi/3g_d95GCtCs/hqdefault.jpg",
+      "publishedAt": "2025-11-26T09:05:28Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-11-27T03:45:53.367Z",
+    "updatedAt": "2025-11-27T03:45:53.367Z",
+    "topicKey": "nano-banana-proainotebooklm",
+    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画"
+  },
+  {
     "id": "yt-YpEiTf4a5WQ",
     "source": {
       "platform": "YouTube",
@@ -26,137 +182,33 @@
     "notes": "YouTube Data API: google-school の最新動画"
   },
   {
-    "id": "yt-1WtZlvTWBvs",
+    "id": "yt-bOBD2wLcvuI",
     "source": {
       "platform": "YouTube",
-      "name": "chaen-ai-lab",
-      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
-      "url": "https://www.youtube.com/@chaen-ai-lab",
+      "name": "mikimikiweb",
+      "channelId": "UChxtIA33ty53Hh4MmkXNASg",
+      "url": "https://www.youtube.com/@mikimikiweb",
       "focus": [
-        "AI解説",
-        "LLM"
+        "Web制作",
+        "AI活用"
       ]
     },
     "video": {
-      "id": "1WtZlvTWBvs",
-      "title": "【最新版】世界最強のAIチャットボットのGoogleのNotebook LMを完全解説。高精度、引用表示、多機能。《ソース自動格納、音楽、動画、スライド、クイズ生成となんでもOK。初心者向け丁寧解説》",
-      "url": "https://www.youtube.com/watch?v=1WtZlvTWBvs",
-      "description": "【問い合わせフォーム】プロンプト＆投影資料 動画内で使用した「スライド生成プロンプト」や解説資料を無料配布しています。",
-      "thumbnail": "https://i.ytimg.com/vi/1WtZlvTWBvs/hqdefault.jpg",
-      "publishedAt": "2025-11-25T11:51:06Z"
+      "id": "bOBD2wLcvuI",
+      "title": "【遂にキタ‼️】Google最強AI「NotebookLM」のスライド資料作成・図解作成機能が神！使えるワークフローも解説",
+      "url": "https://www.youtube.com/watch?v=bOBD2wLcvuI",
+      "description": "動画をご覧いただきありがとうございます。 今回はGoogle最強AI「NotebookLM」にスライド資料作成機能が爆誕！徹底解説して ...",
+      "thumbnail": "https://i.ytimg.com/vi/bOBD2wLcvuI/hqdefault.jpg",
+      "publishedAt": "2025-11-25T10:21:19Z"
     },
     "status": "collected",
-    "createdAt": "2025-11-27T00:10:23.023Z",
-    "updatedAt": "2025-11-27T00:10:23.023Z",
-    "topicKey": "aigooglenotebook-lmok",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+    "createdAt": "2025-11-27T03:45:37.126Z",
+    "updatedAt": "2025-11-27T03:45:37.126Z",
+    "topicKey": "googleainotebooklm",
+    "notes": "YouTube Data API: mikimikiweb の最新動画"
   },
   {
-    "id": "yt-OqWXcg_3dXc",
-    "source": {
-      "platform": "YouTube",
-      "name": "iketomo-ch",
-      "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
-      "url": "https://www.youtube.com/@iketomo-ch",
-      "focus": [
-        "AIツール",
-        "活用事例"
-      ]
-    },
-    "video": {
-      "id": "OqWXcg_3dXc",
-      "title": "Gemini3で、多くの仕事がAI代替!?  アウトプット革命が起きてしまったこの時代に楽しく生き残る・活躍するための必要な習慣とは？",
-      "url": "https://www.youtube.com/watch?v=OqWXcg_3dXc",
-      "description": "新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
-      "thumbnail": "https://i.ytimg.com/vi/OqWXcg_3dXc/hqdefault.jpg",
-      "publishedAt": "2025-11-25T11:00:54Z"
-    },
-    "status": "collected",
-    "createdAt": "2025-11-27T00:10:23.509Z",
-    "updatedAt": "2025-11-27T00:10:23.509Z",
-    "topicKey": "gemini3ai",
-    "notes": "YouTube Data API: iketomo-ch の最新動画"
-  },
-  {
-    "id": "yt-tX1SPRor_oI",
-    "source": {
-      "platform": "YouTube",
-      "name": "AIAIChatGPT-cj4sh",
-      "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
-      "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
-      "focus": [
-        "ChatGPT",
-        "生成AIノウハウ"
-      ]
-    },
-    "video": {
-      "id": "tX1SPRor_oI",
-      "title": "【画像から3Dワールド生成】現実そっくりの3D環境を量産できるAI世界モデル「Marble」の概要・使い方・活用事例！",
-      "url": "https://www.youtube.com/watch?v=tX1SPRor_oI",
-      "description": "動画の説明 World Labsは、(2025年)11月13日 画像を読み込むと 読み込んだ画像から自動で3D空間を生成してくれ 作った3D空間 ...",
-      "thumbnail": "https://i.ytimg.com/vi/tX1SPRor_oI/hqdefault.jpg",
-      "publishedAt": "2025-11-25T09:06:02Z"
-    },
-    "status": "collected",
-    "createdAt": "2025-11-27T00:10:24.005Z",
-    "updatedAt": "2025-11-27T00:10:24.005Z",
-    "topicKey": "3d3daimarble",
-    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画"
-  },
-  {
-    "id": "yt-CqgkIrVtdTA",
-    "source": {
-      "platform": "YouTube",
-      "name": "technavi_tooru",
-      "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
-      "url": "https://www.youtube.com/@technavi_tooru",
-      "focus": [
-        "テックニュース",
-        "生成AI"
-      ]
-    },
-    "video": {
-      "id": "CqgkIrVtdTA",
-      "title": "Anthropicの新しいモデル「CLAUDE OPUS 4.5」登場！",
-      "url": "https://www.youtube.com/watch?v=CqgkIrVtdTA",
-      "description": "メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております  ‍♂️  (YouTubeアプリからの加入 ...",
-      "thumbnail": "https://i.ytimg.com/vi/CqgkIrVtdTA/hqdefault.jpg",
-      "publishedAt": "2025-11-25T09:00:27Z"
-    },
-    "status": "collected",
-    "createdAt": "2025-11-27T00:10:23.876Z",
-    "updatedAt": "2025-11-27T00:10:23.876Z",
-    "topicKey": "anthropicclaude-opus-45",
-    "notes": "YouTube Data API: technavi_tooru の最新動画"
-  },
-  {
-    "id": "yt-RHl6XH18cEw",
-    "source": {
-      "platform": "YouTube",
-      "name": "kei31e",
-      "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
-      "url": "https://www.youtube.com/@kei31e",
-      "focus": [
-        "エンジニアリング",
-        "AI"
-      ]
-    },
-    "video": {
-      "id": "RHl6XH18cEw",
-      "title": "スマホでNano Banana Proを使ってマンガを作ろう",
-      "url": "https://www.youtube.com/watch?v=RHl6XH18cEw",
-      "description": "スマホバナナはこちら。 https://note.com/konho/n/n103c961a415e.",
-      "thumbnail": "https://i.ytimg.com/vi/RHl6XH18cEw/hqdefault.jpg",
-      "publishedAt": "2025-11-25T06:29:47Z"
-    },
-    "status": "collected",
-    "createdAt": "2025-11-27T00:10:23.321Z",
-    "updatedAt": "2025-11-27T00:10:23.321Z",
-    "topicKey": "nano-banana-pro",
-    "notes": "YouTube Data API: kei31e の最新動画"
-  },
-  {
-    "id": "yt-pe4izKdMveA",
+    "id": "yt-fsZ4mUTZZ7E",
     "source": {
       "platform": "YouTube",
       "name": "ai_masaou",
@@ -168,17 +220,17 @@
       ]
     },
     "video": {
-      "id": "pe4izKdMveA",
-      "title": "【最高です】Claude Opus 4.5 モデルが新登場！開発・エージェント性能で圧倒的だったので解説します",
-      "url": "https://www.youtube.com/watch?v=pe4izKdMveA",
-      "description": "今回の動画では、Claudeから新たに登場した「Opus 4.5」というモデルについて解説しました。 このモデルは、圧倒的な開発 ...",
-      "thumbnail": "https://i.ytimg.com/vi/pe4izKdMveA/hqdefault.jpg",
-      "publishedAt": "2025-11-25T00:55:00Z"
+      "id": "fsZ4mUTZZ7E",
+      "title": "【一推し】ブラウザAIは新登場『Claude For Chrome』がおすすめ！手軽に導入してAI操作やスケジュールが便利",
+      "url": "https://www.youtube.com/watch?v=fsZ4mUTZZ7E",
+      "description": "今回の動画では、新たに Max プランのユーザー向けに提供が始まった Cloud for Chrome について解説しました。 AIブラウザ系の ...",
+      "thumbnail": "https://i.ytimg.com/vi/fsZ4mUTZZ7E/hqdefault.jpg",
+      "publishedAt": "2025-11-25T10:20:00Z"
     },
     "status": "collected",
-    "createdAt": "2025-11-27T00:10:22.757Z",
-    "updatedAt": "2025-11-27T00:10:22.757Z",
-    "topicKey": "claude-opus-45",
+    "createdAt": "2025-11-27T03:45:39.434Z",
+    "updatedAt": "2025-11-27T03:45:39.434Z",
+    "topicKey": "aiclaude-for-chromeai",
     "notes": "YouTube Data API: ai_masaou の最新動画"
   },
   {
@@ -338,134 +390,108 @@
     "notes": "YouTube Data API: kei31e の最新動画"
   },
   {
-    "id": "yt-IAgT00oqBcw",
+    "id": "yt-rHgeU2sEdG4",
     "source": {
       "platform": "YouTube",
-      "name": "chaen-ai-lab",
-      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
-      "url": "https://www.youtube.com/@chaen-ai-lab",
+      "name": "technavi_tooru",
+      "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
+      "url": "https://www.youtube.com/@technavi_tooru",
       "focus": [
-        "AI解説",
-        "LLM"
+        "テックニュース",
+        "生成AI"
       ]
     },
     "video": {
-      "id": "IAgT00oqBcw",
-      "title": "【衝撃】イーロン・マスクの報酬150兆円！？使い道が異次元すぎる。 #shorts #イーロンマスク#ビジネス #雑学 #お金 #テスラ",
-      "url": "https://www.youtube.com/watch?v=IAgT00oqBcw",
-      "description": "【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 日本のGDPの4分の1に ...",
-      "thumbnail": "https://i.ytimg.com/vi/IAgT00oqBcw/hqdefault.jpg",
-      "publishedAt": "2025-11-23T13:38:21Z"
+      "id": "rHgeU2sEdG4",
+      "title": "AIデータセンター入門②：GPUクラスタを速くするRDMAとは何？",
+      "url": "https://www.youtube.com/watch?v=rHgeU2sEdG4",
+      "description": "メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております  ‍♂️  (YouTubeアプリからの加入 ...",
+      "thumbnail": "https://i.ytimg.com/vi/rHgeU2sEdG4/hqdefault.jpg",
+      "publishedAt": "2025-11-23T09:30:23Z"
     },
     "status": "collected",
-    "createdAt": "2025-11-27T00:10:23.023Z",
-    "updatedAt": "2025-11-27T00:10:23.023Z",
-    "topicKey": "150-shorts",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+    "createdAt": "2025-11-27T03:45:52.018Z",
+    "updatedAt": "2025-11-27T03:45:52.018Z",
+    "topicKey": "ai2gpurdma",
+    "notes": "YouTube Data API: technavi_tooru の最新動画"
   },
   {
-    "id": "yt-UMrmAKY4QNM",
+    "id": "yt-BxslylmJLJg",
     "source": {
       "platform": "YouTube",
-      "name": "tomos_aiagent",
-      "channelId": "UCAmdG83hIqRQfwLaNQS7H2w",
-      "url": "https://www.youtube.com/@tomos_aiagent",
+      "name": "AIAIChatGPT-cj4sh",
+      "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
+      "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
       "focus": [
-        "AIエージェント",
-        "自動化"
+        "ChatGPT",
+        "生成AIノウハウ"
       ]
     },
     "video": {
-      "id": "UMrmAKY4QNM",
-      "title": "【LINE×最強AI】話題の「Nano Banana Pro」をLINEに実装する方法！写真から超リアル画像を生成する自動化ワークフロー🍌（n8n／AIエージェント／AIワークフロー）",
-      "url": "https://www.youtube.com/watch?v=UMrmAKY4QNM",
-      "description": "無料コミュニティでテンプレを入手！：https://www.skool.com/tomolab-2938 ・ 日本有数の専用コミュニティを見てみる！",
-      "thumbnail": "https://i.ytimg.com/vi/UMrmAKY4QNM/hqdefault.jpg",
-      "publishedAt": "2025-11-23T12:22:13Z"
+      "id": "BxslylmJLJg",
+      "title": "【週刊最新AIツール&amp;ニュース】GoogleのAIチャット「Gemini」の5つの新機能・Gemini 3 Pro・Nano Banana Pro/「NotebookLM」の新機能",
+      "url": "https://www.youtube.com/watch?v=BxslylmJLJg",
+      "description": "動画の説明 今週リリース(発表)されたAIツールとAIニュースをまとめています なるべく無料で使えるツールを中心に紹介します！",
+      "thumbnail": "https://i.ytimg.com/vi/BxslylmJLJg/hqdefault.jpg",
+      "publishedAt": "2025-11-23T09:06:16Z"
     },
     "status": "collected",
-    "createdAt": "2025-11-27T00:10:23.633Z",
-    "updatedAt": "2025-11-27T00:10:23.633Z",
-    "topicKey": "lineainano-banana-prolinen8naiai",
-    "notes": "YouTube Data API: tomos_aiagent の最新動画"
+    "createdAt": "2025-11-27T03:45:54.340Z",
+    "updatedAt": "2025-11-27T03:45:54.340Z",
+    "topicKey": "aiampgoogleaigemini5gemini-3-pronano-banana-pronotebooklm",
+    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画"
   },
   {
-    "id": "yt-jrCuW7HJbO4",
+    "id": "yt-cXQuiEr7Jpg",
     "source": {
       "platform": "YouTube",
-      "name": "ウェブマニア",
-      "channelId": "UCvpDuJLRV07mTu6gh9CGq0w",
-      "url": "https://www.youtube.com/@%E3%82%A6%E3%82%A7%E3%83%96%E3%83%9E%E3%83%8B%E3%82%A2",
+      "name": "keitoaiweb",
+      "channelId": "UCfapRkagDtoQEkGeyD3uERQ",
+      "url": "https://www.youtube.com/@keitoaiweb",
       "focus": [
-        "Webマーケ",
-        "AI活用"
+        "AIニュース",
+        "Web活用"
       ]
     },
     "video": {
-      "id": "jrCuW7HJbO4",
-      "title": "個人ゲーム開発を始めて約1か月の進捗共有＆ゲーム情報公開！#ゲーム開発",
-      "url": "https://www.youtube.com/watch?v=jrCuW7HJbO4",
-      "description": "公式Xはこちら！フォローいただけると嬉しいです♪ ：https://x.com/webmaniapro ＜ウェブマニアについて＞ おすすめのWEB ...",
-      "thumbnail": "https://i.ytimg.com/vi/jrCuW7HJbO4/hqdefault.jpg",
-      "publishedAt": "2025-11-23T12:21:18Z"
+      "id": "cXQuiEr7Jpg",
+      "title": "【知らないと損】NotebookLMのスライド資料生成と図解生成機能が素晴らしい！",
+      "url": "https://www.youtube.com/watch?v=cXQuiEr7Jpg",
+      "description": "NotebookLMにスライド資料生成機能が追加。インフォグラフィックを作成する機能も追加されてたので合わせて紹介。かなり ...",
+      "thumbnail": "https://i.ytimg.com/vi/cXQuiEr7Jpg/hqdefault.jpg",
+      "publishedAt": "2025-11-23T08:03:58Z"
     },
     "status": "collected",
-    "createdAt": "2025-11-27T00:10:23.154Z",
-    "updatedAt": "2025-11-27T00:10:23.154Z",
-    "topicKey": "1",
-    "notes": "YouTube Data API: ウェブマニア の最新動画"
+    "createdAt": "2025-11-27T03:45:43.474Z",
+    "updatedAt": "2025-11-27T03:45:43.474Z",
+    "topicKey": "notebooklm",
+    "notes": "YouTube Data API: keitoaiweb の最新動画"
   },
   {
-    "id": "yt-mA00ScGrlWs",
+    "id": "yt-NAwykfigzQ4",
     "source": {
       "platform": "YouTube",
-      "name": "ai_masaou",
-      "channelId": "UCvHpETRVi1tXeRJoYiXHJqw",
-      "url": "https://www.youtube.com/@ai_masaou",
+      "name": "iketomo-ch",
+      "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
+      "url": "https://www.youtube.com/@iketomo-ch",
       "focus": [
-        "生成AI",
-        "Tips"
+        "AIツール",
+        "活用事例"
       ]
     },
     "video": {
-      "id": "mA00ScGrlWs",
-      "title": "【開発者必見】GPT-5.1の進化が示す『タスク効率』を解説！今後、最も重要になる指標について",
-      "url": "https://www.youtube.com/watch?v=mA00ScGrlWs",
-      "description": "GPT-5.1や最新モデルが登場するたび、「トークン単価（$/1M）」だけでコスト計算していませんか？実は、AIエージェント開発 ...",
-      "thumbnail": "https://i.ytimg.com/vi/mA00ScGrlWs/hqdefault.jpg",
-      "publishedAt": "2025-11-23T03:05:01Z"
+      "id": "NAwykfigzQ4",
+      "title": "注目AIニュース22選～Gemini3、Nano Banana Pro、NotebookLMでスライド作成、Copilot無料でエージェントモード、Grok4.1など",
+      "url": "https://www.youtube.com/watch?v=NAwykfigzQ4",
+      "description": "提供：Udemy | Benesse ...",
+      "thumbnail": "https://i.ytimg.com/vi/NAwykfigzQ4/hqdefault.jpg",
+      "publishedAt": "2025-11-23T06:00:31Z"
     },
     "status": "collected",
-    "createdAt": "2025-11-27T00:10:22.757Z",
-    "updatedAt": "2025-11-27T00:10:22.757Z",
-    "topicKey": "gpt-51",
-    "notes": "YouTube Data API: ai_masaou の最新動画"
-  },
-  {
-    "id": "yt-07c2xcGrVr4",
-    "source": {
-      "platform": "YouTube",
-      "name": "mikimikiweb",
-      "channelId": "UChxtIA33ty53Hh4MmkXNASg",
-      "url": "https://www.youtube.com/@mikimikiweb",
-      "focus": [
-        "Web制作",
-        "AI活用"
-      ]
-    },
-    "video": {
-      "id": "07c2xcGrVr4",
-      "title": "【革命的‼️】Googleの画像生成AI「NanoBanana Pro」が凄すぎる！徹底解説します！",
-      "url": "https://www.youtube.com/watch?v=07c2xcGrVr4",
-      "description": "動画をご覧いただきありがとうございます。 今回はGoogleの画像生成AI「Nano Banana Pro」が爆誕！ 徹底解説していきます。",
-      "thumbnail": "https://i.ytimg.com/vi/07c2xcGrVr4/hqdefault.jpg",
-      "publishedAt": "2025-11-22T10:18:42Z"
-    },
-    "status": "collected",
-    "createdAt": "2025-11-27T00:10:22.567Z",
-    "updatedAt": "2025-11-27T00:10:22.567Z",
-    "topicKey": "googleainanobanana-pro",
-    "notes": "YouTube Data API: mikimikiweb の最新動画"
+    "createdAt": "2025-11-27T03:45:49.552Z",
+    "updatedAt": "2025-11-27T03:45:49.552Z",
+    "topicKey": "ai22gemini3nano-banana-pronotebooklmcopilotgrok41",
+    "notes": "YouTube Data API: iketomo-ch の最新動画"
   },
   {
     "id": "yt-1UxPMB3sOwM",
@@ -546,58 +572,6 @@
     "notes": "YouTube Data API: ai_masaou の最新動画"
   },
   {
-    "id": "yt-6rBe-2pV_L0",
-    "source": {
-      "platform": "YouTube",
-      "name": "iketomo-ch",
-      "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
-      "url": "https://www.youtube.com/@iketomo-ch",
-      "focus": [
-        "AIツール",
-        "活用事例"
-      ]
-    },
-    "video": {
-      "id": "6rBe-2pV_L0",
-      "title": "【必見】Gemini進化やばすぎ！超具体的に紹介①Gemini3のベースアップ　②Nanobanana Proで日本語図解が何でも作れる③NotebookLMが超進化　④AI studioでツール化も",
-      "url": "https://www.youtube.com/watch?v=6rBe-2pV_L0",
-      "description": "新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
-      "thumbnail": "https://i.ytimg.com/vi/6rBe-2pV_L0/hqdefault.jpg",
-      "publishedAt": "2025-11-22T06:00:10Z"
-    },
-    "status": "collected",
-    "createdAt": "2025-11-27T00:10:23.509Z",
-    "updatedAt": "2025-11-27T00:10:23.509Z",
-    "topicKey": "gemini1gemini3-2nanobanana-pro3notebooklm-4ai-studio",
-    "notes": "YouTube Data API: iketomo-ch の最新動画"
-  },
-  {
-    "id": "yt-htB3zmgRitM",
-    "source": {
-      "platform": "YouTube",
-      "name": "ai-saborou",
-      "channelId": "UC9AuyS7U4PxeDSNMJ2srarA",
-      "url": "https://www.youtube.com/@ai-saborou",
-      "focus": [
-        "AIツール",
-        "自動化"
-      ]
-    },
-    "video": {
-      "id": "htB3zmgRitM",
-      "title": "【衝撃】NotebookLMでスライド自動生成。自分で作るより高品質でした...",
-      "url": "https://www.youtube.com/watch?v=htB3zmgRitM",
-      "description": "NotebookLMのスライド機能の使い方と編集の仕方をご紹介します。 ▽ NotebookLM https://notebooklm.google.com/ ▽ 私の ...",
-      "thumbnail": "https://i.ytimg.com/vi/htB3zmgRitM/hqdefault.jpg",
-      "publishedAt": "2025-11-22T05:39:52Z"
-    },
-    "status": "collected",
-    "createdAt": "2025-11-27T00:10:22.209Z",
-    "updatedAt": "2025-11-27T00:10:22.209Z",
-    "topicKey": "notebooklm",
-    "notes": "YouTube Data API: ai-saborou の最新動画"
-  },
-  {
     "id": "yt-z-E53KJjtn8",
     "source": {
       "platform": "YouTube",
@@ -650,6 +624,32 @@
     "notes": "YouTube Data API: technavi_tooru の最新動画"
   },
   {
+    "id": "yt-xyvyYDW1K6A",
+    "source": {
+      "platform": "YouTube",
+      "name": "chaen-ai-lab",
+      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
+      "url": "https://www.youtube.com/@chaen-ai-lab",
+      "focus": [
+        "AI解説",
+        "LLM"
+      ]
+    },
+    "video": {
+      "id": "xyvyYDW1K6A",
+      "title": "【ChatGPT超え】Googleから最強の画像生成AI「Nano Banana Pro」が公開。資料作成、図解、広告、インスタ映えも作れる。デザイナー不要か。。",
+      "url": "https://www.youtube.com/watch?v=xyvyYDW1K6A",
+      "description": "【問い合わせフォーム】動画内で使用したプロンプトや解説資料を無料配布しています。 以下のリンクからアンケートにお答え ...",
+      "thumbnail": "https://i.ytimg.com/vi/xyvyYDW1K6A/hqdefault.jpg",
+      "publishedAt": "2025-11-21T11:19:18Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-11-27T03:45:44.730Z",
+    "updatedAt": "2025-11-27T03:45:44.730Z",
+    "topicKey": "chatgptgoogleainano-banana-pro",
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+  },
+  {
     "id": "yt-DkcVrKjTpHY",
     "source": {
       "platform": "YouTube",
@@ -676,56 +676,30 @@
     "notes": "YouTube Data API: iketomo-ch の最新動画"
   },
   {
-    "id": "yt-6h6PP1KkJWc",
+    "id": "yt-o7yiGNjxrKM",
     "source": {
       "platform": "YouTube",
-      "name": "AIAIChatGPT-cj4sh",
-      "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
-      "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
+      "name": "chaen-ai-lab",
+      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
+      "url": "https://www.youtube.com/@chaen-ai-lab",
       "focus": [
-        "ChatGPT",
-        "生成AIノウハウ"
+        "AI解説",
+        "LLM"
       ]
     },
     "video": {
-      "id": "6h6PP1KkJWc",
-      "title": "【2025年最強画像生成AI】Gemini 3 Proベースの画像生成AIモデル「Nano Banana Pro」の概要・無料で使う方法・活用事例！",
-      "url": "https://www.youtube.com/watch?v=6h6PP1KkJWc",
-      "description": "動画の説明 Googleは、(2025年)11月21日 画像生成・編集AIモデルの最新版 「Nano Banana Pro」を公開しました このモデル ...",
-      "thumbnail": "https://i.ytimg.com/vi/6h6PP1KkJWc/hqdefault.jpg",
-      "publishedAt": "2025-11-21T09:09:25Z"
+      "id": "o7yiGNjxrKM",
+      "title": "【ついに】Geminiから新モデル公開。一体何がすごいのか。 #ai #チャエン#gemini #ai活用",
+      "url": "https://www.youtube.com/watch?v=o7yiGNjxrKM",
+      "description": "【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 Googleから「Gemini 3」 ...",
+      "thumbnail": "https://i.ytimg.com/vi/o7yiGNjxrKM/hqdefault.jpg",
+      "publishedAt": "2025-11-20T10:45:06Z"
     },
     "status": "collected",
-    "createdAt": "2025-11-27T00:10:24.005Z",
-    "updatedAt": "2025-11-27T00:10:24.005Z",
-    "topicKey": "2025aigemini-3-proainano-banana-pro",
-    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画"
-  },
-  {
-    "id": "yt-2HBuY842Koc",
-    "source": {
-      "platform": "YouTube",
-      "name": "keitoaiweb",
-      "channelId": "UCfapRkagDtoQEkGeyD3uERQ",
-      "url": "https://www.youtube.com/@keitoaiweb",
-      "focus": [
-        "AIニュース",
-        "Web活用"
-      ]
-    },
-    "video": {
-      "id": "2HBuY842Koc",
-      "title": "Nanobanana Proが過去一凄い！Googleの画像生成AI最新バージョンを徹底検証（ナノバナナプロ）",
-      "url": "https://www.youtube.com/watch?v=2HBuY842Koc",
-      "description": "Googleの画像生成AIの最新バージョン「Nanobanana Pro（ナノバナナプロ）」が登場したので徹底検証してみます。文字の出力 ...",
-      "thumbnail": "https://i.ytimg.com/vi/2HBuY842Koc/hqdefault.jpg",
-      "publishedAt": "2025-11-21T07:50:43Z"
-    },
-    "status": "collected",
-    "createdAt": "2025-11-27T00:10:22.886Z",
-    "updatedAt": "2025-11-27T00:10:22.886Z",
-    "topicKey": "nanobanana-progoogleai",
-    "notes": "YouTube Data API: keitoaiweb の最新動画"
+    "createdAt": "2025-11-27T03:45:45.600Z",
+    "updatedAt": "2025-11-27T03:45:45.600Z",
+    "topicKey": "gemini-ai-gemini-ai",
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
   },
   {
     "id": "yt-B2VAu4_s2rI",
@@ -778,6 +752,32 @@
     "updatedAt": "2025-11-27T02:47:58.911Z",
     "topicKey": "gemini-30",
     "notes": "YouTube Data API: google-school の最新動画"
+  },
+  {
+    "id": "yt-Wj0Jd-n008E",
+    "source": {
+      "platform": "YouTube",
+      "name": "ai-saborou",
+      "channelId": "UC9AuyS7U4PxeDSNMJ2srarA",
+      "url": "https://www.youtube.com/@ai-saborou",
+      "focus": [
+        "AIツール",
+        "自動化"
+      ]
+    },
+    "video": {
+      "id": "Wj0Jd-n008E",
+      "title": "7分でGemini 3 Proのすごいところが分かる動画",
+      "url": "https://www.youtube.com/watch?v=Wj0Jd-n008E",
+      "description": "Gemini 3 Proのすごいところを解説していきます noteのメンバーシップ関連記事 ▽ 新しいAIモデルが出た時のルーティン ...",
+      "thumbnail": "https://i.ytimg.com/vi/Wj0Jd-n008E/hqdefault.jpg",
+      "publishedAt": "2025-11-20T08:00:41Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-11-27T03:45:34.826Z",
+    "updatedAt": "2025-11-27T03:45:34.826Z",
+    "topicKey": "7gemini-3-pro",
+    "notes": "YouTube Data API: ai-saborou の最新動画"
   },
   {
     "id": "yt-hnhngS_YTkQ",
