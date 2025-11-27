@@ -1,5 +1,53 @@
 [
   {
+    "title": "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+    "date": "2025-11-27",
+    "summary": "Google Workspace FlowsとNotebookLMがもたらす知識管理と業務自動化の進化を探る。特に、Claude for Chromeとの統合がどのように業務効率を向上させるかを具体例を交えて解説し、ビジネス現場での活用可能性を示す。",
+    "tags": [
+      {
+        "slug": "google-workspace",
+        "label": "Google Workspace",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "notebooklm",
+        "label": "NotebookLM",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "automation",
+        "label": "業務自動化",
+        "category": "ユースケース",
+        "style": "accent-teal"
+      },
+      {
+        "slug": "ai-topic",
+        "label": "AIトピック",
+        "category": "その他",
+        "style": "accent-neutral"
+      },
+      {
+        "slug": "information-management",
+        "label": "情報整理",
+        "category": "ユースケース",
+        "style": "accent-lime"
+      }
+    ],
+    "url": "posts/2025-11-27-google-workspace-flowsnotebooklm.html",
+    "slug": "2025-11-27-google-workspace-flowsnotebooklm",
+    "publishedAt": "2025-11-27T22:57:40.452Z",
+    "image": {
+      "key": "infra-03",
+      "src": "assets/img/article-templates/infra-03.webp",
+      "alt": "クラウド連携を示す幾何学模様（バリアント3）",
+      "label": "クラウド・インフラ",
+      "caption": "Googleやクラウドプラットフォーム関連トピック向け。",
+      "category": "infrastructure"
+    }
+  },
+  {
     "title": "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
     "date": "2025-11-27",
     "summary": "2025年における「自律型ブラウジング」の現状と展望。AIは「対話」から「実行」へ。月額100ドルの価値はあるのか？エンジニアやマーケター必見の徹底分析レポート。",

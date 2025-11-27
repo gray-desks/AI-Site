@@ -5,20 +5,32 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Thu, 27 Nov 2025 11:59:42 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 27 Nov 2025 22:57:40 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
   <item>
-    <title>Claude for Chrome拡張の実力検証：生産性向上の新基準</title>
+    <title>Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代</title>
+    <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-27-google-workspace-flowsnotebooklm.html</link>
+    <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-27-google-workspace-flowsnotebooklm.html</guid>
+    <pubDate>Thu, 27 Nov 2025 22:57:40 GMT</pubDate>
+    <description>Google Workspace FlowsとNotebookLMがもたらす知識管理と業務自動化の進化を探る。特に、Claude for Chromeとの統合がどのように業務効率を向上させるかを具体例を交えて解説し、ビジネス現場での活用可能性を示す。</description>
+    <category>Google Workspace</category>
+    <category>NotebookLM</category>
+    <category>業務自動化</category>
+    <category>AIトピック</category>
+    <category>情報整理</category>
+  </item>
+  <item>
+    <title>Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-27-claude-for-chrome.html</link>
     <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-27-claude-for-chrome.html</guid>
     <pubDate>Thu, 27 Nov 2025 11:49:48 GMT</pubDate>
-    <description>Claude for Chrome拡張機能は、Webブラウジングを効率化し、開発者やビジネスプロフェッショナルの生産性を劇的に向上させます。本記事では、具体的な設定手順や操作方法、実際のユースケースを通じて、その実力を徹底的に解説します。</description>
+    <description>2025年における「自律型ブラウジング」の現状と展望。AIは「対話」から「実行」へ。月額100ドルの価値はあるのか？エンジニアやマーケター必見の徹底分析レポート。</description>
     <category>Claude</category>
     <category>Chrome拡張</category>
-    <category>生成AI</category>
-    <category>生産性向上</category>
-    <category>技術スタック</category>
+    <category>AIエージェント</category>
+    <category>自動化</category>
+    <category>徹底分析</category>
   </item>
   <item>
     <title>【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較</title>

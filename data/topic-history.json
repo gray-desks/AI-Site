@@ -222,5 +222,13 @@
     "sourceName": "Manual Input",
     "videoTitle": "Claude Tool Search技術",
     "draftUrl": "posts/2025-11-27-claude-for-chrome.html"
+  },
+  {
+    "topicKey": "google-workspace-flows",
+    "firstSeen": "2025-11-27T22:57:40.452Z",
+    "lastPublishedAt": "2025-11-27",
+    "sourceName": "Manual Input",
+    "videoTitle": "Google Workspace Flows自動化",
+    "draftUrl": "posts/2025-11-27-google-workspace-flowsnotebooklm.html"
   }
 ]
