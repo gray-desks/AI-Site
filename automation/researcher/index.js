@@ -53,7 +53,17 @@ const getEligibleCandidates = (processedIds) => {
   if (!Array.isArray(candidates)) return [];
 
   const eligible = candidates.filter(
-    (item) => item.status === 'collected' && item.video?.id && !processedIds.has(item.video.id),
+    (item) => {
+      const hasVideo = item.video?.id;
+      if (!hasVideo) return false;
+      // 'collected' は通常通り対象にする
+      if (item.status === 'collected') return !processedIds.has(item.video.id);
+      // 過去に「字幕無し」でスキップしたものは、説明文フォールバックを試すため再挑戦する
+      if (item.status === 'skipped' && item.skipReason === 'transcript-unavailable') {
+        return !processedIds.has(item.video.id);
+      }
+      return false;
+    },
   );
 
   return eligible.sort(
