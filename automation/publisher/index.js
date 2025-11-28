@@ -13,6 +13,7 @@ const path = require('path');
 const { readJson, writeJson, ensureDir } = require('../lib/io');
 const { VALIDATION } = require('../config/constants');
 const { findOrphanPosts } = require('../lib/postValidation');
+const { upsertProcessedVideo } = require('../lib/processedVideos');
 
 const { injectCommonComponents } = require('./ssg');
 const { generateRSS } = require('./rss');
@@ -195,6 +196,20 @@ const runPublisher = async ({ collectorResult, researcherResult, generatorResult
       console.log(`[publisher] data/posts.json を更新しました（${updatedPosts.length}件）。`);
     } else {
       console.log('[publisher] data/posts.json に変化はありませんでした。');
+    }
+
+    // 記事化済みのVideo IDを記録
+    if (article.video?.id) {
+      const recorded = upsertProcessedVideo({
+        videoId: article.video.id,
+        videoTitle: article.video.title,
+        articleTitle: article.title,
+        postUrl: relativePath,
+        sourceName: article.source?.name || '',
+      });
+      if (recorded) {
+        console.log(`[publisher] processed-videos.json を更新しました: ${recorded.videoId}`);
+      }
     }
   } else {
     console.log('[publisher] generator出力が無いため、記事作成とposts.json更新をスキップします。');

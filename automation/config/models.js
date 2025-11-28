@@ -32,6 +32,14 @@ const QUERY_GENERATION = {
   response_format: { type: 'json_object' },
 };
 
+// テーマ重複判定用モデル（軽量・低コスト）
+const THEME_DEDUPLICATION = {
+  model: 'gpt-4o-mini',
+  fallbackModel: 'gpt-3.5-turbo',
+  temperature: 0.2,
+  response_format: { type: 'json_object' },
+};
+
 // トピックキー抽出用モデル
 const TOPIC_KEY_EXTRACTION = {
   model: 'gpt-4o',
@@ -66,5 +74,6 @@ module.exports = {
   TOPIC_KEY_EXTRACTION,
   SUMMARY_GENERATION,
   QUERY_GENERATION,
+  THEME_DEDUPLICATION,
   ARTICLE_GENERATION,
 };

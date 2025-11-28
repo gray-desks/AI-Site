@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * @fileoverview Generator: 記事生成ステージ
- * - `data/candidates.json` から `status='researched'` の候補を1つ選択します。
+ * - Researcherで採用された動画候補（字幕付き）を元に記事を生成します。
  * - OpenAI API を呼び出し、SEOを意識した記事の下書きをJSON形式で生成させます。
  * - 生成された記事データとテンプレートを組み合わせて、公開用のHTMLファイルを作成します。
  * - 記事のトピックが最近公開されたものと重複していないかチェックします。
@@ -158,42 +158,25 @@ const parseCompletionContent = (content) => {
 };
 
 /**
- * 候補データから検索クエリを抽出します。
+ * 記事生成プロンプトに渡すソース情報を組み立てます。
  * @param {object} candidate - 候補オブジェクト
- * @returns {string} 検索クエリ
- */
-const extractSearchQuery = (candidate) => {
-  // 新しい構造: { original, extracted, method }
-  if (candidate.searchQuery && typeof candidate.searchQuery === 'object') {
-    return candidate.searchQuery.extracted || candidate.searchQuery.original || '';
-  }
-  // 古い構造: 文字列
-  if (typeof candidate.searchQuery === 'string') {
-    return candidate.searchQuery;
-  }
-  // フォールバックとして動画タイトルを使用
-  return candidate.video?.title || '';
-};
-
-/**
- * Google検索の要約結果を整形してプロンプトに含める文字列を生成します。
- * @param {Array<object>} summaries - 要約情報の配列
  * @returns {string} 整形された文字列
  */
-const formatSearchSummaries = (summaries) => {
-  if (!Array.isArray(summaries) || summaries.length === 0) {
-    return '検索要約が取得できていません。';
+const buildSourceMaterial = (candidate) => {
+  const blocks = [];
+  if (candidate.transcript) {
+    blocks.push(`【Transcript 抜粋】\n${candidate.transcript}`);
   }
-  // 各要約をマークダウン形式の文字列に変換
-  return summaries
-    .map((item, index) => {
-      const title = item.title || `Source ${index + 1}`;
-      const url = item.url || 'URLなし';
-      const summary = item.summary || item.snippet || '要約なし';
-      const snippet = item.snippet ? `\nスニペット: ${item.snippet}` : '';
-      return `### ソース${index + 1}\nタイトル: ${title}\nURL: ${url}\n要約: ${summary}${snippet}`;
-    })
-    .join('\n\n');
+  if (candidate.video?.description) {
+    blocks.push(`【Video Description】\n${candidate.video.description}`);
+  }
+  if (candidate.themeCheck?.reason) {
+    const matched = candidate.themeCheck?.matchedTitle
+      ? ` / matched: ${candidate.themeCheck.matchedTitle}`
+      : '';
+    blocks.push(`【テーマ重複チェック】${candidate.themeCheck.reason}${matched}`);
+  }
+  return blocks.join('\n\n') || '情報が十分に取得できていません。';
 };
 
 /**
@@ -204,8 +187,7 @@ const formatSearchSummaries = (summaries) => {
  */
 const requestArticleDraft = async (apiKey, candidate, { forceLongSummary = false, forceLongIntro = false } = {}) => {
   const today = new Date().toISOString().split('T')[0];
-  const searchSummary = formatSearchSummaries(candidate.searchSummaries);
-  const searchQuery = extractSearchQuery(candidate);
+  const sourceMaterial = buildSourceMaterial(candidate);
 
   // プロンプトを組み立てる
   const messages = [
@@ -215,13 +197,10 @@ const requestArticleDraft = async (apiKey, candidate, { forceLongSummary = false
     },
     {
       role: 'user',
-      content: ARTICLE_GENERATION_PROMPT.user(
-        candidate,
-        searchSummary,
-        searchQuery,
-        today,
-        { forceLongSummary, forceLongIntro },
-      ),
+      content: ARTICLE_GENERATION_PROMPT.user(candidate, sourceMaterial, today, {
+        forceLongSummary,
+        forceLongIntro,
+      }),
     },
   ];
 
@@ -293,10 +272,10 @@ const updateTopicHistory = (history, topicKey, record) => {
 /**
  * Generatorステージのメイン処理
  *
- * @param {object|null} researchResult - Researcherの結果 { keyword, summaries }
- *                                       指定されていない場合は candidates.json から読み込む
+ * @param {object|null} input - Researcherで採用された候補オブジェクト（{ candidate })。
+ *                              未指定の場合は candidates.json から status='researched' を探す。
  */
-const runGenerator = async (researchResult = null) => {
+const runGenerator = async (input = null) => {
   logger.info('ステージ開始: 候補の分析を実行します。');
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -315,41 +294,35 @@ const runGenerator = async (researchResult = null) => {
 
   const posts = readJson(postsJsonPath, []);
   const topicHistory = readJson(topicHistoryPath, []);
+  const allCandidates = readCandidates();
+  let candidates = Array.isArray(allCandidates) ? allCandidates : [];
+  let candidate = null;
+  let mode = input?.mode || 'auto';
 
-  let candidate;
-  let candidates = []; // candidates.json の内容（researchResult がない場合のみ使用）
-  const isManualMode = !!researchResult; // researchResult が渡されたかどうか
-
-  // researchResult が渡された場合は、それから候補オブジェクトを生成
-  if (isManualMode) {
-    logger.info('研究結果から候補を生成します。');
-    const { keyword, summaries } = researchResult;
+  if (input && typeof input === 'object' && input.candidate) {
+    candidate = input.candidate;
+    // candidates.json に保存されている最新版があればマージ
+    const stored = candidates.find((item) => item.id === candidate.id);
+    if (stored) {
+      candidate = { ...stored, ...candidate };
+    }
+  } else if (!input) {
+    logger.info('candidates.json から候補を読み込みます。');
+    candidates = Array.isArray(allCandidates) ? allCandidates : [];
+    metricsTracker.set('candidates.total', candidates.length);
+    candidate = candidates.find((item) => item.status === 'researched');
+  } else if (input && input.keyword) {
+    // 後方互換: キーワードのみ渡された場合の簡易モード
+    mode = 'manual';
+    logger.info('キーワード入力から候補を生成します（簡易モード）。');
     const now = new Date().toISOString();
-    const topicKey = slugify(keyword, 'ai-topic');
-
-    // 候補オブジェクトを動的生成
+    const topicKey = slugify(input.keyword, 'ai-topic');
     candidate = {
       id: `manual-${Date.now()}`,
       status: 'researched',
-      searchQuery: {
-        original: keyword,
-        extracted: keyword,
-        method: 'manual',
-      },
       topicKey,
-      topicKeyMeta: {
-        method: 'manual',
-        raw: keyword,
-        product: null,
-        feature: null,
-        category: null,
-        confidence: 1.0,
-        reasoning: 'Manual keyword input',
-        error: null,
-      },
-      searchSummaries: summaries,
       video: {
-        title: keyword,
+        title: input.keyword,
         url: '',
         description: '',
       },
@@ -358,34 +331,30 @@ const runGenerator = async (researchResult = null) => {
         url: '',
         channelId: '',
       },
+      transcript: input.transcript || '',
       researchedAt: now,
       createdAt: now,
       updatedAt: now,
     };
-
+    candidates = [];
     metricsTracker.set('candidates.total', 1);
-    metricsTracker.increment('candidates.analyzed');
-  } else {
-    // researchResult がない場合は、従来通り candidates.json から読み込む
-    logger.info('candidates.json から候補を読み込みます。');
-    candidates = readCandidates();
-    metricsTracker.set('candidates.total', candidates.length);
-
-    // `status='researched'` の候補を1つ見つける
-    candidate = candidates.find((item) => item.status === 'researched');
-    if (!candidate) {
-      logger.info('researched状態の候補が存在しないため処理を終了します。');
-      return buildResult({
-        generated: false,
-        reason: 'no-researched-candidates',
-      });
-    }
-    metricsTracker.increment('candidates.analyzed');
   }
 
-  logger.info(
-    `対象候補: ${candidate.id} / ${candidate.source.name} / ${candidate.video?.title}`,
-  );
+  const isManualMode = mode === 'manual';
+
+  if (!candidate) {
+    logger.info('researched状態の候補が存在しないため処理を終了します。');
+    return buildResult({
+      generated: false,
+      reason: 'no-researched-candidates',
+    });
+  }
+
+  metricsTracker.set('candidates.total', candidates.length || 1);
+  metricsTracker.increment('candidates.analyzed');
+
+  const sourceName = candidate.source?.name || 'Unknown Source';
+  logger.info(`対象候補: ${candidate.id} / ${sourceName} / ${candidate.video?.title}`);
   const sourceUrl = resolveSourceUrl(candidate.source);
   // トピックキーが存在しない場合のフォールバック
   const fallbackTopicKey = slugify(candidate.video?.title);
@@ -426,19 +395,11 @@ const runGenerator = async (researchResult = null) => {
     });
   }
 
-  const searchSummaries = Array.isArray(candidate.searchSummaries)
-    ? candidate.searchSummaries
-    : [];
-  if (searchSummaries.length === 0) {
-    logger.warn(
-      '⚠️ Google検索の上位記事要約がありませんが、動画情報のみで記事生成を試みます。',
-    );
+  if (!candidate.transcript) {
+    logger.warn('⚠️ 字幕テキストがないため、動画説明のみで記事生成を試みます。');
+  } else {
+    logger.info(`[source] transcript length: ${candidate.transcript.length} chars`);
   }
-
-  const enrichedCandidate = {
-    ...candidate,
-    searchSummaries,
-  };
 
   // --- 記事生成 ---
   const stopDraftTimer = metricsTracker.startTimer('articleGeneration.timeMs');
@@ -449,7 +410,7 @@ const runGenerator = async (researchResult = null) => {
   while (attempts < maxAttempts) {
     attempts += 1;
     try {
-      article = await requestArticleDraft(apiKey, enrichedCandidate, {
+      article = await requestArticleDraft(apiKey, candidate, {
         forceLongSummary: attempts >= 2,
         forceLongIntro: attempts >= 2,
       });
@@ -509,10 +470,10 @@ const runGenerator = async (researchResult = null) => {
   // HTMLテンプレートに渡すメタデータ
   const meta = {
     date: today,
-    sourceName: candidate.source.name,
+    sourceName,
     sourceUrl,
-    videoUrl: candidate.video.url,
-    videoTitle: candidate.video.title,
+    videoUrl: candidate.video?.url || '',
+    videoTitle: candidate.video?.title || '',
     image: selectedImage,
   };
 
@@ -583,14 +544,15 @@ const runGenerator = async (researchResult = null) => {
     relativePath: publishRelativePath,
     image: selectedImage || null,
     source: {
-      name: candidate.source.name,
+      name: sourceName,
       url: sourceUrl,
     },
     video: {
-      title: candidate.video.title,
-      url: candidate.video.url,
+      title: candidate.video?.title || '',
+      url: candidate.video?.url || '',
+      id: candidate.video?.id || null,
     },
-    searchSummaries,
+    transcriptLength: candidate.transcript ? candidate.transcript.length : 0,
   };
 
   logger.info(`記事データを返却: slug=${slug}, ファイル予定パス=${publishRelativePath}`);

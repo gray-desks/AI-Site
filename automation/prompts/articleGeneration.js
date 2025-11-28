@@ -21,25 +21,26 @@ const ARTICLE_GENERATION = {
 - 基本は「です・ます」調だが、論理の展開は鋭く、無駄な言葉を削ぎ落とす。
 - 読者に対して「教える」のではなく、「知見を共有する」対等なスタンス。`,
 
-  user: (candidate, searchSummary, searchQuery, today, options = {}) => {
+  user: (candidate, sourceMaterial, today, options = {}) => {
     const extra =
-      (options.forceLongSummary ? '\n- summaryは180文字以上、必ずClaudeとChrome統合の具体例を含めること。' : '') +
-      (options.forceLongIntro ? '\n- introは500文字以上、Claude for Chrome拡張の実際の設定・操作手順を具体的に含めること。' : '');
+      (options.forceLongSummary ? '\n- summaryは180文字以上、動画の核心トピックと具体的なユースケースを含めてください。' : '') +
+      (options.forceLongIntro ? '\n- introは500文字以上、動画の背景と読者へのメリットを具体的に説明してください。' : '');
     return `
 # Mission: Write a High-Quality Technical Review
 以下のリサーチ情報を元に、エンジニアやテック愛好家が満足する**情報量と深度**を持つ技術記事を作成してください。
 記事が短くなることは許されません。読者が「保存版」としてブックマークしたくなるような、網羅的かつ詳細な内容にしてください。
 
 **Source Material**:
-[Title]: ${candidate.video.title}
-[Research Note]:
-${searchSummary}
+[YouTube Title]: ${candidate.video.title}
+[Transcript / Notes]:
+${sourceMaterial}
 
 **Requirement**:
 - Generate a JSON object following the schema below.
 - **Total Character Count: 3000+ characters** (This is a strict requirement. Provide deep analysis, not just summaries).
 - **Content Density**: Avoid filler words. Every paragraph must contain new information, technical details, or specific examples.
 - **Style**: Analytical, precise, and forward-looking. Use technical terminology correctly.
+- **Grounding**: 事実・引用は上記Transcript/Notesに基づき、根拠が無い推測は避けること。
 
 # Output Schema (JSON Only)
 {

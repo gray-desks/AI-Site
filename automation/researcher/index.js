@@ -1,273 +1,253 @@
 #!/usr/bin/env node
 /**
- * @fileoverview Researcher: キーワードベースのGoogle検索・要約ツール
- * - 指定されたキーワードからLLMを使って多角的な検索クエリを生成します。
- * - 複数のクエリでGoogle検索を並列実行し、結果を統合・重複排除します。
- * - 求人サイトやセミナー情報などのノイズを強力にフィルタリングします。
- * - 上位の記事を取得し、OpenAI APIで要約します。
+ * @fileoverview Researcher: YouTube動画ベースのネタ選定＆リサーチ
+ * - 登録済みチャンネルの未処理動画を公開日時順に横断取得
+ * - Video ID重複を1次フィルタとしてスキップ
+ * - 直近記事タイトルを使ったAIテーマ重複判定を実施（2次フィルタ）
+ * - 字幕を取得し、Generatorがそのまま記事化に使える形で返却
  */
 
 const path = require('path');
-const { ensureDir, writeJson } = require('../lib/io');
-const { searchTopArticles } = require('../lib/googleSearch');
-const { RESEARCHER, RATE_LIMITS } = require('../config/constants');
-const { QUERY_GENERATION } = require('../config/models');
-const QUERY_GENERATION_PROMPT = require('../prompts/queryGeneration');
-const { callOpenAI, parseJsonContent } = require('../lib/openai');
+const { ensureDir, writeJson, readJson } = require('../lib/io');
+const { readCandidates, writeCandidates } = require('../lib/candidatesRepository');
 const { createLogger } = require('../lib/logger');
 const { createMetricsTracker } = require('../lib/metrics');
-const { summarizeSearchResult } = require('./services/summaryBuilder');
+const { RESEARCHER, RATE_LIMITS } = require('../config/constants');
+const { THEME_DEDUPLICATION } = require('../config/models');
+const THEME_DEDUP_PROMPT = require('../prompts/themeDeduplication');
+const { callOpenAI } = require('../lib/openai');
+const { fetchTranscriptText } = require('./services/transcriptFetcher');
+const { readProcessedVideos } = require('../lib/processedVideos');
 
 // --- パス設定 ---
 const root = path.resolve(__dirname, '..', '..');
 const outputDir = path.join(root, 'automation', 'output', 'researcher');
+const postsJsonPath = path.join(root, 'data', 'posts.json');
 
-// --- 定数設定 ---
-const { GOOGLE_TOP_LIMIT, MIN_SUMMARIES, SEARCH_FRESHNESS_DAYS, SUMMARY_MIN_LENGTH } = RESEARCHER;
+// --- 初期化 ---
 const logger = createLogger('researcher');
 const metricsTracker = createMetricsTracker('researcher');
-
-/**
- * 指定されたミリ秒だけ処理を待機します。
- */
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Google検索結果から除外するドメインのリスト
-const BLOCKED_DOMAINS = [
-  // SNS
-  'x.com', 'twitter.com', 't.co', 'facebook.com', 'instagram.com', 'tiktok.com',
-  'youtube.com', 'youtu.be', 'm.youtube.com', 'reddit.com', 'pinterest.com',
-  // ニュース・まとめ・Q&A
-  'b.hatena.ne.jp', 'forest.watch.impress.co.jp', 'itmedia.co.jp', 'news.mynavi.jp', 'wired.jp',
-  'yahoo.co.jp', 'news.yahoo.co.jp', 'chiebukuro.yahoo.co.jp', 'quora.jp',
-  // 求人・フリーランス案件・セミナー
-  'techplay.jp', 'connpass.com', 'levtech.jp', 'techbiz.com', 'freelance-start.com',
-  'midworks.com', 'geechs-job.com', 'pe-bank.jp', 'wantedly.com', 'green-japan.com',
-  'doda.jp', 'rikunabi.com', 'mynavi.jp', 'en-japan.com', 'type.jp',
-  'crowdworks.jp', 'lancers.jp', 'coconala.com',
-  'udemy.com', 'coursera.org',
-];
-
-// 除外キーワード（タイトルに含まれていたらスキップ）
-const BLOCKED_KEYWORDS = [
-  '求人', '採用', '募集', '未経験', '年収', '案件', 'フリーランス',
-  'セミナー', 'イベント', '勉強会', 'ウェビナー',
-  'コース', '講座', 'レッスン',
-];
-
 /**
- * URLが除外対象のドメインに一致するか判定します。
+ * 直近の記事タイトルを降順で取得します。
+ * @param {number} limit
+ * @returns {Array<string>}
  */
-const shouldSkipResult = (url) => {
-  if (!url) return true;
-  try {
-    const hostname = new URL(url).hostname.toLowerCase();
-    return BLOCKED_DOMAINS.some(
-      (blocked) => hostname === blocked || hostname.endsWith(`.${blocked}`),
-    );
-  } catch {
-    return true;
-  }
+const getRecentPostTitles = (limit) => {
+  const posts = readJson(postsJsonPath, []);
+  if (!Array.isArray(posts) || posts.length === 0) return [];
+  const sorted = [...posts].sort(
+    (a, b) => new Date(b.publishedAt || b.date || 0) - new Date(a.publishedAt || a.date || 0),
+  );
+  return sorted.slice(0, limit).map((p) => p.title).filter(Boolean);
 };
 
 /**
- * タイトルに除外キーワードが含まれているか判定します。
- * ただし、元の検索キーワードにその単語が含まれている場合は除外しません。
+ * candidates.jsonから処理対象の候補を抽出し、新しい順に並べます。
+ * @param {Set<string>} processedIds
+ * @returns {Array<object>}
  */
-const hasBlockedKeyword = (title, searchKeyword) => {
-  if (!title) return false;
-  const lowerTitle = title.toLowerCase();
-  const lowerKeyword = (searchKeyword || '').toLowerCase();
+const getEligibleCandidates = (processedIds) => {
+  const candidates = readCandidates();
+  if (!Array.isArray(candidates)) return [];
 
-  return BLOCKED_KEYWORDS.some((blocked) => {
-    // 検索キーワード自体にその単語が含まれているならOK（例：「AI セミナー」で検索した場合）
-    if (lowerKeyword.includes(blocked)) return false;
-    return lowerTitle.includes(blocked);
+  const eligible = candidates.filter(
+    (item) => item.status === 'collected' && item.video?.id && !processedIds.has(item.video.id),
+  );
+
+  return eligible.sort(
+    (a, b) =>
+      new Date(b.video?.publishedAt || b.createdAt || 0) - new Date(a.video?.publishedAt || a.createdAt || 0),
+  );
+};
+
+/**
+ * candidates.json内の特定候補を更新します。
+ * @param {string} id
+ * @param {Function|object} updater
+ * @returns {{nextCandidates: Array<object>, updated: object|null}}
+ */
+const updateCandidate = (id, updater) => {
+  const candidates = readCandidates();
+  const next = candidates.map((item) => {
+    if (item.id !== id) return item;
+    const patch = typeof updater === 'function' ? updater(item) : { ...updater };
+    return { ...item, ...patch };
   });
+  writeCandidates(next);
+  const updated = next.find((item) => item.id === id) || null;
+  return { nextCandidates: next, updated };
 };
 
 /**
- * Google検索結果から公開日時を推定し、新鮮さをチェックします。
+ * AIでテーマ重複を判定します。
+ * @param {string} videoTitle
+ * @param {Array<string>} recentTitles
+ * @param {string} apiKey
+ * @returns {Promise<{duplicate: boolean, reason: string, matchedTitle: string|null, raw: object|null}>}
  */
-const isFreshEnough = (item) => {
-  const freshnessDays = SEARCH_FRESHNESS_DAYS || 0;
-  if (!freshnessDays || freshnessDays <= 0) return true;
-  const cutoff = Date.now() - freshnessDays * 24 * 60 * 60 * 1000;
-
-  const metaTags = item?.pagemap?.metatags;
-  if (Array.isArray(metaTags) && metaTags.length > 0) {
-    const meta = metaTags[0] || {};
-    const candidates = [
-      meta['article:published_time'],
-      meta['og:updated_time'],
-      meta['date'],
-      meta['last-modified'],
-    ].filter(Boolean);
-    for (const value of candidates) {
-      const parsed = new Date(value).getTime();
-      if (!Number.isNaN(parsed)) {
-        return parsed >= cutoff;
-      }
-    }
+const judgeThemeDuplicate = async (videoTitle, recentTitles, apiKey) => {
+  if (!videoTitle) {
+    return { duplicate: false, reason: 'タイトルなし', matchedTitle: null, raw: null };
   }
-  return true;
-};
+  if (!apiKey) {
+    throw new Error('OPENAI_API_KEY が設定されていません。');
+  }
+  if (!Array.isArray(recentTitles) || recentTitles.length === 0) {
+    return { duplicate: false, reason: '直近記事なし', matchedTitle: null, raw: null };
+  }
 
-/**
- * LLMを使って検索クエリを生成します。
- */
-const generateSearchQueries = async (keyword, apiKey) => {
   try {
     const messages = [
-      { role: 'system', content: QUERY_GENERATION_PROMPT.system },
-      { role: 'user', content: QUERY_GENERATION_PROMPT.user(keyword) },
+      { role: 'system', content: THEME_DEDUP_PROMPT.system },
+      { role: 'user', content: THEME_DEDUP_PROMPT.user(videoTitle, recentTitles) },
     ];
-
     const completion = await callOpenAI({
       apiKey,
       messages,
-      model: QUERY_GENERATION.model,
-      fallbackModel: QUERY_GENERATION.fallbackModel,
-      temperature: QUERY_GENERATION.temperature,
-      responseFormat: QUERY_GENERATION.response_format,
+      model: THEME_DEDUPLICATION.model,
+      fallbackModel: THEME_DEDUPLICATION.fallbackModel,
+      temperature: THEME_DEDUPLICATION.temperature,
+      responseFormat: THEME_DEDUPLICATION.response_format,
     });
-
-    const result = parseJsonContent(completion?.choices?.[0]?.message?.content);
-    let queries = result?.queries || [];
-
-    // 元のキーワードも必ず含める
-    if (!queries.includes(keyword)) {
-      queries.unshift(keyword);
-    }
-
-    // ノイズ除去キーワードを付与
-    const negatives = '-求人 -採用 -募集 -セミナー -イベント -まとめ';
-    return queries.map(q => `${q} ${negatives}`);
-
+    const content = completion?.choices?.[0]?.message?.content;
+    const parsed = typeof content === 'string' ? JSON.parse(content) : content;
+    const duplicate = parsed?.duplicate === true;
+    const reason = parsed?.reason || (duplicate ? '重複と判定' : '非重複と判定');
+    const matchedTitle = parsed?.matchedTitle || null;
+    return { duplicate, reason, matchedTitle, raw: parsed };
   } catch (error) {
-    logger.warn(`[クエリ生成失敗] ${error.message} -> フォールバッククエリを使用`);
-    return [`${keyword} 技術 解説 -求人 -セミナー`, `${keyword} 使い方 -求人 -セミナー`];
+    logger.warn(`[theme-check] 判定に失敗しました（保守的に重複扱い）: ${error.message}`);
+    return { duplicate: true, reason: `判定失敗: ${error.message}`, matchedTitle: null, raw: null };
   }
 };
 
 /**
- * 複数のクエリでGoogle検索を実行し、結果を統合します。
+ * 字幕テキストをプロンプト向けに整形・トリムします。
+ * @param {string|null} transcript
+ * @returns {string|null}
  */
-const performMultiQuerySearch = async (queries, googleApiKey, googleCx) => {
-  const allResults = [];
-  const seenUrls = new Set();
-
-  // 並列実行（レート制限に注意しつつ）
-  for (const query of queries) {
-    try {
-      logger.info(`[Google検索] クエリ実行: "${query}"`);
-      const res = await searchTopArticles({
-        apiKey: googleApiKey,
-        cx: googleCx,
-        query,
-        num: 5, // 各クエリで5件取得
-      });
-
-      const items = Array.isArray(res.items) ? res.items : [];
-      for (const item of items) {
-        if (!seenUrls.has(item.link)) {
-          seenUrls.add(item.link);
-          allResults.push(item);
-        }
-      }
-      await sleep(1000); // API制限回避のウェイト
-    } catch (error) {
-      logger.warn(`[Google検索エラー] クエリ: "${query}" -> ${error.message}`);
-    }
+const normalizeTranscript = (transcript) => {
+  if (!transcript) return null;
+  const compact = transcript.replace(/\s+/g, ' ').trim();
+  if (compact.length < RESEARCHER.TRANSCRIPT_MIN_CHARS) return null;
+  if (compact.length > RESEARCHER.TRANSCRIPT_MAX_LENGTH) {
+    return `${compact.slice(0, RESEARCHER.TRANSCRIPT_MAX_LENGTH)}...`;
   }
-
-  return allResults;
-};
-
-/**
- * 検索結果を取得・フィルタリング・要約します。
- */
-const fetchSearchSummaries = async (keyword, googleApiKey, googleCx, openaiApiKey) => {
-  if (!keyword || !googleApiKey || !googleCx) return [];
-
-  try {
-    // 1. クエリ生成
-    const queries = await generateSearchQueries(keyword, openaiApiKey);
-    logger.info(`[クエリ生成] ${queries.length}件: ${JSON.stringify(queries)}`);
-
-    // 2. 検索実行
-    let items = await performMultiQuerySearch(queries, googleApiKey, googleCx);
-    logger.info(`[Google検索] 結果総数: ${items.length}件`);
-
-    // 3. フィルタリング
-    const beforeFilter = items.length;
-    items = items.filter((item) => {
-      if (!isFreshEnough(item)) return false;
-      if (shouldSkipResult(item.link)) return false;
-      if (hasBlockedKeyword(item.title, keyword)) return false;
-      return true;
-    });
-    logger.info(`[フィルタリング] ${beforeFilter} -> ${items.length}件 (除外: ${beforeFilter - items.length}件)`);
-
-    // 4. 要約生成（最大5件まで）
-    const targetItems = items.slice(0, 5);
-    logger.info(`[処理対象] 上位${targetItems.length}件を要約します`);
-
-    const summaries = [];
-    for (const [index, item] of targetItems.entries()) {
-      try {
-        logger.info(`[要約] (${index + 1}/${targetItems.length}) ${item.title}`);
-        const summaryEntry = await summarizeSearchResult(item, index, openaiApiKey);
-
-        // 品質の低い要約（スニペットのみなど）は、他に候補があれば除外したいが、
-        // 候補が少ない場合は採用する。ここではとりあえず全て追加し、後で選別も可能。
-        if (summaryEntry.quality === 'high' || summaries.length < MIN_SUMMARIES) {
-          summaries.push(summaryEntry);
-        }
-      } catch (error) {
-        logger.warn(`[要約失敗] ${item.link}: ${error.message}`);
-      }
-      await sleep(RATE_LIMITS.SEARCH_RESULT_WAIT_MS);
-    }
-
-    return summaries;
-
-  } catch (error) {
-    logger.warn(`[Researcherエラー] ${error.message}`);
-    return [];
-  }
+  return compact;
 };
 
 /**
  * Researcherのメイン処理
+ * @param {object} [options]
+ * @param {string} [options.candidateId] - 明示的に処理したい候補ID
+ * @returns {Promise<object>}
  */
-const runResearcher = async ({ keyword }) => {
-  if (!keyword) throw new Error('keyword パラメータは必須です。');
-
-  logger.info('=== Researcher 開始 ===');
-  logger.info(`検索キーワード: "${keyword}"`);
-
-  const openaiApiKey = process.env.OPENAI_API_KEY;
-  const googleApiKey = process.env.GOOGLE_SEARCH_API_KEY;
-  const googleCx = process.env.GOOGLE_SEARCH_CX;
-
-  if (!openaiApiKey || !googleApiKey || !googleCx) {
-    throw new Error('必要なAPIキー環境変数が設定されていません。');
+const runResearcher = async ({ candidateId } = {}) => {
+  logger.info('=== Researcher 開始: YouTube動画からネタを選定します ===');
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new Error('OPENAI_API_KEY が設定されていません。');
   }
 
-  const stopTimer = metricsTracker.startTimer('googleSearch.timeMs');
-  let summaries = [];
+  const recentTitles = getRecentPostTitles(RESEARCHER.RECENT_POST_LIMIT);
+  const processedIds = new Set(readProcessedVideos().map((item) => item.videoId));
+  const eligible = getEligibleCandidates(processedIds).filter((item) =>
+    candidateId ? item.id === candidateId : true,
+  );
 
-  try {
-    summaries = await fetchSearchSummaries(keyword, googleApiKey, googleCx, openaiApiKey);
-    const elapsed = stopTimer();
-    metricsTracker.increment('googleSearch.success');
-    metricsTracker.increment('googleSearch.totalResults', summaries.length);
-    logger.info(`[Google検索] 完了: ${summaries.length}件の要約を取得 (${elapsed}ms)`);
-  } catch (error) {
-    const elapsed = stopTimer();
-    metricsTracker.increment('googleSearch.failure');
-    logger.error(`[Google検索] 失敗 (${elapsed}ms): ${error.message}`);
+  if (eligible.length === 0) {
+    logger.info('未処理の候補動画がありません。');
+    return {
+      status: 'no-candidates',
+      candidate: null,
+      skipped: [],
+      recentTitles,
+    };
+  }
+
+  logger.info(`処理候補: ${eligible.length}件（最新順）。動画ID重複の一次フィルタを適用します。`);
+
+  const skipped = [];
+  let chosen = null;
+
+  for (const [index, candidate] of eligible.entries()) {
+    metricsTracker.increment('candidates.checked');
+    logger.info(`(${index + 1}/${eligible.length}) ${candidate.video.title}`);
+
+    const videoId = candidate.video?.id;
+    if (!videoId) {
+      skipped.push({ id: candidate.id, reason: 'video-id-missing' });
+      continue;
+    }
+
+    if (processedIds.has(videoId)) {
+      logger.info(`→ Video ID重複のためスキップ: ${videoId}`);
+      metricsTracker.increment('candidates.skipped.videoId');
+      const { updated } = updateCandidate(candidate.id, {
+        status: 'skipped',
+        skipReason: 'video-id-duplicate',
+        updatedAt: new Date().toISOString(),
+      });
+      skipped.push({ id: candidate.id, reason: 'video-id-duplicate', candidate: updated });
+      continue;
+    }
+
+    // --- AIテーマ重複チェック ---
+    const themeCheck = await judgeThemeDuplicate(candidate.video.title, recentTitles, apiKey);
+    logger.info(
+      `→ テーマ重複判定: ${themeCheck.duplicate ? '重複あり' : '重複なし'} (${themeCheck.reason})`,
+    );
+
+    if (themeCheck.duplicate) {
+      metricsTracker.increment('candidates.skipped.theme');
+      const { updated } = updateCandidate(candidate.id, {
+        status: 'skipped',
+        skipReason: 'theme-duplicate',
+        skipDetail: themeCheck.reason,
+        updatedAt: new Date().toISOString(),
+      });
+      skipped.push({
+        id: candidate.id,
+        reason: 'theme-duplicate',
+        detail: themeCheck.reason,
+        matchedTitle: themeCheck.matchedTitle || null,
+        candidate: updated,
+      });
+      await sleep(RATE_LIMITS.THEME_DEDUP_WAIT_MS);
+      continue;
+    }
+
+    // --- 字幕取得 ---
+    const rawTranscript = await fetchTranscriptText(videoId);
+    const transcript = normalizeTranscript(rawTranscript);
+    if (!transcript) {
+      logger.warn('字幕が取得できないためスキップします。');
+      metricsTracker.increment('candidates.skipped.transcript');
+      const { updated } = updateCandidate(candidate.id, {
+        status: 'skipped',
+        skipReason: 'transcript-unavailable',
+        updatedAt: new Date().toISOString(),
+      });
+      skipped.push({ id: candidate.id, reason: 'transcript-unavailable', candidate: updated });
+      continue;
+    }
+
+    // 採用決定
+    const now = new Date().toISOString();
+    const { updated } = updateCandidate(candidate.id, {
+      status: 'researched',
+      transcript,
+      transcriptLength: transcript.length,
+      themeCheck,
+      recentTitles,
+      researchedAt: now,
+      updatedAt: now,
+    });
+    chosen = updated;
+    metricsTracker.increment('candidates.selected');
+    break;
   }
 
   // 成果物の保存
@@ -275,43 +255,36 @@ const runResearcher = async ({ keyword }) => {
   const timestamp = new Date().toISOString();
   const outputData = {
     timestamp,
-    keyword,
-    summariesCount: summaries.length,
-    summaries,
+    status: chosen ? 'researched' : 'skipped-all',
+    candidateId: chosen?.id || null,
+    skipped,
     metrics: metricsTracker.summary(),
   };
-
   const outputPath = path.join(outputDir, `researcher-${timestamp.split('T')[0]}.json`);
   writeJson(outputPath, outputData);
   logger.info(`成果物を保存: ${outputPath}`);
 
-  return { keyword, summaries };
+  return {
+    status: chosen ? 'researched' : 'skipped',
+    candidate: chosen,
+    skipped,
+    recentTitles,
+  };
 };
 
 // スクリプト直接実行
 if (require.main === module) {
   const { parseArgs } = require('util');
-  const options = { keyword: { type: 'string', short: 'k' } };
-  let keyword;
+  const options = { candidate: { type: 'string', short: 'c' } };
+  let candidateId;
   try {
     const parsed = parseArgs({ options, strict: false });
-    keyword = parsed.values.keyword;
-  } catch (e) { /* ignore */ }
-
-  // フォールバック
-  if (!keyword) {
-    const argv = process.argv.slice(2);
-    const idx = argv.findIndex(a => a === '--keyword' || a === '-k');
-    if (idx !== -1) keyword = argv[idx + 1];
-    else if (argv[0] && !argv[0].startsWith('-')) keyword = argv[0];
+    candidateId = parsed.values.candidate;
+  } catch (e) {
+    // ignore
   }
 
-  if (!keyword) {
-    console.error('使用方法: node researcher/index.js --keyword "検索キーワード"');
-    process.exit(1);
-  }
-
-  runResearcher({ keyword })
+  runResearcher({ candidateId })
     .then((result) => console.log('Researcher finished:', JSON.stringify(result, null, 2)))
     .catch((error) => {
       console.error('Researcher failed:', error);
