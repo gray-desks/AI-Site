@@ -221,9 +221,19 @@ const runResearcher = async ({ candidateId } = {}) => {
 
     // --- 字幕取得 ---
     const rawTranscript = await fetchTranscriptText(videoId);
-    const transcript = normalizeTranscript(rawTranscript);
+    let transcript = normalizeTranscript(rawTranscript);
+
+    // 字幕がない場合は動画説明文をフォールバックとして利用
+    if (!transcript && candidate.video?.description) {
+      const fallback = normalizeTranscript(candidate.video.description);
+      if (fallback) {
+        transcript = fallback;
+        logger.info('字幕なしのため動画説明文をフォールバックとして使用します。');
+      }
+    }
+
     if (!transcript) {
-      logger.warn('字幕が取得できないためスキップします。');
+      logger.warn('字幕/説明が取得できないためスキップします。');
       metricsTracker.increment('candidates.skipped.transcript');
       const { updated } = updateCandidate(candidate.id, {
         status: 'skipped',
