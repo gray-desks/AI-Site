@@ -19,11 +19,12 @@
       "thumbnail": "https://i.ytimg.com/vi/53O8yynXBqM/hqdefault.jpg",
       "publishedAt": "2025-11-27T14:45:00Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:11.040Z",
-    "updatedAt": "2025-11-27T22:56:11.040Z",
+    "updatedAt": "2025-11-28T07:03:27.607Z",
     "topicKey": "pcsotaz-imageaicomfyuivram",
-    "notes": "YouTube Data API: AI-Hakase の最新動画"
+    "notes": "YouTube Data API: AI-Hakase の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-LMaTfGsl7Dg",
@@ -45,11 +46,13 @@
       "thumbnail": "https://i.ytimg.com/vi/LMaTfGsl7Dg/hqdefault.jpg",
       "publishedAt": "2025-11-27T11:00:42Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:37.207Z",
-    "updatedAt": "2025-11-27T11:45:37.207Z",
+    "updatedAt": "2025-11-28T07:03:30.216Z",
     "topicKey": "notebooklm-11",
-    "notes": "YouTube Data API: iketomo-ch の最新動画"
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はNotebookLMの機能を扱っており、直近の記事1はNotebookLMの進化について言及しているため、同じニュース・トピックと判断しました。"
   },
   {
     "id": "yt-bWcrP-MLpH8",
@@ -71,11 +74,12 @@
       "thumbnail": "https://i.ytimg.com/vi/bWcrP-MLpH8/hqdefault.jpg",
       "publishedAt": "2025-11-27T10:30:26Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:26.936Z",
-    "updatedAt": "2025-11-27T11:45:26.936Z",
+    "updatedAt": "2025-11-28T07:03:34.331Z",
     "topicKey": "claudetool-searchptc",
-    "notes": "YouTube Data API: ai_masaou の最新動画"
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-8_WpF708h8c",
@@ -97,11 +101,13 @@
       "thumbnail": "https://i.ytimg.com/vi/8_WpF708h8c/hqdefault.jpg",
       "publishedAt": "2025-11-27T10:27:06Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:55:51.994Z",
-    "updatedAt": "2025-11-27T22:55:51.994Z",
+    "updatedAt": "2025-11-28T07:03:38.457Z",
     "topicKey": "googlegoogle-workspace-flows",
-    "notes": "YouTube Data API: ai-saborou の最新動画"
+    "notes": "YouTube Data API: ai-saborou の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGoogle Workspace Flowsの使い方を解説しており、直近の記事1もGoogle Workspace Flowsに関する内容であるため、同じニュース・トピックを扱っていると判断しました。"
   },
   {
     "id": "yt-_5L1Emc-Djk",
@@ -123,11 +129,12 @@
       "thumbnail": "https://i.ytimg.com/vi/_5L1Emc-Djk/hqdefault.jpg",
       "publishedAt": "2025-11-27T09:05:49Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:44.255Z",
-    "updatedAt": "2025-11-27T11:45:44.255Z",
+    "updatedAt": "2025-11-28T07:03:42.046Z",
     "topicKey": "sora-2",
-    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画"
+    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-vVw4C6YiLIs",
@@ -149,11 +156,13 @@
       "thumbnail": "https://i.ytimg.com/vi/vVw4C6YiLIs/hqdefault.jpg",
       "publishedAt": "2025-11-27T07:34:28Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:41.405Z",
-    "updatedAt": "2025-11-27T11:45:41.405Z",
+    "updatedAt": "2025-11-28T07:03:45.709Z",
     "topicKey": "i2vwan22-painter-flf2v",
-    "notes": "YouTube Data API: AI-Hakase の最新動画"
+    "notes": "YouTube Data API: AI-Hakase の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画は画像生成技術に関する内容であり、直近の記事の中でNano Banana Proの実力やGemini 2.5での画像生成革命について触れているため、同じテーマであると判断しました。"
   },
   {
     "id": "yt-YpEiTf4a5WQ",
@@ -175,11 +184,12 @@
       "thumbnail": "https://i.ytimg.com/vi/YpEiTf4a5WQ/hqdefault.jpg",
       "publishedAt": "2025-11-26T09:00:52Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:55:53.914Z",
-    "updatedAt": "2025-11-27T22:55:53.914Z",
+    "updatedAt": "2025-11-28T07:03:49.921Z",
     "topicKey": "ai-topic",
-    "notes": "YouTube Data API: google-school の最新動画"
+    "notes": "YouTube Data API: google-school の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-1WtZlvTWBvs",
@@ -201,11 +211,13 @@
       "thumbnail": "https://i.ytimg.com/vi/1WtZlvTWBvs/hqdefault.jpg",
       "publishedAt": "2025-11-25T11:51:06Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:31.118Z",
-    "updatedAt": "2025-11-27T11:45:31.118Z",
+    "updatedAt": "2025-11-28T07:03:55.501Z",
     "topicKey": "aigooglenotebook-lmok",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGoogleのNotebook LMについて詳しく解説しており、直近の記事1の「Google Workspace FlowsとNotebookLMの進化」とテーマが重複しています。両者ともNotebook LMに関連する内容を扱っているため。"
   },
   {
     "id": "yt-OqWXcg_3dXc",
@@ -227,11 +239,13 @@
       "thumbnail": "https://i.ytimg.com/vi/OqWXcg_3dXc/hqdefault.jpg",
       "publishedAt": "2025-11-25T11:00:54Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:38.131Z",
-    "updatedAt": "2025-11-27T11:45:38.131Z",
+    "updatedAt": "2025-11-28T07:04:01.160Z",
     "topicKey": "gemini3ai",
-    "notes": "YouTube Data API: iketomo-ch の最新動画"
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGemini3に関連するAIの代替やアウトプット革命について述べており、直近の記事3（Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet）や記事9（Gemini 3: マルチモーダルAIの新時代と実務活用の可能性）とテーマが重複しています。"
   },
   {
     "id": "yt-tX1SPRor_oI",
@@ -253,11 +267,12 @@
       "thumbnail": "https://i.ytimg.com/vi/tX1SPRor_oI/hqdefault.jpg",
       "publishedAt": "2025-11-25T09:06:02Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:45.243Z",
-    "updatedAt": "2025-11-27T11:45:45.243Z",
+    "updatedAt": "2025-11-28T07:04:05.403Z",
     "topicKey": "3d3daimarble",
-    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画"
+    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-CqgkIrVtdTA",
@@ -279,11 +294,13 @@
       "thumbnail": "https://i.ytimg.com/vi/CqgkIrVtdTA/hqdefault.jpg",
       "publishedAt": "2025-11-25T09:00:27Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:42.903Z",
-    "updatedAt": "2025-11-27T11:45:42.903Z",
+    "updatedAt": "2025-11-28T07:04:09.275Z",
     "topicKey": "anthropicclaude-opus-45",
-    "notes": "YouTube Data API: technavi_tooru の最新動画"
+    "notes": "YouTube Data API: technavi_tooru の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAnthropicの新しいモデル「CLAUDE OPUS 4.5」についてのものであり、直近の記事の中で「Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析」がClaudeに関連しているため、同じ話題と判断しました。"
   },
   {
     "id": "yt-RHl6XH18cEw",
@@ -305,11 +322,13 @@
       "thumbnail": "https://i.ytimg.com/vi/RHl6XH18cEw/hqdefault.jpg",
       "publishedAt": "2025-11-25T06:29:47Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:35.746Z",
-    "updatedAt": "2025-11-27T11:45:35.746Z",
+    "updatedAt": "2025-11-28T07:04:12.378Z",
     "topicKey": "nano-banana-pro",
-    "notes": "YouTube Data API: kei31e の最新動画"
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はNano Banana Proを使用してマンガを作ることに焦点を当てており、直近の記事の中でNano Banana Proに関する内容が含まれているため、同じテーマと判断しました。"
   },
   {
     "id": "yt-pe4izKdMveA",
@@ -331,11 +350,13 @@
       "thumbnail": "https://i.ytimg.com/vi/pe4izKdMveA/hqdefault.jpg",
       "publishedAt": "2025-11-25T00:55:00Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:28.301Z",
-    "updatedAt": "2025-11-27T11:45:28.301Z",
+    "updatedAt": "2025-11-28T07:04:15.532Z",
     "topicKey": "claude-opus-45",
-    "notes": "YouTube Data API: ai_masaou の最新動画"
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はClaude Opus 4.5モデルの開発とエージェント性能について解説しており、直近の記事B2のClaude for Chrome拡張機能とブラウザベースAIエージェントの分析と関連性があるため、同じ話題と判断しました。"
   },
   {
     "id": "yt-8lMenH7Upi4",
@@ -357,11 +378,13 @@
       "thumbnail": "https://i.ytimg.com/vi/8lMenH7Upi4/hqdefault.jpg",
       "publishedAt": "2025-11-24T10:34:23Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:55:58.887Z",
-    "updatedAt": "2025-11-27T22:55:58.887Z",
+    "updatedAt": "2025-11-28T07:04:18.446Z",
     "topicKey": "chatgpt-chatgpt-openai-ai",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はChatGPTに関する開発秘話を扱っており、直近の記事の中でGPT-4oの進化やビジネス効率化に関する内容が含まれているため、同じAIツールに関連するテーマで重複と判断しました。"
   },
   {
     "id": "yt-maFLI82NKgE",
@@ -383,11 +406,12 @@
       "thumbnail": "https://i.ytimg.com/vi/maFLI82NKgE/hqdefault.jpg",
       "publishedAt": "2025-11-24T10:26:14Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:02.587Z",
-    "updatedAt": "2025-11-27T22:56:02.587Z",
+    "updatedAt": "2025-11-28T07:04:21.317Z",
     "topicKey": "windowswindhawk18",
-    "notes": "YouTube Data API: ウェブマニア の最新動画"
+    "notes": "YouTube Data API: ウェブマニア の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-TdCpEiUwEhA",
@@ -409,11 +433,13 @@
       "thumbnail": "https://i.ytimg.com/vi/TdCpEiUwEhA/hqdefault.jpg",
       "publishedAt": "2025-11-24T09:07:30Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:13.687Z",
-    "updatedAt": "2025-11-27T22:56:13.687Z",
+    "updatedAt": "2025-11-28T07:04:23.874Z",
     "topicKey": "aigoogleainano-banana-proamp",
-    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画"
+    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画は「Nano Banana Pro」という画像生成AIモデルに関する内容であり、直近の記事の8番目「Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命」が同じモデルを扱っているため重複と判断しました。"
   },
   {
     "id": "yt-phnzvUNmth0",
@@ -435,11 +461,13 @@
       "thumbnail": "https://i.ytimg.com/vi/phnzvUNmth0/hqdefault.jpg",
       "publishedAt": "2025-11-24T09:05:00Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:55:55.878Z",
-    "updatedAt": "2025-11-27T22:55:55.878Z",
+    "updatedAt": "2025-11-28T07:04:27.324Z",
     "topicKey": "nanobanana-pro8notebookantigravity",
-    "notes": "YouTube Data API: ai_masaou の最新動画"
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画は『Nanobanana Pro』の活用に関する内容であり、直近の記事の中で8番目の「Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命」が同じ製品に関連しているため、重複と判断しました。"
   },
   {
     "id": "yt-0McK0oencUE",
@@ -461,11 +489,13 @@
       "thumbnail": "https://i.ytimg.com/vi/0McK0oencUE/hqdefault.jpg",
       "publishedAt": "2025-11-24T06:00:00Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:06.766Z",
-    "updatedAt": "2025-11-27T22:56:06.766Z",
+    "updatedAt": "2025-11-28T07:04:30.212Z",
     "topicKey": "10nano-banana",
-    "notes": "YouTube Data API: iketomo-ch の最新動画"
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はNano Bananaアプリの開発と業務効率化について扱っており、直近の記事の中でNano Banana Proに関する内容があり、同じ製品に関連するテーマであるため重複と判断しました。"
   },
   {
     "id": "yt-O05yOsEJHZM",
@@ -487,11 +517,13 @@
       "thumbnail": "https://i.ytimg.com/vi/O05yOsEJHZM/hqdefault.jpg",
       "publishedAt": "2025-11-24T02:24:47Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:04.558Z",
-    "updatedAt": "2025-11-27T22:56:04.558Z",
+    "updatedAt": "2025-11-28T07:04:32.925Z",
     "topicKey": "nano-banana-pro",
-    "notes": "YouTube Data API: kei31e の最新動画"
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はNano Banana Proを扱っており、直近の記事の8番と10番もNano Banana Proに関連しているため、同じニュース・トピックと判断しました。"
   },
   {
     "id": "yt-IAgT00oqBcw",
@@ -513,11 +545,12 @@
       "thumbnail": "https://i.ytimg.com/vi/IAgT00oqBcw/hqdefault.jpg",
       "publishedAt": "2025-11-23T13:38:21Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:32.563Z",
-    "updatedAt": "2025-11-27T11:45:32.563Z",
+    "updatedAt": "2025-11-28T07:04:35.753Z",
     "topicKey": "150-shorts",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-UMrmAKY4QNM",
@@ -539,11 +572,13 @@
       "thumbnail": "https://i.ytimg.com/vi/UMrmAKY4QNM/hqdefault.jpg",
       "publishedAt": "2025-11-23T12:22:13Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:39.946Z",
-    "updatedAt": "2025-11-27T11:45:39.946Z",
+    "updatedAt": "2025-11-28T07:04:38.481Z",
     "topicKey": "lineainano-banana-prolinen8naiai",
-    "notes": "YouTube Data API: tomos_aiagent の最新動画"
+    "notes": "YouTube Data API: tomos_aiagent の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はNano Banana ProをLINEに実装する方法を扱っており、直近の記事の8番と10番はNano Banana Proに関連する内容で、特に画像生成に関する話題が重複しているため。"
   },
   {
     "id": "yt-jrCuW7HJbO4",
@@ -565,11 +600,12 @@
       "thumbnail": "https://i.ytimg.com/vi/jrCuW7HJbO4/hqdefault.jpg",
       "publishedAt": "2025-11-23T12:21:18Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:34.040Z",
-    "updatedAt": "2025-11-27T11:45:34.040Z",
+    "updatedAt": "2025-11-28T07:04:41.086Z",
     "topicKey": "1",
-    "notes": "YouTube Data API: ウェブマニア の最新動画"
+    "notes": "YouTube Data API: ウェブマニア の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-mA00ScGrlWs",
@@ -591,11 +627,13 @@
       "thumbnail": "https://i.ytimg.com/vi/mA00ScGrlWs/hqdefault.jpg",
       "publishedAt": "2025-11-23T03:05:01Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:55:57.595Z",
-    "updatedAt": "2025-11-27T22:55:57.595Z",
+    "updatedAt": "2025-11-28T07:04:44.696Z",
     "topicKey": "gpt-51",
-    "notes": "YouTube Data API: ai_masaou の最新動画"
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGPT-5.1の進化とタスク効率について解説しており、直近の記事3の「Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較」もGPT-5を扱っているため、同じニュース・トピックとみなされる。"
   },
   {
     "id": "yt-1UxPMB3sOwM",
@@ -617,11 +655,13 @@
       "thumbnail": "https://i.ytimg.com/vi/1UxPMB3sOwM/hqdefault.jpg",
       "publishedAt": "2025-11-22T09:59:58Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:01.527Z",
-    "updatedAt": "2025-11-27T22:56:01.527Z",
+    "updatedAt": "2025-11-28T07:04:48.050Z",
     "topicKey": "no1gemininano-banana-prolpgemini-ai-gemini-ai",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGeminiの新モデル「Nano Banana Pro」に関する内容であり、直近の記事の中で「Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命」や「Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く」が同じテーマを扱っているため。"
   },
   {
     "id": "yt-qDKgMdw9ISg",
@@ -643,11 +683,12 @@
       "thumbnail": "https://i.ytimg.com/vi/qDKgMdw9ISg/hqdefault.jpg",
       "publishedAt": "2025-11-22T09:30:38Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:03.474Z",
-    "updatedAt": "2025-11-27T22:56:03.474Z",
+    "updatedAt": "2025-11-28T07:04:50.769Z",
     "topicKey": "unreal-engine-50",
-    "notes": "YouTube Data API: ウェブマニア の最新動画"
+    "notes": "YouTube Data API: ウェブマニア の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-6rBe-2pV_L0",
@@ -669,11 +710,13 @@
       "thumbnail": "https://i.ytimg.com/vi/6rBe-2pV_L0/hqdefault.jpg",
       "publishedAt": "2025-11-22T06:00:10Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:08.740Z",
-    "updatedAt": "2025-11-27T22:56:08.740Z",
+    "updatedAt": "2025-11-28T07:04:53.493Z",
     "topicKey": "gemini1gemini3-2nanobanana-pro3notebooklm-4ai-studio",
-    "notes": "YouTube Data API: iketomo-ch の最新動画"
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGeminiの進化やNanobanana Proに関する具体的な情報を扱っており、直近の記事の中にGemini新モデルの技術的進化やNanobanana Proに関する記事があるため、同じ話題と判断しました。"
   },
   {
     "id": "yt-z-E53KJjtn8",
@@ -695,11 +738,13 @@
       "thumbnail": "https://i.ytimg.com/vi/z-E53KJjtn8/hqdefault.jpg",
       "publishedAt": "2025-11-22T02:49:29Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:09.824Z",
-    "updatedAt": "2025-11-27T22:56:09.824Z",
+    "updatedAt": "2025-11-28T07:04:56.176Z",
     "topicKey": "apihttpaiwebhookoauth2jsonn8n",
-    "notes": "YouTube Data API: tomos_aiagent の最新動画"
+    "notes": "YouTube Data API: tomos_aiagent の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAPIやHTTPリクエストの基礎を扱っており、直近の記事4も同様にAPIとHTTPリクエストの基礎から応用までをテーマにしているため。"
   },
   {
     "id": "yt-7I49onMkt0g",
@@ -721,11 +766,12 @@
       "thumbnail": "https://i.ytimg.com/vi/7I49onMkt0g/hqdefault.jpg",
       "publishedAt": "2025-11-22T02:09:53Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:12.554Z",
-    "updatedAt": "2025-11-27T22:56:12.554Z",
+    "updatedAt": "2025-11-28T07:04:59.315Z",
     "topicKey": "apple-macwindowsllmparallaxai",
-    "notes": "YouTube Data API: technavi_tooru の最新動画"
+    "notes": "YouTube Data API: technavi_tooru の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-6h6PP1KkJWc",
@@ -747,11 +793,13 @@
       "thumbnail": "https://i.ytimg.com/vi/6h6PP1KkJWc/hqdefault.jpg",
       "publishedAt": "2025-11-21T09:09:25Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T22:56:15.499Z",
-    "updatedAt": "2025-11-27T22:56:15.499Z",
+    "updatedAt": "2025-11-28T07:05:01.590Z",
     "topicKey": "2025aigemini-3-proainano-banana-pro",
-    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画"
+    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はNano Banana Proに関する内容であり、直近の記事の8番と9番がNano Banana ProやGeminiに関連しているため、同じニュース・トピックを扱っていると判断しました。"
   },
   {
     "id": "yt-2HBuY842Koc",
@@ -773,11 +821,13 @@
       "thumbnail": "https://i.ytimg.com/vi/2HBuY842Koc/hqdefault.jpg",
       "publishedAt": "2025-11-21T07:50:43Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-27T11:45:29.868Z",
-    "updatedAt": "2025-11-27T11:45:29.868Z",
+    "updatedAt": "2025-11-28T07:05:04.874Z",
     "topicKey": "nanobanana-progoogleai",
-    "notes": "YouTube Data API: keitoaiweb の最新動画"
+    "notes": "YouTube Data API: keitoaiweb の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はNanobanana ProとGoogleの画像生成AIに関する内容であり、直近の記事の中に「Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命」と「Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く」が含まれており、同じテーマを扱っているため。"
   },
   {
     "id": "yt-hnhngS_YTkQ",
