@@ -454,6 +454,16 @@ const runGenerator = async (input = null) => {
 
   // --- 記事データの後処理 ---
   const normalizedTags = mapArticleTags(article.tags); // タグを正規化
+  if (DEFAULT_POST_STATUS !== 'published') {
+    // 下書き扱いの場合は #下書き タグを追加
+    const hasDraftTag = normalizedTags.some((tag) => {
+      const slug = typeof tag === 'object' ? tag.slug : tag;
+      return slug === 'draft' || slug === '下書き';
+    });
+    if (!hasDraftTag) {
+      normalizedTags.push({ slug: 'draft', label: '下書き', category: '運用', style: 'accent-gold' });
+    }
+  }
   const hydratedArticle = {
     ...article,
     tags: normalizedTags,

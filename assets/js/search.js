@@ -4,6 +4,8 @@
  * キーワードにマッチする記事をリアルタイムで検索します。
  */
 
+const isPublishedPost = (post) => (post?.status || 'published') === 'published';
+
 /**
  * 記事検索機能の初期化
  * Fuse.jsを使った曖昧検索を初期化し、検索入力フィールドにイベントリスナーを登録します。
@@ -31,7 +33,9 @@ window.initSearch = async () => {
         // posts.jsonから記事データを非同期で取得
         const response = await fetch('/data/posts.json');
         if (!response.ok) throw new Error('Failed to load posts');
-        posts = await response.json();
+        const loaded = await response.json();
+        const normalized = Array.isArray(loaded) ? loaded : [];
+        posts = normalized.filter(isPublishedPost);
 
         // Fuse.jsの初期化
         // 検索対象フィールドとスコアリングパラメータを設定
@@ -101,7 +105,8 @@ window.initSearch = async () => {
 
             // 各結果アイテムへのリンクを作成
             const link = document.createElement('a');
-            link.href = `/posts/${item.slug}.html`;
+            const href = item.url ? `/${item.url}` : `/posts/${item.slug}.html`;
+            link.href = href;
             link.className = 'search-result-link';
 
             // タイトル要素を作成

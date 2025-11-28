@@ -136,7 +136,7 @@ const initPostList = () => {
 
   // アプリケーションの状態管理オブジェクト
   const state = {
-    allPosts: [], // すべての記事データ
+    allPosts: [], // すべての記事データ（公開・下書き含む）
     filteredPosts: [], // フィルタリング後の記事データ
     allTags: [], // すべてのタグ情報（カウント付き）
     searchQuery: '', // タグ検索のクエリ文字列
@@ -144,6 +144,9 @@ const initPostList = () => {
     isLoading: true, // データ読み込み中フラグ
     visibleCount: INITIAL_DISPLAY_COUNT, // 現在表示されている記事数
   };
+
+  const isDraftPost = (post) => (post?.status || 'published') !== 'published';
+  const isPublishedPost = (post) => (post?.status || 'published') === 'published';
 
   /**
    * 文字列を正規化する（全角/半角統一、トリミング、小文字化）
@@ -159,7 +162,8 @@ const initPostList = () => {
    */
   const buildTagIndex = (posts) => {
     const tagMap = new Map();
-    posts.forEach(post => {
+    // 公開記事のみをカウント対象（通常表示と一致させる）
+    posts.filter(isPublishedPost).forEach(post => {
       (post.tags || []).forEach(tag => {
         const tagObj = toTagObject(tag);
         if (!tagMap.has(tagObj.slug)) {
@@ -170,17 +174,32 @@ const initPostList = () => {
       });
     });
     // カウント数の降順、同数なら日本語の辞書順でソート
-    return Array.from(tagMap.values()).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'ja'));
+    const tags = Array.from(tagMap.values()).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'ja'));
+    // 下書きタグの表示を保証（下書きが存在する場合）
+    const hasDraftTag = tags.some((tag) => tag.slug === 'draft');
+    const draftCount = posts.filter(isDraftPost).length;
+    if (!hasDraftTag && draftCount > 0) {
+      tags.unshift({ slug: 'draft', label: '下書き', count: draftCount });
+    }
+    return tags;
   };
 
   /**
    * 指定されたタグで記事をフィルタリングする
+   * - デフォルトは公開記事のみを対象
+   * - slugが 'draft' の場合のみ下書きを対象
    * @param {string} slug - フィルタするタグのslug（nullの場合は全記事を返す）
    * @returns {Array} フィルタリングされた記事の配列
    */
   const filterPostsByTag = (slug) => {
-    if (!slug) return [...state.allPosts];
-    return state.allPosts.filter(post =>
+    const base = slug === 'draft'
+      ? state.allPosts.filter(isDraftPost)
+      : state.allPosts.filter(isPublishedPost);
+
+    if (!slug) return base;
+    if (slug === 'draft') return base;
+
+    return base.filter(post =>
       (post.tags || []).some(tag => toTagObject(tag).slug === slug)
     );
   };
@@ -196,6 +215,7 @@ const initPostList = () => {
     const defaultImg = 'assets/img/article-templates/new_default.svg';
     const imageSrc = post.image?.src || defaultImg;
     const imageAlt = post.image?.alt || post.title;
+    const statusBadge = isDraftPost(post) ? '<span class="post-status badge-draft">下書き</span>' : '';
     // タグリストのHTMLを生成
     const tagsHTML = (post.tags || []).map(tag => {
       const tagObj = toTagObject(tag);
@@ -209,7 +229,7 @@ const initPostList = () => {
             <img src="${imageSrc}" alt="${imageAlt}" loading="lazy" decoding="async" width="640" height="360">
           </figure>
           <div class="post-card-body">
-            <div class="post-meta">${formatDate(post.date)}</div>
+            <div class="post-meta"><span class="post-date">${formatDate(post.date)}</span>${statusBadge}</div>
             <h3>${post.title}</h3>
             <p class="post-summary">${post.summary ?? ''}</p>
             ${tagsHTML ? `<ul class="tag-list">${tagsHTML}</ul>` : ''}
@@ -313,7 +333,7 @@ const initPostList = () => {
     if (state.selectedTag) {
       elements.filterStatus.textContent = `タグ「${state.selectedTag.label}」でフィルタ中 (${state.filteredPosts.length}件)`;
     } else {
-      elements.filterStatus.textContent = `全${state.allPosts.length}件の記事を表示中`;
+      elements.filterStatus.textContent = `全${state.filteredPosts.length}件の記事を表示中`;
     }
 
     // 検索クリアボタンの有効/無効を制御
@@ -417,8 +437,9 @@ const initPostList = () => {
       return res.json();
     })
     .then(posts => {
+      const normalizedPosts = Array.isArray(posts) ? posts : [];
       // 記事データを日付順にソートして保存
-      state.allPosts = posts.sort(comparePosts);
+      state.allPosts = normalizedPosts.sort(comparePosts);
       // タグのインデックスを構築
       state.allTags = buildTagIndex(state.allPosts);
       state.isLoading = false;
