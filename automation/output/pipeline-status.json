@@ -1,23 +1,23 @@
 {
-  "status": "success",
-  "generatedFile": "posts/2025-11-28-sora-2.html",
-  "executedAt": "2025-11-28T07:29:18.803Z",
+  "status": "skipped",
+  "generatedFile": null,
+  "executedAt": "2025-11-28T09:25:47.955Z",
   "collector": {
     "source": "YouTube",
     "checkedSources": 17,
-    "newCandidates": 0,
-    "totalCandidates": 42,
+    "newCandidates": 3,
+    "totalCandidates": 45,
     "errors": [],
     "metrics": {
-      "totalVideosFound": 0,
-      "newVideosAdded": 0,
-      "duplicatesSkipped": 0
+      "totalVideosFound": 7,
+      "newVideosAdded": 3,
+      "duplicatesSkipped": 4
     }
   },
   "researcher": {
     "status": "researched",
     "candidate": {
-      "id": "yt-_5L1Emc-Djk",
+      "id": "yt-tX1SPRor_oI",
       "source": {
         "platform": "YouTube",
         "name": "AIAIChatGPT-cj4sh",
@@ -29,32 +29,33 @@
         ]
       },
       "video": {
-        "id": "_5L1Emc-Djk",
-        "title": "【Sora 2最新アプデ】作りたい動画を作れる「ストーリーボード」機能/アニメ・コミック・セルフィ―・ニュースキャスターなど「スタイル動画生成」機能",
-        "url": "https://www.youtube.com/watch?v=_5L1Emc-Djk",
-        "description": "動画の説明 (2025年)11月の中旬～下旬にかけて OpenAIは、テキストや画像から動画を生成できる 動画生成AIモデル「Sora 2」の ...",
-        "thumbnail": "https://i.ytimg.com/vi/_5L1Emc-Djk/hqdefault.jpg",
-        "publishedAt": "2025-11-27T09:05:49Z"
+        "id": "tX1SPRor_oI",
+        "title": "【画像から3Dワールド生成】現実そっくりの3D環境を量産できるAI世界モデル「Marble」の概要・使い方・活用事例！",
+        "url": "https://www.youtube.com/watch?v=tX1SPRor_oI",
+        "description": "動画の説明 World Labsは、(2025年)11月13日 画像を読み込むと 読み込んだ画像から自動で3D空間を生成してくれ 作った3D空間 ...",
+        "thumbnail": "https://i.ytimg.com/vi/tX1SPRor_oI/hqdefault.jpg",
+        "publishedAt": "2025-11-25T09:06:02Z"
       },
       "status": "researched",
-      "createdAt": "2025-11-27T11:45:44.255Z",
-      "updatedAt": "2025-11-28T07:28:44.865Z",
-      "topicKey": "sora-2",
+      "createdAt": "2025-11-27T11:45:45.243Z",
+      "updatedAt": "2025-11-28T09:25:06.849Z",
+      "topicKey": "3d3daimarble",
       "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
       "skipReason": "transcript-unavailable",
-      "transcript": "【Sora 2最新アプデ】作りたい動画を作れる「ストーリーボード」機能/アニメ・コミック・セルフィ―・ニュースキャスターなど「スタイル動画生成」機能 動画の説明 (2025年)11月の中旬～下旬にかけて OpenAIは、テキストや画像から動画を生成できる 動画生成AIモデル「Sora 2」の ...",
-      "transcriptLength": 150,
+      "transcript": "【画像から3Dワールド生成】現実そっくりの3D環境を量産できるAI世界モデル「Marble」の概要・使い方・活用事例！ 動画の説明 World Labsは、(2025年)11月13日 画像を読み込むと 読み込んだ画像から自動で3D空間を生成してくれ 作った3D空間 ...",
+      "transcriptLength": 136,
       "themeCheck": {
         "duplicate": false,
-        "reason": "候補動画はSora 2のアプデに関する内容であり、直近の記事はAIや知識管理、画像生成など異なるテーマを扱っているため、重複しないと判断しました。",
+        "reason": "候補動画は3D環境生成に特化したAI技術について扱っており、直近の記事は主にテキスト生成や知識管理、ビジネス効率化に関する内容であるため、テーマが異なると判断した。",
         "matchedTitle": null,
         "raw": {
           "duplicate": false,
-          "reason": "候補動画はSora 2のアプデに関する内容であり、直近の記事はAIや知識管理、画像生成など異なるテーマを扱っているため、重複しないと判断しました。",
+          "reason": "候補動画は3D環境生成に特化したAI技術について扱っており、直近の記事は主にテキスト生成や知識管理、ビジネス効率化に関する内容であるため、テーマが異なると判断した。",
           "matchedTitle": null
         }
       },
       "recentTitles": [
+        "Sora 2の革新: ストーリーボードとスタイル動画生成の可能性",
         "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
         "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
         "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
@@ -63,13 +64,13 @@
         "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
         "Gemini新モデルの技術的進化と実践的応用の可能性",
         "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命",
-        "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性",
-        "Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く"
+        "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性"
       ],
-      "researchedAt": "2025-11-28T07:28:44.865Z"
+      "researchedAt": "2025-11-28T09:25:06.849Z"
     },
     "skipped": [],
     "recentTitles": [
+      "Sora 2の革新: ストーリーボードとスタイル動画生成の可能性",
       "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
       "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
       "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
@@ -78,173 +79,34 @@
       "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
       "Gemini新モデルの技術的進化と実践的応用の可能性",
       "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命",
-      "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性",
-      "Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く"
+      "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性"
     ]
   },
   "generator": {
-    "generated": true,
-    "candidateId": "yt-_5L1Emc-Djk",
-    "postEntry": {
-      "title": "Sora 2の革新: ストーリーボードとスタイル動画生成の可能性",
-      "date": "2025-11-28",
-      "summary": "OpenAIのSora 2は、テキストや画像から動画を生成するAIモデルとして注目されています。最新のアップデートで追加されたストーリーボード機能と多様なスタイル動画生成機能により、クリエイターはより自由度の高い動画制作が可能になりました。この記事では、これらの新機能がどのように動画制作のプロセスを変革し、ビジネスやエンターテインメントの分野でどのように活用されるかを詳しく解説します。",
-      "tags": [
-        {
-          "slug": "video-generation",
-          "label": "動画生成AI",
-          "category": "技術トピック",
-          "style": "accent-purple"
-        },
-        {
-          "slug": "openai",
-          "label": "OpenAI",
-          "category": "その他",
-          "style": "accent-gold"
-        },
-        {
-          "slug": "tag-3",
-          "label": "ストーリーボード",
-          "category": "その他",
-          "style": "accent-lavender"
-        },
-        {
-          "slug": "tag-4",
-          "label": "スタイル動画",
-          "category": "その他",
-          "style": "accent-pink"
-        },
-        {
-          "slug": "tag-5",
-          "label": "クリエイティブテクノロジー",
-          "category": "その他",
-          "style": "accent-orange"
-        }
-      ],
-      "url": "posts/2025-11-28-sora-2.html",
-      "slug": "2025-11-28-sora-2",
-      "publishedAt": "2025-11-28T07:29:18.797Z",
-      "image": {
-        "key": "collab-05",
-        "src": "assets/img/article-templates/collab-05.webp",
-        "alt": "チーム協業とチャットを思わせるシンボル（バリアント5）",
-        "label": "コラボレーションダイナミクス",
-        "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
-        "category": "collaboration"
-      }
-    },
-    "draftUrl": "posts/2025-11-28-sora-2.html",
-    "topicKey": "sora-2",
-    "article": {
-      "title": "Sora 2の革新: ストーリーボードとスタイル動画生成の可能性",
-      "summary": "OpenAIのSora 2は、テキストや画像から動画を生成するAIモデルとして注目されています。最新のアップデートで追加されたストーリーボード機能と多様なスタイル動画生成機能により、クリエイターはより自由度の高い動画制作が可能になりました。この記事では、これらの新機能がどのように動画制作のプロセスを変革し、ビジネスやエンターテインメントの分野でどのように活用されるかを詳しく解説します。",
-      "intro": "2025年11月の中旬から下旬にかけて、OpenAIは動画生成AIモデル「Sora 2」に大幅なアップデートを施しました。このアップデートは、特にストーリーボード機能とスタイル動画生成機能の追加が注目されています。ストーリーボード機能は、ユーザーが動画の構成を視覚的に計画しやすくするためのツールであり、これによりプロジェクトの効率が大幅に向上します。また、アニメ、コミック、セルフィー、ニュースキャスターなどの多様なスタイル動画生成機能は、クリエイターが求める多様なビジュアル表現を可能にします。この記事では、これらの新機能が具体的にどのように機能し、どのような技術的背景があるのかを詳しく探ります。さらに、これらの機能が動画制作業界に与える影響についても考察し、エンジニアやクリエイターがこの技術をどのように活用できるかを提案します。",
-      "conclusion": "Sora 2の最新アップデートは、動画生成のプロセスを劇的に変革する可能性を秘めています。ストーリーボード機能とスタイル動画生成機能は、クリエイターがより効率的かつ創造的に作品を制作する手助けをします。現時点での技術的な制約やコスト面での課題も考慮する必要がありますが、これらの機能は今後、さらに多くの分野での活用が期待されます。特に、限られたリソースで高品質なコンテンツを求める中小企業や個人クリエイターにとっては、試す価値のある技術です。",
-      "tags": [
-        {
-          "slug": "video-generation",
-          "label": "動画生成AI",
-          "category": "技術トピック",
-          "style": "accent-purple"
-        },
-        {
-          "slug": "openai",
-          "label": "OpenAI",
-          "category": "その他",
-          "style": "accent-gold"
-        },
-        {
-          "slug": "tag-3",
-          "label": "ストーリーボード",
-          "category": "その他",
-          "style": "accent-lavender"
-        },
-        {
-          "slug": "tag-4",
-          "label": "スタイル動画",
-          "category": "その他",
-          "style": "accent-pink"
-        },
-        {
-          "slug": "tag-5",
-          "label": "クリエイティブテクノロジー",
-          "category": "その他",
-          "style": "accent-orange"
-        }
-      ],
-      "sections": [
-        {
-          "heading": "Sora 2の技術的進化とアーキテクチャ",
-          "subSections": [
-            {
-              "heading": "ストーリーボード機能の技術的背景",
-              "body": "ストーリーボード機能は、従来の動画制作プロセスを大幅に効率化します。これまで、動画の構成を計画するには手動でのスクリプト作成やフレームごとのデザインが必要でしたが、Sora 2のストーリーボード機能は、テキスト入力を基に自動的にシーンの流れを生成します。このプロセスは、自然言語処理（NLP）とコンピュータビジョン技術を組み合わせて実現されています。具体的には、ユーザーが入力したテキストを解析し、シーンごとの重要な要素を抽出、これを基に視覚的なシーケンスを生成します。さらに、AIはユーザーのフィードバックを学習し、次回以降の生成プロセスに反映させることで、より精度の高いストーリーボードを提供します。この機能により、クリエイターはアイデアの具現化に専念でき、制作時間を大幅に短縮することが可能となります。"
-            }
-          ]
-        },
-        {
-          "heading": "多様なスタイル動画生成の実用性",
-          "subSections": [
-            {
-              "heading": "スタイル動画生成機能のユースケース",
-              "body": "Sora 2のスタイル動画生成機能は、クリエイターにとって非常に強力なツールです。この機能は、アニメ、コミック、セルフィー、ニュースキャスターといった多様なスタイルを選択可能にし、ユーザーのニーズに応じたカスタマイズが可能です。例えば、アニメスタイルでは、手書き風のアニメーションを自動生成し、プロのアニメーターが手掛けたかのようなビジュアルを提供します。これは、アニメーション制作のコストと時間を大幅に削減する可能性を秘めています。一方、ニュースキャスタースタイルは、ニュース番組のようなフォーマットで情報を伝える動画を生成します。これにより、企業は迅速かつ効果的にメッセージを伝えることができ、マーケティングや社内コミュニケーションの効率を向上させることができます。これらの機能は、特に中小企業や個人クリエイターにとって、限られたリソースでプロフェッショナルなコンテンツを制作するための強力な手段となるでしょう。"
-            }
-          ]
-        },
-        {
-          "heading": "Sora 2の市場における位置付けと競合分析",
-          "subSections": [
-            {
-              "heading": "競合製品との比較",
-              "body": "Sora 2は、動画生成AI市場において非常にユニークな立ち位置を占めています。競合製品としては、GoogleのDeepMindが開発した動画生成AIや、AdobeのPremiere Proに搭載されたAI機能などが挙げられます。これらの製品と比較して、Sora 2は特にユーザーインターフェースの直感性と生成速度において優れています。例えば、AdobeのAI機能は高度な編集機能を提供しますが、操作が複雑であるため、初心者には敷居が高いとされています。一方、Sora 2は、シンプルなインターフェースでありながら、高度な生成機能を提供するため、幅広いユーザー層に対応しています。また、生成速度に関しても、Sora 2は最先端のハードウェアアクセラレーション技術を活用し、リアルタイムでの動画生成を実現しています。これにより、ユーザーは即座に結果を確認し、迅速にフィードバックを反映させることが可能です。"
-            }
-          ]
-        }
-      ],
-      "slug": "2025-11-28-sora-2",
-      "date": "2025-11-28",
-      "htmlContent": "<!DOCTYPE html>\n<html lang=\"ja\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Sora 2の革新: ストーリーボードとスタイル動画生成の可能性 | AI情報ブログ</title>\n    <meta name=\"description\" content=\"OpenAIのSora 2は、テキストや画像から動画を生成するAIモデルとして注目されています。最新のアップデートで追加されたストーリーボード機能と多様なスタイル動画生成機能により、クリエイターはより自由度の高い動画制作が可能になりました。この記事では、これらの新機能がどのように動画制作のプロセスを変革し、ビジネスやエンターテインメントの分野でどのように活用されるかを詳しく解説します。\">\n\n    <script src=\"../assets/js/analytics.js\"></script>\n\n    <!-- Google AdSense -->\n    <script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX\"\n        crossorigin=\"anonymous\"></script>\n\n    <!-- ファビコン -->\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"../assets/img/logo.svg\">\n    <link rel=\"apple-touch-icon\" href=\"../assets/img/logo.svg\">\n\n    <!-- Open Graph / SNS共有 -->\n    <meta property=\"og:type\" content=\"article\">\n    <meta property=\"og:title\" content=\"Sora 2の革新: ストーリーボードとスタイル動画生成の可能性 | AI情報ブログ\">\n    <meta property=\"og:description\" content=\"OpenAIのSora 2は、テキストや画像から動画を生成するAIモデルとして注目されています。最新のアップデートで追加されたストーリーボード機能と多様なスタイル動画生成機能により、クリエイターはより自由度の高い動画制作が可能になりました。この記事では、これらの新機能がどのように動画制作のプロセスを変革し、ビジネスやエンターテインメントの分野でどのように活用されるかを詳しく解説します。\">\n    <meta property=\"og:image\" content=\"../assets/img/article-templates/collab-05.webp\">\n    <meta property=\"og:site_name\" content=\"AI情報ブログ\">\n    <meta property=\"og:locale\" content=\"ja_JP\">\n    <meta property=\"article:published_time\" content=\"2025-11-28T00:00:00+09:00\">\n\n    <!-- Twitter Card -->\n    <meta name=\"twitter:card\" content=\"summary_large_image\">\n    <meta name=\"twitter:title\" content=\"Sora 2の革新: ストーリーボードとスタイル動画生成の可能性 | AI情報ブログ\">\n    <meta name=\"twitter:description\" content=\"OpenAIのSora 2は、テキストや画像から動画を生成するAIモデルとして注目されています。最新のアップデートで追加されたストーリーボード機能と多様なスタイル動画生成機能により、クリエイターはより自由度の高い動画制作が可能になりました。この記事では、これらの新機能がどのように動画制作のプロセスを変革し、ビジネスやエンターテインメントの分野でどのように活用されるかを詳しく解説します。\">\n    <meta name=\"twitter:image\" content=\"../assets/img/article-templates/collab-05.webp\">\n\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css\">\n    <link rel=\"stylesheet\" href=\"../assets/css/main.css\">\n</head>\n\n<body class=\"article-page\">\n    <!-- ヘッダーはSSGまたはcomponents.jsで挿入されます -->\n\n    <main>\n        <article class=\"article-detail\">\n  <section class=\"inner article-hero\">\n    <p class=\"article-eyebrow\">Daily Briefing</p>\n    <div class=\"article-hero-layout\">\n      <div class=\"article-hero-main\">\n        <p class=\"post-meta\">2025.11.28</p>\n        <h1>Sora 2の革新: ストーリーボードとスタイル動画生成の可能性</h1>\n        <p class=\"article-summary\">OpenAIのSora 2は、テキストや画像から動画を生成するAIモデルとして注目されています。最新のアップデートで追加されたストーリーボード機能と多様なスタイル動画生成機能により、クリエイターはより自由度の高い動画制作が可能になりました。この記事では、これらの新機能がどのように動画制作のプロセスを変革し、ビジネスやエンターテインメントの分野でどのように活用されるかを詳しく解説します。</p>\n      </div>\n    </div>\n\n    <ul class=\"article-tags\">\n          <li class=\"tag\" data-tag-slug=\"video-generation\" data-tag-category=\"技術トピック\" data-tag-style=\"accent-purple\">動画生成AI</li>\n          <li class=\"tag\" data-tag-slug=\"openai\" data-tag-category=\"その他\" data-tag-style=\"accent-gold\">OpenAI</li>\n          <li class=\"tag\" data-tag-slug=\"tag-3\" data-tag-category=\"その他\" data-tag-style=\"accent-lavender\">ストーリーボード</li>\n          <li class=\"tag\" data-tag-slug=\"tag-4\" data-tag-category=\"その他\" data-tag-style=\"accent-pink\">スタイル動画</li>\n          <li class=\"tag\" data-tag-slug=\"tag-5\" data-tag-category=\"その他\" data-tag-style=\"accent-orange\">クリエイティブテクノロジー</li>\n        </ul>\n  </section>\n\n  \n      <!-- Google AdSense: 記事上広告 -->\n      <!--\n      <div class=\"inner\">\n        <div class=\"ad-container ad-article-top\">\n          <span class=\"ad-label\">広告</span>\n        </div>\n      </div>\n      -->\n\n\n  <div class=\"inner article-grid\">\n    <div class=\"article-main-column\">\n      <article class=\"post-article article-content\">\n        \n        <section class=\"article-intro-block\">\n          <div class=\"intro-content\">\n<p>2025年11月の中旬から下旬にかけて、OpenAIは動画生成AIモデル「Sora 2」に大幅なアップデートを施しました。このアップデートは、特にストーリーボード機能とスタイル動画生成機能の追加が注目されています。ストーリーボード機能は、ユーザーが動画の構成を視覚的に計画しやすくするためのツールであり、これによりプロジェクトの効率が大幅に向上します。また、アニメ、コミック、セルフィー、ニュースキャスターなどの多様なスタイル動画生成機能は、クリエイターが求める多様なビジュアル表現を可能にします。この記事では、これらの新機能が具体的にどのように機能し、どのような技術的背景があるのかを詳しく探ります。さらに、これらの機能が動画制作業界に与える影響についても考察し、エンジニアやクリエイターがこの技術をどのように活用できるかを提案します。</p>\n          </div>\n        </section>\n        \n            <section class=\"article-section\" id=\"sora-2\">\n              <h2 class=\"section-heading\">Sora 2の技術的進化とアーキテクチャ</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">ストーリーボード機能の技術的背景</h3>\n                <div class=\"subsection-body\">\n                  <p>ストーリーボード機能は、従来の動画制作プロセスを大幅に効率化します。これまで、動画の構成を計画するには手動でのスクリプト作成やフレームごとのデザインが必要でしたが、Sora 2のストーリーボード機能は、テキスト入力を基に自動的にシーンの流れを生成します。このプロセスは、自然言語処理（NLP）とコンピュータビジョン技術を組み合わせて実現されています。具体的には、ユーザーが入力したテキストを解析し、シーンごとの重要な要素を抽出、これを基に視覚的なシーケンスを生成します。さらに、AIはユーザーのフィードバックを学習し、次回以降の生成プロセスに反映させることで、より精度の高いストーリーボードを提供します。この機能により、クリエイターはアイデアの具現化に専念でき、制作時間を大幅に短縮することが可能となります。</p>\n                </div>\n              </div>\n            </section>\n            <!-- Google AdSense: 記事中広告 -->\n            <!--\n            <div class=\"ad-container ad-article-middle\">\n              <span class=\"ad-label\">広告</span>\n            </div>\n            -->\n\n\n            <section class=\"article-section\" id=\"section-2\">\n              <h2 class=\"section-heading\">多様なスタイル動画生成の実用性</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">スタイル動画生成機能のユースケース</h3>\n                <div class=\"subsection-body\">\n                  <p>Sora 2のスタイル動画生成機能は、クリエイターにとって非常に強力なツールです。この機能は、アニメ、コミック、セルフィー、ニュースキャスターといった多様なスタイルを選択可能にし、ユーザーのニーズに応じたカスタマイズが可能です。例えば、アニメスタイルでは、手書き風のアニメーションを自動生成し、プロのアニメーターが手掛けたかのようなビジュアルを提供します。これは、アニメーション制作のコストと時間を大幅に削減する可能性を秘めています。一方、ニュースキャスタースタイルは、ニュース番組のようなフォーマットで情報を伝える動画を生成します。これにより、企業は迅速かつ効果的にメッセージを伝えることができ、マーケティングや社内コミュニケーションの効率を向上させることができます。これらの機能は、特に中小企業や個人クリエイターにとって、限られたリソースでプロフェッショナルなコンテンツを制作するための強力な手段となるでしょう。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"sora-2\">\n              <h2 class=\"section-heading\">Sora 2の市場における位置付けと競合分析</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">競合製品との比較</h3>\n                <div class=\"subsection-body\">\n                  <p>Sora 2は、動画生成AI市場において非常にユニークな立ち位置を占めています。競合製品としては、GoogleのDeepMindが開発した動画生成AIや、AdobeのPremiere Proに搭載されたAI機能などが挙げられます。これらの製品と比較して、Sora 2は特にユーザーインターフェースの直感性と生成速度において優れています。例えば、AdobeのAI機能は高度な編集機能を提供しますが、操作が複雑であるため、初心者には敷居が高いとされています。一方、Sora 2は、シンプルなインターフェースでありながら、高度な生成機能を提供するため、幅広いユーザー層に対応しています。また、生成速度に関しても、Sora 2は最先端のハードウェアアクセラレーション技術を活用し、リアルタイムでの動画生成を実現しています。これにより、ユーザーは即座に結果を確認し、迅速にフィードバックを反映させることが可能です。</p>\n                </div>\n              </div>\n            </section>\n      </article>\n    </div>\n\n    <aside class=\"article-sidebar\" aria-label=\"ページ内ナビゲーション\">\n      <section class=\"article-card article-toc\">\n        <p class=\"article-card-label\">目次</p>\n        <ol class=\"toc-list\" data-toc-list aria-live=\"polite\"></ol>\n      </section>\n    </aside>\n  </div>\n\n  \n      <!-- Google AdSense: 記事下広告 -->\n      <!--\n      <div class=\"inner\">\n        <div class=\"ad-container ad-article-bottom\">\n          <span class=\"ad-label\">広告</span>\n        </div>\n      </div>\n      -->\n\n\n  \n      <section class=\"article-conclusion inner\">\n        <h2 class=\"conclusion-heading\">まとめ</h2>\n        <div class=\"conclusion-content\">\n<p>Sora 2の最新アップデートは、動画生成のプロセスを劇的に変革する可能性を秘めています。ストーリーボード機能とスタイル動画生成機能は、クリエイターがより効率的かつ創造的に作品を制作する手助けをします。現時点での技術的な制約やコスト面での課題も考慮する必要がありますが、これらの機能は今後、さらに多くの分野での活用が期待されます。特に、限られたリソースで高品質なコンテンツを求める中小企業や個人クリエイターにとっては、試す価値のある技術です。</p>\n        </div>\n      </section>\n</article>\n\n    </main>\n\n    <!-- フッターはSSGまたはcomponents.jsで挿入されます -->\n\n    <script src=\"../assets/js/components.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js\"></script>\n    <script src=\"../assets/js/main.js\" defer></script>\n    <script src=\"../assets/js/article.js\" defer></script>\n</body>\n\n</html>",
-      "relativePath": "posts/2025-11-28-sora-2.html",
-      "image": {
-        "key": "collab-05",
-        "src": "assets/img/article-templates/collab-05.webp",
-        "alt": "チーム協業とチャットを思わせるシンボル（バリアント5）",
-        "label": "コラボレーションダイナミクス",
-        "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
-        "category": "collaboration"
-      },
-      "source": {
-        "name": "AIAIChatGPT-cj4sh",
-        "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh"
-      },
-      "video": {
-        "title": "【Sora 2最新アプデ】作りたい動画を作れる「ストーリーボード」機能/アニメ・コミック・セルフィ―・ニュースキャスターなど「スタイル動画生成」機能",
-        "url": "https://www.youtube.com/watch?v=_5L1Emc-Djk",
-        "id": "_5L1Emc-Djk"
-      },
-      "transcriptLength": 150
-    },
+    "generated": false,
+    "reason": "article-generation-failed",
+    "candidateId": "yt-tX1SPRor_oI",
+    "error": "article total length too short",
     "metrics": {
       "scope": "generator",
       "counters": {
-        "candidates.total": 42,
+        "candidates.total": 45,
         "candidates.analyzed": 2,
-        "articles.failed": 1,
-        "articles.generated": 1
+        "articles.failed": 2
       },
       "timings": {
         "articleGeneration.timeMs": {
           "count": 4,
-          "avg": 26354,
-          "min": 14884,
-          "max": 36106
+          "avg": 32697,
+          "min": 18758,
+          "max": 46588
         }
       }
     }
   },
   "publisher": {
-    "addedPost": true,
+    "addedPost": false,
     "totalPosts": 27,
-    "outputFile": "posts/2025-11-28-sora-2.html"
+    "outputFile": null
   }
 }

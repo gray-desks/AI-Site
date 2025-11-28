@@ -1,5 +1,89 @@
 [
   {
+    "id": "yt-CdAhxcbYsMc",
+    "source": {
+      "platform": "YouTube",
+      "name": "google-school",
+      "channelId": "UC_kTlZMryHFPMc7QMi4g0VQ",
+      "url": "https://www.youtube.com/@google-school",
+      "focus": [
+        "Google",
+        "AI教育"
+      ]
+    },
+    "video": {
+      "id": "CdAhxcbYsMc",
+      "title": "【革命】Googleの「Deep Research」超絶進化しました！活用方法も紹介！",
+      "url": "https://www.youtube.com/watch?v=CdAhxcbYsMc",
+      "description": "「Deep Research」の違い、答えれますか？ Geminiにおける「Deep Research」もNotebookLMの「Deep Research」も ...",
+      "thumbnail": "https://i.ytimg.com/vi/CdAhxcbYsMc/hqdefault.jpg",
+      "publishedAt": "2025-11-28T09:00:32Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-28T09:24:00.556Z",
+    "updatedAt": "2025-11-28T09:24:06.252Z",
+    "topicKey": "googledeep-research",
+    "notes": "YouTube Data API: google-school の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGoogleのAI技術に関する内容であり、直近の記事の中でGoogle Workspace FlowsとNotebookLMの進化が知識管理と自動化に関連しているため、AI技術の進化という観点で重複していると判断しました。"
+  },
+  {
+    "id": "yt-JvaJwwrHG00",
+    "source": {
+      "platform": "YouTube",
+      "name": "AIAIChatGPT-cj4sh",
+      "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
+      "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
+      "focus": [
+        "ChatGPT",
+        "生成AIノウハウ"
+      ]
+    },
+    "video": {
+      "id": "JvaJwwrHG00",
+      "title": "【無料で始める創作革命】AIで画像・動画・音声ぜんぶ生成！ アドビのオールインワンAI「Firefly」徹底解説！",
+      "url": "https://www.youtube.com/watch?v=JvaJwwrHG00",
+      "description": "動画内で紹介したツールのリンク アドビ公式ストア https://r.nox-asp.jp/x?nxid=vwp-tjh-kjx Adobe Fireflyトップページ ...",
+      "thumbnail": "https://i.ytimg.com/vi/JvaJwwrHG00/hqdefault.jpg",
+      "publishedAt": "2025-11-28T08:01:42Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-28T09:24:02.379Z",
+    "updatedAt": "2025-11-28T09:24:10.305Z",
+    "topicKey": "ai-aifirefly",
+    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAIを用いた画像・動画・音声生成に関する内容であり、直近の記事の中でNano Banana Proの実力やGemini 3のマルチモーダルAIに関する記事が同様のテーマ（画像生成）を扱っているため。"
+  },
+  {
+    "id": "yt-DeKvHXNfhtA",
+    "source": {
+      "platform": "YouTube",
+      "name": "kei31e",
+      "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
+      "url": "https://www.youtube.com/@kei31e",
+      "focus": [
+        "エンジニアリング",
+        "AI"
+      ]
+    },
+    "video": {
+      "id": "DeKvHXNfhtA",
+      "title": "Nano Banana Proに記事を読み込ませてサムネイルを作ろう【Thumbnail Creator】",
+      "url": "https://www.youtube.com/watch?v=DeKvHXNfhtA",
+      "description": "Thumbnail Creatorはここから無料でダウンロードできます https://thumbnail-creator.kei31.com/",
+      "thumbnail": "https://i.ytimg.com/vi/DeKvHXNfhtA/hqdefault.jpg",
+      "publishedAt": "2025-11-28T07:31:34Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-28T09:24:01.524Z",
+    "updatedAt": "2025-11-28T09:24:12.898Z",
+    "topicKey": "nano-banana-prothumbnail-creator",
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はNano Banana Proを扱っており、直近の記事9番もNano Banana Proに関連する内容であるため、同じテーマと判断しました。"
+  },
+  {
     "id": "yt-53O8yynXBqM",
     "source": {
       "platform": "YouTube",
@@ -250,12 +334,39 @@
       "thumbnail": "https://i.ytimg.com/vi/YpEiTf4a5WQ/hqdefault.jpg",
       "publishedAt": "2025-11-26T09:00:52Z"
     },
-    "status": "skipped",
+    "status": "failed",
     "createdAt": "2025-11-27T22:55:53.914Z",
-    "updatedAt": "2025-11-28T07:24:47.030Z",
+    "updatedAt": "2025-11-28T09:25:03.336Z",
     "topicKey": "ai-topic",
     "notes": "YouTube Data API: google-school の最新動画",
-    "skipReason": "transcript-unavailable"
+    "skipReason": "transcript-unavailable",
+    "transcript": "【便利】「多言語対応」の音声付きのスライドを作る方法を徹底解説！ 「Vids×TTS」で多言語対応のスライドを作れ！今回はスライドを多言語化するというテーマで、どのようにしたら実現できるのか ...",
+    "transcriptLength": 99,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画は多言語対応の音声付きスライド作成に特化しており、直近の記事はAIや技術の進化に関する内容で異なる分野の話題であるため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画は多言語対応の音声付きスライド作成に特化しており、直近の記事はAIや技術の進化に関する内容で異なる分野の話題であるため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "Sora 2の革新: ストーリーボードとスタイル動画生成の可能性",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
+      "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+      "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+      "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
+      "Gemini新モデルの技術的進化と実践的応用の可能性",
+      "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命",
+      "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性"
+    ],
+    "researchedAt": "2025-11-28T09:24:16.742Z",
+    "failReason": "article-generation-error",
+    "errorMessage": "article total length too short"
   },
   {
     "id": "yt-1WtZlvTWBvs",
@@ -333,12 +444,39 @@
       "thumbnail": "https://i.ytimg.com/vi/tX1SPRor_oI/hqdefault.jpg",
       "publishedAt": "2025-11-25T09:06:02Z"
     },
-    "status": "skipped",
+    "status": "failed",
     "createdAt": "2025-11-27T11:45:45.243Z",
-    "updatedAt": "2025-11-28T07:24:49.805Z",
+    "updatedAt": "2025-11-28T09:25:47.950Z",
     "topicKey": "3d3daimarble",
     "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
-    "skipReason": "transcript-unavailable"
+    "skipReason": "transcript-unavailable",
+    "transcript": "【画像から3Dワールド生成】現実そっくりの3D環境を量産できるAI世界モデル「Marble」の概要・使い方・活用事例！ 動画の説明 World Labsは、(2025年)11月13日 画像を読み込むと 読み込んだ画像から自動で3D空間を生成してくれ 作った3D空間 ...",
+    "transcriptLength": 136,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画は3D環境生成に特化したAI技術について扱っており、直近の記事は主にテキスト生成や知識管理、ビジネス効率化に関する内容であるため、テーマが異なると判断した。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画は3D環境生成に特化したAI技術について扱っており、直近の記事は主にテキスト生成や知識管理、ビジネス効率化に関する内容であるため、テーマが異なると判断した。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "Sora 2の革新: ストーリーボードとスタイル動画生成の可能性",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
+      "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+      "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+      "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
+      "Gemini新モデルの技術的進化と実践的応用の可能性",
+      "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命",
+      "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性"
+    ],
+    "researchedAt": "2025-11-28T09:25:06.849Z",
+    "failReason": "article-generation-error",
+    "errorMessage": "article total length too short"
   },
   {
     "id": "yt-CqgkIrVtdTA",
