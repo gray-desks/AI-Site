@@ -19,12 +19,39 @@
       "thumbnail": "https://i.ytimg.com/vi/53O8yynXBqM/hqdefault.jpg",
       "publishedAt": "2025-11-27T14:45:00Z"
     },
-    "status": "skipped",
+    "status": "failed",
     "createdAt": "2025-11-27T22:56:11.040Z",
-    "updatedAt": "2025-11-28T07:24:38.828Z",
+    "updatedAt": "2025-11-28T07:28:42.709Z",
     "topicKey": "pcsotaz-imageaicomfyuivram",
     "notes": "YouTube Data API: AI-Hakase の最新動画",
-    "skipReason": "transcript-unavailable"
+    "skipReason": "transcript-unavailable",
+    "transcript": "【PCスペック不要】秒速でSOTA画質？！話題の「Z-Image」を徹底検証したら、生成AIの常識が崩壊しました…｜「衝撃の真実」と最強の使い方を解説｜ComfyUI・低VRAM 動画のもとになったNote記事 ...",
+    "transcriptLength": 109,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画は生成AIの画像生成技術に特化しており、直近の記事は主に知識管理、自動化、LLMの比較など異なるテーマを扱っているため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画は生成AIの画像生成技術に特化しており、直近の記事は主に知識管理、自動化、LLMの比較など異なるテーマを扱っているため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
+      "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+      "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+      "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
+      "Gemini新モデルの技術的進化と実践的応用の可能性",
+      "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命",
+      "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性",
+      "Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く"
+    ],
+    "researchedAt": "2025-11-28T07:28:06.598Z",
+    "failReason": "article-generation-error",
+    "errorMessage": "article total length too short"
   },
   {
     "id": "yt-LMaTfGsl7Dg",
@@ -130,12 +157,50 @@
       "thumbnail": "https://i.ytimg.com/vi/_5L1Emc-Djk/hqdefault.jpg",
       "publishedAt": "2025-11-27T09:05:49Z"
     },
-    "status": "skipped",
+    "status": "generated",
     "createdAt": "2025-11-27T11:45:44.255Z",
-    "updatedAt": "2025-11-28T07:24:41.940Z",
+    "updatedAt": "2025-11-28T07:29:18.797Z",
     "topicKey": "sora-2",
     "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
-    "skipReason": "transcript-unavailable"
+    "skipReason": "transcript-unavailable",
+    "transcript": "【Sora 2最新アプデ】作りたい動画を作れる「ストーリーボード」機能/アニメ・コミック・セルフィ―・ニュースキャスターなど「スタイル動画生成」機能 動画の説明 (2025年)11月の中旬～下旬にかけて OpenAIは、テキストや画像から動画を生成できる 動画生成AIモデル「Sora 2」の ...",
+    "transcriptLength": 150,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はSora 2のアプデに関する内容であり、直近の記事はAIや知識管理、画像生成など異なるテーマを扱っているため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はSora 2のアプデに関する内容であり、直近の記事はAIや知識管理、画像生成など異なるテーマを扱っているため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
+      "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+      "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+      "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
+      "Gemini新モデルの技術的進化と実践的応用の可能性",
+      "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命",
+      "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性",
+      "Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く"
+    ],
+    "researchedAt": "2025-11-28T07:28:44.865Z",
+    "generatedAt": "2025-11-28T07:29:18.797Z",
+    "postDate": "2025-11-28",
+    "slug": "2025-11-28-sora-2",
+    "outputFile": "posts/2025-11-28-sora-2.html",
+    "image": {
+      "key": "collab-05",
+      "src": "assets/img/article-templates/collab-05.webp",
+      "alt": "チーム協業とチャットを思わせるシンボル（バリアント5）",
+      "label": "コラボレーションダイナミクス",
+      "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
+      "category": "collaboration"
+    },
+    "imageKey": "collab-05"
   },
   {
     "id": "yt-vVw4C6YiLIs",

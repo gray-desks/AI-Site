@@ -230,5 +230,13 @@
     "sourceName": "Manual Input",
     "videoTitle": "Google Workspace Flows自動化",
     "draftUrl": "posts/2025-11-27-google-workspace-flowsnotebooklm.html"
+  },
+  {
+    "topicKey": "sora-2",
+    "firstSeen": "2025-11-28T07:29:18.798Z",
+    "lastPublishedAt": "2025-11-28",
+    "sourceName": "AIAIChatGPT-cj4sh",
+    "videoTitle": "【Sora 2最新アプデ】作りたい動画を作れる「ストーリーボード」機能/アニメ・コミック・セルフィ―・ニュースキャスターなど「スタイル動画生成」機能",
+    "draftUrl": "posts/2025-11-28-sora-2.html"
   }
 ]

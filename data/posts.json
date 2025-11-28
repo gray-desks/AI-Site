@@ -1,5 +1,53 @@
 [
   {
+    "title": "Sora 2の革新: ストーリーボードとスタイル動画生成の可能性",
+    "date": "2025-11-28",
+    "summary": "OpenAIのSora 2は、テキストや画像から動画を生成するAIモデルとして注目されています。最新のアップデートで追加されたストーリーボード機能と多様なスタイル動画生成機能により、クリエイターはより自由度の高い動画制作が可能になりました。この記事では、これらの新機能がどのように動画制作のプロセスを変革し、ビジネスやエンターテインメントの分野でどのように活用されるかを詳しく解説します。",
+    "tags": [
+      {
+        "slug": "video-generation",
+        "label": "動画生成AI",
+        "category": "技術トピック",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "openai",
+        "label": "OpenAI",
+        "category": "その他",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "tag-3",
+        "label": "ストーリーボード",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "tag-4",
+        "label": "スタイル動画",
+        "category": "その他",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "tag-5",
+        "label": "クリエイティブテクノロジー",
+        "category": "その他",
+        "style": "accent-orange"
+      }
+    ],
+    "url": "posts/2025-11-28-sora-2.html",
+    "slug": "2025-11-28-sora-2",
+    "publishedAt": "2025-11-28T07:29:18.797Z",
+    "image": {
+      "key": "collab-05",
+      "src": "assets/img/article-templates/collab-05.webp",
+      "alt": "チーム協業とチャットを思わせるシンボル（バリアント5）",
+      "label": "コラボレーションダイナミクス",
+      "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
+      "category": "collaboration"
+    }
+  },
+  {
     "title": "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
     "date": "2025-11-27",
     "summary": "Google Workspace FlowsとNotebookLMがもたらす知識管理と業務自動化の進化を探る。特に、Claude for Chromeとの統合がどのように業務効率を向上させるかを具体例を交えて解説し、ビジネス現場での活用可能性を示す。",

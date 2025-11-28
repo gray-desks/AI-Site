@@ -5,9 +5,21 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Fri, 28 Nov 2025 07:25:01 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 28 Nov 2025 07:29:18 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>Sora 2の革新: ストーリーボードとスタイル動画生成の可能性</title>
+    <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-28-sora-2.html</link>
+    <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025-11-28-sora-2.html</guid>
+    <pubDate>Fri, 28 Nov 2025 07:29:18 GMT</pubDate>
+    <description>OpenAIのSora 2は、テキストや画像から動画を生成するAIモデルとして注目されています。最新のアップデートで追加されたストーリーボード機能と多様なスタイル動画生成機能により、クリエイターはより自由度の高い動画制作が可能になりました。この記事では、これらの新機能がどのように動画制作のプロセスを変革し、ビジネスやエンターテインメントの分野でどのように活用されるかを詳しく解説します。</description>
+    <category>動画生成AI</category>
+    <category>OpenAI</category>
+    <category>ストーリーボード</category>
+    <category>スタイル動画</category>
+    <category>クリエイティブテクノロジー</category>
+  </item>
   <item>
     <title>Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025-11-27-google-workspace-flowsnotebooklm.html</link>
