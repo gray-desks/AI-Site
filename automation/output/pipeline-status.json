@@ -1,11 +1,18 @@
 {
   "status": "skipped",
   "generatedFile": null,
-  "executedAt": "2025-11-28T07:05:05.200Z",
+  "executedAt": "2025-11-28T07:10:16.126Z",
   "collector": {
-    "status": "skipped",
-    "reason": "active-candidates-sufficient",
-    "activeCandidates": 30
+    "source": "YouTube",
+    "checkedSources": 17,
+    "newCandidates": 0,
+    "totalCandidates": 42,
+    "errors": [],
+    "metrics": {
+      "totalVideosFound": 5,
+      "newVideosAdded": 0,
+      "duplicatesSkipped": 5
+    }
   },
   "researcher": {
     "status": "no-candidates",
