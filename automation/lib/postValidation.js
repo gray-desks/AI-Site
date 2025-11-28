@@ -37,10 +37,24 @@ const normalizePath = (value) => {
  * @returns {Promise<Array<string>>} HTMLファイル名の配列
  */
 const readPostsDirectory = async () => {
-  const entries = await fs.readdir(postsDir, { withFileTypes: true });
-  return entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith('.html'))
-    .map((entry) => entry.name);
+  const walk = async (dir, base = '') => {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+    const files = await Promise.all(
+      entries.map(async (entry) => {
+        const rel = base ? path.posix.join(base, entry.name) : entry.name;
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          return walk(fullPath, rel);
+        }
+        if (entry.isFile() && entry.name.endsWith('.html')) {
+          return rel.replace(/\\/g, '/');
+        }
+        return null;
+      })
+    );
+    return files.flat().filter(Boolean);
+  };
+  return walk(postsDir);
 };
 
 /**
@@ -95,7 +109,12 @@ const findOrphanPosts = async () => {
   const ignoreList = Array.isArray(VALIDATION?.ORPHAN_POST_IGNORE)
     ? VALIDATION.ORPHAN_POST_IGNORE
     : [];
-  const ignores = new Set(ignoreList);
+  // 無視リストはファイル名だけでもパスでもヒットするよう正規化
+  const ignores = new Set(
+    ignoreList
+      .map(normalizePath)
+      .filter(Boolean)
+  );
 
   // 1. `posts/` ディレクトリ内の全HTMLファイルを取得
   const htmlFiles = await readPostsDirectory();
@@ -106,11 +125,15 @@ const findOrphanPosts = async () => {
 
   // 4. HTMLファイルの中から、無視リストになく、かつ登録済みURLにもないものを抽出
   return htmlFiles
-    .filter((name) => !ignores.has(name)) // 無視リストにあるファイルを除外
     .map((name) => ({
       filename: name,
       url: normalizePath(path.posix.join('posts', name)), // ファイル名から正規化されたURLパスを生成
     }))
+    .filter((entry) => {
+      if (!entry?.url) return false;
+      const base = path.posix.basename(entry.url);
+      return !ignores.has(entry.url) && !ignores.has(base);
+    }) // 無視リストにあるファイルを除外
     .filter((entry) => !knownUrls.has(entry.url)); // 登録済みのURLセットに含まれていないものをフィルタリング
 };
 

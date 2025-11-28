@@ -7,7 +7,12 @@
     "pipeline": "node automation/pipeline/index.js",
     "research": "node automation/researcher/index.js",
     "generate": "node automation/generator/index.js",
-    "publish": "node automation/publisher/index.js"
+    "publish": "node automation/publisher/index.js",
+    "posts": "node automation/scripts/posts-cli.js",
+    "posts:drafts": "node automation/scripts/posts-cli.js drafts",
+    "posts:status": "node automation/scripts/posts-cli.js status",
+    "posts:orphans": "node automation/scripts/posts-cli.js orphans",
+    "posts:migrate-folders": "node automation/scripts/migrate-posts-folders.js"
   },
   "keywords": [
     "ai",

@@ -47,12 +47,13 @@ const getHeaderHTML = (basePath, currentPath) => {
   loadTemplates();
   if (!cachedHeaderTemplate) return '';
 
+  const prefix = basePath === './' ? '' : basePath;
   const isHome = currentPath === 'index.html' || currentPath === '';
   const isAbout = currentPath === 'about.html';
 
-  const homeLink = basePath === '../' ? '../index.html' : 'index.html';
-  const aboutLink = basePath === '../' ? '../about.html' : 'about.html';
-  const logoPath = basePath + 'assets/img/logo.svg';
+  const homeLink = `${prefix}index.html`;
+  const aboutLink = `${prefix}about.html`;
+  const logoPath = `${prefix}assets/img/logo.svg`;
 
   // プレースホルダーの置換
   return cachedHeaderTemplate
@@ -73,10 +74,11 @@ const getFooterHTML = (basePath) => {
   if (!cachedFooterTemplate) return '';
 
   const currentYear = new Date().getFullYear();
-  const homeLink = basePath === '../' ? '../index.html' : 'index.html';
-  const aboutLink = basePath === '../' ? '../about.html' : 'about.html';
-  const privacyLink = basePath === '../' ? '../privacy-policy.html' : 'privacy-policy.html';
-  const contactLink = basePath === '../' ? '../contact.html' : 'contact.html';
+  const prefix = basePath === './' ? '' : basePath;
+  const homeLink = `${prefix}index.html`;
+  const aboutLink = `${prefix}about.html`;
+  const privacyLink = `${prefix}privacy-policy.html`;
+  const contactLink = `${prefix}contact.html`;
 
   // プレースホルダーの置換
   return cachedFooterTemplate

@@ -26,6 +26,28 @@ const statusPath = path.join(root, 'automation', 'output', 'pipeline-status.json
 const feedPath = path.join(root, 'feed.xml');
 
 /**
+ * 指定された記事オブジェクトから、階層化された相対パスを生成します。
+ * 期待フォーマット: posts/YYYY/MM/<slug>.html
+ * @param {object} article
+ * @returns {string} posts配下の相対パス
+ */
+const buildArticleRelativePath = (article = {}) => {
+  if (article.relativePath) return article.relativePath;
+  const fileName = `${article.slug ?? 'draft'}.html`;
+  const sourceDate = article.date || article.publishedAt || '';
+  let year = 'unknown';
+  let month = '01';
+  if (sourceDate) {
+    const parsed = new Date(sourceDate);
+    if (!Number.isNaN(parsed.getTime())) {
+      year = String(parsed.getUTCFullYear());
+      month = String(parsed.getUTCMonth() + 1).padStart(2, '0');
+    }
+  }
+  return path.posix.join('posts', year, month, fileName);
+};
+
+/**
  * 日付文字列をパースしてタイムスタンプ（ミリ秒）を返します。
  * パースに失敗した場合はフォールバック値を試みます。
  * @param {string} value - パースする日付文字列 (e.g., ISO 8601)
@@ -156,8 +178,7 @@ const runPublisher = async ({ collectorResult, researcherResult, generatorResult
   // Generatorが記事を生成した場合のみ処理を実行
   if (generatorResult?.generated && generatorResult.article?.htmlContent) {
     const article = generatorResult.article;
-    const relativePath =
-      article.relativePath || path.posix.join('posts', `${article.slug ?? 'draft'}.html`);
+    const relativePath = buildArticleRelativePath(article);
     const absolutePath = path.join(root, relativePath);
     ensureDir(path.dirname(absolutePath));
 

@@ -476,7 +476,12 @@ const runGenerator = async (input = null) => {
   const slugifiedTitle = slugify(article.title, topicKey || 'ai-topic');
   const slug = `${today}-${slugifiedTitle}`;
   const fileName = `${slug}.html`;
-  const publishRelativePath = path.posix.join('posts', fileName);
+  const [year, month = '01'] = today.split('-');
+  const publishRelativePath = path.posix.join('posts', year, month, fileName);
+
+  // 記事のディレクトリ深さに応じてアセットベースパスを計算（例: posts/2025/11/... -> ../../../）
+  const pathDepth = Math.max(1, publishRelativePath.split('/').length - 1);
+  const assetBase = '../'.repeat(pathDepth);
 
   // HTMLテンプレートに渡すメタデータ
   const meta = {
@@ -489,10 +494,7 @@ const runGenerator = async (input = null) => {
   };
 
   // --- HTML生成 ---
-  const publishHtml = compileArticleHtml(hydratedArticle, meta, {
-    assetBase: '../',
-    image: selectedImage,
-  });
+  const publishHtml = compileArticleHtml(hydratedArticle, meta, { assetBase, image: selectedImage });
 
   const now = new Date().toISOString();
 
