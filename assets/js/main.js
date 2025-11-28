@@ -178,8 +178,16 @@ const initPostList = () => {
     // 下書きタグの表示を保証（下書きが存在する場合）
     const hasDraftTag = tags.some((tag) => tag.slug === 'draft');
     const draftCount = posts.filter(isDraftPost).length;
-    if (!hasDraftTag && draftCount > 0) {
-      tags.unshift({ slug: 'draft', label: '下書き', count: draftCount });
+    let draftTag = null;
+    if (hasDraftTag) {
+      const idx = tags.findIndex((tag) => tag.slug === 'draft');
+      draftTag = tags.splice(idx, 1)[0];
+    } else if (draftCount > 0) {
+      draftTag = { slug: 'draft', label: '下書き', count: draftCount };
+    }
+    if (draftTag) {
+      draftTag.count = draftCount || draftTag.count || 0;
+      tags.push(draftTag); // 常に最後に配置
     }
     return tags;
   };

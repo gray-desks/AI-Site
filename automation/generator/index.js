@@ -41,6 +41,7 @@ const layoutHtmlTemplatePath = path.join(root, 'automation', 'templates', 'layou
 
 // --- 定数 ---
 const { DEDUPE_WINDOW_DAYS } = GENERATOR;
+const DEFAULT_POST_STATUS = process.env.POST_DEFAULT_STATUS || 'draft';
 // ロガーとメトリクス追跡ツールを初期化
 const logger = createLogger('generator');
 const metricsTracker = createMetricsTracker('generator');
@@ -537,6 +538,7 @@ const runGenerator = async (input = null) => {
     url: publishRelativePath,
     slug,
     publishedAt: now,
+    status: DEFAULT_POST_STATUS,
     image: selectedImage || null,
   };
 
