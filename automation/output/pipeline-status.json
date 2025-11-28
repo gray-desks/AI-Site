@@ -1,7 +1,7 @@
 {
   "status": "skipped",
   "generatedFile": null,
-  "executedAt": "2025-11-28T07:10:16.126Z",
+  "executedAt": "2025-11-28T07:16:18.075Z",
   "collector": {
     "source": "YouTube",
     "checkedSources": 17,
@@ -9,15 +9,295 @@
     "totalCandidates": 42,
     "errors": [],
     "metrics": {
-      "totalVideosFound": 5,
+      "totalVideosFound": 0,
       "newVideosAdded": 0,
-      "duplicatesSkipped": 5
+      "duplicatesSkipped": 0
     }
   },
   "researcher": {
-    "status": "no-candidates",
+    "status": "skipped",
     "candidate": null,
-    "skipped": [],
+    "skipped": [
+      {
+        "id": "yt-53O8yynXBqM",
+        "reason": "transcript-unavailable",
+        "candidate": {
+          "id": "yt-53O8yynXBqM",
+          "source": {
+            "platform": "YouTube",
+            "name": "AI-Hakase",
+            "channelId": "UC_XCzQX1YiDetIm5IUYvZ7w",
+            "url": "https://www.youtube.com/@AI-Hakase",
+            "focus": [
+              "AI解説",
+              "研究トレンド"
+            ]
+          },
+          "video": {
+            "id": "53O8yynXBqM",
+            "title": "【PCスペック不要】秒速でSOTA画質？！話題の「Z-Image」を徹底検証したら、生成AIの常識が崩壊しました…｜「衝撃の真実」と最強の使い方を解説｜ComfyUI・低VRAM",
+            "url": "https://www.youtube.com/watch?v=53O8yynXBqM",
+            "description": "動画のもとになったNote記事 ...",
+            "thumbnail": "https://i.ytimg.com/vi/53O8yynXBqM/hqdefault.jpg",
+            "publishedAt": "2025-11-27T14:45:00Z"
+          },
+          "status": "skipped",
+          "createdAt": "2025-11-27T22:56:11.040Z",
+          "updatedAt": "2025-11-28T07:15:59.002Z",
+          "topicKey": "pcsotaz-imageaicomfyuivram",
+          "notes": "YouTube Data API: AI-Hakase の最新動画",
+          "skipReason": "transcript-unavailable"
+        }
+      },
+      {
+        "id": "yt-_5L1Emc-Djk",
+        "reason": "transcript-unavailable",
+        "candidate": {
+          "id": "yt-_5L1Emc-Djk",
+          "source": {
+            "platform": "YouTube",
+            "name": "AIAIChatGPT-cj4sh",
+            "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
+            "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
+            "focus": [
+              "ChatGPT",
+              "生成AIノウハウ"
+            ]
+          },
+          "video": {
+            "id": "_5L1Emc-Djk",
+            "title": "【Sora 2最新アプデ】作りたい動画を作れる「ストーリーボード」機能/アニメ・コミック・セルフィ―・ニュースキャスターなど「スタイル動画生成」機能",
+            "url": "https://www.youtube.com/watch?v=_5L1Emc-Djk",
+            "description": "動画の説明 (2025年)11月の中旬～下旬にかけて OpenAIは、テキストや画像から動画を生成できる 動画生成AIモデル「Sora 2」の ...",
+            "thumbnail": "https://i.ytimg.com/vi/_5L1Emc-Djk/hqdefault.jpg",
+            "publishedAt": "2025-11-27T09:05:49Z"
+          },
+          "status": "skipped",
+          "createdAt": "2025-11-27T11:45:44.255Z",
+          "updatedAt": "2025-11-28T07:16:02.579Z",
+          "topicKey": "sora-2",
+          "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
+          "skipReason": "transcript-unavailable"
+        }
+      },
+      {
+        "id": "yt-YpEiTf4a5WQ",
+        "reason": "transcript-unavailable",
+        "candidate": {
+          "id": "yt-YpEiTf4a5WQ",
+          "source": {
+            "platform": "YouTube",
+            "name": "google-school",
+            "channelId": "UC_kTlZMryHFPMc7QMi4g0VQ",
+            "url": "https://www.youtube.com/@google-school",
+            "focus": [
+              "Google",
+              "AI教育"
+            ]
+          },
+          "video": {
+            "id": "YpEiTf4a5WQ",
+            "title": "【便利】「多言語対応」の音声付きのスライドを作る方法を徹底解説！",
+            "url": "https://www.youtube.com/watch?v=YpEiTf4a5WQ",
+            "description": "「Vids×TTS」で多言語対応のスライドを作れ！今回はスライドを多言語化するというテーマで、どのようにしたら実現できるのか ...",
+            "thumbnail": "https://i.ytimg.com/vi/YpEiTf4a5WQ/hqdefault.jpg",
+            "publishedAt": "2025-11-26T09:00:52Z"
+          },
+          "status": "skipped",
+          "createdAt": "2025-11-27T22:55:53.914Z",
+          "updatedAt": "2025-11-28T07:16:05.402Z",
+          "topicKey": "ai-topic",
+          "notes": "YouTube Data API: google-school の最新動画",
+          "skipReason": "transcript-unavailable"
+        }
+      },
+      {
+        "id": "yt-tX1SPRor_oI",
+        "reason": "transcript-unavailable",
+        "candidate": {
+          "id": "yt-tX1SPRor_oI",
+          "source": {
+            "platform": "YouTube",
+            "name": "AIAIChatGPT-cj4sh",
+            "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
+            "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
+            "focus": [
+              "ChatGPT",
+              "生成AIノウハウ"
+            ]
+          },
+          "video": {
+            "id": "tX1SPRor_oI",
+            "title": "【画像から3Dワールド生成】現実そっくりの3D環境を量産できるAI世界モデル「Marble」の概要・使い方・活用事例！",
+            "url": "https://www.youtube.com/watch?v=tX1SPRor_oI",
+            "description": "動画の説明 World Labsは、(2025年)11月13日 画像を読み込むと 読み込んだ画像から自動で3D空間を生成してくれ 作った3D空間 ...",
+            "thumbnail": "https://i.ytimg.com/vi/tX1SPRor_oI/hqdefault.jpg",
+            "publishedAt": "2025-11-25T09:06:02Z"
+          },
+          "status": "skipped",
+          "createdAt": "2025-11-27T11:45:45.243Z",
+          "updatedAt": "2025-11-28T07:16:07.847Z",
+          "topicKey": "3d3daimarble",
+          "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
+          "skipReason": "transcript-unavailable"
+        }
+      },
+      {
+        "id": "yt-maFLI82NKgE",
+        "reason": "transcript-unavailable",
+        "candidate": {
+          "id": "yt-maFLI82NKgE",
+          "source": {
+            "platform": "YouTube",
+            "name": "ウェブマニア",
+            "channelId": "UCvpDuJLRV07mTu6gh9CGq0w",
+            "url": "https://www.youtube.com/@%E3%82%A6%E3%82%A7%E3%83%96%E3%83%9E%E3%83%8B%E3%82%A2",
+            "focus": [
+              "Webマーケ",
+              "AI活用"
+            ]
+          },
+          "video": {
+            "id": "maFLI82NKgE",
+            "title": "知らないと損するWindowsの拡張機能！デザイン・実用性を向上する『Windhawk』のおすすめ拡張機能18選",
+            "url": "https://www.youtube.com/watch?v=maFLI82NKgE",
+            "description": "ゲーム開発に挑戦中！公式Xをぜひぜひフォローしてね♪ ：https://x.com/webmaniapro ＜関連動画＞ 個人ゲーム開発を始めて約1 ...",
+            "thumbnail": "https://i.ytimg.com/vi/maFLI82NKgE/hqdefault.jpg",
+            "publishedAt": "2025-11-24T10:26:14Z"
+          },
+          "status": "skipped",
+          "createdAt": "2025-11-27T22:56:02.587Z",
+          "updatedAt": "2025-11-28T07:16:10.368Z",
+          "topicKey": "windowswindhawk18",
+          "notes": "YouTube Data API: ウェブマニア の最新動画",
+          "skipReason": "transcript-unavailable"
+        }
+      },
+      {
+        "id": "yt-IAgT00oqBcw",
+        "reason": "transcript-unavailable",
+        "candidate": {
+          "id": "yt-IAgT00oqBcw",
+          "source": {
+            "platform": "YouTube",
+            "name": "chaen-ai-lab",
+            "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
+            "url": "https://www.youtube.com/@chaen-ai-lab",
+            "focus": [
+              "AI解説",
+              "LLM"
+            ]
+          },
+          "video": {
+            "id": "IAgT00oqBcw",
+            "title": "【衝撃】イーロン・マスクの報酬150兆円！？使い道が異次元すぎる。 #shorts #イーロンマスク#ビジネス #雑学 #お金 #テスラ",
+            "url": "https://www.youtube.com/watch?v=IAgT00oqBcw",
+            "description": "【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 日本のGDPの4分の1に ...",
+            "thumbnail": "https://i.ytimg.com/vi/IAgT00oqBcw/hqdefault.jpg",
+            "publishedAt": "2025-11-23T13:38:21Z"
+          },
+          "status": "skipped",
+          "createdAt": "2025-11-27T11:45:32.563Z",
+          "updatedAt": "2025-11-28T07:16:12.263Z",
+          "topicKey": "150-shorts",
+          "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+          "skipReason": "transcript-unavailable"
+        }
+      },
+      {
+        "id": "yt-jrCuW7HJbO4",
+        "reason": "transcript-unavailable",
+        "candidate": {
+          "id": "yt-jrCuW7HJbO4",
+          "source": {
+            "platform": "YouTube",
+            "name": "ウェブマニア",
+            "channelId": "UCvpDuJLRV07mTu6gh9CGq0w",
+            "url": "https://www.youtube.com/@%E3%82%A6%E3%82%A7%E3%83%96%E3%83%9E%E3%83%8B%E3%82%A2",
+            "focus": [
+              "Webマーケ",
+              "AI活用"
+            ]
+          },
+          "video": {
+            "id": "jrCuW7HJbO4",
+            "title": "個人ゲーム開発を始めて約1か月の進捗共有＆ゲーム情報公開！#ゲーム開発",
+            "url": "https://www.youtube.com/watch?v=jrCuW7HJbO4",
+            "description": "公式Xはこちら！フォローいただけると嬉しいです♪ ：https://x.com/webmaniapro ＜ウェブマニアについて＞ おすすめのWEB ...",
+            "thumbnail": "https://i.ytimg.com/vi/jrCuW7HJbO4/hqdefault.jpg",
+            "publishedAt": "2025-11-23T12:21:18Z"
+          },
+          "status": "skipped",
+          "createdAt": "2025-11-27T11:45:34.040Z",
+          "updatedAt": "2025-11-28T07:16:14.023Z",
+          "topicKey": "1",
+          "notes": "YouTube Data API: ウェブマニア の最新動画",
+          "skipReason": "transcript-unavailable"
+        }
+      },
+      {
+        "id": "yt-qDKgMdw9ISg",
+        "reason": "transcript-unavailable",
+        "candidate": {
+          "id": "yt-qDKgMdw9ISg",
+          "source": {
+            "platform": "YouTube",
+            "name": "ウェブマニア",
+            "channelId": "UCvpDuJLRV07mTu6gh9CGq0w",
+            "url": "https://www.youtube.com/@%E3%82%A6%E3%82%A7%E3%83%96%E3%83%9E%E3%83%8B%E3%82%A2",
+            "focus": [
+              "Webマーケ",
+              "AI活用"
+            ]
+          },
+          "video": {
+            "id": "qDKgMdw9ISg",
+            "title": "【Unreal Engine 5】知識0の完全初心者がどうやってゲーム開発してるの？現在開発中のゲーム映像もチラ見せします！",
+            "url": "https://www.youtube.com/watch?v=qDKgMdw9ISg",
+            "description": "今回の動画について＞ ゲーム開発の夢に挑戦中のウェブマニアが、現在どうやってUnreal Engine 5を学習しているかをご紹介し ...",
+            "thumbnail": "https://i.ytimg.com/vi/qDKgMdw9ISg/hqdefault.jpg",
+            "publishedAt": "2025-11-22T09:30:38Z"
+          },
+          "status": "skipped",
+          "createdAt": "2025-11-27T22:56:03.474Z",
+          "updatedAt": "2025-11-28T07:16:15.786Z",
+          "topicKey": "unreal-engine-50",
+          "notes": "YouTube Data API: ウェブマニア の最新動画",
+          "skipReason": "transcript-unavailable"
+        }
+      },
+      {
+        "id": "yt-7I49onMkt0g",
+        "reason": "transcript-unavailable",
+        "candidate": {
+          "id": "yt-7I49onMkt0g",
+          "source": {
+            "platform": "YouTube",
+            "name": "technavi_tooru",
+            "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
+            "url": "https://www.youtube.com/@technavi_tooru",
+            "focus": [
+              "テックニュース",
+              "生成AI"
+            ]
+          },
+          "video": {
+            "id": "7I49onMkt0g",
+            "title": "Apple MacとWindowsでLLMを分散実行！Parallaxを使った自家製AIクラスターの構築",
+            "url": "https://www.youtube.com/watch?v=7I49onMkt0g",
+            "description": "メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております  ‍♂️  (YouTubeアプリからの加入 ...",
+            "thumbnail": "https://i.ytimg.com/vi/7I49onMkt0g/hqdefault.jpg",
+            "publishedAt": "2025-11-22T02:09:53Z"
+          },
+          "status": "skipped",
+          "createdAt": "2025-11-27T22:56:12.554Z",
+          "updatedAt": "2025-11-28T07:16:18.070Z",
+          "topicKey": "apple-macwindowsllmparallaxai",
+          "notes": "YouTube Data API: technavi_tooru の最新動画",
+          "skipReason": "transcript-unavailable"
+        }
+      }
+    ],
     "recentTitles": [
       "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
       "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
