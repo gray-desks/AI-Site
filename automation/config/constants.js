@@ -27,7 +27,7 @@ const RESEARCHER = {
   // プロンプトに含める字幕テキストの最大文字数（長すぎる場合はトリム）
   TRANSCRIPT_MAX_LENGTH: 9000,
   // 字幕がこの文字数未満しか取得できない場合は不十分としてスキップ
-  TRANSCRIPT_MIN_CHARS: 120,
+  TRANSCRIPT_MIN_CHARS: 60,
 };
 
 // --- Generatorステージ関連 ---

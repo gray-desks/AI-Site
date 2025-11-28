@@ -233,12 +233,15 @@ const runResearcher = async ({ candidateId } = {}) => {
     const rawTranscript = await fetchTranscriptText(videoId);
     let transcript = normalizeTranscript(rawTranscript);
 
-    // 字幕がない場合は動画説明文をフォールバックとして利用
-    if (!transcript && candidate.video?.description) {
-      const fallback = normalizeTranscript(candidate.video.description);
+    // 字幕がない場合はタイトル+説明文をフォールバックとして利用（短いショート対策）
+    if (!transcript) {
+      const parts = [];
+      if (candidate.video?.title) parts.push(candidate.video.title);
+      if (candidate.video?.description) parts.push(candidate.video.description);
+      const fallback = normalizeTranscript(parts.join(' '));
       if (fallback) {
         transcript = fallback;
-        logger.info('字幕なしのため動画説明文をフォールバックとして使用します。');
+        logger.info('字幕なしのためタイトル+説明文をフォールバックとして使用します。');
       }
     }
 
