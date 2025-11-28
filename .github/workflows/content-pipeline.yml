@@ -10,7 +10,7 @@
 #
 # 処理フロー:
 # 1. Collector: YouTubeチャンネルから最新動画を収集
-# 2. Researcher: キーワード抽出とGoogle検索による情報収集
+# 2. Researcher: キーワード抽出とAIによる情報収集
 # 3. Generator: OpenAI APIを使った記事生成
 # 4. Publisher: 生成された記事をサイトに公開
 # ====================================================================
@@ -73,15 +73,13 @@ jobs:
       # ----------------------------------------------------------------
       # OpenAI APIを使用して、以下の処理を順次実行します:
       # 1. YouTube動画の収集（Collector）
-      # 2. キーワード抽出とGoogle検索（Researcher）
+      # 2. キーワード抽出とリサーチ（Researcher）
       # 3. 記事の生成（Generator）
       # 4. 記事の公開（Publisher）
       - name: Generate article via OpenAI API
         env:
           # 必要なAPIキーをGitHub Secretsから取得して環境変数に設定
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}           # OpenAI API（記事生成、キーワード抽出）
-          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }} # Google Custom Search API
-          GOOGLE_SEARCH_CX: ${{ secrets.GOOGLE_SEARCH_CX }}       # Googleカスタム検索エンジンID
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}         # YouTube Data API v3
           ARTICLES_PER_RUN: 1                                     # 1ジョブで1本生成（1日2回のスケジュールで合計2本）
         run: node automation/pipeline/index.js

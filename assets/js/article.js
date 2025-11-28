@@ -280,9 +280,24 @@ window.initArticlePage = () => {
 
         // 本文のテキスト抽出（簡易的なHTMLタグ除去と整形）
         let bodyText = '';
-        const paragraphs = articleContent.querySelectorAll('p, h2, h3, ul, ol');
 
-        paragraphs.forEach(el => {
+        // 記事本文の要素を取得
+        const contentElements = Array.from(articleContent.querySelectorAll('p, h2, h3, ul, ol'));
+
+        // まとめの要素を取得して追加
+        const conclusion = document.querySelector('.article-conclusion');
+        if (conclusion) {
+          const conclusionHeading = conclusion.querySelector('.conclusion-heading');
+          if (conclusionHeading) contentElements.push(conclusionHeading);
+
+          const conclusionContent = conclusion.querySelector('.conclusion-content');
+          if (conclusionContent) {
+            const conclusionParagraphs = conclusionContent.querySelectorAll('p, ul, ol');
+            contentElements.push(...Array.from(conclusionParagraphs));
+          }
+        }
+
+        contentElements.forEach(el => {
           // ボタン自体のテキストが含まれないようにチェック
           if (el.closest('.note-copy-btn-container')) return;
 
