@@ -12,50 +12,12 @@ const YOUTUBE_API_BASE = 'https://www.googleapis.com/youtube/v3';
 
 // --- 各タスクで使用するOpenAIモデルの設定 ---
 
-// キーワード抽出用モデル
-const KEYWORD_EXTRACTION = {
-  // 使用するモデルID (gpt-4oに変更して403エラーを回避)
-  model: 'gpt-4o',
-  // フォールバックモデル (主モデルが失敗した場合に使用)
-  fallbackModel: 'gpt-3.5-turbo',
-  // 生成されるテキストの多様性 (0に近いほど決定的)
-  temperature: 0.3,
-  // 生成されるトークンの最大数
-  max_tokens: 100,
-};
-
-// 検索クエリ生成用モデル
-const QUERY_GENERATION = {
-  model: 'gpt-4o',
-  fallbackModel: 'gpt-3.5-turbo',
-  temperature: 0.7,
-  response_format: { type: 'json_object' },
-};
-
 // テーマ重複判定用モデル（軽量・低コスト）
 const THEME_DEDUPLICATION = {
   model: 'gpt-4o-mini',
   fallbackModel: 'gpt-3.5-turbo',
   temperature: 0.2,
   response_format: { type: 'json_object' },
-};
-
-// トピックキー抽出用モデル
-const TOPIC_KEY_EXTRACTION = {
-  model: 'gpt-4o',
-  fallbackModel: 'gpt-3.5-turbo',
-  temperature: 0.2,
-  max_tokens: 200,
-  // レスポンス形式をJSONに指定
-  response_format: { type: 'json_object' },
-};
-
-// 検索結果の要約生成用モデル
-const SUMMARY_GENERATION = {
-  model: 'gpt-4o',
-  fallbackModel: 'gpt-3.5-turbo',
-  temperature: 0.3,
-  max_tokens: 800,
 };
 
 // 記事本文の生成用モデル
@@ -70,10 +32,6 @@ const ARTICLE_GENERATION = {
 module.exports = {
   OPENAI_API_URL,
   YOUTUBE_API_BASE,
-  KEYWORD_EXTRACTION,
-  TOPIC_KEY_EXTRACTION,
-  SUMMARY_GENERATION,
-  QUERY_GENERATION,
   THEME_DEDUPLICATION,
   ARTICLE_GENERATION,
 };

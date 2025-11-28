@@ -28,15 +28,6 @@ const RESEARCHER = {
   TRANSCRIPT_MAX_LENGTH: 9000,
   // 字幕がこの文字数未満しか取得できない場合は不十分としてスキップ
   TRANSCRIPT_MIN_CHARS: 300,
-  // --- Legacy (Google検索ベースの実装との互換用) ---
-  GOOGLE_TOP_LIMIT: 5,
-  MIN_SUMMARIES: 2,
-  ARTICLE_FETCH_TIMEOUT_MS: 15000,
-  ARTICLE_TEXT_MAX_LENGTH: 20000,
-  SUMMARY_MIN_LENGTH: 500,
-  SUMMARY_MAX_LENGTH: 800,
-  USER_AGENT: 'AIInfoBlogCollector/1.0 (+https://github.com/gray-desk/AI-information-blog)',
-  SEARCH_FRESHNESS_DAYS: 7,
 };
 
 // --- Generatorステージ関連 ---
@@ -48,8 +39,6 @@ const GENERATOR = {
 // --- APIレート制限 ---
 // 各API呼び出しの間に設ける待機時間（ミリ秒）
 const RATE_LIMITS = {
-  // 候補1件あたりの処理後の待機時間
-  CANDIDATE_PROCESSING_WAIT_MS: 500,
   // テーマ重複チェックを連続で行う際の待機時間
   THEME_DEDUP_WAIT_MS: 300,
 };
