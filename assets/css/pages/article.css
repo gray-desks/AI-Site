@@ -879,6 +879,13 @@ body.article-page main {
   box-shadow: var(--shadow-sm);
 }
 
+.article-image figcaption {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin-top: var(--space-xs);
+}
+
 /* === Note記事用コピーボタン === */
 .note-copy-btn-container {
   margin-top: var(--space-xl);
