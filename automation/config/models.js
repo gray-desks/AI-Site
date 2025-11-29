@@ -29,9 +29,18 @@ const ARTICLE_GENERATION = {
   response_format: { type: 'json_object' },
 };
 
+// 字幕が薄い動画を補うための補助アウトライン生成用モデル
+const SUPPLEMENTAL_OUTLINE = {
+  model: 'gpt-4o-mini',
+  fallbackModel: 'gpt-3.5-turbo',
+  temperature: 0.35,
+  maxTokens: 320,
+};
+
 module.exports = {
   OPENAI_API_URL,
   YOUTUBE_API_BASE,
   THEME_DEDUPLICATION,
   ARTICLE_GENERATION,
+  SUPPLEMENTAL_OUTLINE,
 };

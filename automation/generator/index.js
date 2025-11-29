@@ -12,7 +12,7 @@ const path = require('path');
 const { readJson, writeJson } = require('../lib/io');
 const slugify = require('../lib/slugify');
 const { GENERATOR } = require('../config/constants');
-const { ARTICLE_GENERATION } = require('../config/models');
+const { ARTICLE_GENERATION, SUPPLEMENTAL_OUTLINE } = require('../config/models');
 const ARTICLE_GENERATION_PROMPT = require('../prompts/articleGeneration');
 const { callOpenAI } = require('../lib/openai');
 const { readCandidates, writeCandidates } = require('../lib/candidatesRepository');
@@ -21,6 +21,7 @@ const { createMetricsTracker } = require('../lib/metrics');
 const { createTagMapper } = require('./services/tagMapper');
 const { createImageSelector } = require('./services/imageSelector');
 const { createTemplateRenderer } = require('./services/templateRenderer');
+const { isTopicBlocked, blockTopic } = require('../lib/topicBlocklist');
 
 // --- パス設定 ---
 // プロジェクトのルートディレクトリを取得
@@ -69,7 +70,7 @@ const { compileArticleHtml } = createTemplateRenderer({
  * 生成された記事オブジェクトの簡易バリデーション
  * 必須フィールドや最低長を満たさない場合はエラーを投げ、再試行用にキーワードを戻せるようにする。
  */
-const validateArticlePayload = (article) => {
+const validateArticlePayload = (article, { lenient = false } = {}) => {
   if (!article || typeof article !== 'object') {
     throw new Error('article payload is empty or invalid');
   }
@@ -85,13 +86,18 @@ const validateArticlePayload = (article) => {
       }, 0)
       : 0);
 
+  const minSummary = lenient ? 80 : 100;
+  const minIntro = lenient ? 220 : 300;
+  const minSectionBody = lenient ? 160 : 200;
+  const minTotal = lenient ? 1400 : 1800;
+
   if (!article.title || article.title.length < 10) {
     throw new Error('article title too short');
   }
-  if (!article.summary || article.summary.length < 100) {
+  if (!article.summary || article.summary.length < minSummary) {
     throw new Error('article summary too short');
   }
-  if (!article.intro || article.intro.length < 300) {
+  if (!article.intro || article.intro.length < minIntro) {
     throw new Error('article intro too short');
   }
   if (!Array.isArray(article.sections) || article.sections.length === 0) {
@@ -99,12 +105,12 @@ const validateArticlePayload = (article) => {
   }
   const hasValidSection = article.sections.some((sec) =>
     Array.isArray(sec.subSections) &&
-    sec.subSections.some((sub) => (sub.body || '').length >= 200),
+    sec.subSections.some((sub) => (sub.body || '').length >= minSectionBody),
   );
   if (!hasValidSection) {
     throw new Error('article sections too thin');
   }
-  if (totalLength < 1800) {
+  if (totalLength < minTotal) {
     throw new Error('article total length too short');
   }
 };
@@ -159,17 +165,112 @@ const parseCompletionContent = (content) => {
 };
 
 /**
+ * 動画説明文からタイムスタンプ付きのチャプター行を抽出します。
+ * @param {string} description
+ * @returns {Array<string>}
+ */
+const extractChaptersFromDescription = (description = '') => {
+  if (!description) return [];
+  return description
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line && /\b\d{1,2}:\d{2}(?::\d{2})?\b/.test(line))
+    .slice(0, 12);
+};
+
+/**
+ * 字幕が薄い場合に、タイトルや説明文から補助アウトラインを生成します。
+ * @param {string} apiKey
+ * @param {object} candidate
+ * @returns {Promise<string|null>}
+ */
+const generateSupplementalOutline = async (apiKey, candidate) => {
+  const description = candidate.video?.description || '説明文なし';
+  const focus = Array.isArray(candidate.source?.focus) ? candidate.source.focus.filter(Boolean) : [];
+  const focusText = focus.length > 0 ? focus.join(', ') : 'AI/テック全般';
+  const messages = [
+    {
+      role: 'system',
+      content:
+        'あなたは動画編集部のリサーチ担当です。字幕がない動画でもブログ記事化できるよう、短い説明文から記事の骨子を日本語で箇条書きしてください。最大5行、180〜260文字程度で、読者メリットと具体的な論点が伝わるようにしてください。Markdown記号は不要です。',
+    },
+    {
+      role: 'user',
+      content: `動画タイトル: ${candidate.video?.title || 'Untitled'}
+説明文: ${description}
+チャンネルのフォーカス: ${focusText}
+出力: 箇条書きのみ。`,
+    },
+  ];
+
+  try {
+    const completion = await callOpenAI({
+      apiKey,
+      messages,
+      model: SUPPLEMENTAL_OUTLINE.model,
+      fallbackModel: SUPPLEMENTAL_OUTLINE.fallbackModel,
+      temperature: SUPPLEMENTAL_OUTLINE.temperature,
+      maxTokens: SUPPLEMENTAL_OUTLINE.maxTokens,
+    });
+    const content = completion?.choices?.[0]?.message?.content;
+    if (typeof content === 'string') {
+      return content.trim();
+    }
+  } catch (error) {
+    logger.warn(`[generator] 補助アウトライン生成に失敗しました: ${error.message}`);
+  }
+  return null;
+};
+
+/**
+ * 字幕がない/短い場合に、プロンプトに添える補助情報を構築します。
+ * @param {string} apiKey
+ * @param {object} candidate
+ * @returns {Promise<string>}
+ */
+const buildSupplementalNotes = async (apiKey, candidate) => {
+  const notes = [];
+  const transcriptLength = candidate.transcript ? candidate.transcript.length : 0;
+  const description = candidate.video?.description || '';
+
+  const chapters = extractChaptersFromDescription(description);
+  if (chapters.length > 0) {
+    notes.push(`チャプター抜粋（説明文より）:\n${chapters.join('\n')}`);
+  }
+
+  const focus = Array.isArray(candidate.source?.focus) ? candidate.source.focus.filter(Boolean) : [];
+  if (focus.length > 0) {
+    notes.push(`チャンネルのフォーカス: ${focus.join(' / ')}`);
+  }
+
+  const needsOutline = transcriptLength < 400 && description.length < 500;
+  if (needsOutline) {
+    const outline = await generateSupplementalOutline(apiKey, candidate);
+    if (outline) {
+      notes.push(`AI補助アウトライン（字幕なし対策）:\n${outline}`);
+    }
+  }
+
+  return notes.join('\n\n');
+};
+
+/**
  * 記事生成プロンプトに渡すソース情報を組み立てます。
  * @param {object} candidate - 候補オブジェクト
+ * @param {object} [options]
+ * @param {string} [options.supplementalNotes] - 字幕不足時の補助情報
  * @returns {string} 整形された文字列
  */
-const buildSourceMaterial = (candidate) => {
+const buildSourceMaterial = (candidate, { supplementalNotes } = {}) => {
   const blocks = [];
   if (candidate.transcript) {
     blocks.push(`【Transcript 抜粋】\n${candidate.transcript}`);
   }
   if (candidate.video?.description) {
     blocks.push(`【Video Description】\n${candidate.video.description}`);
+  }
+  if (supplementalNotes) {
+    blocks.push(`【補助情報】\n${supplementalNotes}`);
   }
   if (candidate.themeCheck?.reason) {
     const matched = candidate.themeCheck?.matchedTitle
@@ -186,9 +287,14 @@ const buildSourceMaterial = (candidate) => {
  * @param {object} candidate - 記事の元となる候補データ
  * @returns {Promise<object>} 生成された記事データ (JSON)
  */
-const requestArticleDraft = async (apiKey, candidate, { forceLongSummary = false, forceLongIntro = false } = {}) => {
+const requestArticleDraft = async (
+  apiKey,
+  candidate,
+  sourceMaterial,
+  { forceLongSummary = false, forceLongIntro = false } = {},
+) => {
   const today = new Date().toISOString().split('T')[0];
-  const sourceMaterial = buildSourceMaterial(candidate);
+  const material = sourceMaterial || buildSourceMaterial(candidate);
 
   // プロンプトを組み立てる
   const messages = [
@@ -198,7 +304,7 @@ const requestArticleDraft = async (apiKey, candidate, { forceLongSummary = false
     },
     {
       role: 'user',
-      content: ARTICLE_GENERATION_PROMPT.user(candidate, sourceMaterial, today, {
+      content: ARTICLE_GENERATION_PROMPT.user(candidate, material, today, {
         forceLongSummary,
         forceLongIntro,
       }),
@@ -366,6 +472,32 @@ const runGenerator = async (input = null) => {
     logger.warn(`⚠️ topicKey未設定のため動画タイトルから生成しました: ${topicKey}`);
   }
 
+  const lenientValidation = !candidate.transcript || candidate.transcript.length < 400;
+
+  // --- ブロックリストチェック ---
+  if (isTopicBlocked(topicKey)) {
+    metricsTracker.increment('candidates.skipped.topicBlocklist');
+    const now = new Date().toISOString();
+    if (!isManualMode) {
+      const updatedCandidates = candidates.map((item) =>
+        item.id === candidate.id
+          ? {
+            ...item,
+            status: 'skipped',
+            skipReason: 'topic-blocked',
+            updatedAt: now,
+          }
+          : item,
+      );
+      writeCandidates(updatedCandidates);
+    }
+    return buildResult({
+      generated: false,
+      reason: 'topic-blocked',
+      candidateId: candidate.id,
+    });
+  }
+
   // --- トピックの重複チェック ---
   const duplicate = isDuplicateTopic(topicKey, posts, topicHistory);
   logger.info(`重複判定: ${duplicate ? '重複あり → スキップ' : '新規トピック'}`);
@@ -373,6 +505,12 @@ const runGenerator = async (input = null) => {
   if (duplicate) {
     metricsTracker.increment('candidates.skipped.duplicate');
     const now = new Date().toISOString();
+    blockTopic(topicKey, {
+      reason: 'duplicate-topic',
+      sourceName,
+      videoTitle: candidate.video?.title || '',
+      blockedAt: now,
+    });
 
     // candidates.json の更新（従来モードのみ）
     if (!isManualMode) {
@@ -402,6 +540,16 @@ const runGenerator = async (input = null) => {
     logger.info(`[source] transcript length: ${candidate.transcript.length} chars`);
   }
 
+  if (lenientValidation) {
+    logger.info('字幕が無い/短いため、バリデーションを緩和します。');
+  }
+
+  const supplementalNotes = await buildSupplementalNotes(apiKey, candidate);
+  if (supplementalNotes) {
+    logger.info('補助情報をプロンプトに追加しました（チャプター/AIアウトライン）。');
+  }
+  const sourceMaterial = buildSourceMaterial(candidate, { supplementalNotes });
+
   // --- 記事生成 ---
   const stopDraftTimer = metricsTracker.startTimer('articleGeneration.timeMs');
   let article;
@@ -411,11 +559,11 @@ const runGenerator = async (input = null) => {
   while (attempts < maxAttempts) {
     attempts += 1;
     try {
-      article = await requestArticleDraft(apiKey, candidate, {
+      article = await requestArticleDraft(apiKey, candidate, sourceMaterial, {
         forceLongSummary: attempts >= 2,
         forceLongIntro: attempts >= 2,
       });
-      validateArticlePayload(article);
+      validateArticlePayload(article, { lenient: lenientValidation });
       const elapsed = stopDraftTimer();
       metricsTracker.increment('articles.generated');
       logger.info(`OpenAI応答を受信: "${article.title}" (${elapsed}ms) (attempt ${attempts})`);

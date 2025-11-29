@@ -18,6 +18,8 @@ const THEME_DEDUP_PROMPT = require('../prompts/themeDeduplication');
 const { callOpenAI } = require('../lib/openai');
 const { fetchTranscriptText } = require('./services/transcriptFetcher');
 const { readProcessedVideos } = require('../lib/processedVideos');
+const slugify = require('../lib/slugify');
+const { isTopicBlocked, blockTopic } = require('../lib/topicBlocklist');
 
 // --- パス設定 ---
 const root = path.resolve(__dirname, '..', '..');
@@ -204,6 +206,20 @@ const runResearcher = async ({ candidateId } = {}) => {
       continue;
     }
 
+    const topicKey = candidate.topicKey || slugify(candidate.video?.title, 'ai-topic');
+    if (isTopicBlocked(topicKey)) {
+      logger.info(`→ ブロック済みトピックのためスキップ: ${topicKey}`);
+      metricsTracker.increment('candidates.skipped.topicBlocklist');
+      const { updated } = updateCandidate(candidate.id, {
+        status: 'skipped',
+        skipReason: 'topic-blocked',
+        topicKey,
+        updatedAt: new Date().toISOString(),
+      });
+      skipped.push({ id: candidate.id, reason: 'topic-blocked', candidate: updated });
+      continue;
+    }
+
     // --- AIテーマ重複チェック ---
     const themeCheck = await judgeThemeDuplicate(candidate.video.title, recentTitles, apiKey);
     logger.info(
@@ -212,10 +228,16 @@ const runResearcher = async ({ candidateId } = {}) => {
 
     if (themeCheck.duplicate) {
       metricsTracker.increment('candidates.skipped.theme');
+      blockTopic(topicKey, {
+        reason: 'theme-duplicate',
+        sourceName: candidate.source?.name || null,
+        videoTitle: candidate.video?.title || null,
+      });
       const { updated } = updateCandidate(candidate.id, {
         status: 'skipped',
         skipReason: 'theme-duplicate',
         skipDetail: themeCheck.reason,
+        topicKey,
         updatedAt: new Date().toISOString(),
       });
       skipped.push({
@@ -261,6 +283,7 @@ const runResearcher = async ({ candidateId } = {}) => {
     const now = new Date().toISOString();
     const { updated } = updateCandidate(candidate.id, {
       status: 'researched',
+      topicKey,
       transcript,
       transcriptLength: transcript.length,
       themeCheck,
