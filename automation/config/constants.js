@@ -55,7 +55,7 @@ const VALIDATION = {
 const SITE_CONFIG = {
   // サイトのベースURL（sitemap.xml生成に使用）
   // TODO: 実際の公開URLに変更してください
-  BASE_URL: 'https://yamazaki2357.github.io/AI-Site',
+  BASE_URL: 'https://project-ai-blog.com/AI-Site',
 };
 
 module.exports = {

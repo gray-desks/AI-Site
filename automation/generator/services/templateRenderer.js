@@ -258,7 +258,7 @@ const createTemplateRenderer = ({ templatePath, layoutPath }) => {
     const heroImageSrc = heroImage?.src ? `${normalizedAssetBase}${heroImage.src}` : null;
 
     // SNSシェア用画像は絶対パスにする
-    const SITE_URL = 'https://yamazaki2357.github.io/';
+    const SITE_URL = 'https://project-ai-blog.com/';
     const absoluteHeroImageSrc = heroImage?.src ? `${SITE_URL}${heroImage.src}` : null;
     const socialImage = absoluteHeroImageSrc || `${SITE_URL}assets/img/ogp-default.svg`;
 

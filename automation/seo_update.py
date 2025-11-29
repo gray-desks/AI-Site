@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 # 設定
-BASE_URL = "https://yamazaki2357.github.io"
+BASE_URL = "https://project-ai-blog.com"
 SITE_NAME = "AI情報ブログ"
 LOGO_URL = f"{BASE_URL}/assets/img/logo.svg"
 TARGET_DIR = "/Users/yamazaki/Development/AI情報ブログ"
