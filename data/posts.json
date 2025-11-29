@@ -33,25 +33,19 @@
         "label": "技術革新",
         "category": "その他",
         "style": "accent-sky"
-      },
-      {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
-        "style": "accent-gold"
       }
     ],
     "url": "posts/2025/11/2025-11-29-flux2zero-shotai.html",
     "slug": "2025-11-29-flux2zero-shotai",
     "publishedAt": "2025-11-29T21:13:49.088Z",
     "createdAt": "2025-11-29T21:13:49.088Z",
-    "status": "draft",
+    "status": "public",
     "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "key": "flux2-comfyui",
+      "src": "assets/img/posts/2025/11/flux2_comfyui_mv_editing.png",
+      "alt": "FLUX.2とComfyUIによるAI動画編集のイメージ",
+      "label": "AI Video Editing",
+      "caption": "FLUX.2とComfyUIを活用した次世代の動画編集ワークフロー",
       "category": "ai"
     }
   },
