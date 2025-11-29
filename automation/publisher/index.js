@@ -78,9 +78,14 @@ const updatePosts = (posts, newEntry) => {
   if (!newEntry) return list;
 
   // 新しいエントリに公開日時がなければ現在時刻を設定
+  const now = new Date().toISOString();
+  // 既存のエントリを探してcreatedAtを保持する
+  const existingEntry = list.find((post) => post.url === newEntry.url);
+
   const normalizedEntry = {
     ...newEntry,
-    publishedAt: newEntry.publishedAt || new Date().toISOString(),
+    publishedAt: newEntry.publishedAt || now,
+    createdAt: existingEntry?.createdAt || newEntry.createdAt || now,
   };
 
   // 同じURLのエントリがあれば削除し、新しいエントリを追加
