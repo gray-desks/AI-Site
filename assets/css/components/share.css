@@ -1,25 +1,44 @@
 /* === Share Component === */
 /* 記事共有ボタンのスタイル */
 
+/* --- Bottom Share Section (Mobile/Tablet/Desktop Footer) --- */
 .share-container {
-    margin: var(--space-2xl) 0;
+    margin: var(--space-3xl) 0;
     padding: var(--space-xl);
-    background-color: var(--surface-secondary);
-    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, var(--surface-secondary), var(--surface-tertiary));
+    border-radius: var(--radius-xl);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-md);
-    transition: background-color var(--transition-base);
+    gap: var(--space-lg);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative background glow */
+.share-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .share-label {
     font-family: var(--font-display);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    color: var(--text-secondary);
-    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    position: relative;
+    z-index: 1;
 }
 
 .share-buttons {
@@ -27,8 +46,37 @@
     gap: var(--space-md);
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
+/* --- Side Share Bar (Desktop Sticky) --- */
+.share-side {
+    display: none;
+    /* Hidden on mobile */
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-xl));
+    z-index: 10;
+    height: fit-content;
+    padding-top: var(--space-xs);
+}
+
+.share-side-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    margin-bottom: var(--space-xs);
+    opacity: 0.7;
+}
+
+/* --- Common Button Styles --- */
 .share-btn {
     display: inline-flex;
     align-items: center;
@@ -36,122 +84,125 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    color: #fff;
-    font-size: 1.5rem;
-    transition: all var(--transition-spring);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border: none;
+    /* Circle */
+    color: var(--text-secondary);
+    background-color: var(--surface-primary);
+    border: 1px solid var(--border-medium);
+    font-size: 1.25rem;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Bouncy spring */
     cursor: pointer;
     text-decoration: none;
     position: relative;
-    overflow: visible;
-    /* ツールチップ表示のため */
-}
-
-/* ホバーエフェクト */
-.share-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.share-btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .share-btn svg {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     fill: currentColor;
-    transition: transform var(--transition-base);
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.share-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border-color: transparent;
 }
 
 .share-btn:hover svg {
     transform: scale(1.1);
 }
 
-/* Brand Colors with Gradients */
-.share-btn--x {
+.share-btn:active {
+    transform: translateY(-1px) scale(0.95);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Brand Specific Styles */
+.share-btn--x:hover {
     background-color: #000;
     background: linear-gradient(135deg, #333 0%, #000 100%);
 }
 
-.share-btn--facebook {
-    background-color: #1877f2;
-    background: linear-gradient(135deg, #3b5998 0%, #1877f2 100%);
-}
-
-.share-btn--line {
-    background-color: #06c755;
-    background: linear-gradient(135deg, #00b900 0%, #06c755 100%);
-}
-
-.share-btn--hatena {
-    background-color: #00a4de;
-}
-
-.share-btn--copy {
-    background-color: #fff;
-    color: var(--text-secondary);
-    border: 1px solid var(--border-medium);
-}
-
 .share-btn--copy:hover {
-    background-color: var(--surface-hover);
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent-secondary) 100%);
 }
 
-/* Tooltip for Copy */
-.share-btn--copy::after {
-    content: "Copied!";
+/* Tooltip */
+.share-tooltip {
     position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
     background-color: var(--text-primary);
     color: #fff;
-    padding: 6px 12px;
-    border-radius: var(--radius-md);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
     font-size: 0.75rem;
     font-weight: 600;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.2s ease;
     white-space: nowrap;
-    box-shadow: var(--shadow-md);
-    z-index: 10;
-}
-
-.share-btn--copy::before {
-    content: "";
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    border-width: 6px;
-    border-style: solid;
-    border-color: var(--text-primary) transparent transparent transparent;
-    opacity: 0;
     pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
     transition: all 0.2s ease;
-    z-index: 10;
+    box-shadow: var(--shadow-md);
+    z-index: 20;
 }
 
-.share-btn--copy.copied::after,
-.share-btn--copy.copied::before {
+/* Tooltip Positioning */
+/* Bottom Share: Tooltip on Top */
+.share-container .share-tooltip {
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+}
+
+.share-container .share-btn:hover .share-tooltip {
     opacity: 1;
+    visibility: visible;
     transform: translateX(-50%) translateY(0);
 }
 
+/* Side Share: Tooltip on Right */
+.share-side .share-tooltip {
+    left: 120%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-5px);
+}
+
+.share-side .share-btn:hover .share-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Copied State */
+.share-btn.copied {
+    background-color: var(--color-success) !important;
+    border-color: var(--color-success) !important;
+    color: #fff !important;
+}
+
+/* Responsive Adjustments */
 @media (min-width: 768px) {
     .share-container {
         flex-direction: row;
         justify-content: space-between;
-        padding: var(--space-xl) var(--space-2xl);
+        padding: var(--space-xl) var(--space-3xl);
     }
 
     .share-buttons {
         justify-content: flex-end;
     }
+}
+
+@media (min-width: 1024px) {
+    .share-side {
+        display: flex;
+        /* Show on desktop */
+    }
+
+    /* Hide bottom share on desktop if desired, but keeping it is usually fine. 
+       Maybe simplify it? For now, keep both. */
 }

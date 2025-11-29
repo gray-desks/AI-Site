@@ -8,7 +8,7 @@
  * 記事ページ (`body.article-page`) のメインコンテンツのパディング調整
  */
 body.article-page main {
-  padding-top: var(--space-xl);
+  /* padding-top: var(--space-xl);  <- Removed to prevent header overlap */
 }
 
 /*
@@ -66,6 +66,8 @@ body.article-page main {
   width: min(900px, 100% - 2rem);
   margin: 0 auto;
   border-bottom: 1px solid var(--border-subtle);
+  text-align: center;
+  /* テキストを中央揃え */
 }
 
 @media (min-width: 768px) {
@@ -74,10 +76,11 @@ body.article-page main {
   }
 }
 
-/* デスクトップサイズではより広い幅に */
+/* デスクトップサイズでは幅を制限して中央揃えを維持 */
 @media (min-width: 1024px) {
   .article-hero {
-    width: min(1400px, 100% - 4rem);
+    width: 100%;
+    max-width: 1000px;
   }
 }
 
@@ -130,7 +133,14 @@ body.article-page main {
   margin-top: var(--space-sm);
   max-width: 68ch;
   line-height: 1.7;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+/*
+ * 記事ヒーロー画像のコンテナ (.article-hero-image-container)
+ * スタイルは assets/css/components/article-image.css で定義されています。
+ */
 
 /*
  * 記事ヒーローセクションのレイアウト (.article-hero-layout)
@@ -142,6 +152,8 @@ body.article-page main {
   gap: var(--space-md);
   position: relative;
   z-index: 1;
+  align-items: center;
+  /* 子要素を中央揃え */
 }
 
 /*
@@ -150,8 +162,10 @@ body.article-page main {
  */
 .article-meta-grid {
   margin-top: var(--space-lg);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  /* GridからFlexに変更して中央寄せしやすくする */
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-md);
   position: relative;
   z-index: 1;
@@ -209,6 +223,8 @@ body.article-page main {
   margin-top: var(--space-md);
   position: relative;
   z-index: 1;
+  justify-content: center;
+  /* タグを中央寄せ */
 }
 
 /*
@@ -258,6 +274,12 @@ body.article-page main {
     gap: var(--space-2xl);
     align-items: flex-start;
     width: min(1400px, 100% - 4rem);
+  }
+
+  /* サイドシェアバーがある場合のグリッド定義 */
+  .article-grid.has-share-side {
+    grid-template-columns: 48px minmax(0, 1fr) 300px;
+    gap: var(--space-xl);
   }
 }
 
@@ -431,8 +453,9 @@ body.article-page main {
 
 @media (min-width: 1024px) {
   .article-conclusion {
-    width: min(1400px, 100% - 4rem);
-    max-width: none;
+    width: 100%;
+    max-width: 800px;
+    /* 本文幅に合わせて制限 */
   }
 }
 

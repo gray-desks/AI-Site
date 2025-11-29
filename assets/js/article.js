@@ -388,8 +388,60 @@ window.initArticlePage = () => {
   // --- 7. SNSシェアボタンの設置 ---
   const setupShareButtons = () => {
     const articleContent = document.querySelector('.article-content');
+    const articleGrid = document.querySelector('.article-grid');
     if (!articleContent) return;
 
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+
+    // --- Side Share Bar (Desktop) ---
+    if (articleGrid) {
+      // 既存のサイドシェアがあれば削除
+      const existingSide = document.querySelector('.share-side');
+      if (existingSide) existingSide.remove();
+
+      const sideShare = document.createElement('aside');
+      sideShare.className = 'share-side';
+      sideShare.innerHTML = `
+            <span class="share-side-label">Share</span>
+            <a href="https://twitter.com/intent/tweet?url=${url}&text=${title}" target="_blank" rel="noopener noreferrer" class="share-btn share-btn--x" aria-label="X (Twitter)でシェア">
+                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                <span class="share-tooltip">Post to X</span>
+            </a>
+            <button type="button" class="share-btn share-btn--copy" aria-label="リンクをコピー">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                <span class="share-tooltip">Copy Link</span>
+            </button>
+        `;
+
+      // 記事グリッドの先頭に挿入
+      articleGrid.prepend(sideShare);
+      articleGrid.classList.add('has-share-side');
+
+      // サイドバーのコピー機能
+      const sideCopyBtn = sideShare.querySelector('.share-btn--copy');
+      if (sideCopyBtn) {
+        sideCopyBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(window.location.href);
+            sideCopyBtn.classList.add('copied');
+            const tooltip = sideCopyBtn.querySelector('.share-tooltip');
+            if (tooltip) {
+              const originalText = tooltip.textContent;
+              tooltip.textContent = 'Copied!';
+              setTimeout(() => {
+                sideCopyBtn.classList.remove('copied');
+                tooltip.textContent = originalText;
+              }, 2000);
+            }
+          } catch (err) {
+            console.error('Failed to copy:', err);
+          }
+        });
+      }
+    }
+
+    // --- Bottom Share Container (Mobile/All) ---
     // 既存のシェアボタンがあれば削除
     const existingShare = document.querySelector('.share-container');
     if (existingShare) existingShare.remove();
@@ -397,23 +449,16 @@ window.initArticlePage = () => {
     const shareContainer = document.createElement('div');
     shareContainer.className = 'share-container';
 
-    const url = encodeURIComponent(window.location.href);
-    const title = encodeURIComponent(document.title);
-
     shareContainer.innerHTML = `
       <span class="share-label">Share this post</span>
       <div class="share-buttons">
         <a href="https://twitter.com/intent/tweet?url=${url}&text=${title}" target="_blank" rel="noopener noreferrer" class="share-btn share-btn--x" aria-label="X (Twitter)でシェア">
           <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-        </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=${url}" target="_blank" rel="noopener noreferrer" class="share-btn share-btn--facebook" aria-label="Facebookでシェア">
-          <svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036c-2.648 0-2.928 1.67-2.928 3.403v1.518h3.949l-1.006 3.667h-2.943v7.98h-4.887z"></path></svg>
-        </a>
-        <a href="https://social-plugins.line.me/lineit/share?url=${url}" target="_blank" rel="noopener noreferrer" class="share-btn share-btn--line" aria-label="LINEでシェア">
-          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.049.239.064.488.064.739 0 3.868-3.326 7.009-7.429 7.009-1.537 0-2.97-.44-4.17-1.199-.591.248-1.93.661-2.17.709-.159.032-.234-.084-.114-.233.241-.299 1.076-1.566 1.076-1.566-.879-1.344-1.401-2.92-1.401-4.62 0-3.868 3.326-7.009 7.429-7.009 4.103 0 7.429 3.141 7.429 7.009zm-9.389-1.609h-2.033a.41.41 0 0 0-.409.409v3.256a.41.41 0 0 0 .409.409h2.033a.41.41 0 0 0 .409-.409v-3.256a.41.41 0 0 0-.409-.409zm-2.442 3.665v-3.256a.41.41 0 0 0-.41-.409h-.409a.41.41 0 0 0-.409.409v3.256a.41.41 0 0 0 .409.409h.409a.41.41 0 0 0 .41-.409zm5.291-3.665h-.409a.41.41 0 0 0-.409.409v2.033h-1.22v-2.033a.41.41 0 0 0-.409-.409h-.409a.41.41 0 0 0-.409.409v3.256a.41.41 0 0 0 .409.409h2.856a.41.41 0 0 0 .409-.409v-.409a.41.41 0 0 0-.409-.409zm2.856.409v1.22l-1.633-1.633a.41.41 0 0 0-.29-.12h-.409a.41.41 0 0 0-.409.409v3.256a.41.41 0 0 0 .409.409h.409a.41.41 0 0 0 .409-.409v-1.22l1.633 1.633a.41.41 0 0 0 .29.12h.409a.41.41 0 0 0 .409-.409v-3.256a.41.41 0 0 0-.409-.409h-.409a.41.41 0 0 0-.409.409z"></path></svg>
+          <span class="share-tooltip">Post to X</span>
         </a>
         <button type="button" class="share-btn share-btn--copy" aria-label="リンクをコピー">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          <span class="share-tooltip">Copy Link</span>
         </button>
       </div>
     `;
@@ -433,9 +478,15 @@ window.initArticlePage = () => {
       try {
         await navigator.clipboard.writeText(window.location.href);
         copyBtn.classList.add('copied');
-        setTimeout(() => {
-          copyBtn.classList.remove('copied');
-        }, 2000);
+        const tooltip = copyBtn.querySelector('.share-tooltip');
+        if (tooltip) {
+          const originalText = tooltip.textContent;
+          tooltip.textContent = 'Copied!';
+          setTimeout(() => {
+            copyBtn.classList.remove('copied');
+            tooltip.textContent = originalText;
+          }, 2000);
+        }
       } catch (err) {
         console.error('Failed to copy:', err);
       }
