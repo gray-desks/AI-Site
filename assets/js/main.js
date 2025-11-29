@@ -439,7 +439,7 @@ const initPostList = () => {
   elements.list.innerHTML = Array(6).fill('<li class="post-card skeleton"><div class="skeleton-media"></div><div class="post-card-body"><div class="skeleton-line"></div><div class="skeleton-line short"></div></div></li>').join('');
 
   // 記事データをJSON形式で読み込み
-  fetch('data/posts.json', { cache: 'no-cache' })
+  fetch(`data/posts.json?v=${new Date().getTime()}`, { cache: 'no-cache' })
     .then(res => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
