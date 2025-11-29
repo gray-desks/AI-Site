@@ -1,5 +1,33 @@
 [
   {
+    "id": "yt-8IdGzL8_tjg",
+    "source": {
+      "platform": "YouTube",
+      "name": "aivtuber2866",
+      "channelId": "UCZQVTC3uLCyuJUOcRlguazA",
+      "url": "https://www.youtube.com/@aivtuber2866",
+      "focus": [
+        "生成AI",
+        "VTuber"
+      ]
+    },
+    "video": {
+      "id": "8IdGzL8_tjg",
+      "title": "【最新モデル解説】Claude Opus 4.5のプロンプトの特徴とClaude Codeの便利なアプデについて解説してみた",
+      "url": "https://www.youtube.com/watch?v=8IdGzL8_tjg",
+      "description": "にゃんた初の書籍が発売中！   Amazonのページ ▶︎https://amzn.to/3QMrFnY 『ゼロからわかるDifyの教科書 ～生成AI × ノー ...",
+      "thumbnail": "https://i.ytimg.com/vi/8IdGzL8_tjg/hqdefault.jpg",
+      "publishedAt": "2025-11-29T09:38:26Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-29T10:03:51.728Z",
+    "updatedAt": "2025-11-29T10:03:57.482Z",
+    "topicKey": "claude-opus-45claude-code",
+    "notes": "YouTube Data API: aivtuber2866 の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はClaude Opus 4.5に関する解説であり、直近の記事4のClaude for Chrome拡張機能に関する内容と関連性が高い。両者はClaudeという同じAIモデルに関連しており、AI技術の進化を扱っているため、同じ話題と判断した。"
+  },
+  {
     "id": "yt-zC-_g1UtEP0",
     "source": {
       "platform": "YouTube",
@@ -26,6 +54,58 @@
     "notes": "YouTube Data API: ai_masaou の最新動画",
     "skipReason": "theme-duplicate",
     "skipDetail": "候補動画はAIエージェントのレビューを扱っており、直近の記事4番目の「Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析」が同じくAIエージェントに関する内容であるため。"
+  },
+  {
+    "id": "yt-p737hOCkgM0",
+    "source": {
+      "platform": "YouTube",
+      "name": "iketomo-ch",
+      "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
+      "url": "https://www.youtube.com/@iketomo-ch",
+      "focus": [
+        "AIツール",
+        "活用事例"
+      ]
+    },
+    "video": {
+      "id": "p737hOCkgM0",
+      "title": "【無料】最強AIで資料作成を爆速化！手作業でパワポ作成の時代は完全に終了した。ビジネス現場でも使える超実践的な5ステップを紹介",
+      "url": "https://www.youtube.com/watch?v=p737hOCkgM0",
+      "description": "新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
+      "thumbnail": "https://i.ytimg.com/vi/p737hOCkgM0/hqdefault.jpg",
+      "publishedAt": "2025-11-29T06:00:49Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-29T10:03:52.987Z",
+    "updatedAt": "2025-11-29T10:04:02.409Z",
+    "topicKey": "ai5",
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "transcript": "【無料】最強AIで資料作成を爆速化！手作業でパワポ作成の時代は完全に終了した。ビジネス現場でも使える超実践的な5ステップを紹介 新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
+    "transcriptLength": 135,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はAIを活用した資料作成に特化しており、直近の記事は主にAIの他の応用や技術的な進化に関するものであるため、同じ話題とは判断できない。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はAIを活用した資料作成に特化しており、直近の記事は主にAIの他の応用や技術的な進化に関するものであるため、同じ話題とは判断できない。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
+      "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
+      "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+      "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+      "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
+      "Gemini新モデルの技術的進化と実践的応用の可能性",
+      "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命"
+    ],
+    "researchedAt": "2025-11-29T10:04:02.403Z",
+    "skipReason": "duplicate-topic"
   },
   {
     "id": "yt-LAGm5O4t3bk",
@@ -976,12 +1056,50 @@
       "thumbnail": "https://i.ytimg.com/vi/IAgT00oqBcw/hqdefault.jpg",
       "publishedAt": "2025-11-23T13:38:21Z"
     },
-    "status": "skipped",
+    "status": "generated",
     "createdAt": "2025-11-27T11:45:32.563Z",
-    "updatedAt": "2025-11-28T07:24:54.130Z",
+    "updatedAt": "2025-11-29T10:04:33.757Z",
     "topicKey": "150-shorts",
     "notes": "YouTube Data API: chaen-ai-lab の最新動画",
-    "skipReason": "transcript-unavailable"
+    "skipReason": "transcript-unavailable",
+    "transcript": "【衝撃】イーロン・マスクの報酬150兆円！？使い道が異次元すぎる。 #shorts #イーロンマスク#ビジネス #雑学 #お金 #テスラ 【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 日本のGDPの4分の1に ...",
+    "transcriptLength": 159,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はイーロン・マスクの報酬に関する内容であり、直近の記事は全てAI技術やソフトウェアに関するもので、テーマが異なるため重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はイーロン・マスクの報酬に関する内容であり、直近の記事は全てAI技術やソフトウェアに関するもので、テーマが異なるため重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
+      "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
+      "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+      "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+      "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
+      "Gemini新モデルの技術的進化と実践的応用の可能性",
+      "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命"
+    ],
+    "researchedAt": "2025-11-29T10:04:05.742Z",
+    "generatedAt": "2025-11-29T10:04:33.757Z",
+    "postDate": "2025-11-29",
+    "slug": "2025-11-29-150",
+    "outputFile": "posts/2025/11/2025-11-29-150.html",
+    "image": {
+      "key": "ai-core-02",
+      "src": "assets/img/article-templates/ai-core-02.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント2）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "imageKey": "ai-core-02"
   },
   {
     "id": "yt-UMrmAKY4QNM",

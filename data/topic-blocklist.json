@@ -1,0 +1,16 @@
+[
+  {
+    "topicKey": "claude-opus-45claude-code",
+    "reason": "theme-duplicate",
+    "sourceName": "aivtuber2866",
+    "videoTitle": "【最新モデル解説】Claude Opus 4.5のプロンプトの特徴とClaude Codeの便利なアプデについて解説してみた",
+    "blockedAt": "2025-11-29T10:03:57.482Z"
+  },
+  {
+    "topicKey": "ai5",
+    "reason": "duplicate-topic",
+    "sourceName": "iketomo-ch",
+    "videoTitle": "【無料】最強AIで資料作成を爆速化！手作業でパワポ作成の時代は完全に終了した。ビジネス現場でも使える超実践的な5ステップを紹介",
+    "blockedAt": "2025-11-29T10:04:02.409Z"
+  }
+]
