@@ -256,7 +256,11 @@ const createTemplateRenderer = ({ templatePath, layoutPath }) => {
     const verboseDate = dateParts.verbose || meta.date || '';
     const heroImage = (meta && meta.image) || options.image || null;
     const heroImageSrc = heroImage?.src ? `${normalizedAssetBase}${heroImage.src}` : null;
-    const socialImage = heroImageSrc || `${normalizedAssetBase}assets/img/ogp-default.svg`;
+
+    // SNSシェア用画像は絶対パスにする
+    const SITE_URL = 'https://yamazaki2357.github.io/';
+    const absoluteHeroImageSrc = heroImage?.src ? `${SITE_URL}${heroImage.src}` : null;
+    const socialImage = absoluteHeroImageSrc || `${SITE_URL}assets/img/ogp-default.svg`;
 
     // --- 2. 各パーツのHTMLマークアップ生成 ---
 
