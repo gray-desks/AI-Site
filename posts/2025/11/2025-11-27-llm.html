@@ -40,27 +40,27 @@
 </head>
 
 <body class="article-page">
-<header class="site-header">
+  <header class="site-header">
     <div class="inner">
-        <a class="brand" href="../../../index.html">
-            <img src="../../../assets/img/logo.svg" alt="AI情報ブログ ロゴ" class="logo">
-            <span>AI情報ブログ</span>
-        </a>
-        <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-        <nav aria-label="メインナビゲーション">
-            <a href="../../../index.html" >ホーム</a>
-            <a href="../../../about.html" >このサイトについて</a>
-        </nav>
+      <a class="brand" href="../../../index.html">
+        <img src="../../../assets/img/logo.svg" alt="AI情報ブログ ロゴ" class="logo">
+        <span>AI情報ブログ</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <nav aria-label="メインナビゲーション">
+        <a href="../../../index.html">ホーム</a>
+        <a href="../../../about.html">このサイトについて</a>
+      </nav>
     </div>
     <div class="menu-overlay"></div>
-</header>
-<!-- ヘッダーはSSGまたはcomponents.jsで挿入されます -->
+  </header>
+  <!-- ヘッダーはSSGまたはcomponents.jsで挿入されます -->
 
   <main>
     <article class="article-detail">
@@ -167,7 +167,7 @@
               <div class="article-subsection">
                 <h3 class="subsection-heading">「Deep Think」が変える問題解決</h3>
                 <div class="subsection-body">
-                  <figure class="article-image">
+                  <figure class="article-image-container">
                     <img src="../../../assets/img/posts/2025-11-27-llm/gemini.png" alt="Gemini 3のDeep Thinkモードのイメージ"
                       loading="lazy">
                     <figcaption>Gemini 3のDeep Thinkモードは、複雑な問題を深く思考してから回答する</figcaption>
@@ -186,8 +186,9 @@
               <div class="article-subsection">
                 <h3 class="subsection-heading">自律的に動く「パートナー」</h3>
                 <div class="subsection-body">
-                  <figure class="article-image">
-                    <img src="../../../assets/img/posts/2025-11-27-llm/gpt5.png" alt="GPT-5のエージェント機能のイメージ" loading="lazy">
+                  <figure class="article-image-container">
+                    <img src="../../../assets/img/posts/2025-11-27-llm/gpt5.png" alt="GPT-5のエージェント機能のイメージ"
+                      loading="lazy">
                     <figcaption>GPT-5は自律的なエージェントとして、ユーザーのタスクを能動的にサポートする</figcaption>
                   </figure>
                   <p>
@@ -206,7 +207,7 @@
               <div class="article-subsection">
                 <h3 class="subsection-heading">開発者に愛される理由</h3>
                 <div class="subsection-body">
-                  <figure class="article-image">
+                  <figure class="article-image-container">
                     <img src="../../../assets/img/posts/2025-11-27-llm/claude.png" alt="Claude 3.5 Sonnetのコーディング能力のイメージ"
                       loading="lazy">
                     <figcaption>Claude 3.5 Sonnetは、その安定性と美しいコード生成で開発者から信頼されている</figcaption>
@@ -290,22 +291,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
   <script src="../../../assets/js/main.js" defer></script>
   <script src="../../../assets/js/article.js" defer></script>
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="inner">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <span>AI情報ブログ</span>
-            </div>
-            <nav class="footer-nav" aria-label="フッターナビゲーション">
-                <a href="../../../index.html">ホーム</a>
-                <a href="../../../about.html">このサイトについて</a>
-                <a href="../../../privacy-policy.html">プライバシーポリシー</a>
-                <a href="../../../contact.html">お問い合わせ</a>
-            </nav>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span>AI情報ブログ</span>
         </div>
-        <small class="copyright">&copy; 2025 AI情報ブログ</small>
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a href="../../../index.html">ホーム</a>
+          <a href="../../../about.html">このサイトについて</a>
+          <a href="../../../privacy-policy.html">プライバシーポリシー</a>
+          <a href="../../../contact.html">お問い合わせ</a>
+        </nav>
+      </div>
+      <small class="copyright">&copy; 2025 AI情報ブログ</small>
     </div>
-</footer>
+  </footer>
 </body>
 
 </html>

@@ -864,27 +864,9 @@ body.article-page main {
 }
 
 /*
- * 記事画像のサイズ調整
+ * 記事画像のサイズ調整は components/article-image.css に移動しました
  */
-.article-hero-image img,
-.article-featured-image img,
-.article-image img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  margin: 0 auto;
-  display: block;
-  box-shadow: var(--shadow-sm);
-}
 
-.article-image figcaption {
-  font-size: 0.9rem;
-  color: var(--text-tertiary);
-  text-align: center;
-  margin-top: var(--space-xs);
-}
 
 /* === Note記事用コピーボタン === */
 .note-copy-btn-container {

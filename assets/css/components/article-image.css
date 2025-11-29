@@ -1,0 +1,77 @@
+/**
+ * @fileoverview 記事内画像のスタイルコンポーネント
+ * 記事詳細ページなどで使用される画像の共通スタイルを定義します。
+ */
+
+/*
+ * 記事画像コンテナ (.article-image-container)
+ * 画像とキャプションをラップするコンテナ
+ */
+.article-image-container {
+    margin: var(--space-lg) 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+ * 記事画像本体
+ */
+.article-image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 600px;
+    /* 縦長の画像が画面を占有しすぎないように */
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: block;
+    object-fit: contain;
+    /* 挿絵はトリミングせずに全体を表示 */
+}
+
+/*
+ * アスペクト比を固定したい場合 (オプション)
+ * .aspect-16-9 クラスを追加して使用
+ */
+.article-image-container.aspect-16-9 img {
+    aspect-ratio: 16 / 9;
+}
+
+/*
+ * キャプション
+ */
+.article-image-container figcaption {
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    text-align: center;
+    margin-top: var(--space-xs);
+    line-height: 1.5;
+}
+
+/*
+ * ヒーロー画像用のスタイル (.article-hero-image-container)
+ * 記事の冒頭に配置される大きな画像
+ */
+.article-hero-image-container {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xl);
+    width: 100%;
+    max-width: 800px;
+    /* ヒーロー画像の最大幅を制限 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-hero-image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    /* 高さが大きくなりすぎないように制限 */
+    object-fit: cover;
+    /* アスペクト比を維持しつつトリミング */
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: block;
+}
