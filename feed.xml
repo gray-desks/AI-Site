@@ -5,21 +5,19 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Fri, 28 Nov 2025 21:14:11 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 29 Nov 2025 09:22:57 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
   <item>
-    <title>Aqua Voiceの技術革新：AI音声入力の生産性向上と実践事例</title>
+    <title>思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025/11/2025-11-28-aqua-voiceai.html</link>
     <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025/11/2025-11-28-aqua-voiceai.html</guid>
     <pubDate>Fri, 28 Nov 2025 21:14:11 GMT</pubDate>
-    <description>Aqua VoiceはAIを活用した音声入力技術で、生産性の向上を実現します。本記事では、技術的な背景から具体的なユースケースまでを詳細に解説し、ビジネスや開発現場での即戦力となる活用方法を紹介します。</description>
-    <category>音声入力</category>
-    <category>AI技術</category>
-    <category>生産性向上</category>
+    <description>Aqua Voiceは単なる音声入力ではありません。「声で編集する」次世代エディタです。Y Combinator発のこのツールが、なぜ今話題なのか？料金や使い方も含めて徹底解説します。</description>
     <category>Aqua Voice</category>
-    <category>技術革新</category>
-    <category>下書き</category>
+    <category>音声入力AI</category>
+    <category>生産性向上</category>
+    <category>レビュー</category>
   </item>
   <item>
     <title>【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート</title>

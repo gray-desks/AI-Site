@@ -1,5 +1,61 @@
 [
   {
+    "id": "yt-zC-_g1UtEP0",
+    "source": {
+      "platform": "YouTube",
+      "name": "ai_masaou",
+      "channelId": "UCvHpETRVi1tXeRJoYiXHJqw",
+      "url": "https://www.youtube.com/@ai_masaou",
+      "focus": [
+        "生成AI",
+        "Tips"
+      ]
+    },
+    "video": {
+      "id": "zC-_g1UtEP0",
+      "title": "【完全比較】開発AIエージェント徹底レビュー14選！Cursor、Antigravityの実力は？全てを忖度なしで格付けします",
+      "url": "https://www.youtube.com/watch?v=zC-_g1UtEP0",
+      "description": "今回の動画では、話題の開発AIエージェントについて、私が実際に触れたものを対象に、「モデル」「ハーネス」「使用感」の3 ...",
+      "thumbnail": "https://i.ytimg.com/vi/zC-_g1UtEP0/hqdefault.jpg",
+      "publishedAt": "2025-11-29T09:05:01Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-29T09:22:14.302Z",
+    "updatedAt": "2025-11-29T09:22:19.741Z",
+    "topicKey": "ai14cursorantigravity",
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAIエージェントのレビューを扱っており、直近の記事4番目の「Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析」が同じくAIエージェントに関する内容であるため。"
+  },
+  {
+    "id": "yt-LAGm5O4t3bk",
+    "source": {
+      "platform": "YouTube",
+      "name": "technavi_tooru",
+      "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
+      "url": "https://www.youtube.com/@technavi_tooru",
+      "focus": [
+        "テックニュース",
+        "生成AI"
+      ]
+    },
+    "video": {
+      "id": "LAGm5O4t3bk",
+      "title": "Prime Intellectの新モデル「INTELLECT-3」登場！RLで育てた100BクラスLLMの実力とは？",
+      "url": "https://www.youtube.com/watch?v=LAGm5O4t3bk",
+      "description": "メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております  ‍♂️  (YouTubeアプリからの加入 ...",
+      "thumbnail": "https://i.ytimg.com/vi/LAGm5O4t3bk/hqdefault.jpg",
+      "publishedAt": "2025-11-29T00:00:31Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-29T09:22:15.829Z",
+    "updatedAt": "2025-11-29T09:22:23.020Z",
+    "topicKey": "prime-intellectintellect-3rl100bllm",
+    "notes": "YouTube Data API: technavi_tooru の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画は新しいLLMモデルに関する内容であり、直近の記事5の「Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較」もLLMに関する比較を扱っているため、同じ話題と判断しました。"
+  },
+  {
     "id": "yt-9F87j55gfiI",
     "source": {
       "platform": "YouTube",
@@ -83,11 +139,37 @@
       "thumbnail": "https://i.ytimg.com/vi/kqmuOs69Rhk/hqdefault.jpg",
       "publishedAt": "2025-11-28T10:01:32Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-28T21:13:10.204Z",
-    "updatedAt": "2025-11-28T21:13:10.204Z",
+    "updatedAt": "2025-11-29T09:22:27.420Z",
     "topicKey": "chatgpt",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "transcript": "【ゼロから学ぶ】ChatGPT初心者が最初に覚えるべき設定と使い方。機能が増えすぎた今だからこそ知るべき基礎知識。プロンプトの型とセキュリティ対策《徹底ガイド》 【問い合わせフォーム】動画内で解説した「チャエン式プロンプト」や資料はこちらからお受け取りください。",
+    "transcriptLength": 131,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はChatGPTの使い方や設定に関する基礎知識を扱っており、直近の記事はAIや他のツールに関する異なるトピックを扱っているため、同じ話題とはみなされない。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はChatGPTの使い方や設定に関する基礎知識を扱っており、直近の記事はAIや他のツールに関する異なるトピックを扱っているため、同じ話題とはみなされない。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
+      "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
+      "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+      "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+      "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
+      "Gemini新モデルの技術的進化と実践的応用の可能性",
+      "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命"
+    ],
+    "researchedAt": "2025-11-29T09:22:27.414Z",
+    "skipReason": "duplicate-topic"
   },
   {
     "id": "yt-wXujj978x6o",
@@ -109,11 +191,13 @@
       "thumbnail": "https://i.ytimg.com/vi/wXujj978x6o/hqdefault.jpg",
       "publishedAt": "2025-11-28T09:30:42Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-28T21:13:09.828Z",
-    "updatedAt": "2025-11-28T21:13:09.828Z",
+    "updatedAt": "2025-11-29T09:22:30.429Z",
     "topicKey": "aiclaude",
-    "notes": "YouTube Data API: ai_masaou の最新動画"
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAIエージェントに関する内容であり、直近の記事の4番目のタイトル「Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析」が同じくClaudeに関連するAIエージェントの話題を扱っているため。"
   },
   {
     "id": "yt-CdAhxcbYsMc",
@@ -726,12 +810,39 @@
       "thumbnail": "https://i.ytimg.com/vi/maFLI82NKgE/hqdefault.jpg",
       "publishedAt": "2025-11-24T10:26:14Z"
     },
-    "status": "skipped",
+    "status": "failed",
     "createdAt": "2025-11-27T22:56:02.587Z",
-    "updatedAt": "2025-11-28T07:24:51.928Z",
+    "updatedAt": "2025-11-29T09:22:57.963Z",
     "topicKey": "windowswindhawk18",
     "notes": "YouTube Data API: ウェブマニア の最新動画",
-    "skipReason": "transcript-unavailable"
+    "skipReason": "transcript-unavailable",
+    "transcript": "知らないと損するWindowsの拡張機能！デザイン・実用性を向上する『Windhawk』のおすすめ拡張機能18選 ゲーム開発に挑戦中！公式Xをぜひぜひフォローしてね♪ ：https://x.com/webmaniapro ＜関連動画＞ 個人ゲーム開発を始めて約1 ...",
+    "transcriptLength": 135,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はWindowsの拡張機能に関する内容であり、直近の記事は主にAIやエディタに関する異なるトピックを扱っているため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はWindowsの拡張機能に関する内容であり、直近の記事は主にAIやエディタに関する異なるトピックを扱っているため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
+      "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
+      "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+      "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+      "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
+      "Gemini新モデルの技術的進化と実践的応用の可能性",
+      "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命"
+    ],
+    "researchedAt": "2025-11-29T09:22:34.183Z",
+    "failReason": "article-generation-error",
+    "errorMessage": "article total length too short"
   },
   {
     "id": "yt-TdCpEiUwEhA",
@@ -1620,124 +1731,6 @@
     "postDate": "2025-11-16",
     "slug": "2025-11-16-notebooklmai",
     "outputFile": "posts/2025-11-16-notebooklmai.html",
-    "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    }
-  },
-  {
-    "id": "yt-j0fks57hakI",
-    "source": {
-      "platform": "YouTube",
-      "name": "chaen-ai-lab",
-      "url": "https://www.youtube.com/@chaen-ai-lab",
-      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
-      "focus": [
-        "AI解説",
-        "LLM"
-      ]
-    },
-    "video": {
-      "id": "j0fks57hakI",
-      "title": "【LINE不要？？】ChatGPTにグループチャット機能が搭載。友人や同僚と同じチャットで会話が可能。AI搭載の新時代のチャット体験を徹底解説",
-      "url": "https://www.youtube.com/watch?v=j0fks57hakI",
-      "description": "↓【問い合わせフォーム】 動画内で紹介した資料の入手やAI研修・開発の問い合わせ　\nhttps://go.pardot.com/l/1097692/2025-03-09/kp1dw7\n\nチームのSlackやLINEでのやり取り、「会議のための会議」に非効率さを感じていませんか？ ChatGPTに新登場した「グループチャット機能」は、まさにその悩みを解決する革新的な機能です。\n\nこの動画では、最大20名で使えるAIチャットで、AIが自動で会話に参加し、アイデア出しや検索を徹底解説。 この機能を使えば、面倒なブレストや情報共有が簡単に終わります。 もうAIなしのグループチャットには戻れない、活用術をご覧ください。\n\n■タイムスタンプ\n03:13　グループチャットの始め方・招待方法 \n06:14　AIがファシリテーション（自己紹介ゲーム） \n09:48　実際のチャット画面\n12:38　AIへのサムネイル作成指示 \n15:55　AIによるキャラクター設定と改善提案\n19:32　X（旧Twitter）での反響と旅行企画 \n21:03　株式会社デジライズ紹介＆特典案内 \n\n\n🚀 【新サービス】Beyond AI コミュニティ開設のお知らせ\n​セミナー後、「継続的に学びたい」「質問できる場が欲しい」という多くのご要望をいただきました。\n\n​そこで、AIに代替されない人材を目指す相互学習コミュニティ「Beyond AI」 を開設いたしました！\n\n​✨ Beyond AIの特徴\n​💬 AI開発に関する質問し放題\n​🤝 実践者同士の情報交換\n​📊 最新AIツール・技術の共有\n​🎯 実案件での課題解決サポート\n​📚 限定コンテンツ・勉強会\n\n​🎁 期間限定：今なら7日間無料でお試しいただけます！\n\n​▶️ 詳細・お申込みはこちら： https://fincs.jp/plan/1928392793590269651\n\n■チャンネル登録：\nhttps://www.youtube.com/@chaen-ai-lab\n\n■出演者\n○X（フォロワー17万人）\nhttps://x.com/masahirochaen/ \n\n○自己紹介サイト\nhttps://chaen.super.site/\n\n■AIを学べるニュースとマガジン\n○note\nhttps://note.com/chaen_channel/m/mecad7f011f6d\n\n○メルマガ\nhttps://ai-database.beehiiv.com/p/news-20240203\n\n毎月10記事以上のマガジンが届いて、たったランチ1回分の料金です👀\n（1日換算ですと、約50円程度の破格の料金です🔥）\n\n最新のAI情報をまとめて毎週月曜日にレポートしてお送りしています。\nこれでもうAI情報を見逃すことはありません。\n\n加えて、速報AI関連ニュースやオススメツールの深掘り・操作方法についてもお届けします。\n\n合計毎週2回以上マガジンを発信予定です。\n\n✍️発信内容\n◆毎週月曜\n①AI情報まとめのレポート\n⇨これでAI情報を常にキャッチアップできます。\n\n②私がオススメするAIツールの深掘り情報\n\n③海外のAIニュースや世界でバズった投稿をまとめ\n\n◆不定期\n・速報AIニュース\n・AI系の重要なの論文紹介\n・実務で使えるおすすめAIツール比較\n・AIツールをビジネス利用するための具体的な戦略や操作方法\n\n■チャエンの自己紹介\n同志社大学在学時にオーストラリア・アメリカで留学を経験後、上海にて人事評価制度のコンサル企業のあしたのチーム上海支店の立ち上げに参画。その後、上海にて動画求人サイトの事業で起業。\n\n日本に帰国後、自身の人材領域の経験と得意のTwitterを活用し、Twitterで人材採用、集客の支援を行う株式会社TALMOODを設立。\n\n2022年、世界初の食べて稼げるEat to earn NFTゲーム「Eatnsmile」をスペインにて共同創業。\n\nその後はAI領域の事業を開始して、日本初の世界のAIツールを検索サービス「AI Database」やAIニュースレターの運営、企業向け社内秘書AIアシスタント「Knowledge AI」や著名人向けAI LINE Bot制作「Star AI」、AIと英会話を勉強できる「AI会話」などAI関連サービスを次々とリリース。\n\n現在はTwitterなどSNSにてAIトレンドや活用法について情報発信を行い、日本でAI活用に詳しい人物として各メディア（ABEMAニュース、TBSテレビ サンデージャポンなど）にも出演。\n\n※Twitterフォロワー17万人\n\nGMO AI & Web3株式会社顧問、一般社団法人生成AI活用普及協会評議員を務めながら、2023年にAI商社の「株式会社デジライズ」とAIシステム開発会社「AI-zen株式会社」を立ち上げ代表取締役に就任。NewsPicksプロピッカーも兼任\n\n#チャエンのAI研究所 #ChatGPT #グループチャット #新機能 #AI #業務効率化 #生産性向上 #Slack #LINE #ビジネスチャット #OpenAI #チャエン",
-      "thumbnail": "https://i3.ytimg.com/vi/j0fks57hakI/hqdefault.jpg",
-      "publishedAt": "2025-11-14T12:38:14+00:00"
-    },
-    "searchQuery": "ChatGPT グループチャット 機能",
-    "searchSummaries": [
-      {
-        "title": "ChatGPTに「グループチャット」機能。日本など4地域で試験導入 - PC Watch",
-        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5VUXNUUVpXRjZydkcxalo5TDNNZll1bkpXYmdNQzFCbmY4Z0dTVUtnNWxRZ243RVNMTjJpWlktUXRld3VoSTdTeVdaeVhsSHpjS0Njc3JaSlduT0F1cnNNVXZzOA?oc=5",
-        "snippet": "ChatGPTに「グループチャット」機能。日本など4地域で試験導入    PC Watch",
-        "summary": "ChatGPTに「グループチャット」機能。日本など4地域で試験導入    PC Watch"
-      },
-      {
-        "title": "ChatGPTに「グループチャット」 AIがまとめ役に（Impress Watch） - Yahoo!ニュース",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBUakh3U0RVMHpSeDJIc0x4d2JJYUhySDJ4NTM5eW9ESldqZHBBelBSVWQwY0xLVHNFVjdDeE5FZlgtV3pvQkt4ZzlveFFiYnZyTWlaYlllU194dk1pbUNLVVBBRHRST3VGZGpDNENpa05OV1JYcEpneVc5QlRQeHM?oc=5",
-        "snippet": "ChatGPTに「グループチャット」 AIがまとめ役に（Impress Watch）    Yahoo!ニュース",
-        "summary": "ChatGPTに「グループチャット」 AIがまとめ役に（Impress Watch）    Yahoo!ニュース"
-      },
-      {
-        "title": "OpenAI、ChatGPTで複数ユーザーによるグループチャット機能の試験提供を開始 - CodeZine",
-        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBTRFA2NkNteDNzY1VQTXh0LTRtMlJaWGI3dWpvY3JneFYya1VRVzE0aHV5akVHWWdkX2xxYTBQLWZCLTFSN3FWNXhMMTdPZw?oc=5",
-        "snippet": "OpenAI、ChatGPTで複数ユーザーによるグループチャット機能の試験提供を開始    CodeZine",
-        "summary": "OpenAI、ChatGPTで複数ユーザーによるグループチャット機能の試験提供を開始    CodeZine"
-      }
-    ],
-    "status": "generated",
-    "createdAt": "2025-11-15T06:43:03Z",
-    "updatedAt": "2025-11-15T07:03:55.709Z",
-    "topicKey": "line不要chatgptにクルーフチャット機能か搭載友人や同僚と同しチャットて会話か可能ai搭載の新時代のチャット体験を徹底解説",
-    "notes": "手動追加: Googleニュースで最新情報を調査した候補",
-    "generatedAt": "2025-11-15T07:03:55.709Z",
-    "postDate": "2025-11-15",
-    "slug": "2025-11-15-chatgpt",
-    "outputFile": "posts/2025-11-15-chatgpt.html",
-    "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    }
-  },
-  {
-    "id": "yt-M04rk7XOw84",
-    "source": {
-      "platform": "YouTube",
-      "name": "AI-Hakase",
-      "url": "https://www.youtube.com/@AI-Hakase",
-      "channelId": "UC_XCzQX1YiDetIm5IUYvZ7w",
-      "focus": [
-        "AI解説",
-        "研究トレンド"
-      ]
-    },
-    "video": {
-      "id": "M04rk7XOw84",
-      "title": "【11月最新比較】最強の対話AIはどれ？ChatGPT、Gemini、PixAI「Mioエージェント」を徹底検証した結果、\"うちの子\"創作の相棒はコレ一択でした。",
-      "url": "https://www.youtube.com/watch?v=M04rk7XOw84",
-      "description": "👇動画のもとになったNote記事\n https://note.com/ai_hakase/n/nabea8f9cfe25\n\n🎦 他のフル動画版などもこちらで掲載しております！\nhttps://note.com/ai_hakase/m/m093618cdf798\n\n✨😽現在、皆さんの周りの400人以上の方がご参加されています😽✨\nNoteメンバーシップ あいらぼ（Ai-Lab） にて、最新のトレンド AI を記事と動画でご紹介中です☀️\n🔗：https://note.com/ai_hakase/membership\n\n💬 Note掲示板にて質問対応なども行っています。ぜひご活用ください！\n🔗：https://note.com/ai_hakase/membership/boards\n\n🐤 ハカセさんは X (旧Twitter) でも、AI・トレンドの速報を発信しておりますので、最新技術やお得情報を見逃したくない方は、こちらのフォローもお願いします！\n🔗：https://x.com/ai_hakase_\n\n-----------------------------------------------\n\n- PixAI「ミオ・エージェント」でMBTI診断を全自動生成する神ワークフロー (note)\n🔗：https://note.com/ai_hakase/n/nfeb30ee56967?magazine_key=m135a1d146f62\n\n- AIエージェント「ミオ」を使った\"MV全自動\"制作術 (note)\n🔗：https://note.com/ai_hakase/n/n4fe162f6c37e?magazine_key=m135a1d146f62\n\n- PixAI ミオ - あなたの創造力を映し出すAIエージェント\n🔗：https://mio.pixai.art/ja?refCode=MB35FD9N\n\n- PixAI - AIイラスト・AI画像専用の投稿＆生成サイト（無料）\n🔗：https://pixai.art/ja?refCode=MB35FD9N\n\n- PixAI - メンバーシッププラン（AIアートジェネレーター）\n🔗：https://pixai.art/membership/plans?refCode=MB35FD9N\n\n- PixAI - メンバーシッププラン（お財布に優しいAIイラストサイト）\n🔗：https://pixai.art/ja/membership/plans?refCode=MB35FD9N\n\n-----------------------------------------------\n\n## その他情報\n● 記事・動画の作成の際に生成AIを使用しています。確認はしていますが、誤った記載があれば謹んで訂正を行いますので、コメントやDMにてお教えください。\n● References such as images and videos： Comming_Soon\n （A reference link is provided below the video.）\n● 3dmodel credit by: Ino Noi - @ino_o_noi(稲生乃衣様)\n\n🌟AI創作革命の最前線！あなたの「うちの子」の魂をAIが“心底”理解し、作画崩壊と完全にサヨナラする時代が到来しました！🤯\n\nAIイラストやAI動画生成はもう試しましたか？「もっと可愛く」「背景を夜空に」とAIと“おしゃべり”するだけで、まるで魔法のように絵や映像が生まれるこの時代。しかし、「指示が伝わらない」「うちの子が別人になっちゃった…😭」といったAIとのコミュニケーションの壁に悩んでいませんか？大切なキャラクターへの深い愛やこだわりを、AIがどこまで理解しているかはツールによって千差万別。\n\nそこで今回は、その創作の壁をぶち壊すべく、真の対話型AI王者を徹底解剖！あなたの「創作の魂」とも言える“うちの子”の心を、魂のレベルで理解する最高の“相棒”を見つけ出しちゃいましょう！\n\nこの動画では、AIクリエイターの【葉加瀬あい】が、主要AIツール（ChatGPT, Gemini, PixAI）の能力と、「うちの子」創作における課題点を徹底比較検証します。\n\n💖 この動画でわかる3つのポイント\n\n1. 巨人たちの“落とし穴”：ChatGPTとGemini、その能力と“うちの子”創作における課題点とは？\n    ChatGPT（gpt-image-1 & Sora v2）の画像・動画生成能力と、キャラクターの一貫性やワークフローの課題を深掘り。単発利用は優等生でも、「うちの子」創作のパートナーとしては頑固な一面も…？\n    Gemini（Nano Banana / Veo）の高性能な画像生成・編集、動画生成の魅力と、英語必須・ウォーターマークといった高ハードルな課題を解説。理系肌のエリートも、気軽に創作するには壁が…。\n\n2. PixAI Mioエージェントの衝撃：AIが“アイデア”を理解し、“自動で”創り出す革命的な仕組みとは？\n    専門分野で使われてきた「エージェント機能」が、ついにクリエイターの元へ！私たちの「こうしたい」というアイデアを、ゴールまで全自動でナビゲートしてくれる、PixAIの超有能な専属プロデューサー「Mioエージェント」の革新性を解説。MBTI診断イラスト16タイプ自動生成や、MVの映像プラン自動作成など、具体的な活用例もご紹介！\n\n3. “うちの子”を愛するならPixAI！シームレスな創作体験と驚異のコスパに迫る！\n    【黄金のワークフロー】 PixAIでは、画像生成から編集、動画化まで、対話するだけでストレスなく進めるシームレスな体験を実現。思考がそのまま形になる感覚を味わえます。ウォーターマークもなし！\n    【動画の一貫性】 PixAIの「高一貫性モードV3」が、「うちの子」が動画の途中で別人になる問題を解決！キャラクターの作画を高いレベルで守り、命を吹き込みます。\n    【圧倒的コストパフォーマンス】 他社が月額3,000円超えの中、PixAIはなんと月額1120円から！毎日のログインボーナスと合わせ、月に約70万クレジットも獲得可能。さらに、こちらの特別なリンクから加入で2,000,000クレジット追加特典もご用意しました！副業やマネタイズを目指すクリエイターにもおすすめです。\n\n今回の徹底比較で、ChatGPTやGeminiが単発利用には優秀な一方、PixAI (Mioエージェント) が「うちの子」創作におけるワークフローの分断、キャラクターの一貫性の欠如、コストや言語の壁といった問題を全て解決することが判明しました。\n\nこれからのAI創作は、単なる“呪文”入力から、魂の込められた“会話”へと進化します。そして、その進化の最前線にいるのがPixAIとMioエージェントです。皆さんの大切な“うちの子”の物語を、最高の相棒と共に紡いでいきましょう！💖\n\nぜひこの機会に、PixAIの無限の創作の可能性を体験してみてください！SNSでの発信やコンテンツ作成にも役立つこと間違いなしです！\n\n#葉加瀬あい #副業 #SNS #マーケティング #マネタイズ #ChatGPT\n#AIイラスト #AI生成 #AI動画 #AI創作 #AIツール #対話型AI #Mioエージェント #PixAI #Sora #Veo #ChatGPT #Gemini #キャラクター創作 #うちの子 #作画崩壊 #イラスト #漫画 #アニメーション #デジタルアート #クリエイター #創作活動 #マネタイズ #副業 #SNSマーケティング #AIビジネス #コンテンツ制作 #YouTube #チュートリアル #比較検証 #最新AI #高一貫性モードV3 #AIエージェント #プロンプトエンジニアリング #AIアート #AIキャラクター #AIアシスタント #AI活用 #生成AI #画像生成AI #動画生成AI #AIの未来 #テクノロジー #効率化 #ワークフロー #コストパフォーマンス #AIプロンプト #StableDiffusion #Midjourney #AIクリエイター #葉加瀬あい\n\nFramePack, WanGP, Wan2.1, Hunyuan-Custom, Paperspace, Hunyuan Video,\nAIイラスト, AI生成, AI動画, AI創作, AIツール, 対話型AI, PixAI, Mioエージェント, ChatGPT, Gemini, 作画崩壊, キャラクター一貫性, うちの子, AIアート, AIイラストレーター, AIキャラクター生成, テキストから画像, テキストから動画, プロンプト, プロンプトエンジニアリング, 生成AI, 画像生成AI, 動画生成AI, AIアシスタント, AIチャット, AI会話, イラスト作成, デジタルイラスト, 漫画制作, アニメーション制作, キャラクターデザイン, オリジナルキャラクター, ワークフロー効率化, クリエイティブツール, コストパフォーマンス, 無料AIツール, サブスクリプション, クレジット, 比較, レビュー, 評価, 使い方, チュートリアル, 解説, Sora v2, Veo, GPT-image-1, Nano Banana, Midjourney, Stable Diffusion, 副業, マネタイズ, 稼ぐ, SNS活用, マーケティング, コンテンツ作成, 最新AI, AIトレンド, 未来の創作, AIイラスト 作画崩壊 対策, キャラクター一貫性 AI, AI動画 生成 コスパ, PixAI 使い方, Mioエージェント とは, ChatGPT 画像生成 課題, Gemini 動画生成 ウォーターマーク, うちの子 AI 作成, AIクリエイター ツール比較, 無料 AIイラスト ツール, AIで稼ぐ, キャラクターデザイン AI, AIイラスト やり方, AI動画 作り方, AIツール 比較, 高一貫性モード, クリエイター支援AI, AIワークフロー, コスト効率, AI活用術, 葉加瀬あい, SNSマネタイズ",
-      "thumbnail": "https://i2.ytimg.com/vi/M04rk7XOw84/hqdefault.jpg",
-      "publishedAt": "2025-11-14T11:39:40+00:00"
-    },
-    "searchQuery": "対話AI 比較 ChatGPT Gemini",
-    "searchSummaries": [
-      {
-        "title": "ChatGPT・Gemini・Claudeを徹底比較！性能や料金の違いを解説 - 株式会社SHIFT AI",
-        "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1MS2Myb1ZJNzJmZnVuRTNxSVQwTkRIcnlyVkdVRVEtQWItQURRWVNqZzJ3NVkyWmk1dk9rS0tyMmUxRVk5RWsxOGRB?oc=5",
-        "snippet": "ChatGPT・Gemini・Claudeを徹底比較！性能や料金の違いを解説    株式会社SHIFT AI",
-        "summary": "ChatGPT・Gemini・Claudeを徹底比較！性能や料金の違いを解説    株式会社SHIFT AI"
-      },
-      {
-        "title": "GeminiとChatGPTの比較｜生成AIツールの違いと選び方を徹底解説 - AIsmiley",
-        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9pVHRhaWJWb05pby05dTh5NXNqd1ktXzZsU0tsci1sbXdQWVBpd3FTckRkeWdNdE9pNzJuS2VYOVlJRTFuRTVtRXlvcEhiMjBLVE1JajVCN1AyMkJtU1BPcGF2a2s?oc=5",
-        "snippet": "GeminiとChatGPTの比較｜生成AIツールの違いと選び方を徹底解説    AIsmiley",
-        "summary": "GeminiとChatGPTの比較｜生成AIツールの違いと選び方を徹底解説    AIsmiley"
-      },
-      {
-        "title": "対話型AIサービス比較おすすめ16選！選び方や比較のポイント - BOXIL",
-        "url": "https://news.google.com/rss/articles/CBMiQEFVX3lxTFBhdm5RU3Z1MGFhNER3dk5BaFByZHZ4cUEwZjRVMnNBQzNwcjJURkN1TzVUR1NGSThvYjVUWVNaS0I?oc=5",
-        "snippet": "対話型AIサービス比較おすすめ16選！選び方や比較のポイント    BOXIL",
-        "summary": "対話型AIサービス比較おすすめ16選！選び方や比較のポイント    BOXIL"
-      }
-    ],
-    "status": "generated",
-    "createdAt": "2025-11-15T06:43:03Z",
-    "updatedAt": "2025-11-15T07:20:02.305Z",
-    "topicKey": "11月最新比較最強の対話aiはとれchatgptgeminipixaimioエーシェントを徹底検証した結果うちの子創作の相棒はコレ一択てした",
-    "notes": "手動追加: Googleニュースで最新情報を調査した候補",
-    "generatedAt": "2025-11-15T07:20:02.305Z",
-    "postDate": "2025-11-15",
-    "slug": "2025-11-15-aichatgptgeminipixai",
-    "outputFile": "posts/2025-11-15-aichatgptgeminipixai.html",
     "image": {
       "key": "ai-core-01",
       "src": "assets/img/article-templates/ai-core-01.webp",
