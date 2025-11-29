@@ -1,0 +1,127 @@
+/* === Share Component === */
+/* 記事共有ボタンのスタイル */
+
+.share-container {
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.share-label {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    letter-spacing: 0.05em;
+}
+
+.share-buttons {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    color: #fff;
+    font-size: 1.25rem;
+    transition: transform var(--transition-spring), box-shadow var(--transition-base);
+    box-shadow: var(--shadow-sm);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.share-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.share-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Brand Colors */
+.share-btn--x {
+    background-color: #000;
+}
+
+.share-btn--facebook {
+    background-color: #1877f2;
+}
+
+.share-btn--line {
+    background-color: #06c755;
+}
+
+.share-btn--hatena {
+    background-color: #00a4de;
+}
+
+.share-btn--copy {
+    background-color: var(--surface-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-medium);
+}
+
+.share-btn--copy:hover {
+    background-color: var(--surface-hover);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Tooltip for Copy */
+.share-btn--copy {
+    position: relative;
+}
+
+.share-btn--copy::after {
+    content: "Copied!";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: var(--text-primary);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    margin-bottom: 8px;
+}
+
+.share-btn--copy.copied::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@media (min-width: 768px) {
+    .share-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .share-buttons {
+        justify-content: flex-end;
+    }
+}
