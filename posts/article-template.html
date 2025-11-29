@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-       crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 
   <!-- ファビコン -->
   <link rel="icon" type="image/svg+xml" href="../assets/img/logo.svg">
@@ -33,6 +34,7 @@
 
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
+
 <body class="article-page">
   <!-- ヘッダーはcomponents.jsで動的に挿入されます -->
 
@@ -60,6 +62,13 @@
       <div class="inner article-grid">
         <div class="article-main-column">
           <article class="post-article article-content">
+            <!-- 1. Hero Image (Standardized) -->
+            <!--
+            <div class="article-hero-image-container">
+              <img src="../assets/img/posts/YYYY/MM/filename.png" alt="記事のメイン画像">
+            </div>
+            -->
+
             <section class="article-intro-block">
               <div class="intro-content">
                 <p>本文の前に短いリードを入れ、この記事で何を届けるのかを明示してください。挨拶や不要な枕詞は省き、タイトルと自然につながる導入にすると読みやすくなります。</p>
@@ -70,7 +79,8 @@
             <section class="article-section" id="section-overview">
               <p class="section-eyebrow">Section 01</p>
               <h2>セクション見出し</h2>
-              <p>本文は自由に入れ替えてください。段落やリスト、図版などのHTML要素を利用できます。適宜 <code>&lt;figure&gt;</code> や引用を挿入しても、レイアウトが崩れないよう調整済みです。</p>
+              <p>本文は自由に入れ替えてください。段落やリスト、図版などのHTML要素を利用できます。適宜 <code>&lt;figure&gt;</code> や引用を挿入しても、レイアウトが崩れないよう調整済みです。
+              </p>
             </section>
 
             <section class="article-section" id="section-points">
@@ -87,8 +97,10 @@
             <section class="article-section" id="section-next">
               <p class="section-eyebrow">Section 03</p>
               <h2>次のアクション</h2>
-              <p>執筆が完了したら <code>data/posts.json</code> に記事情報を追記すれば、トップページの一覧に表示されます。テンプレートを流用してもよく、OpenAIジェネレーターの出力を微調整して公開しても問題ありません。</p>
-              <p>必要に応じて <a href="../automation/templates/article.md">automation/templates/article.md</a> を更新し、生成される構成を調整してください。</p>
+              <p>執筆が完了したら <code>data/posts.json</code>
+                に記事情報を追記すれば、トップページの一覧に表示されます。テンプレートを流用してもよく、OpenAIジェネレーターの出力を微調整して公開しても問題ありません。</p>
+              <p>必要に応じて <a href="../automation/templates/article.md">automation/templates/article.md</a>
+                を更新し、生成される構成を調整してください。</p>
             </section>
           </article>
         </div>
@@ -116,4 +128,5 @@
   <script src="../assets/js/main.js" defer></script>
   <script src="../assets/js/article.js" defer></script>
 </body>
+
 </html>
