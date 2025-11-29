@@ -1,5 +1,60 @@
 [
   {
+    "title": "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
+    "date": "2025-11-29",
+    "summary": "FLUX.2によるZero-Shotマルチ編集ワークフローを徹底解説。AIを活用した効率的な動画編集手法を学び、ComfyUIの具体的操作で初心者でも実践可能なスキルを習得します。",
+    "tags": [
+      {
+        "slug": "flux2",
+        "label": "FLUX.2",
+        "category": "その他",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "zero-shot",
+        "label": "Zero-Shot編集",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "ai",
+        "label": "AI動画編集",
+        "category": "その他",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "comfyui",
+        "label": "ComfyUI",
+        "category": "その他",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "tag-5",
+        "label": "技術革新",
+        "category": "その他",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/11/2025-11-29-flux2zero-shotai.html",
+    "slug": "2025-11-29-flux2zero-shotai",
+    "publishedAt": "2025-11-29T21:13:49.088Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-01",
+      "src": "assets/img/article-templates/ai-core-01.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    }
+  },
+  {
     "title": "【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。",
     "date": "2025-11-29",
     "summary": "イーロン・マスクの報酬が最大150兆円になるというニュース。これは単なる金額の話ではなく、「労働」や「運転」がなくなる未来への手付金だった？その背景と私たちの生活への影響をわかりやすく解説します。",

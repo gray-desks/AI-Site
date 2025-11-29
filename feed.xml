@@ -5,21 +5,33 @@
   <link>https://yamazaki2357.github.io/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Sat, 29 Nov 2025 10:04:33 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 29 Nov 2025 21:13:49 GMT</lastBuildDate>
   <atom:link href="https://yamazaki2357.github.io/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
   <item>
-    <title>イーロン・マスクの報酬150兆円：ビジネス戦略と技術革新の未来像</title>
+    <title>FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新</title>
+    <link>https://yamazaki2357.github.io/AI-Site/posts/2025/11/2025-11-29-flux2zero-shotai.html</link>
+    <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025/11/2025-11-29-flux2zero-shotai.html</guid>
+    <pubDate>Sat, 29 Nov 2025 21:13:49 GMT</pubDate>
+    <description>FLUX.2によるZero-Shotマルチ編集ワークフローを徹底解説。AIを活用した効率的な動画編集手法を学び、ComfyUIの具体的操作で初心者でも実践可能なスキルを習得します。</description>
+    <category>FLUX.2</category>
+    <category>Zero-Shot編集</category>
+    <category>AI動画編集</category>
+    <category>ComfyUI</category>
+    <category>技術革新</category>
+    <category>下書き</category>
+  </item>
+  <item>
+    <title>【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。</title>
     <link>https://yamazaki2357.github.io/AI-Site/posts/2025/11/2025-11-29-150.html</link>
     <guid isPermaLink="true">https://yamazaki2357.github.io/AI-Site/posts/2025/11/2025-11-29-150.html</guid>
     <pubDate>Sat, 29 Nov 2025 10:04:33 GMT</pubDate>
-    <description>イーロン・マスクの報酬が150兆円に達するという衝撃的なニュースを深掘りし、その巨額の資金がどのように技術革新やビジネス戦略に活用されるのかを探ります。マスクの影響力と資金の使い道から、テクノロジー業界における新たなトレンドと可能性を考察します。</description>
+    <description>イーロン・マスクの報酬が最大150兆円になるというニュース。これは単なる金額の話ではなく、「労働」や「運転」がなくなる未来への手付金だった？その背景と私たちの生活への影響をわかりやすく解説します。</description>
     <category>イーロン・マスク</category>
     <category>ビジネス戦略</category>
     <category>技術革新</category>
     <category>AIトピック</category>
     <category>持続可能エネルギー</category>
-    <category>下書き</category>
   </item>
   <item>
     <title>思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力</title>
