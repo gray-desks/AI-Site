@@ -287,6 +287,11 @@ window.initArticlePage = () => {
   // --- 6. Note記事用コピー機能 ---
   // 記事のタイトル、本文、タグをNote記事形式でクリップボードにコピーする
   const setupNoteCopyButton = () => {
+    // ローカル環境でのみ表示する
+    const hostname = window.location.hostname;
+    const isLocal = hostname === 'localhost' || hostname === '127.0.0.1';
+    if (!isLocal) return;
+
     const articleContent = document.querySelector('.article-content');
     if (!articleContent) return;
 
