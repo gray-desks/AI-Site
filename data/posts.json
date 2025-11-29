@@ -1,57 +1,44 @@
 [
   {
-    "title": "Aqua Voiceの技術革新：AI音声入力の生産性向上と実践事例",
+    "title": "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
     "date": "2025-11-28",
-    "summary": "Aqua VoiceはAIを活用した音声入力技術で、生産性の向上を実現します。本記事では、技術的な背景から具体的なユースケースまでを詳細に解説し、ビジネスや開発現場での即戦力となる活用方法を紹介します。",
+    "summary": "Aqua Voiceは単なる音声入力ではありません。「声で編集する」次世代エディタです。Y Combinator発のこのツールが、なぜ今話題なのか？料金や使い方も含めて徹底解説します。",
     "tags": [
-      {
-        "slug": "tag-1",
-        "label": "音声入力",
-        "category": "その他",
-        "style": "accent-pink"
-      },
-      {
-        "slug": "ai",
-        "label": "AI技術",
-        "category": "その他",
-        "style": "accent-orange"
-      },
-      {
-        "slug": "tag-3",
-        "label": "生産性向上",
-        "category": "その他",
-        "style": "accent-orange"
-      },
       {
         "slug": "aqua-voice",
         "label": "Aqua Voice",
-        "category": "その他",
-        "style": "accent-gold"
+        "category": "ツール",
+        "style": "accent-blue"
       },
       {
-        "slug": "tag-5",
-        "label": "技術革新",
-        "category": "その他",
-        "style": "accent-sky"
+        "slug": "voice-ai",
+        "label": "音声入力AI",
+        "category": "技術",
+        "style": "accent-pink"
       },
       {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
-        "style": "accent-gold"
+        "slug": "productivity",
+        "label": "生産性向上",
+        "category": "目的",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "review",
+        "label": "レビュー",
+        "category": "記事タイプ",
+        "style": "accent-green"
       }
     ],
     "url": "posts/2025/11/2025-11-28-aqua-voiceai.html",
     "slug": "2025-11-28-aqua-voiceai",
     "publishedAt": "2025-11-28T21:14:11.150Z",
-    "status": "draft",
     "image": {
-      "key": "ai-core-03",
-      "src": "assets/img/article-templates/ai-core-03.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント3）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
+      "key": "aqua-voice-hero",
+      "src": "assets/img/posts/2025/11/aqua_voice_hero.png",
+      "alt": "Aqua Voice: 声で書く次世代エディタ",
+      "label": "Productivity Tools",
+      "caption": "声で操作する次世代エディタ「Aqua Voice」のイメージ",
+      "category": "tool"
     }
   },
   {

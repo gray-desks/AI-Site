@@ -228,9 +228,24 @@ window.initArticlePage = () => {
       if (!slug) return;
 
       // ルートパスからの相対パスを計算してリダイレクト
-      // posts/ディレクトリ内からは '../' を、それ以外からは './' を使用
-      const basePath = window.location.pathname.includes('/posts/') ? '../' : './';
-      window.location.href = `${basePath}index.html?tag=${encodeURIComponent(slug)}`;
+      // ヘッダーのロゴリンク（ホームへのリンク）を利用して正確なパスを取得
+      const homeLink = document.querySelector('.site-header .brand');
+      let targetUrl = './index.html';
+
+      if (homeLink) {
+        const href = homeLink.getAttribute('href');
+        if (href) targetUrl = href;
+      } else if (window.location.pathname.includes('/posts/')) {
+        // フォールバック: パスから深さを計算
+        // /posts/2025/11/article.html -> ../../../index.html
+        // /posts/ 以下のセグメント数をカウント
+        const relativePath = window.location.pathname.split('/posts/')[1];
+        const depth = relativePath ? relativePath.split('/').length : 1;
+        targetUrl = '../'.repeat(depth) + 'index.html';
+      }
+
+      const separator = targetUrl.includes('?') ? '&' : '?';
+      window.location.href = `${targetUrl}${separator}tag=${encodeURIComponent(slug)}`;
     };
 
     document.addEventListener('click', clickHandler);
