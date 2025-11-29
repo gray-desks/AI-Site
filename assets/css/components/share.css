@@ -2,22 +2,24 @@
 /* 記事共有ボタンのスタイル */
 
 .share-container {
-    margin: var(--space-xl) 0;
-    padding: var(--space-lg) 0;
-    border-top: 1px solid var(--border-subtle);
-    border-bottom: 1px solid var(--border-subtle);
+    margin: var(--space-2xl) 0;
+    padding: var(--space-xl);
+    background-color: var(--surface-secondary);
+    border-radius: var(--radius-lg);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--space-md);
+    transition: background-color var(--transition-base);
 }
 
 .share-label {
     font-family: var(--font-display);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-tertiary);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-secondary);
     letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .share-buttons {
@@ -31,44 +33,57 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-full);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
     color: #fff;
-    font-size: 1.25rem;
-    transition: transform var(--transition-spring), box-shadow var(--transition-base);
-    box-shadow: var(--shadow-sm);
+    font-size: 1.5rem;
+    transition: all var(--transition-spring);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     border: none;
     cursor: pointer;
     text-decoration: none;
+    position: relative;
+    overflow: visible;
+    /* ツールチップ表示のため */
 }
 
+/* ホバーエフェクト */
 .share-btn:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .share-btn:active {
-    transform: translateY(0) scale(0.95);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 }
 
 .share-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     fill: currentColor;
+    transition: transform var(--transition-base);
 }
 
-/* Brand Colors */
+.share-btn:hover svg {
+    transform: scale(1.1);
+}
+
+/* Brand Colors with Gradients */
 .share-btn--x {
     background-color: #000;
+    background: linear-gradient(135deg, #333 0%, #000 100%);
 }
 
 .share-btn--facebook {
     background-color: #1877f2;
+    background: linear-gradient(135deg, #3b5998 0%, #1877f2 100%);
 }
 
 .share-btn--line {
     background-color: #06c755;
+    background: linear-gradient(135deg, #00b900 0%, #06c755 100%);
 }
 
 .share-btn--hatena {
@@ -76,7 +91,7 @@
 }
 
 .share-btn--copy {
-    background-color: var(--surface-secondary);
+    background-color: #fff;
     color: var(--text-secondary);
     border: 1px solid var(--border-medium);
 }
@@ -88,29 +103,43 @@
 }
 
 /* Tooltip for Copy */
-.share-btn--copy {
-    position: relative;
-}
-
 .share-btn--copy::after {
     content: "Copied!";
     position: absolute;
-    bottom: 100%;
+    bottom: 120%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background-color: var(--text-primary);
     color: #fff;
-    padding: 4px 8px;
-    border-radius: var(--radius-sm);
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
     font-size: 0.75rem;
+    font-weight: 600;
     opacity: 0;
     pointer-events: none;
-    transition: all var(--transition-base);
+    transition: all 0.2s ease;
     white-space: nowrap;
-    margin-bottom: 8px;
+    box-shadow: var(--shadow-md);
+    z-index: 10;
 }
 
-.share-btn--copy.copied::after {
+.share-btn--copy::before {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--text-primary) transparent transparent transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.share-btn--copy.copied::after,
+.share-btn--copy.copied::before {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
@@ -119,6 +148,7 @@
     .share-container {
         flex-direction: row;
         justify-content: space-between;
+        padding: var(--space-xl) var(--space-2xl);
     }
 
     .share-buttons {
