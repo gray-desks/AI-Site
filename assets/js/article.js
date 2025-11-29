@@ -227,22 +227,44 @@ window.initArticlePage = () => {
       const slug = tagElement.getAttribute('data-tag-slug');
       if (!slug) return;
 
-      // ルートパスからの相対パスを計算してリダイレクト
-      // ヘッダーのロゴリンク（ホームへのリンク）を利用して正確なパスを取得
-      const homeLink = document.querySelector('.site-header .brand');
-      let targetUrl = './index.html';
+      // ルートパスを取得するヘルパー関数（将来的な構成変更にも耐えられるように堅牢化）
+      const getRootPath = () => {
+        // 1. ヘッダーのロゴリンクから取得（最も確実な設定値）
+        // ビルドプロセスによって生成された正しい相対パスを利用する
+        const homeLink = document.querySelector('.site-header .brand');
+        if (homeLink) {
+          const href = homeLink.getAttribute('href');
+          if (href) {
+            // "index.html" を除去してディレクトリパスのみを返す
+            return href.replace(/index\.html$/, '');
+          }
+        }
 
-      if (homeLink) {
-        const href = homeLink.getAttribute('href');
-        if (href) targetUrl = href;
-      } else if (window.location.pathname.includes('/posts/')) {
-        // フォールバック: パスから深さを計算
-        // /posts/2025/11/article.html -> ../../../index.html
-        // /posts/ 以下のセグメント数をカウント
-        const relativePath = window.location.pathname.split('/posts/')[1];
-        const depth = relativePath ? relativePath.split('/').length : 1;
-        targetUrl = '../'.repeat(depth) + 'index.html';
-      }
+        // 2. スクリプトタグのパスから逆算（フォールバック）
+        // article.js が assets/js/ にあることを前提に、その読み込みパスからルートを割り出す
+        const script = document.querySelector('script[src*="assets/js/article.js"]');
+        if (script) {
+          const src = script.getAttribute('src');
+          // 例: "../../../assets/js/article.js" -> "../../../"
+          if (src) return src.split('assets/js/article.js')[0];
+        }
+
+        // 3. URL構造からの推測（最終手段）
+        // /posts/ ディレクトリの深さから相対パスを生成
+        if (window.location.pathname.includes('/posts/')) {
+          const relativePath = window.location.pathname.split('/posts/')[1];
+          // パス区切り文字の数だけ階層を上がる
+          const depth = relativePath.split('/').length;
+          return '../'.repeat(depth);
+        }
+
+        return './';
+      };
+
+      const rootPath = getRootPath();
+      // パスの末尾が '/' でない、かつ空文字でない場合は '/' を追加（念のため）
+      const basePath = (rootPath && !rootPath.endsWith('/')) ? `${rootPath}/` : rootPath;
+      const targetUrl = `${basePath}index.html`;
 
       const separator = targetUrl.includes('?') ? '&' : '?';
       window.location.href = `${targetUrl}${separator}tag=${encodeURIComponent(slug)}`;
