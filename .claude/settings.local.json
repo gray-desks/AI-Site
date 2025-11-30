@@ -16,7 +16,8 @@
       "Bash(git hash-object:*)",
       "Bash(git rm:*)",
       "Bash(python3:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npm run posts:drafts:*)"
     ],
     "deny": [],
     "ask": []

@@ -166,6 +166,9 @@ const initPostList = () => {
     posts.filter(isPublishedPost).forEach(post => {
       (post.tags || []).forEach(tag => {
         const tagObj = toTagObject(tag);
+        // 下書きタグはここではカウントしない（後で特別扱いする）
+        if (tagObj.slug === 'draft') return;
+
         if (!tagMap.has(tagObj.slug)) {
           tagMap.set(tagObj.slug, { ...tagObj, count: 0 });
         }
@@ -173,22 +176,23 @@ const initPostList = () => {
         tagMap.get(tagObj.slug).count++;
       });
     });
+
     // カウント数の降順、同数なら日本語の辞書順でソート
     const tags = Array.from(tagMap.values()).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'ja'));
-    // 下書きタグの表示を保証（下書きが存在する場合）
-    const hasDraftTag = tags.some((tag) => tag.slug === 'draft');
+
+    // 下書き記事の数をカウント
     const draftCount = posts.filter(isDraftPost).length;
-    let draftTag = null;
-    if (hasDraftTag) {
-      const idx = tags.findIndex((tag) => tag.slug === 'draft');
-      draftTag = tags.splice(idx, 1)[0];
-    } else if (draftCount > 0) {
-      draftTag = { slug: 'draft', label: '下書き', count: draftCount };
+
+    // 下書き記事が存在する場合のみ、最後に「下書き」タグを追加
+    if (draftCount > 0) {
+      tags.push({
+        slug: 'draft',
+        label: '下書き',
+        count: draftCount,
+        style: 'accent-gold' // スタイルも指定しておく
+      });
     }
-    if (draftTag) {
-      draftTag.count = draftCount || draftTag.count || 0;
-      tags.push(draftTag); // 常に最後に配置
-    }
+
     return tags;
   };
 

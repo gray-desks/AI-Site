@@ -1,5 +1,49 @@
 [
   {
+    "title": "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+    "date": "2025-11-30",
+    "summary": "Googleの次世代IDE「Antigravity」に搭載された画像生成AI「Nano Banana Pro」を徹底解説。その正体であるGemini 3 Pro Imageの性能、1日5枚と言われる厳しい制限の理由、そして有料版のコストまで、開発者が知るべき全情報をまとめました。",
+    "tags": [
+      {
+        "slug": "antigravity",
+        "label": "Antigravity",
+        "category": "ツール",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "nano-banana-pro",
+        "label": "Nano Banana Pro",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "gemini-3",
+        "label": "Gemini 3",
+        "category": "企業・プロダクト",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "image-generation",
+        "label": "画像生成AI",
+        "category": "技術トピック",
+        "style": "accent-pink"
+      }
+    ],
+    "url": "posts/2025/11/2025-11-30-nanobanana.html",
+    "slug": "2025-11-30-nanobanana",
+    "publishedAt": "2025-11-30T07:35:00.000Z",
+    "status": "published",
+    "image": {
+      "key": "nanobanana-hero",
+      "src": "assets/img/posts/2025/11/nanobanana_pro_hero.png",
+      "alt": "Nano Banana ProとAntigravityのイメージイラスト",
+      "label": "Tech Deep Dive",
+      "caption": "AntigravityとNano Banana Proの融合イメージ",
+      "category": "ai"
+    },
+    "createdAt": "2025-11-30T07:35:00.000Z"
+  },
+  {
     "title": "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
     "date": "2025-11-30",
     "summary": "2025年の個人開発（Indie Hacking）における最新トレンドを徹底解説。AI活用による「一人企業」の実現性、海外で主流のBuild in Public、そして日本市場の独自性まで、個人開発者が知っておくべき生存戦略をまとめました。",
