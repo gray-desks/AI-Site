@@ -10,10 +10,13 @@ const fs = require('fs');
 const TEMPLATE_DIR = path.resolve(__dirname, '../templates/components');
 const HEADER_TEMPLATE_PATH = path.join(TEMPLATE_DIR, 'header.html');
 const FOOTER_TEMPLATE_PATH = path.join(TEMPLATE_DIR, 'footer.html');
+const POSTS_JSON_PATH = path.resolve(__dirname, '../../data/posts.json');
 
 // テンプレートキャッシュ
 let cachedHeaderTemplate = null;
 let cachedFooterTemplate = null;
+// 下書き状態キャッシュ
+let hasDraftsCache = null;
 
 /**
  * テンプレートファイルを読み込みます（キャッシュ対応）
@@ -35,6 +38,36 @@ const loadTemplates = () => {
       cachedFooterTemplate = '';
     }
   }
+};
+
+/**
+ * data/posts.json を読み込み、下書き記事があるかチェックします（キャッシュ対応）
+ * @returns {boolean} 下書き記事が存在するかどうか
+ */
+const checkForDrafts = () => {
+  if (hasDraftsCache !== null) return hasDraftsCache;
+
+  try {
+    if (!fs.existsSync(POSTS_JSON_PATH)) {
+      hasDraftsCache = false;
+      return false;
+    }
+    const posts = JSON.parse(fs.readFileSync(POSTS_JSON_PATH, 'utf-8'));
+    hasDraftsCache = posts.some(post => {
+      // タグチェック (#下書き, 下書き, draft)
+      const hasDraftTag = post.tags && post.tags.some(tag =>
+        tag.label === '下書き' || tag.slug === 'draft' || tag.label === '#下書き'
+      );
+      // ステータスチェック
+      const isDraftStatus = post.status === 'draft';
+
+      return hasDraftTag || isDraftStatus;
+    });
+  } catch (e) {
+    console.error('[SSG] Failed to check for drafts:', e);
+    hasDraftsCache = false;
+  }
+  return hasDraftsCache;
 };
 
 /**
@@ -107,12 +140,36 @@ const injectCommonComponents = (htmlContent, relativeFilePath) => {
 
   const headerHTML = getHeaderHTML(basePath, currentPath);
   const footerHTML = getFooterHTML(basePath);
+  const hasDrafts = checkForDrafts();
 
   // Remove existing header/footer if any (to avoid duplication on re-runs)
   // Use \s* to consume surrounding whitespace (newlines) to prevent accumulation
   let newHtml = htmlContent
     .replace(/\s*<header class="site-header">[\s\S]*?<\/header>\s*/, '')
     .replace(/\s*<footer class="site-footer">[\s\S]*?<\/footer>\s*/, '');
+
+  // Handle Draft Indicator Class
+  if (newHtml.includes('<body')) {
+    // 1. Clean up existing has-drafts class
+    if (newHtml.match(/<body[^>]*class=["']/)) {
+      newHtml = newHtml.replace(/(<body[^>]*class=["'])([^"']*)("')/i, (match, p1, p2, p3) => {
+        const classes = p2.split(/\s+/).filter(c => c !== 'has-drafts' && c !== '').join(' ');
+        return `${p1}${classes}${p3}`;
+      });
+    }
+
+    // 2. Add has-drafts class if needed
+    if (hasDrafts) {
+      if (newHtml.match(/<body[^>]*class=["']/)) {
+        newHtml = newHtml.replace(/(<body[^>]*class=["'])([^"']*)("')/i, (match, p1, p2, p3) => {
+          const currentClasses = p2.trim();
+          return `${p1}${currentClasses ? currentClasses + ' ' : ''}has-drafts${p3}`;
+        });
+      } else {
+        newHtml = newHtml.replace(/(<body)/i, '$1 class="has-drafts"');
+      }
+    }
+  }
 
   // Inject Header after <body>
   // We look for <body> tag. If it has attributes, we handle that.

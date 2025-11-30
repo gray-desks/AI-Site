@@ -50,6 +50,7 @@
 /* 広告表示やアクセシビリティ向上のための補助的なスタイル */
 @import url('utilities/ads.css');
 @import url('utilities/accessibility.css');
+@import url('utilities/draft-indicator.css');
 
 /* === Responsive: レスポンシブデザイン === */
 /* 画面幅に応じたスタイル調整 */
