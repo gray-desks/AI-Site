@@ -1,5 +1,49 @@
 [
   {
+    "title": "個人ゲーム開発の進捗とAI活用：1か月で得た教訓と実践的アドバイス",
+    "date": "2025-11-30",
+    "summary": "個人ゲーム開発を始めて1か月の進捗を共有し、具体的な成果や課題を分析します。また、AIやWebマーケティングの視点から、ゲーム開発に役立つ実践的なアドバイスを提供します。",
+    "tags": [
+      {
+        "slug": "tag-1",
+        "label": "ゲーム開発",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "ai-utilization",
+        "label": "AI活用",
+        "category": "ユースケース",
+        "style": "accent-teal"
+      },
+      {
+        "slug": "web",
+        "label": "Webマーケティング",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/11/2025-11-30-ai1.html",
+    "slug": "2025-11-30-ai1",
+    "publishedAt": "2025-11-30T06:09:44.772Z",
+    "status": "draft",
+    "image": {
+      "key": "future-05",
+      "src": "assets/img/article-templates/future-05.webp",
+      "alt": "未来感のあるホログラム調（バリアント5）",
+      "label": "フューチャービジョン",
+      "caption": "次世代ロードマップやGemini 3.0の展望記事向け。",
+      "category": "future"
+    },
+    "createdAt": "2025-11-30T06:09:44.776Z"
+  },
+  {
     "title": "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
     "date": "2025-11-29",
     "summary": "FLUX.2によるZero-Shotマルチ編集ワークフローを徹底解説。AIを活用した効率的な動画編集手法を学び、ComfyUIの具体的操作で初心者でも実践可能なスキルを習得します。",

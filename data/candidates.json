@@ -1,5 +1,61 @@
 [
   {
+    "id": "yt-5uLXVwcl4zE",
+    "source": {
+      "platform": "YouTube",
+      "name": "iketomo-ch",
+      "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
+      "url": "https://www.youtube.com/@iketomo-ch",
+      "focus": [
+        "AIツール",
+        "活用事例"
+      ]
+    },
+    "video": {
+      "id": "5uLXVwcl4zE",
+      "title": "注目AIニュース17選～Claude 4.5 Opus、ChatGPTショッピング、Difyトリガー、FLUX.2、AI労働力代替Iceburg Indexなど",
+      "url": "https://www.youtube.com/watch?v=5uLXVwcl4zE",
+      "description": "提供：Skywork onelink：https://skywork.ai/p/6LQNqF クーポンコード：iketomo-ch20 Skyworkにご登録と毎日５００クレジットを ...",
+      "thumbnail": "https://i.ytimg.com/vi/5uLXVwcl4zE/hqdefault.jpg",
+      "publishedAt": "2025-11-30T06:00:06Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-30T06:08:05.749Z",
+    "updatedAt": "2025-11-30T06:08:10.200Z",
+    "topicKey": "ai17claude-45-opuschatgptdifyflux2aiiceburg-index",
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画タイトルに含まれる「FLUX.2」が直近の記事タイトル1と関連しており、AIに関する話題であるため重複と判断しました。"
+  },
+  {
+    "id": "yt-jAizjL2z8HY",
+    "source": {
+      "platform": "YouTube",
+      "name": "technavi_tooru",
+      "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
+      "url": "https://www.youtube.com/@technavi_tooru",
+      "focus": [
+        "テックニュース",
+        "生成AI"
+      ]
+    },
+    "video": {
+      "id": "jAizjL2z8HY",
+      "title": "FLUX.2[dev]とZ-Image-Turbo登場！Apple Macでイメージ生成モデルを検証してみた",
+      "url": "https://www.youtube.com/watch?v=jAizjL2z8HY",
+      "description": "メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております  ‍♂️  (YouTubeアプリからの加入 ...",
+      "thumbnail": "https://i.ytimg.com/vi/jAizjL2z8HY/hqdefault.jpg",
+      "publishedAt": "2025-11-30T01:30:47Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-30T06:08:06.352Z",
+    "updatedAt": "2025-11-30T06:08:14.327Z",
+    "topicKey": "flux2devz-image-turboapple-mac",
+    "notes": "YouTube Data API: technavi_tooru の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はFLUX.2に関連しており、直近の記事1もFLUX.2に関する内容であるため、同じニュース・トピックを扱っていると判断しました。"
+  },
+  {
     "id": "yt-_CKyEGIBhOM",
     "source": {
       "platform": "YouTube",
@@ -1213,12 +1269,50 @@
       "thumbnail": "https://i.ytimg.com/vi/jrCuW7HJbO4/hqdefault.jpg",
       "publishedAt": "2025-11-23T12:21:18Z"
     },
-    "status": "skipped",
+    "status": "generated",
     "createdAt": "2025-11-27T11:45:34.040Z",
-    "updatedAt": "2025-11-28T07:24:57.061Z",
+    "updatedAt": "2025-11-30T06:09:44.772Z",
     "topicKey": "1",
     "notes": "YouTube Data API: ウェブマニア の最新動画",
-    "skipReason": "transcript-unavailable"
+    "skipReason": "transcript-unavailable",
+    "transcript": "個人ゲーム開発を始めて約1か月の進捗共有＆ゲーム情報公開！#ゲーム開発 公式Xはこちら！フォローいただけると嬉しいです♪ ：https://x.com/webmaniapro ＜ウェブマニアについて＞ おすすめのWEB ...",
+    "transcriptLength": 113,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画は個人ゲーム開発に関する進捗共有とゲーム情報の公開を扱っており、直近の記事は全て異なるテーマ（AI技術、ビジネス、知識管理など）を扱っているため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画は個人ゲーム開発に関する進捗共有とゲーム情報の公開を扱っており、直近の記事は全て異なるテーマ（AI技術、ビジネス、知識管理など）を扱っているため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
+      "【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。",
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
+      "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
+      "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
+      "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
+      "AI時代の革新: タイニーチームとデータ駆動型組織の未来"
+    ],
+    "researchedAt": "2025-11-30T06:08:20.073Z",
+    "generatedAt": "2025-11-30T06:09:44.772Z",
+    "postDate": "2025-11-30",
+    "slug": "2025-11-30-ai1",
+    "outputFile": "posts/2025/11/2025-11-30-ai1.html",
+    "image": {
+      "key": "future-05",
+      "src": "assets/img/article-templates/future-05.webp",
+      "alt": "未来感のあるホログラム調（バリアント5）",
+      "label": "フューチャービジョン",
+      "caption": "次世代ロードマップやGemini 3.0の展望記事向け。",
+      "category": "future"
+    },
+    "imageKey": "future-05"
   },
   {
     "id": "yt-mA00ScGrlWs",
@@ -1799,83 +1893,6 @@
     "topicKey": "chatgptline",
     "notes": "YouTube Data API: keitoaiweb の最新動画",
     "skipReason": "duplicate-topic",
-    "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    }
-  },
-  {
-    "id": "yt-R809zJr__fE",
-    "source": {
-      "platform": "YouTube",
-      "name": "AI-Hakase",
-      "channelId": "UC_XCzQX1YiDetIm5IUYvZ7w",
-      "url": "https://www.youtube.com/@AI-Hakase",
-      "focus": [
-        "AI解説",
-        "研究トレンド"
-      ]
-    },
-    "video": {
-      "id": "R809zJr__fE",
-      "title": "【AI動画の&quot;スローモーション病&quot;を根治】全Wan2.2ユーザー必見！&quot;もっさり&quot;した動きを完全解決する神ノード『PainterI2V』がついに登場【ComfyUIワークフロー配布】",
-      "url": "https://www.youtube.com/watch?v=R809zJr__fE",
-      "description": "動画のもとになったNote記事 https://note.com/ai_hakase/n/ndf33b6d29544 他のフル動画版などもこちらで掲載しております！",
-      "thumbnail": "https://i.ytimg.com/vi/R809zJr__fE/hqdefault.jpg",
-      "publishedAt": "2025-11-15T09:46:14Z"
-    },
-    "searchQuery": "【AI動画の&quot;スローモーション病&quot;を根治】全Wan2.2ユーザー必見！&quot;もっさり&quot;した動きを完全解決する神ノード『PainterI2V』がついに登場【ComfyUIワークフロー配布】",
-    "searchSummaries": [],
-    "status": "skipped",
-    "createdAt": "2025-11-15T12:01:57.004Z",
-    "updatedAt": "2025-11-16T00:13:56.293Z",
-    "topicKey": "aiquotquotwan22quotquotpainteri2vcomfyui",
-    "notes": "YouTube Data API: AI-Hakase の最新動画",
-    "skipReason": "no-search-summaries",
-    "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    }
-  },
-  {
-    "id": "yt-0yqyeJ9VQFw",
-    "source": {
-      "platform": "YouTube",
-      "name": "AIAIChatGPT-cj4sh",
-      "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
-      "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
-      "focus": [
-        "ChatGPT",
-        "生成AIノウハウ"
-      ]
-    },
-    "video": {
-      "id": "0yqyeJ9VQFw",
-      "title": "【NotebookLMの特大アプデ】オリジナルの解説動画生成機能＋Deep Research機能実装＋読み込んだ画像からノートを作れる！",
-      "url": "https://www.youtube.com/watch?v=0yqyeJ9VQFw",
-      "description": "動画の説明 PDFファイルやYouTubeのURLを読み込むだけで AIが仮想のノートブック(以下ノート)を生成し 読み込んだデータ ...",
-      "thumbnail": "https://i.ytimg.com/vi/0yqyeJ9VQFw/hqdefault.jpg",
-      "publishedAt": "2025-11-15T09:05:35Z"
-    },
-    "searchQuery": "【NotebookLMの特大アプデ】オリジナルの解説動画生成機能＋Deep Research機能実装＋読み込んだ画像からノートを作れる！",
-    "searchSummaries": [],
-    "status": "generated",
-    "createdAt": "2025-11-15T12:02:03.195Z",
-    "updatedAt": "2025-11-16T00:27:12.246Z",
-    "topicKey": "notebooklmdeep-research",
-    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
-    "generatedAt": "2025-11-16T00:27:12.246Z",
-    "postDate": "2025-11-16",
-    "slug": "2025-11-16-notebooklmai",
-    "outputFile": "posts/2025-11-16-notebooklmai.html",
     "image": {
       "key": "ai-core-01",
       "src": "assets/img/article-templates/ai-core-01.webp",

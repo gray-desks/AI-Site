@@ -12,5 +12,19 @@
     "sourceName": "iketomo-ch",
     "videoTitle": "【無料】最強AIで資料作成を爆速化！手作業でパワポ作成の時代は完全に終了した。ビジネス現場でも使える超実践的な5ステップを紹介",
     "blockedAt": "2025-11-29T10:04:02.409Z"
+  },
+  {
+    "topicKey": "ai17claude-45-opuschatgptdifyflux2aiiceburg-index",
+    "reason": "theme-duplicate",
+    "sourceName": "iketomo-ch",
+    "videoTitle": "注目AIニュース17選～Claude 4.5 Opus、ChatGPTショッピング、Difyトリガー、FLUX.2、AI労働力代替Iceburg Indexなど",
+    "blockedAt": "2025-11-30T06:08:10.200Z"
+  },
+  {
+    "topicKey": "flux2devz-image-turboapple-mac",
+    "reason": "theme-duplicate",
+    "sourceName": "technavi_tooru",
+    "videoTitle": "FLUX.2[dev]とZ-Image-Turbo登場！Apple Macでイメージ生成モデルを検証してみた",
+    "blockedAt": "2025-11-30T06:08:14.327Z"
   }
 ]

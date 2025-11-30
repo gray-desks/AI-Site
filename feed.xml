@@ -5,9 +5,20 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Sat, 29 Nov 2025 22:09:17 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 30 Nov 2025 06:09:44 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>個人ゲーム開発の進捗とAI活用：1か月で得た教訓と実践的アドバイス</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-ai1.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-ai1.html</guid>
+    <pubDate>Sun, 30 Nov 2025 06:09:44 GMT</pubDate>
+    <description>個人ゲーム開発を始めて1か月の進捗を共有し、具体的な成果や課題を分析します。また、AIやWebマーケティングの視点から、ゲーム開発に役立つ実践的なアドバイスを提供します。</description>
+    <category>ゲーム開発</category>
+    <category>AI活用</category>
+    <category>Webマーケティング</category>
+    <category>下書き</category>
+  </item>
   <item>
     <title>FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-29-flux2zero-shotai.html</link>
