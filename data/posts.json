@@ -1,5 +1,61 @@
 [
   {
+    "title": "GmailのPOP3サポート終了：2026年に向けた移行戦略と新たなメール管理手法",
+    "date": "2025-11-30",
+    "summary": "2026年1月からGmailでのPOP3サーバーが終了します。本記事では、その影響と具体的な対策、代替手段を詳述し、ビジネスや開発現場での実用的な活用法を解説します。",
+    "tags": [
+      {
+        "slug": "gmail",
+        "label": "Gmail",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "pop3",
+        "label": "POP3",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "tag-3",
+        "label": "メール管理",
+        "category": "その他",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "web",
+        "label": "Web活用",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "ai",
+        "label": "AI技術",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/11/2025-11-30-gmailpop32026.html",
+    "slug": "2025-11-30-gmailpop32026",
+    "publishedAt": "2025-11-30T09:21:55.227Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-01",
+      "src": "assets/img/article-templates/ai-core-01.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "createdAt": "2025-11-30T09:21:55.230Z"
+  },
+  {
     "title": "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
     "date": "2025-11-30",
     "summary": "Googleの次世代IDE「Antigravity」に搭載された画像生成AI「Nano Banana Pro」を徹底解説。その正体であるGemini 3 Pro Imageの性能、1日5枚と言われる厳しい制限の理由、そして有料版のコストまで、開発者が知るべき全情報をまとめました。",

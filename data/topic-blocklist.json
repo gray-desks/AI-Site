@@ -26,5 +26,12 @@
     "sourceName": "technavi_tooru",
     "videoTitle": "FLUX.2[dev]とZ-Image-Turbo登場！Apple Macでイメージ生成モデルを検証してみた",
     "blockedAt": "2025-11-30T06:08:14.327Z"
+  },
+  {
+    "topicKey": "aiampchatgptclaudeclaude-opus-45",
+    "reason": "theme-duplicate",
+    "sourceName": "AIAIChatGPT-cj4sh",
+    "videoTitle": "【週刊最新AIツール&amp;ニュース】ChatGPTのショッピング機能と進化したボイスモード/Claudeの最上位モデル「Claude Opus 4.5」",
+    "blockedAt": "2025-11-30T09:21:05.753Z"
   }
 ]

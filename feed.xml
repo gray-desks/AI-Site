@@ -5,19 +5,43 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Sun, 30 Nov 2025 06:09:44 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 30 Nov 2025 09:21:55 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
   <item>
-    <title>個人ゲーム開発の進捗とAI活用：1か月で得た教訓と実践的アドバイス</title>
+    <title>GmailのPOP3サポート終了：2026年に向けた移行戦略と新たなメール管理手法</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-gmailpop32026.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-gmailpop32026.html</guid>
+    <pubDate>Sun, 30 Nov 2025 09:21:55 GMT</pubDate>
+    <description>2026年1月からGmailでのPOP3サーバーが終了します。本記事では、その影響と具体的な対策、代替手段を詳述し、ビジネスや開発現場での実用的な活用法を解説します。</description>
+    <category>Gmail</category>
+    <category>POP3</category>
+    <category>メール管理</category>
+    <category>Web活用</category>
+    <category>AI技術</category>
+    <category>下書き</category>
+  </item>
+  <item>
+    <title>【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、&quot;1日5枚&quot;制限の真実</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-nanobanana.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-nanobanana.html</guid>
+    <pubDate>Sun, 30 Nov 2025 07:35:00 GMT</pubDate>
+    <description>Googleの次世代IDE「Antigravity」に搭載された画像生成AI「Nano Banana Pro」を徹底解説。その正体であるGemini 3 Pro Imageの性能、1日5枚と言われる厳しい制限の理由、そして有料版のコストまで、開発者が知るべき全情報をまとめました。</description>
+    <category>Antigravity</category>
+    <category>Nano Banana Pro</category>
+    <category>Gemini 3</category>
+    <category>画像生成AI</category>
+  </item>
+  <item>
+    <title>2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-ai1.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-ai1.html</guid>
     <pubDate>Sun, 30 Nov 2025 06:09:44 GMT</pubDate>
-    <description>個人ゲーム開発を始めて1か月の進捗を共有し、具体的な成果や課題を分析します。また、AIやWebマーケティングの視点から、ゲーム開発に役立つ実践的なアドバイスを提供します。</description>
-    <category>ゲーム開発</category>
+    <description>2025年の個人開発（Indie Hacking）における最新トレンドを徹底解説。AI活用による「一人企業」の実現性、海外で主流のBuild in Public、そして日本市場の独自性まで、個人開発者が知っておくべき生存戦略をまとめました。</description>
+    <category>個人開発</category>
     <category>AI活用</category>
-    <category>Webマーケティング</category>
-    <category>下書き</category>
+    <category>Build in Public</category>
+    <category>海外トレンド</category>
   </item>
   <item>
     <title>FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新</title>
