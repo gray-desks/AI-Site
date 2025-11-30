@@ -5,9 +5,22 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Sun, 30 Nov 2025 09:21:55 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 30 Nov 2025 21:14:51 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>GoogleのデザインAI「Stitch」徹底解説：UIデザインの効率化と実用性</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-googleaistitchui.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-googleaistitchui.html</guid>
+    <pubDate>Sun, 30 Nov 2025 21:14:51 GMT</pubDate>
+    <description>Googleの最新デザインAI「Stitch」は、UIデザインのプロセスを効率化し、クリエイターに新たな可能性を提供します。本記事では、その機能と実用的なユースケースを深掘りし、導入のメリットと課題を考察します。</description>
+    <category>Google AI</category>
+    <category>デザインAI</category>
+    <category>UIデザイン</category>
+    <category>Stitch</category>
+    <category>AI活用</category>
+    <category>下書き</category>
+  </item>
   <item>
     <title>GmailのPOP3サポート終了：2026年に向けた移行戦略と新たなメール管理手法</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-gmailpop32026.html</link>

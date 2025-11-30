@@ -1,5 +1,151 @@
 [
   {
+    "id": "yt-xgsX4gtWDLM",
+    "source": {
+      "platform": "YouTube",
+      "name": "AI-Hakase",
+      "channelId": "UC_XCzQX1YiDetIm5IUYvZ7w",
+      "url": "https://www.youtube.com/@AI-Hakase",
+      "focus": [
+        "AI解説",
+        "研究トレンド"
+      ]
+    },
+    "video": {
+      "id": "xgsX4gtWDLM",
+      "title": "【FLUX.2 完全攻略 実践編】素材と指示だけでOK！「Zero-Shot」マルチ編集ワークフロー完全解説＆限定配布｜ComfyUIハンズオン",
+      "url": "https://www.youtube.com/watch?v=xgsX4gtWDLM",
+      "description": "動画のもとになったNote記事 https://note.com/ai_hakase/n/n33f403759194 他のフル動画版などもこちらで掲載しております！",
+      "thumbnail": "https://i.ytimg.com/vi/xgsX4gtWDLM/hqdefault.jpg",
+      "publishedAt": "2025-11-30T15:04:38Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-30T21:13:34.930Z",
+    "updatedAt": "2025-11-30T21:13:38.622Z",
+    "topicKey": "flux2-okzero-shotcomfyui",
+    "notes": "YouTube Data API: AI-Hakase の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はFLUX.2のZero-Shotマルチ編集に関する内容であり、直近の記事4も同様にFLUX.2のZero-Shotマルチ編集について扱っているため。"
+  },
+  {
+    "id": "yt-g-8Ipqyf8oc",
+    "source": {
+      "platform": "YouTube",
+      "name": "chaen-ai-lab",
+      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
+      "url": "https://www.youtube.com/@chaen-ai-lab",
+      "focus": [
+        "AI解説",
+        "LLM"
+      ]
+    },
+    "video": {
+      "id": "g-8Ipqyf8oc",
+      "title": "【世界最強チャットボット】Googleの「NotebookLM」を徹底解説 #ai #チャエン #仕事効率化#gemini #notebooklm",
+      "url": "https://www.youtube.com/watch?v=g-8Ipqyf8oc",
+      "description": "【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 Googleが提供する無料の ...",
+      "thumbnail": "https://i.ytimg.com/vi/g-8Ipqyf8oc/hqdefault.jpg",
+      "publishedAt": "2025-11-30T10:45:04Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-11-30T21:13:34.132Z",
+    "updatedAt": "2025-11-30T21:13:43.156Z",
+    "topicKey": "googlenotebooklm-ai-gemini-notebooklm",
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGoogleのNotebookLMについて解説しており、直近の記事8はGoogle Workspace FlowsとNotebookLMの進化について扱っているため、同じテーマであると判断しました。"
+  },
+  {
+    "id": "yt-nlOTk9XTaNw",
+    "source": {
+      "platform": "YouTube",
+      "name": "mikimikiweb",
+      "channelId": "UChxtIA33ty53Hh4MmkXNASg",
+      "url": "https://www.youtube.com/@mikimikiweb",
+      "focus": [
+        "Web制作",
+        "AI活用"
+      ]
+    },
+    "video": {
+      "id": "nlOTk9XTaNw",
+      "title": "【革命的‼️】Google最新デザインAI「Stitch」神アプデ！超使えるようになったので徹底解説",
+      "url": "https://www.youtube.com/watch?v=nlOTk9XTaNw",
+      "description": "動画をご覧いただきありがとうございます。 今回は無料のGoogle最新デザインAI「Stitich」爆誕しました！UIデザインに革命が ...",
+      "thumbnail": "https://i.ytimg.com/vi/nlOTk9XTaNw/hqdefault.jpg",
+      "publishedAt": "2025-11-30T10:41:13Z"
+    },
+    "status": "generated",
+    "createdAt": "2025-11-30T21:13:33.772Z",
+    "updatedAt": "2025-11-30T21:14:51.961Z",
+    "topicKey": "googleaistitch",
+    "notes": "YouTube Data API: mikimikiweb の最新動画",
+    "transcript": "【革命的‼️】Google最新デザインAI「Stitch」神アプデ！超使えるようになったので徹底解説 動画をご覧いただきありがとうございます。 今回は無料のGoogle最新デザインAI「Stitich」爆誕しました！UIデザインに革命が ...",
+    "transcriptLength": 122,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はGoogleの最新デザインAI「Stitch」に関するものであり、直近の記事は主に他のAI技術やGoogleの異なる製品に関する内容であるため、同じ話題とは判断できない。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はGoogleの最新デザインAI「Stitch」に関するものであり、直近の記事は主に他のAI技術やGoogleの異なる製品に関する内容であるため、同じ話題とは判断できない。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "GmailのPOP3サポート終了：2026年に向けた移行戦略と新たなメール管理手法",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+      "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
+      "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
+      "【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。",
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
+      "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
+      "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較"
+    ],
+    "researchedAt": "2025-11-30T21:13:46.944Z",
+    "generatedAt": "2025-11-30T21:14:51.961Z",
+    "postDate": "2025-11-30",
+    "slug": "2025-11-30-googleaistitchui",
+    "outputFile": "posts/2025/11/2025-11-30-googleaistitchui.html",
+    "image": {
+      "key": "ai-core-04",
+      "src": "assets/img/article-templates/ai-core-04.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "imageKey": "ai-core-04"
+  },
+  {
+    "id": "yt-vBGMd0TmzHw",
+    "source": {
+      "platform": "YouTube",
+      "name": "kei31e",
+      "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
+      "url": "https://www.youtube.com/@kei31e",
+      "focus": [
+        "エンジニアリング",
+        "AI"
+      ]
+    },
+    "video": {
+      "id": "vBGMd0TmzHw",
+      "title": "AIに敗北するストーリー",
+      "url": "https://www.youtube.com/watch?v=vBGMd0TmzHw",
+      "description": "",
+      "thumbnail": "https://i.ytimg.com/vi/vBGMd0TmzHw/hqdefault.jpg",
+      "publishedAt": "2025-11-30T10:24:34Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-11-30T21:13:34.349Z",
+    "updatedAt": "2025-11-30T21:13:34.349Z",
+    "topicKey": "ai",
+    "notes": "YouTube Data API: kei31e の最新動画"
+  },
+  {
     "id": "yt-U5bd4D9yG-M",
     "source": {
       "platform": "YouTube",
@@ -1874,65 +2020,6 @@
       "key": "ai-core-02",
       "src": "assets/img/article-templates/ai-core-02.webp",
       "alt": "AIコアを象徴する抽象的な波形（バリアント2）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    }
-  },
-  {
-    "id": "yt-sKZyXbRud6g",
-    "source": {
-      "platform": "YouTube",
-      "name": "technavi_tooru",
-      "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
-      "url": "https://www.youtube.com/@technavi_tooru",
-      "focus": [
-        "テックニュース",
-        "生成AI"
-      ]
-    },
-    "video": {
-      "id": "sKZyXbRud6g",
-      "title": "Sherlock Dash AlphaとSherlock Think Alphaをテストしましょう！",
-      "url": "https://www.youtube.com/watch?v=sKZyXbRud6g",
-      "description": "https://www.twitch.tv/technavi_tooru https://x.com/technavi_tooru https://discord.com/invite/X6DuaZyQW6.",
-      "thumbnail": "https://i.ytimg.com/vi/sKZyXbRud6g/hqdefault_live.jpg",
-      "publishedAt": "2025-11-16T12:00:14Z"
-    },
-    "searchQuery": "Sherlock Dash AlphaとSherlock Think Alphaをテストしましょう！",
-    "searchSummaries": [
-      {
-        "title": "「Gemini 3.0」のYahoo!リアルタイム検索 - X（旧Twitter）を ...",
-        "url": "https://search.yahoo.co.jp/realtime/search?rkf=1&p=Gemini%203.0&btid=MTk1MzQ5NTE3MTE2NzA4NDc3OA%3D%3D&ifr=tp_bz",
-        "snippet": "... しょう。 いず｜フリー ... x.com/openrouterai/s… OpenRouter @OpenRouterAI. New Stealth Models! - Sherlock Think Alpha (reasoning) - Sherlock Dash Alpha ...",
-        "summary": "「Gemini 3.0」のX（旧Twitter）検索結果 - Yahoo!リアルタイム検索 ウェブ 画像 動画 リアルタイム ニュース キーワードを消す 検索 ミュートしたアカウント すべて 画像・動画 自動更新 並べ替え： 新着順 メニューを開く Gemini 3 .0 とかQwen4とか、いつになるんですかね… 雷之電@古明地ゲー体験版出ました @ lunaticlives 2分前 メニューを開く Gemini 3 .0 早く出ないかなぁ Flowry @ yura_407 4分前 メニューを開く 【Google AI・プロダクト】最新動向（2025年11月16日） | 次世代AI「 Gemini 3 .0 」と「Nano Banana Pro」のリーク情報が加速｜Sun Bunny @yk198901212 note.com/leal_colt3215/… Sun Bunny @ yk198901212 17分前 メニューを開く Googleの次の大型AIモデル「 Gemini 3 ."
-      },
-      {
-        "title": "Untitled",
-        "url": "https://mirrors.sonic.net/ubuntu/dists/bionic-proposed/universe/i18n/by-hash/SHA256/f35085987e1b76773a50e379894c28363cb9b1d02324ccdc039d152500f89f1a",
-        "snippet": "... テストのためのフレームワークを提供しているかどうかを チェックすることを可能 ... しょう。 . AfterStep は BowMan ウィンドウマネージャプロジェクトを ...",
-        "summary": "Package: 2vcard Description-md5: 2c96ee919233c4f6128f265ad35ff488 Description-ja: アドレス帳から VCARD ファイルフォーマットへの変換用 perl スクリプト 2vcard converts address books and alias files into the widely-used vCard format.Currently it can convert from abook, Eudora, Juno, LDIF, mutt, mh and pine.Package: 7kaa Description-md5: 37b0a07b664e6e2e6b3370a23d7a49cb Description-ja: 七王国 古代の敵対者 (Seven Kingdoms Ancient Adversaries): リアルタイム戦略ゲーム 七王国 (Seven Kingdoms) は Trevor Chan によって設計された、 リアルタイム戦略ゲームに貿易、外交、そしてスパイを融合させた ユニーク"
-      },
-      {
-        "title": "サイトマップ | おすすめ英会話・英語学習の比較・ランキング ...",
-        "url": "https://englishhub.jp/sitemap",
-        "snippet": "Jan 15, 2017 ... ... テスト活用法とは～ · 英語で学ぶ日本、英語で伝える日本 · 海外へ行こう！特集 · 英語コーチング特集 ～学び方をデザイン～ · English Hubについて · IELTS ...",
-        "summary": "サイトマップ | おすすめ英会話・英語学習の比較・ランキング- English Hub 英語学習トップ 英会話スクール オンライン英会話 留学 英語学習アプリ TOEIC対策 TOEFL対策 IELTS対策 英検対策 子供向け 英語学習ノウハウ キャリア search 最新記事 Latest オンライン英会話 オンライン英会話業界の最新ニュースをご紹介しています。オンライン英会話の気になる新サービス情報や、大変おとくなキャンペーン、割引情報など、おすすめの情報が満載です。オンライン英会話で英語を学んでいる方やこれからオンライン英会話を始めようとしている方はぜひ参考にしてください。英会話教室 留学 アプリ 教材 TOEIC TOEFL 新商品 キャンペーン 英会話教室、オンライン英会話、英語学習アプリ、語学留学などに関する最新のキャンペーン情報を配信しています。"
-      }
-    ],
-    "status": "generated",
-    "createdAt": "2025-11-16T12:01:51.995Z",
-    "updatedAt": "2025-11-16T12:02:27.411Z",
-    "topicKey": "sherlock-dash-alphasherlock-think-alpha",
-    "notes": "YouTube Data API: technavi_tooru の最新動画",
-    "generatedAt": "2025-11-16T12:02:27.411Z",
-    "postDate": "2025-11-16",
-    "slug": "2025-11-16-aigemini-30",
-    "outputFile": "posts/2025-11-16-aigemini-30.html",
-    "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"

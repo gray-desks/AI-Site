@@ -33,5 +33,19 @@
     "sourceName": "AIAIChatGPT-cj4sh",
     "videoTitle": "【週刊最新AIツール&amp;ニュース】ChatGPTのショッピング機能と進化したボイスモード/Claudeの最上位モデル「Claude Opus 4.5」",
     "blockedAt": "2025-11-30T09:21:05.753Z"
+  },
+  {
+    "topicKey": "flux2-okzero-shotcomfyui",
+    "reason": "theme-duplicate",
+    "sourceName": "AI-Hakase",
+    "videoTitle": "【FLUX.2 完全攻略 実践編】素材と指示だけでOK！「Zero-Shot」マルチ編集ワークフロー完全解説＆限定配布｜ComfyUIハンズオン",
+    "blockedAt": "2025-11-30T21:13:38.622Z"
+  },
+  {
+    "topicKey": "googlenotebooklm-ai-gemini-notebooklm",
+    "reason": "theme-duplicate",
+    "sourceName": "chaen-ai-lab",
+    "videoTitle": "【世界最強チャットボット】Googleの「NotebookLM」を徹底解説 #ai #チャエン #仕事効率化#gemini #notebooklm",
+    "blockedAt": "2025-11-30T21:13:43.156Z"
   }
 ]

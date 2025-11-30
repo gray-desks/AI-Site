@@ -1,5 +1,61 @@
 [
   {
+    "title": "GoogleのデザインAI「Stitch」徹底解説：UIデザインの効率化と実用性",
+    "date": "2025-11-30",
+    "summary": "Googleの最新デザインAI「Stitch」は、UIデザインのプロセスを効率化し、クリエイターに新たな可能性を提供します。本記事では、その機能と実用的なユースケースを深掘りし、導入のメリットと課題を考察します。",
+    "tags": [
+      {
+        "slug": "google-ai",
+        "label": "Google AI",
+        "category": "企業・プロダクト",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "ai",
+        "label": "デザインAI",
+        "category": "その他",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "ui",
+        "label": "UIデザイン",
+        "category": "その他",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "stitch",
+        "label": "Stitch",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "ai-utilization",
+        "label": "AI活用",
+        "category": "ユースケース",
+        "style": "accent-teal"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/11/2025-11-30-googleaistitchui.html",
+    "slug": "2025-11-30-googleaistitchui",
+    "publishedAt": "2025-11-30T21:14:51.961Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-04",
+      "src": "assets/img/article-templates/ai-core-04.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "createdAt": "2025-11-30T21:14:51.964Z"
+  },
+  {
     "title": "GmailのPOP3サポート終了：2026年に向けた移行戦略と新たなメール管理手法",
     "date": "2025-11-30",
     "summary": "2026年1月からGmailでのPOP3サーバーが終了します。本記事では、その影響と具体的な対策、代替手段を詳述し、ビジネスや開発現場での実用的な活用法を解説します。",
