@@ -6,13 +6,13 @@
 #
 # 実行タイミング:
 # - 手動実行（workflow_dispatch）
-# - スケジュール実行（毎日09:00 JST / 00:00 UTC）
+# - スケジュール実行（毎日06:00 JST / 21:00 UTC, 18:00 JST / 09:00 UTC）
 #
 # 処理フロー:
-# 1. Collector: YouTubeチャンネルから最新動画を収集
-# 2. Researcher: キーワード抽出とAIによる情報収集
-# 3. Generator: OpenAI APIを使った記事生成
-# 4. Publisher: 生成された記事をサイトに公開
+# 1. Collector: YouTubeチャンネルから最新動画を収集 (YouTube Data API)
+# 2. Researcher: 動画の選定と字幕取得、テーマ重複チェック (OpenAI API)
+# 3. Generator: 記事の執筆・生成 (OpenAI API)
+# 4. Publisher: 記事公開処理 (Git Commit)
 # ====================================================================
 
 name: content-pipeline
@@ -71,18 +71,16 @@ jobs:
       # ----------------------------------------------------------------
       # ステップ4: 記事生成パイプラインの実行
       # ----------------------------------------------------------------
-      # OpenAI APIを使用して、以下の処理を順次実行します:
-      # 1. YouTube動画の収集（Collector）
-      # 2. キーワード抽出とリサーチ（Researcher）
-      # 3. 記事の生成（Generator）
-      # 4. 記事の公開（Publisher）
-      - name: Generate article via OpenAI API
+      # 以下のAPIを使用して、動画収集から記事生成までを行います:
+      # - YouTube Data API: 動画情報の収集
+      # - OpenAI API: 記事構成案の作成、執筆、重複チェック
+      - name: Run Content Pipeline
         env:
           # 必要なAPIキーをGitHub Secretsから取得して環境変数に設定
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}           # OpenAI API（記事生成、キーワード抽出）
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}         # YouTube Data API v3
-          ARTICLES_PER_RUN: 1                                     # 1ジョブで1本生成（1日2回のスケジュールで合計2本）
-        run: node automation/pipeline/index.js
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}           # OpenAI API
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}         # YouTube Data API
+          ARTICLES_PER_RUN: 1                                     # 1回の実行で生成する記事数
+        run: npm run pipeline
 
       # ----------------------------------------------------------------
       # ステップ5: 生成されたコンテンツをGitにコミット・プッシュ
@@ -102,7 +100,7 @@ jobs:
             git add .
 
             # 変更をコミット
-            git commit -m "chore: auto-generate article"
+            git commit -m "chore: auto-generate article via pipeline"
 
             # リモートリポジトリにプッシュ
             git push
@@ -111,13 +109,3 @@ jobs:
             echo "No changes to commit."
           fi
 
-      # ----------------------------------------------------------------
-      # ステップ6: パイプラインの実行結果を表示
-      # ----------------------------------------------------------------
-      # pipeline-status.json には以下の情報が記録されています:
-      # - 各ステージ（Collector/Researcher/Generator/Publisher）の実行結果
-      # - 処理された候補数、成功・失敗件数
-      # - 生成されたファイルのパス
-      # - メトリクス情報（処理時間、API呼び出し回数など）
-      - name: Show pipeline status
-        run: cat automation/output/pipeline-status.json
