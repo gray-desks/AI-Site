@@ -269,6 +269,20 @@
   height: 8px;
   background: var(--color-primary);
   border-radius: 2px;
+  transition: background-color var(--transition-base);
+}
+
+/* Draft Status Indicators */
+.section-header h2.draft-status-1::before {
+  background: var(--color-success);
+}
+
+.section-header h2.draft-status-2::before {
+  background: var(--color-warning);
+}
+
+.section-header h2.draft-status-3-plus::before {
+  background: #ef4444; /* Red 500 */
 }
 
 /* === 投稿セクション (#posts) === */

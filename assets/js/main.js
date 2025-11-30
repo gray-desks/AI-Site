@@ -452,6 +452,23 @@ const initPostList = () => {
       const normalizedPosts = Array.isArray(posts) ? posts : [];
       // 記事データを日付順にソートして保存
       state.allPosts = normalizedPosts.sort(comparePosts);
+
+      // 下書き記事の数をカウントしてインジケーターの色を変更
+      const draftCount = state.allPosts.filter(isDraftPost).length;
+      const sectionHeaderH2 = document.querySelector('.section-header h2');
+      if (sectionHeaderH2) {
+        // 既存のクラスを削除
+        sectionHeaderH2.classList.remove('draft-status-1', 'draft-status-2', 'draft-status-3-plus');
+        
+        // 下書き数に応じてクラスを追加
+        if (draftCount === 1) {
+          sectionHeaderH2.classList.add('draft-status-1');
+        } else if (draftCount === 2) {
+          sectionHeaderH2.classList.add('draft-status-2');
+        } else if (draftCount >= 3) {
+          sectionHeaderH2.classList.add('draft-status-3-plus');
+        }
+      }
       // タグのインデックスを構築
       state.allTags = buildTagIndex(state.allPosts);
       state.isLoading = false;
