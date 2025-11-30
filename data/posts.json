@@ -1,42 +1,42 @@
 [
   {
-    "title": "個人ゲーム開発の進捗とAI活用：1か月で得た教訓と実践的アドバイス",
+    "title": "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
     "date": "2025-11-30",
-    "summary": "個人ゲーム開発を始めて1か月の進捗を共有し、具体的な成果や課題を分析します。また、AIやWebマーケティングの視点から、ゲーム開発に役立つ実践的なアドバイスを提供します。",
+    "summary": "2025年の個人開発（Indie Hacking）における最新トレンドを徹底解説。AI活用による「一人企業」の実現性、海外で主流のBuild in Public、そして日本市場の独自性まで、個人開発者が知っておくべき生存戦略をまとめました。",
     "tags": [
       {
-        "slug": "tag-1",
-        "label": "ゲーム開発",
+        "slug": "indie-hacking",
+        "label": "個人開発",
         "category": "その他",
         "style": "accent-lime"
       },
       {
-        "slug": "ai-utilization",
+        "slug": "ai-tools",
         "label": "AI活用",
         "category": "ユースケース",
         "style": "accent-teal"
       },
       {
-        "slug": "web",
-        "label": "Webマーケティング",
+        "slug": "build-in-public",
+        "label": "Build in Public",
         "category": "その他",
         "style": "accent-blue"
       },
       {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
-        "style": "accent-gold"
+        "slug": "global-trends",
+        "label": "海外トレンド",
+        "category": "その他",
+        "style": "accent-purple"
       }
     ],
     "url": "posts/2025/11/2025-11-30-ai1.html",
     "slug": "2025-11-30-ai1",
     "publishedAt": "2025-11-30T06:09:44.772Z",
-    "status": "draft",
+    "status": "published",
     "image": {
       "key": "future-05",
       "src": "assets/img/article-templates/future-05.webp",
-      "alt": "未来感のあるホログラム調（バリアント5）",
+      "alt": "2025年版 個人開発の生存戦略",
       "label": "フューチャービジョン",
       "caption": "次世代ロードマップやGemini 3.0の展望記事向け。",
       "category": "future"
