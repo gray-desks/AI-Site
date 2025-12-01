@@ -1,5 +1,67 @@
 [
   {
+    "title": "Unreal Engine 5を活用した初心者向けゲーム開発：学習法と実践的ステップの詳細",
+    "date": "2025-12-01",
+    "summary": "Unreal Engine 5を用いたゲーム開発における初心者向けの学習方法と実践的なプロジェクト進捗を詳述。具体的なステップやリソースを提案し、AIやWebマーケティングとの関連性にも触れます。",
+    "tags": [
+      {
+        "slug": "unreal-engine-5",
+        "label": "Unreal Engine 5",
+        "category": "その他",
+        "style": "accent-teal"
+      },
+      {
+        "slug": "tag-2",
+        "label": "ゲーム開発",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "tag-3",
+        "label": "初心者向け",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "tag-4",
+        "label": "学習方法",
+        "category": "その他",
+        "style": "accent-teal"
+      },
+      {
+        "slug": "ai-utilization",
+        "label": "AI活用",
+        "category": "ユースケース",
+        "style": "accent-teal"
+      },
+      {
+        "slug": "web",
+        "label": "Webマーケティング",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-01-unreal-engine-5.html",
+    "slug": "2025-12-01-unreal-engine-5",
+    "publishedAt": "2025-12-01T09:33:30.815Z",
+    "status": "draft",
+    "image": {
+      "key": "robotics-05",
+      "src": "assets/img/article-templates/robotics-05.webp",
+      "alt": "ロボティクスやハードウェアを想起させるライン（バリアント5）",
+      "label": "ロボティクス×エッジ",
+      "caption": "エッジデバイスやハードウェア連携記事に。",
+      "category": "robotics"
+    },
+    "createdAt": "2025-12-01T09:33:30.818Z"
+  },
+  {
     "title": "GoogleのデザインAI「Stitch」徹底解説：UIデザインの効率化と実用性",
     "date": "2025-11-30",
     "summary": "Googleの最新デザインAI「Stitch」は、UIデザインのプロセスを効率化し、クリエイターに新たな可能性を提供します。本記事では、その機能と実用的なユースケースを深掘りし、導入のメリットと課題を考察します。",

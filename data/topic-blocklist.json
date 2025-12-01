@@ -47,5 +47,19 @@
     "sourceName": "chaen-ai-lab",
     "videoTitle": "【世界最強チャットボット】Googleの「NotebookLM」を徹底解説 #ai #チャエン #仕事効率化#gemini #notebooklm",
     "blockedAt": "2025-11-30T21:13:43.156Z"
+  },
+  {
+    "topicKey": "20nano-banana-pro",
+    "reason": "theme-duplicate",
+    "sourceName": "AIAIChatGPT-cj4sh",
+    "videoTitle": "【すぐに使える活用事例20例】Nano Banana Pro(ナノバナナプロ)の画像生成＆編集性能を徹底検証！",
+    "blockedAt": "2025-12-01T09:32:10.448Z"
+  },
+  {
+    "topicKey": "nano-banana-proai3",
+    "reason": "theme-duplicate",
+    "sourceName": "google-school",
+    "videoTitle": "【革命】「Nano Banana Pro」の実力がヤバい！他の画像生成AIと一線を画す「3つ」の理由",
+    "blockedAt": "2025-12-01T09:32:14.417Z"
   }
 ]

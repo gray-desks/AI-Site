@@ -1,5 +1,115 @@
 [
   {
+    "id": "yt-L1bd_kIZgec",
+    "source": {
+      "platform": "YouTube",
+      "name": "AIAIChatGPT-cj4sh",
+      "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
+      "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
+      "focus": [
+        "ChatGPT",
+        "生成AIノウハウ"
+      ]
+    },
+    "video": {
+      "id": "L1bd_kIZgec",
+      "title": "【すぐに使える活用事例20例】Nano Banana Pro(ナノバナナプロ)の画像生成＆編集性能を徹底検証！",
+      "url": "https://www.youtube.com/watch?v=L1bd_kIZgec",
+      "description": "動画の説明 Googleが(2025年)11月下旬にリリースした 画像生成AIモデルの最新版 「Nano Banana Pro(以下ナノバナナPro)」は ...",
+      "thumbnail": "https://i.ytimg.com/vi/L1bd_kIZgec/hqdefault.jpg",
+      "publishedAt": "2025-12-01T09:06:08Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-01T09:32:05.475Z",
+    "updatedAt": "2025-12-01T09:32:10.448Z",
+    "topicKey": "20nano-banana-pro",
+    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はNano Banana Proの画像生成性能を検証しているが、直近の記事3は同じ製品Nano Banana Proに関する内容であり、画像生成エンジンについての解説を行っているため、テーマが重複している。"
+  },
+  {
+    "id": "yt-qa8vuMpX6NM",
+    "source": {
+      "platform": "YouTube",
+      "name": "google-school",
+      "channelId": "UC_kTlZMryHFPMc7QMi4g0VQ",
+      "url": "https://www.youtube.com/@google-school",
+      "focus": [
+        "Google",
+        "AI教育"
+      ]
+    },
+    "video": {
+      "id": "qa8vuMpX6NM",
+      "title": "【革命】「Nano Banana Pro」の実力がヤバい！他の画像生成AIと一線を画す「3つ」の理由",
+      "url": "https://www.youtube.com/watch?v=qa8vuMpX6NM",
+      "description": "「Nano Banana Pro」、めちゃくちゃ進化しましたね！今回は「Nano Banana Pro」の「どうヤバいのか」を 3つの軸で解説し ...",
+      "thumbnail": "https://i.ytimg.com/vi/qa8vuMpX6NM/hqdefault.jpg",
+      "publishedAt": "2025-12-01T09:01:23Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-01T09:32:03.154Z",
+    "updatedAt": "2025-12-01T09:32:14.418Z",
+    "topicKey": "nano-banana-proai3",
+    "notes": "YouTube Data API: google-school の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画は「Nano Banana Pro」に関する内容であり、直近の記事3は同じ製品「Nano Banana Pro」を扱っているため、テーマが重複していると判断しました。"
+  },
+  {
+    "id": "yt-j3qiNUbzZ04",
+    "source": {
+      "platform": "YouTube",
+      "name": "kei31e",
+      "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
+      "url": "https://www.youtube.com/@kei31e",
+      "focus": [
+        "エンジニアリング",
+        "AI"
+      ]
+    },
+    "video": {
+      "id": "j3qiNUbzZ04",
+      "title": "意図的に伸ばさなくてよいメディアを作っておく",
+      "url": "https://www.youtube.com/watch?v=j3qiNUbzZ04",
+      "description": "意図的に伸ばさなくてよいメディアを作っておく.",
+      "thumbnail": "https://i.ytimg.com/vi/j3qiNUbzZ04/hqdefault.jpg",
+      "publishedAt": "2025-11-30T22:21:16Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-01T09:32:04.507Z",
+    "updatedAt": "2025-12-01T09:32:18.022Z",
+    "topicKey": "ai-topic",
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "transcript-unavailable"
+  },
+  {
+    "id": "yt-XHXsqxnwVpI",
+    "source": {
+      "platform": "YouTube",
+      "name": "kei31e",
+      "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
+      "url": "https://www.youtube.com/@kei31e",
+      "focus": [
+        "エンジニアリング",
+        "AI"
+      ]
+    },
+    "video": {
+      "id": "XHXsqxnwVpI",
+      "title": "作業用Pianoメドレー",
+      "url": "https://www.youtube.com/watch?v=XHXsqxnwVpI",
+      "description": "",
+      "thumbnail": "https://i.ytimg.com/vi/XHXsqxnwVpI/hqdefault_live.jpg",
+      "publishedAt": "2025-11-30T21:17:47Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-01T09:32:04.507Z",
+    "updatedAt": "2025-12-01T09:32:20.952Z",
+    "topicKey": "piano",
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "transcript-unavailable"
+  },
+  {
     "id": "yt-xgsX4gtWDLM",
     "source": {
       "platform": "YouTube",
@@ -139,11 +249,12 @@
       "thumbnail": "https://i.ytimg.com/vi/vBGMd0TmzHw/hqdefault.jpg",
       "publishedAt": "2025-11-30T10:24:34Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-11-30T21:13:34.349Z",
-    "updatedAt": "2025-11-30T21:13:34.349Z",
+    "updatedAt": "2025-12-01T09:32:24.805Z",
     "topicKey": "ai",
-    "notes": "YouTube Data API: kei31e の最新動画"
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-U5bd4D9yG-M",
@@ -1628,12 +1739,50 @@
       "thumbnail": "https://i.ytimg.com/vi/qDKgMdw9ISg/hqdefault.jpg",
       "publishedAt": "2025-11-22T09:30:38Z"
     },
-    "status": "skipped",
+    "status": "generated",
     "createdAt": "2025-11-27T22:56:03.474Z",
-    "updatedAt": "2025-11-28T07:24:58.911Z",
+    "updatedAt": "2025-12-01T09:33:30.815Z",
     "topicKey": "unreal-engine-50",
     "notes": "YouTube Data API: ウェブマニア の最新動画",
-    "skipReason": "transcript-unavailable"
+    "skipReason": "transcript-unavailable",
+    "transcript": "【Unreal Engine 5】知識0の完全初心者がどうやってゲーム開発してるの？現在開発中のゲーム映像もチラ見せします！ 今回の動画について＞ ゲーム開発の夢に挑戦中のウェブマニアが、現在どうやってUnreal Engine 5を学習しているかをご紹介し ...",
+    "transcriptLength": 133,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はゲーム開発に関する内容であり、直近の記事はAIやデザイン、個人開発など異なるテーマを扱っているため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はゲーム開発に関する内容であり、直近の記事はAIやデザイン、個人開発など異なるテーマを扱っているため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "GoogleのデザインAI「Stitch」徹底解説：UIデザインの効率化と実用性",
+      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+      "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
+      "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
+      "【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。",
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
+      "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
+      "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析"
+    ],
+    "researchedAt": "2025-12-01T09:32:27.025Z",
+    "generatedAt": "2025-12-01T09:33:30.815Z",
+    "postDate": "2025-12-01",
+    "slug": "2025-12-01-unreal-engine-5",
+    "outputFile": "posts/2025/12/2025-12-01-unreal-engine-5.html",
+    "image": {
+      "key": "robotics-05",
+      "src": "assets/img/article-templates/robotics-05.webp",
+      "alt": "ロボティクスやハードウェアを想起させるライン（バリアント5）",
+      "label": "ロボティクス×エッジ",
+      "caption": "エッジデバイスやハードウェア連携記事に。",
+      "category": "robotics"
+    },
+    "imageKey": "robotics-05"
   },
   {
     "id": "yt-6rBe-2pV_L0",
@@ -2020,126 +2169,6 @@
       "key": "ai-core-02",
       "src": "assets/img/article-templates/ai-core-02.webp",
       "alt": "AIコアを象徴する抽象的な波形（バリアント2）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    }
-  },
-  {
-    "id": "yt-VAVUtUMGb6M",
-    "source": {
-      "platform": "YouTube",
-      "name": "keitoaiweb",
-      "channelId": "UCfapRkagDtoQEkGeyD3uERQ",
-      "url": "https://www.youtube.com/@keitoaiweb",
-      "focus": [
-        "AIニュース",
-        "Web活用"
-      ]
-    },
-    "video": {
-      "id": "VAVUtUMGb6M",
-      "title": "ChatGPTにLINEのようなグループチャット機能が登場！対人でのメッセージの送受信が可能？",
-      "url": "https://www.youtube.com/watch?v=VAVUtUMGb6M",
-      "description": "ChatGPTにSlackやLINEのようにグループを作成して通常のメッセージのやり取りが可能な機能が登場しました。何がどこまで ...",
-      "thumbnail": "https://i.ytimg.com/vi/VAVUtUMGb6M/hqdefault.jpg",
-      "publishedAt": "2025-11-16T10:57:25Z"
-    },
-    "searchQuery": "ChatGPTにLINEのようなグループチャット機能が登場！対人でのメッセージの送受信が可能？",
-    "searchSummaries": [
-      {
-        "title": "【2024年版】世界のメッセージングアプリ事情 ～WhatsApp ...",
-        "url": "https://mobilus.co.jp/lab/chatbot/global-messaging-app/",
-        "snippet": "1990年代にSMSが登場し、モバイル端末間でのテキストメッセージの送受信が可能になりました。 ... グループチャットなど、さまざまな機能を有するようになっています。また ...",
-        "summary": "【2024年版】世界のメッセージングアプリ事情 ～WhatsApp、Messenger、WeChat、LINEまで勢力分布と今後の展望～ - Mobilus CX-Branding Tech.Lab - モビルス CXブランディングテックラボ - すべてのビジネスに、一歩先行くCXを。モビルスのCX（カスタマーエクスペリエンス）向上情報サイト モビルス製品に関する お問い合わせ お役立ち資料 ダウンロード CX ノンボイス ボイスボット トピック 対談 市場調査 お役立ち資料 モビルス製品一覧 記事検索 モビルス製品に関する お問い合わせ お役立ち資料 ダウンロード 記事検索 CX ノンボイス ボイスボット トピック 対談 市場調査 お役立ち資料 モビルス製品一覧 記事検索 お問い合わせ TOP ノンボイス 【2024年版】世界のメッセージングアプリ事情 ～WhatsApp、Messenger、WeChat、LINEまで勢力分布と今後の展望～ 【2024年版】世界のメッセージングアプリ事情 ～WhatsApp、Messenger、WeChat、LINEまで勢力分布と今後の展望～ 投稿日"
-      },
-      {
-        "title": "知らないと損するLINEの裏技・便利機能43選！【2025年版】",
-        "url": "https://network.mobile.rakuten.co.jp/sumakatsu/contents/articles/2025/00369/",
-        "snippet": "Jul 29, 2025 ... 以下のように、引用付きのメッセージがトークに送信されます。 送信取消 ... メッセージを常にトークルームの上部に表示させるアナウンス機能を使えば、大事 ...",
-        "summary": "知らないと損するLINEの裏技・便利機能43選！【2025年版】 --> 記事一覧 楽天モバイル料金プランへ 記事一覧へ キーワードで探す #AI #Android #eSIM #Google #Instagram #iPhone #LINE #SIM #SNS #TikTok #Webサービス #Wi-Fi #X(Twitter) #YouTube #アクセサリー #アプリ #ストリーミング #スマホの選び方 #セキュリティ #トラブル解決 #リモートワーク #乗り換え #携帯キャリア #料金プラン #格安SIM #機種変更 #機能 #海外 #節約 #通信 #電話 楽天モバイル料金プランへ モバイルトップ ＞ スマ活トップ ＞ 記事一覧 ＞ お役立ち ＞ 知らないと損するLINEの裏技・便利機能43選！【2025年版】 知らないと損するLINEの裏技・便利機能43選！【2025年版】 2025.07.29 普段利用しているLINEアプリで、裏技や便利な機能を知っていると、家族や友人とのやり取りの中で役立つ場面があります。"
-      },
-      {
-        "title": "ChatGPTとは？使い方、料金、できること、注意点、社会への影響 ...",
-        "url": "https://exawizards.com/column/article/ai/chatgpt/",
-        "snippet": "Apr 20, 2023 ... 無料のため利用できる回数には制限がありますが、「試しに使ってみたい方」、「使う頻度が少ない方」、「GPT-4は使えなくても良い方」はLINEのAIチャット ...",
-        "summary": "ChatGPTとは？使い方、料金、できること、注意点、社会への影響まで徹底解説 - DXコラム - 株式会社エクサウィザーズ Skip to content DXコラム ノウハウ記事 DX DX人材 HR AI ChatGPT 特集 経営層インタビュー セミナーレポート お役立ち資料 検索: DXコラム > ノウハウ記事 > AI > ChatGPTとは？使い方、料金、できること、注意点、社会への影響まで徹底解説 メールマガジンを登録 --> --> ChatGPTとは？使い方、料金、できること、注意点、社会への影響まで徹底解説 AI 公開日 2023.04.20 更新日 2025.08.04 #AI #ChatGPT DXコラム編集部 ChatGPTとは、米国のAI開発組織であるOpenAIが2022年11月に公開した対話型AIサービスです。本記事ではChatGPTの紹介と、GPTという技術の説明、他のサーピスとの連携、APIの料金や何ができるのか、利用の際の注意点や社会に与えている影響まで説明します。今話題のChatGPTについて簡単に網羅的に学べますのでぜひご一読ください。"
-      }
-    ],
-    "status": "skipped",
-    "createdAt": "2025-11-16T12:01:36.652Z",
-    "updatedAt": "2025-11-17T00:13:31.834Z",
-    "topicKey": "chatgptline",
-    "notes": "YouTube Data API: keitoaiweb の最新動画",
-    "skipReason": "duplicate-topic",
-    "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    }
-  },
-  {
-    "id": "yt-mq-7-5lzuxw",
-    "source": {
-      "platform": "YouTube",
-      "name": "ai-saborou",
-      "channelId": "UC9AuyS7U4PxeDSNMJ2srarA",
-      "url": "https://www.youtube.com/@ai-saborou",
-      "focus": [
-        "AIツール",
-        "自動化"
-      ]
-    },
-    "video": {
-      "id": "mq-7-5lzuxw",
-      "title": "【初心者必見】AI活用を0から学ぶ4つのステップ",
-      "url": "https://www.youtube.com/watch?v=mq-7-5lzuxw",
-      "description": "AI活用の学習をどう進めれば良いか、4つのステップを提案します。 noteのメンバーシップ メンバーシップ購読はこちら ...",
-      "thumbnail": "https://i.ytimg.com/vi/mq-7-5lzuxw/hqdefault.jpg",
-      "publishedAt": "2025-11-14T10:26:14Z"
-    },
-    "status": "generated",
-    "createdAt": "2025-11-17T00:45:39.585Z",
-    "updatedAt": "2025-11-17T00:46:58.182Z",
-    "topicKey": "ai04",
-    "notes": "YouTube Data API: ai-saborou の最新動画",
-    "searchQuery": {
-      "original": "【初心者必見】AI活用を0から学ぶ4つのステップ",
-      "extracted": "【初心者必見】AI活用を0から学ぶ4つのステップ",
-      "method": "fallback"
-    },
-    "searchSummaries": [
-      {
-        "title": "【初心者必見】AI活用を0から学ぶ4つのステップ https://t.co ...",
-        "url": "https://x.com/riverstn7/status/1989647560840245681",
-        "snippet": "2 days ago ... BENZO (@riverstn7). 56 views. 【初心者必見】AI活用を0から学ぶ4つのステップ https://t.co/IM1al5eFLs via @YouTube.",
-        "summary": "Something went wrong, but don’t fret — let’s give it another shot. Try again Some privacy related extensions may cause issues on x.com. Please disable them and try again. 2 days ago ... BENZO (@riverstn7). 56 views. 【初心者必見】AI活用を0から学ぶ4つのステップ https://t.co/IM1al5eFLs via @YouTube."
-      },
-      {
-        "title": "AI(人工知能)の作り方！初心者がいちから開発する全手順【準備から ...",
-        "url": "https://generative-ai.sejuku.net/blog/3946/",
-        "snippet": "Oct 10, 2025 ... また、線形代数などの数学の知識やニューラルネットワークを学ぶのも時間がかかります。 そこで、以降では初心者がAI（人工知能）を作る4つのステップを紹介 ...",
-        "summary": "AI(人工知能)の作り方！初心者がいちから開発する全手順【準備から公開】 | 侍エンジニア MENU サービス 生成AI基礎コース 生成AI業務改善コース 生成AIツール ChatGPT Gemini Copilot Claude Perplexity DeepSeek 生成AI診断 生成AI学習 スクール セミナー 講座 サービス 生成AI基礎コース 生成AI業務改善コース 生成AIツール ChatGPT Gemini Copilot Claude Perplexity DeepSeek 生成AI診断 生成AI学習 スクール セミナー 講座 無料で相談する ホーム 生成AI AI(人工知能)の作り方！初心者がいちから開発する全手順【準備から公開】 AI(人工知能)の作り方！初心者がいちから開発する全手順【準備から公開】 2025 10/10 広告 生成AI 2025年10月10日 中川大輝 この記事では、準備段階から公開までのAI(人工知能)の作り方をわかりやすく解説します。"
-      },
-      {
-        "title": "AIでサボろうチャンネル (@ai_saborou) / Posts / X",
-        "url": "https://x.com/ai_saborou",
-        "snippet": "【初心者必見】AI活用を0から学ぶ4つのステップ. AI活用の学習をどう進めれば良いか、4つのステップを提案します。 noteのメンバーシップ メンバーシップ購読はこちら ...",
-        "summary": "Something went wrong, but don’t fret — let’s give it another shot. Try again Some privacy related extensions may cause issues on x.com. Please disable them and try again. 【初心者必見】AI活用を0から学ぶ4つのステップ. AI活用の学習をどう進めれば良いか、4つのステップを提案します。 noteのメンバーシップ メンバーシップ購読はこちら ..."
-      }
-    ],
-    "researchedAt": "2025-11-17T00:45:45.927Z",
-    "generatedAt": "2025-11-17T00:46:58.182Z",
-    "postDate": "2025-11-17",
-    "slug": "2025-11-17-ai04",
-    "outputFile": "posts/2025-11-17-ai04.html",
-    "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"

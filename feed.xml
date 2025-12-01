@@ -5,9 +5,23 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Sun, 30 Nov 2025 21:14:51 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 01 Dec 2025 09:33:30 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>Unreal Engine 5を活用した初心者向けゲーム開発：学習法と実践的ステップの詳細</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-01-unreal-engine-5.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-01-unreal-engine-5.html</guid>
+    <pubDate>Mon, 01 Dec 2025 09:33:30 GMT</pubDate>
+    <description>Unreal Engine 5を用いたゲーム開発における初心者向けの学習方法と実践的なプロジェクト進捗を詳述。具体的なステップやリソースを提案し、AIやWebマーケティングとの関連性にも触れます。</description>
+    <category>Unreal Engine 5</category>
+    <category>ゲーム開発</category>
+    <category>初心者向け</category>
+    <category>学習方法</category>
+    <category>AI活用</category>
+    <category>Webマーケティング</category>
+    <category>下書き</category>
+  </item>
   <item>
     <title>GoogleのデザインAI「Stitch」徹底解説：UIデザインの効率化と実用性</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-googleaistitchui.html</link>
@@ -22,17 +36,15 @@
     <category>下書き</category>
   </item>
   <item>
-    <title>GmailのPOP3サポート終了：2026年に向けた移行戦略と新たなメール管理手法</title>
+    <title>【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-gmailpop32026.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-gmailpop32026.html</guid>
     <pubDate>Sun, 30 Nov 2025 09:21:55 GMT</pubDate>
-    <description>2026年1月からGmailでのPOP3サーバーが終了します。本記事では、その影響と具体的な対策、代替手段を詳述し、ビジネスや開発現場での実用的な活用法を解説します。</description>
+    <description>2026年からGmailのPOP3受信機能が終了する件について、一般ユーザーへの影響と対策をわかりやすく解説。自分が影響を受けるかどうかのチェックリストや、転送設定への切り替え時の注意点も紹介します。</description>
     <category>Gmail</category>
     <category>POP3</category>
     <category>メール管理</category>
-    <category>Web活用</category>
-    <category>AI技術</category>
-    <category>下書き</category>
+    <category>セキュリティ</category>
   </item>
   <item>
     <title>【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、&quot;1日5枚&quot;制限の真実</title>
