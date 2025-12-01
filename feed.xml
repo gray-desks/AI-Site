@@ -5,9 +5,22 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Mon, 01 Dec 2025 09:33:30 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 01 Dec 2025 21:14:56 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html</guid>
+    <pubDate>Mon, 01 Dec 2025 21:14:56 GMT</pubDate>
+    <description>ChatGPT-5.1、Gemini 3、Claude 4.5の3つのAIツールを7つのタスクで比較し、それぞれの特徴や実用性を評価します。具体的なユースケースを通じて、読者が最適なAIツールを選ぶための情報を提供します。</description>
+    <category>AIツール</category>
+    <category>ChatGPT</category>
+    <category>Google AI</category>
+    <category>Claude</category>
+    <category>自然言語処理</category>
+    <category>下書き</category>
+  </item>
   <item>
     <title>Unreal Engine 5を活用した初心者向けゲーム開発：学習法と実践的ステップの詳細</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-01-unreal-engine-5.html</link>
@@ -23,17 +36,16 @@
     <category>下書き</category>
   </item>
   <item>
-    <title>GoogleのデザインAI「Stitch」徹底解説：UIデザインの効率化と実用性</title>
+    <title>絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-googleaistitchui.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-googleaistitchui.html</guid>
     <pubDate>Sun, 30 Nov 2025 21:14:51 GMT</pubDate>
-    <description>Googleの最新デザインAI「Stitch」は、UIデザインのプロセスを効率化し、クリエイターに新たな可能性を提供します。本記事では、その機能と実用的なユースケースを深掘りし、導入のメリットと課題を考察します。</description>
+    <description>GoogleのAI「Stitch」に神アップデート！手書きメモから「動くアプリ」が一瞬で作れるようになりました。絵心ゼロでもOKなその衝撃的な進化と、具体的な使い方をわかりやすく解説します。</description>
     <category>Google AI</category>
     <category>デザインAI</category>
     <category>UIデザイン</category>
     <category>Stitch</category>
     <category>AI活用</category>
-    <category>下書き</category>
   </item>
   <item>
     <title>【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと</title>

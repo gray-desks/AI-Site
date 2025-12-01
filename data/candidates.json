@@ -1,5 +1,147 @@
 [
   {
+    "id": "yt-v74vDClaaSo",
+    "source": {
+      "platform": "YouTube",
+      "name": "iketomo-ch",
+      "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
+      "url": "https://www.youtube.com/@iketomo-ch",
+      "focus": [
+        "AIツール",
+        "活用事例"
+      ]
+    },
+    "video": {
+      "id": "v74vDClaaSo",
+      "title": "本当に使えるAIはどれ？ ChatGPT-5.1、Gemini 3、Claude 4.5を、図解・バイブコーディング系の7つのタスクで比較！",
+      "url": "https://www.youtube.com/watch?v=v74vDClaaSo",
+      "description": "新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
+      "thumbnail": "https://i.ytimg.com/vi/v74vDClaaSo/hqdefault.jpg",
+      "publishedAt": "2025-12-01T11:01:50Z"
+    },
+    "status": "generated",
+    "createdAt": "2025-12-01T21:13:35.365Z",
+    "updatedAt": "2025-12-01T21:14:56.833Z",
+    "topicKey": "ai-chatgpt-51gemini-3claude-457",
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "transcript": "本当に使えるAIはどれ？ ChatGPT-5.1、Gemini 3、Claude 4.5を、図解・バイブコーディング系の7つのタスクで比較！ 新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
+    "transcriptLength": 142,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はAIツールの比較に関する内容であり、直近の記事はゲーム開発やアプリ制作、画像生成エンジン、動画編集、知識管理など異なるトピックを扱っているため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はAIツールの比較に関する内容であり、直近の記事はゲーム開発やアプリ制作、画像生成エンジン、動画編集、知識管理など異なるトピックを扱っているため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "Unreal Engine 5を活用した初心者向けゲーム開発：学習法と実践的ステップの詳細",
+      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
+      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+      "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
+      "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
+      "【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。",
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
+      "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート",
+      "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代"
+    ],
+    "researchedAt": "2025-12-01T21:13:39.962Z",
+    "generatedAt": "2025-12-01T21:14:56.833Z",
+    "postDate": "2025-12-01",
+    "slug": "2025-12-01-aichatgpt-51gemini-3claude-45",
+    "outputFile": "posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html",
+    "image": {
+      "key": "collab-05",
+      "src": "assets/img/article-templates/collab-05.webp",
+      "alt": "チーム協業とチャットを思わせるシンボル（バリアント5）",
+      "label": "コラボレーションダイナミクス",
+      "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
+      "category": "collaboration"
+    },
+    "imageKey": "collab-05"
+  },
+  {
+    "id": "yt-kROekJFIVf0",
+    "source": {
+      "platform": "YouTube",
+      "name": "ai_masaou",
+      "channelId": "UCvHpETRVi1tXeRJoYiXHJqw",
+      "url": "https://www.youtube.com/@ai_masaou",
+      "focus": [
+        "生成AI",
+        "Tips"
+      ]
+    },
+    "video": {
+      "id": "kROekJFIVf0",
+      "title": "【2025年完全版】作業効率をブチ上げるAIツール14選！実際に課金している理由と共に徹底解説します",
+      "url": "https://www.youtube.com/watch?v=kROekJFIVf0",
+      "description": "今回の動画では、2025年12月現在「課金する価値がある」と考えているAIサービスを、実際に私が有料契約しているものに限定し ...",
+      "thumbnail": "https://i.ytimg.com/vi/kROekJFIVf0/hqdefault.jpg",
+      "publishedAt": "2025-12-01T10:35:00Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-12-01T21:13:34.320Z",
+    "updatedAt": "2025-12-01T21:13:34.320Z",
+    "topicKey": "2025ai14",
+    "notes": "YouTube Data API: ai_masaou の最新動画"
+  },
+  {
+    "id": "yt-jcoUkt4rg8k",
+    "source": {
+      "platform": "YouTube",
+      "name": "chaen-ai-lab",
+      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
+      "url": "https://www.youtube.com/@chaen-ai-lab",
+      "focus": [
+        "AI解説",
+        "LLM"
+      ]
+    },
+    "video": {
+      "id": "jcoUkt4rg8k",
+      "title": "【トップ営業の常識】優秀人材が実践する失敗しないMTG準備術とは？相手の心を掴む台本作成までAIを使った全手法",
+      "url": "https://www.youtube.com/watch?v=jcoUkt4rg8k",
+      "description": "【問い合わせフォーム】動画内で使用したプロンプトや解説資料を無料配布しています。 以下のリンクからアンケートにお答え ...",
+      "thumbnail": "https://i.ytimg.com/vi/jcoUkt4rg8k/hqdefault.jpg",
+      "publishedAt": "2025-12-01T10:33:10Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-12-01T21:13:34.839Z",
+    "updatedAt": "2025-12-01T21:13:34.839Z",
+    "topicKey": "mtgai",
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+  },
+  {
+    "id": "yt-rohkXyzbryI",
+    "source": {
+      "platform": "YouTube",
+      "name": "keitoaiweb",
+      "channelId": "UCfapRkagDtoQEkGeyD3uERQ",
+      "url": "https://www.youtube.com/@keitoaiweb",
+      "focus": [
+        "AIニュース",
+        "Web活用"
+      ]
+    },
+    "video": {
+      "id": "rohkXyzbryI",
+      "title": "WordPressは古い？サクッとHPができるWeb制作特化AIエージェント『Readdy』が良い！",
+      "url": "https://www.youtube.com/watch?v=rohkXyzbryI",
+      "description": "Webサイト制作特化AI Readdyを使ってWebサイトを作成してみました。 Readdyはこちらから利用可能 ...",
+      "thumbnail": "https://i.ytimg.com/vi/rohkXyzbryI/hqdefault.jpg",
+      "publishedAt": "2025-12-01T09:45:48Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-12-01T21:13:34.610Z",
+    "updatedAt": "2025-12-01T21:13:34.610Z",
+    "topicKey": "wordpresshpwebaireaddy",
+    "notes": "YouTube Data API: keitoaiweb の最新動画"
+  },
+  {
     "id": "yt-L1bd_kIZgec",
     "source": {
       "platform": "YouTube",
@@ -2064,51 +2206,6 @@
       "category": "ai"
     },
     "imageKey": "ai-core-03"
-  },
-  {
-    "id": "yt-LSYpUMvUE78",
-    "source": {
-      "platform": "YouTube",
-      "name": "chaen-ai-lab",
-      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
-      "url": "https://www.youtube.com/@chaen-ai-lab",
-      "focus": [
-        "AI解説",
-        "LLM"
-      ]
-    },
-    "video": {
-      "id": "LSYpUMvUE78",
-      "title": "【ChatGPT新機能】グループチャット機能搭載 #chatgpt #ai #チャエン #仕事効率化 #業務効率化 #line",
-      "url": "https://www.youtube.com/watch?v=LSYpUMvUE78",
-      "description": "【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 ChatGPTにグループ ...",
-      "thumbnail": "https://i.ytimg.com/vi/LSYpUMvUE78/hqdefault.jpg",
-      "publishedAt": "2025-11-17T11:30:32Z"
-    },
-    "status": "generated",
-    "createdAt": "2025-11-17T12:01:27.460Z",
-    "updatedAt": "2025-11-17T12:12:33.681Z",
-    "topicKey": "chatgpt-chatgpt-ai-line",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
-    "searchQuery": {
-      "original": "【ChatGPT新機能】グループチャット機能搭載 #chatgpt #ai #チャエン #仕事効率化 #業務効率化 #line",
-      "extracted": "【ChatGPT新機能】グループチャット機能搭載 #chatgpt #ai #チャエン #仕事効率化 #業務効率化 #line",
-      "method": "fallback"
-    },
-    "searchSummaries": [],
-    "researchedAt": "2025-11-17T12:01:31.048Z",
-    "generatedAt": "2025-11-17T12:12:33.681Z",
-    "postDate": "2025-11-17",
-    "slug": "2025-11-17-chatgpt",
-    "outputFile": "posts/2025-11-17-chatgpt.html",
-    "image": {
-      "key": "collab-02",
-      "src": "assets/img/article-templates/collab-02.webp",
-      "alt": "チーム協業とチャットを思わせるシンボル（バリアント2）",
-      "label": "コラボレーションダイナミクス",
-      "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
-      "category": "collaboration"
-    }
   },
   {
     "id": "yt-p6xraf9z234",

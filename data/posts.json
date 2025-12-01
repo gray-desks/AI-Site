@@ -1,5 +1,61 @@
 [
   {
+    "title": "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
+    "date": "2025-12-01",
+    "summary": "ChatGPT-5.1、Gemini 3、Claude 4.5の3つのAIツールを7つのタスクで比較し、それぞれの特徴や実用性を評価します。具体的なユースケースを通じて、読者が最適なAIツールを選ぶための情報を提供します。",
+    "tags": [
+      {
+        "slug": "ai-tools",
+        "label": "AIツール",
+        "category": "ツール",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "chatgpt",
+        "label": "ChatGPT",
+        "category": "ツール",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "google-ai",
+        "label": "Google AI",
+        "category": "企業・プロダクト",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "claude",
+        "label": "Claude",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "tag-5",
+        "label": "自然言語処理",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html",
+    "slug": "2025-12-01-aichatgpt-51gemini-3claude-45",
+    "publishedAt": "2025-12-01T21:14:56.833Z",
+    "status": "draft",
+    "image": {
+      "key": "collab-05",
+      "src": "assets/img/article-templates/collab-05.webp",
+      "alt": "チーム協業とチャットを思わせるシンボル（バリアント5）",
+      "label": "コラボレーションダイナミクス",
+      "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
+      "category": "collaboration"
+    },
+    "createdAt": "2025-12-01T21:14:56.837Z"
+  },
+  {
     "title": "Unreal Engine 5を活用した初心者向けゲーム開発：学習法と実践的ステップの詳細",
     "date": "2025-12-01",
     "summary": "Unreal Engine 5を用いたゲーム開発における初心者向けの学習方法と実践的なプロジェクト進捗を詳述。具体的なステップやリソースを提案し、AIやWebマーケティングとの関連性にも触れます。",

@@ -294,5 +294,13 @@
     "sourceName": "ウェブマニア",
     "videoTitle": "【Unreal Engine 5】知識0の完全初心者がどうやってゲーム開発してるの？現在開発中のゲーム映像もチラ見せします！",
     "draftUrl": "posts/2025/12/2025-12-01-unreal-engine-5.html"
+  },
+  {
+    "topicKey": "ai-chatgpt-51gemini-3claude-457",
+    "firstSeen": "2025-12-01T21:14:56.834Z",
+    "lastPublishedAt": "2025-12-01",
+    "sourceName": "iketomo-ch",
+    "videoTitle": "本当に使えるAIはどれ？ ChatGPT-5.1、Gemini 3、Claude 4.5を、図解・バイブコーディング系の7つのタスクで比較！",
+    "draftUrl": "posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html"
   }
 ]
