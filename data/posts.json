@@ -62,9 +62,9 @@
     "createdAt": "2025-12-01T09:33:30.818Z"
   },
   {
-    "title": "GoogleのデザインAI「Stitch」徹底解説：UIデザインの効率化と実用性",
+    "title": "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
     "date": "2025-11-30",
-    "summary": "Googleの最新デザインAI「Stitch」は、UIデザインのプロセスを効率化し、クリエイターに新たな可能性を提供します。本記事では、その機能と実用的なユースケースを深掘りし、導入のメリットと課題を考察します。",
+    "summary": "GoogleのAI「Stitch」に神アップデート！手書きメモから「動くアプリ」が一瞬で作れるようになりました。絵心ゼロでもOKなその衝撃的な進化と、具体的な使い方をわかりやすく解説します。",
     "tags": [
       {
         "slug": "google-ai",
@@ -95,24 +95,18 @@
         "label": "AI活用",
         "category": "ユースケース",
         "style": "accent-teal"
-      },
-      {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
-        "style": "accent-gold"
       }
     ],
     "url": "posts/2025/11/2025-11-30-googleaistitchui.html",
     "slug": "2025-11-30-googleaistitchui",
     "publishedAt": "2025-11-30T21:14:51.961Z",
-    "status": "draft",
+    "status": "published",
     "image": {
-      "key": "ai-core-04",
-      "src": "assets/img/article-templates/ai-core-04.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "key": "stitch-update-2025",
+      "src": "assets/img/posts/2025/11/stitch_update_2025.png",
+      "alt": "Google Stitchのアップデートイメージ",
+      "label": "Stitch Update",
+      "caption": "手書きメモからアプリが生成されるイメージ",
       "category": "ai"
     },
     "createdAt": "2025-11-30T21:14:51.964Z"
