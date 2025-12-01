@@ -56,9 +56,9 @@
     "createdAt": "2025-11-30T21:14:51.964Z"
   },
   {
-    "title": "GmailのPOP3サポート終了：2026年に向けた移行戦略と新たなメール管理手法",
+    "title": "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
     "date": "2025-11-30",
-    "summary": "2026年1月からGmailでのPOP3サーバーが終了します。本記事では、その影響と具体的な対策、代替手段を詳述し、ビジネスや開発現場での実用的な活用法を解説します。",
+    "summary": "2026年からGmailのPOP3受信機能が終了する件について、一般ユーザーへの影響と対策をわかりやすく解説。自分が影響を受けるかどうかのチェックリストや、転送設定への切り替え時の注意点も紹介します。",
     "tags": [
       {
         "slug": "gmail",
@@ -79,35 +79,23 @@
         "style": "accent-pink"
       },
       {
-        "slug": "web",
-        "label": "Web活用",
+        "slug": "security",
+        "label": "セキュリティ",
         "category": "その他",
-        "style": "accent-lavender"
-      },
-      {
-        "slug": "ai",
-        "label": "AI技術",
-        "category": "その他",
-        "style": "accent-orange"
-      },
-      {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
-        "style": "accent-gold"
+        "style": "accent-blue"
       }
     ],
     "url": "posts/2025/11/2025-11-30-gmailpop32026.html",
     "slug": "2025-11-30-gmailpop32026",
     "publishedAt": "2025-11-30T09:21:55.227Z",
-    "status": "draft",
+    "status": "published",
     "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
+      "key": "gmail-pop3-2026",
+      "src": "assets/img/posts/2025/11/gmail_pop3_2026.png",
+      "alt": "Gmail POP3終了と2026年問題のイラスト",
+      "label": "Gmail 2026年問題",
+      "caption": "GmailのPOP3サポート終了をイメージしたパステルカラーのイラスト",
+      "category": "security"
     },
     "createdAt": "2025-11-30T09:21:55.230Z"
   },
