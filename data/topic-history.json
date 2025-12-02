@@ -310,5 +310,13 @@
     "sourceName": "AI-Hakase",
     "videoTitle": "【新機能解説】「Reference Pro」とは？日本語プロンプトで画像編集が変わる！PixAIでマルチ画像参照からキャラ固定までが完全完結する、その実力を徹底検証。",
     "draftUrl": "posts/2025/12/2025-12-02-pixaireference-pro.html"
+  },
+  {
+    "topicKey": "githubai",
+    "firstSeen": "2025-12-02T21:18:21.005Z",
+    "lastPublishedAt": "2025-12-02",
+    "sourceName": "iketomo-ch",
+    "videoTitle": "非エンジニアもそろそろ向き合う必要あり！GithubがなぜAIエージェント時代に必須のスキルなのか？基本的な考え方や使い方を徹底解説",
+    "draftUrl": "posts/2025/12/2025-12-02-aigithub.html"
   }
 ]

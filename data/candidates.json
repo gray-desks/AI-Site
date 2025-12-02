@@ -1,5 +1,175 @@
 [
   {
+    "id": "yt-491sxQKDv6Y",
+    "source": {
+      "platform": "YouTube",
+      "name": "kei31e",
+      "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
+      "url": "https://www.youtube.com/@kei31e",
+      "focus": [
+        "エンジニアリング",
+        "AI"
+      ]
+    },
+    "video": {
+      "id": "491sxQKDv6Y",
+      "title": "新しいスマホを買わざるを得なかった話",
+      "url": "https://www.youtube.com/watch?v=491sxQKDv6Y",
+      "description": "新しいスマホを買わざるを得なかった話.",
+      "thumbnail": "https://i.ytimg.com/vi/491sxQKDv6Y/hqdefault.jpg",
+      "publishedAt": "2025-12-02T21:15:10Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-02T21:15:42.767Z",
+    "updatedAt": "2025-12-02T21:17:13.449Z",
+    "topicKey": "ai-topic",
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "transcript-unavailable"
+  },
+  {
+    "id": "yt-TrcXCGLbYe8",
+    "source": {
+      "platform": "YouTube",
+      "name": "chaen-ai-lab",
+      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
+      "url": "https://www.youtube.com/@chaen-ai-lab",
+      "focus": [
+        "AI解説",
+        "LLM"
+      ]
+    },
+    "video": {
+      "id": "TrcXCGLbYe8",
+      "title": "GoogleのAIノートが最強すぎる。資料要約からテスト作成までこれ1つで完結 #AI #notebooklm #仕事効率化 #ai #チャエン #google #shorts",
+      "url": "https://www.youtube.com/watch?v=TrcXCGLbYe8",
+      "description": "【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 Google ...",
+      "thumbnail": "https://i.ytimg.com/vi/TrcXCGLbYe8/hqdefault.jpg",
+      "publishedAt": "2025-12-02T11:01:03Z"
+    },
+    "status": "failed",
+    "createdAt": "2025-12-02T21:15:42.380Z",
+    "updatedAt": "2025-12-02T21:17:10.013Z",
+    "topicKey": "googleai1-ai-notebooklm-ai-google-shorts",
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "transcript": "GoogleのAIノートが最強すぎる。資料要約からテスト作成までこれ1つで完結 #AI #notebooklm #仕事効率化 #ai #チャエン #google #shorts 【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 Google ...",
+    "transcriptLength": 173,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はGoogleのAIノートに関するもので、主に仕事効率化や資料作成に焦点を当てている。一方、直近の記事はAIツールの比較や他のAI技術に関するもので、テーマが異なるため重複とは判断しない。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はGoogleのAIノートに関するもので、主に仕事効率化や資料作成に焦点を当てている。一方、直近の記事はAIツールの比較や他のAI技術に関するもので、テーマが異なるため重複とは判断しない。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
+      "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
+      "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
+      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
+      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+      "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
+      "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
+      "【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。",
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力"
+    ],
+    "researchedAt": "2025-12-02T21:15:51.089Z",
+    "failReason": "article-generation-error",
+    "errorMessage": "article summary too short"
+  },
+  {
+    "id": "yt-EZINHGqu2Cw",
+    "source": {
+      "platform": "YouTube",
+      "name": "iketomo-ch",
+      "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
+      "url": "https://www.youtube.com/@iketomo-ch",
+      "focus": [
+        "AIツール",
+        "活用事例"
+      ]
+    },
+    "video": {
+      "id": "EZINHGqu2Cw",
+      "title": "非エンジニアもそろそろ向き合う必要あり！GithubがなぜAIエージェント時代に必須のスキルなのか？基本的な考え方や使い方を徹底解説",
+      "url": "https://www.youtube.com/watch?v=EZINHGqu2Cw",
+      "description": "新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
+      "thumbnail": "https://i.ytimg.com/vi/EZINHGqu2Cw/hqdefault.jpg",
+      "publishedAt": "2025-12-02T11:00:25Z"
+    },
+    "status": "generated",
+    "createdAt": "2025-12-02T21:15:42.919Z",
+    "updatedAt": "2025-12-02T21:18:21.004Z",
+    "topicKey": "githubai",
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "transcript": "非エンジニアもそろそろ向き合う必要あり！GithubがなぜAIエージェント時代に必須のスキルなのか？基本的な考え方や使い方を徹底解説 新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
+    "transcriptLength": 138,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はGithubとAIエージェントに関するスキルについての内容であり、直近の記事はAIツールやアプリ開発に関する異なるトピックを扱っているため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はGithubとAIエージェントに関するスキルについての内容であり、直近の記事はAIツールやアプリ開発に関する異なるトピックを扱っているため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
+      "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
+      "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
+      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
+      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+      "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
+      "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
+      "【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。",
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力"
+    ],
+    "researchedAt": "2025-12-02T21:17:15.544Z",
+    "generatedAt": "2025-12-02T21:18:21.004Z",
+    "postDate": "2025-12-02",
+    "slug": "2025-12-02-aigithub",
+    "outputFile": "posts/2025/12/2025-12-02-aigithub.html",
+    "image": {
+      "key": "ai-core-04",
+      "src": "assets/img/article-templates/ai-core-04.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "imageKey": "ai-core-04"
+  },
+  {
+    "id": "yt-gAz-MVAriM0",
+    "source": {
+      "platform": "YouTube",
+      "name": "ai_masaou",
+      "channelId": "UCvHpETRVi1tXeRJoYiXHJqw",
+      "url": "https://www.youtube.com/@ai_masaou",
+      "focus": [
+        "生成AI",
+        "Tips"
+      ]
+    },
+    "video": {
+      "id": "gAz-MVAriM0",
+      "title": "【Gemini3並?!】Deepseekの新作『v3.2 speciale』は本当に凄いのか確かめてみた！",
+      "url": "https://www.youtube.com/watch?v=gAz-MVAriM0",
+      "description": "今回の動画では、DeepseekV3.2とspecialeモデルが登場したのでこれについて解説しました。実際にGemini3やGPT5.1並の性能 ...",
+      "thumbnail": "https://i.ytimg.com/vi/gAz-MVAriM0/hqdefault.jpg",
+      "publishedAt": "2025-12-02T10:50:01Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-12-02T21:15:41.978Z",
+    "updatedAt": "2025-12-02T21:15:41.978Z",
+    "topicKey": "gemini3deepseekv32-speciale",
+    "notes": "YouTube Data API: ai_masaou の最新動画"
+  },
+  {
     "id": "yt-0462VatpoKE",
     "source": {
       "platform": "YouTube",
@@ -2286,69 +2456,5 @@
       "category": "infrastructure"
     },
     "imageKey": "infra-01"
-  },
-  {
-    "id": "yt-sS7rPKNsYhc",
-    "source": {
-      "platform": "YouTube",
-      "name": "chaen-ai-lab",
-      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
-      "url": "https://www.youtube.com/@chaen-ai-lab",
-      "focus": [
-        "AI解説",
-        "LLM"
-      ]
-    },
-    "video": {
-      "id": "sS7rPKNsYhc",
-      "title": "AI導入で「伸びる会社」と「伸びない会社」の決定的な違い #shorts #AI #ビジネス #仕事効率化",
-      "url": "https://www.youtube.com/watch?v=sS7rPKNsYhc",
-      "description": "【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 マッキンゼーの最新調査で ...",
-      "thumbnail": "https://i.ytimg.com/vi/sS7rPKNsYhc/hqdefault.jpg",
-      "publishedAt": "2025-11-18T10:01:27Z"
-    },
-    "status": "generated",
-    "createdAt": "2025-11-18T12:01:29.901Z",
-    "updatedAt": "2025-11-18T12:06:20.348Z",
-    "topicKey": "ai-shorts-ai",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
-    "searchQuery": {
-      "original": "AI導入で「伸びる会社」と「伸びない会社」の決定的な違い #shorts #AI #ビジネス #仕事効率化",
-      "extracted": "AI導入で「伸びる会社」と「伸びない会社」の決定的な違い #shorts #AI #ビジネス #仕事効率化",
-      "method": "fallback"
-    },
-    "topicKeyMeta": {
-      "method": "fallback",
-      "raw": "AI導入で「伸びる会社」と「伸びない会社」の決定的な違い #shorts #AI #ビジネス #仕事効率化",
-      "product": null,
-      "feature": null,
-      "category": null,
-      "confidence": null,
-      "reasoning": null,
-      "error": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
-    },
-    "searchSummaries": [
-      {
-        "title": "JANE JOHN / インフルエンサー インタビュー (@janejohn_jp ...",
-        "url": "https://www.instagram.com/janejohn_jp/?hl=ja",
-        "snippet": "... 的な表現だけでは伝えきれない部分があると感じます。丁寧な文章と適切な表現 ... 「投稿が伸びる・伸びないに関わらず、『可愛い！好きだ！』と思うことを発信し ...",
-        "summary": "... 的な表現だけでは伝えきれない部分があると感じます。丁寧な文章と適切な表現 ... 「投稿が伸びる・伸びないに関わらず、『可愛い！好きだ！』と思うことを発信し ...",
-        "quality": "low"
-      }
-    ],
-    "researchedAt": "2025-11-18T12:01:35.152Z",
-    "generatedAt": "2025-11-18T12:06:20.348Z",
-    "postDate": "2025-11-18",
-    "slug": "2025-11-18-ai",
-    "outputFile": "posts/2025-11-18-ai.html",
-    "image": {
-      "key": "ai-core-03",
-      "src": "assets/img/article-templates/ai-core-03.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント3）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    },
-    "imageKey": "ai-core-03"
   }
 ]

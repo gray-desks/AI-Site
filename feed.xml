@@ -5,21 +5,33 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Tue, 02 Dec 2025 09:30:33 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 02 Dec 2025 21:18:21 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
   <item>
-    <title>PixAIのReference Pro機能解説：日本語プロンプトによる画像編集の新境地</title>
+    <title>AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-aigithub.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-aigithub.html</guid>
+    <pubDate>Tue, 02 Dec 2025 21:18:21 GMT</pubDate>
+    <description>AIエージェントの進化に伴い、Githubのスキルが非エンジニアにとっても重要性を増しています。この記事では、Githubの基本的な使い方から、AIツールとの連携による業務効率化の具体例を解説します。</description>
+    <category>GitHub Copilot</category>
+    <category>AIエージェント</category>
+    <category>非エンジニア</category>
+    <category>業務効率化</category>
+    <category>技術スキル</category>
+    <category>下書き</category>
+  </item>
+  <item>
+    <title>【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-pixaireference-pro.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-pixaireference-pro.html</guid>
     <pubDate>Tue, 02 Dec 2025 09:30:33 GMT</pubDate>
-    <description>PixAIの新機能「Reference Pro」は、日本語プロンプトを用いた画像編集を革新します。マルチ画像参照とキャラクター固定機能により、ビジネスやクリエイティブな現場での実用性が向上。具体的なユースケースを通じて、その効果を検証します。</description>
+    <description>「うちの子」をAIで描きたいけど、毎回顔が変わってしまう…そんな悩みを解決するPixAIの「Reference Pro」機能を徹底解説。絵心がなくても、スマホ一つでキャラクターを固定して描き続ける方法を分かりやすく紹介します。</description>
     <category>PixAI</category>
     <category>画像編集</category>
     <category>AI技術</category>
     <category>日本語プロンプト</category>
     <category>マルチ画像参照</category>
-    <category>下書き</category>
   </item>
   <item>
     <title>AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析</title>

@@ -1,5 +1,61 @@
 [
   {
+    "title": "AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド",
+    "date": "2025-12-02",
+    "summary": "AIエージェントの進化に伴い、Githubのスキルが非エンジニアにとっても重要性を増しています。この記事では、Githubの基本的な使い方から、AIツールとの連携による業務効率化の具体例を解説します。",
+    "tags": [
+      {
+        "slug": "github-copilot",
+        "label": "GitHub Copilot",
+        "category": "ツール",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "ai",
+        "label": "AIエージェント",
+        "category": "その他",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "tag-3",
+        "label": "非エンジニア",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "productivity",
+        "label": "業務効率化",
+        "category": "ユースケース",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "tag-5",
+        "label": "技術スキル",
+        "category": "その他",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-02-aigithub.html",
+    "slug": "2025-12-02-aigithub",
+    "publishedAt": "2025-12-02T21:18:21.004Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-04",
+      "src": "assets/img/article-templates/ai-core-04.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "createdAt": "2025-12-02T21:18:21.008Z"
+  },
+  {
     "title": "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
     "date": "2025-12-02",
     "summary": "「うちの子」をAIで描きたいけど、毎回顔が変わってしまう…そんな悩みを解決するPixAIの「Reference Pro」機能を徹底解説。絵心がなくても、スマホ一つでキャラクターを固定して描き続ける方法を分かりやすく紹介します。",
