@@ -302,5 +302,13 @@
     "sourceName": "iketomo-ch",
     "videoTitle": "本当に使えるAIはどれ？ ChatGPT-5.1、Gemini 3、Claude 4.5を、図解・バイブコーディング系の7つのタスクで比較！",
     "draftUrl": "posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html"
+  },
+  {
+    "topicKey": "reference-propixai",
+    "firstSeen": "2025-12-02T09:30:33.192Z",
+    "lastPublishedAt": "2025-12-02",
+    "sourceName": "AI-Hakase",
+    "videoTitle": "【新機能解説】「Reference Pro」とは？日本語プロンプトで画像編集が変わる！PixAIでマルチ画像参照からキャラ固定までが完全完結する、その実力を徹底検証。",
+    "draftUrl": "posts/2025/12/2025-12-02-pixaireference-pro.html"
   }
 ]

@@ -1,5 +1,149 @@
 [
   {
+    "id": "yt-0462VatpoKE",
+    "source": {
+      "platform": "YouTube",
+      "name": "kei31e",
+      "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
+      "url": "https://www.youtube.com/@kei31e",
+      "focus": [
+        "エンジニアリング",
+        "AI"
+      ]
+    },
+    "video": {
+      "id": "0462VatpoKE",
+      "title": "Nano Banana ProとThumbnail Creatorでマンガを作ろう",
+      "url": "https://www.youtube.com/watch?v=0462VatpoKE",
+      "description": "Thumbnail Creator https://thumbnail-creator.kei31.com/",
+      "thumbnail": "https://i.ytimg.com/vi/0462VatpoKE/hqdefault.jpg",
+      "publishedAt": "2025-12-02T05:51:20Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-02T09:29:20.657Z",
+    "updatedAt": "2025-12-02T09:29:24.729Z",
+    "topicKey": "nano-banana-prothumbnail-creator",
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画のタイトルに含まれる「Nano Banana Pro」が、直近の記事5においても取り上げられており、同じ製品に関連する内容であるため。"
+  },
+  {
+    "id": "yt-LbMQbiskYOw",
+    "source": {
+      "platform": "YouTube",
+      "name": "AI-Hakase",
+      "channelId": "UC_XCzQX1YiDetIm5IUYvZ7w",
+      "url": "https://www.youtube.com/@AI-Hakase",
+      "focus": [
+        "AI解説",
+        "研究トレンド"
+      ]
+    },
+    "video": {
+      "id": "LbMQbiskYOw",
+      "title": "【新機能解説】「Reference Pro」とは？日本語プロンプトで画像編集が変わる！PixAIでマルチ画像参照からキャラ固定までが完全完結する、その実力を徹底検証。",
+      "url": "https://www.youtube.com/watch?v=LbMQbiskYOw",
+      "description": "動画のもとになったNote記事 https://note.com/ai_hakase/n/n56bc739f83ff 他のフル動画版などもこちらで掲載しております！",
+      "thumbnail": "https://i.ytimg.com/vi/LbMQbiskYOw/hqdefault.jpg",
+      "publishedAt": "2025-12-02T01:08:19Z"
+    },
+    "status": "generated",
+    "createdAt": "2025-12-02T09:29:21.254Z",
+    "updatedAt": "2025-12-02T09:30:33.191Z",
+    "topicKey": "reference-propixai",
+    "notes": "YouTube Data API: AI-Hakase の最新動画",
+    "transcript": "【新機能解説】「Reference Pro」とは？日本語プロンプトで画像編集が変わる！PixAIでマルチ画像参照からキャラ固定までが完全完結する、その実力を徹底検証。 動画のもとになったNote記事 https://note.com/ai_hakase/n/n56bc739f83ff 他のフル動画版などもこちらで掲載しております！",
+    "transcriptLength": 166,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はPixAIの新機能に関するものであり、直近の記事はAIツールや画像生成エンジンの解説、動画制作の変化について扱っているため、テーマが異なると判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はPixAIの新機能に関するものであり、直近の記事はAIツールや画像生成エンジンの解説、動画制作の変化について扱っているため、テーマが異なると判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
+      "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
+      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
+      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+      "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
+      "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
+      "【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。",
+      "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
+      "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート"
+    ],
+    "researchedAt": "2025-12-02T09:29:28.248Z",
+    "generatedAt": "2025-12-02T09:30:33.191Z",
+    "postDate": "2025-12-02",
+    "slug": "2025-12-02-pixaireference-pro",
+    "outputFile": "posts/2025/12/2025-12-02-pixaireference-pro.html",
+    "image": {
+      "key": "ai-core-01",
+      "src": "assets/img/article-templates/ai-core-01.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "imageKey": "ai-core-01"
+  },
+  {
+    "id": "yt-Lycs2T_tuGo",
+    "source": {
+      "platform": "YouTube",
+      "name": "technavi_tooru",
+      "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
+      "url": "https://www.youtube.com/@technavi_tooru",
+      "focus": [
+        "テックニュース",
+        "生成AI"
+      ]
+    },
+    "video": {
+      "id": "Lycs2T_tuGo",
+      "title": "Microsoft Fara-7B登場！オンデバイスでPC操作までこなすエージェントSLMを試してみた",
+      "url": "https://www.youtube.com/watch?v=Lycs2T_tuGo",
+      "description": "メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております  ‍♂️  (YouTubeアプリからの加入 ...",
+      "thumbnail": "https://i.ytimg.com/vi/Lycs2T_tuGo/hqdefault.jpg",
+      "publishedAt": "2025-12-02T00:00:32Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-12-02T09:29:21.499Z",
+    "updatedAt": "2025-12-02T09:29:21.499Z",
+    "topicKey": "microsoft-fara-7bpcslm",
+    "notes": "YouTube Data API: technavi_tooru の最新動画"
+  },
+  {
+    "id": "yt-IDhlNU26p10",
+    "source": {
+      "platform": "YouTube",
+      "name": "kei31e",
+      "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
+      "url": "https://www.youtube.com/@kei31e",
+      "focus": [
+        "エンジニアリング",
+        "AI"
+      ]
+    },
+    "video": {
+      "id": "IDhlNU26p10",
+      "title": "すごいことを説明できるとすごい",
+      "url": "https://www.youtube.com/watch?v=IDhlNU26p10",
+      "description": "すごいことを説明できるとすごい.",
+      "thumbnail": "https://i.ytimg.com/vi/IDhlNU26p10/hqdefault.jpg",
+      "publishedAt": "2025-12-01T22:05:18Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-12-02T09:29:20.658Z",
+    "updatedAt": "2025-12-02T09:29:20.658Z",
+    "topicKey": "ai-topic",
+    "notes": "YouTube Data API: kei31e の最新動画"
+  },
+  {
     "id": "yt-v74vDClaaSo",
     "source": {
       "platform": "YouTube",
@@ -2206,69 +2350,5 @@
       "category": "ai"
     },
     "imageKey": "ai-core-03"
-  },
-  {
-    "id": "yt-p6xraf9z234",
-    "source": {
-      "platform": "YouTube",
-      "name": "chaen-ai-lab",
-      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
-      "url": "https://www.youtube.com/@chaen-ai-lab",
-      "focus": [
-        "AI解説",
-        "LLM"
-      ]
-    },
-    "video": {
-      "id": "p6xraf9z234",
-      "title": "【AIで社員が半分クビ？】AI失業の最前線に迫る。AI時代に淘汰されない人材になるための「5つのステップ」を徹底解説。《専門家が緊急提言》",
-      "url": "https://www.youtube.com/watch?v=p6xraf9z234",
-      "description": "【問い合わせフォーム】 動画内で紹介した資料の入手やAI研修・開発の問い合わせ ...",
-      "thumbnail": "https://i.ytimg.com/vi/p6xraf9z234/hqdefault.jpg",
-      "publishedAt": "2025-11-17T11:12:10Z"
-    },
-    "status": "generated",
-    "createdAt": "2025-11-17T12:01:27.460Z",
-    "updatedAt": "2025-11-18T00:16:52.665Z",
-    "topicKey": "aiaiai5",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
-    "searchQuery": {
-      "original": "【AIで社員が半分クビ？】AI失業の最前線に迫る。AI時代に淘汰されない人材になるための「5つのステップ」を徹底解説。《専門家が緊急提言》",
-      "extracted": "【AIで社員が半分クビ？】AI失業の最前線に迫る。AI時代に淘汰されない人材になるための「5つのステップ」を徹底解説。《専門家が緊急提言》",
-      "method": "fallback"
-    },
-    "searchSummaries": [
-      {
-        "title": "東京海上の内幕を暴露しよう",
-        "url": "https://egg.5ch.net/test/read.cgi/hoken/1392777304/46-n",
-        "snippet": "5ちゃんねるの保険業界α＠5ch掲示板での議論に参加しましょう：「東京海上の内幕を暴露しよう」。",
-        "summary": "この記事は、東京海上に関する情報を5chの掲示板から集めたもので、特に企業の内部事情や給与に関する議論が中心となっています。主要な技術的発見や事実としては、東京海上の平均年収が1,394万円であることが挙げられます。これは、一般的な日本企業の平均年収と比較して非常に高い水準であり、同社が高収入の職場であることを示しています。\n\n具体的な数値としては、掲示板上での議論において、東京海上の給与が他の企業と比較してどの程度高いかが話題になっています。特に、年収1,394万円という数字は、他の保険業界の企業と比較しても高い水準であることが指摘されています。この数値は、同社が業界内での競争力を維持するために、優秀な人材を引きつけるための戦略の一環であると考えられます。\n\n実装上の制約や注意点としては、掲示板の情報が匿名であり、信憑性に欠ける可能性があることが挙げられます。情報の正確性を確認するためには、他の信頼できる情報源と照らし合わせることが重要です。また、企業の内部情報が外部に漏れることによるリスクも考慮する必要があります。企業としては、情報管理の強化が求められるでしょう。\n\n今後の展望や応用シーンについては、東京海上が高い給与水準を維持することで、優秀な人材を確保し続けることが期待されます。これにより、同社は今後も保険業界での競争力を維持し、さらなる成長を遂げる可能性があります。また、他の企業にとっても、東京海上の給与水準はベンチマークとなり得るため、業界全体の給与水準の引き上げにつながる可能性があります。\n\n総じて、この記事は東京海上の給与水準に関する情報を中心に、企業の内部事情に関する議論を提供していますが、情報の信憑性には注意が必要です。"
-      },
-      {
-        "title": "第一生命セックス族 [無断転載禁止]©2ch.net - 5ちゃんねる掲示板",
-        "url": "https://itest.5ch.net/egg/test/read.cgi/hoken/1461762856/645-n",
-        "snippet": "こういうことになるという実例。 日野OL不倫放火殺人事件（ひのOLふりんほうかさつじんじけん）とは1993年12月14日、東京都日野市で発生した放火殺人事件であり、幼児2人が焼 ...",
-        "summary": "保険業界板のスレッド | itest.5ch.net news/1654610717 news4plus/1650072491 poverty/1666940197 */9245000000 保険業界 5ちゃんねる 閉じる この画像を開く このIDのレスを非表示 この名前のレスを非表示 トップページ 保険業界 全て見る 1-100 最新50 1 全て 戻る スレッド一覧 戻る メニュー 表示 中 文字サイズの変更 投稿フォーム 機能 レス検索 ページの上へ移動 ページの下へ移動 ページ移動 トップ スレッド一覧 スレッド検索 設定 PC版 戻る 返信 --> コメントを投稿する 最新コメを読み込む 全て見る 1-100 最新50 1 全て --> 書き込み 書き込み 閉じる sageる クリア ＊書き込み反映には時間が掛かる場合があります＊ ＊ ＵＰＬＩＦＴ しています＊ ＵＰＬＩＦＴを利用して書き込む ＵＰＬＩＦＴにログイン --> 関連スレッド一覧 過去ログ 保険業界スレッド一覧 --> --> &times; --> &times; --> こういうことになるという実例。 日野OL不倫放火殺人事件（ひのOLふりんほうかさつじんじけん）とは1993年12月14日、東京都日野市で発生した放火殺人事件であり、幼児2人が焼 ..."
-      },
-      {
-        "title": "第一生命セックス族 [無断転載禁止]©2ch.net",
-        "url": "https://egg.5ch.net/test/read.cgi/hoken/1461762856",
-        "snippet": "5ちゃんねるの保険業界α＠5ch掲示板での議論に参加しましょう：「○○○○第一生命セックス族○○○○ [無断転載禁止]©2ch.net」。",
-        "summary": "����������ꐶ���Z�b�N�X���������� [���f�]�ڋ֎~]&#169;2ch.net �T�����˂� �� �ی��ƊE����5ch�f���� UPLIFT ���O�C�� 1002�R�����g 507KB ����������ꐶ���Z�b�N�X���������� [���f�]�ڋ֎~]&#169;2ch.net �X�����܂Ƃ߂� 5ch����p �� gzo.ai �S�� �O100 ��100 �ŐV50 ���X����1000�𒴂��Ă��܂��B����ȏ㏑�����݂͂ł��܂���B 1 �������ׂ̖̈��������� �C�� | ��C 2016/04/27(��) 22:14:16.05 ���ۃi���o�[�����͑�ꐶ�������I 2 �������ׂ̖̈��������� �C�� | ��C 2016/04/27(��) 23:10:25.40 �ی������Ă�(T_T) 3 �������ׂ̖̈��������� �C�� | ��C 2016/04/27(��) 23:20:06.69 ���c�Ƃ̘b�𕷂���������( �G�L�D�M) 4 �������ׂ̖̈��������� �C�� | ��C 2016/04/27(��) 23:29:55.14 �O�E�̖��c�ƂŎq��R�Ȗ^ 5 �������ׂ̖̈��������� �C�� | ��C 2016/04/28(��) 12:17:11.32 ���{�ڂ����b�ŗL���ɂȂ����Ⴂ�܂����ˁB�B�B�B 6 �������ׂ̖̈��������� �C�� | ��C 2016/04/30(�y) 19:54:32.54 ���{�����ɐ�񂶂ăZ�b�N�"
-      }
-    ],
-    "researchedAt": "2025-11-17T12:02:08.872Z",
-    "generatedAt": "2025-11-18T00:16:52.665Z",
-    "postDate": "2025-11-18",
-    "slug": "2025-11-18-ai5",
-    "outputFile": "posts/2025-11-18-ai5.html",
-    "image": {
-      "key": "ai-core-02",
-      "src": "assets/img/article-templates/ai-core-02.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント2）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    }
   }
 ]

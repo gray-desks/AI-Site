@@ -1,5 +1,61 @@
 [
   {
+    "title": "PixAIのReference Pro機能解説：日本語プロンプトによる画像編集の新境地",
+    "date": "2025-12-02",
+    "summary": "PixAIの新機能「Reference Pro」は、日本語プロンプトを用いた画像編集を革新します。マルチ画像参照とキャラクター固定機能により、ビジネスやクリエイティブな現場での実用性が向上。具体的なユースケースを通じて、その効果を検証します。",
+    "tags": [
+      {
+        "slug": "pixai",
+        "label": "PixAI",
+        "category": "企業・プロダクト",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "tag-2",
+        "label": "画像編集",
+        "category": "その他",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "ai",
+        "label": "AI技術",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "tag-4",
+        "label": "日本語プロンプト",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "tag-5",
+        "label": "マルチ画像参照",
+        "category": "その他",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-02-pixaireference-pro.html",
+    "slug": "2025-12-02-pixaireference-pro",
+    "publishedAt": "2025-12-02T09:30:33.191Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-01",
+      "src": "assets/img/article-templates/ai-core-01.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "createdAt": "2025-12-02T09:30:33.194Z"
+  },
+  {
     "title": "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
     "date": "2025-12-01",
     "summary": "ChatGPT-5.1、Gemini 3、Claude 4.5の3つのAIツールを7つのタスクで比較し、それぞれの特徴や実用性を評価します。具体的なユースケースを通じて、読者が最適なAIツールを選ぶための情報を提供します。",
