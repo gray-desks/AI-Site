@@ -56,9 +56,9 @@
     "createdAt": "2025-12-01T21:14:56.837Z"
   },
   {
-    "title": "Unreal Engine 5を活用した初心者向けゲーム開発：学習法と実践的ステップの詳細",
+    "title": "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
     "date": "2025-12-01",
-    "summary": "Unreal Engine 5を用いたゲーム開発における初心者向けの学習方法と実践的なプロジェクト進捗を詳述。具体的なステップやリソースを提案し、AIやWebマーケティングとの関連性にも触れます。",
+    "summary": "ふとテレビやネットで映像を見たとき、「これ、実写なの？それともCG？」と見分けがつかなくて驚いたことはありませんか？実はその多くが、たった一つの「共通のソフト」で作られていることをご存知でしょうか。",
     "tags": [
       {
         "slug": "unreal-engine-5",
@@ -67,22 +67,10 @@
         "style": "accent-teal"
       },
       {
-        "slug": "tag-2",
-        "label": "ゲーム開発",
+        "slug": "cg-video",
+        "label": "CG/映像",
         "category": "その他",
         "style": "accent-lime"
-      },
-      {
-        "slug": "tag-3",
-        "label": "初心者向け",
-        "category": "その他",
-        "style": "accent-lime"
-      },
-      {
-        "slug": "tag-4",
-        "label": "学習方法",
-        "category": "その他",
-        "style": "accent-teal"
       },
       {
         "slug": "ai-utilization",
@@ -91,29 +79,29 @@
         "style": "accent-teal"
       },
       {
-        "slug": "web",
-        "label": "Webマーケティング",
+        "slug": "tech-trend",
+        "label": "技術トレンド",
         "category": "その他",
         "style": "accent-blue"
       },
       {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
+        "slug": "beginner",
+        "label": "初心者向け",
+        "category": "その他",
         "style": "accent-gold"
       }
     ],
     "url": "posts/2025/12/2025-12-01-unreal-engine-5.html",
     "slug": "2025-12-01-unreal-engine-5",
     "publishedAt": "2025-12-01T09:33:30.815Z",
-    "status": "draft",
+    "status": "published",
     "image": {
-      "key": "robotics-05",
-      "src": "assets/img/article-templates/robotics-05.webp",
-      "alt": "ロボティクスやハードウェアを想起させるライン（バリアント5）",
-      "label": "ロボティクス×エッジ",
-      "caption": "エッジデバイスやハードウェア連携記事に。",
-      "category": "robotics"
+      "key": "ue5-magic-wand",
+      "src": "assets/img/posts/2025/12/ue5_magic_wand.jpg",
+      "alt": "Unreal Engine 5とAIが描く魔法のような未来",
+      "label": "Future Tech",
+      "caption": "想像力がそのまま映像になる時代の到来",
+      "category": "technology"
     },
     "createdAt": "2025-12-01T09:33:30.818Z"
   },
