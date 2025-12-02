@@ -17,7 +17,9 @@
       "Bash(git rm:*)",
       "Bash(python3:*)",
       "Bash(curl:*)",
-      "Bash(npm run posts:drafts:*)"
+      "Bash(npm run posts:drafts:*)",
+      "Bash(npm start)",
+      "Bash(npm run:*)"
     ],
     "deny": [],
     "ask": []
