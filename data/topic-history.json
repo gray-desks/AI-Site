@@ -318,5 +318,13 @@
     "sourceName": "iketomo-ch",
     "videoTitle": "非エンジニアもそろそろ向き合う必要あり！GithubがなぜAIエージェント時代に必須のスキルなのか？基本的な考え方や使い方を徹底解説",
     "draftUrl": "posts/2025/12/2025-12-02-aigithub.html"
+  },
+  {
+    "topicKey": "microsoft-fara-7bpcslm",
+    "firstSeen": "2025-12-03T01:23:45.659Z",
+    "lastPublishedAt": "2025-12-03",
+    "sourceName": "technavi_tooru",
+    "videoTitle": "Microsoft Fara-7B登場！オンデバイスでPC操作までこなすエージェントSLMを試してみた",
+    "draftUrl": "posts/2025/12/2025-12-03-microsoft-fara-7bai.html"
   }
 ]

@@ -21,7 +21,7 @@
     },
     "status": "skipped",
     "createdAt": "2025-12-02T21:15:42.767Z",
-    "updatedAt": "2025-12-02T21:17:13.449Z",
+    "updatedAt": "2025-12-03T01:22:10.704Z",
     "topicKey": "ai-topic",
     "notes": "YouTube Data API: kei31e の最新動画",
     "skipReason": "transcript-unavailable"
@@ -163,11 +163,13 @@
       "thumbnail": "https://i.ytimg.com/vi/gAz-MVAriM0/hqdefault.jpg",
       "publishedAt": "2025-12-02T10:50:01Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-12-02T21:15:41.978Z",
-    "updatedAt": "2025-12-02T21:15:41.978Z",
+    "updatedAt": "2025-12-03T01:22:14.042Z",
     "topicKey": "gemini3deepseekv32-speciale",
-    "notes": "YouTube Data API: ai_masaou の最新動画"
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はDeepseekの新作に関するもので、直近の記事の中でAIツール比較に関する内容が含まれており、Gemini 3が言及されているため、AIツールに関するテーマが重複していると判断しました。"
   },
   {
     "id": "yt-0462VatpoKE",
@@ -281,11 +283,49 @@
       "thumbnail": "https://i.ytimg.com/vi/Lycs2T_tuGo/hqdefault.jpg",
       "publishedAt": "2025-12-02T00:00:32Z"
     },
-    "status": "collected",
+    "status": "generated",
     "createdAt": "2025-12-02T09:29:21.499Z",
-    "updatedAt": "2025-12-02T09:29:21.499Z",
+    "updatedAt": "2025-12-03T01:23:45.658Z",
     "topicKey": "microsoft-fara-7bpcslm",
-    "notes": "YouTube Data API: technavi_tooru の最新動画"
+    "notes": "YouTube Data API: technavi_tooru の最新動画",
+    "transcript": "Microsoft Fara-7B登場！オンデバイスでPC操作までこなすエージェントSLMを試してみた メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております ‍♂️ (YouTubeアプリからの加入 ...",
+    "transcriptLength": 118,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はMicrosoftのFara-7Bという特定のAIエージェントに関するものであり、直近の記事はAIエージェント全般や他のAIツールに関する内容であるため、テーマが異なると判断した。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はMicrosoftのFara-7Bという特定のAIエージェントに関するものであり、直近の記事はAIエージェント全般や他のAIツールに関する内容であるため、テーマが異なると判断した。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド",
+      "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
+      "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
+      "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
+      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
+      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+      "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
+      "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
+      "【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。"
+    ],
+    "researchedAt": "2025-12-03T01:22:17.607Z",
+    "generatedAt": "2025-12-03T01:23:45.658Z",
+    "postDate": "2025-12-03",
+    "slug": "2025-12-03-microsoft-fara-7bai",
+    "outputFile": "posts/2025/12/2025-12-03-microsoft-fara-7bai.html",
+    "image": {
+      "key": "ai-core-03",
+      "src": "assets/img/article-templates/ai-core-03.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント3）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "imageKey": "ai-core-03"
   },
   {
     "id": "yt-IDhlNU26p10",
@@ -2378,83 +2418,5 @@
     "notes": "YouTube Data API: keitoaiweb の最新動画",
     "skipReason": "theme-duplicate",
     "skipDetail": "候補動画はNanobanana ProとGoogleの画像生成AIに関する内容であり、直近の記事の中に「Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命」と「Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く」が含まれており、同じテーマを扱っているため。"
-  },
-  {
-    "id": "yt-hnhngS_YTkQ",
-    "source": {
-      "platform": "YouTube",
-      "name": "technavi_tooru",
-      "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
-      "url": "https://www.youtube.com/@technavi_tooru",
-      "focus": [
-        "テックニュース",
-        "生成AI"
-      ]
-    },
-    "video": {
-      "id": "hnhngS_YTkQ",
-      "title": "Google Anti-Gravity登場！Cursorの代わりになり得るIDEなのか？！",
-      "url": "https://www.youtube.com/watch?v=hnhngS_YTkQ",
-      "description": "メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております  ‍♂️  (YouTubeアプリからの加入 ...",
-      "thumbnail": "https://i.ytimg.com/vi/hnhngS_YTkQ/hqdefault.jpg",
-      "publishedAt": "2025-11-18T23:36:08Z"
-    },
-    "status": "generated",
-    "createdAt": "2025-11-19T00:12:43.702Z",
-    "updatedAt": "2025-11-19T00:19:45.687Z",
-    "topicKey": "google-anti-gravitycursoride",
-    "notes": "YouTube Data API: technavi_tooru の最新動画",
-    "searchQuery": {
-      "original": "Google Anti-Gravity登場！Cursorの代わりになり得るIDEなのか？！",
-      "extracted": "Google Anti-Gravity登場！Cursorの代わりになり得るIDEなのか？！",
-      "method": "fallback"
-    },
-    "topicKeyMeta": {
-      "method": "fallback",
-      "raw": "Google Anti-Gravity登場！Cursorの代わりになり得るIDEなのか？！",
-      "product": null,
-      "feature": null,
-      "category": null,
-      "confidence": null,
-      "reasoning": null,
-      "error": "OpenAI API error: 403 {\n    \"error\": {\n        \"message\": \"Project `proj_Dp5YUVtPzRS9YS8EYSlI7e8T` does not have access to model `gpt-4o-mini`\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"model_not_found\"\n    }\n}\n"
-    },
-    "searchSummaries": [
-      {
-        "title": "hellog～英語史ブログ",
-        "url": "http://user.keio.ac.jp/~rhotta/hellog/hellog_archive.html",
-        "snippet": "... なる受動文が可能なのか？ #4935. 2022-10-31 (1): #4935. 接続法と命令法の近似. #4934. 2022-10-30 (1): #4934. 英語綴字の（不）規則性の考え方. #4933. 2022-10-29 ...",
-        "summary": "... なる受動文が可能なのか？ #4935. 2022-10-31 (1): #4935. 接続法と命令法の近似. #4934. 2022-10-30 (1): #4934. 英語綴字の（不）規則性の考え方. #4933. 2022-10-29 ...",
-        "quality": "low"
-      },
-      {
-        "title": "Untitled",
-        "url": "http://ftp.ncnu.edu.tw/debian/dists/lenny/main/i18n/Translation-ja",
-        "snippet": "... なりません。チャレンジステージでは、 単語の代わりにランダムな文字列が登場します。xletters-duel を使えば、 ネットワークによる対戦プレイも可能です。 Package ...",
-        "summary": "この記事では、いくつかのソフトウェアパッケージが紹介されており、それぞれが特定の機能や用途に特化しています。以下に主要な技術的発見や事実、具体的な数値、実装上の制約、今後の展望についてまとめます。\n\nまず、「libsary10」は大規模なテキストファイル（10MBから100MB）を高速に全文検索するための添字配列ライブラリです。これにより、巨大なデータセットを効率的に処理できることが期待されます。次に、「ktouch」はKDE環境向けのタッチタイピング学習ソフトで、ユーザーの習得度に応じてテキストの内容を調整し、適切な指の位置を指示することで、タイピングスキルの向上をサポートします。\n\n「modconf」はデバイスドライバのインストールと設定を行うためのターミナルベースのインターフェイスを提供し、システム管理者にとって便利なツールです。「cruft」はシステム内の不要なファイルを検出するプログラムで、dpkgのデータベースに依存して動作しますが、まだプレリリース版であり、性能向上が求められています。\n\n「efax」はFAXメッセージの送受信を行うプログラムで、Class 1またはClass 2のFAXモデムを使用します。PostScriptファイルのFAX送信にはghostscriptが必要で、設定ファイルの編集が必要になる場合があります。「unpaper」はスキャンしたページを後処理するツールで、PDF変換後の可読性向上やOCR前の品質改善に役立ちます。\n\n「vinagre」はGNOMEデスクトップ向けのVNCクライアントで、複数の接続を同時に確立でき、GNOME keyringへのパスワード保存などの機能を提供します。「wzip」はデータの高減衰圧縮を行うプリプロセッサで、計測データのノイズ除去にも使用できます。\n\n実装上の制約としては、各パッケージが特定の環境や依存関係に基づいて動作することが挙げられます。例えば、「efax」では特定のモデムクラスが必要であり、「vinagre」ではGNOME環境が前提となっています。\n\n今後の展望として、これらのツールはそれぞれの専門分野での効率化やユーザー体験の向上に寄与することが期待されます。特に、データ処理やシステム管理の分野での応用が進むことで、より広範なユーザー層に利用される可能性があります。",
-        "quality": "high"
-      },
-      {
-        "title": "Så vender vi snart blikket hjemad | Familien Vajses hjemmeside",
-        "url": "http://vajse.dk/?p=138",
-        "snippet": "Nov 20, 2015 ... ... なることもある。 [url=http://creationvsevolution.freeforums.org/winows7-8-t46900.html]office2013 personal 価格[/url] 大丈夫？なのか？まぁ ...",
-        "summary": "この記事は、Familien Vajseの家族がグリーンランドでの生活を終え、帰国の準備を進めている様子を描写しています。彼らは11月30日にこの地を離れる予定であり、その前に多くのイベントや活動を楽しんでいます。Nikolasは幼稚園での宿泊イベントに参加し、家族でスキー場でそり遊びを楽しみました。また、彼は日曜日に体操教室に通っており、父親は彼がハンドボールを続けることを期待しています。Isabellは体操を始め、すぐにNuukセンターでの発表会に参加しました。Helenaは新しい歯が生え、夜に母親を起こすことが多くなっています。\n\n家族は、クリスマスパーティーや洗礼式のコーヒーミーティング、感謝祭、Isaの誕生日など、さまざまなイベントを控えており、これらを楽しみにしています。記事では、彼らがNuukを離れる前に経験する予定の出来事についても触れています。さらに、記事の中で、嵐が来るため、翌日金曜日に子供たちが学校を休むことが決まったことも述べられています。\n\n技術的な要素や数値的なデータは特に含まれていませんが、家族の日常生活やイベントの詳細が豊富に記載されています。この記事は、Familien Vajseの個人的なブログの一部であり、彼らの生活の一部を共有することを目的としています。今後の展望としては、彼らが帰国後にどのような生活を送るのか、またグリーンランドでの経験がどのように彼らの生活に影響を与えるのかが注目されます。特に、子供たちの成長や新しい活動への参加がどのように続くのかが興味深いポイントです。\n\nこのように、Familien Vajseのブログは、家族の生活やイベントを通じて、彼らの個人的な経験を共有し、読者に親しみやすい内容を提供しています。",
-        "quality": "high"
-      }
-    ],
-    "researchedAt": "2025-11-19T00:13:25.044Z",
-    "generatedAt": "2025-11-19T00:19:45.687Z",
-    "postDate": "2025-11-19",
-    "slug": "2025-11-19-google-anti-gravityide",
-    "outputFile": "posts/2025-11-19-google-anti-gravityide.html",
-    "image": {
-      "key": "infra-01",
-      "src": "assets/img/article-templates/infra-01.webp",
-      "alt": "クラウド連携を示す幾何学模様（バリアント1）",
-      "label": "クラウド・インフラ",
-      "caption": "Googleやクラウドプラットフォーム関連トピック向け。",
-      "category": "infrastructure"
-    },
-    "imageKey": "infra-01"
   }
 ]
