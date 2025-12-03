@@ -289,18 +289,12 @@
         "label": "自然言語処理",
         "category": "その他",
         "style": "accent-blue"
-      },
-      {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
-        "style": "accent-gold"
       }
     ],
     "url": "posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html",
     "slug": "2025-12-01-aichatgpt-51gemini-3claude-45",
     "publishedAt": "2025-12-01T21:14:56.833Z",
-    "status": "draft",
+    "status": "published",
     "image": {
       "key": "collab-05",
       "src": "assets/img/article-templates/collab-05.webp",
