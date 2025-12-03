@@ -44,9 +44,9 @@
     "createdAt": "2025-12-03T09:28:51.264Z"
   },
   {
-    "title": "AIを活用したMTG準備術：成功を導く台本作成の全手法",
+    "title": "まだ「議事録」だけですか？ 2025年冬、会議AIが“指示待ち”を卒業していた話。",
     "date": "2025-12-03",
-    "summary": "営業におけるMTG準備の重要性を理解し、AIを活用した台本作成法を学ぶことで、相手の心を掴む具体的な手法を習得できます。実践的なスキルを身につけ、成功率を高めるための情報を提供します。",
+    "summary": "会議AIは「議事録」から「リアルタイム・コーチ」へ。2025年冬の最新AIトレンドと、会議中の「カンペ」機能など、ビジネス現場での活用事例を解説します。",
     "tags": [
       {
         "slug": "tag-1",
@@ -77,24 +77,18 @@
         "label": "プロンプト",
         "category": "その他",
         "style": "accent-sky"
-      },
-      {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
-        "style": "accent-gold"
       }
     ],
     "url": "posts/2025/12/2025-12-03-aimtg.html",
     "slug": "2025-12-03-aimtg",
     "publishedAt": "2025-12-03T01:27:44.027Z",
-    "status": "draft",
+    "status": "published",
     "image": {
-      "key": "ai-core-01",
-      "src": "assets/img/article-templates/ai-core-01.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "key": "aimtg-hero",
+      "src": "assets/img/posts/2025/12/aimtg_hero.jpg",
+      "alt": "会議AIがリアルタイムでサポートするイメージ",
+      "label": "AI Meeting",
+      "caption": "会議中にAIが「カンペ」を出してくれる未来",
       "category": "ai"
     },
     "createdAt": "2025-12-03T01:27:44.030Z"
