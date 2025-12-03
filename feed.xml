@@ -5,9 +5,22 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Wed, 03 Dec 2025 01:23:45 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 03 Dec 2025 01:27:44 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>AIを活用したMTG準備術：成功を導く台本作成の全手法</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-aimtg.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-aimtg.html</guid>
+    <pubDate>Wed, 03 Dec 2025 01:27:44 GMT</pubDate>
+    <description>営業におけるMTG準備の重要性を理解し、AIを活用した台本作成法を学ぶことで、相手の心を掴む具体的な手法を習得できます。実践的なスキルを身につけ、成功率を高めるための情報を提供します。</description>
+    <category>営業</category>
+    <category>AIトピック</category>
+    <category>MTG準備</category>
+    <category>台本作成</category>
+    <category>プロンプト</category>
+    <category>下書き</category>
+  </item>
   <item>
     <title>Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-microsoft-fara-7bai.html</link>

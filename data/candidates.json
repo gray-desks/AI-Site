@@ -21,7 +21,7 @@
     },
     "status": "skipped",
     "createdAt": "2025-12-02T21:15:42.767Z",
-    "updatedAt": "2025-12-03T01:22:10.704Z",
+    "updatedAt": "2025-12-03T01:26:35.789Z",
     "topicKey": "ai-topic",
     "notes": "YouTube Data API: kei31e の最新動画",
     "skipReason": "transcript-unavailable"
@@ -347,11 +347,12 @@
       "thumbnail": "https://i.ytimg.com/vi/IDhlNU26p10/hqdefault.jpg",
       "publishedAt": "2025-12-01T22:05:18Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-12-02T09:29:20.658Z",
-    "updatedAt": "2025-12-02T09:29:20.658Z",
+    "updatedAt": "2025-12-03T01:26:38.240Z",
     "topicKey": "ai-topic",
-    "notes": "YouTube Data API: kei31e の最新動画"
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "transcript-unavailable"
   },
   {
     "id": "yt-v74vDClaaSo",
@@ -437,11 +438,13 @@
       "thumbnail": "https://i.ytimg.com/vi/kROekJFIVf0/hqdefault.jpg",
       "publishedAt": "2025-12-01T10:35:00Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-12-01T21:13:34.320Z",
-    "updatedAt": "2025-12-01T21:13:34.320Z",
+    "updatedAt": "2025-12-03T01:26:40.723Z",
     "topicKey": "2025ai14",
-    "notes": "YouTube Data API: ai_masaou の最新動画"
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAIツールに関する内容であり、直近の記事4がAIツールの比較を扱っているため、同じニュース・トピックと判断しました。"
   },
   {
     "id": "yt-jcoUkt4rg8k",
@@ -463,11 +466,49 @@
       "thumbnail": "https://i.ytimg.com/vi/jcoUkt4rg8k/hqdefault.jpg",
       "publishedAt": "2025-12-01T10:33:10Z"
     },
-    "status": "collected",
+    "status": "generated",
     "createdAt": "2025-12-01T21:13:34.839Z",
-    "updatedAt": "2025-12-01T21:13:34.839Z",
+    "updatedAt": "2025-12-03T01:27:44.027Z",
     "topicKey": "mtgai",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "transcript": "【トップ営業の常識】優秀人材が実践する失敗しないMTG準備術とは？相手の心を掴む台本作成までAIを使った全手法 【問い合わせフォーム】動画内で使用したプロンプトや解説資料を無料配布しています。 以下のリンクからアンケートにお答え ...",
+    "transcriptLength": 118,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画は営業やMTG準備に関する内容であり、直近の記事はAI技術やツールに関するもので、テーマが異なるため重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画は営業やMTG準備に関する内容であり、直近の記事はAI技術やツールに関するもので、テーマが異なるため重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性",
+      "AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド",
+      "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
+      "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
+      "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
+      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
+      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+      "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
+      "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新"
+    ],
+    "researchedAt": "2025-12-03T01:26:43.019Z",
+    "generatedAt": "2025-12-03T01:27:44.027Z",
+    "postDate": "2025-12-03",
+    "slug": "2025-12-03-aimtg",
+    "outputFile": "posts/2025/12/2025-12-03-aimtg.html",
+    "image": {
+      "key": "ai-core-01",
+      "src": "assets/img/article-templates/ai-core-01.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "imageKey": "ai-core-01"
   },
   {
     "id": "yt-rohkXyzbryI",
