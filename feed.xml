@@ -5,9 +5,20 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Wed, 03 Dec 2025 01:27:44 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 03 Dec 2025 09:28:51 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-notebooklm.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-notebooklm.html</guid>
+    <pubDate>Wed, 03 Dec 2025 09:28:51 GMT</pubDate>
+    <description>NotebookLMの新機能であるインフォグラフィックとスライド機能を徹底分析。データ視覚化やプレゼンテーション作成の効率化を通じて、業務の生産性向上に寄与する具体的なユースケースを紹介します。</description>
+    <category>NotebookLM</category>
+    <category>AIツール</category>
+    <category>ビジネス効率化</category>
+    <category>下書き</category>
+  </item>
   <item>
     <title>AIを活用したMTG準備術：成功を導く台本作成の全手法</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-aimtg.html</link>

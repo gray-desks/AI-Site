@@ -1,5 +1,49 @@
 [
   {
+    "title": "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法",
+    "date": "2025-12-03",
+    "summary": "NotebookLMの新機能であるインフォグラフィックとスライド機能を徹底分析。データ視覚化やプレゼンテーション作成の効率化を通じて、業務の生産性向上に寄与する具体的なユースケースを紹介します。",
+    "tags": [
+      {
+        "slug": "notebooklm",
+        "label": "NotebookLM",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "ai-tools",
+        "label": "AIツール",
+        "category": "ツール",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "tag-3",
+        "label": "ビジネス効率化",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-03-notebooklm.html",
+    "slug": "2025-12-03-notebooklm",
+    "publishedAt": "2025-12-03T09:28:51.261Z",
+    "status": "draft",
+    "image": {
+      "key": "infra-01",
+      "src": "assets/img/article-templates/infra-01.webp",
+      "alt": "クラウド連携を示す幾何学模様（バリアント1）",
+      "label": "クラウド・インフラ",
+      "caption": "Googleやクラウドプラットフォーム関連トピック向け。",
+      "category": "infrastructure"
+    },
+    "createdAt": "2025-12-03T09:28:51.264Z"
+  },
+  {
     "title": "AIを活用したMTG準備術：成功を導く台本作成の全手法",
     "date": "2025-12-03",
     "summary": "営業におけるMTG準備の重要性を理解し、AIを活用した台本作成法を学ぶことで、相手の心を掴む具体的な手法を習得できます。実践的なスキルを身につけ、成功率を高めるための情報を提供します。",

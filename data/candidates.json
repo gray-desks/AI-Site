@@ -1,5 +1,123 @@
 [
   {
+    "id": "yt-ExMElTH_3OQ",
+    "source": {
+      "platform": "YouTube",
+      "name": "AIAIChatGPT-cj4sh",
+      "channelId": "UCXo1SsIDZ_dke2Nr1r3qk6w",
+      "url": "https://www.youtube.com/@AIAIChatGPT-cj4sh",
+      "focus": [
+        "ChatGPT",
+        "生成AIノウハウ"
+      ]
+    },
+    "video": {
+      "id": "ExMElTH_3OQ",
+      "title": "【すぐに使える活用事例10例】Googleの最新AI「Gemini 3 Pro」でゲーム・アプリ・webサイトを作る方法を徹底解説！",
+      "url": "https://www.youtube.com/watch?v=ExMElTH_3OQ",
+      "description": "動画の説明 Googleは、(2025年)11月下旬 最新の推論AIモデル「Gemini 3 Pro」を公開しました 「Gemini 3 Pro」は、公開直後 ...",
+      "thumbnail": "https://i.ytimg.com/vi/ExMElTH_3OQ/hqdefault.jpg",
+      "publishedAt": "2025-12-03T09:06:09Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-03T09:27:19.194Z",
+    "updatedAt": "2025-12-03T09:27:24.115Z",
+    "topicKey": "10googleaigemini-3-proweb",
+    "notes": "YouTube Data API: AIAIChatGPT-cj4sh の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGoogleのAI「Gemini 3 Pro」を用いたゲーム・アプリ・webサイトの作成方法を解説しており、直近の記事の5番目にある「AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析」がGemini 3に関連しているため、同じテーマとみなされる。"
+  },
+  {
+    "id": "yt-gV8snCCZQJk",
+    "source": {
+      "platform": "YouTube",
+      "name": "google-school",
+      "channelId": "UC_kTlZMryHFPMc7QMi4g0VQ",
+      "url": "https://www.youtube.com/@google-school",
+      "focus": [
+        "Google",
+        "AI教育"
+      ]
+    },
+    "video": {
+      "id": "gV8snCCZQJk",
+      "title": "【最新情報】「NotebookLM」の新機能、ビジネスの場でどう使うかを徹底検証",
+      "url": "https://www.youtube.com/watch?v=gV8snCCZQJk",
+      "description": "「NotebookLM」のスタジオに新機能「インフォグラフィック」と「スライド」機能ができました。 今回はその説明だけだと、 ...",
+      "thumbnail": "https://i.ytimg.com/vi/gV8snCCZQJk/hqdefault.jpg",
+      "publishedAt": "2025-12-03T09:01:14Z"
+    },
+    "status": "generated",
+    "createdAt": "2025-12-03T09:27:17.920Z",
+    "updatedAt": "2025-12-03T09:28:51.261Z",
+    "topicKey": "notebooklm",
+    "notes": "YouTube Data API: google-school の最新動画",
+    "transcript": "【最新情報】「NotebookLM」の新機能、ビジネスの場でどう使うかを徹底検証 「NotebookLM」のスタジオに新機能「インフォグラフィック」と「スライド」機能ができました。 今回はその説明だけだと、 ...",
+    "transcriptLength": 107,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画は「NotebookLM」の新機能に焦点を当てており、ビジネスでの活用方法を検証する内容です。直近の記事はAIの活用方法やツールのレビューに関するものであり、特定の製品や機能に関する直接的な重複は見られません。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画は「NotebookLM」の新機能に焦点を当てており、ビジネスでの活用方法を検証する内容です。直近の記事はAIの活用方法やツールのレビューに関するものであり、特定の製品や機能に関する直接的な重複は見られません。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "AIを活用したMTG準備術：成功を導く台本作成の全手法",
+      "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性",
+      "AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド",
+      "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
+      "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
+      "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
+      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
+      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
+      "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地"
+    ],
+    "researchedAt": "2025-12-03T09:27:29.049Z",
+    "generatedAt": "2025-12-03T09:28:51.261Z",
+    "postDate": "2025-12-03",
+    "slug": "2025-12-03-notebooklm",
+    "outputFile": "posts/2025/12/2025-12-03-notebooklm.html",
+    "image": {
+      "key": "infra-01",
+      "src": "assets/img/article-templates/infra-01.webp",
+      "alt": "クラウド連携を示す幾何学模様（バリアント1）",
+      "label": "クラウド・インフラ",
+      "caption": "Googleやクラウドプラットフォーム関連トピック向け。",
+      "category": "infrastructure"
+    },
+    "imageKey": "infra-01"
+  },
+  {
+    "id": "yt-YzxQCcJEzWA",
+    "source": {
+      "platform": "YouTube",
+      "name": "technavi_tooru",
+      "channelId": "UCB3mOPzHaD-K1n7YlubgOqA",
+      "url": "https://www.youtube.com/@technavi_tooru",
+      "focus": [
+        "テックニュース",
+        "生成AI"
+      ]
+    },
+    "video": {
+      "id": "YzxQCcJEzWA",
+      "title": "Deepseek v3.2 登場！最新アップデートをローカルとコーディングで検証してみた",
+      "url": "https://www.youtube.com/watch?v=YzxQCcJEzWA",
+      "description": "メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております  ‍♂️  (YouTubeアプリからの加入 ...",
+      "thumbnail": "https://i.ytimg.com/vi/YzxQCcJEzWA/hqdefault.jpg",
+      "publishedAt": "2025-12-03T08:00:49Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-12-03T09:27:19.071Z",
+    "updatedAt": "2025-12-03T09:27:19.071Z",
+    "topicKey": "deepseek-v32",
+    "notes": "YouTube Data API: technavi_tooru の最新動画"
+  },
+  {
     "id": "yt-491sxQKDv6Y",
     "source": {
       "platform": "YouTube",
