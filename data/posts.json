@@ -1,5 +1,61 @@
 [
   {
+    "title": "Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング",
+    "date": "2025-12-03",
+    "summary": "Claude.mdの効果的な書き方を解説し、LLMの研究に基づいたコンテキストエンジニアリングの手法を紹介。実践的なユースケースを通じて、開発者が得られるメリットを明示します。",
+    "tags": [
+      {
+        "slug": "claudemd",
+        "label": "Claude.md",
+        "category": "その他",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "llm",
+        "label": "LLM",
+        "category": "技術トピック",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "tag-3",
+        "label": "コンテキストエンジニアリング",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "generative-ai",
+        "label": "生成AI",
+        "category": "技術トピック",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "tag-5",
+        "label": "開発効率",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-03-claudemdllm.html",
+    "slug": "2025-12-03-claudemdllm",
+    "publishedAt": "2025-12-03T21:16:18.689Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-04",
+      "src": "assets/img/article-templates/ai-core-04.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "createdAt": "2025-12-03T21:16:18.693Z"
+  },
+  {
     "title": "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法",
     "date": "2025-12-03",
     "summary": "NotebookLMの新機能であるインフォグラフィックとスライド機能を徹底分析。データ視覚化やプレゼンテーション作成の効率化を通じて、業務の生産性向上に寄与する具体的なユースケースを紹介します。",

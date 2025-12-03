@@ -89,5 +89,12 @@
     "sourceName": "AIAIChatGPT-cj4sh",
     "videoTitle": "【すぐに使える活用事例10例】Googleの最新AI「Gemini 3 Pro」でゲーム・アプリ・webサイトを作る方法を徹底解説！",
     "blockedAt": "2025-12-03T09:27:24.114Z"
+  },
+  {
+    "topicKey": "3cursor-chatgptgemini32",
+    "reason": "theme-duplicate",
+    "sourceName": "iketomo-ch",
+    "videoTitle": "【文章3倍速】Cursorでの文章ライティング術！ ChatGPTやGeminiとの「３つの違い」を紹介しつつ、実際に2冊の本を書き上げた知見を共有！",
+    "blockedAt": "2025-12-03T21:14:51.888Z"
   }
 ]

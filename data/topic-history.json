@@ -342,5 +342,13 @@
     "sourceName": "google-school",
     "videoTitle": "【最新情報】「NotebookLM」の新機能、ビジネスの場でどう使うかを徹底検証",
     "draftUrl": "posts/2025/12/2025-12-03-notebooklm.html"
+  },
+  {
+    "topicKey": "claudecodeclaudemdllm",
+    "firstSeen": "2025-12-03T21:16:18.691Z",
+    "lastPublishedAt": "2025-12-03",
+    "sourceName": "ai_masaou",
+    "videoTitle": "ClaudeCodeの効率を爆上げする『優れたCLAUDE.md』の書き方を解説します！LLMの研究とコンテキストエンジニアリングの点から説明",
+    "draftUrl": "posts/2025/12/2025-12-03-claudemdllm.html"
   }
 ]

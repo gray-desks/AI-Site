@@ -1,5 +1,149 @@
 [
   {
+    "id": "yt-s3uH6eHKkDc",
+    "source": {
+      "platform": "YouTube",
+      "name": "iketomo-ch",
+      "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
+      "url": "https://www.youtube.com/@iketomo-ch",
+      "focus": [
+        "AIツール",
+        "活用事例"
+      ]
+    },
+    "video": {
+      "id": "s3uH6eHKkDc",
+      "title": "【文章3倍速】Cursorでの文章ライティング術！ ChatGPTやGeminiとの「３つの違い」を紹介しつつ、実際に2冊の本を書き上げた知見を共有！",
+      "url": "https://www.youtube.com/watch?v=s3uH6eHKkDc",
+      "description": "新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
+      "thumbnail": "https://i.ytimg.com/vi/s3uH6eHKkDc/hqdefault.jpg",
+      "publishedAt": "2025-12-03T11:01:57Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-03T21:14:48.741Z",
+    "updatedAt": "2025-12-03T21:14:51.888Z",
+    "topicKey": "3cursor-chatgptgemini32",
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はCursorを用いた文章ライティング術について述べており、直近の記事の中でAIツール比較に関する記事（6）がChatGPTやGeminiを扱っているため、同じ話題と判断しました。"
+  },
+  {
+    "id": "yt-Bkm6S4oawMw",
+    "source": {
+      "platform": "YouTube",
+      "name": "ai_masaou",
+      "channelId": "UCvHpETRVi1tXeRJoYiXHJqw",
+      "url": "https://www.youtube.com/@ai_masaou",
+      "focus": [
+        "生成AI",
+        "Tips"
+      ]
+    },
+    "video": {
+      "id": "Bkm6S4oawMw",
+      "title": "ClaudeCodeの効率を爆上げする『優れたCLAUDE.md』の書き方を解説します！LLMの研究とコンテキストエンジニアリングの点から説明",
+      "url": "https://www.youtube.com/watch?v=Bkm6S4oawMw",
+      "description": "今回の動画では、開発者の皆さんにぜひ知っておいてほしい「優れた Claude.md の書き方」について解説しました。 Claude ...",
+      "thumbnail": "https://i.ytimg.com/vi/Bkm6S4oawMw/hqdefault.jpg",
+      "publishedAt": "2025-12-03T11:00:21Z"
+    },
+    "status": "generated",
+    "createdAt": "2025-12-03T21:14:48.099Z",
+    "updatedAt": "2025-12-03T21:16:18.689Z",
+    "topicKey": "claudecodeclaudemdllm",
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "transcript": "ClaudeCodeの効率を爆上げする『優れたCLAUDE.md』の書き方を解説します！LLMの研究とコンテキストエンジニアリングの点から説明 今回の動画では、開発者の皆さんにぜひ知っておいてほしい「優れた Claude.md の書き方」について解説しました。 Claude ...",
+    "transcriptLength": 141,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はClaudeCodeの効率向上に関する具体的な書き方を解説しており、直近の記事はAIエージェントや他のAIツールに関する内容で異なるトピックを扱っているため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はClaudeCodeの効率向上に関する具体的な書き方を解説しており、直近の記事はAIエージェントや他のAIツールに関する内容で異なるトピックを扱っているため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法",
+      "まだ「議事録」だけですか？ 2025年冬、会議AIが“指示待ち”を卒業していた話。",
+      "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性",
+      "AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド",
+      "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
+      "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
+      "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
+      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
+      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
+      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実"
+    ],
+    "researchedAt": "2025-12-03T21:14:55.878Z",
+    "generatedAt": "2025-12-03T21:16:18.689Z",
+    "postDate": "2025-12-03",
+    "slug": "2025-12-03-claudemdllm",
+    "outputFile": "posts/2025/12/2025-12-03-claudemdllm.html",
+    "image": {
+      "key": "ai-core-04",
+      "src": "assets/img/article-templates/ai-core-04.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "imageKey": "ai-core-04"
+  },
+  {
+    "id": "yt-x77ooB-5L2Y",
+    "source": {
+      "platform": "YouTube",
+      "name": "chaen-ai-lab",
+      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
+      "url": "https://www.youtube.com/@chaen-ai-lab",
+      "focus": [
+        "AI解説",
+        "LLM"
+      ]
+    },
+    "video": {
+      "id": "x77ooB-5L2Y",
+      "title": "プロがChatGPTの全てを徹底解説、課金する必要はあるのか各プランの違いはこれ#AI #chatgpt  #仕事効率化 #ai #チャエン #google #shorts",
+      "url": "https://www.youtube.com/watch?v=x77ooB-5L2Y",
+      "description": "【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 機能が増えすぎたChatGPT ...",
+      "thumbnail": "https://i.ytimg.com/vi/x77ooB-5L2Y/hqdefault.jpg",
+      "publishedAt": "2025-12-03T10:30:46Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-12-03T21:14:48.338Z",
+    "updatedAt": "2025-12-03T21:14:48.338Z",
+    "topicKey": "chatgptai-chatgpt-ai-google-shorts",
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+  },
+  {
+    "id": "yt-NlcapbqzdMk",
+    "source": {
+      "platform": "YouTube",
+      "name": "ウェブマニア",
+      "channelId": "UCvpDuJLRV07mTu6gh9CGq0w",
+      "url": "https://www.youtube.com/@%E3%82%A6%E3%82%A7%E3%83%96%E3%83%9E%E3%83%8B%E3%82%A2",
+      "focus": [
+        "Webマーケ",
+        "AI活用"
+      ]
+    },
+    "video": {
+      "id": "NlcapbqzdMk",
+      "title": "凄っ！！あらゆる作業を自動化してくれるAIブラウザ『FlowithOS』がヤバすぎ！これ従来のAIブラウザとはレベルが違うぞ...",
+      "url": "https://www.youtube.com/watch?v=NlcapbqzdMk",
+      "description": "公式サイト：https://try.flowith.io/flowithos ※こちら現在招待制のサービスです。 Flowithさんから特別に招待コードをいただけた ...",
+      "thumbnail": "https://i.ytimg.com/vi/NlcapbqzdMk/hqdefault.jpg",
+      "publishedAt": "2025-12-03T10:00:44Z"
+    },
+    "status": "collected",
+    "createdAt": "2025-12-03T21:14:48.481Z",
+    "updatedAt": "2025-12-03T21:14:48.481Z",
+    "topicKey": "aiflowithosai",
+    "notes": "YouTube Data API: ウェブマニア の最新動画"
+  },
+  {
     "id": "yt-ExMElTH_3OQ",
     "source": {
       "platform": "YouTube",
