@@ -1,5 +1,55 @@
 [
   {
+    "title": "Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界",
+    "date": "2025-12-04",
+    "summary": "Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。",
+    "tags": [
+      {
+        "slug": "ai",
+        "label": "AI技術",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "nano-banana-pro",
+        "label": "Nano Banana Pro",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "tag-3",
+        "label": "マンガ制作",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "tag-4",
+        "label": "クリエイティブテクノロジー",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-04-nano-banana-proai.html",
+    "slug": "2025-12-04-nano-banana-proai",
+    "publishedAt": "2025-12-04T09:28:57.358Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-01",
+      "src": "assets/img/article-templates/ai-core-01.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "createdAt": "2025-12-04T09:28:57.362Z"
+  },
+  {
     "title": "OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化",
     "date": "2025-12-04",
     "summary": "OpenAI CEOサム・アルトマンが2025年12月2日、社内向けに最高レベルの警報「コードレッド」を発令しました。Google Gemini 3の圧倒的な性能向上により、ChatGPTはユーザー減少と市場シェアの低下に直面。わずか3年前にGoogleを脅かしたOpenAIが、今度は逆の立場に立たされています。",

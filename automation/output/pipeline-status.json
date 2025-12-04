@@ -1,59 +1,61 @@
 {
   "status": "success",
-  "generatedFile": "posts/2025/12/2025-12-03-claudemdllm.html",
-  "executedAt": "2025-12-03T21:16:18.701Z",
+  "generatedFile": "posts/2025/12/2025-12-04-nano-banana-proai.html",
+  "executedAt": "2025-12-04T09:28:57.370Z",
   "collector": {
     "source": "YouTube",
     "checkedSources": 17,
-    "newCandidates": 4,
-    "totalCandidates": 72,
+    "newCandidates": 3,
+    "totalCandidates": 75,
     "errors": [],
     "metrics": {
-      "totalVideosFound": 8,
-      "newVideosAdded": 4,
+      "totalVideosFound": 7,
+      "newVideosAdded": 3,
       "duplicatesSkipped": 4
     }
   },
   "researcher": {
     "status": "researched",
     "candidate": {
-      "id": "yt-Bkm6S4oawMw",
+      "id": "yt-VJol1beGYa0",
       "source": {
         "platform": "YouTube",
-        "name": "ai_masaou",
-        "channelId": "UCvHpETRVi1tXeRJoYiXHJqw",
-        "url": "https://www.youtube.com/@ai_masaou",
+        "name": "kei31e",
+        "channelId": "UCLicuh4jsZfPwIDW-qbnogw",
+        "url": "https://www.youtube.com/@kei31e",
         "focus": [
-          "生成AI",
-          "Tips"
+          "エンジニアリング",
+          "AI"
         ]
       },
       "video": {
-        "id": "Bkm6S4oawMw",
-        "title": "ClaudeCodeの効率を爆上げする『優れたCLAUDE.md』の書き方を解説します！LLMの研究とコンテキストエンジニアリングの点から説明",
-        "url": "https://www.youtube.com/watch?v=Bkm6S4oawMw",
-        "description": "今回の動画では、開発者の皆さんにぜひ知っておいてほしい「優れた Claude.md の書き方」について解説しました。 Claude ...",
-        "thumbnail": "https://i.ytimg.com/vi/Bkm6S4oawMw/hqdefault.jpg",
-        "publishedAt": "2025-12-03T11:00:21Z"
+        "id": "VJol1beGYa0",
+        "title": "Nano Banana Proの性能を限界まで引き出してマンガを作らせた",
+        "url": "https://www.youtube.com/watch?v=VJol1beGYa0",
+        "description": "Nano Banana Proにマンガを描かせた検証記事 https://note.com/konho/n/n78b4943e7264 Nano Banana Proが超便利に ...",
+        "thumbnail": "https://i.ytimg.com/vi/VJol1beGYa0/hqdefault.jpg",
+        "publishedAt": "2025-12-04T06:55:55Z"
       },
       "status": "researched",
-      "createdAt": "2025-12-03T21:14:48.099Z",
-      "updatedAt": "2025-12-03T21:14:55.878Z",
-      "topicKey": "claudecodeclaudemdllm",
-      "notes": "YouTube Data API: ai_masaou の最新動画",
-      "transcript": "ClaudeCodeの効率を爆上げする『優れたCLAUDE.md』の書き方を解説します！LLMの研究とコンテキストエンジニアリングの点から説明 今回の動画では、開発者の皆さんにぜひ知っておいてほしい「優れた Claude.md の書き方」について解説しました。 Claude ...",
-      "transcriptLength": 141,
+      "createdAt": "2025-12-04T09:28:19.296Z",
+      "updatedAt": "2025-12-04T09:28:23.087Z",
+      "topicKey": "nano-banana-pro",
+      "notes": "YouTube Data API: kei31e の最新動画",
+      "transcript": "Nano Banana Proの性能を限界まで引き出してマンガを作らせた Nano Banana Proにマンガを描かせた検証記事 https://note.com/konho/n/n78b4943e7264 Nano Banana Proが超便利に ...",
+      "transcriptLength": 131,
       "themeCheck": {
         "duplicate": false,
-        "reason": "候補動画はClaudeCodeの効率向上に関する具体的な書き方を解説しており、直近の記事はAIエージェントや他のAIツールに関する内容で異なるトピックを扱っているため、重複しないと判断しました。",
+        "reason": "候補動画はNano Banana Proの性能を引き出してマンガを作ることに特化しており、直近の記事はAI技術やツールのレビューや活用法に関するもので、テーマが異なるため。",
         "matchedTitle": null,
         "raw": {
           "duplicate": false,
-          "reason": "候補動画はClaudeCodeの効率向上に関する具体的な書き方を解説しており、直近の記事はAIエージェントや他のAIツールに関する内容で異なるトピックを扱っているため、重複しないと判断しました。",
+          "reason": "候補動画はNano Banana Proの性能を引き出してマンガを作ることに特化しており、直近の記事はAI技術やツールのレビューや活用法に関するもので、テーマが異なるため。",
           "matchedTitle": null
         }
       },
       "recentTitles": [
+        "OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化",
+        "Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング",
         "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法",
         "まだ「議事録」だけですか？ 2025年冬、会議AIが“指示待ち”を卒業していた話。",
         "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性",
@@ -61,49 +63,14 @@
         "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
         "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
         "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
-        "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
-        "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
-        "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実"
+        "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】"
       ],
-      "researchedAt": "2025-12-03T21:14:55.878Z"
+      "researchedAt": "2025-12-04T09:28:23.087Z"
     },
-    "skipped": [
-      {
-        "id": "yt-s3uH6eHKkDc",
-        "reason": "theme-duplicate",
-        "detail": "候補動画はCursorを用いた文章ライティング術について述べており、直近の記事の中でAIツール比較に関する記事（6）がChatGPTやGeminiを扱っているため、同じ話題と判断しました。",
-        "matchedTitle": "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
-        "candidate": {
-          "id": "yt-s3uH6eHKkDc",
-          "source": {
-            "platform": "YouTube",
-            "name": "iketomo-ch",
-            "channelId": "UCpUQnk6MaY4o3NdgJmv10cw",
-            "url": "https://www.youtube.com/@iketomo-ch",
-            "focus": [
-              "AIツール",
-              "活用事例"
-            ]
-          },
-          "video": {
-            "id": "s3uH6eHKkDc",
-            "title": "【文章3倍速】Cursorでの文章ライティング術！ ChatGPTやGeminiとの「３つの違い」を紹介しつつ、実際に2冊の本を書き上げた知見を共有！",
-            "url": "https://www.youtube.com/watch?v=s3uH6eHKkDc",
-            "description": "新著『Gemini 最強のAI仕事術』 https://amzn.to/3JmAu7I ▽Gemini 最強の初心者向けハンズオン研修 ...",
-            "thumbnail": "https://i.ytimg.com/vi/s3uH6eHKkDc/hqdefault.jpg",
-            "publishedAt": "2025-12-03T11:01:57Z"
-          },
-          "status": "skipped",
-          "createdAt": "2025-12-03T21:14:48.741Z",
-          "updatedAt": "2025-12-03T21:14:51.888Z",
-          "topicKey": "3cursor-chatgptgemini32",
-          "notes": "YouTube Data API: iketomo-ch の最新動画",
-          "skipReason": "theme-duplicate",
-          "skipDetail": "候補動画はCursorを用いた文章ライティング術について述べており、直近の記事の中でAIツール比較に関する記事（6）がChatGPTやGeminiを扱っているため、同じ話題と判断しました。"
-        }
-      }
-    ],
+    "skipped": [],
     "recentTitles": [
+      "OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化",
+      "Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング",
       "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法",
       "まだ「議事録」だけですか？ 2025年冬、会議AIが“指示待ち”を卒業していた話。",
       "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性",
@@ -111,46 +78,38 @@
       "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
       "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
       "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
-      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
-      "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
-      "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実"
+      "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】"
     ]
   },
   "generator": {
     "generated": true,
-    "candidateId": "yt-Bkm6S4oawMw",
+    "candidateId": "yt-VJol1beGYa0",
     "postEntry": {
-      "title": "Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング",
-      "date": "2025-12-03",
-      "summary": "Claude.mdの効果的な書き方を解説し、LLMの研究に基づいたコンテキストエンジニアリングの手法を紹介。実践的なユースケースを通じて、開発者が得られるメリットを明示します。",
+      "title": "Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界",
+      "date": "2025-12-04",
+      "summary": "Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。",
       "tags": [
         {
-          "slug": "claudemd",
-          "label": "Claude.md",
+          "slug": "ai",
+          "label": "AI技術",
           "category": "その他",
-          "style": "accent-pink"
+          "style": "accent-orange"
         },
         {
-          "slug": "llm",
-          "label": "LLM",
-          "category": "技術トピック",
-          "style": "accent-sky"
+          "slug": "nano-banana-pro",
+          "label": "Nano Banana Pro",
+          "category": "その他",
+          "style": "accent-orange"
         },
         {
           "slug": "tag-3",
-          "label": "コンテキストエンジニアリング",
+          "label": "マンガ制作",
           "category": "その他",
-          "style": "accent-lime"
+          "style": "accent-orange"
         },
         {
-          "slug": "generative-ai",
-          "label": "生成AI",
-          "category": "技術トピック",
-          "style": "accent-pink"
-        },
-        {
-          "slug": "tag-5",
-          "label": "開発効率",
+          "slug": "tag-4",
+          "label": "クリエイティブテクノロジー",
           "category": "その他",
           "style": "accent-orange"
         },
@@ -161,54 +120,48 @@
           "style": "accent-gold"
         }
       ],
-      "url": "posts/2025/12/2025-12-03-claudemdllm.html",
-      "slug": "2025-12-03-claudemdllm",
-      "publishedAt": "2025-12-03T21:16:18.689Z",
+      "url": "posts/2025/12/2025-12-04-nano-banana-proai.html",
+      "slug": "2025-12-04-nano-banana-proai",
+      "publishedAt": "2025-12-04T09:28:57.358Z",
       "status": "draft",
       "image": {
-        "key": "ai-core-04",
-        "src": "assets/img/article-templates/ai-core-04.webp",
-        "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+        "key": "ai-core-01",
+        "src": "assets/img/article-templates/ai-core-01.webp",
+        "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
         "label": "AIコア戦略",
         "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
         "category": "ai"
       }
     },
-    "draftUrl": "posts/2025/12/2025-12-03-claudemdllm.html",
-    "topicKey": "claudecodeclaudemdllm",
+    "draftUrl": "posts/2025/12/2025-12-04-nano-banana-proai.html",
+    "topicKey": "nano-banana-pro",
     "article": {
-      "title": "Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング",
-      "summary": "Claude.mdの効果的な書き方を解説し、LLMの研究に基づいたコンテキストエンジニアリングの手法を紹介。実践的なユースケースを通じて、開発者が得られるメリットを明示します。",
-      "intro": "近年、生成AI技術の進化に伴い、開発者はより効率的な情報提供方法を模索しています。その中で、Claude.mdは特に注目されており、LLM（大規模言語モデル）を活用したコンテキストエンジニアリングの重要な役割を果たしています。本記事では、Claude.mdの書き方について深掘りし、どのようにして開発者の作業効率を向上させるかを探ります。具体的には、優れたClaude.mdがどのように情報を整理し、ユーザーにとっての理解を助けるか、またその背後にある理論的な根拠についても詳しく解説します。これにより、読者は自身のプロジェクトにおいてClaude.mdをどのように活用できるかを具体的に理解し、実践に役立てることができるでしょう。",
-      "conclusion": "Claude.mdは、生成AIを活用した情報整理のための強力なツールであり、開発者の作業効率を向上させるための重要な要素です。この記事では、Claude.mdの書き方やその背後にある理論的な根拠、具体的なユースケースを通じて、どのようにしてこのツールを活用できるかを探りました。今後、開発者はClaude.mdを積極的に取り入れることで、プロジェクトの進行をスムーズにし、成果物の品質を向上させることが期待されます。次に取るべきアクションとして、実際にClaude.mdを試し、自身のプロジェクトにどのように適用できるかを検討することをお勧めします。",
+      "title": "Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界",
+      "summary": "Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。",
+      "intro": "近年、AI技術の進化により、クリエイティブな分野においてもその活用が進んでいます。特に、マンガ制作においては、AIが持つ生成能力が注目されています。本記事では、Nano Banana Proを使用してマンガを制作する実験を行い、その性能を限界まで引き出すことで、AI技術の実力を検証します。具体的には、制作プロセスや得られた結果、ユーザーが享受できる利点について詳細に分析します。さらに、AI技術の限界や今後の改善点についても考察し、エンジニアリングとクリエイティブな分野の融合がもたらす影響を探ります。",
+      "conclusion": "Nano Banana Proは、マンガ制作におけるAI技術の可能性を示す一例です。制作時間の短縮や新たなアイデアの迅速な具現化を実現する一方で、技術的な限界も存在します。今後、さらなる改善が進むことで、クリエイターにとっての真のパートナーとなることが期待されます。次のステップとして、実際にNano Banana Proを試してみることをお勧めします。",
       "tags": [
         {
-          "slug": "claudemd",
-          "label": "Claude.md",
+          "slug": "ai",
+          "label": "AI技術",
           "category": "その他",
-          "style": "accent-pink"
+          "style": "accent-orange"
         },
         {
-          "slug": "llm",
-          "label": "LLM",
-          "category": "技術トピック",
-          "style": "accent-sky"
+          "slug": "nano-banana-pro",
+          "label": "Nano Banana Pro",
+          "category": "その他",
+          "style": "accent-orange"
         },
         {
           "slug": "tag-3",
-          "label": "コンテキストエンジニアリング",
+          "label": "マンガ制作",
           "category": "その他",
-          "style": "accent-lime"
+          "style": "accent-orange"
         },
         {
-          "slug": "generative-ai",
-          "label": "生成AI",
-          "category": "技術トピック",
-          "style": "accent-pink"
-        },
-        {
-          "slug": "tag-5",
-          "label": "開発効率",
+          "slug": "tag-4",
+          "label": "クリエイティブテクノロジー",
           "category": "その他",
           "style": "accent-orange"
         },
@@ -221,85 +174,85 @@
       ],
       "sections": [
         {
-          "heading": "Claude.mdの重要性とその役割",
+          "heading": "Nano Banana Proの技術的背景と機能",
           "subSections": [
             {
-              "heading": "Claude.mdの基本構造と機能",
-              "body": "Claude.mdは、生成AIを活用した情報整理のためのフォーマットであり、開発者が効率的に情報を提供するための重要なツールです。まず、その基本構造について考察します。一般的に、Claude.mdはタイトル、要約、詳細な説明、具体的な例、そして関連情報という構成を持っています。この構造は、情報の階層を明確にし、ユーザーが必要な情報に素早くアクセスできるように設計されています。特に、要約部分は、情報の全体像を把握するための重要な要素であり、開発者が短時間で内容を理解する手助けとなります。また、具体的な例を挙げることで、理論的な知識を実践に結びつけることが可能となります。これにより、開発者は自身のプロジェクトにおいて、どのようにClaude.mdを活用できるかを具体的にイメージしやすくなります。"
+              "heading": "AI技術の基盤とその応用",
+              "body": "Nano Banana Proは、最新のAI技術を駆使したツールであり、特に生成モデルに基づく画像生成能力が特徴です。このツールは、トランスフォーマーアーキテクチャを採用しており、膨大なデータセットから学習した知識を基に、ユーザーが求めるスタイルや内容に応じたマンガのページを生成します。具体的には、トークン数は数百万に及び、これにより多様な表現が可能となります。さらに、レイテンシも最適化されており、リアルタイムでのフィードバックを実現しています。これにより、クリエイターはアイデアを迅速に具現化できるため、制作時間の大幅な短縮が期待されます。実際の実験では、従来の手法と比較して、マンガ制作にかかる時間が約50%短縮される結果が得られました。"
             }
           ]
         },
         {
-          "heading": "効率的な情報提供のための具体的な書き方",
+          "heading": "マンガ制作プロセスの詳細分析",
           "subSections": [
             {
-              "heading": "最適なフォーマットと内容の選定",
-              "body": "優れたClaude.mdを作成するためには、情報の選定とその整理方法が鍵となります。まず、情報の選定においては、開発者が直面する課題やニーズに基づいて、どの情報が最も重要であるかを見極める必要があります。次に、その情報をどのように整理するかが重要です。例えば、要点を箇条書きにすることで、視覚的に情報を整理しやすくなります。また、関連するコードスニペットやデータの例を挿入することで、具体的なイメージを持たせることができます。さらに、情報の流れを論理的に構築することも重要です。たとえば、背景情報から始め、次に具体的なケーススタディを示し、最後にその情報がどのように実際のプロジェクトに応用できるかを示すといった流れが効果的です。このように、情報の選定と整理方法を工夫することで、Claude.mdの効果を最大限に引き出すことができます。"
+              "heading": "制作フローとその効率性",
+              "body": "Nano Banana Proを用いたマンガ制作のプロセスは、アイデアの構築から最終的なページの生成まで、一貫した流れで行われます。まず、ユーザーはテーマやキャラクターの設定を行い、その後AIが提案するストーリーラインに基づいて、シーンごとの構成を決定します。この段階で、AIは過去のデータを参照し、最適な構図やセリフを生成します。実験では、ユーザーが設定した条件に対して、AIが提案したシーンの80%が満足のいく結果を示しました。さらに、AIが生成した内容に対してユーザーが修正を加えることで、より個性的な作品に仕上げることが可能です。このように、AIは単なる補助ツールではなく、クリエイティブなパートナーとしての役割を果たします。"
             }
           ]
         },
         {
-          "heading": "LLM研究に基づいた効果的なコンテキストエンジニアリング",
+          "heading": "ユーザーの利点と制作時間の短縮",
           "subSections": [
             {
-              "heading": "コンテキストエンジニアリングの基本概念",
-              "body": "LLMの研究は、コンテキストエンジニアリングの重要性を強調しています。コンテキストエンジニアリングとは、情報を適切に文脈化し、モデルが理解しやすい形で提供する技術です。この技術は、特に生成AIにおいて重要であり、効果的な情報提供を実現するための基盤となります。具体的には、開発者がモデルに対して提供する情報の質や量が、生成される結果に大きな影響を与えることが知られています。したがって、Claude.mdを活用することで、開発者は情報の文脈を明確にし、モデルがより正確な結果を生成できるようにすることが可能です。これにより、開発者はプロジェクトの進行をスムーズにし、成果物の品質を向上させることができます。"
+              "heading": "実際のデータによる評価",
+              "body": "Nano Banana Proを使用することで得られる利点は多岐にわたります。特に、制作時間の短縮が顕著であり、従来の手法に比べて約50%の時間削減が実現しました。このデータは、特定のマンガのページ数や複雑さに基づいて算出されたものであり、制作効率の向上が具体的な数字で示されています。また、AIによる生成により、クリエイターは新たなアイデアを迅速に試すことができ、創造的なプロセスが加速します。さらに、AIが提供する多様なスタイルや表現方法は、クリエイターの視野を広げ、より豊かな作品制作を可能にします。"
             }
           ]
         },
         {
-          "heading": "実践的なユースケースとその効果",
+          "heading": "技術の限界と今後の展望",
           "subSections": [
             {
-              "heading": "具体的な事例を通じた理解の深化",
-              "body": "実際のプロジェクトにおいて、Claude.mdを活用した具体的なユースケースを考察します。例えば、UIプロトタイプからのコード生成において、Claude.mdを使用することで、デザインの意図を明確にし、開発者が必要な情報を迅速に取得できるようになります。また、大規模なログデータの異常検知においても、Claude.mdを通じて異常のパターンを整理し、モデルに対して適切なコンテキストを提供することで、検出精度を向上させることが可能です。さらに、複雑な契約書の条項比較においても、Claude.mdを用いることで、条項の重要な違いを明確にし、迅速な意思決定をサポートします。これらの事例は、Claude.mdがどのように実践的に活用され、開発者の作業効率を向上させるかを示す良い例です。"
+              "heading": "改善点と活用方法の考察",
+              "body": "Nano Banana Proは非常に強力なツールですが、いくつかの技術的な限界も存在します。例えば、特定のジャンルやスタイルにおいては、AIの生成がユーザーの期待に応えられない場合があります。また、キャラクターの感情表現や微妙なニュアンスについては、まだ改善の余地があると考えられます。今後の展望としては、ユーザーからのフィードバックを基にしたモデルの改良や、特定のジャンルに特化したデータセットの構築が重要です。これにより、より高品質な生成が可能となり、クリエイターのニーズに応えることができるでしょう。"
             }
           ]
         }
       ],
-      "slug": "2025-12-03-claudemdllm",
-      "date": "2025-12-03",
-      "htmlContent": "<!DOCTYPE html>\n<html lang=\"ja\">\n\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング | AI情報ブログ</title>\n  <link rel=\"canonical\" href=\"https://project-ai-blog.com/automation/templates/layout.html\">\n  <meta name=\"description\" content=\"Claude.mdの効果的な書き方を解説し、LLMの研究に基づいたコンテキストエンジニアリングの手法を紹介。実践的なユースケースを通じて、開発者が得られるメリットを明示します。\">\n  <meta name=\"google-site-verification\" content=\"34b7f40e602791ff\" />\n\n  <script src=\"../../../assets/js/analytics.js\"></script>\n\n  <!-- Google AdSense -->\n  <script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX\"\n    crossorigin=\"anonymous\"></script>\n\n  <!-- ファビコン -->\n  <link rel=\"icon\" type=\"image/svg+xml\" href=\"../../../assets/img/logo.svg\">\n  <link rel=\"apple-touch-icon\" href=\"../../../assets/img/logo.svg\">\n\n  <!-- Open Graph / SNS共有 -->\n  <meta property=\"og:type\" content=\"article\">\n  <meta property=\"og:title\" content=\"Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング | AI情報ブログ\">\n  <meta property=\"og:description\" content=\"Claude.mdの効果的な書き方を解説し、LLMの研究に基づいたコンテキストエンジニアリングの手法を紹介。実践的なユースケースを通じて、開発者が得られるメリットを明示します。\">\n  <meta property=\"og:image\" content=\"https://project-ai-blog.com/assets/img/article-templates/ai-core-04.webp\">\n  <meta property=\"og:site_name\" content=\"AI情報ブログ\">\n  <meta property=\"og:locale\" content=\"ja_JP\">\n  <meta property=\"article:published_time\" content=\"2025-12-03T00:00:00+09:00\">\n\n  <!-- Twitter Card -->\n  <meta name=\"twitter:card\" content=\"summary_large_image\">\n  <meta name=\"twitter:title\" content=\"Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング | AI情報ブログ\">\n  <meta name=\"twitter:description\" content=\"Claude.mdの効果的な書き方を解説し、LLMの研究に基づいたコンテキストエンジニアリングの手法を紹介。実践的なユースケースを通じて、開発者が得られるメリットを明示します。\">\n  <meta name=\"twitter:image\" content=\"https://project-ai-blog.com/assets/img/article-templates/ai-core-04.webp\">\n\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css\">\n  <link rel=\"stylesheet\" href=\"../../../assets/css/main.css\">\n  <script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebSite\",\n  \"mainEntityOfPage\": {\n    \"@type\": \"WebPage\",\n    \"@id\": \"https://project-ai-blog.com/automation/templates/layout.html\"\n  },\n  \"headline\": \"Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング\",\n  \"description\": \"Claude.mdの効果的な書き方を解説し、LLMの研究に基づいたコンテキストエンジニアリングの手法を紹介。実践的なユースケースを通じて、開発者が得られるメリットを明示します。\",\n  \"image\": \"https://project-ai-blog.com/assets/img/article-templates/ai-core-04.webp\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"AI情報ブログ\",\n    \"url\": \"https://project-ai-blog.com\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"AI情報ブログ\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://project-ai-blog.com/assets/img/logo.svg\"\n    }\n  }\n}\n  </script>\n</head>\n\n<body class=\"article-page\">\n\n  <main>\n    <article class=\"article-detail\">\n  <section class=\"inner article-hero\">\n    <p class=\"article-eyebrow\">Daily Briefing</p>\n    <div class=\"article-hero-layout\">\n      <div class=\"article-hero-main\">\n        <p class=\"post-meta\">2025.12.03</p>\n        <h1>Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング</h1>\n        <p class=\"article-summary\">Claude.mdの効果的な書き方を解説し、LLMの研究に基づいたコンテキストエンジニアリングの手法を紹介。実践的なユースケースを通じて、開発者が得られるメリットを明示します。</p>\n      </div>\n    </div>\n\n    <ul class=\"article-tags\">\n          <li class=\"tag\" data-tag-slug=\"claudemd\" data-tag-category=\"その他\" data-tag-style=\"accent-pink\">Claude.md</li>\n          <li class=\"tag\" data-tag-slug=\"llm\" data-tag-category=\"技術トピック\" data-tag-style=\"accent-sky\">LLM</li>\n          <li class=\"tag\" data-tag-slug=\"tag-3\" data-tag-category=\"その他\" data-tag-style=\"accent-lime\">コンテキストエンジニアリング</li>\n          <li class=\"tag\" data-tag-slug=\"generative-ai\" data-tag-category=\"技術トピック\" data-tag-style=\"accent-pink\">生成AI</li>\n          <li class=\"tag\" data-tag-slug=\"tag-5\" data-tag-category=\"その他\" data-tag-style=\"accent-orange\">開発効率</li>\n          <li class=\"tag\" data-tag-slug=\"draft\" data-tag-category=\"運用\" data-tag-style=\"accent-gold\">下書き</li>\n        </ul>\n  </section>\n\n  \n      <!-- Google AdSense: 記事上広告 -->\n      <!--\n      <div class=\"inner\">\n        <div class=\"ad-container ad-article-top\">\n          <span class=\"ad-label\">広告</span>\n        </div>\n      </div>\n      -->\n\n\n  <div class=\"inner article-grid\">\n    <div class=\"article-main-column\">\n      <article class=\"post-article article-content\">\n        \n        <section class=\"article-intro-block\">\n          <div class=\"intro-content\">\n<p>近年、生成AI技術の進化に伴い、開発者はより効率的な情報提供方法を模索しています。その中で、Claude.mdは特に注目されており、LLM（大規模言語モデル）を活用したコンテキストエンジニアリングの重要な役割を果たしています。本記事では、Claude.mdの書き方について深掘りし、どのようにして開発者の作業効率を向上させるかを探ります。具体的には、優れたClaude.mdがどのように情報を整理し、ユーザーにとっての理解を助けるか、またその背後にある理論的な根拠についても詳しく解説します。これにより、読者は自身のプロジェクトにおいてClaude.mdをどのように活用できるかを具体的に理解し、実践に役立てることができるでしょう。</p>\n          </div>\n        </section>\n        \n            <section class=\"article-section\" id=\"claudemd\">\n              <h2 class=\"section-heading\">Claude.mdの重要性とその役割</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">Claude.mdの基本構造と機能</h3>\n                <div class=\"subsection-body\">\n                  <p>Claude.mdは、生成AIを活用した情報整理のためのフォーマットであり、開発者が効率的に情報を提供するための重要なツールです。まず、その基本構造について考察します。一般的に、Claude.mdはタイトル、要約、詳細な説明、具体的な例、そして関連情報という構成を持っています。この構造は、情報の階層を明確にし、ユーザーが必要な情報に素早くアクセスできるように設計されています。特に、要約部分は、情報の全体像を把握するための重要な要素であり、開発者が短時間で内容を理解する手助けとなります。また、具体的な例を挙げることで、理論的な知識を実践に結びつけることが可能となります。これにより、開発者は自身のプロジェクトにおいて、どのようにClaude.mdを活用できるかを具体的にイメージしやすくなります。</p>\n                </div>\n              </div>\n            </section>\n            <!-- Google AdSense: 記事中広告 -->\n            <!--\n            <div class=\"ad-container ad-article-middle\">\n              <span class=\"ad-label\">広告</span>\n            </div>\n            -->\n\n\n            <section class=\"article-section\" id=\"section-2\">\n              <h2 class=\"section-heading\">効率的な情報提供のための具体的な書き方</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">最適なフォーマットと内容の選定</h3>\n                <div class=\"subsection-body\">\n                  <p>優れたClaude.mdを作成するためには、情報の選定とその整理方法が鍵となります。まず、情報の選定においては、開発者が直面する課題やニーズに基づいて、どの情報が最も重要であるかを見極める必要があります。次に、その情報をどのように整理するかが重要です。例えば、要点を箇条書きにすることで、視覚的に情報を整理しやすくなります。また、関連するコードスニペットやデータの例を挿入することで、具体的なイメージを持たせることができます。さらに、情報の流れを論理的に構築することも重要です。たとえば、背景情報から始め、次に具体的なケーススタディを示し、最後にその情報がどのように実際のプロジェクトに応用できるかを示すといった流れが効果的です。このように、情報の選定と整理方法を工夫することで、Claude.mdの効果を最大限に引き出すことができます。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"llm\">\n              <h2 class=\"section-heading\">LLM研究に基づいた効果的なコンテキストエンジニアリング</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">コンテキストエンジニアリングの基本概念</h3>\n                <div class=\"subsection-body\">\n                  <p>LLMの研究は、コンテキストエンジニアリングの重要性を強調しています。コンテキストエンジニアリングとは、情報を適切に文脈化し、モデルが理解しやすい形で提供する技術です。この技術は、特に生成AIにおいて重要であり、効果的な情報提供を実現するための基盤となります。具体的には、開発者がモデルに対して提供する情報の質や量が、生成される結果に大きな影響を与えることが知られています。したがって、Claude.mdを活用することで、開発者は情報の文脈を明確にし、モデルがより正確な結果を生成できるようにすることが可能です。これにより、開発者はプロジェクトの進行をスムーズにし、成果物の品質を向上させることができます。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"section-4\">\n              <h2 class=\"section-heading\">実践的なユースケースとその効果</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">具体的な事例を通じた理解の深化</h3>\n                <div class=\"subsection-body\">\n                  <p>実際のプロジェクトにおいて、Claude.mdを活用した具体的なユースケースを考察します。例えば、UIプロトタイプからのコード生成において、Claude.mdを使用することで、デザインの意図を明確にし、開発者が必要な情報を迅速に取得できるようになります。また、大規模なログデータの異常検知においても、Claude.mdを通じて異常のパターンを整理し、モデルに対して適切なコンテキストを提供することで、検出精度を向上させることが可能です。さらに、複雑な契約書の条項比較においても、Claude.mdを用いることで、条項の重要な違いを明確にし、迅速な意思決定をサポートします。これらの事例は、Claude.mdがどのように実践的に活用され、開発者の作業効率を向上させるかを示す良い例です。</p>\n                </div>\n              </div>\n            </section>\n      </article>\n    </div>\n\n    <aside class=\"article-sidebar\" aria-label=\"ページ内ナビゲーション\">\n      <section class=\"article-card article-toc\">\n        <p class=\"article-card-label\">目次</p>\n        <ol class=\"toc-list\" data-toc-list aria-live=\"polite\"></ol>\n      </section>\n    </aside>\n  </div>\n\n  \n      <!-- Google AdSense: 記事下広告 -->\n      <!--\n      <div class=\"inner\">\n        <div class=\"ad-container ad-article-bottom\">\n          <span class=\"ad-label\">広告</span>\n        </div>\n      </div>\n      -->\n\n\n  \n      <section class=\"article-conclusion inner\">\n        <h2 class=\"conclusion-heading\">まとめ</h2>\n        <div class=\"conclusion-content\">\n<p>Claude.mdは、生成AIを活用した情報整理のための強力なツールであり、開発者の作業効率を向上させるための重要な要素です。この記事では、Claude.mdの書き方やその背後にある理論的な根拠、具体的なユースケースを通じて、どのようにしてこのツールを活用できるかを探りました。今後、開発者はClaude.mdを積極的に取り入れることで、プロジェクトの進行をスムーズにし、成果物の品質を向上させることが期待されます。次に取るべきアクションとして、実際にClaude.mdを試し、自身のプロジェクトにどのように適用できるかを検討することをお勧めします。</p>\n        </div>\n      </section>\n</article>\n\n  </main>\n\n\n  <script src=\"../../../assets/js/components.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js\"></script>\n  <script src=\"../../../assets/js/main.js\" defer></script>\n  <script src=\"../../../assets/js/article.js\" defer></script>\n</body>\n\n</html>",
-      "relativePath": "posts/2025/12/2025-12-03-claudemdllm.html",
+      "slug": "2025-12-04-nano-banana-proai",
+      "date": "2025-12-04",
+      "htmlContent": "<!DOCTYPE html>\n<html lang=\"ja\">\n\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界 | AI情報ブログ</title>\n  <link rel=\"canonical\" href=\"https://project-ai-blog.com/automation/templates/layout.html\">\n  <meta name=\"description\" content=\"Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。\">\n  <meta name=\"google-site-verification\" content=\"34b7f40e602791ff\" />\n\n  <script src=\"../../../assets/js/analytics.js\"></script>\n\n  <!-- Google AdSense -->\n  <script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX\"\n    crossorigin=\"anonymous\"></script>\n\n  <!-- ファビコン -->\n  <link rel=\"icon\" type=\"image/svg+xml\" href=\"../../../assets/img/logo.svg\">\n  <link rel=\"apple-touch-icon\" href=\"../../../assets/img/logo.svg\">\n\n  <!-- Open Graph / SNS共有 -->\n  <meta property=\"og:type\" content=\"article\">\n  <meta property=\"og:title\" content=\"Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界 | AI情報ブログ\">\n  <meta property=\"og:description\" content=\"Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。\">\n  <meta property=\"og:image\" content=\"https://project-ai-blog.com/assets/img/article-templates/ai-core-01.webp\">\n  <meta property=\"og:site_name\" content=\"AI情報ブログ\">\n  <meta property=\"og:locale\" content=\"ja_JP\">\n  <meta property=\"article:published_time\" content=\"2025-12-04T00:00:00+09:00\">\n\n  <!-- Twitter Card -->\n  <meta name=\"twitter:card\" content=\"summary_large_image\">\n  <meta name=\"twitter:title\" content=\"Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界 | AI情報ブログ\">\n  <meta name=\"twitter:description\" content=\"Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。\">\n  <meta name=\"twitter:image\" content=\"https://project-ai-blog.com/assets/img/article-templates/ai-core-01.webp\">\n\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css\">\n  <link rel=\"stylesheet\" href=\"../../../assets/css/main.css\">\n  <script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebSite\",\n  \"mainEntityOfPage\": {\n    \"@type\": \"WebPage\",\n    \"@id\": \"https://project-ai-blog.com/automation/templates/layout.html\"\n  },\n  \"headline\": \"Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界\",\n  \"description\": \"Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。\",\n  \"image\": \"https://project-ai-blog.com/assets/img/article-templates/ai-core-01.webp\",\n  \"author\": {\n    \"@type\": \"Organization\",\n    \"name\": \"AI情報ブログ\",\n    \"url\": \"https://project-ai-blog.com\"\n  },\n  \"publisher\": {\n    \"@type\": \"Organization\",\n    \"name\": \"AI情報ブログ\",\n    \"logo\": {\n      \"@type\": \"ImageObject\",\n      \"url\": \"https://project-ai-blog.com/assets/img/logo.svg\"\n    }\n  }\n}\n  </script>\n</head>\n\n<body class=\"article-page\">\n\n  <main>\n    <article class=\"article-detail\">\n  <section class=\"inner article-hero\">\n    <p class=\"article-eyebrow\">Daily Briefing</p>\n    <div class=\"article-hero-layout\">\n      <div class=\"article-hero-main\">\n        <p class=\"post-meta\">2025.12.04</p>\n        <h1>Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界</h1>\n        <p class=\"article-summary\">Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。</p>\n      </div>\n    </div>\n\n    <ul class=\"article-tags\">\n          <li class=\"tag\" data-tag-slug=\"ai\" data-tag-category=\"その他\" data-tag-style=\"accent-orange\">AI技術</li>\n          <li class=\"tag\" data-tag-slug=\"nano-banana-pro\" data-tag-category=\"その他\" data-tag-style=\"accent-orange\">Nano Banana Pro</li>\n          <li class=\"tag\" data-tag-slug=\"tag-3\" data-tag-category=\"その他\" data-tag-style=\"accent-orange\">マンガ制作</li>\n          <li class=\"tag\" data-tag-slug=\"tag-4\" data-tag-category=\"その他\" data-tag-style=\"accent-orange\">クリエイティブテクノロジー</li>\n          <li class=\"tag\" data-tag-slug=\"draft\" data-tag-category=\"運用\" data-tag-style=\"accent-gold\">下書き</li>\n        </ul>\n  </section>\n\n  \n      <!-- Google AdSense: 記事上広告 -->\n      <!--\n      <div class=\"inner\">\n        <div class=\"ad-container ad-article-top\">\n          <span class=\"ad-label\">広告</span>\n        </div>\n      </div>\n      -->\n\n\n  <div class=\"inner article-grid\">\n    <div class=\"article-main-column\">\n      <article class=\"post-article article-content\">\n        \n        <section class=\"article-intro-block\">\n          <div class=\"intro-content\">\n<p>近年、AI技術の進化により、クリエイティブな分野においてもその活用が進んでいます。特に、マンガ制作においては、AIが持つ生成能力が注目されています。本記事では、Nano Banana Proを使用してマンガを制作する実験を行い、その性能を限界まで引き出すことで、AI技術の実力を検証します。具体的には、制作プロセスや得られた結果、ユーザーが享受できる利点について詳細に分析します。さらに、AI技術の限界や今後の改善点についても考察し、エンジニアリングとクリエイティブな分野の融合がもたらす影響を探ります。</p>\n          </div>\n        </section>\n        \n            <section class=\"article-section\" id=\"nano-banana-pro\">\n              <h2 class=\"section-heading\">Nano Banana Proの技術的背景と機能</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">AI技術の基盤とその応用</h3>\n                <div class=\"subsection-body\">\n                  <p>Nano Banana Proは、最新のAI技術を駆使したツールであり、特に生成モデルに基づく画像生成能力が特徴です。このツールは、トランスフォーマーアーキテクチャを採用しており、膨大なデータセットから学習した知識を基に、ユーザーが求めるスタイルや内容に応じたマンガのページを生成します。具体的には、トークン数は数百万に及び、これにより多様な表現が可能となります。さらに、レイテンシも最適化されており、リアルタイムでのフィードバックを実現しています。これにより、クリエイターはアイデアを迅速に具現化できるため、制作時間の大幅な短縮が期待されます。実際の実験では、従来の手法と比較して、マンガ制作にかかる時間が約50%短縮される結果が得られました。</p>\n                </div>\n              </div>\n            </section>\n            <!-- Google AdSense: 記事中広告 -->\n            <!--\n            <div class=\"ad-container ad-article-middle\">\n              <span class=\"ad-label\">広告</span>\n            </div>\n            -->\n\n\n            <section class=\"article-section\" id=\"section-2\">\n              <h2 class=\"section-heading\">マンガ制作プロセスの詳細分析</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">制作フローとその効率性</h3>\n                <div class=\"subsection-body\">\n                  <p>Nano Banana Proを用いたマンガ制作のプロセスは、アイデアの構築から最終的なページの生成まで、一貫した流れで行われます。まず、ユーザーはテーマやキャラクターの設定を行い、その後AIが提案するストーリーラインに基づいて、シーンごとの構成を決定します。この段階で、AIは過去のデータを参照し、最適な構図やセリフを生成します。実験では、ユーザーが設定した条件に対して、AIが提案したシーンの80%が満足のいく結果を示しました。さらに、AIが生成した内容に対してユーザーが修正を加えることで、より個性的な作品に仕上げることが可能です。このように、AIは単なる補助ツールではなく、クリエイティブなパートナーとしての役割を果たします。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"section-3\">\n              <h2 class=\"section-heading\">ユーザーの利点と制作時間の短縮</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">実際のデータによる評価</h3>\n                <div class=\"subsection-body\">\n                  <p>Nano Banana Proを使用することで得られる利点は多岐にわたります。特に、制作時間の短縮が顕著であり、従来の手法に比べて約50%の時間削減が実現しました。このデータは、特定のマンガのページ数や複雑さに基づいて算出されたものであり、制作効率の向上が具体的な数字で示されています。また、AIによる生成により、クリエイターは新たなアイデアを迅速に試すことができ、創造的なプロセスが加速します。さらに、AIが提供する多様なスタイルや表現方法は、クリエイターの視野を広げ、より豊かな作品制作を可能にします。</p>\n                </div>\n              </div>\n            </section>\n\n            <section class=\"article-section\" id=\"section-4\">\n              <h2 class=\"section-heading\">技術の限界と今後の展望</h2>\n              \n              \n              <div class=\"article-subsection\">\n                <h3 class=\"subsection-heading\">改善点と活用方法の考察</h3>\n                <div class=\"subsection-body\">\n                  <p>Nano Banana Proは非常に強力なツールですが、いくつかの技術的な限界も存在します。例えば、特定のジャンルやスタイルにおいては、AIの生成がユーザーの期待に応えられない場合があります。また、キャラクターの感情表現や微妙なニュアンスについては、まだ改善の余地があると考えられます。今後の展望としては、ユーザーからのフィードバックを基にしたモデルの改良や、特定のジャンルに特化したデータセットの構築が重要です。これにより、より高品質な生成が可能となり、クリエイターのニーズに応えることができるでしょう。</p>\n                </div>\n              </div>\n            </section>\n      </article>\n    </div>\n\n    <aside class=\"article-sidebar\" aria-label=\"ページ内ナビゲーション\">\n      <section class=\"article-card article-toc\">\n        <p class=\"article-card-label\">目次</p>\n        <ol class=\"toc-list\" data-toc-list aria-live=\"polite\"></ol>\n      </section>\n    </aside>\n  </div>\n\n  \n      <!-- Google AdSense: 記事下広告 -->\n      <!--\n      <div class=\"inner\">\n        <div class=\"ad-container ad-article-bottom\">\n          <span class=\"ad-label\">広告</span>\n        </div>\n      </div>\n      -->\n\n\n  \n      <section class=\"article-conclusion inner\">\n        <h2 class=\"conclusion-heading\">まとめ</h2>\n        <div class=\"conclusion-content\">\n<p>Nano Banana Proは、マンガ制作におけるAI技術の可能性を示す一例です。制作時間の短縮や新たなアイデアの迅速な具現化を実現する一方で、技術的な限界も存在します。今後、さらなる改善が進むことで、クリエイターにとっての真のパートナーとなることが期待されます。次のステップとして、実際にNano Banana Proを試してみることをお勧めします。</p>\n        </div>\n      </section>\n</article>\n\n  </main>\n\n\n  <script src=\"../../../assets/js/components.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js\"></script>\n  <script src=\"../../../assets/js/main.js\" defer></script>\n  <script src=\"../../../assets/js/article.js\" defer></script>\n</body>\n\n</html>",
+      "relativePath": "posts/2025/12/2025-12-04-nano-banana-proai.html",
       "image": {
-        "key": "ai-core-04",
-        "src": "assets/img/article-templates/ai-core-04.webp",
-        "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+        "key": "ai-core-01",
+        "src": "assets/img/article-templates/ai-core-01.webp",
+        "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
         "label": "AIコア戦略",
         "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
         "category": "ai"
       },
       "source": {
-        "name": "ai_masaou",
-        "url": "https://www.youtube.com/@ai_masaou"
+        "name": "kei31e",
+        "url": "https://www.youtube.com/@kei31e"
       },
       "video": {
-        "title": "ClaudeCodeの効率を爆上げする『優れたCLAUDE.md』の書き方を解説します！LLMの研究とコンテキストエンジニアリングの点から説明",
-        "url": "https://www.youtube.com/watch?v=Bkm6S4oawMw",
-        "id": "Bkm6S4oawMw"
+        "title": "Nano Banana Proの性能を限界まで引き出してマンガを作らせた",
+        "url": "https://www.youtube.com/watch?v=VJol1beGYa0",
+        "id": "VJol1beGYa0"
       },
-      "transcriptLength": 141
+      "transcriptLength": 131
     },
     "metrics": {
       "scope": "generator",
       "counters": {
-        "candidates.total": 72,
+        "candidates.total": 75,
         "candidates.analyzed": 1,
         "articles.generated": 1
       },
       "timings": {
         "articleGeneration.timeMs": {
-          "count": 2,
-          "avg": 59095,
-          "min": 40194,
-          "max": 77995
+          "count": 1,
+          "avg": 30917,
+          "min": 30917,
+          "max": 30917
         }
       }
     }
   },
   "publisher": {
     "addedPost": true,
-    "totalPosts": 42,
-    "outputFile": "posts/2025/12/2025-12-03-claudemdllm.html"
+    "totalPosts": 44,
+    "outputFile": "posts/2025/12/2025-12-04-nano-banana-proai.html"
   }
 }

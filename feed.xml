@@ -5,9 +5,33 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Wed, 03 Dec 2025 21:16:18 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 04 Dec 2025 09:28:57 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-04-nano-banana-proai.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-04-nano-banana-proai.html</guid>
+    <pubDate>Thu, 04 Dec 2025 09:28:57 GMT</pubDate>
+    <description>Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。</description>
+    <category>AI技術</category>
+    <category>Nano Banana Pro</category>
+    <category>マンガ制作</category>
+    <category>クリエイティブテクノロジー</category>
+    <category>下書き</category>
+  </item>
+  <item>
+    <title>OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-04-openai-code-red.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-04-openai-code-red.html</guid>
+    <pubDate>Thu, 04 Dec 2025 00:00:00 GMT</pubDate>
+    <description>OpenAI CEOサム・アルトマンが2025年12月2日、社内向けに最高レベルの警報「コードレッド」を発令しました。Google Gemini 3の圧倒的な性能向上により、ChatGPTはユーザー減少と市場シェアの低下に直面。わずか3年前にGoogleを脅かしたOpenAIが、今度は逆の立場に立たされています。</description>
+    <category>OpenAI</category>
+    <category>Google AI</category>
+    <category>ChatGPT</category>
+    <category>Gemini 3</category>
+    <category>AI市場動向</category>
+  </item>
   <item>
     <title>Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-claudemdllm.html</link>
