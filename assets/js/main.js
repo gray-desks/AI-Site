@@ -458,15 +458,17 @@ const initPostList = () => {
       const sectionHeaderH2 = document.querySelector('.section-header h2');
       if (sectionHeaderH2) {
         // 既存のクラスを削除
-        sectionHeaderH2.classList.remove('draft-status-1', 'draft-status-2', 'draft-status-3-plus');
-        
+        sectionHeaderH2.classList.remove('draft-status-0', 'draft-status-1-2', 'draft-status-3-4', 'draft-status-5-6');
+
         // 下書き数に応じてクラスを追加
-        if (draftCount === 1) {
-          sectionHeaderH2.classList.add('draft-status-1');
-        } else if (draftCount === 2) {
-          sectionHeaderH2.classList.add('draft-status-2');
-        } else if (draftCount >= 3) {
-          sectionHeaderH2.classList.add('draft-status-3-plus');
+        if (draftCount === 0) {
+          sectionHeaderH2.classList.add('draft-status-0');
+        } else if (draftCount >= 1 && draftCount <= 2) {
+          sectionHeaderH2.classList.add('draft-status-1-2');
+        } else if (draftCount >= 3 && draftCount <= 4) {
+          sectionHeaderH2.classList.add('draft-status-3-4');
+        } else if (draftCount >= 5 && draftCount <= 6) {
+          sectionHeaderH2.classList.add('draft-status-5-6');
         }
       }
       // タグのインデックスを構築

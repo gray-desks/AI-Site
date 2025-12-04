@@ -278,17 +278,24 @@
 }
 
 /* Draft Status Indicators */
-.section-header h2.draft-status-1::before {
+.section-header h2.draft-status-0::before {
+  background: var(--color-primary);
+  /* Blue - No drafts */
+}
+
+.section-header h2.draft-status-1-2::before {
   background: var(--color-success);
+  /* Green - 1-2 drafts */
 }
 
-.section-header h2.draft-status-2::before {
+.section-header h2.draft-status-3-4::before {
   background: var(--color-warning);
+  /* Yellow - 3-4 drafts */
 }
 
-.section-header h2.draft-status-3-plus::before {
+.section-header h2.draft-status-5-6::before {
   background: #ef4444;
-  /* Red 500 */
+  /* Red - 5-6 drafts */
 }
 
 /* === 投稿セクション (#posts) === */
