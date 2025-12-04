@@ -1,5 +1,61 @@
 [
   {
+    "title": "FFGO技術解説：動画制作の一貫性を向上させる新手法の可能性",
+    "date": "2025-12-04",
+    "summary": "Wan2.2の新技術「FFGO」は、動画制作における一貫性を向上させる革新的なアプローチです。本記事ではFFGOの仕組み、導入メリット、具体的なユースケースを深掘りし、今後の動画制作に与える影響を考察します。",
+    "tags": [
+      {
+        "slug": "ffgo",
+        "label": "FFGO",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "tag-2",
+        "label": "動画制作",
+        "category": "その他",
+        "style": "accent-pink"
+      },
+      {
+        "slug": "ai",
+        "label": "AI技術",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "first-frame-go",
+        "label": "First Frame Go",
+        "category": "その他",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "tag-5",
+        "label": "技術解説",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-04-ffgo.html",
+    "slug": "2025-12-04-ffgo",
+    "publishedAt": "2025-12-04T21:16:40.784Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-01",
+      "src": "assets/img/article-templates/ai-core-01.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント1）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "createdAt": "2025-12-04T21:16:40.787Z"
+  },
+  {
     "title": "Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界",
     "date": "2025-12-04",
     "summary": "Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。",
