@@ -19,7 +19,9 @@
       "Bash(curl:*)",
       "Bash(npm run posts:drafts:*)",
       "Bash(npm start)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "WebSearch",
+      "Bash(git rebase:*)"
     ],
     "deny": [],
     "ask": []
