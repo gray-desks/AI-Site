@@ -1,5 +1,170 @@
 [
   {
+    "id": "yt-VjtT75dqIAg",
+    "source": {
+      "platform": "YouTube",
+      "name": "AI-Hakase",
+      "channelId": "UC_XCzQX1YiDetIm5IUYvZ7w",
+      "url": "https://www.youtube.com/@AI-Hakase",
+      "focus": [
+        "AI解説",
+        "研究トレンド"
+      ]
+    },
+    "video": {
+      "id": "VjtT75dqIAg",
+      "title": "【URL貼るだけ】AIが勝手に「売れる広告動画」を量産してくれる?! EC特化型AIエージェント『Bandy AI』が革命的すぎる件",
+      "url": "https://www.youtube.com/watch?v=VjtT75dqIAg",
+      "description": "こちらからBandy AIを試してみてください！：https://cutt.ly/Gtu4rWqP 動画のもとになったNote記事 ...",
+      "thumbnail": "https://i.ytimg.com/vi/VjtT75dqIAg/hqdefault.jpg",
+      "publishedAt": "2025-12-05T14:00:17Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-05T21:14:31.860Z",
+    "updatedAt": "2025-12-05T21:14:37.285Z",
+    "topicKey": "urlai-ecaibandy-ai",
+    "notes": "YouTube Data API: AI-Hakase の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAIエージェントによる広告動画制作に関する内容であり、直近の記事の中でAIエージェントに関連する内容が含まれているため。特に、7番目の記事「Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性」が関連している。"
+  },
+  {
+    "id": "yt-xN31OY3hmc4",
+    "source": {
+      "platform": "YouTube",
+      "name": "chaen-ai-lab",
+      "channelId": "UC9buL3Iph_f7AZxdzmiBL8Q",
+      "url": "https://www.youtube.com/@chaen-ai-lab",
+      "focus": [
+        "AI解説",
+        "LLM"
+      ]
+    },
+    "video": {
+      "id": "xN31OY3hmc4",
+      "title": "営業マン必見。商談前の「事前準備」で成約率を上げる方法 #営業 #ChatGPT #AI活用 #chatgpt #仕事効率化 #shorts",
+      "url": "https://www.youtube.com/watch?v=xN31OY3hmc4",
+      "description": "【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 商談で成果が出ない原因 ...",
+      "thumbnail": "https://i.ytimg.com/vi/xN31OY3hmc4/hqdefault.jpg",
+      "publishedAt": "2025-12-05T10:45:07Z"
+    },
+    "status": "failed",
+    "createdAt": "2025-12-05T21:14:30.952Z",
+    "updatedAt": "2025-12-05T21:15:32.053Z",
+    "topicKey": "chatgpt-ai-chatgpt-shorts",
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "transcript": "営業マン必見。商談前の「事前準備」で成約率を上げる方法 #営業 #ChatGPT #AI活用 #chatgpt #仕事効率化 #shorts 【問い合わせフォーム ※期間限定特典付き⬇️】 https://go.pardot.com/l/1097692/2025-03-09/kp1dw7 商談で成果が出ない原因 ...",
+    "transcriptLength": 160,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画は営業や商談に関する事前準備の方法を扱っており、直近の記事はAI技術や市場動向に関する内容であり、テーマが異なるため重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画は営業や商談に関する事前準備の方法を扱っており、直近の記事はAI技術や市場動向に関する内容であり、テーマが異なるため重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "【2025年最新】「SaaSは死んだ」って本当？AI時代の個人開発と日本の\"ヤバい\"現状を解説",
+      "FFGO技術解説：動画制作の一貫性を向上させる新手法の可能性",
+      "Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界",
+      "OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化",
+      "まだ「議事録」だけですか？ 2025年冬、会議AIが“指示待ち”を卒業していた話。",
+      "Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル",
+      "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性",
+      "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法",
+      "AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド",
+      "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド"
+    ],
+    "researchedAt": "2025-12-05T21:14:41.586Z",
+    "failReason": "article-generation-error",
+    "errorMessage": "article total length too short"
+  },
+  {
+    "id": "yt-Cj363_vIiNY",
+    "source": {
+      "platform": "YouTube",
+      "name": "keitoaiweb",
+      "channelId": "UCfapRkagDtoQEkGeyD3uERQ",
+      "url": "https://www.youtube.com/@keitoaiweb",
+      "focus": [
+        "AIニュース",
+        "Web活用"
+      ]
+    },
+    "video": {
+      "id": "Cj363_vIiNY",
+      "title": "【文字起こし精度No.1】AI議事録ツール『Notta』と『Notta Memo』がすごく便利！",
+      "url": "https://www.youtube.com/watch?v=Cj363_vIiNY",
+      "description": "Notta AIがAI文字起こしサービスで一番おすすめです！ 20%OFFクーポンコード【LCKCF2PS】 ※有効期限は3月29日 Notta ...",
+      "thumbnail": "https://i.ytimg.com/vi/Cj363_vIiNY/hqdefault.jpg",
+      "publishedAt": "2025-12-05T10:00:22Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-05T21:14:30.833Z",
+    "updatedAt": "2025-12-05T21:15:34.491Z",
+    "topicKey": "no1ainottanotta-memo",
+    "notes": "YouTube Data API: keitoaiweb の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAI議事録ツールに関する内容であり、直近の記事の5番目も会議AIに関する話題を扱っているため、同じテーマと判断しました。"
+  },
+  {
+    "id": "yt-uo0QMumVNMA",
+    "source": {
+      "platform": "YouTube",
+      "name": "tomos_aiagent",
+      "channelId": "UCAmdG83hIqRQfwLaNQS7H2w",
+      "url": "https://www.youtube.com/@tomos_aiagent",
+      "focus": [
+        "AIエージェント",
+        "自動化"
+      ]
+    },
+    "video": {
+      "id": "uo0QMumVNMA",
+      "title": "【魔法】Claude 4.5 Opus × n8nなら10分でWebアプリ開発!? 初心者さん向け、自動Web開発（AIワークフロー・n8n）",
+      "url": "https://www.youtube.com/watch?v=uo0QMumVNMA",
+      "description": "無料コミュニティで素材を入手！：https://www.skool.com/tomolab-2938 ・ 日本有数の専用 ...",
+      "thumbnail": "https://i.ytimg.com/vi/uo0QMumVNMA/hqdefault.jpg",
+      "publishedAt": "2025-12-05T09:59:22Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-05T21:14:31.733Z",
+    "updatedAt": "2025-12-05T21:15:37.906Z",
+    "topicKey": "claude-45-opus-n8n10web-webain8n",
+    "notes": "YouTube Data API: tomos_aiagent の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAIを用いたWebアプリ開発に関する内容であり、直近の記事の中でClaude.mdの書き方完全ガイドがAIコーディングに関連しているため、同じAI技術を扱っている観点で重複と判断しました。"
+  },
+  {
+    "id": "yt-WRbG_22RfeI",
+    "source": {
+      "platform": "YouTube",
+      "name": "ai_masaou",
+      "channelId": "UCvHpETRVi1tXeRJoYiXHJqw",
+      "url": "https://www.youtube.com/@ai_masaou",
+      "focus": [
+        "生成AI",
+        "Tips"
+      ]
+    },
+    "video": {
+      "id": "WRbG_22RfeI",
+      "title": "【超有料級】ClaudeCodeを本気の徹底解説！全ての基礎から知るべき全てを網羅した完全解説",
+      "url": "https://www.youtube.com/watch?v=WRbG_22RfeI",
+      "description": "今回の動画では、ClaudeCodeをリリースから今まで使い続けてきた開発者の私視点で最新のトレンド・モデルの傾向・ ...",
+      "thumbnail": "https://i.ytimg.com/vi/WRbG_22RfeI/hqdefault.jpg",
+      "publishedAt": "2025-12-05T09:30:19Z"
+    },
+    "status": "skipped",
+    "createdAt": "2025-12-05T21:14:30.616Z",
+    "updatedAt": "2025-12-05T21:15:41.201Z",
+    "topicKey": "claudecode",
+    "notes": "YouTube Data API: ai_masaou の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はClaudeCodeに関する徹底解説であり、直近の記事6番目の「Claude.mdの書き方完全ガイド」がAIコーディングに関連しており、同じClaudeシリーズに関する内容であるため重複と判断しました。"
+  },
+  {
     "id": "yt-BAd9V-W04ig",
     "source": {
       "platform": "YouTube",
@@ -139,11 +304,13 @@
       "thumbnail": "https://i.ytimg.com/vi/UodANk7TDBY/hqdefault.jpg",
       "publishedAt": "2025-12-05T07:00:35Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-12-05T09:24:44.192Z",
-    "updatedAt": "2025-12-05T09:24:44.192Z",
+    "updatedAt": "2025-12-05T21:15:44.309Z",
     "topicKey": "google-workspace-studioai",
-    "notes": "YouTube Data API: iketomo-ch の最新動画"
+    "notes": "YouTube Data API: iketomo-ch の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はGoogle Workspace Studioに関するもので、AIエージェントの作成やセキュリティに焦点を当てている。一方、直近の記事の中で「まだ『議事録』だけですか？」が会議AIの進化に触れており、AIエージェントに関連するテーマを扱っているため、同じ話題と判断した。"
   },
   {
     "id": "yt-VgrR1ncXYt0",
@@ -165,11 +332,13 @@
       "thumbnail": "https://i.ytimg.com/vi/VgrR1ncXYt0/hqdefault.jpg",
       "publishedAt": "2025-12-04T21:26:41Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-12-05T09:24:44.056Z",
-    "updatedAt": "2025-12-05T09:24:44.056Z",
+    "updatedAt": "2025-12-05T21:15:47.895Z",
     "topicKey": "ai",
-    "notes": "YouTube Data API: kei31e の最新動画"
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAI問題に関する議論を扱っており、直近の記事4番の「OpenAIが緊急体制『コードレッド』を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化」もAI市場における問題や変化について触れているため、同じ話題と判断しました。"
   },
   {
     "id": "yt-YraQ6cpbqA0",
@@ -375,11 +544,12 @@
       "thumbnail": "https://i.ytimg.com/vi/6FxHTHJFSvs/hqdefault.jpg",
       "publishedAt": "2025-12-03T21:35:01Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-12-04T09:28:19.297Z",
-    "updatedAt": "2025-12-04T09:28:19.297Z",
+    "updatedAt": "2025-12-05T21:15:48.199Z",
     "topicKey": "ai",
-    "notes": "YouTube Data API: kei31e の最新動画"
+    "notes": "YouTube Data API: kei31e の最新動画",
+    "skipReason": "topic-blocked"
   },
   {
     "id": "yt-s3uH6eHKkDc",
@@ -493,11 +663,13 @@
       "thumbnail": "https://i.ytimg.com/vi/x77ooB-5L2Y/hqdefault.jpg",
       "publishedAt": "2025-12-03T10:30:46Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-12-03T21:14:48.338Z",
-    "updatedAt": "2025-12-03T21:14:48.338Z",
+    "updatedAt": "2025-12-05T21:15:51.738Z",
     "topicKey": "chatgptai-chatgpt-ai-google-shorts",
-    "notes": "YouTube Data API: chaen-ai-lab の最新動画"
+    "notes": "YouTube Data API: chaen-ai-lab の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はChatGPTの解説とプランの違いについて扱っており、AI技術に関連する内容であるため、AIに関する情報を扱った直近の記事とテーマが重複しています。"
   },
   {
     "id": "yt-NlcapbqzdMk",
@@ -519,11 +691,13 @@
       "thumbnail": "https://i.ytimg.com/vi/NlcapbqzdMk/hqdefault.jpg",
       "publishedAt": "2025-12-03T10:00:44Z"
     },
-    "status": "collected",
+    "status": "skipped",
     "createdAt": "2025-12-03T21:14:48.481Z",
-    "updatedAt": "2025-12-03T21:14:48.481Z",
+    "updatedAt": "2025-12-05T21:15:54.525Z",
     "topicKey": "aiflowithosai",
-    "notes": "YouTube Data API: ウェブマニア の最新動画"
+    "notes": "YouTube Data API: ウェブマニア の最新動画",
+    "skipReason": "theme-duplicate",
+    "skipDetail": "候補動画はAIブラウザの自動化機能について扱っており、直近の記事の中にはAI技術やその応用に関する内容が多く含まれているため、特にAIエージェントや自動化に関連するテーマが重複していると判断しました。"
   },
   {
     "id": "yt-ExMElTH_3OQ",
@@ -637,11 +811,49 @@
       "thumbnail": "https://i.ytimg.com/vi/YzxQCcJEzWA/hqdefault.jpg",
       "publishedAt": "2025-12-03T08:00:49Z"
     },
-    "status": "collected",
+    "status": "generated",
     "createdAt": "2025-12-03T09:27:19.071Z",
-    "updatedAt": "2025-12-03T09:27:19.071Z",
+    "updatedAt": "2025-12-05T21:17:05.845Z",
     "topicKey": "deepseek-v32",
-    "notes": "YouTube Data API: technavi_tooru の最新動画"
+    "notes": "YouTube Data API: technavi_tooru の最新動画",
+    "transcript": "Deepseek v3.2 登場！最新アップデートをローカルとコーディングで検証してみた メンバーシップ開始しました！当チャンネルをサポートしてくださる方を募集しております ‍♂️ (YouTubeアプリからの加入 ...",
+    "transcriptLength": 111,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はDeepseekのアップデートに関する内容であり、直近の記事はAI技術やコーディングに関連するが、特定の製品やアップデートに焦点を当てていないため、テーマが異なる。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はDeepseekのアップデートに関する内容であり、直近の記事はAI技術やコーディングに関連するが、特定の製品やアップデートに焦点を当てていないため、テーマが異なる。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "【2025年最新】「SaaSは死んだ」って本当？AI時代の個人開発と日本の\"ヤバい\"現状を解説",
+      "FFGO技術解説：動画制作の一貫性を向上させる新手法の可能性",
+      "Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界",
+      "OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化",
+      "まだ「議事録」だけですか？ 2025年冬、会議AIが“指示待ち”を卒業していた話。",
+      "Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル",
+      "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性",
+      "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法",
+      "AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド",
+      "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド"
+    ],
+    "researchedAt": "2025-12-05T21:15:58.712Z",
+    "generatedAt": "2025-12-05T21:17:05.845Z",
+    "postDate": "2025-12-05",
+    "slug": "2025-12-05-deepseek-v32ai",
+    "outputFile": "posts/2025/12/2025-12-05-deepseek-v32ai.html",
+    "image": {
+      "key": "ai-core-02",
+      "src": "assets/img/article-templates/ai-core-02.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント2）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "imageKey": "ai-core-02"
   },
   {
     "id": "yt-491sxQKDv6Y",

@@ -5,45 +5,55 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Fri, 05 Dec 2025 09:26:08 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 05 Dec 2025 21:17:06 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
   <item>
-    <title>Mistral 3の詳細レビュー：オープンソースAIモデルの進化と実用性の考察</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-05-mistral-3ai.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-05-mistral-3ai.html</guid>
-    <pubDate>Fri, 05 Dec 2025 09:26:08 GMT</pubDate>
-    <description>Mistral 3は最新のオープンソースAIモデルであり、その性能や特長を深く分析します。生成AIの実用的なユースケースや他モデルとの比較を通じて、技術的な洞察を提供します。</description>
-    <category>Mistral 3</category>
-    <category>オープンソース</category>
+    <title>【2025年最新】「SaaSは死んだ」って本当？AI時代の個人開発と日本の&quot;ヤバい&quot;現状を解説</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-06-saas-is-dead-ai-impact-japan.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-06-saas-is-dead-ai-impact-japan.html</guid>
+    <pubDate>Sat, 06 Dec 2025 00:00:00 GMT</pubDate>
+    <description>海外で話題の「SaaS is Dead」議論の本質と、AI開発ツールの進化がもたらす変化について解説します。Microsoftのサティア・ナデラ氏の発言を発端としたこの議論は、日本企業にとっても無視できない警告を含んでいます。AI時代に個人開発者がどう生き残るか、その生存戦略を提示します。</description>
+    <category>技術トレンド</category>
+    <category>業務効率化</category>
+    <category>システム開発</category>
+    <category>Cursor</category>
+  </item>
+  <item>
+    <title>Deepseek v3.2レビュー：ローカル環境での生成AI活用とコーディング効率の向上</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-05-deepseek-v32ai.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-05-deepseek-v32ai.html</guid>
+    <pubDate>Fri, 05 Dec 2025 00:00:00 GMT</pubDate>
+    <description>Deepseek v3.2の新機能を詳細に分析し、ローカル環境でのパフォーマンス向上やコーディングプロセスへの具体的な利点を検証します。生成AIのビジネス活用に向けた実践的な洞察を提供します。</description>
+    <category>Deepseek</category>
     <category>生成AI</category>
-    <category>技術分析</category>
+    <category>コーディング</category>
+    <category>業務効率化</category>
+    <category>異常検知</category>
     <category>下書き</category>
   </item>
   <item>
     <title>FFGO技術解説：動画制作の一貫性を向上させる新手法の可能性</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-04-ffgo.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-04-ffgo.html</guid>
-    <pubDate>Thu, 04 Dec 2025 21:16:40 GMT</pubDate>
+    <pubDate>Thu, 04 Dec 2025 00:00:00 GMT</pubDate>
     <description>Wan2.2の新技術「FFGO」は、動画制作における一貫性を向上させる革新的なアプローチです。本記事ではFFGOの仕組み、導入メリット、具体的なユースケースを深掘りし、今後の動画制作に与える影響を考察します。</description>
     <category>FFGO</category>
     <category>動画制作</category>
     <category>AI技術</category>
     <category>First Frame Go</category>
     <category>技術解説</category>
-    <category>下書き</category>
   </item>
   <item>
     <title>Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-04-nano-banana-proai.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-04-nano-banana-proai.html</guid>
-    <pubDate>Thu, 04 Dec 2025 09:28:57 GMT</pubDate>
+    <pubDate>Thu, 04 Dec 2025 00:00:00 GMT</pubDate>
     <description>Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。</description>
     <category>AI技術</category>
     <category>Nano Banana Pro</category>
     <category>マンガ制作</category>
     <category>クリエイティブテクノロジー</category>
-    <category>下書き</category>
   </item>
   <item>
     <title>OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化</title>
@@ -58,33 +68,10 @@
     <category>AI市場動向</category>
   </item>
   <item>
-    <title>Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-claudemdllm.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-claudemdllm.html</guid>
-    <pubDate>Wed, 03 Dec 2025 21:16:18 GMT</pubDate>
-    <description>Claude Codeで毎回同じ説明をするのは面倒...そんな悩みを解決するCLAUDE.mdの書き方を徹底解説。テンプレートやコツも紹介し、AIコーディングの効率を劇的に向上させる方法をお伝えします。</description>
-    <category>Claude.md</category>
-    <category>LLM</category>
-    <category>コンテキストエンジニアリング</category>
-    <category>生成AI</category>
-    <category>開発効率</category>
-  </item>
-  <item>
-    <title>NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-notebooklm.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-notebooklm.html</guid>
-    <pubDate>Wed, 03 Dec 2025 09:28:51 GMT</pubDate>
-    <description>NotebookLMの新機能であるインフォグラフィックとスライド機能を徹底分析。データ視覚化やプレゼンテーション作成の効率化を通じて、業務の生産性向上に寄与する具体的なユースケースを紹介します。</description>
-    <category>NotebookLM</category>
-    <category>AIツール</category>
-    <category>ビジネス効率化</category>
-    <category>下書き</category>
-  </item>
-  <item>
     <title>まだ「議事録」だけですか？ 2025年冬、会議AIが“指示待ち”を卒業していた話。</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-aimtg.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-aimtg.html</guid>
-    <pubDate>Wed, 03 Dec 2025 01:27:44 GMT</pubDate>
+    <pubDate>Wed, 03 Dec 2025 00:00:00 GMT</pubDate>
     <description>会議AIは「議事録」から「リアルタイム・コーチ」へ。2025年冬の最新AIトレンドと、会議中の「カンペ」機能など、ビジネス現場での活用事例を解説します。</description>
     <category>営業</category>
     <category>AIトピック</category>
@@ -93,36 +80,56 @@
     <category>プロンプト</category>
   </item>
   <item>
+    <title>Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-claudemdllm.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-claudemdllm.html</guid>
+    <pubDate>Wed, 03 Dec 2025 00:00:00 GMT</pubDate>
+    <description>Claude Codeで毎回同じ説明をするのは面倒...そんな悩みを解決するCLAUDE.mdの書き方を徹底解説。テンプレートやコツも紹介し、AIコーディングの効率を劇的に向上させる方法をお伝えします。</description>
+    <category>Claude.md</category>
+    <category>LLM</category>
+    <category>コンテキストエンジニアリング</category>
+    <category>生成AI</category>
+    <category>開発効率</category>
+  </item>
+  <item>
     <title>Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-microsoft-fara-7bai.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-microsoft-fara-7bai.html</guid>
-    <pubDate>Wed, 03 Dec 2025 01:23:45 GMT</pubDate>
+    <pubDate>Wed, 03 Dec 2025 00:00:00 GMT</pubDate>
     <description>Microsoftの新しいAIエージェントFara-7Bは、オンデバイスでのPC操作を可能にし、業務効率を大幅に向上させる。具体的なユースケースを通じてその実力を探る。</description>
     <category>Microsoft</category>
     <category>Fara-7B</category>
     <category>生成AI</category>
     <category>AIエージェント</category>
     <category>業務効率化</category>
-    <category>下書き</category>
+  </item>
+  <item>
+    <title>NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-notebooklm.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-notebooklm.html</guid>
+    <pubDate>Wed, 03 Dec 2025 00:00:00 GMT</pubDate>
+    <description>NotebookLMの新機能であるインフォグラフィックとスライド機能を徹底分析。データ視覚化やプレゼンテーション作成の効率化を通じて、業務の生産性向上に寄与する具体的なユースケースを紹介します。</description>
+    <category>NotebookLM</category>
+    <category>AIツール</category>
+    <category>ビジネス効率化</category>
   </item>
   <item>
     <title>AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-aigithub.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-aigithub.html</guid>
-    <pubDate>Tue, 02 Dec 2025 21:18:21 GMT</pubDate>
+    <pubDate>Tue, 02 Dec 2025 00:00:00 GMT</pubDate>
     <description>AIエージェントの進化に伴い、Githubのスキルが非エンジニアにとっても重要性を増しています。この記事では、Githubの基本的な使い方から、AIツールとの連携による業務効率化の具体例を解説します。</description>
-    <category>GitHub Copilot</category>
+    <category>GitHub</category>
     <category>AIエージェント</category>
     <category>非エンジニア</category>
     <category>業務効率化</category>
     <category>技術スキル</category>
-    <category>下書き</category>
   </item>
   <item>
     <title>【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-pixaireference-pro.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-pixaireference-pro.html</guid>
-    <pubDate>Tue, 02 Dec 2025 09:30:33 GMT</pubDate>
+    <pubDate>Tue, 02 Dec 2025 00:00:00 GMT</pubDate>
     <description>「うちの子」をAIで描きたいけど、毎回顔が変わってしまう…そんな悩みを解決するPixAIの「Reference Pro」機能を徹底解説。絵心がなくても、スマホ一つでキャラクターを固定して描き続ける方法を分かりやすく紹介します。</description>
     <category>PixAI</category>
     <category>画像編集</category>
@@ -131,22 +138,10 @@
     <category>マルチ画像参照</category>
   </item>
   <item>
-    <title>AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html</guid>
-    <pubDate>Mon, 01 Dec 2025 21:14:56 GMT</pubDate>
-    <description>ChatGPT-5.1、Gemini 3、Claude 4.5の3つのAIツールを7つのタスクで比較し、それぞれの特徴や実用性を評価します。具体的なユースケースを通じて、読者が最適なAIツールを選ぶための情報を提供します。</description>
-    <category>AIツール</category>
-    <category>ChatGPT</category>
-    <category>Google AI</category>
-    <category>Claude</category>
-    <category>自然言語処理</category>
-  </item>
-  <item>
     <title>【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-01-unreal-engine-5.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-01-unreal-engine-5.html</guid>
-    <pubDate>Mon, 01 Dec 2025 09:33:30 GMT</pubDate>
+    <pubDate>Mon, 01 Dec 2025 00:00:00 GMT</pubDate>
     <description>ふとテレビやネットで映像を見たとき、「これ、実写なの？それともCG？」と見分けがつかなくて驚いたことはありませんか？実はその多くが、たった一つの「共通のソフト」で作られていることをご存知でしょうか。</description>
     <category>Unreal Engine 5</category>
     <category>CG/映像</category>
@@ -155,10 +150,21 @@
     <category>初心者向け</category>
   </item>
   <item>
+    <title>【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-gmailpop32026.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-gmailpop32026.html</guid>
+    <pubDate>Sun, 30 Nov 2025 00:00:00 GMT</pubDate>
+    <description>2026年からGmailのPOP3受信機能が終了する件について、一般ユーザーへの影響と対策をわかりやすく解説。自分が影響を受けるかどうかのチェックリストや、転送設定への切り替え時の注意点も紹介します。</description>
+    <category>Gmail</category>
+    <category>POP3</category>
+    <category>メール管理</category>
+    <category>AIガバナンス</category>
+  </item>
+  <item>
     <title>絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-googleaistitchui.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-googleaistitchui.html</guid>
-    <pubDate>Sun, 30 Nov 2025 21:14:51 GMT</pubDate>
+    <pubDate>Sun, 30 Nov 2025 00:00:00 GMT</pubDate>
     <description>GoogleのAI「Stitch」に神アップデート！手書きメモから「動くアプリ」が一瞬で作れるようになりました。絵心ゼロでもOKなその衝撃的な進化と、具体的な使い方をわかりやすく解説します。</description>
     <category>Google AI</category>
     <category>デザインAI</category>
@@ -167,55 +173,21 @@
     <category>AI活用</category>
   </item>
   <item>
-    <title>【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-gmailpop32026.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-gmailpop32026.html</guid>
-    <pubDate>Sun, 30 Nov 2025 09:21:55 GMT</pubDate>
-    <description>2026年からGmailのPOP3受信機能が終了する件について、一般ユーザーへの影響と対策をわかりやすく解説。自分が影響を受けるかどうかのチェックリストや、転送設定への切り替え時の注意点も紹介します。</description>
-    <category>Gmail</category>
-    <category>POP3</category>
-    <category>メール管理</category>
-    <category>セキュリティ</category>
-  </item>
-  <item>
     <title>【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、&quot;1日5枚&quot;制限の真実</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-nanobanana.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-nanobanana.html</guid>
-    <pubDate>Sun, 30 Nov 2025 07:35:00 GMT</pubDate>
+    <pubDate>Sun, 30 Nov 2025 00:00:00 GMT</pubDate>
     <description>Googleの次世代IDE「Antigravity」に搭載された画像生成AI「Nano Banana Pro」を徹底解説。その正体であるGemini 3 Pro Imageの性能、1日5枚と言われる厳しい制限の理由、そして有料版のコストまで、開発者が知るべき全情報をまとめました。</description>
     <category>Antigravity</category>
     <category>Nano Banana Pro</category>
     <category>Gemini 3</category>
-    <category>画像生成AI</category>
-  </item>
-  <item>
-    <title>2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-ai1.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-30-ai1.html</guid>
-    <pubDate>Sun, 30 Nov 2025 06:09:44 GMT</pubDate>
-    <description>2025年の個人開発（Indie Hacking）における最新トレンドを徹底解説。AI活用による「一人企業」の実現性、海外で主流のBuild in Public、そして日本市場の独自性まで、個人開発者が知っておくべき生存戦略をまとめました。</description>
-    <category>個人開発</category>
-    <category>AI活用</category>
-    <category>Build in Public</category>
-    <category>海外トレンド</category>
-  </item>
-  <item>
-    <title>FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-29-flux2zero-shotai.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-29-flux2zero-shotai.html</guid>
-    <pubDate>Sat, 29 Nov 2025 21:13:49 GMT</pubDate>
-    <description>FLUX.2によるZero-Shotマルチ編集ワークフローを徹底解説。AIを活用した効率的な動画編集手法を学び、ComfyUIの具体的操作で初心者でも実践可能なスキルを習得します。</description>
-    <category>FLUX.2</category>
-    <category>Zero-Shot編集</category>
-    <category>AI動画編集</category>
-    <category>ComfyUI</category>
-    <category>技術革新</category>
+    <category>画像生成</category>
   </item>
   <item>
     <title>【衝撃】イーロン・マスクの報酬が「150兆円」！？ このニュースがあなたの未来をどう変えるのか、わかりやすく解説します。</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-29-150.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-29-150.html</guid>
-    <pubDate>Sat, 29 Nov 2025 10:04:33 GMT</pubDate>
+    <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
     <description>イーロン・マスクの報酬が最大150兆円になるというニュース。これは単なる金額の話ではなく、「労働」や「運転」がなくなる未来への手付金だった？その背景と私たちの生活への影響をわかりやすく解説します。</description>
     <category>イーロン・マスク</category>
     <category>ビジネス戦略</category>
@@ -224,45 +196,45 @@
     <category>持続可能エネルギー</category>
   </item>
   <item>
+    <title>FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-29-flux2zero-shotai.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-29-flux2zero-shotai.html</guid>
+    <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+    <description>FLUX.2によるZero-Shotマルチ編集ワークフローを徹底解説。AIを活用した効率的な動画編集手法を学び、ComfyUIの具体的操作で初心者でも実践可能なスキルを習得します。</description>
+    <category>FLUX</category>
+    <category>Zero-Shot編集</category>
+    <category>AI動画編集</category>
+    <category>ComfyUI</category>
+    <category>技術革新</category>
+  </item>
+  <item>
     <title>思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-28-aqua-voiceai.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-28-aqua-voiceai.html</guid>
-    <pubDate>Fri, 28 Nov 2025 21:14:11 GMT</pubDate>
+    <pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate>
     <description>Aqua Voiceは単なる音声入力ではありません。「声で編集する」次世代エディタです。Y Combinator発のこのツールが、なぜ今話題なのか？料金や使い方も含めて徹底解説します。</description>
     <category>Aqua Voice</category>
     <category>音声入力AI</category>
     <category>生産性向上</category>
-    <category>レビュー</category>
+    <category>比較検証</category>
   </item>
   <item>
     <title>【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-28-sora-2.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-28-sora-2.html</guid>
-    <pubDate>Fri, 28 Nov 2025 07:29:18 GMT</pubDate>
+    <pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate>
     <description>OpenAIの動画生成AI「Sora 2」に大幅なアップデートが施されました。「ガチャ」から「演出」へと進化した新機能「ストーリーボード」や、キャラクターの一貫性を保つ新機能について、専門用語を使わずにわかりやすく解説します。</description>
-    <category>動画生成AI</category>
+    <category>動画生成</category>
     <category>OpenAI</category>
     <category>ストーリーボード</category>
     <category>スタイル動画</category>
     <category>クリエイティブテクノロジー</category>
   </item>
   <item>
-    <title>Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-27-google-workspace-flowsnotebooklm.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-27-google-workspace-flowsnotebooklm.html</guid>
-    <pubDate>Thu, 27 Nov 2025 22:57:40 GMT</pubDate>
-    <description>Google Workspace FlowsとNotebookLMがもたらす知識管理と業務自動化の進化を探る。特に、Claude for Chromeとの統合がどのように業務効率を向上させるかを具体例を交えて解説し、ビジネス現場での活用可能性を示す。</description>
-    <category>Google Workspace</category>
-    <category>NotebookLM</category>
-    <category>業務自動化</category>
-    <category>AIトピック</category>
-    <category>情報整理</category>
-  </item>
-  <item>
     <title>Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-27-claude-for-chrome.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-27-claude-for-chrome.html</guid>
-    <pubDate>Thu, 27 Nov 2025 11:49:48 GMT</pubDate>
+    <pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate>
     <description>2025年における「自律型ブラウジング」の現状と展望。AIは「対話」から「実行」へ。月額100ドルの価値はあるのか？エンジニアやマーケター必見の徹底分析レポート。</description>
     <category>Claude</category>
     <category>Chrome拡張</category>
@@ -271,10 +243,22 @@
     <category>徹底分析</category>
   </item>
   <item>
+    <title>Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-27-google-workspace-flowsnotebooklm.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-27-google-workspace-flowsnotebooklm.html</guid>
+    <pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate>
+    <description>Google Workspace FlowsとNotebookLMがもたらす知識管理と業務自動化の進化を探る。特に、Claude for Chromeとの統合がどのように業務効率を向上させるかを具体例を交えて解説し、ビジネス現場での活用可能性を示す。</description>
+    <category>Google Workspace</category>
+    <category>NotebookLM</category>
+    <category>業務自動化</category>
+    <category>AIトピック</category>
+    <category>情報整理</category>
+  </item>
+  <item>
     <title>【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-27-llm.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-27-llm.html</guid>
-    <pubDate>Thu, 27 Nov 2025 03:46:53 GMT</pubDate>
+    <pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate>
     <description>2025年11月に登場したGemini 3、8月にリリースされたGPT-5、そして根強い人気のClaude 3.5 Sonnet。最新3大LLMの性能、機能、コストを徹底比較。Deep Thinkモードやエージェント機能など、それぞれの強みを解説します。</description>
     <category>LLM</category>
     <category>生成AI</category>
@@ -286,7 +270,7 @@
     <title>APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-26-apihttp.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-26-apihttp.html</guid>
-    <pubDate>Wed, 26 Nov 2025 12:08:03 GMT</pubDate>
+    <pubDate>Wed, 26 Nov 2025 00:00:00 GMT</pubDate>
     <description>APIとHTTPリクエストの基本概念を深掘りし、ビジネスや開発現場での具体的な活用方法を解説します。技術的な背景を理解し、実践的なユースケースを知ることで、APIを効果的に活用するための知識を提供します。</description>
     <category>API</category>
     <category>HTTPリクエスト</category>
@@ -301,7 +285,7 @@
     <title>GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-26-gpt-4o.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-26-gpt-4o.html</guid>
-    <pubDate>Wed, 26 Nov 2025 00:11:53 GMT</pubDate>
+    <pubDate>Wed, 26 Nov 2025 00:00:00 GMT</pubDate>
     <description>GPT-4oはテキストとマルチメディアの融合を実現し、ビジネス効率化やクリエイティブプロセスの革新を推進します。本記事ではその技術的背景と実用的ユースケースを詳述します。</description>
     <category>ChatGPT</category>
     <category>AI技術</category>
@@ -312,7 +296,7 @@
     <title>AI時代の革新: タイニーチームとデータ駆動型組織の未来</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-25-ai.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-25-ai.html</guid>
-    <pubDate>Tue, 25 Nov 2025 12:09:49 GMT</pubDate>
+    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
     <description>AIを活用する組織の成功法則を探る。タイニーチームの役割とデータ駆動型アプローチがどのように企業の競争力を高めるのかを分析する。</description>
     <category>AIトピック</category>
     <category>データ駆動型</category>
@@ -324,7 +308,7 @@
     <title>Gemini新モデルの技術的進化と実践的応用の可能性</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-25-gemini.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-25-gemini.html</guid>
-    <pubDate>Tue, 25 Nov 2025 00:10:33 GMT</pubDate>
+    <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
     <description>Geminiの新モデルが公開され、その技術的進化とビジネス現場での応用可能性を徹底解説します。新しいAI技術がどのように業務効率を向上させるのかを探ります。</description>
     <category>Google AI</category>
     <category>AI技術</category>
@@ -333,10 +317,22 @@
     <category>技術進化</category>
   </item>
   <item>
+    <title>Gemini 3: マルチモーダルAIの新時代と実務活用の可能性</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-24-gemini-3-ai.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-24-gemini-3-ai.html</guid>
+    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
+    <description>Googleの新AIモデルGemini 3は、マルチモーダル性能を強化し、ビジネスや教育現場での実務活用を加速させます。本記事ではその技術的背景と具体的なユースケースを深掘りします。</description>
+    <category>Gemini 3</category>
+    <category>マルチモーダル</category>
+    <category>生成AI</category>
+    <category>Google AI</category>
+    <category>技術革新</category>
+  </item>
+  <item>
     <title>Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-24-nano-banana-pro-gemini-25.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-24-nano-banana-pro-gemini-25.html</guid>
-    <pubDate>Mon, 24 Nov 2025 12:08:17 GMT</pubDate>
+    <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
     <description>GoogleのNano Banana Proは、Gemini 2.5を基盤にした画像生成AIで、リアルさとスピードを兼ね備えています。本記事ではその技術的背景と実用的なユースケースを詳しく解説します。</description>
     <category>AI画像生成</category>
     <category>Gemini 2.5</category>
@@ -345,24 +341,12 @@
     <category>デジタルクリエイティブ</category>
   </item>
   <item>
-    <title>Gemini 3: マルチモーダルAIの新時代と実務活用の可能性</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-24-gemini-3-ai.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-24-gemini-3-ai.html</guid>
-    <pubDate>Mon, 24 Nov 2025 00:12:29 GMT</pubDate>
-    <description>Googleの新AIモデルGemini 3は、マルチモーダル性能を強化し、ビジネスや教育現場での実務活用を加速させます。本記事ではその技術的背景と具体的なユースケースを深掘りします。</description>
-    <category>Gemini 3</category>
-    <category>マルチモーダルAI</category>
-    <category>生成AI</category>
-    <category>Google AI</category>
-    <category>技術革新</category>
-  </item>
-  <item>
     <title>Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-23-nano-banana-proai.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-23-nano-banana-proai.html</guid>
-    <pubDate>Sun, 23 Nov 2025 12:07:14 GMT</pubDate>
+    <pubDate>Sun, 23 Nov 2025 00:00:00 GMT</pubDate>
     <description>Nano Banana Proは、既存の画像編集を革新するAIとして注目されています。本記事では、その技術的背景、具体的なユースケース、競合との比較を通じて、その真価を検証します。</description>
-    <category>画像生成AI</category>
+    <category>画像生成</category>
     <category>Nano Banana Pro</category>
     <category>技術革新</category>
     <category>AI活用</category>
@@ -371,7 +355,7 @@
     <title>Stitch 2.0の進化：Gemini3とNanobanana Proの実力を徹底解剖</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-23-stitch-20gemini3nanobanana-pro.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-23-stitch-20gemini3nanobanana-pro.html</guid>
-    <pubDate>Sun, 23 Nov 2025 01:36:00 GMT</pubDate>
+    <pubDate>Sun, 23 Nov 2025 00:00:00 GMT</pubDate>
     <description>Stitch 2.0は、Gemini3とNanobanana Proを搭載し、UIデザインの新たな可能性を切り開きます。本記事では、その技術的特性と実際のユースケースを詳述し、導入のメリットと課題を探ります。</description>
     <category>AI技術</category>
     <category>UIデザイン</category>
@@ -383,7 +367,7 @@
     <title>Canva AIの革新: 資料作成の効率化とその限界</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-22-canva-ai.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-22-canva-ai.html</guid>
-    <pubDate>Sat, 22 Nov 2025 07:09:20 GMT</pubDate>
+    <pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate>
     <description>Canva AIは資料作成を劇的に効率化するツールです。AIの力を借りて、デザイン知識がなくてもプロ級の資料を作成可能にします。本記事では、その技術的背景と実用的なユースケース、そして現時点での制約を詳述します。</description>
     <category>Canva AI</category>
     <category>資料作成</category>
@@ -392,30 +376,10 @@
     <category>デザインツール</category>
   </item>
   <item>
-    <title>Gemini 3の技術革新：軽量化と専門性の未来</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-22-gemini-3.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-22-gemini-3.html</guid>
-    <pubDate>Sat, 22 Nov 2025 06:33:28 GMT</pubDate>
-    <description>Gemini 3の軽量モデルがもたらす技術的進化と、その実用性を深く探ります。</description>
-    <category>AI技術</category>
-    <category>モデル軽量化</category>
-    <category>ビジネス応用</category>
-  </item>
-  <item>
-    <title>Gemini 3 Proがもたらす未来のAI体験、驚きの連続！</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-22-gemini-3-proai.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-22-gemini-3-proai.html</guid>
-    <pubDate>Sat, 22 Nov 2025 06:16:17 GMT</pubDate>
-    <description>Gemini 3 ProはただのAIじゃない。実際に触ってみたら、まるで未来がここに来たような感覚。これ、絶対に試してみる価値あり！</description>
-    <category>AIトピック</category>
-    <category>Gemini 3 Pro</category>
-    <category>技術革新</category>
-  </item>
-  <item>
     <title>Gemini 3: Googleの次世代AIがもたらす革新と挑戦</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-22-gemini-3-googleai.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-22-gemini-3-googleai.html</guid>
-    <pubDate>Sat, 22 Nov 2025 03:48:51 GMT</pubDate>
+    <pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate>
     <description>Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。</description>
     <category>AIトピック</category>
     <category>Gemini 3</category>
@@ -427,7 +391,7 @@
     <title>Gemini 3の革新: AIアシスタントの新機能と応用展望</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-20-gemini-3-ai.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-20-gemini-3-ai.html</guid>
-    <pubDate>Thu, 20 Nov 2025 01:54:53 GMT</pubDate>
+    <pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate>
     <description>この記事では、Googleの最新AIアシスタントGemini 3の新機能とその技術的背景、実践的な応用例を深掘りします。</description>
     <category>Gemini 3</category>
     <category>AIアシスタント</category>
@@ -439,7 +403,7 @@
     <title>Google Anti-Gravityの可能性とIDE業界へのインパクト</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-19-google-anti-gravityide.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-19-google-anti-gravityide.html</guid>
-    <pubDate>Wed, 19 Nov 2025 00:19:45 GMT</pubDate>
+    <pubDate>Wed, 19 Nov 2025 00:00:00 GMT</pubDate>
     <description>この記事では、Googleの新しいIDE『Anti-Gravity』が業界に与える影響とその技術的特性を深掘りします。</description>
     <category>Google Anti-Gravity</category>
     <category>IDE</category>
@@ -450,19 +414,30 @@
     <title>AI駆動開発とは？開発者の生産性を劇的に向上させる新しい開発手法</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-18-ai-driven-development.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-18-ai-driven-development.html</guid>
-    <pubDate>Tue, 18 Nov 2025 23:59:00 GMT</pubDate>
+    <pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate>
     <description>GitHub Copilot、ChatGPT、Claude Codeなど、AIツールを活用した「AI駆動開発」の考え方と導入手順、現場での実践ポイントをまとめました。</description>
     <category>AI駆動開発</category>
-    <category>GitHub Copilot</category>
+    <category>GitHub</category>
     <category>生産性向上</category>
     <category>コーディング支援</category>
     <category>開発ツール</category>
   </item>
   <item>
+    <title>AI導入で成功する企業の条件とその技術的要因</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-18-ai.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-18-ai.html</guid>
+    <pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate>
+    <description>この記事を読むと、AI導入に成功する企業の特徴と技術的要因について深く理解できます。</description>
+    <category>AI導入</category>
+    <category>ビジネス効率化</category>
+    <category>技術要因</category>
+    <category>企業成長</category>
+  </item>
+  <item>
     <title>AI時代に淘汰されない人材になるための5つのステップ</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-18-ai5.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-18-ai5.html</guid>
-    <pubDate>Tue, 18 Nov 2025 23:58:00 GMT</pubDate>
+    <pubDate>Tue, 18 Nov 2025 00:00:00 GMT</pubDate>
     <description>この記事では、AIの進化が労働市場に与える影響と、AI時代において淘汰されないための具体的なステップを解説します。</description>
     <category>AI失業</category>
     <category>労働市場</category>
@@ -471,21 +446,10 @@
     <category>AI適応</category>
   </item>
   <item>
-    <title>AI導入で成功する企業の条件とその技術的要因</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-18-ai.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-18-ai.html</guid>
-    <pubDate>Tue, 18 Nov 2025 12:06:20 GMT</pubDate>
-    <description>この記事を読むと、AI導入に成功する企業の特徴と技術的要因について深く理解できます。</description>
-    <category>AI導入</category>
-    <category>ビジネス効率化</category>
-    <category>技術要因</category>
-    <category>企業成長</category>
-  </item>
-  <item>
     <title>AI活用を0から学ぶ4つのステップ：初心者向け完全ガイド</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-17-ai04.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-17-ai04.html</guid>
-    <pubDate>Mon, 17 Nov 2025 23:59:00 GMT</pubDate>
+    <pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate>
     <description>この記事を読むと、AI初心者がどのようにAIを活用し始めるかを具体的に理解できます。4つのステップでわかりやすく解説します。</description>
     <category>AI活用</category>
     <category>初心者ガイド</category>
@@ -496,7 +460,7 @@
     <title>ChatGPTのグループチャット機能がもたらす業務効率化の新潮流</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-17-chatgpt.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-17-chatgpt.html</guid>
-    <pubDate>Mon, 17 Nov 2025 23:58:00 GMT</pubDate>
+    <pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate>
     <description>この記事を読むと、ChatGPTの新たなグループチャット機能がどのように業務効率化を促進し、AIの活用を次のレベルに引き上げるかを理解できます。</description>
     <category>ChatGPT</category>
     <category>AI</category>
@@ -505,20 +469,10 @@
     <category>テクノロジー</category>
   </item>
   <item>
-    <title>NotebookLMの最新アップデートでAIノート作成がさらに便利に！</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-16-notebooklmai.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-16-notebooklmai.html</guid>
-    <pubDate>Sun, 16 Nov 2025 23:59:00 GMT</pubDate>
-    <description>NotebookLMの新機能により、AIを活用したノート作成がより簡単になりました。この記事では、具体的な機能とその活用方法を詳しく解説します。</description>
-    <category>AIノート作成</category>
-    <category>情報整理</category>
-    <category>生成AI</category>
-  </item>
-  <item>
     <title>次世代AI「Gemini 3.0」と新モデルの動向を探る</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-16-aigemini-30.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-16-aigemini-30.html</guid>
-    <pubDate>Sun, 16 Nov 2025 23:58:00 GMT</pubDate>
+    <pubDate>Sun, 16 Nov 2025 00:00:00 GMT</pubDate>
     <description>この記事では、Googleの次世代AIモデル「Gemini 3.0」と「Sherlock Think Alpha」および「Sherlock Dash Alpha」についての最新情報を解説します。読者は新しいAI技術がどのように活用できるかを理解できます。</description>
     <category>生成AI</category>
     <category>AIモデル</category>
@@ -526,26 +480,36 @@
     <category>AI活用</category>
   </item>
   <item>
-    <title>ChatGPTのグループチャット機能で業務効率を劇的に向上させる方法</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-15-chatgpt.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-15-chatgpt.html</guid>
-    <pubDate>Sat, 15 Nov 2025 23:58:00 GMT</pubDate>
-    <description>ChatGPTの新しいグループチャット機能を活用することで、チームのコミュニケーションを効率化し、生産性を向上させる方法を解説します。</description>
-    <category>ChatGPT</category>
-    <category>グループチャット</category>
-    <category>業務効率化</category>
-    <category>AI活用</category>
+    <title>NotebookLMの最新アップデートでAIノート作成がさらに便利に！</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-16-notebooklmai.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-16-notebooklmai.html</guid>
+    <pubDate>Sun, 16 Nov 2025 00:00:00 GMT</pubDate>
+    <description>NotebookLMの新機能により、AIを活用したノート作成がより簡単になりました。この記事では、具体的な機能とその活用方法を詳しく解説します。</description>
+    <category>AIノート作成</category>
+    <category>情報整理</category>
+    <category>生成AI</category>
   </item>
   <item>
     <title>AIツール徹底比較：ChatGPT、Gemini、PixAIの選び方</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-15-aichatgptgeminipixai.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-15-aichatgptgeminipixai.html</guid>
-    <pubDate>Sat, 15 Nov 2025 23:57:00 GMT</pubDate>
+    <pubDate>Sat, 15 Nov 2025 00:00:00 GMT</pubDate>
     <description>AIツールのChatGPT、Gemini、PixAIを徹底比較し、あなたの創作活動に最適な選択肢を見つけるためのガイドです。</description>
     <category>生成AI</category>
     <category>AIツール比較</category>
     <category>PixAI</category>
     <category>ChatGPT</category>
+  </item>
+  <item>
+    <title>ChatGPTのグループチャット機能で業務効率を劇的に向上させる方法</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-15-chatgpt.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/11/2025-11-15-chatgpt.html</guid>
+    <pubDate>Sat, 15 Nov 2025 00:00:00 GMT</pubDate>
+    <description>ChatGPTの新しいグループチャット機能を活用することで、チームのコミュニケーションを効率化し、生産性を向上させる方法を解説します。</description>
+    <category>ChatGPT</category>
+    <category>グループチャット</category>
+    <category>業務効率化</category>
+    <category>AI活用</category>
   </item>
 </channel>
 </rss>

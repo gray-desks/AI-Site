@@ -44,6 +44,62 @@
     "createdAt": "2025-12-05T14:51:31.007Z"
   },
   {
+    "title": "Deepseek v3.2レビュー：ローカル環境での生成AI活用とコーディング効率の向上",
+    "date": "2025-12-05",
+    "summary": "Deepseek v3.2の新機能を詳細に分析し、ローカル環境でのパフォーマンス向上やコーディングプロセスへの具体的な利点を検証します。生成AIのビジネス活用に向けた実践的な洞察を提供します。",
+    "tags": [
+      {
+        "slug": "deepseek",
+        "label": "Deepseek",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "ai",
+        "label": "生成AI",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "tag-3",
+        "label": "コーディング",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "business",
+        "label": "業務効率化",
+        "category": "ユースケース",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "tag-5",
+        "label": "異常検知",
+        "category": "その他",
+        "style": "accent-blue"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-05-deepseek-v32ai.html",
+    "slug": "2025-12-05-deepseek-v32ai",
+    "publishedAt": "2025-12-05T00:00:00.000Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-02",
+      "src": "assets/img/article-templates/ai-core-02.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント2）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "createdAt": "2025-12-05T21:17:06.116Z"
+  },
+  {
     "title": "FFGO技術解説：動画制作の一貫性を向上させる新手法の可能性",
     "date": "2025-12-04",
     "summary": "Wan2.2の新技術「FFGO」は、動画制作における一貫性を向上させる革新的なアプローチです。本記事ではFFGOの仕組み、導入メリット、具体的なユースケースを深掘りし、今後の動画制作に与える影響を考察します。",

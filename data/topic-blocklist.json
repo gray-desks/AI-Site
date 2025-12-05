@@ -124,5 +124,61 @@
     "sourceName": "google-school",
     "videoTitle": "【完全自動化！】「まじん式プロンプト×Workflows」で1行書くだけでGoogleスライド完全自動生成へ！",
     "blockedAt": "2025-12-05T09:24:51.741Z"
+  },
+  {
+    "topicKey": "urlai-ecaibandy-ai",
+    "reason": "theme-duplicate",
+    "sourceName": "AI-Hakase",
+    "videoTitle": "【URL貼るだけ】AIが勝手に「売れる広告動画」を量産してくれる?! EC特化型AIエージェント『Bandy AI』が革命的すぎる件",
+    "blockedAt": "2025-12-05T21:14:37.285Z"
+  },
+  {
+    "topicKey": "no1ainottanotta-memo",
+    "reason": "theme-duplicate",
+    "sourceName": "keitoaiweb",
+    "videoTitle": "【文字起こし精度No.1】AI議事録ツール『Notta』と『Notta Memo』がすごく便利！",
+    "blockedAt": "2025-12-05T21:15:34.491Z"
+  },
+  {
+    "topicKey": "claude-45-opus-n8n10web-webain8n",
+    "reason": "theme-duplicate",
+    "sourceName": "tomos_aiagent",
+    "videoTitle": "【魔法】Claude 4.5 Opus × n8nなら10分でWebアプリ開発!? 初心者さん向け、自動Web開発（AIワークフロー・n8n）",
+    "blockedAt": "2025-12-05T21:15:37.905Z"
+  },
+  {
+    "topicKey": "claudecode",
+    "reason": "theme-duplicate",
+    "sourceName": "ai_masaou",
+    "videoTitle": "【超有料級】ClaudeCodeを本気の徹底解説！全ての基礎から知るべき全てを網羅した完全解説",
+    "blockedAt": "2025-12-05T21:15:41.201Z"
+  },
+  {
+    "topicKey": "google-workspace-studioai",
+    "reason": "theme-duplicate",
+    "sourceName": "iketomo-ch",
+    "videoTitle": "Google Workspace Studioがでた！ワークフロー型AIエージェントを簡単に作れて、無料で、しかもセキュリティも安心！これは使うしかない！",
+    "blockedAt": "2025-12-05T21:15:44.309Z"
+  },
+  {
+    "topicKey": "ai",
+    "reason": "theme-duplicate",
+    "sourceName": "kei31e",
+    "videoTitle": "なぜAI問題はもめるのか",
+    "blockedAt": "2025-12-05T21:15:47.895Z"
+  },
+  {
+    "topicKey": "chatgptai-chatgpt-ai-google-shorts",
+    "reason": "theme-duplicate",
+    "sourceName": "chaen-ai-lab",
+    "videoTitle": "プロがChatGPTの全てを徹底解説、課金する必要はあるのか各プランの違いはこれ#AI #chatgpt  #仕事効率化 #ai #チャエン #google #shorts",
+    "blockedAt": "2025-12-05T21:15:51.738Z"
+  },
+  {
+    "topicKey": "aiflowithosai",
+    "reason": "theme-duplicate",
+    "sourceName": "ウェブマニア",
+    "videoTitle": "凄っ！！あらゆる作業を自動化してくれるAIブラウザ『FlowithOS』がヤバすぎ！これ従来のAIブラウザとはレベルが違うぞ...",
+    "blockedAt": "2025-12-05T21:15:54.525Z"
   }
 ]

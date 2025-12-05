@@ -374,5 +374,13 @@
     "sourceName": "technavi_tooru",
     "videoTitle": "Mistral 3 登場！最新オープンソースモデルの実力とは？",
     "draftUrl": "posts/2025/12/2025-12-05-mistral-3ai.html"
+  },
+  {
+    "topicKey": "deepseek-v32",
+    "firstSeen": "2025-12-05T21:17:05.846Z",
+    "lastPublishedAt": "2025-12-05",
+    "sourceName": "technavi_tooru",
+    "videoTitle": "Deepseek v3.2 登場！最新アップデートをローカルとコーディングで検証してみた",
+    "draftUrl": "posts/2025/12/2025-12-05-deepseek-v32ai.html"
   }
 ]
