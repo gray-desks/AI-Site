@@ -1,37 +1,38 @@
 ---
-title: "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新"
-date: "2025-11-29"
-slug: "2025-11-29-flux2zero-shotai"
-summary: "FLUX.2によるZero-Shotマルチ編集ワークフローを徹底解説。AIを活用した効率的な動画編集手法を学び、ComfyUIの具体的操作で初心者でも実践可能なスキルを習得します。"
-status: "published"
+title: FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新
+date: '2025-11-29'
+slug: 2025-11-29-flux2zero-shotai
+summary: >-
+  FLUX.2によるZero-Shotマルチ編集ワークフローを徹底解説。AIを活用した効率的な動画編集手法を学び、ComfyUIの具体的操作で初心者でも実践可能なスキルを習得します。
+status: published
 tags:
-  - slug: "flux2"
-    label: "FLUX.2"
-    category: "その他"
-    style: "accent-pink"
-  - slug: "zero-shot"
-    label: "Zero-Shot編集"
-    category: "その他"
-    style: "accent-lavender"
-  - slug: "ai"
-    label: "AI動画編集"
-    category: "その他"
-    style: "accent-gold"
-  - slug: "comfyui"
-    label: "ComfyUI"
-    category: "その他"
-    style: "accent-pink"
-  - slug: "tag-5"
-    label: "技術革新"
-    category: "その他"
-    style: "accent-sky"
+  - slug: flux
+    label: FLUX
+    category: 企業・プロダクト
+    style: accent-pink
+  - slug: zero-shot
+    label: Zero-Shot編集
+    category: その他
+    style: accent-lavender
+  - slug: ai
+    label: AI動画編集
+    category: その他
+    style: accent-gold
+  - slug: comfyui
+    label: ComfyUI
+    category: 企業・プロダクト
+    style: accent-pink
+  - slug: tag-5
+    label: 技術革新
+    category: その他
+    style: accent-sky
 image:
-  key: "flux2-comfyui"
-  src: "assets/img/posts/2025/11/flux2_comfyui_mv_editing.png"
-  alt: "FLUX.2とComfyUIによるAI動画編集のイメージ"
-  label: "AI Video Editing"
-  caption: "FLUX.2とComfyUIを活用した次世代の動画編集ワークフロー"
-  category: "ai"
+  key: flux2-comfyui
+  src: assets/img/posts/2025/11/flux2_comfyui_mv_editing.png
+  alt: FLUX.2とComfyUIによるAI動画編集のイメージ
+  label: AI Video Editing
+  caption: FLUX.2とComfyUIを活用した次世代の動画編集ワークフロー
+  category: ai
 ---
 
 「動画編集の面倒な作業を、AIが全部やってくれたらいいのに」

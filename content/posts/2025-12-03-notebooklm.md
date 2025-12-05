@@ -1,33 +1,30 @@
 ---
-title: "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法"
-date: "2025-12-03"
-slug: "2025-12-03-notebooklm"
-summary: "NotebookLMの新機能であるインフォグラフィックとスライド機能を徹底分析。データ視覚化やプレゼンテーション作成の効率化を通じて、業務の生産性向上に寄与する具体的なユースケースを紹介します。"
-status: "draft"
+title: NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法
+date: '2025-12-03'
+slug: 2025-12-03-notebooklm
+summary: >-
+  NotebookLMの新機能であるインフォグラフィックとスライド機能を徹底分析。データ視覚化やプレゼンテーション作成の効率化を通じて、業務の生産性向上に寄与する具体的なユースケースを紹介します。
+status: draft
 tags:
-  - slug: "notebooklm"
-    label: "NotebookLM"
-    category: "その他"
-    style: "accent-lavender"
-  - slug: "ai-tools"
-    label: "AIツール"
-    category: "ツール"
-    style: "accent-lavender"
-  - slug: "tag-3"
-    label: "ビジネス効率化"
-    category: "その他"
-    style: "accent-blue"
-  - slug: "draft"
-    label: "下書き"
-    category: "運用"
-    style: "accent-gold"
+  - slug: notebooklm
+    label: NotebookLM
+    category: 企業・プロダクト
+    style: accent-blue
+  - slug: ai
+    label: AIツール
+    category: その他
+    style: accent-lavender
+  - slug: tag-3
+    label: ビジネス効率化
+    category: その他
+    style: accent-blue
 image:
-  key: "infra-01"
-  src: "assets/img/article-templates/infra-01.webp"
-  alt: "クラウド連携を示す幾何学模様（バリアント1）"
-  label: "クラウド・インフラ"
-  caption: "Googleやクラウドプラットフォーム関連トピック向け。"
-  category: "infrastructure"
+  key: infra-01
+  src: assets/img/article-templates/infra-01.webp
+  alt: クラウド連携を示す幾何学模様（バリアント1）
+  label: クラウド・インフラ
+  caption: Googleやクラウドプラットフォーム関連トピック向け。
+  category: infrastructure
 ---
 
 2025年12月、AI技術の進化が加速する中で、Googleが提供する「NotebookLM」に新たな機能が追加されました。特に注目すべきは、インフォグラフィックとスライド機能です。これらの機能は、データの視覚化やプレゼンテーションの作成において、どのようにビジネスシーンでの生産性向上に寄与するのでしょうか。本記事では、これらの新機能の詳細を分析し、具体的なユースケースを通じてその実用性を検証します。特に、データ分析やプレゼンテーション作成における効率化の観点から、どのように業務改善が図れるのかを掘り下げていきます。最後に、これらの機能をどのように活用すべきか、読者にとっての次のステップを示唆します。

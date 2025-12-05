@@ -1,37 +1,39 @@
 ---
-title: "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド"
-date: "2025-12-02"
-slug: "2025-12-02-pixaireference-pro"
-summary: "「うちの子」をAIで描きたいけど、毎回顔が変わってしまう…そんな悩みを解決するPixAIの「Reference Pro」機能を徹底解説。絵心がなくても、スマホ一つでキャラクターを固定して描き続ける方法を分かりやすく紹介します。"
-status: "published"
+title: 【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド
+date: '2025-12-02'
+slug: 2025-12-02-pixaireference-pro
+summary: >-
+  「うちの子」をAIで描きたいけど、毎回顔が変わってしまう…そんな悩みを解決するPixAIの「Reference
+  Pro」機能を徹底解説。絵心がなくても、スマホ一つでキャラクターを固定して描き続ける方法を分かりやすく紹介します。
+status: published
 tags:
-  - slug: "pixai"
-    label: "PixAI"
-    category: "企業・プロダクト"
-    style: "accent-purple"
-  - slug: "tag-2"
-    label: "画像編集"
-    category: "その他"
-    style: "accent-gold"
-  - slug: "ai"
-    label: "AI技術"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "tag-4"
-    label: "日本語プロンプト"
-    category: "その他"
-    style: "accent-blue"
-  - slug: "tag-5"
-    label: "マルチ画像参照"
-    category: "その他"
-    style: "accent-sky"
+  - slug: pixai
+    label: PixAI
+    category: 企業・プロダクト
+    style: accent-pink
+  - slug: tag-2
+    label: 画像編集
+    category: その他
+    style: accent-gold
+  - slug: ai
+    label: AI技術
+    category: その他
+    style: accent-orange
+  - slug: tag-4
+    label: 日本語プロンプト
+    category: その他
+    style: accent-blue
+  - slug: tag-5
+    label: マルチ画像参照
+    category: その他
+    style: accent-sky
 image:
-  key: "pixai-reference-pro"
-  src: "assets/img/posts/2025/12/pixai_reference_pro.png"
-  alt: "PixAI Reference Proでキャラクターを固定"
-  label: "PixAI"
-  caption: "PixAI Reference Proでキャラクターを固定"
-  category: "ai"
+  key: pixai-reference-pro
+  src: assets/img/posts/2025/12/pixai_reference_pro.png
+  alt: PixAI Reference Proでキャラクターを固定
+  label: PixAI
+  caption: PixAI Reference Proでキャラクターを固定
+  category: ai
 ---
 
 最近、AIでイラストを作る話題、よく耳にしますよね。

@@ -1,33 +1,35 @@
 ---
-title: "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実"
-date: "2025-11-30"
-slug: "2025-11-30-nanobanana"
-summary: "Googleの次世代IDE「Antigravity」に搭載された画像生成AI「Nano Banana Pro」を徹底解説。その正体であるGemini 3 Pro Imageの性能、1日5枚と言われる厳しい制限の理由、そして有料版のコストまで、開発者が知るべき全情報をまとめました。"
-status: "published"
+title: 【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、"1日5枚"制限の真実
+date: '2025-11-30'
+slug: 2025-11-30-nanobanana
+summary: >-
+  Googleの次世代IDE「Antigravity」に搭載された画像生成AI「Nano Banana Pro」を徹底解説。その正体であるGemini 3
+  Pro Imageの性能、1日5枚と言われる厳しい制限の理由、そして有料版のコストまで、開発者が知るべき全情報をまとめました。
+status: published
 tags:
-  - slug: "antigravity"
-    label: "Antigravity"
-    category: "ツール"
-    style: "accent-purple"
-  - slug: "nano-banana-pro"
-    label: "Nano Banana Pro"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "gemini-3"
-    label: "Gemini 3"
-    category: "企業・プロダクト"
-    style: "accent-gold"
-  - slug: "image-generation"
-    label: "画像生成AI"
-    category: "技術トピック"
-    style: "accent-pink"
+  - slug: antigravity
+    label: Antigravity
+    category: その他
+    style: accent-lavender
+  - slug: nano-banana-pro
+    label: Nano Banana Pro
+    category: その他
+    style: accent-orange
+  - slug: gemini-3
+    label: Gemini 3
+    category: その他
+    style: accent-gold
+  - slug: image-gen
+    label: 画像生成
+    category: 技術トピック
+    style: accent-pink
 image:
-  key: "nanobanana-hero"
-  src: "assets/img/posts/2025/11/nanobanana_pro_hero.png"
-  alt: "Nano Banana ProとAntigravityのイメージイラスト"
-  label: "Tech Deep Dive"
-  caption: "AntigravityとNano Banana Proの融合イメージ"
-  category: "ai"
+  key: nanobanana-hero
+  src: assets/img/posts/2025/11/nanobanana_pro_hero.png
+  alt: Nano Banana ProとAntigravityのイメージイラスト
+  label: Tech Deep Dive
+  caption: AntigravityとNano Banana Proの融合イメージ
+  category: ai
 ---
 
 ![Nano Banana ProとAntigravityのイメージイラスト](../../../assets/img/posts/2025/11/nanobanana_pro_hero.png)

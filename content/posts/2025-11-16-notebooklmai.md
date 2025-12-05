@@ -1,29 +1,29 @@
 ---
-title: "NotebookLMの最新アップデートでAIノート作成がさらに便利に！"
-date: "2025-11-16"
-slug: "2025-11-16-notebooklmai"
-summary: "NotebookLMの新機能により、AIを活用したノート作成がより簡単になりました。この記事では、具体的な機能とその活用方法を詳しく解説します。"
-status: "published"
+title: NotebookLMの最新アップデートでAIノート作成がさらに便利に！
+date: '2025-11-16'
+slug: 2025-11-16-notebooklmai
+summary: NotebookLMの新機能により、AIを活用したノート作成がより簡単になりました。この記事では、具体的な機能とその活用方法を詳しく解説します。
+status: published
 tags:
-  - slug: "ai-note-taking"
-    label: "AIノート作成"
-    category: "その他"
-    style: "accent-neutral"
-  - slug: "information-management"
-    label: "情報整理"
-    category: "その他"
-    style: "accent-neutral"
-  - slug: "generative-ai"
-    label: "生成AI"
-    category: "技術トピック"
-    style: "accent-pink"
+  - slug: ai
+    label: AIノート作成
+    category: その他
+    style: accent-orange
+  - slug: tag-2
+    label: 情報整理
+    category: その他
+    style: accent-orange
+  - slug: ai-1
+    label: 生成AI
+    category: その他
+    style: accent-orange
 image:
-  key: "knowledge-02"
-  src: "assets/img/article-templates/knowledge-02.webp"
-  alt: "ノートや知識体系を示す重なり（バリアント2）"
-  label: "ナレッジグラフ"
-  caption: "NotebookLMや知識管理の話題に。"
-  category: "knowledge"
+  key: knowledge-02
+  src: assets/img/article-templates/knowledge-02.webp
+  alt: ノートや知識体系を示す重なり（バリアント2）
+  label: ナレッジグラフ
+  caption: NotebookLMや知識管理の話題に。
+  category: knowledge
 ---
 
 AI技術の進化により、日々の業務効率化がますます進んでいます。特に、AIを活用したノート作成ツールは、情報整理やアイデアの具現化に役立つため、多くのユーザーから注目されています。NotebookLMの最新アップデートでは、解説動画生成機能やDeep Research機能が追加され、さらに画像からノートを作成することが可能になりました。これにより、情報収集や整理が一層効率的に行えるようになり、特に個人ユーザーや小規模事業者にとっては大きな助けとなるでしょう。

@@ -21,7 +21,8 @@
       "Bash(npm start)",
       "Bash(npm run:*)",
       "WebSearch",
-      "Bash(git rebase:*)"
+      "Bash(git rebase:*)",
+      "Bash(bundle exec jekyll serve:*)"
     ],
     "deny": [],
     "ask": []

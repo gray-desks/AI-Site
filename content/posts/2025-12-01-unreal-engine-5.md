@@ -1,37 +1,38 @@
 ---
-title: "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説"
-date: "2025-12-01"
-slug: "2025-12-01-unreal-engine-5"
-summary: "ふとテレビやネットで映像を見たとき、「これ、実写なの？それともCG？」と見分けがつかなくて驚いたことはありませんか？実はその多くが、たった一つの「共通のソフト」で作られていることをご存知でしょうか。"
-status: "published"
+title: 【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説
+date: '2025-12-01'
+slug: 2025-12-01-unreal-engine-5
+summary: >-
+  ふとテレビやネットで映像を見たとき、「これ、実写なの？それともCG？」と見分けがつかなくて驚いたことはありませんか？実はその多くが、たった一つの「共通のソフト」で作られていることをご存知でしょうか。
+status: published
 tags:
-  - slug: "unreal-engine-5"
-    label: "Unreal Engine 5"
-    category: "その他"
-    style: "accent-teal"
-  - slug: "cg-video"
-    label: "CG/映像"
-    category: "その他"
-    style: "accent-lime"
-  - slug: "ai-utilization"
-    label: "AI活用"
-    category: "ユースケース"
-    style: "accent-teal"
-  - slug: "tech-trend"
-    label: "技術トレンド"
-    category: "その他"
-    style: "accent-blue"
-  - slug: "beginner"
-    label: "初心者向け"
-    category: "その他"
-    style: "accent-gold"
+  - slug: unreal-engine-5
+    label: Unreal Engine 5
+    category: その他
+    style: accent-teal
+  - slug: cg
+    label: CG/映像
+    category: その他
+    style: accent-lime
+  - slug: ai
+    label: AI活用
+    category: その他
+    style: accent-gold
+  - slug: tech-trend
+    label: 技術トレンド
+    category: ニュース
+    style: accent-blue
+  - slug: tag-5
+    label: 初心者向け
+    category: その他
+    style: accent-lime
 image:
-  key: "ue5-magic-wand"
-  src: "assets/img/posts/2025/12/ue5_magic_wand.jpg"
-  alt: "Unreal Engine 5とAIが描く魔法のような未来"
-  label: "Future Tech"
-  caption: "想像力がそのまま映像になる時代の到来"
-  category: "technology"
+  key: ue5-magic-wand
+  src: assets/img/posts/2025/12/ue5_magic_wand.jpg
+  alt: Unreal Engine 5とAIが描く魔法のような未来
+  label: Future Tech
+  caption: 想像力がそのまま映像になる時代の到来
+  category: technology
 ---
 
 ふとテレビやネットで映像を見たとき、「これ、実写なの？それともCG？」と見分けがつかなくて驚いたことはありませんか？

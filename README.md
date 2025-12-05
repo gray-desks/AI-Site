@@ -6,10 +6,13 @@
 ## フォルダ構成
 - `content/posts/` **記事の原稿 (Markdown)**。ここを編集します。
 - `posts/YYYY/MM/` **公開用HTML**。自動生成されるため手動編集は禁止です。
-- `data/posts.json` 投稿一覧・メタデータ。ビルド時に自動更新されます。
-- `data/candidates.json` 動画候補と進捗ステータス。
-- `automation/` パイプライン本体（collector/researcher/generator/publisher）。
-- `scripts/` ビルド用スクリプトなど。
+- `data/` データファイル (`posts.json`, `tags.json` 等)。
+- `scripts/` 開発・運用スクリプト。
+  - `build/` ビルド関連 (`npm run build:posts`)
+  - `dev/` 開発サーバー (`npm run dev`)
+  - `cli/` CLIツール (`npm run posts`)
+  - `maintenance/` メンテナンス用スクリプト
+- `automation/` AI自動化パイプライン（collector/researcher/generator/publisher）。
 - `templates/` 記事生成用の共通HTMLテンプレート。
 
 ## 記事の更新・作成フロー

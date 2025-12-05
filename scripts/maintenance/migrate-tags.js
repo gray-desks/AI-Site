@@ -8,8 +8,8 @@
  */
 
 const path = require('path');
-const { readJson, writeJson } = require('../lib/io');
-const slugify = require('../lib/slugify');
+const { readJson, writeJson } = require('../../automation/lib/io');
+const slugify = require('../../automation/lib/slugify');
 
 // --- パス設定 ---
 const root = path.resolve(__dirname, '..', '..');
@@ -115,11 +115,11 @@ const mapTags = (tags, tagIndex) => {
  */
 const main = () => {
   console.log('[migrate-tags] タグの移行処理を開始します...');
-  
+
   // 必要なファイルを読み込み
   const posts = readJson(postsPath, []);
   const tagConfig = readJson(tagsConfigPath, []);
-  
+
   // タグ検索用インデックスを構築
   const tagIndex = buildTagIndex(Array.isArray(tagConfig) ? tagConfig : []);
 

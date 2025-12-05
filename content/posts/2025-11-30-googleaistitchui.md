@@ -1,37 +1,38 @@
 ---
-title: "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】"
-date: "2025-11-30"
-slug: "2025-11-30-googleaistitchui"
-summary: "GoogleのAI「Stitch」に神アップデート！手書きメモから「動くアプリ」が一瞬で作れるようになりました。絵心ゼロでもOKなその衝撃的な進化と、具体的な使い方をわかりやすく解説します。"
-status: "published"
+title: 絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】
+date: '2025-11-30'
+slug: 2025-11-30-googleaistitchui
+summary: >-
+  GoogleのAI「Stitch」に神アップデート！手書きメモから「動くアプリ」が一瞬で作れるようになりました。絵心ゼロでもOKなその衝撃的な進化と、具体的な使い方をわかりやすく解説します。
+status: published
 tags:
-  - slug: "google-ai"
-    label: "Google AI"
-    category: "企業・プロダクト"
-    style: "accent-purple"
-  - slug: "ai"
-    label: "デザインAI"
-    category: "その他"
-    style: "accent-sky"
-  - slug: "ui"
-    label: "UIデザイン"
-    category: "その他"
-    style: "accent-sky"
-  - slug: "stitch"
-    label: "Stitch"
-    category: "その他"
-    style: "accent-blue"
-  - slug: "ai-utilization"
-    label: "AI活用"
-    category: "ユースケース"
-    style: "accent-teal"
+  - slug: google-ai
+    label: Google AI
+    category: その他
+    style: accent-orange
+  - slug: ai
+    label: デザインAI
+    category: その他
+    style: accent-sky
+  - slug: ui
+    label: UIデザイン
+    category: その他
+    style: accent-sky
+  - slug: stitch
+    label: Stitch
+    category: その他
+    style: accent-blue
+  - slug: ai-1
+    label: AI活用
+    category: その他
+    style: accent-gold
 image:
-  key: "stitch-update-2025"
-  src: "assets/img/posts/2025/11/stitch_update_2025.png"
-  alt: "Google Stitchのアップデートイメージ"
-  label: "Stitch Update"
-  caption: "手書きメモからアプリが生成されるイメージ"
-  category: "ai"
+  key: stitch-update-2025
+  src: assets/img/posts/2025/11/stitch_update_2025.png
+  alt: Google Stitchのアップデートイメージ
+  label: Stitch Update
+  caption: 手書きメモからアプリが生成されるイメージ
+  category: ai
 ---
 
 ![Google Stitchのアップデートイメージ](../../../assets/img/posts/2025/11/stitch_update_2025.png)

@@ -1,33 +1,35 @@
 ---
-title: "Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く"
-date: "2025-11-23"
-slug: "2025-11-23-nano-banana-proai"
-summary: "Nano Banana Proは、既存の画像編集を革新するAIとして注目されています。本記事では、その技術的背景、具体的なユースケース、競合との比較を通じて、その真価を検証します。"
-status: "published"
+title: Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く
+date: '2025-11-23'
+slug: 2025-11-23-nano-banana-proai
+summary: >-
+  Nano Banana
+  Proは、既存の画像編集を革新するAIとして注目されています。本記事では、その技術的背景、具体的なユースケース、競合との比較を通じて、その真価を検証します。
+status: published
 tags:
-  - slug: "image-generation"
-    label: "画像生成AI"
-    category: "技術トピック"
-    style: "accent-pink"
-  - slug: "nano-banana-pro"
-    label: "Nano Banana Pro"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "tag-3"
-    label: "技術革新"
-    category: "その他"
-    style: "accent-sky"
-  - slug: "ai-utilization"
-    label: "AI活用"
-    category: "ユースケース"
-    style: "accent-teal"
+  - slug: image-gen
+    label: 画像生成
+    category: 技術トピック
+    style: accent-pink
+  - slug: nano-banana-pro
+    label: Nano Banana Pro
+    category: その他
+    style: accent-orange
+  - slug: tag-3
+    label: 技術革新
+    category: その他
+    style: accent-sky
+  - slug: ai
+    label: AI活用
+    category: その他
+    style: accent-gold
 image:
-  key: "security-04"
-  src: "assets/img/article-templates/security-04.webp"
-  alt: "セキュリティを示す保護レイヤ（バリアント4）"
-  label: "セキュリティラティス"
-  caption: "トラストやガバナンス記事に使用。"
-  category: "security"
+  key: security-04
+  src: assets/img/article-templates/security-04.webp
+  alt: セキュリティを示す保護レイヤ（バリアント4）
+  label: セキュリティラティス
+  caption: トラストやガバナンス記事に使用。
+  category: security
 ---
 
 画像生成AIの進化は目覚ましく、その中でもNano Banana Proは特に注目されています。従来の画像生成AIが「ゼロから作る」ことに特化していたのに対し、Nano Banana Proは既存の画像を自然言語で指示するだけで編集可能にするという革新性を持っています。この記事では、Nano Banana Proの技術的な特長、具体的なユースケース、そして競合製品との比較を通じて、その実力を徹底的に検証します。最終的には、エンジニアやクリエイターがこの技術をどのように活用できるかについての洞察を提供します。

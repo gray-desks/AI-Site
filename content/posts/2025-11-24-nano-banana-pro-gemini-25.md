@@ -1,37 +1,39 @@
 ---
-title: "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命"
-date: "2025-11-24"
-slug: "2025-11-24-nano-banana-pro-gemini-25"
-summary: "GoogleのNano Banana Proは、Gemini 2.5を基盤にした画像生成AIで、リアルさとスピードを兼ね備えています。本記事ではその技術的背景と実用的なユースケースを詳しく解説します。"
-status: "published"
+title: 'Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命'
+date: '2025-11-24'
+slug: 2025-11-24-nano-banana-pro-gemini-25
+summary: >-
+  GoogleのNano Banana Proは、Gemini
+  2.5を基盤にした画像生成AIで、リアルさとスピードを兼ね備えています。本記事ではその技術的背景と実用的なユースケースを詳しく解説します。
+status: published
 tags:
-  - slug: "ai"
-    label: "AI画像生成"
-    category: "その他"
-    style: "accent-blue"
-  - slug: "gemini-25"
-    label: "Gemini 2.5"
-    category: "その他"
-    style: "accent-lime"
-  - slug: "nano-banana-pro"
-    label: "Nano Banana Pro"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "google-ai"
-    label: "Google AI"
-    category: "企業・プロダクト"
-    style: "accent-purple"
-  - slug: "tag-5"
-    label: "デジタルクリエイティブ"
-    category: "その他"
-    style: "accent-sky"
+  - slug: ai
+    label: AI画像生成
+    category: その他
+    style: accent-blue
+  - slug: gemini-25
+    label: Gemini 2.5
+    category: その他
+    style: accent-lime
+  - slug: nano-banana-pro
+    label: Nano Banana Pro
+    category: その他
+    style: accent-orange
+  - slug: google-ai
+    label: Google AI
+    category: その他
+    style: accent-orange
+  - slug: tag-5
+    label: デジタルクリエイティブ
+    category: その他
+    style: accent-sky
 image:
-  key: "ai-core-05"
-  src: "assets/img/article-templates/ai-core-05.webp"
-  alt: "AIコアを象徴する抽象的な波形（バリアント5）"
-  label: "AIコア戦略"
-  caption: "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。"
-  category: "ai"
+  key: ai-core-05
+  src: assets/img/article-templates/ai-core-05.webp
+  alt: AIコアを象徴する抽象的な波形（バリアント5）
+  label: AIコア戦略
+  caption: 大規模言語モデルやAI基盤の戦略を示すグラデーションアート。
+  category: ai
 ---
 
 Googleが開発した画像生成AI「Nano Banana Pro」は、AI画像生成の新たな地平を切り開いています。このツールは、従来のAI画像生成で課題とされていたリアルさとスピードの両立を実現し、クリエイターやSNSユーザーの間で注目を集めています。本記事では、Nano Banana Proがどのようにしてこれらの課題を克服し、どのような技術的背景を持っているのかを詳しく検証します。また、具体的なユースケースを通じて、実際にどのように活用できるのかを探ります。結論として、Nano Banana Proはデザイナーの役割を完全に置き換えるものではないものの、特定のタスクにおいては非常に有用であることがわかります。

@@ -1,37 +1,39 @@
 ---
-title: "OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化"
-date: "2025-12-04"
-slug: "2025-12-04-openai-code-red"
-summary: "OpenAI CEOサム・アルトマンが2025年12月2日、社内向けに最高レベルの警報「コードレッド」を発令しました。Google Gemini 3の圧倒的な性能向上により、ChatGPTはユーザー減少と市場シェアの低下に直面。わずか3年前にGoogleを脅かしたOpenAIが、今度は逆の立場に立たされています。"
-status: "published"
+title: OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化
+date: '2025-12-04'
+slug: 2025-12-04-openai-code-red
+summary: >-
+  OpenAI CEOサム・アルトマンが2025年12月2日、社内向けに最高レベルの警報「コードレッド」を発令しました。Google Gemini
+  3の圧倒的な性能向上により、ChatGPTはユーザー減少と市場シェアの低下に直面。わずか3年前にGoogleを脅かしたOpenAIが、今度は逆の立場に立たされています。
+status: published
 tags:
-  - slug: "openai"
-    label: "OpenAI"
-    category: "企業・プロダクト"
-    style: "accent-purple"
-  - slug: "google-ai"
-    label: "Google AI"
-    category: "企業・プロダクト"
-    style: "accent-blue"
-  - slug: "chatgpt"
-    label: "ChatGPT"
-    category: "ツール"
-    style: "accent-lavender"
-  - slug: "gemini-3"
-    label: "Gemini 3"
-    category: "企業・プロダクト"
-    style: "accent-gold"
-  - slug: "ai-market"
-    label: "AI市場動向"
-    category: "その他"
-    style: "accent-orange"
+  - slug: openai
+    label: OpenAI
+    category: 企業・プロダクト
+    style: accent-purple
+  - slug: google-ai
+    label: Google AI
+    category: その他
+    style: accent-orange
+  - slug: chatgpt
+    label: ChatGPT
+    category: 企業・プロダクト
+    style: accent-purple
+  - slug: gemini-3
+    label: Gemini 3
+    category: その他
+    style: accent-gold
+  - slug: ai
+    label: AI市場動向
+    category: その他
+    style: accent-lavender
 image:
-  key: "openai-code-red-hero"
-  src: "assets/img/posts/2025/12/openai_code_red_hero.png"
-  alt: "OpenAI コードレッド - AI市場の勢力図変化"
-  label: "Breaking News"
-  caption: "OpenAIのコードレッド宣言とAI業界の激変"
-  category: "news"
+  key: openai-code-red-hero
+  src: assets/img/posts/2025/12/openai_code_red_hero.png
+  alt: OpenAI コードレッド - AI市場の勢力図変化
+  label: Breaking News
+  caption: OpenAIのコードレッド宣言とAI業界の激変
+  category: news
 ---
 
 2025年12月2日、AI業界に激震が走りました。OpenAIのCEOサム・アルトマンが全社員向けに「コードレッド（Code Red）」という最高レベルの緊急体制を宣言したのです。この宣言は、ChatGPTのリリース以来初めてとなる本格的な危機対応であり、AI市場におけるパワーバランスの大きな変化を象徴する出来事です。皮肉なことに、2022年11月のChatGPT登場時、脅威を感じたGoogle CEOスンダー・ピチャイが同じく「コードレッド」を宣言しました。わずか3年で、立場は完全に逆転したのです。本記事では、この緊急事態の背景にある技術的・ビジネス的要因を深掘りし、AI業界の今後の展開を予測します。
@@ -61,41 +63,13 @@ ChatGPT改善に集中するため、以下のプロジェクトが延期され�
 
 OpenAIがコードレッドを宣言した直接的な原因は、2025年11月18-19日に発表されたGoogle Gemini 3の圧倒的な性能向上です。主要なベンチマークテストにおいて、Gemini 3はChatGPT 5.1を大きく上回る結果を示しました：
 
-ベンチマーク
-
-Gemini 3 Pro
-
-ChatGPT 5.1
-
-LMArena総合ランキング
-
-1位（1501点）
-
-3位（約300点差）
-
-GPQA Diamond（博士レベル推論）
-
-91.9%
-
-88.1%
-
-Humanity's Last Exam
-
-37.5%
-
-26.5%
-
-SWE-bench Verified（コーディング）
-
-76.2%
-
-73%
-
-スクリーンスポット（画像認識）
-
-72.7%
-
-3.5%
+| ベンチマーク | Gemini 3 Pro | ChatGPT 5.1 |
+| :--- | :--- | :--- |
+| LMArena総合ランキング | 1位（1501点） | 3位（約300点差） |
+| GPQA Diamond（博士レベル推論） | 91.9% | 88.1% |
+| Humanity's Last Exam | 37.5% | 26.5% |
+| SWE-bench Verified（コーディング） | 76.2% | 73% |
+| スクリーンスポット（画像認識） | 72.7% | 3.5% |
 
 特にマルチモーダル（画像・動画理解）タスクでは、Gemini 3が圧倒的な優位性を示しています。Video-MMMUでは87.6%という高スコアを記録し、テキスト、画像、動画を同時に理解・推論する能力で大きくリードしています。
 

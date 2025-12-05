@@ -1,37 +1,39 @@
 ---
-title: "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代"
-date: "2025-11-27"
-slug: "2025-11-27-google-workspace-flowsnotebooklm"
-summary: "Google Workspace FlowsとNotebookLMがもたらす知識管理と業務自動化の進化を探る。特に、Claude for Chromeとの統合がどのように業務効率を向上させるかを具体例を交えて解説し、ビジネス現場での活用可能性を示す。"
-status: "published"
+title: 'Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代'
+date: '2025-11-27'
+slug: 2025-11-27-google-workspace-flowsnotebooklm
+summary: >-
+  Google Workspace FlowsとNotebookLMがもたらす知識管理と業務自動化の進化を探る。特に、Claude for
+  Chromeとの統合がどのように業務効率を向上させるかを具体例を交えて解説し、ビジネス現場での活用可能性を示す。
+status: published
 tags:
-  - slug: "google-workspace"
-    label: "Google Workspace"
-    category: "その他"
-    style: "accent-lime"
-  - slug: "notebooklm"
-    label: "NotebookLM"
-    category: "その他"
-    style: "accent-lavender"
-  - slug: "automation"
-    label: "業務自動化"
-    category: "ユースケース"
-    style: "accent-teal"
-  - slug: "ai-topic"
-    label: "AIトピック"
-    category: "その他"
-    style: "accent-neutral"
-  - slug: "information-management"
-    label: "情報整理"
-    category: "ユースケース"
-    style: "accent-lime"
+  - slug: google-workspace
+    label: Google Workspace
+    category: その他
+    style: accent-lime
+  - slug: notebooklm
+    label: NotebookLM
+    category: 企業・プロダクト
+    style: accent-blue
+  - slug: tag-3
+    label: 業務自動化
+    category: その他
+    style: accent-blue
+  - slug: ai
+    label: AIトピック
+    category: その他
+    style: accent-blue
+  - slug: tag-5
+    label: 情報整理
+    category: その他
+    style: accent-orange
 image:
-  key: "hero"
-  src: "assets/img/posts/2025-11-28-gw-flows/hero.png"
-  alt: "Google Workspace FlowsとNotebookLMの進化イメージ"
-  label: "Latest Update"
-  caption: "AIエージェントによる業務自動化のイメージ"
-  category: "ai"
+  key: hero
+  src: assets/img/posts/2025-11-28-gw-flows/hero.png
+  alt: Google Workspace FlowsとNotebookLMの進化イメージ
+  label: Latest Update
+  caption: AIエージェントによる業務自動化のイメージ
+  category: ai
 ---
 
 ![Google Workspace FlowsとNotebookLMの進化イメージ](../../../assets/img/posts/2025-11-28-gw-flows/hero.png)

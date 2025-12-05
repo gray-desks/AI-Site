@@ -1,37 +1,38 @@
 ---
-title: "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析"
-date: "2025-11-27"
-slug: "2025-11-27-claude-for-chrome"
-summary: "2025年における「自律型ブラウジング」の現状と展望。AIは「対話」から「実行」へ。月額100ドルの価値はあるのか？エンジニアやマーケター必見の徹底分析レポート。"
-status: "published"
+title: Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析
+date: '2025-11-27'
+slug: 2025-11-27-claude-for-chrome
+summary: >-
+  2025年における「自律型ブラウジング」の現状と展望。AIは「対話」から「実行」へ。月額100ドルの価値はあるのか？エンジニアやマーケター必見の徹底分析レポート。
+status: published
 tags:
-  - slug: "claude"
-    label: "Claude"
-    category: "AIモデル"
-    style: "accent-lavender"
-  - slug: "chrome-extension"
-    label: "Chrome拡張"
-    category: "ツール"
-    style: "accent-blue"
-  - slug: "ai-agent"
-    label: "AIエージェント"
-    category: "技術トピック"
-    style: "accent-pink"
-  - slug: "automation"
-    label: "自動化"
-    category: "ユースケース"
-    style: "accent-orange"
-  - slug: "analysis"
-    label: "徹底分析"
-    category: "記事タイプ"
-    style: "accent-green"
+  - slug: claude
+    label: Claude
+    category: 企業・プロダクト
+    style: accent-orange
+  - slug: chrome
+    label: Chrome拡張
+    category: その他
+    style: accent-blue
+  - slug: agent
+    label: AIエージェント
+    category: 技術トピック
+    style: accent-gold
+  - slug: tag-4
+    label: 自動化
+    category: その他
+    style: accent-pink
+  - slug: tag-5
+    label: 徹底分析
+    category: その他
+    style: accent-lime
 image:
-  key: "hero"
-  src: "assets/img/posts/2025-11-27/hero.png"
-  alt: "Claude for Chrome拡張機能のイメージイラスト"
-  label: "Special Report"
-  caption: "AIエージェントがブラウザを操作するイメージ"
-  category: "ai"
+  key: hero
+  src: assets/img/posts/2025-11-27/hero.png
+  alt: Claude for Chrome拡張機能のイメージイラスト
+  label: Special Report
+  caption: AIエージェントがブラウザを操作するイメージ
+  category: ai
 ---
 
 ![Claude for Chrome拡張機能のイメージイラスト](../../../assets/img/posts/2025-11-27/hero.png)

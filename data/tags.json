@@ -1,296 +1,502 @@
 [
   {
-    "slug": "ai-news",
-    "label": "AIニュース",
+    "slug": "news",
+    "label": "ニュース",
     "category": "ニュース",
-    "aliases": ["aiニュース", "ai news", "aiトレンド", "最新ai情報"],
-    "style": "accent-sky"
+    "aliases": [
+      "news",
+      "速報",
+      "最新情報",
+      "トレンド"
+    ],
+    "style": "accent-orange"
   },
   {
-    "slug": "generative-ai",
-    "label": "生成AI",
-    "category": "技術トピック",
-    "aliases": ["生成ai", "ジェネレーティブai", "generative ai", "生成系ai"],
-    "style": "accent-pink"
+    "slug": "tech-trend",
+    "label": "技術トレンド",
+    "category": "ニュース",
+    "aliases": [
+      "tech trend",
+      "トレンド",
+      "動向"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "openai",
+    "label": "OpenAI",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "openai",
+      "オープンai"
+    ],
+    "style": "accent-purple"
   },
   {
     "slug": "chatgpt",
     "label": "ChatGPT",
-    "category": "ツール",
-    "aliases": ["gpt-4o", "gpt4o", "chat gpt", "チャットgpt"],
-    "style": "accent-purple"
-  },
-  {
-    "slug": "ai-chat",
-    "label": "AIチャット",
-    "category": "ユースケース",
-    "aliases": ["aiチャット", "ai conversation", "aiメッセージ"],
-    "style": "accent-lime"
-  },
-  {
-    "slug": "prompt-design",
-    "label": "プロンプト設計",
-    "category": "スキル",
-    "aliases": ["プロンプト作成", "prompt engineering", "プロンプトエンジニアリング"],
-    "style": "accent-gold"
-  },
-  {
-    "slug": "llm",
-    "label": "LLM",
-    "category": "技術トピック",
-    "aliases": ["大規模言語モデル", "large language model", "llm"],
-    "style": "accent-sky"
-  },
-  {
-    "slug": "ai-tools",
-    "label": "AIツール",
-    "category": "ツール",
-    "aliases": ["ai tool", "aiサービス", "aiアプリ"],
-    "style": "accent-lavender"
-  },
-  {
-    "slug": "productivity",
-    "label": "業務効率化",
-    "category": "ユースケース",
-    "aliases": ["効率化", "workflow効率化", "productivity"],
-    "style": "accent-lime"
-  },
-  {
-    "slug": "automation",
-    "label": "業務自動化",
-    "category": "ユースケース",
-    "aliases": ["自動化", "automation", "workflow automation"],
-    "style": "accent-teal"
-  },
-  {
-    "slug": "image-generation",
-    "label": "画像生成AI",
-    "category": "技術トピック",
-    "aliases": ["image generation", "画像ai", "img2img"],
-    "style": "accent-pink"
-  },
-  {
-    "slug": "video-generation",
-    "label": "動画生成AI",
-    "category": "技術トピック",
-    "aliases": ["video generation", "動画ai"],
-    "style": "accent-purple"
-  },
-  {
-    "slug": "ai-security",
-    "label": "AIセキュリティ",
-    "category": "ガバナンス",
-    "aliases": ["ai security", "セキュリティ対策"],
-    "style": "accent-orange"
-  },
-  {
-    "slug": "ai-policy",
-    "label": "AI政策",
-    "category": "ガバナンス",
-    "aliases": ["ai regulation", "ai法規制", "aiガバナンス"],
-    "style": "accent-orange"
-  },
-  {
-    "slug": "ai-topic",
-    "label": "AIトピック",
-    "category": "その他",
-    "aliases": ["その他", "other", "aiトピック", "ai"],
-    "style": "accent-neutral"
-  },
-  {
-    "slug": "ai-utilization",
-    "label": "AI活用",
-    "category": "ユースケース",
-    "aliases": ["ai活用", "ai utilization", "ai利用"],
-    "style": "accent-teal"
-  },
-  {
-    "slug": "ai-unemployment",
-    "label": "AI失業",
-    "category": "社会課題",
-    "aliases": ["ai失業", "失業リスク", "雇用への影響"],
-    "style": "accent-orange"
-  },
-  {
-    "slug": "labor-market",
-    "label": "労働市場",
-    "category": "社会課題",
-    "aliases": ["労働市場", "雇用市場", "就職市場"],
-    "style": "accent-neutral"
-  },
-  {
-    "slug": "career-strategy",
-    "label": "キャリア戦略",
-    "category": "スキル",
-    "aliases": ["キャリア戦略", "キャリア", "career"],
-    "style": "accent-gold"
-  },
-  {
-    "slug": "ai-adaptation",
-    "label": "AI適応",
-    "category": "スキル",
-    "aliases": ["ai適応", "ai対応", "適応戦略"],
-    "style": "accent-gold"
-  },
-  {
-    "slug": "beginner-guide",
-    "label": "初心者ガイド",
-    "category": "学習リソース",
-    "aliases": ["初心者", "ビギナー", "入門"],
-    "style": "accent-sky"
-  },
-  {
-    "slug": "ai-learning",
-    "label": "AI学習",
-    "category": "学習リソース",
-    "aliases": ["ai学習", "学習", "勉強"],
-    "style": "accent-sky"
-  },
-  {
-    "slug": "ai-steps",
-    "label": "AIステップ",
-    "category": "学習リソース",
-    "aliases": ["ステップ", "段階", "手順"],
-    "style": "accent-sky"
-  },
-  {
-    "slug": "group-chat",
-    "label": "グループチャット",
-    "category": "ツール機能",
-    "aliases": ["グループチャット", "チャット", "コラボレーション"],
-    "style": "accent-lavender"
-  },
-  {
-    "slug": "technology",
-    "label": "テクノロジー",
-    "category": "その他",
-    "aliases": ["テクノロジー", "技術", "tech"],
-    "style": "accent-neutral"
-  },
-  {
-    "slug": "ai-note-taking",
-    "label": "AIノート作成",
-    "category": "ユースケース",
-    "aliases": ["ノート作成", "メモ", "note-taking"],
-    "style": "accent-lime"
-  },
-  {
-    "slug": "information-management",
-    "label": "情報整理",
-    "category": "ユースケース",
-    "aliases": ["情報整理", "整理", "知識管理"],
-    "style": "accent-lime"
-  },
-  {
-    "slug": "ai-model",
-    "label": "AIモデル",
-    "category": "技術トピック",
-    "aliases": ["aiモデル", "モデル", "model"],
-    "style": "accent-pink"
-  },
-  {
-    "slug": "google-ai",
-    "label": "Google AI",
     "category": "企業・プロダクト",
-    "aliases": ["google", "グーグル", "gemini"],
+    "aliases": [
+      "chatgpt",
+      "gpt-4",
+      "gpt-4o",
+      "o1",
+      "gpt"
+    ],
     "style": "accent-purple"
   },
   {
-    "slug": "ai-tools-comparison",
-    "label": "AIツール比較",
-    "category": "ユースケース",
-    "aliases": ["比較", "ツール比較", "comparison"],
-    "style": "accent-lime"
+    "slug": "google",
+    "label": "Google",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "google",
+      "グーグル"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "gemini",
+    "label": "Gemini",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "gemini",
+      "gemini 1.5",
+      "gemini 2.0",
+      "gemini 3.0",
+      "bard"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "anthropic",
+    "label": "Anthropic",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "anthropic",
+      "アンソロピック"
+    ],
+    "style": "accent-orange"
+  },
+  {
+    "slug": "claude",
+    "label": "Claude",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "claude",
+      "claude 3.5",
+      "claude 3",
+      "sonnet",
+      "opus"
+    ],
+    "style": "accent-orange"
+  },
+  {
+    "slug": "microsoft",
+    "label": "Microsoft",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "microsoft",
+      "ms",
+      "copilot"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "perplexity",
+    "label": "Perplexity",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "perplexity",
+      "perplexity ai"
+    ],
+    "style": "accent-teal"
+  },
+  {
+    "slug": "notebooklm",
+    "label": "NotebookLM",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "notebooklm",
+      "notebook lm"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "midjourney",
+    "label": "Midjourney",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "midjourney",
+      "ミッドジャーニー"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "stable-diffusion",
+    "label": "Stable Diffusion",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "stable diffusion",
+      "sdxl",
+      "sd3"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "flux",
+    "label": "FLUX",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "flux",
+      "flux.1",
+      "flux.2"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "comfyui",
+    "label": "ComfyUI",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "comfyui",
+      "comfy ui"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "runway",
+    "label": "Runway",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "runway",
+      "gen-2",
+      "gen-3"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "luma",
+    "label": "Luma AI",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "luma",
+      "dream machine"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "kling",
+    "label": "Kling",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "kling",
+      "kling ai"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "sora",
+    "label": "Sora",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "sora",
+      "openai sora"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "hailuo",
+    "label": "Hailuo AI",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "hailuo",
+      "minimax"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "unreal-engine",
+    "label": "Unreal Engine",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "unreal engine",
+      "ue5",
+      "ue"
+    ],
+    "style": "accent-purple"
+  },
+  {
+    "slug": "cursor",
+    "label": "Cursor",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "cursor",
+      "cursor editor"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "windsurf",
+    "label": "Windsurf",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "windsurf",
+      "codeium"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "bolt",
+    "label": "bolt.new",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "bolt",
+      "bolt.new",
+      "stackblitz"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "v0",
+    "label": "v0",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "v0",
+      "v0.dev",
+      "vercel"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "replit",
+    "label": "Replit",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "replit",
+      "replit agent"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "github",
+    "label": "GitHub",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "github",
+      "copilot",
+      "github copilot"
+    ],
+    "style": "accent-purple"
+  },
+  {
+    "slug": "notion",
+    "label": "Notion",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "notion",
+      "notion ai"
+    ],
+    "style": "accent-purple"
+  },
+  {
+    "slug": "canva",
+    "label": "Canva",
+    "category": "企業・プロダクト",
+    "aliases": [
+      "canva",
+      "magic studio"
+    ],
+    "style": "accent-purple"
   },
   {
     "slug": "pixai",
     "label": "PixAI",
     "category": "企業・プロダクト",
-    "aliases": ["pixai", "pix ai"],
-    "style": "accent-purple"
+    "aliases": [
+      "pixai",
+      "pixai.art"
+    ],
+    "style": "accent-pink"
   },
   {
-    "slug": "ai-development",
-    "label": "AI駆動開発",
-    "category": "開発",
-    "aliases": ["ai開発", "ai-driven", "ai駆動"],
-    "style": "accent-blue"
+    "slug": "llm",
+    "label": "LLM",
+    "category": "技術トピック",
+    "aliases": [
+      "llm",
+      "大規模言語モデル"
+    ],
+    "style": "accent-sky"
   },
   {
-    "slug": "github-copilot",
-    "label": "GitHub Copilot",
-    "category": "ツール",
-    "aliases": ["copilot", "コパイロット", "github"],
-    "style": "accent-purple"
+    "slug": "agent",
+    "label": "AIエージェント",
+    "category": "技術トピック",
+    "aliases": [
+      "agent",
+      "ai agent",
+      "自律型ai"
+    ],
+    "style": "accent-gold"
   },
   {
-    "slug": "coding-assistant",
+    "slug": "rag",
+    "label": "RAG",
+    "category": "技術トピック",
+    "aliases": [
+      "rag",
+      "検索拡張生成"
+    ],
+    "style": "accent-sky"
+  },
+  {
+    "slug": "multimodal",
+    "label": "マルチモーダル",
+    "category": "技術トピック",
+    "aliases": [
+      "multimodal",
+      "マルチモーダルai"
+    ],
+    "style": "accent-sky"
+  },
+  {
+    "slug": "image-gen",
+    "label": "画像生成",
+    "category": "技術トピック",
+    "aliases": [
+      "image generation",
+      "画像生成ai",
+      "text-to-image"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "video-gen",
+    "label": "動画生成",
+    "category": "技術トピック",
+    "aliases": [
+      "video generation",
+      "動画生成ai",
+      "text-to-video"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "coding",
     "label": "コーディング支援",
-    "category": "ツール機能",
-    "aliases": ["コーディング", "coding", "プログラミング支援"],
-    "style": "accent-lavender"
-  },
-  {
-    "slug": "developer-tools",
-    "label": "開発ツール",
-    "category": "開発",
-    "aliases": ["開発ツール", "dev tools", "開発環境"],
+    "category": "技術トピック",
+    "aliases": [
+      "coding",
+      "programming",
+      "コード生成"
+    ],
     "style": "accent-blue"
   },
   {
-    "slug": "ai-ethics",
-    "label": "AI倫理",
-    "category": "ガバナンス",
-    "aliases": ["ai倫理", "ethics", "倫理", "エシックス"],
-    "style": "accent-orange"
-  },
-  {
-    "slug": "bias",
-    "label": "バイアス",
-    "category": "ガバナンス",
-    "aliases": ["bias", "偏見", "バイアス対策", "公平性"],
-    "style": "accent-orange"
-  },
-  {
-    "slug": "fairness",
-    "label": "AI公平性",
-    "category": "ガバナンス",
-    "aliases": ["fairness", "公平性", "公正性", "フェアネス"],
-    "style": "accent-orange"
-  },
-  {
-    "slug": "ai-responsibility",
-    "label": "AI責任",
-    "category": "ガバナンス",
-    "aliases": ["責任あるai", "responsibility", "責任", "アカウンタビリティ"],
-    "style": "accent-orange"
-  },
-  {
-    "slug": "transparency",
-    "label": "透明性",
-    "category": "ガバナンス",
-    "aliases": ["transparency", "透明性", "説明可能性", "explainability"],
-    "style": "accent-orange"
-  },
-  {
-    "slug": "ai-healthcare",
-    "label": "AIヘルスケア",
-    "category": "ユースケース",
-    "aliases": ["aiヘルスケア", "healthcare", "医療ai", "健康"],
+    "slug": "no-code",
+    "label": "No-Code",
+    "category": "技術トピック",
+    "aliases": [
+      "no-code",
+      "low-code",
+      "ノーコード",
+      "ローコード"
+    ],
     "style": "accent-teal"
   },
   {
-    "slug": "medical-ai",
-    "label": "医療AI",
-    "category": "ユースケース",
-    "aliases": ["医療ai", "medical", "医療", "臨床ai"],
+    "slug": "ui-ux",
+    "label": "UI/UX",
+    "category": "技術トピック",
+    "aliases": [
+      "ui",
+      "ux",
+      "design",
+      "デザイン"
+    ],
     "style": "accent-teal"
   },
   {
-    "slug": "diagnosis",
-    "label": "診断支援",
+    "slug": "business",
+    "label": "業務効率化",
     "category": "ユースケース",
-    "aliases": ["診断", "diagnosis", "診断支援", "医療診断"],
-    "style": "accent-teal"
+    "aliases": [
+      "business",
+      "productivity",
+      "仕事術",
+      "時短"
+    ],
+    "style": "accent-lime"
+  },
+  {
+    "slug": "creative",
+    "label": "クリエイティブ",
+    "category": "ユースケース",
+    "aliases": [
+      "creative",
+      "art",
+      "創作"
+    ],
+    "style": "accent-pink"
+  },
+  {
+    "slug": "marketing",
+    "label": "マーケティング",
+    "category": "ユースケース",
+    "aliases": [
+      "marketing",
+      "seo",
+      "集客"
+    ],
+    "style": "accent-lime"
+  },
+  {
+    "slug": "development",
+    "label": "システム開発",
+    "category": "ユースケース",
+    "aliases": [
+      "development",
+      "dev",
+      "エンジニアリング"
+    ],
+    "style": "accent-blue"
+  },
+  {
+    "slug": "beginner",
+    "label": "初心者ガイド",
+    "category": "学習リソース",
+    "aliases": [
+      "beginner",
+      "入門",
+      "使い方",
+      "解説"
+    ],
+    "style": "accent-sky"
+  },
+  {
+    "slug": "comparison",
+    "label": "比較検証",
+    "category": "学習リソース",
+    "aliases": [
+      "comparison",
+      "比較",
+      "レビュー"
+    ],
+    "style": "accent-orange"
+  },
+  {
+    "slug": "governance",
+    "label": "AIガバナンス",
+    "category": "社会課題",
+    "aliases": [
+      "governance",
+      "ethics",
+      "security",
+      "倫理",
+      "セキュリティ",
+      "著作権"
+    ],
+    "style": "accent-orange"
   }
 ]

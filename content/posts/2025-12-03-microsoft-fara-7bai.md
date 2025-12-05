@@ -1,41 +1,38 @@
 ---
-title: "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性"
-date: "2025-12-03"
-slug: "2025-12-03-microsoft-fara-7bai"
-summary: "Microsoftの新しいAIエージェントFara-7Bは、オンデバイスでのPC操作を可能にし、業務効率を大幅に向上させる。具体的なユースケースを通じてその実力を探る。"
-status: "draft"
+title: Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性
+date: '2025-12-03'
+slug: 2025-12-03-microsoft-fara-7bai
+summary: >-
+  Microsoftの新しいAIエージェントFara-7Bは、オンデバイスでのPC操作を可能にし、業務効率を大幅に向上させる。具体的なユースケースを通じてその実力を探る。
+status: draft
 tags:
-  - slug: "microsoft"
-    label: "Microsoft"
-    category: "その他"
-    style: "accent-blue"
-  - slug: "fara-7b"
-    label: "Fara-7B"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "generative-ai"
-    label: "生成AI"
-    category: "技術トピック"
-    style: "accent-pink"
-  - slug: "ai"
-    label: "AIエージェント"
-    category: "その他"
-    style: "accent-gold"
-  - slug: "productivity"
-    label: "業務効率化"
-    category: "ユースケース"
-    style: "accent-lime"
-  - slug: "draft"
-    label: "下書き"
-    category: "運用"
-    style: "accent-gold"
+  - slug: microsoft
+    label: Microsoft
+    category: 企業・プロダクト
+    style: accent-blue
+  - slug: fara-7b
+    label: Fara-7B
+    category: その他
+    style: accent-orange
+  - slug: ai
+    label: 生成AI
+    category: その他
+    style: accent-orange
+  - slug: agent
+    label: AIエージェント
+    category: 技術トピック
+    style: accent-gold
+  - slug: business
+    label: 業務効率化
+    category: ユースケース
+    style: accent-lime
 image:
-  key: "ai-core-03"
-  src: "assets/img/article-templates/ai-core-03.webp"
-  alt: "AIコアを象徴する抽象的な波形（バリアント3）"
-  label: "AIコア戦略"
-  caption: "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。"
-  category: "ai"
+  key: ai-core-03
+  src: assets/img/article-templates/ai-core-03.webp
+  alt: AIコアを象徴する抽象的な波形（バリアント3）
+  label: AIコア戦略
+  caption: 大規模言語モデルやAI基盤の戦略を示すグラデーションアート。
+  category: ai
 ---
 
 2025年12月、Microsoftは新たなAIエージェントFara-7Bを発表しました。この技術は、オンデバイスでのPC操作を実現するもので、ユーザーの作業効率を飛躍的に向上させる可能性を秘めています。特に、生成AI技術の進化に伴い、Fara-7Bは従来のAIツールとは一線を画す存在となるでしょう。この記事では、Fara-7Bの機能やアーキテクチャを深掘りし、実際の使用シナリオを通じてその効果を検証します。さらに、競合技術との比較や、導入に際しての課題についても考察します。読者は、Fara-7Bがもたらす新たな作業スタイルを理解し、今後のビジネス環境における活用方法を見出すことができるでしょう。

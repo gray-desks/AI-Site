@@ -1,33 +1,35 @@
 ---
-title: "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力"
-date: "2025-11-28"
-slug: "2025-11-28-aqua-voiceai"
-summary: "Aqua Voiceは単なる音声入力ではありません。「声で編集する」次世代エディタです。Y Combinator発のこのツールが、なぜ今話題なのか？料金や使い方も含めて徹底解説します。"
-status: "published"
+title: 思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力
+date: '2025-11-28'
+slug: 2025-11-28-aqua-voiceai
+summary: >-
+  Aqua Voiceは単なる音声入力ではありません。「声で編集する」次世代エディタです。Y
+  Combinator発のこのツールが、なぜ今話題なのか？料金や使い方も含めて徹底解説します。
+status: published
 tags:
-  - slug: "aqua-voice"
-    label: "Aqua Voice"
-    category: "ツール"
-    style: "accent-blue"
-  - slug: "voice-ai"
-    label: "音声入力AI"
-    category: "技術"
-    style: "accent-pink"
-  - slug: "productivity"
-    label: "生産性向上"
-    category: "目的"
-    style: "accent-orange"
-  - slug: "review"
-    label: "レビュー"
-    category: "記事タイプ"
-    style: "accent-green"
+  - slug: aqua-voice
+    label: Aqua Voice
+    category: その他
+    style: accent-gold
+  - slug: ai
+    label: 音声入力AI
+    category: その他
+    style: accent-gold
+  - slug: tag-3
+    label: 生産性向上
+    category: その他
+    style: accent-orange
+  - slug: comparison
+    label: 比較検証
+    category: 学習リソース
+    style: accent-orange
 image:
-  key: "aqua-voice-hero"
-  src: "assets/img/posts/2025/11/aqua_voice_hero.png"
-  alt: "Aqua Voice: 声で書く次世代エディタ"
-  label: "Productivity Tools"
-  caption: "声で操作する次世代エディタ「Aqua Voice」のイメージ"
-  category: "tool"
+  key: aqua-voice-hero
+  src: assets/img/posts/2025/11/aqua_voice_hero.png
+  alt: 'Aqua Voice: 声で書く次世代エディタ'
+  label: Productivity Tools
+  caption: 声で操作する次世代エディタ「Aqua Voice」のイメージ
+  category: tool
 ---
 
 ![Aqua Voice: 声で書く次世代エディタ](../../../assets/img/posts/2025/11/aqua_voice_hero.png)

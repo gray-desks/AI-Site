@@ -1,37 +1,39 @@
 ---
-title: "Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル"
-date: "2025-12-03"
-slug: "2025-12-03-claudemdllm"
-summary: "Claude Codeで毎回同じ説明をするのは面倒...そんな悩みを解決するCLAUDE.mdの書き方を徹底解説。テンプレートやコツも紹介し、AIコーディングの効率を劇的に向上させる方法をお伝えします。"
-status: "published"
+title: Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル
+date: '2025-12-03'
+slug: 2025-12-03-claudemdllm
+summary: >-
+  Claude
+  Codeで毎回同じ説明をするのは面倒...そんな悩みを解決するCLAUDE.mdの書き方を徹底解説。テンプレートやコツも紹介し、AIコーディングの効率を劇的に向上させる方法をお伝えします。
+status: published
 tags:
-  - slug: "claudemd"
-    label: "Claude.md"
-    category: "その他"
-    style: "accent-pink"
-  - slug: "llm"
-    label: "LLM"
-    category: "技術トピック"
-    style: "accent-sky"
-  - slug: "tag-3"
-    label: "コンテキストエンジニアリング"
-    category: "その他"
-    style: "accent-lime"
-  - slug: "generative-ai"
-    label: "生成AI"
-    category: "技術トピック"
-    style: "accent-pink"
-  - slug: "tag-5"
-    label: "開発効率"
-    category: "その他"
-    style: "accent-orange"
+  - slug: claudemd
+    label: Claude.md
+    category: その他
+    style: accent-pink
+  - slug: llm
+    label: LLM
+    category: 技術トピック
+    style: accent-sky
+  - slug: tag-3
+    label: コンテキストエンジニアリング
+    category: その他
+    style: accent-lime
+  - slug: ai
+    label: 生成AI
+    category: その他
+    style: accent-orange
+  - slug: tag-5
+    label: 開発効率
+    category: その他
+    style: accent-orange
 image:
-  key: "claudemd-guide-hero"
-  src: "assets/img/posts/2025/12/claudemdllm-hero.png"
-  alt: "Claude.mdの書き方完全ガイド"
-  label: "Claude.md Guide"
-  caption: "Claude.mdの書き方完全ガイド"
-  category: "tech"
+  key: claudemd-guide-hero
+  src: assets/img/posts/2025/12/claudemdllm-hero.png
+  alt: Claude.mdの書き方完全ガイド
+  label: Claude.md Guide
+  caption: Claude.mdの書き方完全ガイド
+  category: tech
 ---
 
 「また同じ説明を繰り返すのか...」

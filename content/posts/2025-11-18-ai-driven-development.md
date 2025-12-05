@@ -1,37 +1,39 @@
 ---
-title: "AI駆動開発とは？開発者の生産性を劇的に向上させる新しい開発手法"
-date: "2025-11-18"
-slug: "2025-11-18-ai-driven-development"
-summary: "GitHub Copilot、ChatGPT、Claude Codeなど、AIツールを活用した「AI駆動開発」の考え方と導入手順、現場での実践ポイントをまとめました。"
-status: "published"
+title: AI駆動開発とは？開発者の生産性を劇的に向上させる新しい開発手法
+date: '2025-11-18'
+slug: 2025-11-18-ai-driven-development
+summary: >-
+  GitHub Copilot、ChatGPT、Claude
+  Codeなど、AIツールを活用した「AI駆動開発」の考え方と導入手順、現場での実践ポイントをまとめました。
+status: published
 tags:
-  - slug: "ai-development"
-    label: "AI駆動開発"
-    category: "開発"
-    style: "accent-blue"
-  - slug: "github-copilot"
-    label: "GitHub Copilot"
-    category: "ツール"
-    style: "accent-purple"
-  - slug: "productivity"
-    label: "生産性向上"
-    category: "ビジネス"
-    style: "accent-teal"
-  - slug: "coding-assistant"
-    label: "コーディング支援"
-    category: "ツール"
-    style: "accent-purple"
-  - slug: "developer-tools"
-    label: "開発ツール"
-    category: "開発"
-    style: "accent-blue"
+  - slug: ai
+    label: AI駆動開発
+    category: その他
+    style: accent-sky
+  - slug: github
+    label: GitHub
+    category: 企業・プロダクト
+    style: accent-purple
+  - slug: tag-3
+    label: 生産性向上
+    category: その他
+    style: accent-orange
+  - slug: coding
+    label: コーディング支援
+    category: 技術トピック
+    style: accent-blue
+  - slug: tag-5
+    label: 開発ツール
+    category: その他
+    style: accent-teal
 image:
-  key: "ai-core-01"
-  src: "assets/img/article-templates/ai-core-01.webp"
-  alt: "AIコアを象徴する抽象的な波形（バリアント1）"
-  label: "AIコア戦略"
-  caption: "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。"
-  category: "ai"
+  key: ai-core-01
+  src: assets/img/article-templates/ai-core-01.webp
+  alt: AIコアを象徴する抽象的な波形（バリアント1）
+  label: AIコア戦略
+  caption: 大規模言語モデルやAI基盤の戦略を示すグラデーションアート。
+  category: ai
 ---
 
 近年、ソフトウェア開発の現場で「AI駆動開発（AI-Driven Development）」という新しい開発手法が注目を集めています。GitHub Copilot、ChatGPT、Claude Codeなどのツールが登場し、開発者の働き方を根本から変えつつあります。本記事では、AI駆動開発とは何か、どのように活用すれば効果的なのか、そして実際の導入事例まで詳しく解説します。

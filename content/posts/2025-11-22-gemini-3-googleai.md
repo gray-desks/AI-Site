@@ -1,37 +1,37 @@
 ---
-title: "Gemini 3: Googleの次世代AIがもたらす革新と挑戦"
-date: "2025-11-22"
-slug: "2025-11-22-gemini-3-googleai"
-summary: "Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。"
-status: "published"
+title: 'Gemini 3: Googleの次世代AIがもたらす革新と挑戦'
+date: '2025-11-22'
+slug: 2025-11-22-gemini-3-googleai
+summary: Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。
+status: published
 tags:
-  - slug: "ai-topic"
-    label: "AIトピック"
-    category: "その他"
-    style: "accent-neutral"
-  - slug: "gemini-3"
-    label: "Gemini 3"
-    category: "その他"
-    style: "accent-gold"
-  - slug: "google-ai"
-    label: "Google AI"
-    category: "企業・プロダクト"
-    style: "accent-purple"
-  - slug: "tag-4"
-    label: "マルチモーダル"
-    category: "その他"
-    style: "accent-sky"
-  - slug: "tag-5"
-    label: "推論能力"
-    category: "その他"
-    style: "accent-pink"
+  - slug: ai
+    label: AIトピック
+    category: その他
+    style: accent-blue
+  - slug: gemini-3
+    label: Gemini 3
+    category: その他
+    style: accent-gold
+  - slug: google-ai
+    label: Google AI
+    category: その他
+    style: accent-orange
+  - slug: multimodal
+    label: マルチモーダル
+    category: 技術トピック
+    style: accent-sky
+  - slug: tag-5
+    label: 推論能力
+    category: その他
+    style: accent-pink
 image:
-  key: "future-04"
-  src: "assets/img/article-templates/future-04.webp"
-  alt: "未来感のあるホログラム調（バリアント4）"
-  label: "フューチャービジョン"
-  caption: "次世代ロードマップやGemini 3.0の展望記事向け。"
-  category: "future"
+  key: future-04
+  src: assets/img/article-templates/future-04.webp
+  alt: 未来感のあるホログラム調（バリアント4）
+  label: フューチャービジョン
+  caption: 次世代ロードマップやGemini 3.0の展望記事向け。
+  category: future
 ---
 
 2025年11月22日、ついにそのベールを脱いだGoogleの最新AIモデル「Gemini 3」。前モデルであるGemini 2の発表からわずか1年足らずで、私たちはまたしてもAIの歴史的な転換点を目撃することになりました。

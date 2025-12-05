@@ -1,37 +1,39 @@
 ---
-title: "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析"
-date: "2025-12-01"
-slug: "2025-12-01-aichatgpt-51gemini-3claude-45"
-summary: "ChatGPT-5.1、Gemini 3、Claude 4.5の3つのAIツールを7つのタスクで比較し、それぞれの特徴や実用性を評価します。具体的なユースケースを通じて、読者が最適なAIツールを選ぶための情報を提供します。"
-status: "published"
+title: AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析
+date: '2025-12-01'
+slug: 2025-12-01-aichatgpt-51gemini-3claude-45
+summary: >-
+  ChatGPT-5.1、Gemini 3、Claude
+  4.5の3つのAIツールを7つのタスクで比較し、それぞれの特徴や実用性を評価します。具体的なユースケースを通じて、読者が最適なAIツールを選ぶための情報を提供します。
+status: "private"
 tags:
-  - slug: "ai-tools"
-    label: "AIツール"
-    category: "ツール"
-    style: "accent-lavender"
-  - slug: "chatgpt"
-    label: "ChatGPT"
-    category: "ツール"
-    style: "accent-purple"
-  - slug: "google-ai"
-    label: "Google AI"
-    category: "企業・プロダクト"
-    style: "accent-purple"
-  - slug: "claude"
-    label: "Claude"
-    category: "その他"
-    style: "accent-lavender"
-  - slug: "tag-5"
-    label: "自然言語処理"
-    category: "その他"
-    style: "accent-blue"
+  - slug: ai
+    label: AIツール
+    category: その他
+    style: accent-lavender
+  - slug: chatgpt
+    label: ChatGPT
+    category: 企業・プロダクト
+    style: accent-purple
+  - slug: google-ai
+    label: Google AI
+    category: その他
+    style: accent-orange
+  - slug: claude
+    label: Claude
+    category: 企業・プロダクト
+    style: accent-orange
+  - slug: tag-5
+    label: 自然言語処理
+    category: その他
+    style: accent-blue
 image:
-  key: "collab-05"
-  src: "assets/img/article-templates/collab-05.webp"
-  alt: "チーム協業とチャットを思わせるシンボル（バリアント5）"
-  label: "コラボレーションダイナミクス"
-  caption: "ChatGPTやコラボレーション系の議論を彩るビジュアル。"
-  category: "collaboration"
+  key: collab-05
+  src: assets/img/article-templates/collab-05.webp
+  alt: チーム協業とチャットを思わせるシンボル（バリアント5）
+  label: コラボレーションダイナミクス
+  caption: ChatGPTやコラボレーション系の議論を彩るビジュアル。
+  category: collaboration
 ---
 
 近年、AI技術は急速に進化し、さまざまな業界での活用が進んでいます。特に、自然言語処理（NLP）分野においては、ChatGPT-5.1、Gemini 3、Claude 4.5といった先進的なAIツールが登場し、業務の効率化や生産性向上に寄与しています。本記事では、これら3つのAIツールを7つの具体的なタスクを通じて比較し、それぞれの特徴や実用性を評価します。読者は、自身の業務や開発環境に最適なAIツールを選ぶための情報を得ることができます。特に、AIツールの選定には、技術的な背景や各ツールの強み・弱みを理解することが不可欠です。これにより、読者は単なるツール選びに留まらず、AIを活用した業務改善の戦略を構築することが可能となります。

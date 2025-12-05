@@ -1,37 +1,35 @@
 ---
-title: "Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界"
-date: "2025-12-04"
-slug: "2025-12-04-nano-banana-proai"
-summary: "Nano Banana Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。"
-status: "draft"
+title: Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界
+date: '2025-12-04'
+slug: 2025-12-04-nano-banana-proai
+summary: >-
+  Nano Banana
+  Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。
+status: draft
 tags:
-  - slug: "ai"
-    label: "AI技術"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "nano-banana-pro"
-    label: "Nano Banana Pro"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "tag-3"
-    label: "マンガ制作"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "tag-4"
-    label: "クリエイティブテクノロジー"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "draft"
-    label: "下書き"
-    category: "運用"
-    style: "accent-gold"
+  - slug: ai
+    label: AI技術
+    category: その他
+    style: accent-orange
+  - slug: nano-banana-pro
+    label: Nano Banana Pro
+    category: その他
+    style: accent-orange
+  - slug: tag-3
+    label: マンガ制作
+    category: その他
+    style: accent-orange
+  - slug: tag-4
+    label: クリエイティブテクノロジー
+    category: その他
+    style: accent-orange
 image:
-  key: "ai-core-01"
-  src: "assets/img/article-templates/ai-core-01.webp"
-  alt: "AIコアを象徴する抽象的な波形（バリアント1）"
-  label: "AIコア戦略"
-  caption: "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。"
-  category: "ai"
+  key: ai-core-01
+  src: assets/img/article-templates/ai-core-01.webp
+  alt: AIコアを象徴する抽象的な波形（バリアント1）
+  label: AIコア戦略
+  caption: 大規模言語モデルやAI基盤の戦略を示すグラデーションアート。
+  category: ai
 ---
 
 近年、AI技術の進化により、クリエイティブな分野においてもその活用が進んでいます。特に、マンガ制作においては、AIが持つ生成能力が注目されています。本記事では、Nano Banana Proを使用してマンガを制作する実験を行い、その性能を限界まで引き出すことで、AI技術の実力を検証します。具体的には、制作プロセスや得られた結果、ユーザーが享受できる利点について詳細に分析します。さらに、AI技術の限界や今後の改善点についても考察し、エンジニアリングとクリエイティブな分野の融合がもたらす影響を探ります。
