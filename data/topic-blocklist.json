@@ -110,5 +110,19 @@
     "sourceName": "mikimikiweb",
     "videoTitle": "【凄すぎ‼️】最新AI「Google Antigravity」爆誕！誰でも自然言語でコーディング！徹底解説",
     "blockedAt": "2025-12-04T21:15:13.629Z"
+  },
+  {
+    "topicKey": "aikling-o1",
+    "reason": "theme-duplicate",
+    "sourceName": "AIAIChatGPT-cj4sh",
+    "videoTitle": "【ナノバナナの動画版!】動画を自由に編集できる次世代の動画生成AIモデル「Kling O1」の始め方と使いこなしガイド！",
+    "blockedAt": "2025-12-05T09:24:47.879Z"
+  },
+  {
+    "topicKey": "workflows1google",
+    "reason": "theme-duplicate",
+    "sourceName": "google-school",
+    "videoTitle": "【完全自動化！】「まじん式プロンプト×Workflows」で1行書くだけでGoogleスライド完全自動生成へ！",
+    "blockedAt": "2025-12-05T09:24:51.741Z"
   }
 ]

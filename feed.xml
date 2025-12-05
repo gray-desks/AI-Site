@@ -5,9 +5,21 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Thu, 04 Dec 2025 21:16:40 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 05 Dec 2025 09:26:08 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>Mistral 3の詳細レビュー：オープンソースAIモデルの進化と実用性の考察</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-05-mistral-3ai.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-05-mistral-3ai.html</guid>
+    <pubDate>Fri, 05 Dec 2025 09:26:08 GMT</pubDate>
+    <description>Mistral 3は最新のオープンソースAIモデルであり、その性能や特長を深く分析します。生成AIの実用的なユースケースや他モデルとの比較を通じて、技術的な洞察を提供します。</description>
+    <category>Mistral 3</category>
+    <category>オープンソース</category>
+    <category>生成AI</category>
+    <category>技術分析</category>
+    <category>下書き</category>
+  </item>
   <item>
     <title>FFGO技術解説：動画制作の一貫性を向上させる新手法の可能性</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-04-ffgo.html</link>
@@ -46,17 +58,16 @@
     <category>AI市場動向</category>
   </item>
   <item>
-    <title>Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング</title>
+    <title>Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-claudemdllm.html</link>
     <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-03-claudemdllm.html</guid>
     <pubDate>Wed, 03 Dec 2025 21:16:18 GMT</pubDate>
-    <description>Claude.mdの効果的な書き方を解説し、LLMの研究に基づいたコンテキストエンジニアリングの手法を紹介。実践的なユースケースを通じて、開発者が得られるメリットを明示します。</description>
+    <description>Claude Codeで毎回同じ説明をするのは面倒...そんな悩みを解決するCLAUDE.mdの書き方を徹底解説。テンプレートやコツも紹介し、AIコーディングの効率を劇的に向上させる方法をお伝えします。</description>
     <category>Claude.md</category>
     <category>LLM</category>
     <category>コンテキストエンジニアリング</category>
     <category>生成AI</category>
     <category>開発効率</category>
-    <category>下書き</category>
   </item>
   <item>
     <title>NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法</title>

@@ -366,5 +366,13 @@
     "sourceName": "AI-Hakase",
     "videoTitle": "【完全解説】Wan2.2の新技術「FFGO」とは？動画の一貫性を支配する&quot;First Frame Go&quot;の仕組みと導入メリットを徹底解剖",
     "draftUrl": "posts/2025/12/2025-12-04-ffgo.html"
+  },
+  {
+    "topicKey": "mistral-3",
+    "firstSeen": "2025-12-05T09:26:08.095Z",
+    "lastPublishedAt": "2025-12-05",
+    "sourceName": "technavi_tooru",
+    "videoTitle": "Mistral 3 登場！最新オープンソースモデルの実力とは？",
+    "draftUrl": "posts/2025/12/2025-12-05-mistral-3ai.html"
   }
 ]
