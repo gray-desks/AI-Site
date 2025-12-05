@@ -12,7 +12,8 @@
     "posts:drafts": "node automation/scripts/posts-cli.js drafts",
     "posts:status": "node automation/scripts/posts-cli.js status",
     "posts:orphans": "node automation/scripts/posts-cli.js orphans",
-    "posts:migrate-folders": "node automation/scripts/migrate-posts-folders.js"
+    "posts:migrate-folders": "node automation/scripts/migrate-posts-folders.js",
+    "build:posts": "node scripts/build_articles.js"
   },
   "keywords": [
     "ai",
@@ -30,5 +31,10 @@
     "sharp": "^0.34.5",
     "sitemap": "^8.0.2",
     "youtube-transcript": "^1.2.0"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^17.0.1",
+    "turndown": "^7.2.2"
   }
 }

@@ -20,7 +20,7 @@ const { createLogger } = require('../lib/logger');
 const { createMetricsTracker } = require('../lib/metrics');
 const { createTagMapper } = require('./services/tagMapper');
 const { createImageSelector } = require('./services/imageSelector');
-const { createTemplateRenderer } = require('./services/templateRenderer');
+const { createMarkdownRenderer } = require('./services/markdownRenderer');
 const { isTopicBlocked, blockTopic } = require('../lib/topicBlocklist');
 
 // --- パス設定 ---
@@ -34,11 +34,6 @@ const topicHistoryPath = path.join(root, 'data', 'topic-history.json');
 const tagsConfigPath = path.join(root, 'data', 'tags.json');
 // 記事画像リストのパス
 const articleImagesManifestPath = path.join(root, 'assets', 'img', 'articles', 'index.json');
-// 記事HTMLテンプレートのパス
-// 記事HTMLテンプレートのパス
-const articleHtmlTemplatePath = path.join(root, 'automation', 'templates', 'article.html');
-// レイアウトテンプレートのパス
-const layoutHtmlTemplatePath = path.join(root, 'automation', 'templates', 'layout.html');
 
 // --- 定数 ---
 const { DEDUPE_WINDOW_DAYS } = GENERATOR;
@@ -60,11 +55,8 @@ const { selectArticleImage } = createImageSelector({
   manifestPath: articleImagesManifestPath,
 });
 
-// テンプレートレンダリングサービス: 記事データからHTMLを生成する
-const { compileArticleHtml } = createTemplateRenderer({
-  templatePath: articleHtmlTemplatePath,
-  layoutPath: layoutHtmlTemplatePath,
-});
+// Markdownレンダリングサービス: 記事データからMarkdownを生成する
+const { compileArticleMarkdown } = createMarkdownRenderer();
 
 /**
  * 生成された記事オブジェクトの簡易バリデーション
@@ -641,8 +633,12 @@ const runGenerator = async (input = null) => {
     image: selectedImage,
   };
 
-  // --- HTML生成 ---
-  const publishHtml = compileArticleHtml(hydratedArticle, meta, { assetBase, image: selectedImage });
+  // --- Markdown生成 ---
+  const publishMarkdown = compileArticleMarkdown(hydratedArticle, meta, {
+    slug,
+    image: selectedImage,
+    status: DEFAULT_POST_STATUS
+  });
 
   const now = new Date().toISOString();
 
@@ -659,7 +655,7 @@ const runGenerator = async (input = null) => {
           topicKey,
           postDate: today,
           slug,
-          outputFile: publishRelativePath,
+          outputFile: publishRelativePath, // This will be the HTML path eventually
           image: selectedImage || null,
           imageKey: selectedImage?.key || null,
         }
@@ -702,7 +698,7 @@ const runGenerator = async (input = null) => {
     sections: Array.isArray(hydratedArticle.sections) ? hydratedArticle.sections : [],
     slug,
     date: today,
-    htmlContent: publishHtml,
+    markdownContent: publishMarkdown, // Changed from htmlContent
     relativePath: publishRelativePath,
     image: selectedImage || null,
     source: {

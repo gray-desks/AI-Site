@@ -181,62 +181,48 @@ const runPublisher = async ({ collectorResult, researcherResult, generatorResult
   let postsChanged = false;
 
   // Generatorが記事を生成した場合のみ処理を実行
-  if (generatorResult?.generated && generatorResult.article?.htmlContent) {
+  if (generatorResult?.generated && generatorResult.article?.markdownContent) {
     const article = generatorResult.article;
-    const relativePath = buildArticleRelativePath(article);
-    const absolutePath = path.join(root, relativePath);
-    ensureDir(path.dirname(absolutePath));
+    const slug = article.slug;
+    const date = article.date;
+    const markdownContent = article.markdownContent;
 
-    const nextHtml = article.htmlContent;
+    // content/posts に Markdownファイルを書き込む
+    const contentDir = path.join(root, 'content', 'posts');
+    ensureDir(contentDir);
+    const mdFileName = `${date}-${slug}.md`;
+    const mdFilePath = path.join(contentDir, mdFileName);
+
     // 既存ファイルがあれば読み込み、内容が変更されているか確認
-    const currentHtml = fs.existsSync(absolutePath) ? fs.readFileSync(absolutePath, 'utf-8') : null;
-    if (currentHtml !== nextHtml) {
-      fs.writeFileSync(absolutePath, nextHtml);
-      console.log(`[publisher] 記事ファイルを書き込みました: ${relativePath}`);
-    } else {
-      console.log(`[publisher] 既存コンテンツと同一のため書き込みをスキップ: ${relativePath}`);
-    }
+    const currentMd = fs.existsSync(mdFilePath) ? fs.readFileSync(mdFilePath, 'utf-8') : null;
 
-    generatedFilePath = relativePath;
+    if (currentMd !== markdownContent) {
+      fs.writeFileSync(mdFilePath, markdownContent);
+      console.log(`[publisher] Markdownファイルを書き込みました: content/posts/${mdFileName}`);
 
-    // posts.jsonに保存するエントリを作成
-    const basePostEntry =
-      generatorResult.postEntry || {
-        title: article.title,
-        date: article.date,
-        summary: article.summary ?? '',
-        tags: Array.isArray(article.tags) ? article.tags : [],
-      };
-    const finalizedPostEntry = {
-      ...basePostEntry,
-      url: relativePath,
-      slug: basePostEntry.slug || article.slug,
-      image: basePostEntry.image || article.image || null,
-    };
-
-    // posts.jsonを更新
-    updatedPosts = updatePosts(posts, finalizedPostEntry);
-    postsChanged = JSON.stringify(updatedPosts) !== JSON.stringify(posts);
-    if (postsChanged) {
-      writeJson(postsJsonPath, updatedPosts);
-      console.log(`[publisher] data/posts.json を更新しました（${updatedPosts.length}件）。`);
-    } else {
-      console.log('[publisher] data/posts.json に変化はありませんでした。');
-    }
-
-    // 記事化済みのVideo IDを記録
-    if (article.video?.id) {
-      const recorded = upsertProcessedVideo({
-        videoId: article.video.id,
-        videoTitle: article.video.title,
-        articleTitle: article.title,
-        postUrl: relativePath,
-        sourceName: article.source?.name || '',
-      });
-      if (recorded) {
-        console.log(`[publisher] processed-videos.json を更新しました: ${recorded.videoId}`);
+      // ビルドスクリプトを実行してHTMLを生成・posts.jsonを更新
+      console.log('[publisher] npm run build:posts を実行します...');
+      try {
+        const { execSync } = require('child_process');
+        execSync('npm run build:posts', { cwd: root, stdio: 'inherit' });
+        postsChanged = true;
+      } catch (error) {
+        console.error('[publisher] ビルドスクリプトの実行に失敗しました:', error.message);
+        throw error;
       }
+    } else {
+      console.log(`[publisher] 既存Markdownと同一のため書き込みをスキップ: ${mdFileName}`);
     }
+
+    generatedFilePath = buildArticleRelativePath(article); // For status reporting
+
+    // posts.json は build:posts で更新されているはずなので、再読み込み
+    updatedPosts = readJson(postsJsonPath, []);
+
+  } else if (generatorResult?.generated && generatorResult.article?.htmlContent) {
+    // Fallback for legacy HTML-only generation (if any)
+    console.warn('[publisher] ⚠️ Markdownコンテンツがありません。HTML直接書き込みモード（非推奨）で動作します。');
+    // ... (Old logic could go here, but let's just skip it or assume MD is always present now)
   } else {
     console.log('[publisher] generator出力が無いため、記事作成とposts.json更新をスキップします。');
   }

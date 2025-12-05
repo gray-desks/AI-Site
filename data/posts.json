@@ -93,7 +93,7 @@
     ],
     "url": "posts/2025/12/2025-12-04-ffgo.html",
     "slug": "2025-12-04-ffgo",
-    "publishedAt": "2025-12-04T21:16:40.784Z",
+    "publishedAt": "2025-12-04T00:00:00.000Z",
     "status": "draft",
     "image": {
       "key": "ai-core-01",
@@ -103,7 +103,7 @@
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
     },
-    "createdAt": "2025-12-04T21:16:40.787Z"
+    "createdAt": "2025-12-05T07:36:15.868Z"
   },
   {
     "title": "Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界",
@@ -143,7 +143,7 @@
     ],
     "url": "posts/2025/12/2025-12-04-nano-banana-proai.html",
     "slug": "2025-12-04-nano-banana-proai",
-    "publishedAt": "2025-12-04T09:28:57.358Z",
+    "publishedAt": "2025-12-04T00:00:00.000Z",
     "status": "draft",
     "image": {
       "key": "ai-core-01",
@@ -153,7 +153,7 @@
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
     },
-    "createdAt": "2025-12-04T09:28:57.362Z"
+    "createdAt": "2025-12-05T07:36:15.869Z"
   },
   {
     "title": "OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化",
@@ -203,7 +203,7 @@
       "caption": "OpenAIのコードレッド宣言とAI業界の激変",
       "category": "news"
     },
-    "createdAt": "2025-12-04T00:00:00.000Z"
+    "createdAt": "2025-12-05T07:36:15.870Z"
   },
   {
     "title": "Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル",
@@ -243,7 +243,7 @@
     ],
     "url": "posts/2025/12/2025-12-03-claudemdllm.html",
     "slug": "2025-12-03-claudemdllm",
-    "publishedAt": "2025-12-03T21:16:18.689Z",
+    "publishedAt": "2025-12-03T00:00:00.000Z",
     "status": "published",
     "image": {
       "key": "claudemd-guide-hero",
@@ -253,7 +253,7 @@
       "caption": "Claude.mdの書き方完全ガイド",
       "category": "tech"
     },
-    "createdAt": "2025-12-03T21:16:18.693Z"
+    "createdAt": "2025-12-05T07:36:15.867Z"
   },
   {
     "title": "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法",
@@ -287,7 +287,7 @@
     ],
     "url": "posts/2025/12/2025-12-03-notebooklm.html",
     "slug": "2025-12-03-notebooklm",
-    "publishedAt": "2025-12-03T09:28:51.261Z",
+    "publishedAt": "2025-12-03T00:00:00.000Z",
     "status": "draft",
     "image": {
       "key": "infra-01",
@@ -297,7 +297,7 @@
       "caption": "Googleやクラウドプラットフォーム関連トピック向け。",
       "category": "infrastructure"
     },
-    "createdAt": "2025-12-03T09:28:51.264Z"
+    "createdAt": "2025-12-05T07:36:15.868Z"
   },
   {
     "title": "まだ「議事録」だけですか？ 2025年冬、会議AIが“指示待ち”を卒業していた話。",
@@ -337,7 +337,7 @@
     ],
     "url": "posts/2025/12/2025-12-03-aimtg.html",
     "slug": "2025-12-03-aimtg",
-    "publishedAt": "2025-12-03T01:27:44.027Z",
+    "publishedAt": "2025-12-03T00:00:00.000Z",
     "status": "published",
     "image": {
       "key": "aimtg-hero",
@@ -347,7 +347,7 @@
       "caption": "会議中にAIが「カンペ」を出してくれる未来",
       "category": "ai"
     },
-    "createdAt": "2025-12-03T01:27:44.030Z"
+    "createdAt": "2025-12-05T07:36:15.865Z"
   },
   {
     "title": "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性",
@@ -393,7 +393,7 @@
     ],
     "url": "posts/2025/12/2025-12-03-microsoft-fara-7bai.html",
     "slug": "2025-12-03-microsoft-fara-7bai",
-    "publishedAt": "2025-12-03T01:23:45.658Z",
+    "publishedAt": "2025-12-03T00:00:00.000Z",
     "status": "draft",
     "image": {
       "key": "ai-core-03",
@@ -403,7 +403,7 @@
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
     },
-    "createdAt": "2025-12-03T01:23:45.661Z"
+    "createdAt": "2025-12-05T07:36:15.867Z"
   },
   {
     "title": "AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド",
@@ -449,7 +449,7 @@
     ],
     "url": "posts/2025/12/2025-12-02-aigithub.html",
     "slug": "2025-12-02-aigithub",
-    "publishedAt": "2025-12-02T21:18:21.004Z",
+    "publishedAt": "2025-12-02T00:00:00.000Z",
     "status": "draft",
     "image": {
       "key": "ai-core-04",
@@ -459,7 +459,7 @@
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
     },
-    "createdAt": "2025-12-02T21:18:21.008Z"
+    "createdAt": "2025-12-05T07:36:15.863Z"
   },
   {
     "title": "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
@@ -499,7 +499,7 @@
     ],
     "url": "posts/2025/12/2025-12-02-pixaireference-pro.html",
     "slug": "2025-12-02-pixaireference-pro",
-    "publishedAt": "2025-12-02T09:30:33.191Z",
+    "publishedAt": "2025-12-02T00:00:00.000Z",
     "status": "published",
     "image": {
       "key": "pixai-reference-pro",
@@ -509,7 +509,7 @@
       "caption": "PixAI Reference Proでキャラクターを固定",
       "category": "ai"
     },
-    "createdAt": "2025-12-02T09:30:33.194Z"
+    "createdAt": "2025-12-05T07:36:15.864Z"
   },
   {
     "title": "AIツール比較：ChatGPT-5.1、Gemini 3、Claude 4.5の実用性と効率性を徹底分析",
@@ -549,7 +549,7 @@
     ],
     "url": "posts/2025/12/2025-12-01-aichatgpt-51gemini-3claude-45.html",
     "slug": "2025-12-01-aichatgpt-51gemini-3claude-45",
-    "publishedAt": "2025-12-01T21:14:56.833Z",
+    "publishedAt": "2025-12-01T00:00:00.000Z",
     "status": "published",
     "image": {
       "key": "collab-05",
@@ -559,7 +559,7 @@
       "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
       "category": "collaboration"
     },
-    "createdAt": "2025-12-01T21:14:56.837Z"
+    "createdAt": "2025-12-05T07:36:15.862Z"
   },
   {
     "title": "【2025年最新】「実写と見分けがつかない」は序の口？Unreal Engine 5が起こしている“静かな革命”を分かりやすく解説",
@@ -599,7 +599,7 @@
     ],
     "url": "posts/2025/12/2025-12-01-unreal-engine-5.html",
     "slug": "2025-12-01-unreal-engine-5",
-    "publishedAt": "2025-12-01T09:33:30.815Z",
+    "publishedAt": "2025-12-01T00:00:00.000Z",
     "status": "published",
     "image": {
       "key": "ue5-magic-wand",
@@ -609,7 +609,7 @@
       "caption": "想像力がそのまま映像になる時代の到来",
       "category": "technology"
     },
-    "createdAt": "2025-12-01T09:33:30.818Z"
+    "createdAt": "2025-12-05T07:36:15.863Z"
   },
   {
     "title": "絵心ゼロでも「アプリ」が作れる時代へ。GoogleのAI「Stitch」の神アプデが凄すぎる話【2025年12月最新】",
@@ -649,7 +649,7 @@
     ],
     "url": "posts/2025/11/2025-11-30-googleaistitchui.html",
     "slug": "2025-11-30-googleaistitchui",
-    "publishedAt": "2025-11-30T21:14:51.961Z",
+    "publishedAt": "2025-11-30T00:00:00.000Z",
     "status": "published",
     "image": {
       "key": "stitch-update-2025",
@@ -659,7 +659,7 @@
       "caption": "手書きメモからアプリが生成されるイメージ",
       "category": "ai"
     },
-    "createdAt": "2025-11-30T21:14:51.964Z"
+    "createdAt": "2025-12-05T07:36:15.860Z"
   },
   {
     "title": "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
@@ -693,7 +693,7 @@
     ],
     "url": "posts/2025/11/2025-11-30-gmailpop32026.html",
     "slug": "2025-11-30-gmailpop32026",
-    "publishedAt": "2025-11-30T09:21:55.227Z",
+    "publishedAt": "2025-11-30T00:00:00.000Z",
     "status": "published",
     "image": {
       "key": "gmail-pop3-2026",
@@ -703,7 +703,7 @@
       "caption": "GmailのPOP3サポート終了をイメージしたパステルカラーのイラスト",
       "category": "security"
     },
-    "createdAt": "2025-11-30T09:21:55.230Z"
+    "createdAt": "2025-12-05T07:36:15.859Z"
   },
   {
     "title": "【徹底解剖】Google Antigravityの画像生成エンジン「Nano Banana Pro」の正体と、\"1日5枚\"制限の真実",
@@ -737,7 +737,7 @@
     ],
     "url": "posts/2025/11/2025-11-30-nanobanana.html",
     "slug": "2025-11-30-nanobanana",
-    "publishedAt": "2025-11-30T07:35:00.000Z",
+    "publishedAt": "2025-11-30T00:00:00.000Z",
     "status": "published",
     "image": {
       "key": "nanobanana-hero",
@@ -747,7 +747,7 @@
       "caption": "AntigravityとNano Banana Proの融合イメージ",
       "category": "ai"
     },
-    "createdAt": "2025-11-30T07:35:00.000Z"
+    "createdAt": "2025-12-05T07:36:15.861Z"
   },
   {
     "title": "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
@@ -781,7 +781,7 @@
     ],
     "url": "posts/2025/11/2025-11-30-ai1.html",
     "slug": "2025-11-30-ai1",
-    "publishedAt": "2025-11-30T06:09:44.772Z",
+    "publishedAt": "2025-11-30T00:00:00.000Z",
     "status": "published",
     "image": {
       "key": "future-05",
@@ -791,7 +791,7 @@
       "caption": "次世代ロードマップやGemini 3.0の展望記事向け。",
       "category": "future"
     },
-    "createdAt": "2025-11-30T06:09:44.776Z"
+    "createdAt": "2025-12-05T07:36:15.858Z"
   },
   {
     "title": "FLUX.2のZero-Shotマルチ編集：AI時代の動画編集革新",
@@ -831,8 +831,8 @@
     ],
     "url": "posts/2025/11/2025-11-29-flux2zero-shotai.html",
     "slug": "2025-11-29-flux2zero-shotai",
-    "publishedAt": "2025-11-29T21:13:49.088Z",
-    "createdAt": "2025-11-29T21:13:49.088Z",
+    "publishedAt": "2025-11-29T00:00:00.000Z",
+    "createdAt": "2025-12-05T07:36:15.857Z",
     "status": "published",
     "image": {
       "key": "flux2-comfyui",
@@ -881,7 +881,7 @@
     ],
     "url": "posts/2025/11/2025-11-29-150.html",
     "slug": "2025-11-29-150",
-    "publishedAt": "2025-11-29T10:04:33.757Z",
+    "publishedAt": "2025-11-29T00:00:00.000Z",
     "image": {
       "key": "elon-musk-future",
       "src": "assets/img/posts/2025/11/elon_musk_future_lifestyle.jpg",
@@ -889,7 +889,9 @@
       "label": "Future Lifestyle",
       "caption": "労働や運転から解放された未来の生活イメージ",
       "category": "future"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.856Z"
   },
   {
     "title": "思考の速度で入力せよ。声で操作する次世代エディタ「Aqua Voice」の実力",
@@ -923,7 +925,7 @@
     ],
     "url": "posts/2025/11/2025-11-28-aqua-voiceai.html",
     "slug": "2025-11-28-aqua-voiceai",
-    "publishedAt": "2025-11-28T21:14:11.150Z",
+    "publishedAt": "2025-11-28T00:00:00.000Z",
     "image": {
       "key": "aqua-voice-hero",
       "src": "assets/img/posts/2025/11/aqua_voice_hero.png",
@@ -931,7 +933,9 @@
       "label": "Productivity Tools",
       "caption": "声で操作する次世代エディタ「Aqua Voice」のイメージ",
       "category": "tool"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.855Z"
   },
   {
     "title": "【徹底解説】OpenAI「Sora 2」で動画制作はこう変わる！ガチャから「演出」へ進化した革命的アップデート",
@@ -971,7 +975,7 @@
     ],
     "url": "posts/2025/11/2025-11-28-sora-2.html",
     "slug": "2025-11-28-sora-2",
-    "publishedAt": "2025-11-28T07:29:18.797Z",
+    "publishedAt": "2025-11-28T00:00:00.000Z",
     "image": {
       "key": "hero",
       "src": "assets/img/posts/2025-11-28-sora-2/hero.png",
@@ -979,7 +983,9 @@
       "label": "Sora 2 Update",
       "caption": "動画制作の新しいワークフロー",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.855Z"
   },
   {
     "title": "Google Workspace FlowsとNotebookLMの進化: 知識管理と自動化の新時代",
@@ -1019,7 +1025,7 @@
     ],
     "url": "posts/2025/11/2025-11-27-google-workspace-flowsnotebooklm.html",
     "slug": "2025-11-27-google-workspace-flowsnotebooklm",
-    "publishedAt": "2025-11-27T22:57:40.452Z",
+    "publishedAt": "2025-11-27T00:00:00.000Z",
     "image": {
       "key": "hero",
       "src": "assets/img/posts/2025-11-28-gw-flows/hero.png",
@@ -1027,7 +1033,9 @@
       "label": "Latest Update",
       "caption": "AIエージェントによる業務自動化のイメージ",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.853Z"
   },
   {
     "title": "Claude for Chrome拡張機能とブラウザベース AI エージェントの包括的エコシステム分析",
@@ -1067,7 +1075,7 @@
     ],
     "url": "posts/2025/11/2025-11-27-claude-for-chrome.html",
     "slug": "2025-11-27-claude-for-chrome",
-    "publishedAt": "2025-11-27T11:49:48.291Z",
+    "publishedAt": "2025-11-27T00:00:00.000Z",
     "image": {
       "key": "hero",
       "src": "assets/img/posts/2025-11-27/hero.png",
@@ -1075,7 +1083,9 @@
       "label": "Special Report",
       "caption": "AIエージェントがブラウザを操作するイメージ",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.852Z"
   },
   {
     "title": "【2025年最新】Gemini 3 vs GPT-5 vs Claude 3.5 Sonnet：最強LLMはどれだ？徹底比較",
@@ -1115,7 +1125,7 @@
     ],
     "url": "posts/2025/11/2025-11-27-llm.html",
     "slug": "2025-11-27-llm",
-    "publishedAt": "2025-11-27T03:46:53.561Z",
+    "publishedAt": "2025-11-27T00:00:00.000Z",
     "image": {
       "key": "hero",
       "src": "assets/img/posts/2025-11-27-llm/hero.png",
@@ -1123,7 +1133,9 @@
       "label": "技術比較",
       "caption": "3大LLMの比較イメージ",
       "category": "comparison"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.854Z"
   },
   {
     "title": "APIとHTTPリクエストの基礎から応用まで：技術的背景と実践的活用法",
@@ -1181,7 +1193,7 @@
     ],
     "url": "posts/2025/11/2025-11-26-apihttp.html",
     "slug": "2025-11-26-apihttp",
-    "publishedAt": "2025-11-26T12:08:03.150Z",
+    "publishedAt": "2025-11-26T00:00:00.000Z",
     "image": {
       "key": "research-01",
       "src": "assets/img/article-templates/research-01.webp",
@@ -1189,7 +1201,9 @@
       "label": "リサーチ＆インサイト",
       "caption": "Gemini 3.0や深掘り分析記事にフィット。",
       "category": "research"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.849Z"
   },
   {
     "title": "GPT-4oの進化：ビジネス効率化とクリエイティブ領域での革新",
@@ -1223,7 +1237,7 @@
     ],
     "url": "posts/2025/11/2025-11-26-gpt-4o.html",
     "slug": "2025-11-26-gpt-4o",
-    "publishedAt": "2025-11-26T00:11:53.713Z",
+    "publishedAt": "2025-11-26T00:00:00.000Z",
     "image": {
       "key": "collab-04",
       "src": "assets/img/article-templates/collab-04.webp",
@@ -1231,7 +1245,9 @@
       "label": "コラボレーションダイナミクス",
       "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
       "category": "collaboration"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.850Z"
   },
   {
     "title": "AI時代の革新: タイニーチームとデータ駆動型組織の未来",
@@ -1271,7 +1287,7 @@
     ],
     "url": "posts/2025/11/2025-11-25-ai.html",
     "slug": "2025-11-25-ai",
-    "publishedAt": "2025-11-25T12:09:49.623Z",
+    "publishedAt": "2025-11-25T00:00:00.000Z",
     "image": {
       "key": "ai-core-01",
       "src": "assets/img/article-templates/ai-core-01.webp",
@@ -1279,7 +1295,9 @@
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.848Z"
   },
   {
     "title": "Gemini新モデルの技術的進化と実践的応用の可能性",
@@ -1319,7 +1337,7 @@
     ],
     "url": "posts/2025/11/2025-11-25-gemini.html",
     "slug": "2025-11-25-gemini",
-    "publishedAt": "2025-11-25T00:10:33.970Z",
+    "publishedAt": "2025-11-25T00:00:00.000Z",
     "image": {
       "key": "ai-core-04",
       "src": "assets/img/article-templates/ai-core-04.webp",
@@ -1327,7 +1345,9 @@
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.848Z"
   },
   {
     "title": "Nano Banana Proの実力: Gemini 2.5で実現する画像生成革命",
@@ -1367,7 +1387,7 @@
     ],
     "url": "posts/2025/11/2025-11-24-nano-banana-pro-gemini-25.html",
     "slug": "2025-11-24-nano-banana-pro-gemini-25",
-    "publishedAt": "2025-11-24T12:08:17.616Z",
+    "publishedAt": "2025-11-24T00:00:00.000Z",
     "image": {
       "key": "ai-core-05",
       "src": "assets/img/article-templates/ai-core-05.webp",
@@ -1375,7 +1395,9 @@
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.847Z"
   },
   {
     "title": "Gemini 3: マルチモーダルAIの新時代と実務活用の可能性",
@@ -1415,7 +1437,7 @@
     ],
     "url": "posts/2025/11/2025-11-24-gemini-3-ai.html",
     "slug": "2025-11-24-gemini-3-ai",
-    "publishedAt": "2025-11-24T00:12:29.223Z",
+    "publishedAt": "2025-11-24T00:00:00.000Z",
     "image": {
       "key": "research-05",
       "src": "assets/img/article-templates/research-05.webp",
@@ -1423,7 +1445,9 @@
       "label": "リサーチ＆インサイト",
       "caption": "Gemini 3.0や深掘り分析記事にフィット。",
       "category": "research"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.846Z"
   },
   {
     "title": "Nano Banana Proレビュー：画像生成AIの新たな地平を切り開く",
@@ -1457,7 +1481,7 @@
     ],
     "url": "posts/2025/11/2025-11-23-nano-banana-proai.html",
     "slug": "2025-11-23-nano-banana-proai",
-    "publishedAt": "2025-11-23T12:07:14.001Z",
+    "publishedAt": "2025-11-23T00:00:00.000Z",
     "image": {
       "key": "security-04",
       "src": "assets/img/article-templates/security-04.webp",
@@ -1465,7 +1489,9 @@
       "label": "セキュリティラティス",
       "caption": "トラストやガバナンス記事に使用。",
       "category": "security"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.845Z"
   },
   {
     "title": "Stitch 2.0の進化：Gemini3とNanobanana Proの実力を徹底解剖",
@@ -1505,7 +1531,7 @@
     ],
     "url": "posts/2025/11/2025-11-23-stitch-20gemini3nanobanana-pro.html",
     "slug": "2025-11-23-stitch-20gemini3nanobanana-pro",
-    "publishedAt": "2025-11-23T01:36:00.323Z",
+    "publishedAt": "2025-11-23T00:00:00.000Z",
     "image": {
       "key": "ai-core-02",
       "src": "assets/img/article-templates/ai-core-02.webp",
@@ -1513,7 +1539,9 @@
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.845Z"
   },
   {
     "title": "Canva AIの革新: 資料作成の効率化とその限界",
@@ -1553,7 +1581,7 @@
     ],
     "url": "posts/2025/11/2025-11-22-canva-ai.html",
     "slug": "2025-11-22-canva-ai",
-    "publishedAt": "2025-11-22T07:09:20.930Z",
+    "publishedAt": "2025-11-22T00:00:00.000Z",
     "image": {
       "key": "ai-core-05",
       "src": "assets/img/article-templates/ai-core-05.webp",
@@ -1561,79 +1589,9 @@
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
-    }
-  },
-  {
-    "title": "Gemini 3の技術革新：軽量化と専門性の未来",
-    "date": "2025-11-22",
-    "summary": "Gemini 3の軽量モデルがもたらす技術的進化と、その実用性を深く探ります。",
-    "tags": [
-      {
-        "slug": "ai",
-        "label": "AI技術",
-        "category": "その他",
-        "style": "accent-orange"
-      },
-      {
-        "slug": "tag-2",
-        "label": "モデル軽量化",
-        "category": "その他",
-        "style": "accent-orange"
-      },
-      {
-        "slug": "tag-3",
-        "label": "ビジネス応用",
-        "category": "その他",
-        "style": "accent-orange"
-      }
-    ],
-    "url": "posts/2025/11/2025-11-22-gemini-3.html",
-    "slug": "2025-11-22-gemini-3",
-    "publishedAt": "2025-11-22T06:33:28.905Z",
-    "image": {
-      "key": "research-03",
-      "src": "assets/img/article-templates/research-03.webp",
-      "alt": "リサーチデータの波形（バリアント3）",
-      "label": "リサーチ＆インサイト",
-      "caption": "Gemini 3.0や深掘り分析記事にフィット。",
-      "category": "research"
-    }
-  },
-  {
-    "title": "Gemini 3 Proがもたらす未来のAI体験、驚きの連続！",
-    "date": "2025-11-22",
-    "summary": "Gemini 3 ProはただのAIじゃない。実際に触ってみたら、まるで未来がここに来たような感覚。これ、絶対に試してみる価値あり！",
-    "tags": [
-      {
-        "slug": "ai-topic",
-        "label": "AIトピック",
-        "category": "その他",
-        "style": "accent-neutral"
-      },
-      {
-        "slug": "gemini-3-pro",
-        "label": "Gemini 3 Pro",
-        "category": "その他",
-        "style": "accent-lime"
-      },
-      {
-        "slug": "tag-3",
-        "label": "技術革新",
-        "category": "その他",
-        "style": "accent-sky"
-      }
-    ],
-    "url": "posts/2025/11/2025-11-22-gemini-3-proai.html",
-    "slug": "2025-11-22-gemini-3-proai",
-    "publishedAt": "2025-11-22T06:16:17.350Z",
-    "image": {
-      "key": "research-05",
-      "src": "assets/img/article-templates/research-05.webp",
-      "alt": "リサーチデータの波形（バリアント5）",
-      "label": "リサーチ＆インサイト",
-      "caption": "Gemini 3.0や深掘り分析記事にフィット。",
-      "category": "research"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.842Z"
   },
   {
     "title": "Gemini 3: Googleの次世代AIがもたらす革新と挑戦",
@@ -1673,7 +1631,7 @@
     ],
     "url": "posts/2025/11/2025-11-22-gemini-3-googleai.html",
     "slug": "2025-11-22-gemini-3-googleai",
-    "publishedAt": "2025-11-22T03:48:51.001Z",
+    "publishedAt": "2025-11-22T00:00:00.000Z",
     "image": {
       "key": "future-04",
       "src": "assets/img/article-templates/future-04.webp",
@@ -1681,7 +1639,9 @@
       "label": "フューチャービジョン",
       "caption": "次世代ロードマップやGemini 3.0の展望記事向け。",
       "category": "future"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.844Z"
   },
   {
     "title": "Gemini 3の革新: AIアシスタントの新機能と応用展望",
@@ -1721,7 +1681,7 @@
     ],
     "url": "posts/2025/11/2025-11-20-gemini-3-ai.html",
     "slug": "2025-11-20-gemini-3-ai",
-    "publishedAt": "2025-11-20T01:54:53.432Z",
+    "publishedAt": "2025-11-20T00:00:00.000Z",
     "image": {
       "key": "ai-core-04",
       "src": "assets/img/article-templates/ai-core-04.webp",
@@ -1729,7 +1689,9 @@
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.839Z"
   },
   {
     "title": "Google Anti-Gravityの可能性とIDE業界へのインパクト",
@@ -1763,7 +1725,7 @@
     ],
     "url": "posts/2025/11/2025-11-19-google-anti-gravityide.html",
     "slug": "2025-11-19-google-anti-gravityide",
-    "publishedAt": "2025-11-19T00:19:45.687Z",
+    "publishedAt": "2025-11-19T00:00:00.000Z",
     "image": {
       "key": "infra-01",
       "src": "assets/img/article-templates/infra-01.webp",
@@ -1771,7 +1733,9 @@
       "label": "クラウド・インフラ",
       "caption": "Googleやクラウドプラットフォーム関連トピック向け。",
       "category": "infrastructure"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.836Z"
   },
   {
     "title": "AI駆動開発とは？開発者の生産性を劇的に向上させる新しい開発手法",
@@ -1811,7 +1775,7 @@
     ],
     "url": "posts/2025/11/2025-11-18-ai-driven-development.html",
     "slug": "2025-11-18-ai-driven-development",
-    "publishedAt": "2025-11-18T23:59:00.000Z",
+    "publishedAt": "2025-11-18T00:00:00.000Z",
     "image": {
       "key": "ai-core-01",
       "src": "assets/img/article-templates/ai-core-01.webp",
@@ -1819,7 +1783,9 @@
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.832Z"
   },
   {
     "title": "AI時代に淘汰されない人材になるための5つのステップ",
@@ -1859,7 +1825,7 @@
     ],
     "url": "posts/2025/11/2025-11-18-ai5.html",
     "slug": "2025-11-18-ai5",
-    "publishedAt": "2025-11-18T23:58:00.000Z",
+    "publishedAt": "2025-11-18T00:00:00.000Z",
     "image": {
       "key": "ai-core-02",
       "src": "assets/img/article-templates/ai-core-02.webp",
@@ -1867,7 +1833,9 @@
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.834Z"
   },
   {
     "title": "AI導入で成功する企業の条件とその技術的要因",
@@ -1901,7 +1869,7 @@
     ],
     "url": "posts/2025/11/2025-11-18-ai.html",
     "slug": "2025-11-18-ai",
-    "publishedAt": "2025-11-18T12:06:20.348Z",
+    "publishedAt": "2025-11-18T00:00:00.000Z",
     "image": {
       "key": "ai-core-03",
       "src": "assets/img/article-templates/ai-core-03.webp",
@@ -1909,7 +1877,9 @@
       "label": "AIコア戦略",
       "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
       "category": "ai"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.833Z"
   },
   {
     "title": "AI活用を0から学ぶ4つのステップ：初心者向け完全ガイド",
@@ -1951,7 +1921,9 @@
     },
     "url": "posts/2025/11/2025-11-17-ai04.html",
     "slug": "2025-11-17-ai04",
-    "publishedAt": "2025-11-17T23:59:00.000Z"
+    "publishedAt": "2025-11-17T00:00:00.000Z",
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.824Z"
   },
   {
     "title": "ChatGPTのグループチャット機能がもたらす業務効率化の新潮流",
@@ -1991,7 +1963,7 @@
     ],
     "url": "posts/2025/11/2025-11-17-chatgpt.html",
     "slug": "2025-11-17-chatgpt",
-    "publishedAt": "2025-11-17T23:58:00.000Z",
+    "publishedAt": "2025-11-17T00:00:00.000Z",
     "image": {
       "key": "collab-02",
       "src": "assets/img/article-templates/collab-02.webp",
@@ -1999,7 +1971,9 @@
       "label": "コラボレーションダイナミクス",
       "caption": "ChatGPTやコラボレーション系の議論を彩るビジュアル。",
       "category": "collaboration"
-    }
+    },
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.825Z"
   },
   {
     "title": "NotebookLMの最新アップデートでAIノート作成がさらに便利に！",
@@ -2035,7 +2009,9 @@
     },
     "url": "posts/2025/11/2025-11-16-notebooklmai.html",
     "slug": "2025-11-16-notebooklmai",
-    "publishedAt": "2025-11-16T23:59:00.000Z"
+    "publishedAt": "2025-11-16T00:00:00.000Z",
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.823Z"
   },
   {
     "title": "次世代AI「Gemini 3.0」と新モデルの動向を探る",
@@ -2077,7 +2053,9 @@
     },
     "url": "posts/2025/11/2025-11-16-aigemini-30.html",
     "slug": "2025-11-16-aigemini-30",
-    "publishedAt": "2025-11-16T23:58:00.000Z"
+    "publishedAt": "2025-11-16T00:00:00.000Z",
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.822Z"
   },
   {
     "title": "ChatGPTのグループチャット機能で業務効率を劇的に向上させる方法",
@@ -2119,7 +2097,9 @@
     },
     "url": "posts/2025/11/2025-11-15-chatgpt.html",
     "slug": "2025-11-15-chatgpt",
-    "publishedAt": "2025-11-15T23:58:00.000Z"
+    "publishedAt": "2025-11-15T00:00:00.000Z",
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.821Z"
   },
   {
     "title": "AIツール徹底比較：ChatGPT、Gemini、PixAIの選び方",
@@ -2161,6 +2141,8 @@
     },
     "url": "posts/2025/11/2025-11-15-aichatgptgeminipixai.html",
     "slug": "2025-11-15-aichatgptgeminipixai",
-    "publishedAt": "2025-11-15T23:57:00.000Z"
+    "publishedAt": "2025-11-15T00:00:00.000Z",
+    "status": "published",
+    "createdAt": "2025-12-05T07:36:15.819Z"
   }
 ]
