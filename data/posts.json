@@ -156,9 +156,9 @@
     "createdAt": "2025-12-04T00:00:00.000Z"
   },
   {
-    "title": "Claude.mdの書き方：LLMを活用した効率的なコンテキストエンジニアリング",
+    "title": "Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル",
     "date": "2025-12-03",
-    "summary": "AI開発の効率を劇的に変える「Claude.md」の書き方を徹底解説。ハルシネーションを防ぎ、コーディング規約を遵守させるための具体的なテンプレートと、コンテキストエンジニアリングの極意を紹介します。",
+    "summary": "Claude Codeで毎回同じ説明をするのは面倒...そんな悩みを解決するCLAUDE.mdの書き方を徹底解説。テンプレートやコツも紹介し、AIコーディングの効率を劇的に向上させる方法をお伝えします。",
     "tags": [
       {
         "slug": "claudemd",
@@ -189,25 +189,19 @@
         "label": "開発効率",
         "category": "その他",
         "style": "accent-orange"
-      },
-      {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
-        "style": "accent-gold"
       }
     ],
     "url": "posts/2025/12/2025-12-03-claudemdllm.html",
     "slug": "2025-12-03-claudemdllm",
     "publishedAt": "2025-12-03T21:16:18.689Z",
-    "status": "draft",
+    "status": "published",
     "image": {
-      "key": "ai-core-04",
-      "src": "assets/img/article-templates/ai-core-04.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
+      "key": "claudemd-guide-hero",
+      "src": "assets/img/posts/2025/12/claudemdllm-hero.png",
+      "alt": "Claude.mdの書き方完全ガイド",
+      "label": "Claude.md Guide",
+      "caption": "Claude.mdの書き方完全ガイド",
+      "category": "tech"
     },
     "createdAt": "2025-12-03T21:16:18.693Z"
   },
