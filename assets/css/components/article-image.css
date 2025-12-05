@@ -58,19 +58,23 @@
     margin-top: var(--space-md);
     margin-bottom: var(--space-xl);
     width: 100%;
-    max-width: 1000px;
-    /* レイアウトに合わせて拡大 */
+    max-width: none;
+    /* max-widthを削除し、親コンテナに合わせる */
     margin-left: auto;
     margin-right: auto;
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
+    aspect-ratio: 16 / 9;
+    /* コンテナでも比率を指定 */
 }
 
 .article-hero-image-container img {
     width: 100%;
-    height: auto;
-    /* max-height制限を緩和または削除して、アスペクト比を維持したまま大きく表示 */
+    height: 100%;
+    /* コンテナの高さに合わせる */
     object-fit: cover;
+    object-position: center;
+    /* 中心でトリミング */
     display: block;
 }

@@ -67,7 +67,7 @@ body.article-page main {
   margin: 0 auto;
   border-bottom: 1px solid var(--border-subtle);
   text-align: center;
-  /* テキストを中央揃え */
+  /* コンテナ自体は中央揃え */
 }
 
 @media (min-width: 768px) {
@@ -77,10 +77,27 @@ body.article-page main {
 }
 
 /* デスクトップサイズでは幅を制限して中央揃えを維持 */
+/* デスクトップサイズでは幅を記事グリッドに合わせ、Gridレイアウトで左カラムに配置 */
 @media (min-width: 1024px) {
   .article-hero {
     width: 100%;
-    max-width: 1000px;
+    /* 画面幅一杯に */
+    max-width: none;
+    display: grid;
+    /* 記事グリッドと合わせる */
+    grid-template-columns: 1fr minmax(auto, 760px) 1fr;
+    gap: 4rem;
+    align-items: start;
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* ヒーロー内の全要素を中心カラムに配置 */
+  .article-hero>* {
+    grid-column: 2 / 3;
+    width: 100%;
   }
 }
 
@@ -113,6 +130,11 @@ body.article-page main {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  text-align: left;
+  /* テキストは左揃え */
+  width: 100%;
+  width: 100%;
+  /* コンテナ幅を親（Gridカラム）に合わせる */
 }
 
 /*
@@ -131,9 +153,10 @@ body.article-page main {
   font-size: 1.08rem;
   color: var(--text-secondary);
   margin-top: var(--space-sm);
-  max-width: 68ch;
+  max-width: 100%;
+  /* 幅制限を解除してコンテナに合わせる */
   line-height: 1.7;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
 }
 
@@ -153,7 +176,7 @@ body.article-page main {
   position: relative;
   z-index: 1;
   align-items: center;
-  /* 子要素を中央揃え */
+  /* 子要素を中央揃え（.article-hero-main自体を中央に） */
 }
 
 /*
@@ -266,20 +289,26 @@ body.article-page main {
   }
 }
 
-/* デスクトップサイズで2カラムレイアウト */
+/* デスクトップサイズで3カラムレイアウト（中央配置＋右サイドバー） */
 @media (min-width: 1024px) {
   .article-grid {
     display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(240px, 1fr);
-    gap: var(--space-2xl);
+    /* 左余白 | 記事本体 | 右エリア（サイドバー） */
+    /* 記事本体幅を minmax(auto, 760px) にして、画面幅が狭い場合でもギャップを維持して縮小できるようにする */
+    grid-template-columns: 1fr minmax(auto, 760px) 1fr;
+    gap: 4rem;
     align-items: flex-start;
-    width: min(1400px, 100% - 4rem);
+    width: 100%;
+    max-width: none;
+    padding-left: 1rem;
+    /* 最小パディング */
+    padding-right: 1rem;
+    box-sizing: border-box;
   }
 
-  /* サイドシェアバーがある場合のグリッド定義 */
+  /* サイドシェアバーがある場合のグリッド定義（今回は考慮しないがリセット） */
   .article-grid.has-share-side {
-    grid-template-columns: 48px minmax(0, 1fr) 300px;
-    gap: var(--space-xl);
+    grid-template-columns: 1fr 760px 1fr;
   }
 }
 
@@ -294,11 +323,13 @@ body.article-page main {
   margin: 0 auto;
 }
 
-/* デスクトップサイズではグリッドアイテムとして自然に配置 */
+/* デスクトップサイズではグリッドアイテムとして配置 */
 @media (min-width: 1024px) {
   .article-main-column {
     max-width: none;
     margin: 0;
+    grid-column: 2 / 3;
+    /* 中央カラム */
   }
 }
 
@@ -524,7 +555,21 @@ body.article-page main {
     max-width: none;
     margin: 0;
     order: 1;
-    /* デスクトップでは右側に表示 */
+
+    /* 右エリアに配置 */
+    grid-column: 3 / 4;
+
+    /* 右端に寄せる */
+    width: 260px;
+    /* サイドバーの幅を少し縮小 */
+    justify-self: end;
+    /* カラム内で右寄せ */
+    margin-left: auto;
+    /* 安全策 */
+
+    /* 記事との重なりを防ぐために左にマージンを持たせるか、
+       Gridのカラム設定で十分かは画面幅によるが、
+       1frの中に配置されるので、画面が広いと離れていく仕様になる。 */
   }
 }
 
@@ -549,7 +594,7 @@ body.article-page main {
 /* デスクトップサイズでは背景とボーダーを調整 */
 @media (min-width: 1024px) {
   .article-card.article-toc {
-    padding: var(--space-lg);
+    padding: 0.5rem 0.5rem;
     background: var(--surface-secondary);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
