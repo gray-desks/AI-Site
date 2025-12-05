@@ -1,53 +1,47 @@
 [
   {
-    "title": "Mistral 3の詳細レビュー：オープンソースAIモデルの進化と実用性の考察",
-    "date": "2025-12-05",
-    "summary": "Mistral 3は最新のオープンソースAIモデルであり、その性能や特長を深く分析します。生成AIの実用的なユースケースや他モデルとの比較を通じて、技術的な洞察を提供します。",
+    "title": "【2025年最新】「SaaSは死んだ」って本当？AI時代の個人開発と日本の\"ヤバい\"現状を解説",
+    "date": "2025-12-06",
+    "summary": "海外で話題の「SaaS is Dead」議論の本質と、AI開発ツールの進化がもたらす変化について解説します。Microsoftのサティア・ナデラ氏の発言を発端としたこの議論は、日本企業にとっても無視できない警告を含んでいます。AI時代に個人開発者がどう生き残るか、その生存戦略を提示します。",
     "tags": [
       {
-        "slug": "mistral-3",
-        "label": "Mistral 3",
-        "category": "その他",
+        "slug": "tech-trend",
+        "label": "技術トレンド",
+        "category": "ニュース",
         "style": "accent-blue"
       },
       {
-        "slug": "tag-2",
-        "label": "オープンソース",
-        "category": "その他",
+        "slug": "business",
+        "label": "業務効率化",
+        "category": "ユースケース",
         "style": "accent-lime"
       },
       {
-        "slug": "generative-ai",
-        "label": "生成AI",
-        "category": "技術トピック",
-        "style": "accent-pink"
+        "slug": "development",
+        "label": "システム開発",
+        "category": "ユースケース",
+        "style": "accent-blue"
       },
       {
-        "slug": "tag-4",
-        "label": "技術分析",
-        "category": "その他",
-        "style": "accent-teal"
-      },
-      {
-        "slug": "draft",
-        "label": "下書き",
-        "category": "運用",
-        "style": "accent-gold"
+        "slug": "cursor",
+        "label": "Cursor",
+        "category": "企業・プロダクト",
+        "style": "accent-blue"
       }
     ],
-    "url": "posts/2025/12/2025-12-05-mistral-3ai.html",
-    "slug": "2025-12-05-mistral-3ai",
-    "publishedAt": "2025-12-05T09:26:08.093Z",
-    "status": "draft",
+    "url": "posts/2025/12/2025-12-06-saas-is-dead-ai-impact-japan.html",
+    "slug": "2025-12-06-saas-is-dead-ai-impact-japan",
+    "publishedAt": "2025-12-06T00:00:00.000Z",
+    "status": "published",
     "image": {
-      "key": "ai-core-04",
-      "src": "assets/img/article-templates/ai-core-04.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
+      "key": "saas-is-dead-header",
+      "src": "assets/img/posts/2025/12/saas_is_dead_header.jpg",
+      "alt": "SaaS is Dead Header",
+      "label": "Tech Trend",
+      "caption": "SaaSの終焉とAI時代の到来",
+      "category": "tech-trend"
     },
-    "createdAt": "2025-12-05T09:26:08.097Z"
+    "createdAt": "2025-12-05T14:51:31.007Z"
   },
   {
     "title": "FFGO技術解説：動画制作の一貫性を向上させる新手法の可能性",
@@ -530,50 +524,6 @@
       "category": "technology"
     },
     "createdAt": "2025-12-05T08:04:57.184Z"
-  },
-  {
-    "title": "2025年版 個人開発の生存戦略：AI時代のIndie Hackingと日本・海外の現在地",
-    "date": "2025-11-30",
-    "summary": "2025年の個人開発（Indie Hacking）における最新トレンドを徹底解説。AI活用による「一人企業」の実現性、海外で主流のBuild in Public、そして日本市場の独自性まで、個人開発者が知っておくべき生存戦略をまとめました。",
-    "tags": [
-      {
-        "slug": "tag-1",
-        "label": "個人開発",
-        "category": "その他",
-        "style": "accent-orange"
-      },
-      {
-        "slug": "ai",
-        "label": "AI活用",
-        "category": "その他",
-        "style": "accent-gold"
-      },
-      {
-        "slug": "build-in-public",
-        "label": "Build in Public",
-        "category": "その他",
-        "style": "accent-lime"
-      },
-      {
-        "slug": "tag-4",
-        "label": "海外トレンド",
-        "category": "その他",
-        "style": "accent-purple"
-      }
-    ],
-    "url": "posts/2025/11/2025-11-30-ai1.html",
-    "slug": "2025-11-30-ai1",
-    "publishedAt": "2025-11-30T00:00:00.000Z",
-    "status": "draft",
-    "image": {
-      "key": "future-05",
-      "src": "assets/img/article-templates/future-05.webp",
-      "alt": "2025年版 個人開発の生存戦略",
-      "label": "フューチャービジョン",
-      "caption": "次世代ロードマップやGemini 3.0の展望記事向け。",
-      "category": "future"
-    },
-    "createdAt": "2025-12-05T08:04:57.181Z"
   },
   {
     "title": "【2026年問題】「Gmailが使えなくなる」は本当？一般ユーザーが今すぐ確認すべきこと",
