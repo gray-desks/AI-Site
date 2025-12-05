@@ -284,10 +284,9 @@ window.initArticlePage = () => {
   setupTagLinks();
 
 
-  // --- 6. Note記事用コピー機能 ---
-  // 記事のタイトル、本文、タグをNote記事形式でクリップボードにコピーする
-  const setupNoteCopyButton = () => {
-    // ローカル環境でのみ表示する
+  // --- 6. Noteドラフト作成支援 (Local Only - Client Side Mode) ---
+  const setupNoteDraftButton = async () => {
+    // ローカル環境チェック (Live Server含む)
     const hostname = window.location.hostname;
     const isLocal = hostname === 'localhost' || hostname === '127.0.0.1';
     if (!isLocal) return;
@@ -295,94 +294,278 @@ window.initArticlePage = () => {
     const articleContent = document.querySelector('.article-content');
     if (!articleContent) return;
 
-    // 既存のボタンがあれば削除
-    const existingContainer = document.querySelector('.note-copy-btn-container');
-    if (existingContainer) existingContainer.remove();
+    // ボタンコンテナ作成
+    const container = document.createElement('div');
+    container.className = 'note-draft-container';
+    container.style.margin = '2rem 0';
+    container.style.padding = '1.5rem';
+    container.style.backgroundColor = '#f4f4f4';
+    container.style.borderRadius = '8px';
+    container.style.textAlign = 'center';
+    container.style.display = 'flex';
+    container.style.flexWrap = 'wrap';
+    container.style.gap = '10px';
+    container.style.justifyContent = 'center';
+    container.style.alignItems = 'center';
 
-    const btnContainer = document.createElement('div');
-    btnContainer.className = 'note-copy-btn-container';
+    // タイトル
+    const label = document.createElement('div');
+    label.textContent = 'Note投稿支援ツール';
+    label.style.width = '100%';
+    label.style.fontWeight = 'bold';
+    label.style.marginBottom = '0.5rem';
+    label.style.color = '#555';
+    container.appendChild(label);
 
-    const copyBtn = document.createElement('button');
-    copyBtn.className = 'note-copy-btn';
-    copyBtn.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-      </svg>
-      Note記事用にコピー
-    `;
-    copyBtn.type = 'button';
+    // 共通ボタンスタイル生成関数
+    const createBtn = (text, color = '#555') => {
+      const btn = document.createElement('button');
+      btn.textContent = text;
+      btn.disabled = true; // 初期状態は無効
+      btn.style.padding = '0.6rem 1rem';
+      btn.style.backgroundColor = color;
+      btn.style.color = 'white';
+      btn.style.border = 'none';
+      btn.style.borderRadius = '4px';
+      btn.style.cursor = 'pointer';
+      btn.style.fontSize = '0.9rem';
+      btn.style.fontWeight = 'bold';
+      btn.style.transition = 'all 0.2s';
 
-    copyBtn.addEventListener('click', async () => {
+      // ホバー効果
+      btn.onmouseover = () => {
+        if (!btn.disabled) btn.style.opacity = '0.8';
+      };
+      btn.onmouseout = () => {
+        if (!btn.disabled) btn.style.opacity = '1';
+      };
+
+      return btn;
+    };
+
+    // ボタン定義 (ユーザー要望: 配色統一 / タグ追加)
+    const btnImage = createBtn('1. 見出し画像をDL');
+    const btnTitle = createBtn('2. タイトルコピー');
+    const btnBody = createBtn('3. 本文コピー');
+    const btnTags = createBtn('4. ハッシュタグコピー');
+
+    container.appendChild(btnImage);
+    container.appendChild(btnTitle);
+    container.appendChild(btnBody);
+    container.appendChild(btnTags);
+
+    // データ保持用
+    let state = {
+      title: '',
+      body: '',
+      imageUrl: '',
+      tags: '',
+      ready: false
+    };
+    let noteWindow = null; // Noteタブの参照を保持
+
+    // 初期化・データ取得
+    const initData = async () => {
       try {
-        const title = document.querySelector('h1')?.textContent.trim() || '';
-        const tags = Array.from(document.querySelectorAll('.article-tags .tag'))
-          .map(tag => `#${tag.textContent.trim()}`)
-          .join(' ');
+        const pathname = window.location.pathname;
+        const filename = pathname.split('/').pop().replace('.html', '');
+        const mdPath = `../../../content/posts/${filename}.md`;
 
-        // 本文のテキスト抽出（簡易的なHTMLタグ除去と整形）
-        let bodyText = '';
+        const response = await fetch(mdPath);
+        if (response.ok) {
+          const text = await response.text();
 
-        // 記事本文の要素を取得
-        const contentElements = Array.from(articleContent.querySelectorAll('p, h2, h3, ul, ol'));
+          // Frontmatter解析
+          const fmMatch = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+          if (fmMatch) {
+            const fmText = fmMatch[1];
+            state.body = fmMatch[2].trim(); // 本文
 
-        // まとめの要素を取得して追加
-        const conclusion = document.querySelector('.article-conclusion');
-        if (conclusion) {
-          const conclusionHeading = conclusion.querySelector('.conclusion-heading');
-          if (conclusionHeading) contentElements.push(conclusionHeading);
+            const titleMatch = fmText.match(/title:\s*(.*)/);
+            state.title = titleMatch ? titleMatch[1].replace(/^['"]|['"]$/g, '').trim() : document.title;
 
-          const conclusionContent = conclusion.querySelector('.conclusion-content');
-          if (conclusionContent) {
-            const conclusionParagraphs = conclusionContent.querySelectorAll('p, ul, ol');
-            contentElements.push(...Array.from(conclusionParagraphs));
+            // 画像パス取得 (YAMLの構造に対応)
+            const srcMatch = fmText.match(/src:\s*(.*)/);
+            if (srcMatch) {
+              state.imageUrl = srcMatch[1].trim().replace(/^['"]|['"]$/g, '');
+            } else {
+              const imgMatch = fmText.match(/^image:[ \t]*(.+)$/m);
+              if (imgMatch) {
+                const val = imgMatch[1].trim();
+                if (val && !val.startsWith('key:') && !val.startsWith('src:')) {
+                  state.imageUrl = val.replace(/^['"]|['"]$/g, '');
+                }
+              }
+            }
+
+            // タグ取得 (tagsセクションから label を抽出)
+            // tags:
+            //   - label: タグ名
+            const tagsMatch = fmText.match(/tags:\s*\n([\s\S]*?)(?=\n[a-z]|$)/);
+            if (tagsMatch) {
+              const tagsBlock = tagsMatch[1];
+              const labels = [...tagsBlock.matchAll(/label:\s*(.*)/g)].map(m => `#${m[1].trim().replace(/^['"]|['"]$/g, '')}`);
+              state.tags = labels.join(' ');
+            }
+
+          } else {
+            state.title = document.title;
+            state.body = text;
           }
+
+          // 準備完了
+          state.ready = true;
+          [btnImage, btnTitle, btnBody, btnTags].forEach(b => {
+            b.disabled = false;
+            b.style.opacity = '1';
+          });
+
+        } else {
+          label.textContent = 'データ読込エラー (Markdownが見つかりません)';
+        }
+      } catch (e) {
+        console.error(e);
+        label.textContent = '初期化エラー';
+      }
+    };
+    initData();
+
+    // イベントリスナー設定
+    btnTitle.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(state.title);
+      const originalText = btnTitle.textContent;
+      btnTitle.textContent = 'コピー完了・移動します';
+      btnTitle.style.backgroundColor = '#2cb696';
+
+      // Noteタブを開く、またはフォーカス移動
+      if (!noteWindow || noteWindow.closed) {
+        noteWindow = window.open('https://note.com/notes/new', 'note_draft_tab');
+      } else {
+        noteWindow.focus();
+      }
+
+      setTimeout(() => {
+        btnTitle.textContent = originalText;
+        // 完了状態の色を残すかどうか？ ユーザー体験的には戻ったほうがいいかもしれないが、
+        // 「終わったかどうか」を知りたい場合は残したほうがいい。
+        // しかし一旦元に戻す仕様を踏襲する。
+        btnTitle.style.backgroundColor = '#555';
+      }, 3000); // 少し長めに
+    });
+
+    btnBody.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(state.body);
+      const originalText = btnBody.textContent;
+      btnBody.textContent = 'コピー完了！';
+      btnBody.style.backgroundColor = '#2cb696';
+
+      // Noteタブへフォーカス移動
+      if (noteWindow && !noteWindow.closed) {
+        noteWindow.focus();
+      } else {
+        noteWindow = window.open('https://note.com/notes/new', 'note_draft_tab');
+      }
+
+      setTimeout(() => {
+        btnBody.textContent = originalText;
+        btnBody.style.backgroundColor = '#555';
+      }, 1500);
+    });
+
+    btnTags.addEventListener('click', async () => {
+      if (!state.tags) {
+        alert('タグが見つかりませんでした');
+        return;
+      }
+      await navigator.clipboard.writeText(state.tags);
+      const originalText = btnTags.textContent;
+      btnTags.textContent = 'コピー完了！';
+      btnTags.style.backgroundColor = '#2cb696';
+
+      if (noteWindow && !noteWindow.closed) {
+        noteWindow.focus();
+      } else {
+        noteWindow = window.open('https://note.com/notes/new', 'note_draft_tab');
+      }
+
+      setTimeout(() => {
+        btnTags.textContent = originalText;
+        btnTags.style.backgroundColor = '#555';
+      }, 1500);
+    });
+
+    btnImage.addEventListener('click', async () => {
+      if (!state.imageUrl) {
+        alert('見出し画像が見つかりません');
+        return;
+      }
+
+      try {
+        // 相対パスを絶対パスに解決
+        let imgUrl = state.imageUrl;
+        if (!imgUrl.startsWith('http')) {
+          if (!imgUrl.startsWith('/')) {
+            imgUrl = `/${imgUrl}`;
+          }
+          imgUrl = window.location.origin + imgUrl;
         }
 
-        contentElements.forEach(el => {
-          // ボタン自体のテキストが含まれないようにチェック
-          if (el.closest('.note-copy-btn-container')) return;
+        const res = await fetch(imgUrl);
+        if (!res.ok) throw new Error(`Status ${res.status}`);
 
-          if (el.tagName === 'H2') {
-            bodyText += `\n\n## ${el.textContent.trim()}\n\n`;
-          } else if (el.tagName === 'H3') {
-            bodyText += `\n### ${el.textContent.trim()}\n\n`;
-          } else if (el.tagName === 'UL' || el.tagName === 'OL') {
-            const listItems = Array.from(el.querySelectorAll('li')).map(li => `- ${li.textContent.trim()}`).join('\n');
-            bodyText += `${listItems}\n\n`;
-          } else {
-            bodyText += `${el.textContent.trim()}\n\n`;
-          }
-        });
+        const blob = await res.blob();
 
-        const copyText = `${title}\n\n${bodyText}\n${tags}`;
+        // エラーチェック（404ページが返ってきている場合など）
+        if (blob.type.includes('html')) {
+          throw new Error('指定されたパスに画像がありません (404 Not Found)');
+        }
 
-        await navigator.clipboard.writeText(copyText);
+        const url = window.URL.createObjectURL(blob);
 
-        const originalContent = copyBtn.innerHTML;
-        copyBtn.classList.add('copied');
-        copyBtn.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          コピーしました！
-        `;
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
 
+        // 拡張子推定 (MIME type優先)
+        let ext = 'png';
+        if (blob.type === 'image/jpeg') ext = 'jpg';
+        else if (blob.type === 'image/webp') ext = 'webp';
+        else if (blob.type === 'image/png') ext = 'png';
+        else {
+          // ファイル名から取得試行
+          const parts = imgUrl.split('/').pop().split('?')[0].split('.');
+          if (parts.length > 1) ext = parts.pop();
+        }
+
+        a.download = `header-image.${ext}`;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+
+        const originalText = btnImage.textContent;
+        btnImage.textContent = 'DL完了！';
+        btnImage.style.backgroundColor = '#2cb696';
         setTimeout(() => {
-          copyBtn.classList.remove('copied');
-          copyBtn.innerHTML = originalContent;
-        }, 2000);
+          btnImage.textContent = originalText;
+          btnImage.style.backgroundColor = '#555';
+        }, 1500);
 
-      } catch (err) {
-        console.error('コピーに失敗しました:', err);
-        alert('コピーに失敗しました');
+      } catch (e) {
+        console.error(e);
+        alert(`画像のダウンロードに失敗しました。\nURL: ${state.imageUrl}\nError: ${e.message}`);
       }
     });
 
-    btnContainer.appendChild(copyBtn);
-    articleContent.appendChild(btnContainer);
+    // 配置
+    const header = document.querySelector('.article-header');
+    if (header) {
+      header.after(container);
+    } else {
+      articleContent.prepend(container);
+    }
   };
-  setupNoteCopyButton();
+  setupNoteDraftButton();
 
 
   // --- 7. SNSシェアボタンの設置 ---

@@ -15,7 +15,8 @@
     "posts:migrate-folders": "node scripts/maintenance/migrate-posts-folders.js",
     "tags:fix": "node scripts/maintenance/fix_tags.js",
     "build:posts": "node scripts/build/articles.js",
-    "dev": "node scripts/dev/server.js"
+    "dev": "node scripts/dev/server.js",
+    "note:assist": "node automation/note/manual_assist.js"
   },
   "keywords": [
     "ai",

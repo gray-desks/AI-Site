@@ -20,6 +20,52 @@ app.use((req, res, next) => {
 // Serve static files from the project root
 app.use(express.static(path.join(__dirname, '../../')));
 
+// API endpoint to trigger Note draft creation
+app.post('/api/note-draft', (req, res) => {
+    const { slug, step } = req.body; // step: 'init' | 'body'
+    if (!slug) {
+        return res.status(400).json({ error: 'Slug is required' });
+    }
+
+    // Find the file path from slug
+    const postsDir = path.join(__dirname, '../../content/posts');
+    let targetFile = null;
+    try {
+        const files = fs.readdirSync(postsDir).filter(file => file.endsWith('.md'));
+        for (const file of files) {
+            const filePath = path.join(postsDir, file);
+            const content = fs.readFileSync(filePath, 'utf8');
+            const parsed = matter(content);
+            if (parsed.data.slug === slug) {
+                targetFile = filePath;
+                break;
+            }
+        }
+    } catch (e) {
+        return res.status(500).json({ error: 'Failed to read posts' });
+    }
+
+    if (!targetFile) {
+        return res.status(404).json({ error: 'Article not found for this slug' });
+    }
+
+    // Execute script in non-interactive mode
+    const scriptPath = path.join(__dirname, '../../automation/note/manual_assist.js');
+    const modeFlag = step === 'body' ? '--step=body' : '--step=init';
+
+    console.log(`Executing Note Assist: ${slug} [${modeFlag}]`);
+
+    exec(`node "${scriptPath}" "${targetFile}" ${modeFlag}`, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Exec error: ${error}`);
+            console.error(`Stderr: ${stderr}`);
+        }
+        console.log(`Stdout: ${stdout}`);
+    });
+
+    res.json({ message: 'Process started', slug, step: step || 'init' });
+});
+
 // API endpoint to update article status
 app.post('/api/update-status', (req, res) => {
     const { slug, status } = req.body;
