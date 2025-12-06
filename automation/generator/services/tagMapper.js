@@ -190,6 +190,7 @@ const buildTagDictionary = (readJson, tagsConfigPath) => {
   // `正規化されたトークン -> タグオブジェクト` のマッピングを保持するMap
   // Mapを使うことで、O(1)の高速な検索が可能になります
   const index = new Map();
+  const slugSet = new Set(); // 衝突検知用に既存スラグを保持
 
   /**
    * トークン（正規化されたタグ名）をインデックスに登録します。
@@ -225,6 +226,7 @@ const buildTagDictionary = (readJson, tagsConfigPath) => {
       category: item.category || 'その他',      // カテゴリ
       style: item.style || null,                // 色スタイル
     };
+    slugSet.add(normalizedEntry.slug);
 
     // slug, label, および各エイリアスをトークンとしてインデックスに登録
     // これにより、どの表記でもタグを見つけられるようになります
@@ -237,7 +239,7 @@ const buildTagDictionary = (readJson, tagsConfigPath) => {
     }
   });
 
-  return { entries, index };
+  return { entries, index, slugSet };
 };
 
 /**
@@ -310,6 +312,27 @@ const createTagMapper = ({ readJson, tagsConfigPath }) => {
     const tags = [];
     // タグ辞書を取得（初回のみ構築される）
     const dictionary = ensureDictionary();
+    const reservedSlugs = dictionary.slugSet || new Set();
+
+    // 生成するスラグが既存の辞書/今回の処理内と衝突しないように調整する
+    const ensureUniqueSlug = (slugBase) => {
+      let candidate = slugBase;
+      let counter = 1;
+      while (seen.has(candidate) || reservedSlugs.has(candidate)) {
+        candidate = `${slugBase}-${counter}`;
+        counter += 1;
+      }
+      return candidate;
+    };
+
+    // 日本語ラベルでも安定したスラグを生成するため、ラベルからハッシュ付きスラグを決定的に作る
+    const generateSlugForLabel = (label) => {
+      const normalizedLabel = normalizeTagToken(label);
+      const asciiBase = slugify(normalizedLabel || label, '').replace(/^-+|-+$/g, '') || 'tag';
+      const hashPart = simpleHash(normalizedLabel || label).toString(36);
+      const slugBase = `${asciiBase}-${hashPart}`;
+      return ensureUniqueSlug(slugBase);
+    };
 
     // 各タグを順番に処理
     rawTags.forEach((tag, idx) => {
@@ -349,43 +372,9 @@ const createTagMapper = ({ readJson, tagsConfigPath }) => {
       const originalLabel = String(tag ?? '').trim();
       if (!originalLabel) return; // 空文字列なら処理をスキップ
 
-      // ========================================
-      // 2-1: ユニークなスラグ（識別子）を生成
-      // ========================================
-      // まずslugify関数を使って基本的なスラグを生成
-      // 例: "新しい技術" → "xin-ji-shu"
-      const fallbackBase = slugify(originalLabel, 'tag');
-      let fallbackSlug = fallbackBase;
-
-      // スラグが汎用的な 'tag' になってしまったり、既に使われているスラグの場合は、
-      // よりユニークなスラグを生成する必要がある
-      if (fallbackBase === 'tag' || seen.has(fallbackBase)) {
-        // 日本語や特殊文字を含むタグ名を、URLに使える形式に変換
-        const sanitizedLabel = originalLabel
-          .normalize('NFKC')            // Unicode正規化（全角英数を半角に統一など）
-          .toLowerCase()                // 小文字に変換
-          .replace(/\s+/g, '-')         // 空白をハイフンに置換
-          .replace(/[^a-z0-9\-]/g, '')  // 英数字とハイフン以外を削除
-          .replace(/-+/g, '-')          // 連続するハイフンを1つに統合
-          .replace(/^-|-$/g, '');       // 先頭と末尾のハイフンを削除
-
-        // 変換後も有効なスラグが得られない場合は、連番を使用
-        fallbackSlug = sanitizedLabel || `tag-${idx + 1}`;
-
-        // それでも重複する場合は、末尾に連番を付与してユニークにする
-        // 例: "ai" が既に存在する場合 → "ai-1", "ai-2", ...
-        let counter = 1;
-        let candidateSlug = fallbackSlug;
-        while (seen.has(candidateSlug)) {
-          candidateSlug = `${fallbackSlug}-${counter}`;
-          counter += 1;
-        }
-        fallbackSlug = candidateSlug;
-      }
-
-      // 最終チェック: 万が一まだ重複していたらスキップ
-      if (seen.has(fallbackSlug)) return;
-      seen.add(fallbackSlug); // このスラグを使用済みとしてマーク
+      // 決定的かつ衝突しにくいスラグを生成（日本語でも安定）
+      const generatedSlug = generateSlugForLabel(originalLabel);
+      seen.add(generatedSlug); // このスラグを使用済みとしてマーク
 
       // ========================================
       // 2-2: 新しいタグオブジェクトを作成して追加
@@ -394,7 +383,7 @@ const createTagMapper = ({ readJson, tagsConfigPath }) => {
       const newTagCategory = 'その他';                         // カテゴリはデフォルトで「その他」
 
       tags.push({
-        slug: fallbackSlug,                                    // 生成したユニークなスラグ
+        slug: generatedSlug,                                   // 生成したユニークなスラグ
         label: newTagLabel,                                    // 元のタグ名をラベルとして使用
         category: newTagCategory,                              // カテゴリ
         style: selectStyleForTag(newTagLabel, newTagCategory), // タグ名とカテゴリから自動的に色を選択

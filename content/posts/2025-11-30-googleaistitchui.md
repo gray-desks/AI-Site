@@ -6,23 +6,23 @@ summary: >-
   GoogleのAI「Stitch」に神アップデート！手書きメモから「動くアプリ」が一瞬で作れるようになりました。絵心ゼロでもOKなその衝撃的な進化と、具体的な使い方をわかりやすく解説します。
 status: published
 tags:
-  - slug: google-ai
+  - slug: google-ai-odukbz
     label: Google AI
     category: その他
     style: accent-orange
-  - slug: ai
+  - slug: ai-ehhty
     label: デザインAI
     category: その他
     style: accent-sky
-  - slug: ui
+  - slug: ui-7o985q
     label: UIデザイン
     category: その他
     style: accent-sky
-  - slug: stitch
+  - slug: stitch-er7vpr
     label: Stitch
     category: その他
     style: accent-blue
-  - slug: ai-1
+  - slug: ai-2bblh
     label: AI活用
     category: その他
     style: accent-gold

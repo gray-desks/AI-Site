@@ -7,19 +7,19 @@ summary: >-
   Proを用いたマンガ制作の実験を通じて、AI技術の可能性と限界を探ります。具体的なデータを基に、制作時間の短縮や今後の活用方法について考察します。
 status: draft
 tags:
-  - slug: ai
+  - slug: ai-29lob
     label: AI技術
     category: その他
     style: accent-orange
-  - slug: nano-banana-pro
+  - slug: nano-banana-pro-hdj9gi
     label: Nano Banana Pro
     category: その他
     style: accent-orange
-  - slug: tag-3
+  - slug: tag-fn1jz7
     label: マンガ制作
     category: その他
     style: accent-orange
-  - slug: tag-4
+  - slug: tag-4voa3y
     label: クリエイティブテクノロジー
     category: その他
     style: accent-orange

@@ -7,15 +7,15 @@ summary: >-
   Pro Imageの性能、1日5枚と言われる厳しい制限の理由、そして有料版のコストまで、開発者が知るべき全情報をまとめました。
 status: published
 tags:
-  - slug: antigravity
+  - slug: antigravity-h0ao4s
     label: Antigravity
     category: その他
     style: accent-lavender
-  - slug: nano-banana-pro
+  - slug: nano-banana-pro-hdj9gi
     label: Nano Banana Pro
     category: その他
     style: accent-orange
-  - slug: gemini-3
+  - slug: gemini-3-tixnuw
     label: Gemini 3
     category: その他
     style: accent-gold

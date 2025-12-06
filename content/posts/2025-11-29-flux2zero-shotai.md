@@ -10,11 +10,11 @@ tags:
     label: FLUX
     category: 企業・プロダクト
     style: accent-pink
-  - slug: zero-shot
+  - slug: zero-shot-ywbbx9
     label: Zero-Shot編集
     category: その他
     style: accent-lavender
-  - slug: ai
+  - slug: ai-ck40ac
     label: AI動画編集
     category: その他
     style: accent-gold
@@ -22,7 +22,7 @@ tags:
     label: ComfyUI
     category: 企業・プロダクト
     style: accent-pink
-  - slug: tag-5
+  - slug: tag-czy6ii
     label: 技術革新
     category: その他
     style: accent-sky

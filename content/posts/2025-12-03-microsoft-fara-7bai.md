@@ -10,11 +10,11 @@ tags:
     label: Microsoft
     category: 企業・プロダクト
     style: accent-blue
-  - slug: fara-7b
+  - slug: fara-7b-hu7gc2
     label: Fara-7B
     category: その他
     style: accent-orange
-  - slug: ai
+  - slug: ai-f66115
     label: 生成AI
     category: その他
     style: accent-orange

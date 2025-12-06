@@ -5,15 +5,15 @@ slug: 2025-11-19-google-anti-gravityide
 summary: この記事では、Googleの新しいIDE『Anti-Gravity』が業界に与える影響とその技術的特性を深掘りします。
 status: published
 tags:
-  - slug: google-anti-gravity
+  - slug: google-anti-gravity-j3gbje
     label: Google Anti-Gravity
     category: その他
     style: accent-orange
-  - slug: ide
+  - slug: ide-28bu
     label: IDE
     category: その他
     style: accent-teal
-  - slug: tag-3
+  - slug: tag-7eg4cg
     label: ソフトウェア開発
     category: その他
     style: accent-orange

@@ -7,7 +7,7 @@ summary: >-
   Codeで毎回同じ説明をするのは面倒...そんな悩みを解決するCLAUDE.mdの書き方を徹底解説。テンプレートやコツも紹介し、AIコーディングの効率を劇的に向上させる方法をお伝えします。
 status: published
 tags:
-  - slug: claudemd
+  - slug: claudemd-kc0kn
     label: Claude.md
     category: その他
     style: accent-pink
@@ -15,15 +15,15 @@ tags:
     label: LLM
     category: 技術トピック
     style: accent-sky
-  - slug: tag-3
+  - slug: tag-7e08p3
     label: コンテキストエンジニアリング
     category: その他
     style: accent-lime
-  - slug: ai
+  - slug: ai-f66115
     label: 生成AI
     category: その他
     style: accent-orange
-  - slug: tag-5
+  - slug: tag-jcs29p
     label: 開発効率
     category: その他
     style: accent-orange

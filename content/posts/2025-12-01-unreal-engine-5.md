@@ -6,15 +6,15 @@ summary: >-
   ふとテレビやネットで映像を見たとき、「これ、実写なの？それともCG？」と見分けがつかなくて驚いたことはありませんか？実はその多くが、たった一つの「共通のソフト」で作られていることをご存知でしょうか。
 status: published
 tags:
-  - slug: unreal-engine-5
+  - slug: unreal-engine-5-e89nmo
     label: Unreal Engine 5
     category: その他
     style: accent-teal
-  - slug: cg
+  - slug: cg-1ks6ka
     label: CG/映像
     category: その他
     style: accent-lime
-  - slug: ai
+  - slug: ai-2bblh
     label: AI活用
     category: その他
     style: accent-gold
@@ -22,7 +22,7 @@ tags:
     label: 技術トレンド
     category: ニュース
     style: accent-blue
-  - slug: tag-5
+  - slug: tag-lhe3fl
     label: 初心者向け
     category: その他
     style: accent-lime

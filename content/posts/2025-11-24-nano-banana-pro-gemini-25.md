@@ -7,23 +7,23 @@ summary: >-
   2.5を基盤にした画像生成AIで、リアルさとスピードを兼ね備えています。本記事ではその技術的背景と実用的なユースケースを詳しく解説します。
 status: published
 tags:
-  - slug: ai
+  - slug: ai-8dazv7
     label: AI画像生成
     category: その他
     style: accent-blue
-  - slug: gemini-25
+  - slug: gemini-25-x4nzta
     label: Gemini 2.5
     category: その他
     style: accent-lime
-  - slug: nano-banana-pro
+  - slug: nano-banana-pro-hdj9gi
     label: Nano Banana Pro
     category: その他
     style: accent-orange
-  - slug: google-ai
+  - slug: google-ai-odukbz
     label: Google AI
     category: その他
     style: accent-orange
-  - slug: tag-5
+  - slug: tag-ugrswr
     label: デジタルクリエイティブ
     category: その他
     style: accent-sky

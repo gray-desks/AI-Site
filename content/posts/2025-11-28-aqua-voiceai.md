@@ -7,15 +7,15 @@ summary: >-
   Combinator発のこのツールが、なぜ今話題なのか？料金や使い方も含めて徹底解説します。
 status: published
 tags:
-  - slug: aqua-voice
+  - slug: aqua-voice-gigd9u
     label: Aqua Voice
     category: その他
     style: accent-gold
-  - slug: ai
+  - slug: ai-nuegkb
     label: 音声入力AI
     category: その他
     style: accent-gold
-  - slug: tag-3
+  - slug: tag-o3jwtg
     label: 生産性向上
     category: その他
     style: accent-orange

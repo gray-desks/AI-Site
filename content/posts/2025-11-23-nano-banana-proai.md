@@ -11,15 +11,15 @@ tags:
     label: 画像生成
     category: 技術トピック
     style: accent-pink
-  - slug: nano-banana-pro
+  - slug: nano-banana-pro-hdj9gi
     label: Nano Banana Pro
     category: その他
     style: accent-orange
-  - slug: tag-3
+  - slug: tag-czy6ii
     label: 技術革新
     category: その他
     style: accent-sky
-  - slug: ai
+  - slug: ai-2bblh
     label: AI活用
     category: その他
     style: accent-gold

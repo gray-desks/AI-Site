@@ -154,6 +154,16 @@ const initPostList = () => {
    * @returns {string} 正規化された文字列
    */
   const normalize = (value) => String(value ?? '').normalize('NFKC').trim().toLowerCase();
+  /**
+   * タグを一意に識別するキーを生成する
+   * 同じslugでもラベルが異なるケースを分離するため、slugとlabelの両方を使用
+   * @param {Object|string} tag - タグオブジェクトまたはラベル文字列
+   * @returns {string} タグキー
+   */
+  const createTagKey = (tag) => {
+    const obj = toTagObject(tag);
+    return `${normalize(obj.slug)}::${normalize(obj.label || obj.slug)}`;
+  };
 
   /**
    * すべての記事からタグのインデックスを作成する
@@ -161,7 +171,7 @@ const initPostList = () => {
    * @returns {Array} タグオブジェクトの配列（slug, label, count）
    */
   const buildTagIndex = (posts) => {
-    const tagMap = new Map();
+    const tagMap = new Map(); // key: slug+label
     // 公開記事のみをカウント対象（通常表示と一致させる）
     posts.filter(isPublishedPost).forEach(post => {
       (post.tags || []).forEach(tag => {
@@ -169,11 +179,12 @@ const initPostList = () => {
         // 下書きタグはここではカウントしない（後で特別扱いする）
         if (tagObj.slug === 'draft') return;
 
-        if (!tagMap.has(tagObj.slug)) {
-          tagMap.set(tagObj.slug, { ...tagObj, count: 0 });
+        const key = createTagKey(tagObj);
+        if (!tagMap.has(key)) {
+          tagMap.set(key, { ...tagObj, key, count: 0 });
         }
         // タグの出現回数をカウント
-        tagMap.get(tagObj.slug).count++;
+        tagMap.get(key).count++;
       });
     });
 
@@ -185,12 +196,14 @@ const initPostList = () => {
 
     // 下書き記事が存在する場合のみ、最後に「下書き」タグを追加
     if (draftCount > 0) {
-      tags.push({
+      const draftTag = {
         slug: 'draft',
         label: '下書き',
+        key: createTagKey({ slug: 'draft', label: '下書き' }),
         count: draftCount,
         style: 'accent-gold' // スタイルも指定しておく
-      });
+      };
+      tags.push(draftTag);
     }
 
     return tags;
@@ -200,19 +213,21 @@ const initPostList = () => {
    * 指定されたタグで記事をフィルタリングする
    * - デフォルトは公開記事のみを対象
    * - slugが 'draft' の場合のみ下書きを対象
-   * @param {string} slug - フィルタするタグのslug（nullの場合は全記事を返す）
+   * @param {Object|null} tag - フィルタするタグオブジェクト（nullの場合は全件）
    * @returns {Array} フィルタリングされた記事の配列
    */
-  const filterPostsByTag = (slug) => {
-    const base = slug === 'draft'
+  const filterPostsByTag = (tag) => {
+    const targetSlug = tag?.slug;
+    const targetKey = tag?.key ?? (tag ? createTagKey(tag) : null);
+    const base = targetSlug === 'draft'
       ? state.allPosts.filter(isDraftPost)
       : state.allPosts.filter(isPublishedPost);
 
-    if (!slug) return base;
-    if (slug === 'draft') return base;
+    if (!tag) return base;
+    if (targetSlug === 'draft') return base;
 
     return base.filter(post =>
-      (post.tags || []).some(tag => toTagObject(tag).slug === slug)
+      (post.tags || []).some(postTag => createTagKey(postTag) === targetKey)
     );
   };
 
@@ -231,7 +246,8 @@ const initPostList = () => {
     // タグリストのHTMLを生成
     const tagsHTML = (post.tags || []).map(tag => {
       const tagObj = toTagObject(tag);
-      return `<li class="tag" data-tag-slug="${tagObj.slug}" style="cursor: pointer;">${tagObj.label}</li>`;
+      const key = createTagKey(tagObj);
+      return `<li class="tag" data-tag-slug="${tagObj.slug}" data-tag-key="${key}" style="cursor: pointer;">${tagObj.label}</li>`;
     }).join('');
 
     return `
@@ -312,9 +328,9 @@ const initPostList = () => {
 
     if (suggestions.length > 0) {
       elements.tagSuggestions.innerHTML = suggestions.slice(0, 18).map(tag => {
-        const isActive = state.selectedTag?.slug === tag.slug;
+        const isActive = state.selectedTag?.key === tag.key;
         return `
-          <button type="button" class="tag-search-chip${isActive ? ' active' : ''}" data-tag-slug="${tag.slug}">
+          <button type="button" class="tag-search-chip${isActive ? ' active' : ''}" data-tag-slug="${tag.slug}" data-tag-key="${tag.key}">
             <span>${tag.label}</span>
             <span class="tag-count">${tag.count}件</span>
           </button>
@@ -358,15 +374,17 @@ const initPostList = () => {
    */
   const applyTagFilter = (tag) => {
     state.selectedTag = tag;
-    state.filteredPosts = filterPostsByTag(tag?.slug);
+    state.filteredPosts = filterPostsByTag(tag);
     state.visibleCount = INITIAL_DISPLAY_COUNT; // フィルタ変更時はリセット
 
     // URLのクエリパラメータを更新
     const url = new URL(window.location);
     if (tag) {
       url.searchParams.set('tag', tag.slug);
+      url.searchParams.set('tagKey', tag.key);
     } else {
       url.searchParams.delete('tag');
+      url.searchParams.delete('tagKey');
     }
     // ブラウザ履歴に追加（ページはリロードしない）
     window.history.pushState({}, '', url);
@@ -399,11 +417,17 @@ const initPostList = () => {
   elements.tagSuggestions.addEventListener('click', (e) => {
     const button = e.target.closest('button[data-tag-slug]');
     if (!button) return;
+    const key = button.dataset.tagKey;
     const slug = button.dataset.tagSlug;
-    const tag = state.allTags.find(t => t.slug === slug);
+    const tag = key
+      ? state.allTags.find(t => t.key === key)
+      : state.allTags.find(t => t.slug === slug);
     if (tag) {
       // 既に選択中のタグをクリックした場合はフィルタ解除
-      applyTagFilter(state.selectedTag?.slug === slug ? null : tag);
+      const isSameTag = key
+        ? state.selectedTag?.key === key
+        : state.selectedTag?.slug === slug;
+      applyTagFilter(isSameTag ? null : tag);
     }
   });
 
@@ -413,8 +437,11 @@ const initPostList = () => {
     if (!tagEl) return;
     e.preventDefault();
     e.stopPropagation();
+    const key = tagEl.dataset.tagKey;
     const slug = tagEl.dataset.tagSlug;
-    const tag = state.allTags.find(t => t.slug === slug);
+    const tag = key
+      ? state.allTags.find(t => t.key === key)
+      : state.allTags.find(t => t.slug === slug);
     if (tag) {
       applyTagFilter(tag);
       // タグ検索パネルまでスクロール
@@ -477,8 +504,16 @@ const initPostList = () => {
       elements.tagSearchInput.disabled = false;
 
       // URLパラメータから初期タグを取得
-      const initialTagSlug = new URLSearchParams(window.location.search).get('tag');
-      const initialTag = initialTagSlug ? state.allTags.find(t => t.slug === initialTagSlug) : null;
+      const params = new URLSearchParams(window.location.search);
+      const initialTagKey = params.get('tagKey');
+      const initialTagSlug = params.get('tag');
+      let initialTag = null;
+      if (initialTagKey) {
+        initialTag = state.allTags.find(t => t.key === initialTagKey) || null;
+      }
+      if (!initialTag && initialTagSlug) {
+        initialTag = state.allTags.find(t => t.slug === initialTagSlug) || null;
+      }
 
       // 初期フィルタを適用して表示
       applyTagFilter(initialTag);

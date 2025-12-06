@@ -10,7 +10,7 @@ tags:
     label: Claude
     category: 企業・プロダクト
     style: accent-orange
-  - slug: chrome
+  - slug: chrome-vrq5bi
     label: Chrome拡張
     category: その他
     style: accent-blue
@@ -18,11 +18,11 @@ tags:
     label: AIエージェント
     category: 技術トピック
     style: accent-gold
-  - slug: tag-4
+  - slug: tag-jfkuj
     label: 自動化
     category: その他
     style: accent-pink
-  - slug: tag-5
+  - slug: tag-cgwaiu
     label: 徹底分析
     category: その他
     style: accent-lime

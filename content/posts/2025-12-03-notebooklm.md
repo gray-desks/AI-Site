@@ -10,11 +10,11 @@ tags:
     label: NotebookLM
     category: 企業・プロダクト
     style: accent-blue
-  - slug: ai
+  - slug: ai-1qktu3
     label: AIツール
     category: その他
     style: accent-lavender
-  - slug: tag-3
+  - slug: tag-mlae6h
     label: ビジネス効率化
     category: その他
     style: accent-blue

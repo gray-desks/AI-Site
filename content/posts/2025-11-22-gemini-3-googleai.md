@@ -5,15 +5,15 @@ slug: 2025-11-22-gemini-3-googleai
 summary: Googleの最新AIモデルGemini 3は、推論能力とマルチモーダル機能で業界を再定義する。
 status: published
 tags:
-  - slug: ai
+  - slug: ai-h54e4g
     label: AIトピック
     category: その他
     style: accent-blue
-  - slug: gemini-3
+  - slug: gemini-3-tixnuw
     label: Gemini 3
     category: その他
     style: accent-gold
-  - slug: google-ai
+  - slug: google-ai-odukbz
     label: Google AI
     category: その他
     style: accent-orange
@@ -21,7 +21,7 @@ tags:
     label: マルチモーダル
     category: 技術トピック
     style: accent-sky
-  - slug: tag-5
+  - slug: tag-d5gics
     label: 推論能力
     category: その他
     style: accent-pink

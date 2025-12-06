@@ -25,6 +25,9 @@ window.initArticlePage = () => {
 
   const currentUrl = window.location.href;
   const title = document.title.replace(/ \| AI情報ブログ$/, '') || 'AI情報ブログ';
+  // 共通の正規化ヘルパー（slug/labelの組み合わせをキー化するために使用）
+  const normalize = (value) => String(value ?? '').normalize('NFKC').trim().toLowerCase();
+  const createTagKey = (slug, label) => `${normalize(slug)}::${normalize(label || slug)}`;
 
   // --- 2. 目次 (Table of Contents) の自動生成 ---
   const setupTableOfContents = () => {
@@ -225,6 +228,7 @@ window.initArticlePage = () => {
       e.stopPropagation();
 
       const slug = tagElement.getAttribute('data-tag-slug');
+      const label = (tagElement.textContent || '').trim();
       if (!slug) return;
 
       // ルートパスを取得するヘルパー関数（将来的な構成変更にも耐えられるように堅牢化）
@@ -266,8 +270,14 @@ window.initArticlePage = () => {
       const basePath = (rootPath && !rootPath.endsWith('/')) ? `${rootPath}/` : rootPath;
       const targetUrl = `${basePath}index.html`;
 
+      const tagKey = createTagKey(slug, label);
+
       const separator = targetUrl.includes('?') ? '&' : '?';
-      window.location.href = `${targetUrl}${separator}tag=${encodeURIComponent(slug)}`;
+      const params = new URLSearchParams({
+        tag: slug,
+        tagKey
+      });
+      window.location.href = `${targetUrl}${separator}${params.toString()}`;
     };
 
     document.addEventListener('click', clickHandler);

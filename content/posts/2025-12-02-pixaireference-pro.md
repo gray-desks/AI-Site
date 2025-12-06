@@ -11,19 +11,19 @@ tags:
     label: PixAI
     category: 企業・プロダクト
     style: accent-pink
-  - slug: tag-2
+  - slug: tag-f4r3rm
     label: 画像編集
     category: その他
     style: accent-gold
-  - slug: ai
+  - slug: ai-29lob
     label: AI技術
     category: その他
     style: accent-orange
-  - slug: tag-4
+  - slug: tag-dtwnah
     label: 日本語プロンプト
     category: その他
     style: accent-blue
-  - slug: tag-5
+  - slug: tag-te6xd9
     label: マルチ画像参照
     category: その他
     style: accent-sky

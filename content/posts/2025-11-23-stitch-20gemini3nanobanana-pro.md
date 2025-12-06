@@ -1,37 +1,39 @@
 ---
-title: "Stitch 2.0の進化：Gemini3とNanobanana Proの実力を徹底解剖"
-date: "2025-11-23"
-slug: "2025-11-23-stitch-20gemini3nanobanana-pro"
-summary: "Stitch 2.0は、Gemini3とNanobanana Proを搭載し、UIデザインの新たな可能性を切り開きます。本記事では、その技術的特性と実際のユースケースを詳述し、導入のメリットと課題を探ります。"
-status: "published"
+title: Stitch 2.0の進化：Gemini3とNanobanana Proの実力を徹底解剖
+date: '2025-11-23'
+slug: 2025-11-23-stitch-20gemini3nanobanana-pro
+summary: >-
+  Stitch 2.0は、Gemini3とNanobanana
+  Proを搭載し、UIデザインの新たな可能性を切り開きます。本記事では、その技術的特性と実際のユースケースを詳述し、導入のメリットと課題を探ります。
+status: published
 tags:
-  - slug: "ai"
-    label: "AI技術"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "ui"
-    label: "UIデザイン"
-    category: "その他"
-    style: "accent-sky"
-  - slug: "gemini3"
-    label: "Gemini3"
-    category: "その他"
-    style: "accent-orange"
-  - slug: "nanobanana-pro"
-    label: "Nanobanana Pro"
-    category: "その他"
-    style: "accent-lavender"
-  - slug: "tag-5"
-    label: "技術革新"
-    category: "その他"
-    style: "accent-sky"
+  - slug: ai-29lob
+    label: AI技術
+    category: その他
+    style: accent-orange
+  - slug: ui-7o985q
+    label: UIデザイン
+    category: その他
+    style: accent-sky
+  - slug: gemini3-1c768y
+    label: Gemini3
+    category: その他
+    style: accent-orange
+  - slug: nanobanana-pro-tun8km
+    label: Nanobanana Pro
+    category: その他
+    style: accent-lavender
+  - slug: tag-czy6ii
+    label: 技術革新
+    category: その他
+    style: accent-sky
 image:
-  key: "ai-core-02"
-  src: "assets/img/article-templates/ai-core-02.webp"
-  alt: "AIコアを象徴する抽象的な波形（バリアント2）"
-  label: "AIコア戦略"
-  caption: "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。"
-  category: "ai"
+  key: ai-core-02
+  src: assets/img/article-templates/ai-core-02.webp
+  alt: AIコアを象徴する抽象的な波形（バリアント2）
+  label: AIコア戦略
+  caption: 大規模言語モデルやAI基盤の戦略を示すグラデーションアート。
+  category: ai
 ---
 
 AI技術の進化は日進月歩であり、その中でも特に注目されるのがStitch 2.0です。この最新バージョンは、Gemini3とNanobanana Proという先進的なAIモデルを搭載し、UIデザインのプロセスを根本から変革しようとしています。本記事では、Stitch 2.0の技術的特性を深掘りし、実際のユースケースを通じてその可能性を探ります。特に、開発現場での活用可能性や、導入に伴うメリットと課題について詳しく検証します。読者の皆様が抱えるデザインプロセスの効率化や創造性の向上に対する課題に対し、Stitch 2.0がどのように貢献できるのかを明らかにします。

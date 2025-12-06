@@ -5,11 +5,11 @@ slug: 2025-11-15-aichatgptgeminipixai
 summary: AIツールのChatGPT、Gemini、PixAIを徹底比較し、あなたの創作活動に最適な選択肢を見つけるためのガイドです。
 status: published
 tags:
-  - slug: ai
+  - slug: ai-f66115
     label: 生成AI
     category: その他
     style: accent-orange
-  - slug: ai-1
+  - slug: ai-y85qti
     label: AIツール比較
     category: その他
     style: accent-lime

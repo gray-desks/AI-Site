@@ -7,7 +7,7 @@ summary: >-
   Chromeとの統合がどのように業務効率を向上させるかを具体例を交えて解説し、ビジネス現場での活用可能性を示す。
 status: published
 tags:
-  - slug: google-workspace
+  - slug: google-workspace-scee7i
     label: Google Workspace
     category: その他
     style: accent-lime
@@ -15,15 +15,15 @@ tags:
     label: NotebookLM
     category: 企業・プロダクト
     style: accent-blue
-  - slug: tag-3
+  - slug: tag-2zezwh
     label: 業務自動化
     category: その他
     style: accent-blue
-  - slug: ai
+  - slug: ai-h54e4g
     label: AIトピック
     category: その他
     style: accent-blue
-  - slug: tag-5
+  - slug: tag-ckt3by
     label: 情報整理
     category: その他
     style: accent-orange

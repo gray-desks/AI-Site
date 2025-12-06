@@ -11,7 +11,7 @@ tags:
     label: OpenAI
     category: 企業・プロダクト
     style: accent-purple
-  - slug: google-ai
+  - slug: google-ai-odukbz
     label: Google AI
     category: その他
     style: accent-orange
@@ -19,11 +19,11 @@ tags:
     label: ChatGPT
     category: 企業・プロダクト
     style: accent-purple
-  - slug: gemini-3
+  - slug: gemini-3-tixnuw
     label: Gemini 3
     category: その他
     style: accent-gold
-  - slug: ai
+  - slug: ai-b9txxm
     label: AI市場動向
     category: その他
     style: accent-lavender

@@ -7,7 +7,7 @@ summary: >-
   Codeなど、AIツールを活用した「AI駆動開発」の考え方と導入手順、現場での実践ポイントをまとめました。
 status: published
 tags:
-  - slug: ai
+  - slug: ai-3qxawq
     label: AI駆動開発
     category: その他
     style: accent-sky
@@ -15,7 +15,7 @@ tags:
     label: GitHub
     category: 企業・プロダクト
     style: accent-purple
-  - slug: tag-3
+  - slug: tag-o3jwtg
     label: 生産性向上
     category: その他
     style: accent-orange
@@ -23,7 +23,7 @@ tags:
     label: コーディング支援
     category: 技術トピック
     style: accent-blue
-  - slug: tag-5
+  - slug: tag-vlzero
     label: 開発ツール
     category: その他
     style: accent-teal

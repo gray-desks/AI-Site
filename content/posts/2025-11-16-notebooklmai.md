@@ -5,15 +5,15 @@ slug: 2025-11-16-notebooklmai
 summary: NotebookLMの新機能により、AIを活用したノート作成がより簡単になりました。この記事では、具体的な機能とその活用方法を詳しく解説します。
 status: published
 tags:
-  - slug: ai
+  - slug: ai-y2tm1m
     label: AIノート作成
     category: その他
     style: accent-orange
-  - slug: tag-2
+  - slug: tag-ckt3by
     label: 情報整理
     category: その他
     style: accent-orange
-  - slug: ai-1
+  - slug: ai-f66115
     label: 生成AI
     category: その他
     style: accent-orange

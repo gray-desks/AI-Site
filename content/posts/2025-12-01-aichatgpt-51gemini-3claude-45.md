@@ -5,9 +5,9 @@ slug: 2025-12-01-aichatgpt-51gemini-3claude-45
 summary: >-
   ChatGPT-5.1、Gemini 3、Claude
   4.5の3つのAIツールを7つのタスクで比較し、それぞれの特徴や実用性を評価します。具体的なユースケースを通じて、読者が最適なAIツールを選ぶための情報を提供します。
-status: "private"
+status: private
 tags:
-  - slug: ai
+  - slug: ai-1qktu3
     label: AIツール
     category: その他
     style: accent-lavender
@@ -15,7 +15,7 @@ tags:
     label: ChatGPT
     category: 企業・プロダクト
     style: accent-purple
-  - slug: google-ai
+  - slug: google-ai-odukbz
     label: Google AI
     category: その他
     style: accent-orange
@@ -23,7 +23,7 @@ tags:
     label: Claude
     category: 企業・プロダクト
     style: accent-orange
-  - slug: tag-5
+  - slug: tag-cdmm4q
     label: 自然言語処理
     category: その他
     style: accent-blue
