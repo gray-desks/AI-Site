@@ -559,13 +559,10 @@ body.article-page main {
     /* 右エリアに配置 */
     grid-column: 3 / 4;
 
-    /* 右端に寄せる */
     width: 260px;
     /* サイドバーの幅を少し縮小 */
-    justify-self: end;
-    /* カラム内で右寄せ */
-    margin-left: auto;
-    /* 安全策 */
+    justify-self: start;
+    /* 記事コンテンツに寄せる */
 
     /* 記事との重なりを防ぐために左にマージンを持たせるか、
        Gridのカラム設定で十分かは画面幅によるが、

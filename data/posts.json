@@ -1,5 +1,52 @@
 [
   {
+    "title": "AIでアプリを作る時代に、なぜ「GitHub」を学ぶべきなのか？ ── 非エンジニアのための実践ガイド",
+    "date": "2025-12-06",
+    "summary": "AIがコードを書いてくれる時代に、なぜ「GitHub」を学ぶべきなのか？非エンジニアに向けて、開発の「セーブポイント」としてのGitHubの重要性と、最低限覚えるべき4つのスキルを解説します。",
+    "tags": [
+      {
+        "slug": "github",
+        "label": "GitHub",
+        "category": "企業・プロダクト",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "agent",
+        "label": "AIエージェント",
+        "category": "技術トピック",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "tag-3",
+        "label": "非エンジニア",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "ai",
+        "label": "AI活用",
+        "category": "その他",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "tag-5",
+        "label": "リスキリング",
+        "category": "その他",
+        "style": "accent-orange"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-02-aigithub.html",
+    "slug": "2025-12-02-aigithub",
+    "publishedAt": "2025-12-06T00:00:00.000Z",
+    "status": "published",
+    "image": {
+      "src": "assets/img/posts/2025/12/ai-github-guide.jpg",
+      "alt": "AIとGitHubの連携イメージ",
+      "caption": "AI開発においてGitHubがセーブポイントとなる"
+    },
+    "createdAt": "2025-12-05T08:04:57.185Z"
+  },
+  {
     "title": "【2025年最新】「SaaSは死んだ」って本当？AI時代の個人開発と日本の\"ヤバい\"現状を解説",
     "date": "2025-12-06",
     "summary": "海外で話題の「SaaS is Dead」議論の本質と、AI開発ツールの進化がもたらす変化について解説します。Microsoftのサティア・ナデラ氏の発言を発端としたこの議論は、日本企業にとっても無視できない警告を含んでいます。AI時代に個人開発者がどう生き残るか、その生存戦略を提示します。",
@@ -430,56 +477,6 @@
       "category": "infrastructure"
     },
     "createdAt": "2025-12-05T08:04:57.190Z"
-  },
-  {
-    "title": "AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド",
-    "date": "2025-12-02",
-    "summary": "AIエージェントの進化に伴い、Githubのスキルが非エンジニアにとっても重要性を増しています。この記事では、Githubの基本的な使い方から、AIツールとの連携による業務効率化の具体例を解説します。",
-    "tags": [
-      {
-        "slug": "github",
-        "label": "GitHub",
-        "category": "企業・プロダクト",
-        "style": "accent-purple"
-      },
-      {
-        "slug": "agent",
-        "label": "AIエージェント",
-        "category": "技術トピック",
-        "style": "accent-gold"
-      },
-      {
-        "slug": "tag-3",
-        "label": "非エンジニア",
-        "category": "その他",
-        "style": "accent-lavender"
-      },
-      {
-        "slug": "business",
-        "label": "業務効率化",
-        "category": "ユースケース",
-        "style": "accent-lime"
-      },
-      {
-        "slug": "tag-5",
-        "label": "技術スキル",
-        "category": "その他",
-        "style": "accent-sky"
-      }
-    ],
-    "url": "posts/2025/12/2025-12-02-aigithub.html",
-    "slug": "2025-12-02-aigithub",
-    "publishedAt": "2025-12-02T00:00:00.000Z",
-    "status": "draft",
-    "image": {
-      "key": "ai-core-04",
-      "src": "assets/img/article-templates/ai-core-04.webp",
-      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
-      "label": "AIコア戦略",
-      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
-      "category": "ai"
-    },
-    "createdAt": "2025-12-05T08:04:57.185Z"
   },
   {
     "title": "【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド",
