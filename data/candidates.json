@@ -877,7 +877,7 @@
     },
     "status": "skipped",
     "createdAt": "2025-12-02T21:15:42.767Z",
-    "updatedAt": "2025-12-03T01:26:35.789Z",
+    "updatedAt": "2025-12-06T09:21:47.407Z",
     "topicKey": "ai-topic",
     "notes": "YouTube Data API: kei31e の最新動画",
     "skipReason": "transcript-unavailable"
@@ -1205,7 +1205,7 @@
     },
     "status": "skipped",
     "createdAt": "2025-12-02T09:29:20.658Z",
-    "updatedAt": "2025-12-03T01:26:38.240Z",
+    "updatedAt": "2025-12-06T09:21:51.930Z",
     "topicKey": "ai-topic",
     "notes": "YouTube Data API: kei31e の最新動画",
     "skipReason": "transcript-unavailable"
@@ -1386,11 +1386,49 @@
       "thumbnail": "https://i.ytimg.com/vi/rohkXyzbryI/hqdefault.jpg",
       "publishedAt": "2025-12-01T09:45:48Z"
     },
-    "status": "collected",
+    "status": "generated",
     "createdAt": "2025-12-01T21:13:34.610Z",
-    "updatedAt": "2025-12-01T21:13:34.610Z",
+    "updatedAt": "2025-12-06T09:23:08.625Z",
     "topicKey": "wordpresshpwebaireaddy",
-    "notes": "YouTube Data API: keitoaiweb の最新動画"
+    "notes": "YouTube Data API: keitoaiweb の最新動画",
+    "transcript": "WordPressは古い？サクッとHPができるWeb制作特化AIエージェント『Readdy』が良い！ Webサイト制作特化AI Readdyを使ってWebサイトを作成してみました。 Readdyはこちらから利用可能 ...",
+    "transcriptLength": 111,
+    "themeCheck": {
+      "duplicate": false,
+      "reason": "候補動画はWordPressやWeb制作に特化したAIエージェントについての内容であり、直近の記事はAIやアプリ開発、コーディング効率など異なるテーマを扱っているため、重複しないと判断しました。",
+      "matchedTitle": null,
+      "raw": {
+        "duplicate": false,
+        "reason": "候補動画はWordPressやWeb制作に特化したAIエージェントについての内容であり、直近の記事はAIやアプリ開発、コーディング効率など異なるテーマを扱っているため、重複しないと判断しました。",
+        "matchedTitle": null
+      }
+    },
+    "recentTitles": [
+      "AIでアプリを作る時代に、なぜ「GitHub」を学ぶべきなのか？ ── 非エンジニアのための実践ガイド",
+      "【2025年最新】「SaaSは死んだ」って本当？AI時代の個人開発と日本の\"ヤバい\"現状を解説",
+      "Deepseek v3.2レビュー：ローカル環境での生成AI活用とコーディング効率の向上",
+      "FFGO技術解説：動画制作の一貫性を向上させる新手法の可能性",
+      "Nano Banana Proによるマンガ制作の革新：AI技術の実力とその限界",
+      "OpenAIが緊急体制「コードレッド」を宣言 - Google Gemini 3の衝撃とAI市場の勢力図変化",
+      "まだ「議事録」だけですか？ 2025年冬、会議AIが“指示待ち”を卒業していた話。",
+      "Claude.mdの書き方完全ガイド｜AIコーディングの効率を劇的に上げる設定ファイル",
+      "Microsoft Fara-7Bレビュー：オンデバイスAIエージェントの新たな可能性と実用性",
+      "NotebookLMの新機能レビュー：インフォグラフィックとスライド機能のビジネス活用法"
+    ],
+    "researchedAt": "2025-12-06T09:21:55.001Z",
+    "generatedAt": "2025-12-06T09:23:08.625Z",
+    "postDate": "2025-12-06",
+    "slug": "2025-12-06-webaireaddywordpress",
+    "outputFile": "posts/2025/12/2025-12-06-webaireaddywordpress.html",
+    "image": {
+      "key": "security-05",
+      "src": "assets/img/article-templates/security-05.webp",
+      "alt": "セキュリティを示す保護レイヤ（バリアント5）",
+      "label": "セキュリティラティス",
+      "caption": "トラストやガバナンス記事に使用。",
+      "category": "security"
+    },
+    "imageKey": "security-05"
   },
   {
     "id": "yt-L1bd_kIZgec",

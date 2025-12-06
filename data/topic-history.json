@@ -382,5 +382,13 @@
     "sourceName": "technavi_tooru",
     "videoTitle": "Deepseek v3.2 登場！最新アップデートをローカルとコーディングで検証してみた",
     "draftUrl": "posts/2025/12/2025-12-05-deepseek-v32ai.html"
+  },
+  {
+    "topicKey": "wordpresshpwebaireaddy",
+    "firstSeen": "2025-12-06T09:23:08.626Z",
+    "lastPublishedAt": "2025-12-06",
+    "sourceName": "keitoaiweb",
+    "videoTitle": "WordPressは古い？サクッとHPができるWeb制作特化AIエージェント『Readdy』が良い！",
+    "draftUrl": "posts/2025/12/2025-12-06-webaireaddywordpress.html"
   }
 ]

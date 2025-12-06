@@ -47,6 +47,62 @@
     "createdAt": "2025-12-05T08:04:57.185Z"
   },
   {
+    "title": "Web制作特化AI『Readdy』レビュー：WordPressに代わる新たな選択肢とその実力",
+    "date": "2025-12-06",
+    "summary": "Webサイト制作特化AI『Readdy』の機能と利点を徹底分析。WordPressに代わる新しい選択肢としての活用方法や具体的なユースケースを紹介し、導入のメリットと課題を考察します。",
+    "tags": [
+      {
+        "slug": "readdy-fgnuqd",
+        "label": "Readdy",
+        "category": "その他",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "web-1vog1m",
+        "label": "Web制作",
+        "category": "その他",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "agent",
+        "label": "AIエージェント",
+        "category": "技術トピック",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "cms-243t",
+        "label": "CMS",
+        "category": "その他",
+        "style": "accent-lavender"
+      },
+      {
+        "slug": "wordpress-ez9fuh",
+        "label": "WordPress",
+        "category": "その他",
+        "style": "accent-purple"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-06-webaireaddywordpress.html",
+    "slug": "2025-12-06-webaireaddywordpress",
+    "publishedAt": "2025-12-06T00:00:00.000Z",
+    "status": "draft",
+    "image": {
+      "key": "security-05",
+      "src": "assets/img/article-templates/security-05.webp",
+      "alt": "セキュリティを示す保護レイヤ（バリアント5）",
+      "label": "セキュリティラティス",
+      "caption": "トラストやガバナンス記事に使用。",
+      "category": "security"
+    },
+    "createdAt": "2025-12-06T09:23:08.869Z"
+  },
+  {
     "title": "【2025年最新】「SaaSは死んだ」って本当？AI時代の個人開発と日本の\"ヤバい\"現状を解説",
     "date": "2025-12-06",
     "summary": "海外で話題の「SaaS is Dead」議論の本質と、AI開発ツールの進化がもたらす変化について解説します。Microsoftのサティア・ナデラ氏の発言を発端としたこの議論は、日本企業にとっても無視できない警告を含んでいます。AI時代に個人開発者がどう生き残るか、その生存戦略を提示します。",

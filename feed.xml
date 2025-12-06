@@ -5,9 +5,34 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Fri, 05 Dec 2025 21:17:06 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 06 Dec 2025 09:23:08 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
+  <item>
+    <title>AIでアプリを作る時代に、なぜ「GitHub」を学ぶべきなのか？ ── 非エンジニアのための実践ガイド</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-aigithub.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-aigithub.html</guid>
+    <pubDate>Sat, 06 Dec 2025 00:00:00 GMT</pubDate>
+    <description>AIがコードを書いてくれる時代に、なぜ「GitHub」を学ぶべきなのか？非エンジニアに向けて、開発の「セーブポイント」としてのGitHubの重要性と、最低限覚えるべき4つのスキルを解説します。</description>
+    <category>GitHub</category>
+    <category>AIエージェント</category>
+    <category>非エンジニア</category>
+    <category>AI活用</category>
+    <category>リスキリング</category>
+  </item>
+  <item>
+    <title>Web制作特化AI『Readdy』レビュー：WordPressに代わる新たな選択肢とその実力</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-06-webaireaddywordpress.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-06-webaireaddywordpress.html</guid>
+    <pubDate>Sat, 06 Dec 2025 00:00:00 GMT</pubDate>
+    <description>Webサイト制作特化AI『Readdy』の機能と利点を徹底分析。WordPressに代わる新しい選択肢としての活用方法や具体的なユースケースを紹介し、導入のメリットと課題を考察します。</description>
+    <category>Readdy</category>
+    <category>Web制作</category>
+    <category>AIエージェント</category>
+    <category>CMS</category>
+    <category>WordPress</category>
+    <category>下書き</category>
+  </item>
   <item>
     <title>【2025年最新】「SaaSは死んだ」って本当？AI時代の個人開発と日本の&quot;ヤバい&quot;現状を解説</title>
     <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-06-saas-is-dead-ai-impact-japan.html</link>
@@ -112,18 +137,6 @@
     <category>NotebookLM</category>
     <category>AIツール</category>
     <category>ビジネス効率化</category>
-  </item>
-  <item>
-    <title>AIエージェント時代に不可欠なGithubスキル：非エンジニアのための実践ガイド</title>
-    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-aigithub.html</link>
-    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-02-aigithub.html</guid>
-    <pubDate>Tue, 02 Dec 2025 00:00:00 GMT</pubDate>
-    <description>AIエージェントの進化に伴い、Githubのスキルが非エンジニアにとっても重要性を増しています。この記事では、Githubの基本的な使い方から、AIツールとの連携による業務効率化の具体例を解説します。</description>
-    <category>GitHub</category>
-    <category>AIエージェント</category>
-    <category>非エンジニア</category>
-    <category>業務効率化</category>
-    <category>技術スキル</category>
   </item>
   <item>
     <title>【絵心がなくても大丈夫】AIで「うちの子」を固定して描く魔法のツール「PixAI Reference Pro」完全ガイド</title>
