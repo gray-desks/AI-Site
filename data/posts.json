@@ -47,6 +47,62 @@
     "createdAt": "2025-12-05T08:04:57.185Z"
   },
   {
+    "title": "自家製AIクラスター構築：Parallaxを用いたMacとWindowsでのLLM分散実行",
+    "date": "2025-12-06",
+    "summary": "Apple MacとWindowsを活用したLLMの分散実行方法を解説。Parallaxを使用することで、自家製AIクラスターを構築し、実践的なユースケースを提供します。",
+    "tags": [
+      {
+        "slug": "parallax-jdf7o7",
+        "label": "Parallax",
+        "category": "その他",
+        "style": "accent-teal"
+      },
+      {
+        "slug": "llm",
+        "label": "LLM",
+        "category": "技術トピック",
+        "style": "accent-sky"
+      },
+      {
+        "slug": "ai-ykd5gs",
+        "label": "AIクラスター",
+        "category": "その他",
+        "style": "accent-gold"
+      },
+      {
+        "slug": "tag-arowxp",
+        "label": "分散処理",
+        "category": "その他",
+        "style": "accent-orange"
+      },
+      {
+        "slug": "business",
+        "label": "業務効率化",
+        "category": "ユースケース",
+        "style": "accent-lime"
+      },
+      {
+        "slug": "draft",
+        "label": "下書き",
+        "category": "運用",
+        "style": "accent-gold"
+      }
+    ],
+    "url": "posts/2025/12/2025-12-06-aiparallaxmacwindowsllm.html",
+    "slug": "2025-12-06-aiparallaxmacwindowsllm",
+    "publishedAt": "2025-12-06T00:00:00.000Z",
+    "status": "draft",
+    "image": {
+      "key": "ai-core-04",
+      "src": "assets/img/article-templates/ai-core-04.webp",
+      "alt": "AIコアを象徴する抽象的な波形（バリアント4）",
+      "label": "AIコア戦略",
+      "caption": "大規模言語モデルやAI基盤の戦略を示すグラデーションアート。",
+      "category": "ai"
+    },
+    "createdAt": "2025-12-06T21:14:51.943Z"
+  },
+  {
     "title": "Web制作特化AI『Readdy』レビュー：WordPressに代わる新たな選択肢とその実力",
     "date": "2025-12-06",
     "summary": "Webサイト制作特化AI『Readdy』の機能と利点を徹底分析。WordPressに代わる新しい選択肢としての活用方法や具体的なユースケースを紹介し、導入のメリットと課題を考察します。",

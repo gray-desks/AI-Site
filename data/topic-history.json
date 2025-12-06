@@ -390,5 +390,13 @@
     "sourceName": "keitoaiweb",
     "videoTitle": "WordPressは古い？サクッとHPができるWeb制作特化AIエージェント『Readdy』が良い！",
     "draftUrl": "posts/2025/12/2025-12-06-webaireaddywordpress.html"
+  },
+  {
+    "topicKey": "apple-macwindowsllmparallaxai",
+    "firstSeen": "2025-12-06T21:14:51.694Z",
+    "lastPublishedAt": "2025-12-06",
+    "sourceName": "technavi_tooru",
+    "videoTitle": "Apple MacとWindowsでLLMを分散実行！Parallaxを使った自家製AIクラスターの構築",
+    "draftUrl": "posts/2025/12/2025-12-06-aiparallaxmacwindowsllm.html"
   }
 ]

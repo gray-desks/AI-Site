@@ -5,7 +5,7 @@
   <link>https://project-ai-blog.com/AI-Site</link>
   <description>AI・機械学習の最新情報を自動収集・分析。YouTubeチャンネルから注目トピックを抽出し、深掘りした記事を毎日2回自動更新。</description>
   <language>ja</language>
-  <lastBuildDate>Sat, 06 Dec 2025 09:23:08 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 06 Dec 2025 21:14:51 GMT</lastBuildDate>
   <atom:link href="https://project-ai-blog.com/AI-Site/feed.xml" rel="self" type="application/rss+xml" />
 
   <item>
@@ -19,6 +19,19 @@
     <category>非エンジニア</category>
     <category>AI活用</category>
     <category>リスキリング</category>
+  </item>
+  <item>
+    <title>自家製AIクラスター構築：Parallaxを用いたMacとWindowsでのLLM分散実行</title>
+    <link>https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-06-aiparallaxmacwindowsllm.html</link>
+    <guid isPermaLink="true">https://project-ai-blog.com/AI-Site/posts/2025/12/2025-12-06-aiparallaxmacwindowsllm.html</guid>
+    <pubDate>Sat, 06 Dec 2025 00:00:00 GMT</pubDate>
+    <description>Apple MacとWindowsを活用したLLMの分散実行方法を解説。Parallaxを使用することで、自家製AIクラスターを構築し、実践的なユースケースを提供します。</description>
+    <category>Parallax</category>
+    <category>LLM</category>
+    <category>AIクラスター</category>
+    <category>分散処理</category>
+    <category>業務効率化</category>
+    <category>下書き</category>
   </item>
   <item>
     <title>Web制作特化AI『Readdy』レビュー：WordPressに代わる新たな選択肢とその実力</title>
